@@ -5,7 +5,9 @@ Got a template for making cool sections on a character sheet, or a function that
 
 ## Repository Organization
 The repo is organized into three subsections; **HTML & CSS Snippets** and **JS Snippets**.
+
 **HTML & CSS Snippets**
+
 Share clever ways of handling the unique layout needs of Roll20 character sheets. The files in this directory could be HTML, CSS, or a templating language like PUG/SCSS. JS may be included here for character sheet snippets that rely on sheetworkers to properly function.
 
 **JS Snippets**
@@ -17,7 +19,6 @@ A snippet is a small piece of reusable code. They should not be overly long, lik
 ## Submitting a snippet
 Snippets should be located in their own subdirectory of the appropriate main directory. The subdirectory should contain any files needed to use the snippet.
 Include a sumary of how to use your snippet as a comment at the top of the snippet's file. If using the snippet is more complex, a readme.md file can be included as well to elaborate on the summary.
-
 - Fork the repo and make a new branch to add your snippet(s) to.
 - Submit a PR with your snippet(s) from your branch and fork to the main branch of the repo.
 - PR's will be reviewed at least once a week on Tuesdays
@@ -25,3 +26,4 @@ Include a sumary of how to use your snippet as a comment at the top of the snipp
 # Available Snippets
 ## JS Snippets
 ## HTML/CSS Snippets
+[Radios; fill to left using in-range](https://github.com/Kurohyou/Roll20-Snippets/tree/main/HTML%20%26%20CSS%20Snippets/Fill%20to%20left%20using%20in-range): This snippet provides an easy way to fill radio buttons to the left of a checked radio button without needing sheetworkers or complex html/css.
