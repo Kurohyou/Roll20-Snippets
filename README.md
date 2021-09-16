@@ -26,5 +26,6 @@ Include a sumary of how to use your snippet as a comment at the top of the snipp
 
 # Available Snippets
 ## JS Snippets
+[parseRepeatname](https://github.com/Kurohyou/Roll20-Snippets/tree/main/JS%20Snippets/parseRepeatName): This snippet extracts information about the repeating section, row ID, and field from a sheetworker change event object or repeating section attribute name.
 ## HTML/CSS Snippets
 [Radios; fill to left using in-range](https://github.com/Kurohyou/Roll20-Snippets/tree/main/HTML%20%26%20CSS%20Snippets/Fill%20to%20left%20using%20in-range): This snippet provides an easy way to fill radio buttons to the left of a checked radio button without needing sheetworkers or complex html/css.
