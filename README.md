@@ -5,7 +5,7 @@ A repository for storing and sharing useful snippets of code for use in Roll20 A
 Got a template for making cool sections on a character sheet, or a function that automates some repetitive task in your coding? Share them here and help the Roll20 community tackle those problems.
 
 ## Repository Organization
-The repo is organized into three subsections; **HTML & CSS Snippets** and **JS Snippets**.
+The repo is organized into two subsections; **HTML & CSS Snippets** and **JS Snippets**.
 
 **HTML & CSS Snippets**
 
