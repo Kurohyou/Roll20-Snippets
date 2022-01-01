@@ -274,6 +274,7 @@ mixin button-label(inputObj,buttonObj,divObj)
     if spanObj
       - buttonObj.class = buttonObj.class ? `${buttonObj.class} input-label__text` : 'input-label__text';
     +button(buttonObj)
+      block
     +input(inputObj)
 //-End Mixin
 mixin roller-label(inputObj,buttonObj,divObj)
