@@ -30,7 +30,7 @@ This is the first public release of the character sheet scaffold that I use to b
       - [attrTitle(string)](#attrtitlestring)
       - [buttonTitle(string)](#buttontitlestring)
 ## Features
-The scaffold incorporates many useful features. Some of these are PUG mixins and some are sheetworker functions. Others connect the information created in the PUG file with what is used in the sheetworkers. Details on the sheetworker functions can be found in the [js scaffold documentation](https://rawcdn.githack.com/Kurohyou/Roll20-Snippets/846fe3a972ed44b16a45adc768579b8688e86952/K_Scaffold/out/JS_Scaffold.html)
+The scaffold incorporates many useful features. Some of these are PUG mixins and some are sheetworker functions. Others connect the information created in the PUG file with what is used in the sheetworkers. Details on the sheetworker functions can be found in the [js scaffold documentation](https://htmlpreview.github.io/?https://github.com/Kurohyou/Roll20-Snippets/blob/kscaffold/K_Scaffold/out/JS_Scaffold.html)
 
 ## HTML element mixins
 The most basic element of the K-scaffold are the mixins that are provided for most html elements that might be used in a character sheet. These mixins allow you to specify attributes for an element via an object syntax instead of the standard html syntax. This is useful when iterating through collections of items that may each need different attributes added to their elements and may even require different input types. Something like this.
