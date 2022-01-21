@@ -1,11 +1,40 @@
 # The K-Scaffold
-This is the first public release of the character sheet scaffold that I use to build my sheets. It is still under continuous development and will likely change in the future. The scaffold allows sheets and sheetworkers to be written in a more seamless fashion by writing the listeners and connections between attributes directly in the PUG for the sheet.
+This is the first public release of the character sheet scaffold that I use to build my sheets. It is still under continuous development and will likely change in the future. The scaffold allows sheets and [sheetworkers](https://wiki.roll20.net/Sheetworkers) to be written in a more seamless fashion by writing the listeners and connections between attributes directly in the [PUG](https://wiki.roll20.net/Sheet_Author_Tips#PUG) for the sheet.
 
 ## Features
-The scaffold incorporates many useful features. Some of these are PUG mixins and some are sheetworker functions. Others connect the information created in the PUG file with what is used in the sheetworkers.
+The scaffold incorporates many useful features. Some of these are [PUG mixins](https://pugjs.org/language/mixins.html) and some are sheetworker functions. Others connect the information created in the PUG file with what is used in the sheetworkers.
+
+- [The K-Scaffold](#the-k-scaffold)
+  - [Features](#features)
+  - [HTML element mixins](#html-element-mixins)
+    - [Attribute and button mixins](#attribute-and-button-mixins)
+      - [input(obj)](#inputobj)
+        - [text(obj)](#textobj)
+        - [checkbox(obj)](#checkboxobj)
+        - [radio(obj)](#radioobj)
+        - [number(obj)](#numberobj)
+        - [range(obj)](#rangeobj)
+        - [hidden(obj)](#hiddenobj)
+      - [textarea(obj)](#textareaobj)
+      - [select(obj) and option(obj)](#selectobj-and-optionobj)
+      - [img(obj)](#imgobj)
+      - [span(obj)](#spanobj)
+      - [button(obj)](#buttonobj)
+        - [action(obj)](#actionobj)
+        - [roller(obj)](#rollerobj)
+      - [input-label(label,inputObj,divObj,spanObj)](#input-labellabelinputobjdivobjspanobj)
+        - [select-label(label,selectObj,divObj,spanObj)](#select-labellabelselectobjdivobjspanobj)
+        - [button-label(inputObj,buttonObj,divObj)](#button-labelinputobjbuttonobjdivobj)
+      - [headedTextarea(obj,header)](#headedtextareaobjheader)
+      - [adaptiveTextarea(textObj)](#adaptivetextareatextobj)
+    - [Roll20 Elements](#roll20-elements)
+    - [General HTML Elements](#general-html-elements)
+    - [Functions](#functions)
+      - [attrTitle(string)](#attrtitlestring)
+      - [buttonTitle(string)](#buttontitlestring)
 
 ## HTML element mixins
-The most basic element of the K-scaffold are the mixins that are provided for most html elements that might be used in a character sheet. These mixins allow you to specify attributes for an element via an object syntax instead of the standard html syntax. This is useful when iterating through collections of items that may each need different attributes added to their elements and may even require different input types. Something like this
+The most basic element of the K-scaffold are the mixins that are provided for most html elements that might be used in a character sheet. These mixins allow you to specify attributes for an element via an [object syntax instead of the standard html syntax. This is useful when iterating through collections of items that may each need different attributes added to their elements and may even require different input types. Something like this
 
 ```js
 input(name='attr_character_name' type='text' value='')
@@ -179,7 +208,7 @@ creates:
 <button name="act_my-button-action" hidden type="action" title="%{my-button-action}"></button>
 <input name="attr_my_button_action" type="hidden" title="%{my_button_action}" value="">
 ```
-The `roller` mixin creates a set of three elements that are meant to work together and require sheetworker support to work. Only the roll button is visible to the user. The benefit of this construction is that it creates a button that will trigger CRP or other sheetworker actions, but can be dragged to the user's macro bar unlike a base action button. This mixin requires using the trigger functionality of the scaffold and will add a default trigger for the function `initiateRoll()` if no trigger is passed.
+The `roller` mixin creates a set of three elements that are meant to work together and require sheetworker support to work. Only the roll button is visible to the user. The benefit of this construction is that it creates a button that will trigger [Custom Roll Parsing(CRP)](https://wiki.roll20.net/Custom_Roll_Parsing) or other sheetworker actions, but can be dragged to the user's macro bar unlike a base action button. This mixin requires using the trigger functionality of the scaffold and will add a default trigger for the function `initiateRoll()` if no trigger is passed.
 #### input-label(label,inputObj,divObj,spanObj)
 ```js
 - let inputObj = {name:'my attribute',type:'text',value:''};
