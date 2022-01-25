@@ -14,7 +14,6 @@ const expandCascade = function(cascade,sections,attributes){
     return memo;
   },{});
 };
-kFuncs.expandCascade = expandCascade;
 
 const expandRepeating = function(memo,key,cascade,sections,attributes){
   key.replace(/((?:attr|act)_)(repeating_[^_]+)_[^_]+?_(.+)/,(match,type,section,field)=>{
@@ -36,12 +35,10 @@ const expandRepeating = function(memo,key,cascade,sections,attributes){
     });
   });
 };
-kFuncs.expandRepeating = expandRepeating;
 
 const applyID = function(affected,id){
   return affected.replace(/(repeating_[^_]+_)[^_]+(.+)/,`$1${id}$2`);
 };
-kFuncs.applyID = applyID;
 
 const expandNormal = function(memo,key,cascade,sections){
   memo[key] = _.clone(cascade[key]);
@@ -56,11 +53,9 @@ const expandNormal = function(memo,key,cascade,sections){
     },[]);
   }
 };
-kFuncs.expandNormal = expandNormal;
 
 const addAllRows = function(affected,memo,sections){
   affected.replace(/(repeating_[^_]+?)_[^_]+?_(.+)/,(match,section,field)=>{
     sections[section].forEach(id=>memo.push(`${section}_${id}_${field}`));
   });
 };
-kFuncs.addAllRows = addAllRows;
