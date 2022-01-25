@@ -24,11 +24,34 @@ This is the first public release of the character sheet scaffold that I use to b
         - [button-label(inputObj,buttonObj,divObj)](#button-labelinputobjbuttonobjdivobj)
       - [headedTextarea(obj,header)](#headedtextareaobjheader)
       - [adaptiveTextarea(textObj)](#adaptivetextareatextobj)
-    - [Roll20 Elements](#roll20-elements)
+    - [Roll template mixins](#roll-template-mixins)
+      - [rolltemplate(name)](#rolltemplatename)
+      - [multiPartTemplate(name)](#multiparttemplatename)
+      - [characterLink](#characterLink)
+      - [templateConditionalDisplay(fieldName,invert)](#templateconditionaldisplayfieldname,invert)
+      - [templateHelperFunction(helperObj)](#templatehelperfunctionhelperobj)
+        - [rollWasCrit](#templatehelperfunctionhelperobj)
+        - [rollWasFumble](#templatehelperfunctionhelperobj)
+        - [rollTotal](#templatehelperfunctionhelperobj)
+        - [rollGreater](#templatehelperfunctionhelperobj)
+        - [rollLess](#templatehelperfunctionhelperobj)
+        - [rollBetween](#templatehelperfunctionhelperobj)
+        - [allProps](#templatehelperfunctionhelperobj)
     - [General HTML Elements](#general-html-elements)
+      - [div(obj)](#general-html-elements)
+      - [h1(obj)](#general-html-elements)
+      - [h2(obj)](#general-html-elements)
+      - [h3(obj)](#general-html-elements)
+      - [h4(obj)](#general-html-elements)
+      - [h5(obj)](#general-html-elements)
+      - [h6(obj)](#general-html-elements)
+      - [p(obj)](#general-html-elements)
+      - [script](#script)
+      - [kscript](#kscript)
     - [Functions](#functions)
       - [attrTitle(string)](#attrtitlestring)
       - [buttonTitle(string)](#buttontitlestring)
+Want to support the scaffold? Buy me a cup of coffee at the [Kurohyou Studios Patreon Page](https://www.patreon.com/kurohyoustudios?fan_landing=true).
 ## Features
 The scaffold incorporates many useful features. Some of these are PUG mixins and some are sheetworker functions. Others connect the information created in the PUG file with what is used in the sheetworkers. Details on the sheetworker functions can be found in the [js scaffold documentation](https://htmlpreview.github.io/?https://github.com/Kurohyou/Roll20-Snippets/blob/kscaffoldmodule/K_Scaffold/out/global.html)
 
@@ -328,9 +351,9 @@ creates:
 </rolltemplate>
 ```
 Creates the rolltemplate prepending `"sheet-rolltemplate-"` to the name passed to it. Also creates a container within the rolltemplate which can be used to easily style the area of the template.
-#### multiPartTemplate(my-system)
+#### multiPartTemplate(name)
 ```js
-+multiPartTemplate(name)
++multiPartTemplate('my-system')
 ```
 creates:
 ```html
@@ -358,7 +381,7 @@ creates:
 {{/character_name}}
 ```
 Creates a construction for inserting a link to a character (if an id is passed along with the character name)
-#### templateConditionalDisplay(fieldBool,invert)
+#### templateConditionalDisplay(fieldName,invert)
 ```js
 +templateConditionalDisplay('roll1')
   |Output if roll1 is passed
