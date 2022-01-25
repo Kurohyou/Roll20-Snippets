@@ -2,7 +2,7 @@
 /*jshint -W014,-W084,-W030,-W033*/
 /**
  * Alias for [setSectionOrder()](https://wiki.roll20.net/Sheet_Worker_Scripts#setSectionOrder.28.3CRepeating_Section_Name.3E.2C_.3CSection_Array.3E.2C_.3CCallback.3E.29) that allows you to use the section name in either `repeating_section` or `section` formats.
- * @name k.setSectionOrder
+ * @name setSectionOrder
  * @param {string} section
  * @param {string[]} order
  * @returns {void}
@@ -15,7 +15,7 @@ kFuncs.setSectionOrder = _setSectionOrder;
 
 /**
  * Alias for [removeRepeatingRow](https://wiki.roll20.net/Sheet_Worker_Scripts#removeRepeatingRow.28_RowID_.29) that also removes the row from the current object of attribute values and array of section IDs to ensure that erroneous updates are not issued.
- * @name k.removeRepeatingRow
+ * @name removeRepeatingRow
  * @param {string} row - The row id to be removed
  * @param {attributesProxy} attributes - The attribute values currently in memory
  * @param {object} sections - Object that contains arrays of all the IDs in sections on the sheet indexed by repeating name.
@@ -36,7 +36,7 @@ kFuncs.removeRepeatingRow = _removeRepeatingRow;
 
 /**
  * Alias for [getAttrs()](https://wiki.roll20.net/Sheet_Worker_Scripts#getAttrs.28attributeNameArray.2C_callback.29) that converts the default object of attribute values into an {@link attributesProxy} and passes that back to the callback function.
- * @name k.getAttrs
+ * @name getAttrs
  * @param {Object} args
  * @param {string[]} [args.props=baseGet] - Array of attribute names to get the value of. Defaults to {@link baseGet} if not passed.
  * @param {function(attributesProxy)} args.callback - The function to call after the attribute values have been gotten. An {@link attributesProxy} is passed to the callback.
@@ -51,7 +51,6 @@ kFuncs.getAttrs = _getAttrs;
 
 /**
  * Alias for [getAttrs()](https://wiki.roll20.net/Sheet_Worker_Scripts#getAttrs.28attributeNameArray.2C_callback.29) and [getSectionIDs](https://wiki.roll20.net/Sheet_Worker_Scripts#getSectionIDs.28section_name.2Ccallback.29) that combines the actions of both sheetworker functions and converts the default object of attribute values into an {@link attributesProxy}. Also gets the details on how to handle all attributes from the master {@link cascades} object and.
- * @name k.getAllAttrs
  * @param {Object} args
  * @param {string[]} [args.props=baseGet] - Array of attribute names to get the value of. Defaults to {@link baseGet} if not passed.
  * @param {repeatingSectionDetails} sectionDetails - Array of details about a section to get the IDs for and attributes that need to be gotten. 
@@ -71,7 +70,6 @@ kFuncs.getAllAttrs = getAllAttrs;
 
 /**
  * Alias for [getSectionIDs()](https://wiki.roll20.net/Sheet_Worker_Scripts#getSectionIDs.28section_name.2Ccallback.29) that allows you to iterate through several functions at once. Also assembles an array of repeating attributes to get.
- * @name k.getSections
  * @param {object[]} sectionDetails - Array of details about a section to get the IDs for and attributes that need to be gotten.
  * @param {string} sectionDetails.section - The full name of the repeating section including the `repeating_` prefix.
  * @param {string[]} sectionDetails.fields - Array of field names that need to be gotten from the repeating section
@@ -109,7 +107,7 @@ kFuncs.getSections = getSections;
 // Can be awaited to get the values returned from _setAttrs
 /**
  * Alias for [setAttrs()](https://wiki.roll20.net/Sheet_Worker_Scripts#setAttrs.28values.2Coptions.2Ccallback.29) that sets silently by default.
- * @name k.setAttrs
+ * @name setAttrs
  * @param {object} obj - The object containting attributes to set
  * @param {boolean} [vocal=false] - Whether to set silently (default value) or not.
  * @param {function()} [callback] - The callback function to invoke after the setting has been completed. No arguments are passed to the callback function.
@@ -122,7 +120,7 @@ kFuncs.setAttrs = set;
 
 /**
  * Alias for generateRowID that adds the new id to the {@link sectionObj}. Also allows for creation of custom IDs that conform to the section ID requirements.
- * @name k.generateRowID
+ * @name generateRowID
  * @param {string} section - The section name to create an ID for. The `repeating_` prefix is optional so both `repeating_equipment` and `equipment` are valid.
  * @param {sectionObj} sections
  * @param {string} [customText] - Custom text to start the ID with. This text should not be longer than the standard repeating section ID format.

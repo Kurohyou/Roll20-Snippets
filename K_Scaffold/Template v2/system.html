@@ -9,36 +9,31 @@
   <div class="image-border{{#header}} has-header{{/header}}{{#footer}} has-footer{{/footer}}"></div>
 </rolltemplate>
 <script type="text/worker">
-  const k = (function(){const kFuncs = {
-	/**
-	 * This stores the name of your sheet for use in the logging functions {@link k.log} and {@link k.debug}
-	 * @type {string}
-	 * @name k.sheetName
-	 */
-	sheetName:'kScaffold Powered Sheet',
-	/**
-	 * This stores the version of your sheet for use in the logging functions{@link k.log} and {@link k.debug}. It is also stored in the sheet_version attribute on your character sheet.
-	 * @type {number}
-	 * @name k.version
-	 */
-	version:0,
-	/**
-	 * A boolean flag that tells the script whether to enable or disable {@link k.debug} calls. If the version of the sheet is `0`, or an attribute named `debug_mode` is found on opening this is set to true for your entire session. Otherwise, it remains false.
-	 * @type {boolean}
-	 * @name k.debugMode
-	 */
-	debugMode:false,
-	/**
-	 * An object to store your update functions in. Functions should be index by the version they are for (e.g. the update handler for version 1.01 would be indexed to '1.01'). These update functions will be iterated through based on the previous version of the sheet (as stored in the `sheet_version` attribute of the sheet) and the new version of the sheet (as stored in {@link k.version}).
-	 * @type {object}
-	 * @name k.updateHandlers
-	 */
-	updateHandlers:{}
-};/*jshint esversion: 11, laxcomma:true, eqeqeq:true*/
+  const k = (function(){const kFuncs = {};
+/**
+ * This stores the name of your sheet for use in the logging functions {@link log} and {@link debug}
+ * * @var
+ * @type {string}
+ */
+let sheetName = 'kScaffold Powered Sheet';
+kFuncs.sheetName = sheetName;
+/**
+	* This stores the version of your sheet for use in the logging functions{@link log} and {@link debug}. It is also stored in the sheet_version attribute on your character sheet.
+	* @var
+	* @type {number}
+	*/
+let version = 0;
+kFuncs.version = version;
+/**
+	* A boolean flag that tells the script whether to enable or disable {@link debug} calls. If the version of the sheet is `0`, or an attribute named `debug_mode` is found on opening this is set to true for your entire session. Otherwise, it remains false.
+	* @var
+	* @type {boolean}
+	*/
+let debugMode = false;
+kFuncs.debugMode = debugMode;/*jshint esversion: 11, laxcomma:true, eqeqeq:true*/
 /*jshint -W014,-W084,-W030,-W033*/
 /**
  * Replaces problem characters to use a string as a regex.
- * @name k.sanitizeForRegex
  * @param {string} text
  * @returns {string}
  */
@@ -49,7 +44,6 @@ kFuncs.sanitizeForRegex = sanitizeForRegex;
 //
 /**
  * Converts a value to a number, it's default value, or 0.
- * @name k.value
  * @param {*} val
  * @param {number} def
  * @returns {number}
@@ -67,7 +61,6 @@ field: bulk
 */
 /**
  * Extracts the section (e.g. `repeating_equipment`), rowID (e.g `-;lkj098J:LKj`), and field name (e.g. `bulk`) from a repeating attribute name.
- * @name k.parseRepeatName
  * @param {string} string
  * @returns {string[]}
  */
@@ -80,7 +73,6 @@ kFuncs.parseRepeatName = parseRepeatName;
 
 /**
  * Parses out the components of a trigger name similar to {@link parseRepeatName}. Aliases: parseClickTrigger.
- * @name k.parseClickTrigger
  * @param {string} string
  * @returns {string[]}
  */
@@ -95,7 +87,6 @@ const parseClickTrigger = parseTriggerName;
 kFuncs.parseClickTrigger = parseClickTrigger;
 /**
  * Parses out the attribute name from the htmlattribute name.
- * @name k.parseHTMLName
  * @param {string} string
  * @returns {string[]}
  */
@@ -108,7 +99,6 @@ kFuncs.parseHTMLName = parseHTMLName;
 
 /**
  * Capitalize each word in a string.
- * @name k.capitalize
  * @param {string} string
  * @returns {string}
  */
@@ -119,7 +109,6 @@ kFuncs.capitalize = capitalize;
 
 /**
  * Extracts a roll query result for use in later functions. Must be awaited as per [startRoll documentation](https://wiki.roll20.net/Sheet_Worker_Scripts#Roll_Parsing.28NEW.29).
- * @name k.extractQueryResult
  * @param {string} query - The query should be just the text as the `?{` and `}` at the start/end of the query are added by the function.
  * @returns {string}
  */
@@ -133,7 +122,6 @@ kFuncs.extractQueryResult = extractQueryResult;
 
 /**
  * Simulates a query for ensuring that async/await works correctly in the sheetworker environment when doing conditional startRolls. E.g. if you have an if/else and only one of the conditions results in `startRoll` being called (and thus an `await`), the sheetworker environment would normally crash. Awaiting this in the condition that does not actually need to call `startRoll` will keep the environment in sync.
- * @name k.pseudoQuery
  * @param {string|number|undefined|null} value
  * @returns {string}
  */
@@ -148,7 +136,6 @@ kFuncs.pseudoQuery = pseudoQuery;
 //# Utility Functions #
 /**
  * An alias for console.log.
- * @name k.log
  * @param {string|object|Array} msg - The message can be  straight string or an object. If it is an object, the object will be broken down so that each key is used as a label to output followed by the value of that key. If the value of the key is an object or array, it will be output via console.table.
  * @returns {void}
  */
@@ -169,7 +156,6 @@ const log = function(msg){
 kFuncs.log = log;
 /**
  * Alias for console.log that only triggers when debug mode is enabled or when the sheet's version is `0`.
- * @name k.debug
  * @param {string|object|Array} msg - See {@link log}.
  * @param {boolean|string|number} [force=false] - Pass as a truthy value to force the debug output to be output to the console regardless of debug mode.
  * @returns {void}
@@ -195,7 +181,6 @@ kFuncs.debug = debug;
 //orders the section id arrays to match the repOrder attribute
 /**
  * Orders the section id arrays to match the repOrder attribute.
- * @name k.orderSections
  * @param {attributesProxy} attributes - An instance of the {@link attributesProxy}.
  * @param {sectionObj} sections - Array of details about a section to get the IDs for and attributes that need to be gotten.
  * @returns {void}
@@ -211,7 +196,6 @@ kFuncs.orderSections = orderSections;
 //
 /**
  * Orders a single ID array
- * @name k.orderSection
  * @param {string[]} repOrder - Array of IDs in the order they are in on the sheet.
  * @param {string[]} IDs - Array of IDs to be ordered
  * @returns {void}
@@ -225,7 +209,6 @@ kFuncs.orderSection = orderSection;
 
 /**
  * Splits a comma delimited string into an array
- * @name k.commaArray
  * @param {string} [string='']
  * @returns {string[]}
  */
@@ -387,11 +370,9 @@ const createAttrProxy = function(attrs){
 };
 
 const funcs = {};
-kFuncs.funcs = funcs;
 
 /**
  * Function that registers a function for being called via the funcs object. Returns true if the function was successfully registered, and false if it could not be registered for any reason.
- * @name k.registerFuncs
  * @param {object} funcObj - Object with keys that are names to register functions under and values that are functions.
  * @returns {boolean}
  */
@@ -414,7 +395,6 @@ kFuncs.registerFuncs = registerFuncs;
 
 /**
  * Function to call a function previously registered to the funcs object. May not be used that much. Either returns the function or null if no function exists.
- * @name k.callFunc
  * @param {any} funcName - The name of the function to invoke.
  * @param {...any} args - The arguments to call the function with.
  * @returns {any}
@@ -431,6 +411,10 @@ const callFunc = function(funcName,...args){
 kFuncs.callFunc = callFunc;/*jshint esversion: 11, laxcomma:true, eqeqeq:true*/
 /*jshint -W014,-W084,-W030,-W033*/
 //Sheet Updaters and styling functions
+/**
+ * An object to store your update functions in. Functions should be index by the version they are for (e.g. the update handler for version 1.01 would be indexed to '1.01'). These update functions will be iterated through based on the previous version of the sheet (as stored in the `sheet_version` attribute of the sheet) and the new version of the sheet (as stored in {@link k.version}).
+ * @type {object}
+ */
 const updateHandlers = {};
 kFuncs.updateHandlers = updateHandlers;
 const updateSheet = function(){
@@ -459,7 +443,11 @@ const initialSetup = function(attributes,sections){
   debug('Initial sheet setup');
 };
 
-//These functions access the sheet and iterate through all changes necessary before calling setAttrs
+/**
+ * This is the default listener function for attributes that the K-Scaffold uses. It utilizes the `triggerFuncs`, `listenerFunc`, `calculation`, and `affects` properties of the K-scaffold trigger object (see the Pug section of the scaffold for more details).
+ * @param {Roll20Event} event
+ * @returns {void}
+ */
 const accessSheet = function(event){
   debug({funcs});
   debug({event});
@@ -532,7 +520,7 @@ const addAllRows = function(affected,memo,sections){
 /*jshint -W014,-W084,-W030,-W033*/
 /**
  * Alias for [setSectionOrder()](https://wiki.roll20.net/Sheet_Worker_Scripts#setSectionOrder.28.3CRepeating_Section_Name.3E.2C_.3CSection_Array.3E.2C_.3CCallback.3E.29) that allows you to use the section name in either `repeating_section` or `section` formats.
- * @name k.setSectionOrder
+ * @name setSectionOrder
  * @param {string} section
  * @param {string[]} order
  * @returns {void}
@@ -545,7 +533,7 @@ kFuncs.setSectionOrder = _setSectionOrder;
 
 /**
  * Alias for [removeRepeatingRow](https://wiki.roll20.net/Sheet_Worker_Scripts#removeRepeatingRow.28_RowID_.29) that also removes the row from the current object of attribute values and array of section IDs to ensure that erroneous updates are not issued.
- * @name k.removeRepeatingRow
+ * @name removeRepeatingRow
  * @param {string} row - The row id to be removed
  * @param {attributesProxy} attributes - The attribute values currently in memory
  * @param {object} sections - Object that contains arrays of all the IDs in sections on the sheet indexed by repeating name.
@@ -566,7 +554,7 @@ kFuncs.removeRepeatingRow = _removeRepeatingRow;
 
 /**
  * Alias for [getAttrs()](https://wiki.roll20.net/Sheet_Worker_Scripts#getAttrs.28attributeNameArray.2C_callback.29) that converts the default object of attribute values into an {@link attributesProxy} and passes that back to the callback function.
- * @name k.getAttrs
+ * @name getAttrs
  * @param {Object} args
  * @param {string[]} [args.props=baseGet] - Array of attribute names to get the value of. Defaults to {@link baseGet} if not passed.
  * @param {function(attributesProxy)} args.callback - The function to call after the attribute values have been gotten. An {@link attributesProxy} is passed to the callback.
@@ -581,7 +569,6 @@ kFuncs.getAttrs = _getAttrs;
 
 /**
  * Alias for [getAttrs()](https://wiki.roll20.net/Sheet_Worker_Scripts#getAttrs.28attributeNameArray.2C_callback.29) and [getSectionIDs](https://wiki.roll20.net/Sheet_Worker_Scripts#getSectionIDs.28section_name.2Ccallback.29) that combines the actions of both sheetworker functions and converts the default object of attribute values into an {@link attributesProxy}. Also gets the details on how to handle all attributes from the master {@link cascades} object and.
- * @name k.getAllAttrs
  * @param {Object} args
  * @param {string[]} [args.props=baseGet] - Array of attribute names to get the value of. Defaults to {@link baseGet} if not passed.
  * @param {repeatingSectionDetails} sectionDetails - Array of details about a section to get the IDs for and attributes that need to be gotten. 
@@ -601,7 +588,6 @@ kFuncs.getAllAttrs = getAllAttrs;
 
 /**
  * Alias for [getSectionIDs()](https://wiki.roll20.net/Sheet_Worker_Scripts#getSectionIDs.28section_name.2Ccallback.29) that allows you to iterate through several functions at once. Also assembles an array of repeating attributes to get.
- * @name k.getSections
  * @param {object[]} sectionDetails - Array of details about a section to get the IDs for and attributes that need to be gotten.
  * @param {string} sectionDetails.section - The full name of the repeating section including the `repeating_` prefix.
  * @param {string[]} sectionDetails.fields - Array of field names that need to be gotten from the repeating section
@@ -639,7 +625,7 @@ kFuncs.getSections = getSections;
 // Can be awaited to get the values returned from _setAttrs
 /**
  * Alias for [setAttrs()](https://wiki.roll20.net/Sheet_Worker_Scripts#setAttrs.28values.2Coptions.2Ccallback.29) that sets silently by default.
- * @name k.setAttrs
+ * @name setAttrs
  * @param {object} obj - The object containting attributes to set
  * @param {boolean} [vocal=false] - Whether to set silently (default value) or not.
  * @param {function()} [callback] - The callback function to invoke after the setting has been completed. No arguments are passed to the callback function.
@@ -652,7 +638,7 @@ kFuncs.setAttrs = set;
 
 /**
  * Alias for generateRowID that adds the new id to the {@link sectionObj}. Also allows for creation of custom IDs that conform to the section ID requirements.
- * @name k.generateRowID
+ * @name generateRowID
  * @param {string} section - The section name to create an ID for. The `repeating_` prefix is optional so both `repeating_equipment` and `equipment` are valid.
  * @param {sectionObj} sections
  * @param {string} [customText] - Custom text to start the ID with. This text should not be longer than the standard repeating section ID format.

@@ -1,6 +1,10 @@
 /*jshint esversion: 11, laxcomma:true, eqeqeq:true*/
 /*jshint -W014,-W084,-W030,-W033*/
 //Sheet Updaters and styling functions
+/**
+ * An object to store your update functions in. Functions should be index by the version they are for (e.g. the update handler for version 1.01 would be indexed to '1.01'). These update functions will be iterated through based on the previous version of the sheet (as stored in the `sheet_version` attribute of the sheet) and the new version of the sheet (as stored in {@link k.version}).
+ * @type {object}
+ */
 const updateHandlers = {};
 kFuncs.updateHandlers = updateHandlers;
 const updateSheet = function(){
@@ -29,7 +33,11 @@ const initialSetup = function(attributes,sections){
   debug('Initial sheet setup');
 };
 
-//These functions access the sheet and iterate through all changes necessary before calling setAttrs
+/**
+ * This is the default listener function for attributes that the K-Scaffold uses. It utilizes the `triggerFuncs`, `listenerFunc`, `calculation`, and `affects` properties of the K-scaffold trigger object (see the Pug section of the scaffold for more details).
+ * @param {Roll20Event} event
+ * @returns {void}
+ */
 const accessSheet = function(event){
   debug({funcs});
   debug({event});

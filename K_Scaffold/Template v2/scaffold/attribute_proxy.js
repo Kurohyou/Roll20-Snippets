@@ -144,11 +144,9 @@ const createAttrProxy = function(attrs){
 };
 
 const funcs = {};
-kFuncs.funcs = funcs;
 
 /**
  * Function that registers a function for being called via the funcs object. Returns true if the function was successfully registered, and false if it could not be registered for any reason.
- * @name k.registerFuncs
  * @param {object} funcObj - Object with keys that are names to register functions under and values that are functions.
  * @returns {boolean}
  */
@@ -171,7 +169,6 @@ kFuncs.registerFuncs = registerFuncs;
 
 /**
  * Function to call a function previously registered to the funcs object. May not be used that much. Either returns the function or null if no function exists.
- * @name k.callFunc
  * @param {any} funcName - The name of the function to invoke.
  * @param {...any} args - The arguments to call the function with.
  * @returns {any}
