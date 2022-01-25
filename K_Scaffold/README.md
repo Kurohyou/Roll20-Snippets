@@ -51,6 +51,7 @@ This is the first public release of the character sheet scaffold that I use to b
     - [Functions](#functions)
       - [attrTitle(string)](#attrtitlestring)
       - [buttonTitle(string)](#buttontitlestring)
+      
 Want to support the scaffold? Buy me a cup of coffee at the [Kurohyou Studios Patreon Page](https://www.patreon.com/kurohyoustudios?fan_landing=true).
 ## Features
 The scaffold incorporates many useful features. Some of these are PUG mixins and some are sheetworker functions. Others connect the information created in the PUG file with what is used in the sheetworkers. Details on the sheetworker functions can be found in the [js scaffold documentation](https://htmlpreview.github.io/?https://github.com/Kurohyou/Roll20-Snippets/blob/kscaffoldmodule/K_Scaffold/out/global.html)
@@ -411,6 +412,7 @@ Accepts an object with the following properties:
 - func: The name of the helper function to run.
 - values: The text that would normally come after the helper function call (e.g. the `roll1 16` in `{{#rollGreater() roll1 16}}`)
 - invert: An optional boolean that when true inverts the functionality of the helper function. Defaults to false.
+
 There are also aliases for `templateHelperFunction` that are specific for each of the [helper functions](https://wiki.roll20.net/Building_Character_Sheets/Roll_Templates#Helper_Functions). These accept the same helperObj, except that the `func` argument is no longer needed (and will be ignored if passed). These alias functions are:
 - rollWasCrit
 - rollWasFumble
@@ -429,6 +431,7 @@ There are several generic HTML element mixins which can be used to create these 
 - h5(obj)
 - h6(obj)
 - p(obj)
+
 In addition to the above, there are two additional element mixins for handling scripts which are described below.
 #### script
 ```js
