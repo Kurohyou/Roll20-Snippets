@@ -18,7 +18,7 @@ const navigateSheet = function(event){
   debug({setObj});
   set(setObj);
 };
-funcs.navigateSheet = navigateSheet;
+k.funcs.navigateSheet = navigateSheet;
 
 const setupSystem = function(trigger,attributes,sections){
 };

@@ -359,10 +359,41 @@ mixin headedTextarea(obj,header)
     +h3({'data-i18n':header,class:'headed-textarea__header'})
     +textarea(obj)
 //-End Mixin
-mixin script()
+mixin script
   script(type='text/worker')
     block
 //-End Mixin
+mixin kscript
+  +script
+    |const k = (function(){
+    include kvariables.js
+    include utility.js
+    //- The below declarations import variables from the pug file and mixins into the sheetworker code
+    each prop in ['cascades','repeatingSectionDetails']
+      |
+      |const !{prop} = !{JSON.stringify(varObjects[prop])};
+      |
+      |kFuncs.!{prop} = !{prop};
+      - delete varObjects[prop];
+    |
+    |
+    include attribute_proxy.js
+    include accessSheet.js
+    include parse_cascade.js
+    include sheetworker_aliases.js
+    include listeners.js
+    |}());
+    |k.debug({kScaffold:k,funcs:k.funcs,cascades:k.cascades});
+    each content,prop in varObjects
+      |
+      if typeof content === 'object'
+        |const !{prop} = !{JSON.stringify(content)};
+      else
+        |let !{prop} = !{content};
+      |
+    |
+    block
+//- End Mixin
 mixin pseudoEdit({name,content,trigger})
   - let obj = {name:`edit-${name}`,class:'repcontrol-button repcontrol-button--edit','data-i18n-title':`edit section`};
   if trigger

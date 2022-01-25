@@ -8,6 +8,7 @@
 const sanitizeForRegex = function(text){
   return text.replace(/\.|\||\(|\)|\[|\]|\-|\+|\?|\/|\{|\}|\^|\$|\*/g,'\\$&');
 };
+kFuncs.sanitizeForRegex = sanitizeForRegex;
 //
 /**
  * Converts a value to a number, it's default value, or 0
@@ -18,6 +19,7 @@ const sanitizeForRegex = function(text){
 const value = function(val,def){
   return (+val||def||0);
 };
+kFuncs.value = value;
 
 /*
 e.g. repeating_equipment_-09Jhu89z_bulk would give:
@@ -35,6 +37,7 @@ const parseRepeatName = function(string){
   match.shift();
   return match;
 };
+kFuncs.parseRepeatName = parseRepeatName;
 
 /**
  * Parses out the components of a trigger name similar to {@link parseRepeatName}. Aliases: parseClickTrigger.
@@ -46,8 +49,10 @@ const parseTriggerName = function(string){
   match.shift();
   return match;
 };
+kFuncs.parseTriggerName = parseTriggerName;
 const parseClickTrigger = parseTriggerName;
 
+kFuncs.parseClickTrigger = parseClickTrigger;
 /**
  * Parses out the attribute name from the htmlattribute name.
  * @param {string} string
@@ -58,6 +63,7 @@ const parseHTMLName = function(string){
   match.shift();
   return match[0];
 };
+kFuncs.parseHTMLName = parseHTMLName;
 
 /**
  * Capitalize each word in a string
@@ -67,6 +73,7 @@ const parseHTMLName = function(string){
 const capitalize = function(string){
   return string.replace(/(?:^|\s+|\/)[a-z]/ig,(letter)=>letter.toUpperCase());
 };
+kFuncs.capitalize = capitalize;
 
 /**
  * Extracts a roll query result for use in later functions. Must be awaited as per [startRoll documentation](https://wiki.roll20.net/Sheet_Worker_Scripts#Roll_Parsing.28NEW.29).
@@ -79,6 +86,7 @@ const extractQueryResult = async function(query){
 	finishRoll(queryRoll.rollId);
 	return queryRoll.results.query.expression.replace(/^.+?response=|\]$/g,'');
 };
+kFuncs.extractQueryResult = extractQueryResult;
 
 /**
  * Simulates a query for ensuring that async/await works correctly in the sheetworker environment when doing conditional startRolls. E.g. if you have an if/else and only one of the conditions results in `startRoll` being called (and thus an `await`), the sheetworker environment would normally crash. Awaiting this in the condition that does not actually need to call `startRoll` will keep the environment in sync.
@@ -91,6 +99,7 @@ const pseudoQuery = async function(value){
 	finishRoll(queryRoll.rollId);
 	return queryRoll.results.query.expression.replace(/^.+?response=|\]$/g,'');
 };
+kFuncs.pseudoQuery = pseudoQuery;
 
 //# Utility Functions #
 /**
@@ -100,18 +109,19 @@ const pseudoQuery = async function(value){
  */
 const log = function(msg){
   if(typeof msg === 'string'){
-    console.log(`%c${sheetName} log| ${msg}`,"background-color:#159ccf");
+    console.log(`%c${kFuncs.sheetName} log| ${msg}`,"background-color:#159ccf");
   }else if(typeof msg === 'object'){
     Object.keys(msg).forEach((m)=>{
       if(typeof msg[m] === 'string'){
-        console.log(`%c${sheetName} log| ${m}: ${msg[m]}`,"background-color:#159ccf");
+        console.log(`%c${kFuncs.sheetName} log| ${m}: ${msg[m]}`,"background-color:#159ccf");
       }else{
-        console.log(`%c${sheetName} log| ${typeof msg[m]} ${m}`,"background-color:#159ccf");
+        console.log(`%c${kFuncs.sheetName} log| ${typeof msg[m]} ${m}`,"background-color:#159ccf");
         console.table(msg[m]);
       }
     });
   }
 };
+kFuncs.log = log;
 /**
  * Alias for console.log that only triggers when debug mode is enabled or when the sheet's version is `0`.
  * @param {string|object|Array} msg - See {@link log}.
@@ -119,20 +129,21 @@ const log = function(msg){
  * @returns {void}
  */
 const debug = function(msg,force){
-  if(!debugMode && !force && version > 0) return;
+  if(!kFuncs.debugMode && !force && kFuncs.version > 0) return;
   if(typeof msg === 'string'){
-    console.log(`%c${sheetName} DEBUG| ${msg}`,"background-color:tan;color:red;");
+    console.log(`%c${kFuncs.sheetName} DEBUG| ${msg}`,"background-color:tan;color:red;");
   }else if(typeof msg === 'object'){
     Object.keys(msg).forEach((m)=>{
       if(typeof msg[m] === 'string'){
-        console.log(`%c${sheetName} DEBUG| ${m}: ${msg[m]}`,"background-color:tan;color:red;");
+        console.log(`%c${kFuncs.sheetName} DEBUG| ${m}: ${msg[m]}`,"background-color:tan;color:red;");
       }else{
-        console.log(`%c${sheetName} DEBUG| ${typeof msg[m]} ${m}`,"background-color:tan;color:red;font-weight:bold;");
+        console.log(`%c${kFuncs.sheetName} DEBUG| ${typeof msg[m]} ${m}`,"background-color:tan;color:red;font-weight:bold;");
         console.table(msg[m]);
       }
     });
   }
 };
+kFuncs.debug = debug;
 
 //Section ordering
 //orders the section id arrays to match the repOrder attribute
@@ -148,6 +159,7 @@ const orderSections = function(attributes,sections){
     orderSection(attributes.attributes[`_reporder_${section}`],sections[section]);
   });
 };
+kFuncs.orderSections = orderSections;
 
 //
 /**
@@ -161,6 +173,7 @@ const orderSection = function(repOrder,IDs=[]){
     return repOrder.indexOf(a.toLowerCase()) - repOrder.indexOf(b.toLowerCase());
   });
 };
+kFuncs.orderSection = orderSection;
 
 //splits a comma delimited string into an array
 /**
@@ -171,6 +184,7 @@ const orderSection = function(repOrder,IDs=[]){
 const commaArray = function(string=''){
   return string.toLowerCase().split(/\s*,\s*/);
 };
+kFuncs.commaArray = commaArray;
 
 //
 /**
@@ -187,3 +201,4 @@ const generateCustomID = function(string,rowID){
   let re = new RegExp(`^.{${string.length}}`);
   return `${string}${rowID.replace(re,'')}`;
 };
+kFuncs.generateCustomID = generateCustomID;

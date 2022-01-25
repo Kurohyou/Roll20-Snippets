@@ -4,4 +4,4 @@
 const update1x01 = function({attributes,sections}){
   
 };
-updateHandlers['1.01'] = update1x01;
+k.updateHandlers['1.01'] = update1x01;

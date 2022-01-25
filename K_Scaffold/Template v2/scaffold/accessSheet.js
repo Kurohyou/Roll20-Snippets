@@ -2,10 +2,11 @@
 /*jshint -W014,-W084,-W030,-W033*/
 //Sheet Updaters and styling functions
 const updateHandlers = {};
+kFuncs.updateHandlers = updateHandlers;
 const updateSheet = function(){
   log('updating sheet');
   getAllAttrs({props:['sheet_version','debug_mode','collapsed',...baseGet],callback:(attributes,sections,casc)=>{
-    debugMode = !!attributes.debug_mode;
+    kFuncs.debugMode = !!attributes.debug_mode;
     if(!attributes.sheet_version){
       initialSetup(attributes,sections);
     }else{
@@ -15,10 +16,10 @@ const updateSheet = function(){
         }
       });
     }
-    attributes.sheet_version = version;
-    log(`Sheet Update applied. Current Sheet Version ${version}`);
-    styleOnOpen(attributes,sections);
-    setActionCalls({attributes,sections});
+    attributes.sheet_version = kFuncs.version;
+    log(`Sheet Update applied. Current Sheet Version ${kFuncs.version}`);
+    //styleOnOpen(attributes,sections);
+    //setActionCalls({attributes,sections});
     attributes.set();
     log('Sheet ready for use');
   }});
@@ -30,6 +31,7 @@ const initialSetup = function(attributes,sections){
 
 //These functions access the sheet and iterate through all changes necessary before calling setAttrs
 const accessSheet = function(event){
+  debug({funcs});
   debug({event});
   getAllAttrs({event,callback:(attributes,sections,casc)=>{
     let trigger = attributes.getCascObj(event,casc);

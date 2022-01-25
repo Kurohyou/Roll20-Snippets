@@ -10,6 +10,7 @@ const _setSectionOrder = function(section,order){
   let trueSection = section.replace(/repeating_/,'');
   setSectionOrder(trueSection,order);
 };
+kFuncs.setSectionOrder = _setSectionOrder;
 
 /**
  * Alias for [removeRepeatingRow](https://wiki.roll20.net/Sheet_Worker_Scripts#removeRepeatingRow.28_RowID_.29) that also removes the row from the current object of attribute values and array of section IDs to ensure that erroneous updates are not issued.
@@ -29,6 +30,7 @@ const _removeRepeatingRow = function(row,attributes,sections){
   sections[section] = sections[section].filter((id)=>id!==rowID);
   removeRepeatingRow(row);
 };
+kFuncs.removeRepeatingRow = _removeRepeatingRow;
 
 /**
  * Alias for [getAttrs()](https://wiki.roll20.net/Sheet_Worker_Scripts#getAttrs.28attributeNameArray.2C_callback.29) that converts the default object of attribute values into an {@link attributesProxy} and passes that back to the callback function.
@@ -42,6 +44,7 @@ const _getAttrs = function({props=baseGet,callback}){
     callback(attributes);
   });
 };
+kFuncs.getAttrs = _getAttrs;
 
 /**
  * Alias for [getAttrs()](https://wiki.roll20.net/Sheet_Worker_Scripts#getAttrs.28attributeNameArray.2C_callback.29) and [getSectionIDs](https://wiki.roll20.net/Sheet_Worker_Scripts#getSectionIDs.28section_name.2Ccallback.29) that combines the actions of both sheetworker functions and converts the default object of attribute values into an {@link attributesProxy}. Also gets the details on how to handle all attributes from the master {@link cascades} object and.
@@ -60,6 +63,7 @@ const getAllAttrs = function({props=baseGet,sectionDetails=repeatingSectionDetai
     })
   });
 };
+kFuncs.repeatingSectionDetails = repeatingSectionDetails;
 
 /**
  * Alias for [getSectionIDs()](https://wiki.roll20.net/Sheet_Worker_Scripts#getSectionIDs.28section_name.2Ccallback.29) that allows you to iterate through several functions at once. Also assembles an array of repeating attributes to get.
@@ -94,6 +98,7 @@ const getSections = function(sectionDetails,callback){
     worker(queueClone);
   }
 };
+kFuncs.getSections = getSections;
 
 // Sets the attributes while always calling with {silent:true}
 // Can be awaited to get the values returned from _setAttrs
@@ -107,6 +112,7 @@ const getSections = function(sectionDetails,callback){
 const set = function(obj,vocal=false,callback){
   setAttrs(obj,{silent:!vocal},callback);
 };
+kFuncs.setAttrs = set;
 
 /**
  * Alias for generateRowID that adds the new id to the {@link sectionObj}. Also allows for creation of custom IDs that conform to the section ID requirements.
@@ -126,3 +132,4 @@ const _generateRowID = function(section,sections,customText){
   sections[section].push(rowID);
   return `${section}_${rowID}`;
 };
+kFuncs.generateRowID = _generateRowID;

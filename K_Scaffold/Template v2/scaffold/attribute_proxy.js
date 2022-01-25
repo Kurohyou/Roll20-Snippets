@@ -143,20 +143,33 @@ const createAttrProxy = function(attrs){
   return new Proxy(attrTarget,attrHandler);
 };
 
-const funcs = new Proxy({},{
-  set:function(obj,prop,value){
-    if(obj[prop]){
+const funcs = {};
+kFuncs.funcs = funcs;
+
+const registerFuncs = function(funcObj){
+  Object.entries(funcObj).forEach(([prop,value])=>{
+    if(funcs[prop]){
       debug(`!!! Duplicate function name for ${prop} !!!`);
       return false;
-    }else{
-      obj[prop] = value;
+    }else if(typeof value === 'function'){
+      funcs[prop] = value;
       return true;
+    }else{
+      debug(`!!! k.funcs should only store function calls. Invalid value to store in k.funcs !!!`);
+      return false;
     }
-  },
-  get:function(obj,prop){
-    return function(){
-      debug(`running ${prop}`);
-      return obj[prop](...arguments);
-    };
+  });
+  debug({'after registration':funcs});
+};
+kFuncs.registerFuncs = registerFuncs;
+
+const callFunc = function(funcName,...args){
+  if(funcs[funcName]){
+    debug(`calling ${funcName}`);
+    return funcs[funcName](...args);
+  }else{
+    debug(`Invalid function name: ${funcName}`);
+    return null;
   }
-});
+};
+kFuncs.callFunc = callFunc;
