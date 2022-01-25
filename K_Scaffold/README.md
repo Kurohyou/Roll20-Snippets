@@ -263,9 +263,175 @@ creates:
 The `button-label` mixin creates a `div` instead of a `label` so that both the button and the input are interactable. However, the construction can be styled the same as other `input-labels` via the `input-label` class.
 This mixin has two aliases; `roller-label` and `action-label` which function the same way but create the indicated button constructions instead of a base button.
 #### headedTextarea(obj,header)
+```js
++headedTextarea({name:'my textarea'},'A textarea with a header')
+```
+creates:
+```html
+<div class="headed-textarea">
+  <h3 class="headed-textarea__header" data-i18n="A textarea with a header">
+  </h3>
+  <textarea class="headed-textarea__textarea" name="attr_my_textarea" title="@{my_textarea}"></textarea>
+</div>
+```
+The `headedTextarea` mixin creates a combined textarea and header that can be easily styled as one entity.
 #### adaptiveTextarea(textObj)
-### Roll20 Elements
+```js
++adaptiveTextarea({name:'character description'})
+```
+creates:
+```html
+<div class="adaptive adaptive--text">
+  <span class="adaptive--text__span" name="attr_character_description" title="@{character_description}"></span>
+  <textarea class="adaptive--text__textarea" name="attr_character_description" title="@{character_description}"></textarea>
+</div>
+```
+Creates a textarea that will (with proper CSS) grow to fit the content. See [the Roll20 wiki](https://wiki.roll20.net/CSS_Wizardry#Content-scaled_Inputs) for more information about styling this element.
+#### adaptiveInput(textObj)
+```js
++adaptiveInput({name:'character name'})
+```
+creates:
+```html
+<div class="adaptive adaptive--input">
+  <span class="adaptive--input__span" name="attr_character_name" title="@{character_name}"></span>
+  <input class="adaptive--input__input" name="attr_character_name" title="@{character_name}"/>
+</div>
+```
+Similar to `adaptiveTextarea`, but can grow horizontally with the content of an input.
+#### compendiumAttributes
+```js
++compendiumAttributes({prefix,lookupAttributes,triggerAccept,trigger})
+```
+creates:
+```html
+<input name="attr_drop_name" accept="Name" value="" type="hidden" title="@{drop_name}"/>
+<input name="attr_drop_data" accept="data" value="" type="hidden" title="@{drop_data}"/>
+```
+Creates a series of drop target attributes. Note that the mixin uses the [destructuring assignment syntax](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment). All arguments are optional. The default values and purpose are:
+- prefix: `undefined` | If a prefix is passed, it is prepended to the name of each of the drop target inputs.
+- lookupAttributes: `['Name','data']` | These are the compendium attributes to accept. These defaults are the ones that are generally the most useful.
+- triggerAccept: `'Name'` | Which compendium acceptor to put the trigger on
+- trigger: `{listenerFunc:'handleCompendiumDrop'}` | the K-scaffold trigger to use for a compendium drop. The default is a generically named listener function.
+### Roll template mixins
+These mixins create the roll template specific elements required for good looking chat output. They also simplify working with rolltemplate helper functions.
+#### rolltemplate(name)
+```js
++rolltemplate('my-system')
+  |Text output for template
+```
+creates:
+```html
+<rolltemplate class="sheet-rolltemplate-my-system">
+  <div class="template my-system system-{{system}}">Text output for template
+  </div>
+</rolltemplate>
+```
+Creates the rolltemplate prepending `"sheet-rolltemplate-"` to the name passed to it. Also creates a container within the rolltemplate which can be used to easily style the area of the template.
+#### multiPartTemplate(my-system)
+```js
++multiPartTemplate(name)
+```
+creates:
+```html
+<rolltemplate class="sheet-rolltemplate-my-system">
+  {{#^rollBetween() computed::finished 0 0}}
+    <span class="finished"></span>
+  {{/^rollBetween() computed::finished 0 0}}
+  <div class="template my-system system-{{system}}{{#continuation}} continuation{{/continuation}}{{#first}} first{{/first}} finished">Text output for template
+  </div>
+</rolltemplate>
+```
+Similar to `rolltemplate(name)`, but creates a base for a more complex template that will be used to output complex rolls from [custom roll parsing](https://wiki.roll20.net/Custom_Roll_Parsing) and may need to bridge multiple messages.
+#### characterLink
+```js
++characterLink()
+```
+creates:
+```html
+{{#character_name}}
+  {{#character_id}}
+    <h4 class="character_name">[{{footer}}](http://journal.roll20.net/character/{{character_id}})</h4>
+  {{/character_id}}{{^character_id}}
+    <h4 class="character_name">{{footer}}</h4>
+  {{/character_id}}
+{{/character_name}}
+```
+Creates a construction for inserting a link to a character (if an id is passed along with the character name)
+#### templateConditionalDisplay(fieldBool,invert)
+```js
++templateConditionalDisplay('roll1')
+  |Output if roll1 is passed
++templateConditionalDisplay('roll1',true)
+  |Output if roll1 is not passed
+```
+creates:
+```html
+{{#roll1}}Output if roll1 is passed{{/roll1}}
+{{^roll1}}Output if roll1 is not passed{{/roll1}}
+```
+This provides a functional interface for working with the [property logic](https://wiki.roll20.net/Building_Character_Sheets/Roll_Templates#Logic) of roll templates. It accepts a `fieldBool` which is the name of the field to check for presence/absence, and `invert` which is a boolean that defaults to false; when it is truthy it inverts the logic of the conditional display to only display when the field is absent.
+#### templateHelperFunction(helperObj)
+```js
++templateHelperFunction({func:'rollWasCrit',values:'roll1'})
+  |Output on a crit
++templateHelperFunction({func:'rollWasCrit',values:'roll1',invert:true})
+  |Output on a normal hit
+```
+creates:
+```html
+{{#rollWasCrit() roll1}}Output on a crit{{/rollWasCrit() roll1}}
+{{#^rollWasCrit() roll1}}Output on a normal hit{{/^rollWasCrit() roll1}}
+```
+Sets up a call to the indicated helper function. Inserts the block as the content to display if the helper function returns true.
+Accepts an object with the following properties:
+- func: The name of the helper function to run.
+- values: The text that would normally come after the helper function call (e.g. the `roll1 16` in `{{#rollGreater() roll1 16}}`)
+- invert: An optional boolean that when true inverts the functionality of the helper function. Defaults to false.
+There are also aliases for `templateHelperFunction` that are specific for each of the [helper functions](https://wiki.roll20.net/Building_Character_Sheets/Roll_Templates#Helper_Functions). These accept the same helperObj, except that the `func` argument is no longer needed (and will be ignored if passed). These alias functions are:
+- rollWasCrit
+- rollWasFumble
+- rollTotal
+- rollGreater
+- rollLess
+- rollBetween
+- allProps
 ### General HTML Elements
+There are several generic HTML element mixins which can be used to create these elements via objects instead of explicit definition using the standard PUG syntax. These generic element mixins all accept an object with keys of properties to set and values of what to set those properties to. The generic element mixins are:
+- div(obj) - The div obj can also accept a name property for use with the [character sheet image attributes](https://wiki.roll20.net/Image_use_in_character_sheets)
+- h1(obj)
+- h2(obj)
+- h3(obj)
+- h4(obj)
+- h5(obj)
+- h6(obj)
+- p(obj)
+In addition to the above, there are two additional element mixins for handling scripts which are described below.
+#### script
+```js
++script
+  include myfunctions.js
+```
+creates:
+```html
+<script type="text/worker">
+  //contents of myfunctions.js
+</script>
+```
+Creates a script tag with the proper type to put your sheetworker functions in. This basic version should only be used if not using the K-scaffold javascript function library.
+#### kscript
+```js
++script
+  include myfunctions.js
+```
+creates:
+```html
+<script type="text/worker">
+  //The code for the k-scaffold javascript function library will go here.
+  //contents of myfunctions.js
+</script>
+```
+Similar to the `script` mixin, but adds all of the code for the k-scaffold function library as the first code in the script block.
 ### PUG Functions
 #### attrTitle(string)
 This function returns a properly formatted version of the element's name for use in a title or elsewhere that specifying how to call the element's value in chat may be useful.

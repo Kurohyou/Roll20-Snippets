@@ -4,13 +4,14 @@
   - Fixed bug with drone structure handling
 include scaffold/_kpug.pug
 include Mixins/_Sheet Mixins.pug
-- let templateName = 'rapidfire';
-+hidden({name:'template_start',value:`&{template:${templateName}} {{footer=@{character_name}}} {{character_id=@{character_id}}} {{system=@{system}}}`})
+- let templateName = 'my-system';
++hidden({name:'template_start',value:`&{template:${templateName}} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{system=@{system}}}`})
 +hidden({name:'collapsed',value:''})
-+hidden({name:'system',value:'remnants'})
++hidden({name:'system',value:'some-system'})
++checkbox({name:'trigger demo',value:1,trigger:{triggeredFuncs:['testResponse']}})
 //-Rolltemplate definitions
-+text({name:'trigger test',trigger:{listenerFunc:'testResponse'}})
 +rolltemplate(templateName)
+  +characterLink
 +kscript
   //- All additional javascript files should start here
   include Javascript/variables.js

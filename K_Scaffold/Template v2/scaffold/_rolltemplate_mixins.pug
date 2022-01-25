@@ -3,7 +3,6 @@ mixin rolltemplate(name)
   rolltemplate(class=`sheet-rolltemplate-${name}`)
     div(class=`template ${name} system-{{system}}`)
       block
-    div(class='image-border{{#header}} has-header{{/header}}{{#footer}} has-footer{{/footer}}')
 mixin multiPartTemplate(name)
   rolltemplate(class=`sheet-rolltemplate-${name}`)
     +templateHelperFunction({func:'rollBetween',values:'computed::finished 0 0',invert:true})
@@ -11,18 +10,12 @@ mixin multiPartTemplate(name)
     div(class=`template ${name} system-{{system}}{{#continuation}} continuation{{/continuation}}{{#first}} first{{/first}} finished`)
       block
 //- End Mixin
-mixin characterLink()
-  +templateConditionalDisplay('footer')
+mixin characterLink
+  +templateConditionalDisplay('character_name')
     +templateConditionalDisplay('character_id')
-      h4(tabindex='-1').character_name [{{footer}}](http://journal.roll20.net/character/{{character_id}})
+      h4.character_name [{{footer}}](http://journal.roll20.net/character/{{character_id}})
     +templateConditionalDisplay('character_id',true)
-      h4(tabindex='-1').character_name {{footer}}
-//-End mixin
-mixin templateBase(name)
-  - name = name.replace(/\s+/g,'_');
-  +rolltemplate(name)
-    +characterLink()
-    block
+      h4.character_name {{footer}}
 //-End mixin
 mixin templateConditionalDisplay(fieldBool,invert)
   !=`{{${invert ? '^' : '#'}${fieldBool}}}`
@@ -69,7 +62,3 @@ mixin allProps(helperObj)
   +templateHelperFunction(helperObj)
     block
 //- End Mixin
-mixin templateField(name)
-  != `${tField(name)}`
-//- End Mixin
-- const tField = name => `{{${name}}}`;

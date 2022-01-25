@@ -1,12 +1,13 @@
 
-<input name="attr_template_start" value="&{template:rapidfire} {{footer=@{character_name}}} {{character_id=@{character_id}}} {{system=@{system}}}" type="hidden" title="@{template_start}"/>
+<input name="attr_template_start" value="&{template:my-system} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{system=@{system}}}" type="hidden" title="@{template_start}"/>
 <input name="attr_collapsed" value="" type="hidden" title="@{collapsed}"/>
-<input name="attr_system" value="remnants" type="hidden" title="@{system}"/>
-<input name="attr_trigger_test" type="text" title="@{trigger_test}"/>
-<rolltemplate class="sheet-rolltemplate-rapidfire">
-  <div class="template rapidfire system-{{system}}">
+<input name="attr_system" value="some-system" type="hidden" title="@{system}"/>
+<input name="attr_trigger_demo" value="1" type="checkbox" title="@{trigger_demo}"/>
+<rolltemplate class="sheet-rolltemplate-my-system">
+  <div class="template my-system system-{{system}}">{{#character_name}}{{#character_id}}
+    <h4 class="character_name">[{{footer}}](http://journal.roll20.net/character/{{character_id}})</h4>{{/character_id}}{{^character_id}}
+    <h4 class="character_name">{{footer}}</h4>{{/character_id}}{{/character_name}}
   </div>
-  <div class="image-border{{#header}} has-header{{/header}}{{#footer}} has-footer{{/footer}}"></div>
 </rolltemplate>
 <script type="text/worker">
   const k = (function(){const kFuncs = {};
@@ -217,7 +218,7 @@ const commaArray = function(string=''){
 };
 kFuncs.commaArray = commaArray;
   
-  const cascades = {"attr_template_start":{"name":"template_start","type":"hidden","defaultValue":"&{template:rapidfire} {{footer=@{character_name}}} {{character_id=@{character_id}}} {{system=@{system}}}","triggeredFuncs":[],"affects":[]},"attr_collapsed":{"name":"collapsed","type":"hidden","defaultValue":"","triggeredFuncs":[],"affects":[]},"attr_system":{"name":"system","type":"hidden","defaultValue":"remnants","triggeredFuncs":[],"affects":[]},"attr_trigger_test":{"listenerFunc":"testResponse","name":"trigger_test","listener":"change:trigger_test","type":"text","defaultValue":"","triggeredFuncs":[],"affects":[]}};
+  const cascades = {"attr_template_start":{"name":"template_start","type":"hidden","defaultValue":"&{template:my-system} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{system=@{system}}}","triggeredFuncs":[],"affects":[]},"attr_collapsed":{"name":"collapsed","type":"hidden","defaultValue":"","triggeredFuncs":[],"affects":[]},"attr_system":{"name":"system","type":"hidden","defaultValue":"some-system","triggeredFuncs":[],"affects":[]},"attr_trigger_demo":{"triggeredFuncs":["testResponse"],"name":"trigger_demo","listener":"change:trigger_demo","listenerFunc":"accessSheet","type":"checkbox","defaultValue":0,"affects":[]}};
   
   kFuncs.cascades = cascades;
   

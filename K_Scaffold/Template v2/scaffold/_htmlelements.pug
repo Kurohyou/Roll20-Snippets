@@ -454,11 +454,18 @@ mixin complexSubsection(def)
     block
 //- End Mixin
 mixin adaptiveTextarea(textObj)
-  .adaptive-text&attributes(attributes)
-    - let spanObj = {name:textObj.name,class:'adaptive-text__span'};
-    - textObj.class = textObj.class ? `${textObj.class} adaptive-text__textarea` : 'adaptive-text__textarea';
+  .adaptive.adaptive--text&attributes(attributes)
+    - let spanObj = {name:textObj.name,class:'adaptive--text__span'};
+    - textObj.class = textObj.class ? `${textObj.class} adaptive--text__textarea` : 'adaptive--text__textarea';
     +span(spanObj)
     +textarea(textObj)
+//- End Mixin
+mixin adaptiveInput(textObj)
+  .adaptive.adaptive--input&attributes(attributes)
+    - let spanObj = {name:textObj.name,class:'adaptive--input__span','max-width':maxWidth};
+    - textObj.class = textObj.class ? `${textObj.class} adaptive--input__input` : 'adaptive--input__input';
+    +span(spanObj)
+    +input(textObj)
 //- End Mixin
 mixin compendiumAttributes({prefix,lookupAttributes = ['Name','data'],triggerAccept = 'Name',trigger = {listenerFunc:'handleCompendiumDrop'}})
   - prefix = prefix ? `${prefix} ` : '';
