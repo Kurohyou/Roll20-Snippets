@@ -12,7 +12,7 @@ const baseGet = Object.entries(cascades).reduce((memo,[attrName,detailObj])=>{
 },[]);
 const registerEventHandlers = function(){
   on('sheet:opened',updateSheet);
-  debug({funcKeys:Object.keys(funcs)});
+  debug({funcKeys:Object.keys(funcs),funcs});
   //Roll20 change and click listeners
   Object.entries(listeners).forEach(([event,funcName])=>{
     if(funcs[funcName]){
@@ -23,5 +23,5 @@ const registerEventHandlers = function(){
   });
   log(`kScaffold Loaded`);
 };
-setTimeout(registerEventHandlers,0);
+setTimeout(registerEventHandlers,0);//Delay the execution of event registration to ensure all event properties are present.
 return kFuncs;

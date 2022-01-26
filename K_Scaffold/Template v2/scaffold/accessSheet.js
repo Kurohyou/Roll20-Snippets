@@ -39,7 +39,7 @@ const initialSetup = function(attributes,sections){
  * @returns {void}
  */
 const accessSheet = function(event){
-  debug({funcs});
+  debug({funcs:Object.keys(funcs)});
   debug({event});
   getAllAttrs({event,callback:(attributes,sections,casc)=>{
     let trigger = attributes.getCascObj(event,casc);
