@@ -2,8 +2,5 @@
 /*jshint -W014,-W084,-W030,-W033*/
 //Sheet Variables
 //const actionAttributes = ['body','mind','spirit','initiative','repeating_skill_$x_roll','repeating_weapon_$x_roll','situational_awareness','remnant_initiative','assault_roll','strike_roll','motion_roll','repeating_remnant-weapon_$x_roll','repeating_drone_$x_assault','repeating_drone_$x_strike'];
-const systemDefaults = {
-};
-const systems = [];
-const repeatMonitor = [];
-const dynamicQueries = {};
+k.sheetName = 'demo-system';
+k.version = 0;

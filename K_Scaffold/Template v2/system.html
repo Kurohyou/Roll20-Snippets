@@ -1,14 +1,34 @@
 
-<input name="attr_template_start" value="&{template:my-system} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{system=@{system}}}" type="hidden" title="@{template_start}"/>
-<input name="attr_collapsed" value="" type="hidden" title="@{collapsed}"/>
-<input name="attr_system" value="some-system" type="hidden" title="@{system}"/>
-<input name="attr_trigger_demo" value="1" type="checkbox" title="@{trigger_demo}"/>
-<rolltemplate class="sheet-rolltemplate-my-system">
-  <div class="template my-system system-{{system}}">{{#character_name}}{{#character_id}}
-    <h4 class="character_name">[{{footer}}](http://journal.roll20.net/character/{{character_id}})</h4>{{/character_id}}{{^character_id}}
-    <h4 class="character_name">{{footer}}</h4>{{/character_id}}{{/character_name}}
-  </div>
-</rolltemplate>
+<label class="input-label"><span data-i18n="strength"></span>
+  <input class="input-label__input" name="attr_strength" type="number" value="10" title="@{strength}"/>
+</label>
+<label class="input-label"><span data-i18n="strength mod"></span>
+  <input class="input-label__input" name="attr_strength_mod" type="number" value="0" title="@{strength_mod}"/>
+</label>
+<label class="input-label"><span data-i18n="athletics base"></span>
+  <input class="input-label__input" name="attr_athletics_base" type="number" value="0" title="@{athletics_base}"/>
+</label>
+<label class="input-label"><span data-i18n="athletics"></span>
+  <input class="input-label__input" name="attr_athletics" type="number" value="0" title="@{athletics}"/>
+</label>
+<fieldset class="repeating_attack">
+  <input name="attr_name" placeholder="name" type="text" title="@{repeating_attack_$X_name}"/>
+  <label class="input-label"><span data-i18n="mod"></span>
+    <input class="input-label__input" name="attr_mod" readonly="" type="number" value="0" title="@{repeating_attack_$X_mod}"/>
+  </label>
+  <label class="input-label"><span data-i18n="bonus"></span>
+    <input class="input-label__input" name="attr_bonus" type="number" value="0" title="@{repeating_attack_$X_bonus}"/>
+  </label>
+  <label class="input-label"><span data-i18n="weight"></span>
+    <input class="input-label__input" name="attr_weight" type="number" value="0" title="@{repeating_attack_$X_weight}"/>
+  </label>
+  <label class="input-label"><span data-i18n="quantity"></span>
+    <input class="input-label__input" name="attr_quantity" type="number" value="0" title="@{repeating_attack_$X_quantity}"/>
+  </label>
+</fieldset>
+<label class="input-label"><span data-i18n="weapon weight"></span>
+  <input class="input-label__input" name="attr_weapon_weight" type="number" readonly="" value="0" title="@{weapon_weight}"/>
+</label>
 <script type="text/worker">
   const k = (function(){const kFuncs = {};
 /**
@@ -218,11 +238,11 @@ const commaArray = function(string=''){
 };
 kFuncs.commaArray = commaArray;
   
-  const cascades = {"attr_template_start":{"name":"template_start","type":"hidden","defaultValue":"&{template:my-system} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{system=@{system}}}","triggeredFuncs":[],"affects":[]},"attr_collapsed":{"name":"collapsed","type":"hidden","defaultValue":"","triggeredFuncs":[],"affects":[]},"attr_system":{"name":"system","type":"hidden","defaultValue":"some-system","triggeredFuncs":[],"affects":[]},"attr_trigger_demo":{"triggeredFuncs":["testResponse"],"name":"trigger_demo","listener":"change:trigger_demo","listenerFunc":"accessSheet","type":"checkbox","defaultValue":0,"affects":[]}};
+  const cascades = {"attr_strength":{"affects":["strength_mod"],"name":"strength","listener":"change:strength","listenerFunc":"accessSheet","type":"number","defaultValue":10,"triggeredFuncs":[]},"attr_strength_mod":{"affects":["athletics","repeating_attack_$x_mod"],"calculation":"calcStrengthMod","name":"strength_mod","listener":"change:strength_mod","listenerFunc":"accessSheet","type":"number","defaultValue":0,"triggeredFuncs":[]},"attr_athletics_base":{"affects":["athletics"],"name":"athletics_base","listener":"change:athletics_base","listenerFunc":"accessSheet","type":"number","defaultValue":0,"triggeredFuncs":[]},"attr_athletics":{"calculation":"calcAthletics","name":"athletics","type":"number","defaultValue":0,"triggeredFuncs":[],"affects":[]},"attr_repeating_attack_$X_name":{"name":"repeating_attack_$X_name","type":"text","defaultValue":"","triggeredFuncs":[],"affects":[]},"attr_repeating_attack_$X_mod":{"calculation":"calcAttackMod","name":"repeating_attack_$X_mod","type":"number","defaultValue":0,"triggeredFuncs":[],"affects":[]},"attr_repeating_attack_$X_bonus":{"affects":["repeating_attack_$x_mod"],"name":"repeating_attack_$X_bonus","listener":"change:repeating_attack:bonus","listenerFunc":"accessSheet","type":"number","defaultValue":0,"triggeredFuncs":[]},"attr_repeating_attack_$X_weight":{"affects":["weapon_weight"],"name":"repeating_attack_$X_weight","listener":"change:repeating_attack:weight","listenerFunc":"accessSheet","type":"number","defaultValue":0,"triggeredFuncs":[]},"attr_repeating_attack_$X_quantity":{"affects":["weapon_weight"],"name":"repeating_attack_$X_quantity","listener":"change:repeating_attack:quantity","listenerFunc":"accessSheet","type":"number","defaultValue":0,"triggeredFuncs":[]},"attr_weapon_weight":{"calculation":"calcWeaponWeight","name":"weapon_weight","type":"number","defaultValue":0,"triggeredFuncs":[],"affects":[]}};
   
   kFuncs.cascades = cascades;
   
-  const repeatingSectionDetails = [];
+  const repeatingSectionDetails = [{"section":"repeating_attack","fields":["name","mod","bonus","weight","quantity"]}];
   
   kFuncs.repeatingSectionDetails = repeatingSectionDetails;
   /*jshint esversion: 11, laxcomma:true, eqeqeq:true*/
@@ -396,7 +416,7 @@ kFuncs.registerFuncs = registerFuncs;
 
 /**
  * Function to call a function previously registered to the funcs object. May not be used that much. Either returns the function or null if no function exists.
- * @param {any} funcName - The name of the function to invoke.
+ * @param {string} funcName - The name of the function to invoke.
  * @param {...any} args - The arguments to call the function with.
  * @returns {any}
  */
@@ -450,7 +470,7 @@ const initialSetup = function(attributes,sections){
  * @returns {void}
  */
 const accessSheet = function(event){
-  debug({funcs});
+  debug({funcs:Object.keys(funcs)});
   debug({event});
   getAllAttrs({event,callback:(attributes,sections,casc)=>{
     let trigger = attributes.getCascObj(event,casc);
@@ -670,7 +690,7 @@ const baseGet = Object.entries(cascades).reduce((memo,[attrName,detailObj])=>{
 },[]);
 const registerEventHandlers = function(){
   on('sheet:opened',updateSheet);
-  debug({funcKeys:Object.keys(funcs)});
+  debug({funcKeys:Object.keys(funcs),funcs});
   //Roll20 change and click listeners
   Object.entries(listeners).forEach(([event,funcName])=>{
     if(funcs[funcName]){
@@ -681,69 +701,38 @@ const registerEventHandlers = function(){
   });
   log(`kScaffold Loaded`);
 };
-setTimeout(registerEventHandlers,0);
+setTimeout(registerEventHandlers,0);//Delay the execution of event registration to ensure all event properties are present.
 return kFuncs;}());
-  k.debug({kScaffold:k,funcs:k.funcs,cascades:k.cascades});
+  
   /*jshint esversion: 11, laxcomma:true, eqeqeq:true*/
 /*jshint -W014,-W084,-W030,-W033*/
 //Sheet Variables
 //const actionAttributes = ['body','mind','spirit','initiative','repeating_skill_$x_roll','repeating_weapon_$x_roll','situational_awareness','remnant_initiative','assault_roll','strike_roll','motion_roll','repeating_remnant-weapon_$x_roll','repeating_drone_$x_assault','repeating_drone_$x_strike'];
-const systemDefaults = {
-};
-const systems = [];
-const repeatMonitor = [];
-const dynamicQueries = {};/*jshint esversion: 11, laxcomma:true, eqeqeq:true*/
+k.sheetName = 'demo-system';
+k.version = 0;/*jshint esversion: 11, laxcomma:true, eqeqeq:true*/
 /*jshint -W014,-W084,-W030,-W033*/
-/*
-  Sheet Styling
-*/
-const navigateSheet = function(event){
-  debug('navigating sheet');
-  const setObj = {};
-  let [,,page] = parseClickTrigger(event.triggerName);
-  page = page.replace(/nav-|-action/g,'');
-  debug({page});
-  navButtons.forEach((button)=>{
-    let element = button.replace(/-action/,'');
-    let action = element === page ? 'addClass' : 'removeClass';
-    $20(`.${element}`)[action]('active');
-  });
-  setObj.sheet_state = page;
-  debug({setObj});
-  set(setObj);
+const calcStrengthMod = function({attributes}){
+	return Math.floor( (attributes.strength - 10) / 2);
 };
-k.funcs.navigateSheet = navigateSheet;
+k.registerFuncs({calcStrengthMod});
 
-const setupSystem = function(trigger,attributes,sections){
-};/*jshint esversion: 11, laxcomma:true, eqeqeq:true*/
-/*jshint -W014,-W084,-W030,-W033*/
-  /*jshint esversion: 11, laxcomma:true, eqeqeq:true*/
-/*jshint -W014,-W084,-W030,-W033*/
-//Roll Functions
-  /*jshint esversion: 11, laxcomma:true, eqeqeq:true*/
-/*jshint -W014,-W084,-W030,-W033*/
-//Initial change functions
-  /*jshint esversion: 11, laxcomma:true, eqeqeq:true*/
-/*jshint -W014,-W084,-W030,-W033*/
-// Triggered Functions
-const testResponse = function(event){
-	k.debug('Successful trigger');
-	k.debug({event});
-	k.getAttrs({
-		props:['trigger_test'],
-		callback:(attributes,sections,casc)=>{
-			k.debug({attributes});
-		}
-	});
+const calcAthletics = function({attributes}){
+	return attributes.strength_mod + attributes.athletics_base;
 };
-k.registerFuncs({testResponse});/*jshint esversion: 11, laxcomma:true, eqeqeq:true*/
-/*jshint -W014,-W084,-W030,-W033*/
-//Calculation Functions
-  /*jshint esversion: 11, laxcomma:true, eqeqeq:true*/
-/*jshint -W014,-W084,-W030,-W033*/
-// Functions to update
-const update1x01 = function({attributes,sections}){
-  
+k.registerFuncs({calcAthletics});
+
+const calcAttackMod = function({trigger,attributes}){
+	let [section,rowID,field] = k.parseTriggerName(trigger.name);
+	return attributes.strength_mod + attributes[`${section}_${rowID}_bonus`];
 };
-k.updateHandlers['1.01'] = update1x01;
+k.registerFuncs({calcAttackMod});
+
+const calcWeaponWeight = function({trigger,attributes,sections}){
+	return sections.repeating_attack.reduce((total,rowID)=>{
+		return total + 
+		attributes[`repeating_attack_${rowID}_weight`] * 
+		attributes[`repeating_attack_${rowID}_quantity`];
+	},0);
+};
+k.registerFuncs({calcWeaponWeight});
 </script>

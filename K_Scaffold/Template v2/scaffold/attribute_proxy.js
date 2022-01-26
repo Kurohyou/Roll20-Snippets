@@ -169,7 +169,7 @@ kFuncs.registerFuncs = registerFuncs;
 
 /**
  * Function to call a function previously registered to the funcs object. May not be used that much. Either returns the function or null if no function exists.
- * @param {any} funcName - The name of the function to invoke.
+ * @param {string} funcName - The name of the function to invoke.
  * @param {...any} args - The arguments to call the function with.
  * @returns {any}
  */

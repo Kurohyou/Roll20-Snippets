@@ -1,24 +1,17 @@
-//- Changelog v1.1
-  - Stat bonuses now apply (e.g body_mod)
-  - Infrastructure changed for improved maintainability
-  - Fixed bug with drone structure handling
 include scaffold/_kpug.pug
-include Mixins/_Sheet Mixins.pug
-- let templateName = 'my-system';
-+hidden({name:'template_start',value:`&{template:${templateName}} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{system=@{system}}}`})
-+hidden({name:'collapsed',value:''})
-+hidden({name:'system',value:'some-system'})
-+checkbox({name:'trigger demo',value:1,trigger:{triggeredFuncs:['testResponse']}})
-//-Rolltemplate definitions
-+rolltemplate(templateName)
-  +characterLink
+//- additional includes should be below this point
++input-label('strength',{name:'strength',type:'number',value:10,trigger:{affects:['strength_mod']}})
++input-label('strength mod',{name:'strength mod',type:'number',value:0,trigger:{affects:['athletics','repeating_attack_$x_mod'],calculation:'calcStrengthMod'}})
++input-label('athletics base',{name:'athletics base',type:'number',value:0,trigger:{affects:['athletics']}})
++input-label('athletics',{name:'athletics',type:'number',value:0,trigger:{calculation:'calcAthletics'}})
++fieldset({name:'attack'})
+  +text({name:'name',placeholder:'name'})
+  +input-label('mod',{name:'mod',readonly:'',type:'number',value:0,trigger:{calculation:'calcAttackMod'}})
+  +input-label('bonus',{name:'bonus',type:'number',value:0,trigger:{affects:['repeating_attack_$x_mod']}})
+  +input-label('weight',{name:'weight',type:'number',value:0,trigger:{affects:['weapon_weight']}})
+  +input-label('quantity',{name:'quantity',type:'number',value:0,trigger:{affects:['weapon_weight']}})
++input-label('weapon weight',{name:'weapon weight',type:'number',readonly:'',value:0,trigger:{calculation:'calcWeaponWeight'}})
 +kscript
   //- All additional javascript files should start here
   include Javascript/variables.js
-  include Javascript/setupfunctions.js
-  include Javascript/clickfunctions.js
-  include Javascript/rollfunctions.js
-  include Javascript/initialchangefunctions.js
-  include Javascript/triggeredfunctions.js
-  include Javascript/calculators.js
-  include Javascript/updaters.js
+  include Javascript/demoworkers.js
