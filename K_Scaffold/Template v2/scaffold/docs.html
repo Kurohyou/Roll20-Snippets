@@ -1,43 +1,15 @@
 
-<label class="input-label"><span data-i18n="strength"></span>
-  <input class="input-label__input" name="attr_strength" type="number" value="10" title="@{strength}"/>
-</label>
-<label class="input-label"><span data-i18n="strength mod"></span>
-  <input class="input-label__input" name="attr_strength_mod" type="number" value="0" title="@{strength_mod}"/>
-</label>
-<label class="input-label"><span data-i18n="athletics base"></span>
-  <input class="input-label__input" name="attr_athletics_base" type="number" value="0" title="@{athletics_base}"/>
-</label>
-<label class="input-label"><span data-i18n="athletics"></span>
-  <input class="input-label__input" name="attr_athletics" type="number" value="0" title="@{athletics}"/>
-</label>
-<fieldset class="repeating_attack">
-  <input name="attr_name" placeholder="name" type="text" title="@{repeating_attack_$X_name}"/>
-  <label class="input-label"><span data-i18n="mod"></span>
-    <input class="input-label__input" name="attr_mod" readonly="" type="number" value="0" title="@{repeating_attack_$X_mod}"/>
-  </label>
-  <label class="input-label"><span data-i18n="bonus"></span>
-    <input class="input-label__input" name="attr_bonus" type="number" value="0" title="@{repeating_attack_$X_bonus}"/>
-  </label>
-  <label class="input-label"><span data-i18n="weight"></span>
-    <input class="input-label__input" name="attr_weight" type="number" value="0" title="@{repeating_attack_$X_weight}"/>
-  </label>
-  <label class="input-label"><span data-i18n="quantity"></span>
-    <input class="input-label__input" name="attr_quantity" type="number" value="0" title="@{repeating_attack_$X_quantity}"/>
-  </label>
-</fieldset>
-<label class="input-label"><span data-i18n="weapon weight"></span>
-  <input class="input-label__input" name="attr_weapon_weight" type="number" readonly="" value="0" title="@{weapon_weight}"/>
-</label>
+<textarea name="attr_kjsdocs" title="@{kjsdocs}"></textarea>
+<textarea name="attr_kpugdocs" title="@{kpugdocs}"></textarea>
 <script type="text/worker">
   const k = (function(){
   const kFuncs = {};
   
-  const cascades = {"attr_strength":{"affects":["strength_mod"],"name":"strength","listener":"change:strength","listenerFunc":"accessSheet","type":"number","defaultValue":10,"triggeredFuncs":[]},"attr_strength_mod":{"affects":["athletics","repeating_attack_$x_mod"],"calculation":"calcStrengthMod","name":"strength_mod","listener":"change:strength_mod","listenerFunc":"accessSheet","type":"number","defaultValue":0,"triggeredFuncs":[]},"attr_athletics_base":{"affects":["athletics"],"name":"athletics_base","listener":"change:athletics_base","listenerFunc":"accessSheet","type":"number","defaultValue":0,"triggeredFuncs":[]},"attr_athletics":{"calculation":"calcAthletics","name":"athletics","type":"number","defaultValue":0,"triggeredFuncs":[],"affects":[]},"attr_repeating_attack_$X_name":{"name":"repeating_attack_$X_name","type":"text","defaultValue":"","triggeredFuncs":[],"affects":[]},"attr_repeating_attack_$X_mod":{"calculation":"calcAttackMod","name":"repeating_attack_$X_mod","type":"number","defaultValue":0,"triggeredFuncs":[],"affects":[]},"attr_repeating_attack_$X_bonus":{"affects":["repeating_attack_$x_mod"],"name":"repeating_attack_$X_bonus","listener":"change:repeating_attack:bonus","listenerFunc":"accessSheet","type":"number","defaultValue":0,"triggeredFuncs":[]},"attr_repeating_attack_$X_weight":{"affects":["weapon_weight"],"name":"repeating_attack_$X_weight","listener":"change:repeating_attack:weight","listenerFunc":"accessSheet","type":"number","defaultValue":0,"triggeredFuncs":[]},"attr_repeating_attack_$X_quantity":{"affects":["weapon_weight"],"name":"repeating_attack_$X_quantity","listener":"change:repeating_attack:quantity","listenerFunc":"accessSheet","type":"number","defaultValue":0,"triggeredFuncs":[]},"attr_weapon_weight":{"calculation":"calcWeaponWeight","name":"weapon_weight","type":"number","defaultValue":0,"triggeredFuncs":[],"affects":[]}};
+  const cascades = {"attr_kjsdocs":{"name":"kjsdocs","defaultValue":"","triggeredFuncs":[],"affects":[]},"attr_kpugdocs":{"name":"kpugdocs","defaultValue":"","triggeredFuncs":[],"affects":[]}};
   
   kFuncs.cascades = cascades;
   
-  const repeatingSectionDetails = [{"section":"repeating_attack","fields":["name","mod","bonus","weight","quantity"]}];
+  const repeatingSectionDetails = [];
   
   kFuncs.repeatingSectionDetails = repeatingSectionDetails;
   
@@ -971,35 +943,4 @@ const registerEventHandlers = function(){
 setTimeout(registerEventHandlers,0);//Delay the execution of event registration to ensure all event properties are present.
 return kFuncs;}());
   
-  /*jshint esversion: 11, laxcomma:true, eqeqeq:true*/
-/*jshint -W014,-W084,-W030,-W033*/
-//Sheet Variables
-//const actionAttributes = ['body','mind','spirit','initiative','repeating_skill_$x_roll','repeating_weapon_$x_roll','situational_awareness','remnant_initiative','assault_roll','strike_roll','motion_roll','repeating_remnant-weapon_$x_roll','repeating_drone_$x_assault','repeating_drone_$x_strike'];
-k.sheetName = 'demo-system';
-k.version = 0;/*jshint esversion: 11, laxcomma:true, eqeqeq:true*/
-/*jshint -W014,-W084,-W030,-W033*/
-const calcStrengthMod = function({attributes}){
-	return Math.floor( (attributes.strength - 10) / 2);
-};
-k.registerFuncs({calcStrengthMod});
-
-const calcAthletics = function({attributes}){
-	return attributes.strength_mod + attributes.athletics_base;
-};
-k.registerFuncs({calcAthletics});
-
-const calcAttackMod = function({trigger,attributes}){
-	let [section,rowID,field] = k.parseTriggerName(trigger.name);
-	return attributes.strength_mod + attributes[`${section}_${rowID}_bonus`];
-};
-k.registerFuncs({calcAttackMod});
-
-const calcWeaponWeight = function({trigger,attributes,sections}){
-	return sections.repeating_attack.reduce((total,rowID)=>{
-		return total + 
-		attributes[`repeating_attack_${rowID}_weight`] * 
-		attributes[`repeating_attack_${rowID}_quantity`];
-	},0);
-};
-k.registerFuncs({calcWeaponWeight});
 </script>

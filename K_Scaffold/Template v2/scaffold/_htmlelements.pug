@@ -1,4 +1,4 @@
-- const varObjects = {repeatingSectionDetails:[],cascades:{}};
+- const varObjects = {repeatingSectionDetails:[],cascades:{},docs:{js:{},pug:{}}};
 - let selectName = null;
 - let selectTitle = null;
 - let repeatingPrefix = '';
@@ -366,10 +366,9 @@ mixin script
 mixin kscript
   +script
     |const k = (function(){
-    include kvariables.js
-    include utility.js
+    |const kFuncs = {};
     //- The below declarations import variables from the pug file and mixins into the sheetworker code
-    each prop in ['cascades','repeatingSectionDetails']
+    each prop in ['cascades','repeatingSectionDetails','docs']
       |
       |const !{prop} = !{JSON.stringify(varObjects[prop])};
       |
@@ -377,6 +376,8 @@ mixin kscript
       - delete varObjects[prop];
     |
     |
+    include kvariables.js
+    include utility.js
     include attribute_proxy.js
     include accessSheet.js
     include parse_cascade.js
