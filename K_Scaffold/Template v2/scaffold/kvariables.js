@@ -5,7 +5,7 @@
  * * @var
  * @type {string}
  */
-docs.js.sheetName = {
+docs.js['k.sheetName'] = {
 	type:'string',
 	description:'This stores the name of your sheet for use in the logging functions [k.log](#klog) and [k.debug](#kdebug).'
 };
@@ -16,7 +16,7 @@ kFuncs.sheetName = sheetName;
 	* @var
 	* @type {number}
 	*/
-docs.js.version = {
+docs.js['k.version'] = {
 	type:'number',
 	description:'This stores the version of your sheet for use in the logging functions [k.log](#klog) and [k.debug](#kdebug), and in the K-scaffolds sheet versioning handling. It is also stored in the sheet_version attribute on your character sheet.'
 };
@@ -27,7 +27,7 @@ kFuncs.version = version;
 	* @var
 	* @type {boolean}
 	*/
-docs.js.debugMode = {
+docs.js['k.debugMode'] = {
 	type:'boolean',
 	description:'A boolean flag that tells the script whether to enable or disable [k.debug](#kdebug) calls. If the version of the sheet is `0`, or an attribute named `debug_mode` is found on opening this is set to true for all sheets you open from that point on. Otherwise, it remains false.'
 };

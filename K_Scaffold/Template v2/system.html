@@ -32,6 +32,7 @@
 <script type="text/worker">
   const k = (function(){
   const kFuncs = {};
+  <delete>varObjects.docs</delete>
   
   const cascades = {"attr_strength":{"affects":["strength_mod"],"name":"strength","listener":"change:strength","listenerFunc":"accessSheet","type":"number","defaultValue":10,"triggeredFuncs":[]},"attr_strength_mod":{"affects":["athletics","repeating_attack_$x_mod"],"calculation":"calcStrengthMod","name":"strength_mod","listener":"change:strength_mod","listenerFunc":"accessSheet","type":"number","defaultValue":0,"triggeredFuncs":[]},"attr_athletics_base":{"affects":["athletics"],"name":"athletics_base","listener":"change:athletics_base","listenerFunc":"accessSheet","type":"number","defaultValue":0,"triggeredFuncs":[]},"attr_athletics":{"calculation":"calcAthletics","name":"athletics","type":"number","defaultValue":0,"triggeredFuncs":[],"affects":[]},"attr_repeating_attack_$X_name":{"name":"repeating_attack_$X_name","type":"text","defaultValue":"","triggeredFuncs":[],"affects":[]},"attr_repeating_attack_$X_mod":{"calculation":"calcAttackMod","name":"repeating_attack_$X_mod","type":"number","defaultValue":0,"triggeredFuncs":[],"affects":[]},"attr_repeating_attack_$X_bonus":{"affects":["repeating_attack_$x_mod"],"name":"repeating_attack_$X_bonus","listener":"change:repeating_attack:bonus","listenerFunc":"accessSheet","type":"number","defaultValue":0,"triggeredFuncs":[]},"attr_repeating_attack_$X_weight":{"affects":["weapon_weight"],"name":"repeating_attack_$X_weight","listener":"change:repeating_attack:weight","listenerFunc":"accessSheet","type":"number","defaultValue":0,"triggeredFuncs":[]},"attr_repeating_attack_$X_quantity":{"affects":["weapon_weight"],"name":"repeating_attack_$X_quantity","listener":"change:repeating_attack:quantity","listenerFunc":"accessSheet","type":"number","defaultValue":0,"triggeredFuncs":[]},"attr_weapon_weight":{"calculation":"calcWeaponWeight","name":"weapon_weight","type":"number","defaultValue":0,"triggeredFuncs":[],"affects":[]}};
   
@@ -40,10 +41,6 @@
   const repeatingSectionDetails = [{"section":"repeating_attack","fields":["name","mod","bonus","weight","quantity"]}];
   
   kFuncs.repeatingSectionDetails = repeatingSectionDetails;
-  
-  const docs = {"js":{},"pug":{}};
-  
-  kFuncs.docs = docs;
   /*jshint esversion: 11, laxcomma:true, eqeqeq:true*/
 /*jshint -W014,-W084,-W030,-W033*/
 /**
@@ -51,7 +48,7 @@
  * * @var
  * @type {string}
  */
-docs.js.sheetName = {
+docs.js['k.sheetName'] = {
 	type:'string',
 	description:'This stores the name of your sheet for use in the logging functions [k.log](#klog) and [k.debug](#kdebug).'
 };
@@ -62,7 +59,7 @@ kFuncs.sheetName = sheetName;
 	* @var
 	* @type {number}
 	*/
-docs.js.version = {
+docs.js['k.version'] = {
 	type:'number',
 	description:'This stores the version of your sheet for use in the logging functions [k.log](#klog) and [k.debug](#kdebug), and in the K-scaffolds sheet versioning handling. It is also stored in the sheet_version attribute on your character sheet.'
 };
@@ -73,7 +70,7 @@ kFuncs.version = version;
 	* @var
 	* @type {boolean}
 	*/
-docs.js.debugMode = {
+docs.js['k.debugMode'] = {
 	type:'boolean',
 	description:'A boolean flag that tells the script whether to enable or disable [k.debug](#kdebug) calls. If the version of the sheet is `0`, or an attribute named `debug_mode` is found on opening this is set to true for all sheets you open from that point on. Otherwise, it remains false.'
 };
@@ -129,7 +126,7 @@ kFuncs.parseRepeatName = parseRepeatName;
 docs.js['k.parseTriggerName'] = {
   type:'function',
   invocation:`k.parseTriggerName(string)`,
-  description:'Parses out the components of a trigger name similar to {@link parseRepeatName}. Aliases: parseClickTrigger.\n\nAliases: `k.parseClickTrigger`',
+  description:'Parses out the components of a trigger name similar to [parseRepeatName](#parserepeatname). Aliases: parseClickTrigger.\n\nAliases: `k.parseClickTrigger`',
   arguments:[
     {type:'string',name:'string',description:'The triggerName property of the [event](https://wiki.roll20.net/Sheet_Worker_Scripts#eventInfo_Object).'}
   ],
@@ -623,7 +620,10 @@ const docGen = function(type){
   let pugHead = [`# K Scaffold ${type.toUpperCase()} documentation`];
   return Object.entries(docs[type]).reduce((text,[name,docObj])=>{
     let type = docObj.type;
-    text.push(`## \`${type}\` - ${docObj.name || name}`);
+    text.push(`## ${docObj.name || name}`,`\`${type}\``);
+    if(docObj.invocation){
+      text.push(docObj.invocation);
+    }
     if(docObj.description){
       text.push(docObj.description);
     }
@@ -652,7 +652,7 @@ const docGen = function(type){
       }
     });
     if(docObj.retValue){
-      text.push(`- \`${docObj.retValue.type}\` - ${docObj.retValue.description}`)
+      text.push(`- \`returns ${docObj.retValue.type}\` - ${docObj.retValue.description}`)
     }
     return text;
   },pugHead).join('\n');
@@ -970,7 +970,7 @@ const registerEventHandlers = function(){
 };
 setTimeout(registerEventHandlers,0);//Delay the execution of event registration to ensure all event properties are present.
 return kFuncs;}());
-  
+  const docs = {"js":{},"pug":{},"rolltemplate":{}};
   /*jshint esversion: 11, laxcomma:true, eqeqeq:true*/
 /*jshint -W014,-W084,-W030,-W033*/
 //Sheet Variables

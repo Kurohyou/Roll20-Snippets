@@ -49,7 +49,7 @@ kFuncs.parseRepeatName = parseRepeatName;
 docs.js['k.parseTriggerName'] = {
   type:'function',
   invocation:`k.parseTriggerName(string)`,
-  description:'Parses out the components of a trigger name similar to {@link parseRepeatName}. Aliases: parseClickTrigger.\n\nAliases: `k.parseClickTrigger`',
+  description:'Parses out the components of a trigger name similar to [parseRepeatName](#parserepeatname). Aliases: parseClickTrigger.\n\nAliases: `k.parseClickTrigger`',
   arguments:[
     {type:'string',name:'string',description:'The triggerName property of the [event](https://wiki.roll20.net/Sheet_Worker_Scripts#eventInfo_Object).'}
   ],

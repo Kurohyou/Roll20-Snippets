@@ -363,12 +363,17 @@ mixin script
   script(type='text/worker')
     block
 //-End Mixin
-mixin kscript
+mixin kscript(document)
   +script
     |const k = (function(){
     |const kFuncs = {};
     //- The below declarations import variables from the pug file and mixins into the sheetworker code
-    each prop in ['cascades','repeatingSectionDetails','docs']
+    - const propArray = ['cascades','repeatingSectionDetails'];
+    if document
+      - propArray.push('docs');
+    else
+      delete varObjects.docs
+    each prop in propArray
       |
       |const !{prop} = !{JSON.stringify(varObjects[prop])};
       |

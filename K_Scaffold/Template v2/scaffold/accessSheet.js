@@ -44,7 +44,10 @@ const docGen = function(type){
   let pugHead = [`# K Scaffold ${type.toUpperCase()} documentation`];
   return Object.entries(docs[type]).reduce((text,[name,docObj])=>{
     let type = docObj.type;
-    text.push(`## \`${type}\` - ${docObj.name || name}`);
+    text.push(`## ${docObj.name || name}`,`\`${type}\``);
+    if(docObj.invocation){
+      text.push(docObj.invocation);
+    }
     if(docObj.description){
       text.push(docObj.description);
     }
@@ -73,7 +76,7 @@ const docGen = function(type){
       }
     });
     if(docObj.retValue){
-      text.push(`- \`${docObj.retValue.type}\` - ${docObj.retValue.description}`)
+      text.push(`- \`returns ${docObj.retValue.type}\` - ${docObj.retValue.description}`)
     }
     return text;
   },pugHead).join('\n');

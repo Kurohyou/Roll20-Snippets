@@ -13,7 +13,7 @@
   
   kFuncs.repeatingSectionDetails = repeatingSectionDetails;
   
-  const docs = {"js":{},"pug":{}};
+  const docs = {"js":{},"pug":{},"rolltemplate":{}};
   
   kFuncs.docs = docs;
   /*jshint esversion: 11, laxcomma:true, eqeqeq:true*/
@@ -23,7 +23,7 @@
  * * @var
  * @type {string}
  */
-docs.js.sheetName = {
+docs.js['k.sheetName'] = {
 	type:'string',
 	description:'This stores the name of your sheet for use in the logging functions [k.log](#klog) and [k.debug](#kdebug).'
 };
@@ -34,7 +34,7 @@ kFuncs.sheetName = sheetName;
 	* @var
 	* @type {number}
 	*/
-docs.js.version = {
+docs.js['k.version'] = {
 	type:'number',
 	description:'This stores the version of your sheet for use in the logging functions [k.log](#klog) and [k.debug](#kdebug), and in the K-scaffolds sheet versioning handling. It is also stored in the sheet_version attribute on your character sheet.'
 };
@@ -45,7 +45,7 @@ kFuncs.version = version;
 	* @var
 	* @type {boolean}
 	*/
-docs.js.debugMode = {
+docs.js['k.debugMode'] = {
 	type:'boolean',
 	description:'A boolean flag that tells the script whether to enable or disable [k.debug](#kdebug) calls. If the version of the sheet is `0`, or an attribute named `debug_mode` is found on opening this is set to true for all sheets you open from that point on. Otherwise, it remains false.'
 };
@@ -101,7 +101,7 @@ kFuncs.parseRepeatName = parseRepeatName;
 docs.js['k.parseTriggerName'] = {
   type:'function',
   invocation:`k.parseTriggerName(string)`,
-  description:'Parses out the components of a trigger name similar to {@link parseRepeatName}. Aliases: parseClickTrigger.\n\nAliases: `k.parseClickTrigger`',
+  description:'Parses out the components of a trigger name similar to [parseRepeatName](#parserepeatname). Aliases: parseClickTrigger.\n\nAliases: `k.parseClickTrigger`',
   arguments:[
     {type:'string',name:'string',description:'The triggerName property of the [event](https://wiki.roll20.net/Sheet_Worker_Scripts#eventInfo_Object).'}
   ],
@@ -595,7 +595,10 @@ const docGen = function(type){
   let pugHead = [`# K Scaffold ${type.toUpperCase()} documentation`];
   return Object.entries(docs[type]).reduce((text,[name,docObj])=>{
     let type = docObj.type;
-    text.push(`## \`${type}\` - ${docObj.name || name}`);
+    text.push(`## ${docObj.name || name}`,`\`${type}\``);
+    if(docObj.invocation){
+      text.push(docObj.invocation);
+    }
     if(docObj.description){
       text.push(docObj.description);
     }
@@ -624,7 +627,7 @@ const docGen = function(type){
       }
     });
     if(docObj.retValue){
-      text.push(`- \`${docObj.retValue.type}\` - ${docObj.retValue.description}`)
+      text.push(`- \`returns ${docObj.retValue.type}\` - ${docObj.retValue.description}`)
     }
     return text;
   },pugHead).join('\n');
