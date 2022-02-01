@@ -595,7 +595,7 @@ const docGen = function(language){
     debug(`doc gen for ${language}`);
     debug({[`docs.pug`]:docs.pug});
   }
-  let pugHead = [`# K Scaffold ${language.toUpperCase()} documentation`];
+  let docHead = [`# K Scaffold ${language.toUpperCase()} documentation`];
   return Object.entries(docs[language]).reduce((text,[name,docObj])=>{
     let type = docObj.type;
     text.push(`## ${docObj.name || name}`,`\`${type}\`\n`);
@@ -633,7 +633,7 @@ const docGen = function(language){
       text.push(`- \`returns ${docObj.retValue.type}\` - ${docObj.retValue.description}`)
     }
     return text;
-  },pugHead).join('\n');
+  },docHead).join('\n');
 };
 
 const initialSetup = function(attributes,sections){

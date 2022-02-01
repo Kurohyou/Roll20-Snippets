@@ -1,6 +1,7 @@
 # K Scaffold PUG documentation
 ## input
 `mixin`
+
 A generic mixin to create an input. The mixin will replace spaces in the attribute name with underscores and will add a title property if one isn't supplied that will inform the user what the attribute call for the attribute is.
 - `object` - obj: An object containing all of the properties to apply to the element. Must have the properties; `name` and `type`. Can have any property that is valid for an input element. May also have a [trigger](#trigger) proeprty
 - `string` - obj.name: 
@@ -15,6 +16,7 @@ A generic mixin to create an input. The mixin will replace spaces in the attribu
 ```
 ## text
 `mixin`
+
 Alias for [input](#input) that makes a text input.
 ### Example
 **PUG**
@@ -27,6 +29,7 @@ Alias for [input](#input) that makes a text input.
 ```
 ## checkbox
 `mixin`
+
 Alias for [input](#input) that makes a checkbox input.
 ### Example
 **PUG**
@@ -39,6 +42,7 @@ Alias for [input](#input) that makes a checkbox input.
 ```
 ## radio
 `mixin`
+
 Alias for [input](#input) that makes a radio input.
 ### Example
 **PUG**
@@ -51,6 +55,7 @@ Alias for [input](#input) that makes a radio input.
 ```
 ## number
 `mixin`
+
 Alias for [input](#input) that makes a number input.
 ### Example
 **PUG**
@@ -63,6 +68,7 @@ Alias for [input](#input) that makes a number input.
 ```
 ## range
 `mixin`
+
 Alias for [input](#input) that makes a range input.
 ### Example
 **PUG**
@@ -75,6 +81,7 @@ Alias for [input](#input) that makes a range input.
 ```
 ## hidden
 `mixin`
+
 Alias for [input](#input) that makes a hidden input.
 ### Example
 **PUG**
@@ -87,6 +94,7 @@ Alias for [input](#input) that makes a hidden input.
 ```
 ## textarea
 `mixin`
+
 Functions like [input](#input), but creates a textarea instead.
 ### Example
 **PUG**
@@ -99,9 +107,11 @@ Functions like [input](#input), but creates a textarea instead.
 ```
 ## option
 `mixin`
+
 Creates an option attribute. Also stores the trigger for the select that the option is part of. See [select](#select) for example uses.
 ## select
 `mixin`
+
 Functions like [input](#input), but creates a select instead.
 ### Example
 **PUG**
@@ -118,6 +128,7 @@ Functions like [input](#input), but creates a select instead.
 ```
 ## img
 `mixin`
+
 Functions like [input](#input), but creates a span instead. The name property is optional.
 ### Example
 **PUG**
@@ -130,6 +141,7 @@ Functions like [input](#input), but creates a span instead. The name property is
 ```
 ## datalist
 `mixin`
+
 Functions like [input](#input), but creates a datalist instead. Note that an ID should never be put inside a repeating section, although you can reference one from inside the repeating section.
 ### Example
 **PUG**
@@ -148,6 +160,7 @@ Functions like [input](#input), but creates a datalist instead. Note that an ID 
 ```
 ## button
 `mixin`
+
 Creates a button element. Valid types are `roll` or `action`. If a type is not specified in the object argument, a roll button is created. If an action button is created, spaces in the name are replaced with dashes instead of underscores.
 ### Examples
 **PUG**
@@ -168,6 +181,7 @@ Creates a button element. Valid types are `roll` or `action`. If a type is not s
 ```
 ## action
 `mixin`
+
 Alias for [button](#button) that creates a button element with a type of `action`. Spaces in the name are replaced with dashes instead of underscores.
 ### Example
 **PUG**
@@ -180,6 +194,7 @@ Alias for [button](#button) that creates a button element with a type of `action
 ```
 ## navButton
 `mixin`
+
 Alias for [button](#button) that creates a combination roll button and action button element to get around the limitation that action buttons cannot be dragged to the macro quickbar. Requires sheetworker infrastructure to work, which should be triggered `on(sheet:opened)` and `on("change:character_name")`.
 ### Example
 **PUG**
@@ -192,6 +207,7 @@ Alias for [button](#button) that creates a combination roll button and action bu
 ```
 ## customControlFieldset
 `mixin`
+
 Alias for [fieldset](#fieldset) that creates to custom action buttons to add/remove rows to the repeating section. Useful when you need to trigger a sheetworker when a row is added. This also prevents the occassional error of a new row disappearing immediately after the user has clicked the button to create one. Proper use of this will require css to hide the default buttons that fieldsets create automatically. Note that currently this assumes the existence of an addItem and editSection sheetworker function.
 - `string` - name: The name of the repeating section. Will be prefixed with `repeating_` and spaces will be replaced with dashes (`-`).
 - `object` - trigger: Trigger that defines how to handle the removal of a row from the fieldset. `Optional`
@@ -209,6 +225,7 @@ Alias for [fieldset](#fieldset) that creates to custom action buttons to add/rem
 ```
 ## fieldset
 `mixin`
+
 A mixin that creates a fieldset for the creation of a repeating section. The mixin prefixes the name with `repeating_` and replaces problem characters (e.g. spaces are replaced with dashes).
 - `string` - name: The name of the repeating section. Will be prefixed with `repeating_` and spaces will be replaced with dashes (`-`).
 - `object` - trigger: Trigger that defines how to handle the removal of a row from the fieldset. `Optional`
@@ -236,6 +253,7 @@ A mixin that creates a fieldset for the creation of a repeating section. The mix
 ```
 ## pseudo-button
 `mixin`
+
 A mixin for creating pseudo buttons of paired checkboxes/radios and spans such as those that had to be used to create [tabbed sheets](https://wiki.roll20.net/CSS_Wizardry#Show.2FHide_Areas) before action buttons were introduced.
 - `string` - label: The `data-i18n` translation key to use for the displayed text.
 - `object` - inputObj: An object describing the input to be paired with the span. This is the same object that you would pass to [input](#input).
@@ -250,6 +268,7 @@ A mixin for creating pseudo buttons of paired checkboxes/radios and spans such a
 ```
 ## button-label
 `mixin`
+
 A mixin to create a combined button and input that are within the same container. Similar to [input-label](#input-label), but does not use a label.
 - `object` - inputObj: An object describing the input to be paired with the button. This is the same object that you would pass to [input](#input).
 - `object` - buttonObj: An object describing the button to be paired with the input. This is the same object that you would pass to [button](#button).
@@ -265,18 +284,21 @@ A mixin to create a combined button and input that are within the same container
 ```
 ## roller-label
 `mixin`
+
 Similar to the construction created by [button-label](#button-label), except that it creates a [roller](#roller) construction instead of just a straight button.
 - `object` - inputObj: An object describing the input to be paired with the button. This is the same object that you would pass to [input](#input).
 - `object` - buttonObj: An object describing the button to be paired with the input. This is the same object that you would pass to [roller](#roller).
 - `object` - divObj: An object describing the container div. Similar to the first two objects, but will most likely only have a `class` property if it is passed at all.
 ## action-label
 `mixin`
+
 Similar to the construction created by [button-label](#button-label), except that it specifcally creates an [action button](https://wiki.roll20.net/Button#Action_Button) as per [action](#action).
 - `object` - inputObj: An object describing the input to be paired with the button. This is the same object that you would pass to [input](#input).
 - `object` - buttonObj: An object describing the button to be paired with the input. This is the same object that you would pass to [action](#action).
 - `object` - divObj: An object describing the container div. Similar to the first two objects, but will most likely only have a `class` property if it is passed at all.
 ## select-label
 `mixin`
+
 Similar to the construction created by [input-label](#input-label), except that the input is replaced with a select.
 - `string` - label: The `data-i18n` translation key to add to the span in the label.
 - `object` - inputObj: An object describing the select to be paired with the button. This is the same object that you would pass to [select](#select).
@@ -298,6 +320,7 @@ Similar to the construction created by [input-label](#input-label), except that 
 ```
 ## input-label
 `mixin`
+
 Creates a construction that nests the input and span in a label so that they are connected. This is beneficial for screen readers as well as making it easier to interact with the input via mouse by clicking on the text associated with it.
 - `string` - label: The `data-i18n` translation key to add to the span in the label.
 - `object` - inputObj: An object describing the input to be paired with the button. This is the same object that you would pass to [input](#input).
@@ -315,6 +338,7 @@ Creates a construction that nests the input and span in a label so that they are
 ```
 ## headedTextarea
 `mixin`
+
 Creates a construction for pairing a header with a textarea. Currently is locked to creating an `h3`.  This mixin also accepts classes and IDs appended directly to it (see the second example)
 - `object` - textObj: The object describing the textarea as per [textarea](#textarea)
 - `string` - header: The `data-i18n` translation key to use for the header
@@ -337,9 +361,11 @@ Creates a construction for pairing a header with a textarea. Currently is locked
 ```
 ## script
 `mixin`
+
 Similar to [script](#script), but includes the K-scaffold's javascript function library.
 ## adaptiveTextarea
 `mixin`
+
 Creates an html construction for creating a [content-scaled](https://wiki.roll20.net/CSS_Wizardry#Content-scaled_Inputs) textarea.
 - `object` - textObj: The object describing the textarea as per the [textarea](#textarea) mixin. You can apply classes and IDs to the container div by appending them to the mixin call (see the second example).
 ### Examples
@@ -361,6 +387,7 @@ Creates an html construction for creating a [content-scaled](https://wiki.roll20
 ```
 ## compendiumAttributes
 `mixin`
+
 Creates a set of compendium drop target attributes. Defaults to creating target attributes for the `Name` and `data` compendium attributes.
 - `string` - prefix: A prefix to attach to the default attribute names.
 - `array` - lookupAttributes: An array of the lookup attributes to create targets for. The target attributes are named based on the compendium attribute they are for. lookupAttributes defaults to `["Name","data"]`.
@@ -393,6 +420,7 @@ Creates a set of compendium drop target attributes. Defaults to creating target 
 ```
 ## attrTitle
 `function`
+
 Converts an attribute name into an attribute call for that attribute. Converts `_max` attribute names to the proper attribute call syntax for `_max` attributes (see second example). If called from inside the block of a [fieldset](#fieldset) mixin, will also add the appropriate information for calling a repeating attribute.
 - `string` - attrName: The attribute name to create an attribute call for.
 ### Examples
@@ -412,6 +440,7 @@ Converts an attribute name into an attribute call for that attribute. Converts `
 - `returns string` - undefined
 ## buttonTitle
 `function`
+
 Converts an ability name into an ability call for that attribute. If called from inside the block of a [fieldset](#fieldset) mixin, will also add the appropriate information for calling a repeating attribute.
 - `string` - abilityName: The ability name to create an attribute call for.
 ### Examples
@@ -427,6 +456,7 @@ Converts an ability name into an ability call for that attribute. If called from
 - `returns string` - undefined
 ## replaceSpaces
 `function`
+
 Replaces spaces in a string with underscores (`_`).
 - `string` - string: The string to work on
 ### Example
@@ -437,6 +467,7 @@ Replaces spaces in a string with underscores (`_`).
 - `returns string` - undefined
 ## replaceProblems
 `function`
+
 Escapes problem characters in a string for use as a regex.
 - `string` - string: The string to work on
 ### Example
