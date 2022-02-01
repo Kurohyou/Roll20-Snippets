@@ -41,16 +41,16 @@ A boolean flag that tells the script whether to enable or disable [k.debug](#kde
 ## k.sanitizeForRegex
 `function`
 
-```
-jsk.sanitizeForRegex(text)
+```js
+k.sanitizeForRegex(text)
 ```
 Replaces problem characters to use a string as a regex.
 - text - `string`: The text to replace characters in.
 ## k.value
 `function`
 
-```
-jsk.value(val,def)
+```js
+k.value(val,def)
 ```
 Converts a value to a number, it's default value, or `0` if no default value passed.
 - val - `any`: The value to coerce into a number.
@@ -58,8 +58,8 @@ Converts a value to a number, it's default value, or `0` if no default value pas
 ## k.parseRepeatName
 `function`
 
-```
-jsk.parseRepeatName(string)
+```js
+k.parseRepeatName(string)
 ```
 Extracts the section (e.g. `repeating_equipment`), rowID (e.g `-;lkj098J:LKj`), and field name (e.g. `bulk`) from a repeating attribute name.
 - string - `string`: The attribute name to parse.
@@ -67,8 +67,8 @@ Extracts the section (e.g. `repeating_equipment`), rowID (e.g `-;lkj098J:LKj`), 
 ## k.parseTriggerName
 `function`
 
-```
-jsk.parseTriggerName(string)
+```js
+k.parseTriggerName(string)
 ```
 Parses out the components of a trigger name similar to [parseRepeatName](#parserepeatname). Aliases: parseClickTrigger.
 
@@ -78,8 +78,8 @@ Aliases: `k.parseClickTrigger`
 ## k.parseHTMLName
 `function`
 
-```
-jsk.parseHTMLName(string)
+```js
+k.parseHTMLName(string)
 ```
 Parses out the attribute name from the htmlattribute name.
 - string - `string`: The triggerName property of the [event](https://wiki.roll20.net/Sheet_Worker_Scripts#eventInfo_Object).
@@ -87,8 +87,8 @@ Parses out the attribute name from the htmlattribute name.
 ## k.capitalize
 `function`
 
-```
-jsk.capitalize(string)
+```js
+k.capitalize(string)
 ```
 Capitalize each word in a string.
 - string - `string`: The string to capitalize
@@ -96,8 +96,8 @@ Capitalize each word in a string.
 ## k.extractQueryResult
 `function`
 
-```
-jsk.extractQueryResult(section,sections,customText)
+```js
+k.extractQueryResult(section,sections,customText)
 ```
 Extracts a roll query result for use in later functions. Must be awaited as per [startRoll documentation](https://wiki.roll20.net/Sheet_Worker_Scripts#Roll_Parsing.28NEW.29). Stolen from [Oosh's Adventures with Startroll thread](https://app.roll20.net/forum/post/10346883/adventures-with-startroll).
 - query - `string`: The query should be just the text as the `?{` and `}` at the start/end of the query are added by the function.
@@ -105,8 +105,8 @@ Extracts a roll query result for use in later functions. Must be awaited as per 
 ## k.pseudoQuery
 `function`
 
-```
-jsk.pseudoQuery(section,sections,customText)
+```js
+k.pseudoQuery(section,sections,customText)
 ```
 Simulates a query for ensuring that async/await works correctly in the sheetworker environment when doing conditional startRolls. E.g. if you have an if/else and only one of the conditions results in `startRoll` being called (and thus an `await`), the sheetworker environment would normally crash. Awaiting this in the condition that does not actually need to call `startRoll` will keep the environment in sync.
 - value - `number|string`: The value to return. Optional.
@@ -114,16 +114,16 @@ Simulates a query for ensuring that async/await works correctly in the sheetwork
 ## k.log
 `function`
 
-```
-jsk.log(msg)
+```js
+k.log(msg)
 ```
 An alias for console.log.
 - msg - `string|object|array`: The message can be a straight string, an object, or an array. If it is an object or array, the object will be broken down so that each key is used as a label to output followed by the value of that key. If the value of the key is an object or array, it will be output via `console.table`.
 ## k.debug
 `function`
 
-```
-jsk.debug(msg,force)
+```js
+k.debug(msg,force)
 ```
 Alias for console.log that only triggers when debug mode is enabled or when the sheet's version is `0`.
 - setObj - `string`: See [k.log](#klog)
@@ -131,8 +131,8 @@ Alias for console.log that only triggers when debug mode is enabled or when the 
 ## k.orderSections
 `function`
 
-```
-jsk.orderSections(attributes,sections)
+```js
+k.orderSections(attributes,sections)
 ```
 Orders the section id arrays for all sections in the `sections` object to match the repOrder attribute.
 - attributes - `object`: The attributes object that must have a value for the reporder for each section.
@@ -140,8 +140,8 @@ Orders the section id arrays for all sections in the `sections` object to match 
 ## k.orderSection
 `function`
 
-```
-jsk.orderSection(repOrder,IDs)
+```js
+k.orderSection(repOrder,IDs)
 ```
 Orders a single ID array.
 - setObj - `array`: Array of IDs in the order they are in on the sheet.
@@ -149,8 +149,8 @@ Orders a single ID array.
 ## k.commaArray
 `function`
 
-```
-jsk.commaArray(string)
+```js
+k.commaArray(string)
 ```
 Splits a comma delimited string into an array
 - setObj - `string`: The string to split.
@@ -224,8 +224,8 @@ Alias for [removeRepeatingRow](https://wiki.roll20.net/Sheet_Worker_Scripts#remo
 ## k.getAttrs
 `function`
 
-```
-jsk.getAttrs({props,callback})
+```js
+k.getAttrs({props,callback})
 ```
 Alias for [getAttrs](https://wiki.roll20.net/Sheet_Worker_Scripts#getAttrs.28_RowID_.29) that converts the default object of attribute values into a K-scaffold attributes object and passes that back to the callback function.
 - props - `array`: Array of attribute names to get the values of as per the [getAttrs() sheetworker](https://wiki.roll20.net/Sheet_Worker_Scripts#getAttrs.28attributeNameArray.2C_callback.29). If not passed, gets all the attributes contained in the cascades object.
@@ -233,8 +233,8 @@ Alias for [getAttrs](https://wiki.roll20.net/Sheet_Worker_Scripts#getAttrs.28_Ro
 ## k.getAllAttrs
 `function`
 
-```
-jsk.getAllAttrs({props,sectionDetails,callback})
+```js
+k.getAllAttrs({props,sectionDetails,callback})
 ```
 Alias for [getAttrs()](https://wiki.roll20.net/Sheet_Worker_Scripts#getAttrs.28attributeNameArray.2C_callback.29) and [getSectionIDs()](https://wiki.roll20.net/Sheet_Worker_Scripts#getSectionIDs.28section_name.2Ccallback.29) that combines the actions of both sheetworker functions and converts the default object of attribute values into a K-scaffold attributes object. 
 - props - `array`: Array of attribute names to get the values of as per the [getAttrs() sheetworker](https://wiki.roll20.net/Sheet_Worker_Scripts#getAttrs.28attributeNameArray.2C_callback.29).
@@ -243,8 +243,8 @@ Alias for [getAttrs()](https://wiki.roll20.net/Sheet_Worker_Scripts#getAttrs.28a
 ## k.getSections
 `function`
 
-```
-jsk.getSections(sectionDetails,callback)
+```js
+k.getSections(sectionDetails,callback)
 ```
 Alias for [getSectionIDs()](https://wiki.roll20.net/Sheet_Worker_Scripts#getSectionIDs.28section_name.2Ccallback.29) that allows you to iterate through several sections at once. Also assembles an array of repeating attributes to get.
 - props - `array`: Array of attribute names to get the values of as per the [getAttrs() sheetworker](https://wiki.roll20.net/Sheet_Worker_Scripts#getAttrs.28attributeNameArray.2C_callback.29).
@@ -253,8 +253,8 @@ Alias for [getSectionIDs()](https://wiki.roll20.net/Sheet_Worker_Scripts#getSect
 ## k.setAttrs
 `function`
 
-```
-jsk.setAttrs(setObj,vocal,callback)
+```js
+k.setAttrs(setObj,vocal,callback)
 ```
 Alias for [setAttrs()](https://wiki.roll20.net/Sheet_Worker_Scripts#setAttrs.28values.2Coptions.2Ccallback.29) that sets silently by default.
 - setObj - `object`: Object with key/value pairs of attributes to set on the sheet. See [the wiki page](https://wiki.roll20.net/Sheet_Worker_Scripts#setAttrs.28values.2Coptions.2Ccallback.29) for more information.
@@ -263,8 +263,8 @@ Alias for [setAttrs()](https://wiki.roll20.net/Sheet_Worker_Scripts#setAttrs.28v
 ## k.generateRowID
 `function`
 
-```
-jsk.generateRowID(section,sections,customText)
+```js
+k.generateRowID(section,sections,customText)
 ```
 Alias for generateRowID that adds the new id to the sections object. Also allows for creation of custom IDs that conform to the section ID requirements.
 - setObj - `string`: The section name to create an ID for. The `repeating_` prefix is optional so both `repeating_equipment` and `equipment` are valid.
