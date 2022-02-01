@@ -1,4 +1,6 @@
 # K Scaffold JS documentation
+|Table test|Header here|
+|Some entry|Other entry|
 - [k.sheetName](#ksheetName)
 - [k.version](#kversion)
 - [k.debugMode](#kdebugMode)
@@ -313,8 +315,6 @@ Alias for [setAttrs()](https://wiki.roll20.net/Sheet_Worker_Scripts#setAttrs.28v
 k.generateRowID(section,sections,customText)
 ```
 Alias for generateRowID that adds the new id to the sections object. Also allows for creation of custom IDs that conform to the section ID requirements.
-|Argument|type|description|
-|...|...|...|
-|setObj|`string`|The section name to create an ID for. The `repeating_` prefix is optional so both `repeating_equipment` and `equipment` are valid.
-|vocal|`object`|Object containing the IDs for the repeating sections, indexed by repeating section name.
-|customText|`string`|Custom text to start the ID with. This text should not be longer than the standard repeating section ID format.
+- setObj - `string`: The section name to create an ID for. The `repeating_` prefix is optional so both `repeating_equipment` and `equipment` are valid.
+- vocal - `object`: Object containing the IDs for the repeating sections, indexed by repeating section name.
+- customText - `string`: Custom text to start the ID with. This text should not be longer than the standard repeating section ID format.
