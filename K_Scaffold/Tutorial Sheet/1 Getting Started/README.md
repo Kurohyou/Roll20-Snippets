@@ -21,7 +21,7 @@ Ok, we've got our tools and we know what system we're making a sheet for. How do
 ### Sketch a design
 The best place to start when tackling a new sheet is to figure out the design for the sheet. This can be as in depth as you want it to be. I typically spend an hour or so sketching out a wireframe of how the sheet is going to be layed out. Here's what I'm thinking of for the Hero's Journey sheet:
 
-[Hero's Journey Wireframe Sketch](../assets/wireframe.png)
+![Hero's Journey Wireframe Sketch](../assets/wireframe.png)
 
 This sketch will be my guide for how to structure the code of the sheet. The final layout and design of the sheet will almost certainly change from this, but this gives us a roadmap of things that we need to create and prepare for. So, what have I thought about while making this sketch?
 
