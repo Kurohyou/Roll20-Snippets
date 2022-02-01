@@ -73,7 +73,7 @@ const docGen = function(language){
         text.push(
           '**HTML**',
           `\`\`\`html`,
-          eArr[0],
+          eArr[1],
           `\`\`\``
         );
       }
