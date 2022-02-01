@@ -640,6 +640,9 @@ const docGen = function(language){
     args.forEach((a)=>{
       text.push(`|${a.name}|\`${a.type}\`|${a.description || ''}|`)
     });
+    if(args.length){
+      text.push('\n')
+    }
     let example = Array.isArray(docObj.example) ? docObj.example : [];
     if(example.length){
       text.push(`### Example${example.length > 1 ? 's' : ''}`);
