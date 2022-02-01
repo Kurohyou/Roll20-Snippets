@@ -33,7 +33,7 @@ The final consideration isn't a layout one at all. It's a stylistic problem. Thi
 
 ### Setup Project Structure
 This probably seems like a minor thing, and in terms of time spent it is! But, making sure that we know where our code is going to reside while we work on it and how it's going to be organized can save us time down the road when we're hunting for bugs or even just trying to remember where a file that we haven't looked at in a month is. Here's how I'm going to setup my folder structure for the Hero's Journey sheet:
-- thj2ee `folder`
+- thj2e `folder`
   - scaffold `folder`: This will hold the code of the K-scaffold.
   - javascript `folder`: This will hold all of the sheetworkers that we're going to write to power the sheet
   - mixins `folder`: This will hold our project specific PUG and SCSS mixins that we'll inevitably create to automate some of our code generation
@@ -44,6 +44,8 @@ This probably seems like a minor thing, and in terms of time spent it is! But, m
   - translation.json: The JSON file that will store all of our translation keys and values for crowdin to generate the language specific files from.
   - system.html: The sheet's HTML that PUG will generate for us. We may never actually look at the raw code in ths file
   - system.css: The sheet's CSS that SCSS will generate for us. We may never actually look at the raw code in ths file
+
+You can see this structure develop in the [tutorial Sheet folder]("../tutorial sheet") by looking at each of the indexed subdirectories.
 
 ## What's next?
 We obviously haven't done any coding yet. We'll start with writing the first bit of PUG for the sheet next week and see where that takes us.
