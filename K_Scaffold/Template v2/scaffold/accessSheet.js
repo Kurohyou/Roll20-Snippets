@@ -45,6 +45,9 @@ const docGen = function(language){
     debug({[`docs.pug`]:docs.pug});
   }
   let docHead = [`# K Scaffold ${language.toUpperCase()} documentation`];
+  Object.keys(docs[language]).forEach((funcName)=>{
+    docHead.push(`- [${funcName}](#${funcName.replace(/\./g,'')})`);
+  });
   return Object.entries(docs[language]).reduce((text,[name,docObj])=>{
     let type = docObj.type;
     text.push(`## ${docObj.name || name}`,`\`${type}\`\n`);
@@ -56,7 +59,7 @@ const docGen = function(language){
     }
     let args = Array.isArray(docObj.arguments) ? docObj.arguments : [];
     args.forEach((a)=>{
-      text.push(`- \`${a.type}\` - ${a.name}: ${a.description || ''}`)
+      text.push(`- ${a.name} - \`${a.type}\`: ${a.description || ''}`)
     });
     let example = Array.isArray(docObj.example) ? docObj.example : [];
     if(example.length){
