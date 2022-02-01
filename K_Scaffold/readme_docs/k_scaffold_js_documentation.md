@@ -15,7 +15,7 @@
 - [k.orderSections](#korderSections)
 - [k.orderSection](#korderSection)
 - [k.commaArray](#kcommaArray)
-- [K-Scaffold Attribute Object](#K-Scaffold Attribute Object)
+- [K-Scaffold Attribute Object](#K-Scaffold-Attribute-Object)
 - [k.registerFuncs](#kregisterFuncs)
 - [k.callFunc](#kcallFunc)
 - [accessSheet](#accessSheet)

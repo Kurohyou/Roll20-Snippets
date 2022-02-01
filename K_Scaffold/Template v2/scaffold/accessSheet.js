@@ -46,7 +46,7 @@ const docGen = function(language){
   }
   let docHead = [`# K Scaffold ${language.toUpperCase()} documentation`];
   Object.keys(docs[language]).forEach((funcName)=>{
-    docHead.push(`- [${funcName}](#${funcName.replace(/\./g,'')})`);
+    docHead.push(`- [${funcName}](#${funcName.replace(/\./g,'').replace(/\s/g,'-')})`);
   });
   return Object.entries(docs[language]).reduce((text,[name,docObj])=>{
     let type = docObj.type;
