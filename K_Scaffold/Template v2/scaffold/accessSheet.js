@@ -58,8 +58,11 @@ const docGen = function(language){
       text.push(docObj.description);
     }
     let args = Array.isArray(docObj.arguments) ? docObj.arguments : [];
+    if(args.length){
+      text.push('|Argument|type|description|','|...|...|...|')
+    }
     args.forEach((a)=>{
-      text.push(`- ${a.name} - \`${a.type}\`: ${a.description || ''}`)
+      text.push(`|${a.name}|\`${a.type}\`|${a.description || ''}`)
     });
     let example = Array.isArray(docObj.example) ? docObj.example : [];
     if(example.length){
