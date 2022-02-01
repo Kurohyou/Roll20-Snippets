@@ -25,11 +25,12 @@ const updateSheet = function(){
       log(`Sheet Update applied. Current Sheet Version ${kFuncs.version}`);
       //styleOnOpen(attributes,sections);
       //setActionCalls({attributes,sections});
-      debug({casc});
       ['pug','js'].forEach((type)=>{
         if(casc[`attr_k${type}docs`]){
           attributes[`k${type}docs`] = docGen(type);
-          debug({[`k${type}docs`]:attributes[`k${type}docs`]});
+          if(type==='pug'){
+            debug({[`k${type}docs`]:attributes[`k${type}docs`]});
+          }
         }
       });
       attributes.set();
@@ -38,11 +39,13 @@ const updateSheet = function(){
   });
 };
 
-const docGen = function(type){
-  debug(`doc gen for ${type}`);
-  debug({docs});
-  let pugHead = [`# K Scaffold ${type.toUpperCase()} documentation`];
-  return Object.entries(docs[type]).reduce((text,[name,docObj])=>{
+const docGen = function(language){
+  if(language==='pug'){
+    debug(`doc gen for ${language}`);
+    debug({[`docs.pug`]:docs.pug});
+  }
+  let pugHead = [`# K Scaffold ${language.toUpperCase()} documentation`];
+  return Object.entries(docs[language]).reduce((text,[name,docObj])=>{
     let type = docObj.type;
     text.push(`## ${docObj.name || name}`,`\`${type}\``);
     if(docObj.invocation){
@@ -61,12 +64,12 @@ const docGen = function(type){
     }
     example.forEach((eArr)=>{
       text.push(
-        `**${type.toUpperCase()}**`,
+        `**${language.toUpperCase()}**`,
         `\`\`\`js`,
         eArr[0],
         `\`\`\``
       );
-      if(type === 'pug'){
+      if(docObj.type === 'mixin'){
         text.push(
           '**HTML**',
           `\`\`\`html`,

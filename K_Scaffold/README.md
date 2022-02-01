@@ -2,8 +2,8 @@
 This is the first public release of the character sheet scaffold that I use to build my sheets. It is still under continuous development and will likely change in the future. The scaffold allows sheets and sheetworkers to be written in a more seamless fashion by writing the listeners and connections between attributes directly in the PUG for the sheet.
 - [The K-Scaffold](#the-k-scaffold)
   - [Features](#features)
-  - [js scaffold documentation](https://htmlpreview.github.io/?https://github.com/Kurohyou/Roll20-Snippets/blob/kscaffoldmodule/K_Scaffold/out/global.html)
-  - [HTML element mixins](#html-element-mixins)
+  - [Open JS scaffold documentation](https://github.com/Kurohyou/Roll20-Snippets/blob/kscaffoldmodule/K_Scaffold/Template%20v2/scaffold/k_scaffold_js_documentation.md#klog)
+  - [Open PUG scaffold documentation](#html-element-mixins)
     - [Attribute and button mixins](#attribute-and-button-mixins)
       - [input(obj)](#inputobj)
         - [text(obj)](#textobj)
