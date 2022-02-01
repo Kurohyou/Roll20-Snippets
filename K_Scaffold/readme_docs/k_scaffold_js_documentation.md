@@ -1,4 +1,7 @@
 # K Scaffold JS documentation
+|Table test|Header here|
+|---|---|
+|Some entry|Other entry|
 - [k.sheetName](#ksheetName)
 - [k.version](#kversion)
 - [k.debugMode](#kdebugMode)
