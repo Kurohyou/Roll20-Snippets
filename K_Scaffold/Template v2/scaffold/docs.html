@@ -636,7 +636,12 @@ const docGen = function(language){
       }
     });
     if(docObj.retValue){
-      text.push(`- \`returns ${docObj.retValue.type}\` - ${docObj.retValue.description}`)
+      text.push(`returns \`${docObj.retValue.type}\` ${
+        docObj.retValue.description ? 
+          `- ${docObj.retValue.description}` :
+          ''
+        }`
+      );
     }
     return text;
   },docHead).join('\n');

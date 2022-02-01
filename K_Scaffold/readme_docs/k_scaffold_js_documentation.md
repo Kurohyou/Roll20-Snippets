@@ -69,7 +69,7 @@ Extracts the section (e.g. `repeating_equipment`), rowID (e.g `-;lkj098J:LKj`), 
 |Argument|type|description|
 |---|---|---|
 |string|`string`|The attribute name to parse.
-- `returns array` - For a repeating attribute named `repeating_equipment_-LKJhpoi98;lj_weight`, the array will be `['repeating_equipment','-LKJhpoi98;lj','weight']`.
+returns `array` - For a repeating attribute named `repeating_equipment_-LKJhpoi98;lj_weight`, the array will be `['repeating_equipment','-LKJhpoi98;lj','weight']`.
 ## k.parseTriggerName
 `function`
 
@@ -82,7 +82,7 @@ Aliases: `k.parseClickTrigger`
 |Argument|type|description|
 |---|---|---|
 |string|`string`|The triggerName property of the [event](https://wiki.roll20.net/Sheet_Worker_Scripts#eventInfo_Object).
-- `returns array` - For a repeating button named `repeating_equipment_-LKJhpoi98;lj_roll`, the array will be `['repeating_equipment','-LKJhpoi98;lj','roll']`. For a non repeating button named `roll`, the array will be `[undefined,undefined,'roll']`
+returns `array` - For a repeating button named `repeating_equipment_-LKJhpoi98;lj_roll`, the array will be `['repeating_equipment','-LKJhpoi98;lj','roll']`. For a non repeating button named `roll`, the array will be `[undefined,undefined,'roll']`
 ## k.parseHTMLName
 `function`
 
@@ -93,7 +93,7 @@ Parses out the attribute name from the htmlattribute name.
 |Argument|type|description|
 |---|---|---|
 |string|`string`|The triggerName property of the [event](https://wiki.roll20.net/Sheet_Worker_Scripts#eventInfo_Object).
-- `returns array` - For a repeating button named `act_repeating_equipment_-LKJhpoi98;lj_roll`, the array will be `['repeating_equipment','-LKJhpoi98;lj','roll']`. For a non repeating button named `act_roll`, the array will be `[undefined,undefined,'roll']`
+returns `array` - For a repeating button named `act_repeating_equipment_-LKJhpoi98;lj_roll`, the array will be `['repeating_equipment','-LKJhpoi98;lj','roll']`. For a non repeating button named `act_roll`, the array will be `[undefined,undefined,'roll']`
 ## k.capitalize
 `function`
 
@@ -104,7 +104,7 @@ Capitalize each word in a string.
 |Argument|type|description|
 |---|---|---|
 |string|`string`|The string to capitalize
-- `returns string` - The capitalized string
+returns `string` - The capitalized string
 ## k.extractQueryResult
 `function`
 
@@ -115,7 +115,7 @@ Extracts a roll query result for use in later functions. Must be awaited as per 
 |Argument|type|description|
 |---|---|---|
 |query|`string`|The query should be just the text as the `?{` and `}` at the start/end of the query are added by the function.
-- `returns string` - The selected value from the roll query
+returns `string` - The selected value from the roll query
 ## k.pseudoQuery
 `function`
 
@@ -126,7 +126,7 @@ Simulates a query for ensuring that async/await works correctly in the sheetwork
 |Argument|type|description|
 |---|---|---|
 |value|`number|string`|The value to return. Optional.
-- `returns string` - The `value` passed to the function is returned after startRoll resolves.
+returns `string` - The `value` passed to the function is returned after startRoll resolves.
 ## k.log
 `function`
 
@@ -180,7 +180,7 @@ Splits a comma delimited string into an array
 |Argument|type|description|
 |---|---|---|
 |setObj|`string`|The string to split.
-- `returns array` - The string segments of the comma delimited list.
+returns `array` - The string segments of the comma delimited list.
 ## K-Scaffold Attribute Object
 `object`
 
@@ -225,7 +225,7 @@ Function that registers a function for being called via the funcs object. Return
 |funcObj|`object`|Object with keys that are names to register functions under and values that are functions.
 |optionsObj|`object`|Object that contains options to use for this registration.
 |optionsObj.type|`['strings']`|Array that contains the types of specialized functions that apply to the functions being registered. Valid types are `"opener"`, `"updater"`, and `"default"`. `"default"` is always used, and never needs to be passed.
-- `returns boolean` - True if the registration succeeded, false if it failed.
+returns `boolean` - True if the registration succeeded, false if it failed.
 ## k.callFunc
 `function`
 
@@ -234,7 +234,7 @@ Function to call a function previously registered to the funcs object. May not b
 |---|---|---|
 |funcName|`string`|The name of the function to invoke.
 |args|`any`|The arguments to call the function with.
-- `returns any` - undefined
+returns `any` 
 ## k.accessSheet
 `function`
 

@@ -532,7 +532,7 @@ Converts an attribute name into an attribute call for that attribute. Converts `
 +fieldset({name:'equipment'})
   - attrTitle('weight') => "@{repeating_equipment_$X_weight}"
 ```
-- `returns string` - undefined
+returns `string` 
 ## buttonTitle
 `function`
 
@@ -550,7 +550,7 @@ Converts an ability name into an ability call for that attribute. If called from
 +fieldset({name:'equipment'})
   - buttonTitle('use') => "%{repeating_equipment_$X_use}"
 ```
-- `returns string` - undefined
+returns `string` 
 ## replaceSpaces
 `function`
 
@@ -563,7 +563,7 @@ Replaces spaces in a string with underscores (`_`).
 ```js
 - replaceSpaces('attribute name') => "attribute_name"
 ```
-- `returns string` - undefined
+returns `string` 
 ## replaceProblems
 `function`
 
@@ -576,4 +576,4 @@ Escapes problem characters in a string for use as a regex.
 ```js
 - replaceProblems("Here's a problem => [") => "Here's a problem => ["
 ```
-- `returns string` - undefined
+returns `string` 
