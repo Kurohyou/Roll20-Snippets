@@ -164,8 +164,8 @@ mixin option(obj)
     description:'Functions like [input](#input), but creates a select instead.',
     example:[
       [
-        `+select({name:'my select',class:'some-class'})\n+option({value:'option 1','data-i18n':'some-text',trigger:{affects:['some-attribute']}})\n+option({value:'option 2','data-i18n':'other-text'})`,
-        '<select name="attr_my_select" class="some-class">\n<option value="option 1" data-i18n="some-text"></option>\n<option value="option 2" data-i18n="other-text"></option>\n</select>'
+        `+select({name:'my select',class:'some-class'})\n  +option({value:'option 1','data-i18n':'some-text',trigger:{affects:['some-attribute']}})\n  +option({value:'option 2','data-i18n':'other-text'})`,
+        '<select name="attr_my_select" class="some-class">\n  <option value="option 1" data-i18n="some-text"></option>\n  <option value="option 2" data-i18n="other-text"></option>\n</select>'
       ]
     ]
   };
@@ -233,8 +233,8 @@ mixin span(obj)
     description:'Functions like [input](#input), but creates a datalist instead. Note that an ID should never be put inside a repeating section, although you can reference one from inside the repeating section.',
     example:[
       [
-        `+select({name:'my select',list:'my-data'})\n+datalist({id:'my-data'})\n+option({value:'option 1','data-i18n':'some-text',trigger:{affects:['some-attribute']}})\n+option({value:'option 2','data-i18n':'other-text'})`,
-        '<select name="attr_my_select" class="some-class"></select><datalist id="my-data">\n<option value="option 1" data-i18n="some-text"></option>\n<option value="option 2" data-i18n="other-text"></option>\n</datalist>'
+        `+select({name:'my select',list:'my-data'})\n+datalist({id:'my-data'})\n  +option({value:'option 1','data-i18n':'some-text',trigger:{affects:['some-attribute']}})\n  +option({value:'option 2','data-i18n':'other-text'})`,
+        '<select name="attr_my_select" class="some-class"></select><datalist id="my-data">\n  <option value="option 1" data-i18n="some-text"></option>\n  <option value="option 2" data-i18n="other-text"></option>\n</datalist>'
       ]
     ]
   };
@@ -373,7 +373,7 @@ mixin rollerExtras(obj)
     example:[
       [
         `+roller({name:'my roll'})`,
-        '<button type="roll" name="roll_my_roll" value="@{my_roll_action}></button>\n<button type="action" name="act_my-roll-action" hidden></button>\n<input type="hidden" name="attr_my_roll_action" value="">'
+        '<button type="roll" name="roll_my_roll" value="@{my_roll_action}"></button>\n<button type="action" name="act_my-roll-action" hidden></button>\n<input type="hidden" name="attr_my_roll_action" value="">'
       ]
     ]
   };
@@ -485,7 +485,7 @@ mixin inlineFieldset({name,trigger,addClass})
         '<fieldset class="repeating_equipment"></fieldset><div class="repcontainer" data-groupname="repeating_equipment">\n  <input type="text" name="attr_name" title="@{repeating_equipment_$x_name}">\n</div>'
       ],
       [
-        `+fieldset({name:'equipment',{listenerFunc:'handleDeletedRow'},addClass:'class-1 class-2'})\n  +text({name:'name',class:'underlined'})`,
+        `+fieldset({name:'equipment',trigger:{listenerFunc:'handleDeletedRow'},addClass:'class-1 class-2'})\n  +text({name:'name',class:'underlined'})`,
 
         `<span hidden class="class-1 class-2"></span>\n<fieldset class="repeating_equipment"></fieldset><div class="repcontainer" data-groupname="repeating_equipment">\n  <input type="text" name="attr_name" title="@{repeating_equipment_$x_name}">\n</div>`
       ]
@@ -710,7 +710,7 @@ mixin script
     block
 //-End Mixin
 -
-  varObjects.docs.pug.script = {
+  varObjects.docs.pug.kscript = {
     type:'mixin',
     description:'Similar to [script](#script), but includes the K-scaffold\'s javascript function library.'
   };
