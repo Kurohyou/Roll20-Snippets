@@ -47,7 +47,7 @@ const docGen = function(language){
   let pugHead = [`# K Scaffold ${language.toUpperCase()} documentation`];
   return Object.entries(docs[language]).reduce((text,[name,docObj])=>{
     let type = docObj.type;
-    text.push(`## ${docObj.name || name}`,`\`${type}\``);
+    text.push(`## ${docObj.name || name}`,`\`${type}\`\n`);
     if(docObj.invocation){
       text.push(docObj.invocation);
     }
