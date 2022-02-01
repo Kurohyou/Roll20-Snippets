@@ -117,14 +117,14 @@ Functions like [input](#input), but creates a select instead.
 **PUG**
 ```js
 +select({name:'my select',class:'some-class'})
-+option({value:'option 1','data-i18n':'some-text',trigger:{affects:['some-attribute']}})
-+option({value:'option 2','data-i18n':'other-text'})
+  +option({value:'option 1','data-i18n':'some-text',trigger:{affects:['some-attribute']}})
+  +option({value:'option 2','data-i18n':'other-text'})
 ```
 **HTML**
 ```html
 <select name="attr_my_select" class="some-class">
-<option value="option 1" data-i18n="some-text"></option>
-<option value="option 2" data-i18n="other-text"></option>
+  <option value="option 1" data-i18n="some-text"></option>
+  <option value="option 2" data-i18n="other-text"></option>
 </select>
 ```
 ## img
@@ -149,14 +149,14 @@ Functions like [input](#input), but creates a datalist instead. Note that an ID 
 ```js
 +select({name:'my select',list:'my-data'})
 +datalist({id:'my-data'})
-+option({value:'option 1','data-i18n':'some-text',trigger:{affects:['some-attribute']}})
-+option({value:'option 2','data-i18n':'other-text'})
+  +option({value:'option 1','data-i18n':'some-text',trigger:{affects:['some-attribute']}})
+  +option({value:'option 2','data-i18n':'other-text'})
 ```
 **HTML**
 ```html
 <select name="attr_my_select" class="some-class"></select><datalist id="my-data">
-<option value="option 1" data-i18n="some-text"></option>
-<option value="option 2" data-i18n="other-text"></option>
+  <option value="option 1" data-i18n="some-text"></option>
+  <option value="option 2" data-i18n="other-text"></option>
 </datalist>
 ```
 ## button
@@ -204,7 +204,7 @@ Alias for [button](#button) that creates a combination roll button and action bu
 ```
 **HTML**
 ```html
-<button type="roll" name="roll_my_roll" value="@{my_roll_action}></button>
+<button type="roll" name="roll_my_roll" value="@{my_roll_action}"></button>
 <button type="action" name="act_my-roll-action" hidden></button>
 <input type="hidden" name="attr_my_roll_action" value="">
 ```
@@ -250,7 +250,7 @@ A mixin that creates a fieldset for the creation of a repeating section. The mix
 ```
 **PUG**
 ```js
-+fieldset({name:'equipment',{listenerFunc:'handleDeletedRow'},addClass:'class-1 class-2'})
++fieldset({name:'equipment',trigger:{listenerFunc:'handleDeletedRow'},addClass:'class-1 class-2'})
   +text({name:'name',class:'underlined'})
 ```
 **HTML**
@@ -385,6 +385,10 @@ Creates a construction for pairing a header with a textarea. Currently is locked
 </div>
 ```
 ## script
+`mixin`
+
+Creates a generic [Roll20 script block](https://wiki.roll20.net/Building_Character_Sheets#JavaScript_2) for use with the sheetworker system.
+## kscript
 `mixin`
 
 Similar to [script](#script), but includes the K-scaffold's javascript function library.
