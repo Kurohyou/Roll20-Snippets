@@ -45,7 +45,7 @@ This probably seems like a minor thing, and in terms of time spent it is! But, m
   - system.html: The sheet's HTML that PUG will generate for us. We may never actually look at the raw code in ths file
   - system.css: The sheet's CSS that SCSS will generate for us. We may never actually look at the raw code in ths file
 
-You can see this structure develop in the [tutorial Sheet folder]("../tutorial sheet") by looking at each of the indexed subdirectories.
+You can see this structure develop in the [tutorial Sheet folder](../tutorial%20sheet) by looking at each of the indexed subdirectories.
 
 ## What's next?
 We obviously haven't done any coding yet. We'll start with writing the first bit of PUG for the sheet next week and see where that takes us.
