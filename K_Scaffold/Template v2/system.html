@@ -628,7 +628,7 @@ const docGen = function(language){
     let type = docObj.type;
     text.push(`## ${docObj.name || name}`,`\`${type}\`\n`);
     if(docObj.invocation){
-      text.push(docObj.invocation);
+      text.push(`\`\`\`js${docObj.invocation}\`\`\``);
     }
     if(docObj.description){
       text.push(docObj.description);
