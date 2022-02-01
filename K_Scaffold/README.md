@@ -18,7 +18,7 @@ include scaffold/_kpug.pug
     //Calculate an attribute
   };
 ```
-You can include your javascript files or write them directly in the block of the `k`script` mixin. For more information, see the readme docs for the [pug](readme_docs/k_scaffold_pug_documentation.md) and [javascript](readme_docs/k_scaffold_js_documentation.md) libraries.
+You can include your javascript files or write them directly in the block of the `kscript` mixin. For more information, see the readme docs for the [pug](readme_docs/k_scaffold_pug_documentation.md) and [javascript](readme_docs/k_scaffold_js_documentation.md) libraries.
 ## K-scaffold PUG
 To use the K-scaffold to write the html of your sheet, you will write normal PUG, but using a comprehensive library of components that are frequently used on character sheets. These range from simple mixin versions of standard html elements inputs, textareas, and selects to more complex constructions that generate Roll20 elements or workarounds for limitations of Roll20 character sheets. See the [K-scaffold PUG documentation](readme_docs/k_scaffold_pug_documentation.md) for full details on the mixins available.
 ## K-scaffold Javascript
