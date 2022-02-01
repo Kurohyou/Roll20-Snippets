@@ -48,6 +48,8 @@ Replaces problem characters to use a string as a regex.
 |Argument|type|description|
 |---|---|---|
 |text|`string`|The text to replace characters in.|
+
+
 ## k.value
 `function`
 
@@ -59,6 +61,8 @@ Converts a value to a number, it's default value, or `0` if no default value pas
 |---|---|---|
 |val|`any`|The value to coerce into a number.|
 |def|`number`|A default value to use, if not passed, 0 is used instead.|
+
+
 ## k.parseRepeatName
 `function`
 
@@ -69,6 +73,8 @@ Extracts the section (e.g. `repeating_equipment`), rowID (e.g `-;lkj098J:LKj`), 
 |Argument|type|description|
 |---|---|---|
 |string|`string`|The attribute name to parse.|
+
+
 returns `array` - For a repeating attribute named `repeating_equipment_-LKJhpoi98;lj_weight`, the array will be `['repeating_equipment','-LKJhpoi98;lj','weight']`.
 ## k.parseTriggerName
 `function`
@@ -82,6 +88,8 @@ Aliases: `k.parseClickTrigger`
 |Argument|type|description|
 |---|---|---|
 |string|`string`|The triggerName property of the [event](https://wiki.roll20.net/Sheet_Worker_Scripts#eventInfo_Object).|
+
+
 returns `array` - For a repeating button named `repeating_equipment_-LKJhpoi98;lj_roll`, the array will be `['repeating_equipment','-LKJhpoi98;lj','roll']`. For a non repeating button named `roll`, the array will be `[undefined,undefined,'roll']`
 ## k.parseHTMLName
 `function`
@@ -93,6 +101,8 @@ Parses out the attribute name from the htmlattribute name.
 |Argument|type|description|
 |---|---|---|
 |string|`string`|The triggerName property of the [event](https://wiki.roll20.net/Sheet_Worker_Scripts#eventInfo_Object).|
+
+
 returns `array` - For a repeating button named `act_repeating_equipment_-LKJhpoi98;lj_roll`, the array will be `['repeating_equipment','-LKJhpoi98;lj','roll']`. For a non repeating button named `act_roll`, the array will be `[undefined,undefined,'roll']`
 ## k.capitalize
 `function`
@@ -104,6 +114,8 @@ Capitalize each word in a string.
 |Argument|type|description|
 |---|---|---|
 |string|`string`|The string to capitalize|
+
+
 returns `string` - The capitalized string
 ## k.extractQueryResult
 `function`
@@ -115,6 +127,8 @@ Extracts a roll query result for use in later functions. Must be awaited as per 
 |Argument|type|description|
 |---|---|---|
 |query|`string`|The query should be just the text as the `?{` and `}` at the start/end of the query are added by the function.|
+
+
 returns `string` - The selected value from the roll query
 ## k.pseudoQuery
 `function`
@@ -126,6 +140,8 @@ Simulates a query for ensuring that async/await works correctly in the sheetwork
 |Argument|type|description|
 |---|---|---|
 |value|`number|string`|The value to return. Optional.|
+
+
 returns `string` - The `value` passed to the function is returned after startRoll resolves.
 ## k.log
 `function`
@@ -137,6 +153,8 @@ An alias for console.log.
 |Argument|type|description|
 |---|---|---|
 |msg|`string|object|array`|The message can be a straight string, an object, or an array. If it is an object or array, the object will be broken down so that each key is used as a label to output followed by the value of that key. If the value of the key is an object or array, it will be output via `console.table`.|
+
+
 ## k.debug
 `function`
 
@@ -148,6 +166,8 @@ Alias for console.log that only triggers when debug mode is enabled or when the 
 |---|---|---|
 |setObj|`string`|See [k.log](#klog)|
 |force|`boolean`|Pass as a truthy value to force the debug output to be output to the console regardless of debug mode.|
+
+
 ## k.orderSections
 `function`
 
@@ -159,6 +179,8 @@ Orders the section id arrays for all sections in the `sections` object to match 
 |---|---|---|
 |attributes|`object`|The attributes object that must have a value for the reporder for each section.|
 |sections|`object`|Object containing the IDs for the repeating sections, indexed by repeating section name.|
+
+
 ## k.orderSection
 `function`
 
@@ -170,6 +192,8 @@ Orders a single ID array.
 |---|---|---|
 |setObj|`array`|Array of IDs in the order they are in on the sheet.|
 |vocal|`array`|Array of IDs to be ordered.|
+
+
 ## k.commaArray
 `function`
 
@@ -180,6 +204,8 @@ Splits a comma delimited string into an array
 |Argument|type|description|
 |---|---|---|
 |setObj|`string`|The string to split.|
+
+
 returns `array` - The string segments of the comma delimited list.
 ## K-Scaffold Attribute Object
 `object`
@@ -216,6 +242,8 @@ The attributes object that is passed as the first agrument to the callbacks from
 |getCascObj(event,casc)|`function`|Gets the appropriate cascade object for a given attribute or action button|
 |event|`object`||
 |getCascObj.casc|`object`|As the casc object above.|
+
+
 ## k.registerFuncs
 `function`
 
@@ -225,6 +253,8 @@ Function that registers a function for being called via the funcs object. Return
 |funcObj|`object`|Object with keys that are names to register functions under and values that are functions.|
 |optionsObj|`object`|Object that contains options to use for this registration.|
 |optionsObj.type|`['strings']`|Array that contains the types of specialized functions that apply to the functions being registered. Valid types are `"opener"`, `"updater"`, and `"default"`. `"default"` is always used, and never needs to be passed.|
+
+
 returns `boolean` - True if the registration succeeded, false if it failed.
 ## k.callFunc
 `function`
@@ -234,6 +264,8 @@ Function to call a function previously registered to the funcs object. May not b
 |---|---|---|
 |funcName|`string`|The name of the function to invoke.|
 |args|`any`|The arguments to call the function with.|
+
+
 returns `any` 
 ## k.accessSheet
 `function`
@@ -242,6 +274,8 @@ The default listener for the K-scaffold. Used whenever a `listenerFunc` is not s
 |Argument|type|description|
 |---|---|---|
 |event|`object`|The event from the Roll20 trigger as described in [the wiki](https://wiki.roll20.net/Sheet_Worker_Scripts#eventInfo_Object)|
+
+
 ## k.setSectionOrder
 `function`
 
@@ -250,6 +284,8 @@ Alias for [setSectionOrder()](https://wiki.roll20.net/Sheet_Worker_Scripts#setSe
 |---|---|---|
 |section|`string`|The name of the section to change the order in. Accepts the section name with or without the `repeating_` prefix.|
 |order|`['string']`|Array of the row ids in the order that the rows need to be placed.|
+
+
 ## k.removeRepeatingRow
 `function`
 
@@ -259,6 +295,8 @@ Alias for [removeRepeatingRow](https://wiki.roll20.net/Sheet_Worker_Scripts#remo
 |row|`string`|The row id including the section name, e.g. `repeating_equipment_-oiuLKJ987ulkj`.|
 |attributes|`object`|The attributes object passed to the callback in [k.getAllAttrs()](#getAllAttrs), [k.getAttrs()](#getAttrs), or [getAttrs()](https://wiki.roll20.net/Sheet_Worker_Scripts#getAttrs.28attributeNameArray.2C_callback.29)|
 |sections|`object`|Object that contains arrays of all the IDs in sections on the sheet indexed by repeating name.|
+
+
 ## k.getAttrs
 `function`
 
@@ -270,6 +308,8 @@ Alias for [getAttrs](https://wiki.roll20.net/Sheet_Worker_Scripts#getAttrs.28_Ro
 |---|---|---|
 |props|`array`|Array of attribute names to get the values of as per the [getAttrs() sheetworker](https://wiki.roll20.net/Sheet_Worker_Scripts#getAttrs.28attributeNameArray.2C_callback.29). If not passed, gets all the attributes contained in the cascades object.|
 |callback|`function`|The function to call after the attribute values have been gotten. Works the same as the callback for the [getAttrs() sheetworker](https://wiki.roll20.net/Sheet_Worker_Scripts#getAttrs.28attributeNameArray.2C_callback.29).|
+
+
 ## k.getAllAttrs
 `function`
 
@@ -282,6 +322,8 @@ Alias for [getAttrs()](https://wiki.roll20.net/Sheet_Worker_Scripts#getAttrs.28a
 |props|`array`|Array of attribute names to get the values of as per the [getAttrs() sheetworker](https://wiki.roll20.net/Sheet_Worker_Scripts#getAttrs.28attributeNameArray.2C_callback.29).|
 |sectionDetails|`array`|An array of objects that contain the details on how to handle a given repeating section. See [k.getSections](#getSections) for more details.|
 |callback(attributes,sections,casc)|`function`|The function to call after the attribute values have been gotten. Three arguments are passed to the callback; `attributes`, `sections`, and `casc`. `sections` is an object that holds arrays of row ids, indexed by repeating section name. `casc` is the expanded version of the cascades object with repeating attributes including their row IDs.|
+
+
 ## k.getSections
 `function`
 
@@ -294,6 +336,8 @@ Alias for [getSectionIDs()](https://wiki.roll20.net/Sheet_Worker_Scripts#getSect
 |props|`array`|Array of attribute names to get the values of as per the [getAttrs() sheetworker](https://wiki.roll20.net/Sheet_Worker_Scripts#getAttrs.28attributeNameArray.2C_callback.29).|
 |sectionDetails|`array`|An array of objects that contain the details on how to handle a given repeating section. See [k.repeatingSectionDetails](#krepeatingsectiondetails) for more details.|
 |callback(repeatAttrs,sections)|`function`|The function to call after the attribute values have been gotten. Two arguments are passed to the callback; `repeatAttrs` and `sections`. `repeatAttrs` is an array of repeating attributes ready to be used in a [getAttrs](https://wiki.roll20.net/Sheet_Worker_Scripts#getAttrs.28attributeNameArray.2C_callback.29), or [k.getAttrs](#kgetattrs) call. `sections` is an object that holds arrays of row ids, indexed by repeating section name.|
+
+
 ## k.setAttrs
 `function`
 
@@ -306,6 +350,8 @@ Alias for [setAttrs()](https://wiki.roll20.net/Sheet_Worker_Scripts#setAttrs.28v
 |setObj|`object`|Object with key/value pairs of attributes to set on the sheet. See [the wiki page](https://wiki.roll20.net/Sheet_Worker_Scripts#setAttrs.28values.2Coptions.2Ccallback.29) for more information.|
 |vocal|`boolean`|Whether to set silently (default value) or not.|
 |callback()|`function`|The callback function to invoke after the setting has been completed. No arguments are passed to the callback function.|
+
+
 ## k.generateRowID
 `function`
 
@@ -318,3 +364,4 @@ Alias for generateRowID that adds the new id to the sections object. Also allows
 |setObj|`string`|The section name to create an ID for. The `repeating_` prefix is optional so both `repeating_equipment` and `equipment` are valid.|
 |vocal|`object`|Object containing the IDs for the repeating sections, indexed by repeating section name.|
 |customText|`string`|Custom text to start the ID with. This text should not be longer than the standard repeating section ID format.|
+

@@ -39,6 +39,8 @@ A generic mixin to create an input. The mixin will replace spaces in the attribu
 |---|---|---|
 |obj|`object`|An object containing all of the properties to apply to the element. Must have the properties; `name` and `type`. Can have any property that is valid for an input element. May also have a [trigger](#trigger) proeprty|
 |obj.name|`string`||
+
+
 ### Example
 **PUG**
 ```js
@@ -251,6 +253,8 @@ Alias for [fieldset](#fieldset) that creates to custom action buttons to add/rem
 |name|`string`|The name of the repeating section. Will be prefixed with `repeating_` and spaces will be replaced with dashes (`-`).|
 |trigger|`object`|Trigger that defines how to handle the removal of a row from the fieldset. `Optional`|
 |addClass|`string`|Any additional classes that should be used for the repeating section. Note that these are not added to the fieldset itself as adding additional classes to the fieldset itself interferes with calling action buttons from chat, but are added to a span that precedes the fieldset. This allows styling of the repcontainer via a css declaration like `.bonus-class + fieldset + .repcontainer`.|
+
+
 ### Example
 **PUG**
 ```js
@@ -274,6 +278,8 @@ A mixin that creates a fieldset for the creation of a repeating section. The mix
 |name|`string`|The name of the repeating section. Will be prefixed with `repeating_` and spaces will be replaced with dashes (`-`).|
 |trigger|`object`|Trigger that defines how to handle the removal of a row from the fieldset. `Optional`|
 |addClass|`string`|Any additional classes that should be used for the repeating section. Note that these are not added to the fieldset itself as adding additional classes to the fieldset itself interferes with calling action buttons from chat, but are added to a span that precedes the fieldset. This allows styling of the repcontainer via a css declaration like `.bonus-class + fieldset + .repcontainer`.|
+
+
 ### Examples
 **PUG**
 ```js
@@ -306,6 +312,8 @@ A mixin for creating pseudo buttons of paired checkboxes/radios and spans such a
 |---|---|---|
 |label|`string`|The `data-i18n` translation key to use for the displayed text.|
 |inputObj|`object`|An object describing the input to be paired with the span. This is the same object that you would pass to [input](#input).|
+
+
 ### Example
 **PUG**
 ```js
@@ -326,6 +334,8 @@ A mixin to create a combined button and input that are within the same container
 |inputObj|`object`|An object describing the input to be paired with the button. This is the same object that you would pass to [input](#input).|
 |buttonObj|`object`|An object describing the button to be paired with the input. This is the same object that you would pass to [button](#button).|
 |divObj|`object`|An object describing the container div. Similar to the first two objects, but will most likely only have a `class` property if it is passed at all.|
+
+
 ### Example
 **PUG**
 ```js
@@ -347,6 +357,8 @@ Similar to the construction created by [button-label](#button-label), except tha
 |inputObj|`object`|An object describing the input to be paired with the button. This is the same object that you would pass to [input](#input).|
 |buttonObj|`object`|An object describing the button to be paired with the input. This is the same object that you would pass to [roller](#roller).|
 |divObj|`object`|An object describing the container div. Similar to the first two objects, but will most likely only have a `class` property if it is passed at all.|
+
+
 ## action-label
 `mixin`
 
@@ -356,6 +368,8 @@ Similar to the construction created by [button-label](#button-label), except tha
 |inputObj|`object`|An object describing the input to be paired with the button. This is the same object that you would pass to [input](#input).|
 |buttonObj|`object`|An object describing the button to be paired with the input. This is the same object that you would pass to [action](#action).|
 |divObj|`object`|An object describing the container div. Similar to the first two objects, but will most likely only have a `class` property if it is passed at all.|
+
+
 ## select-label
 `mixin`
 
@@ -367,6 +381,8 @@ Similar to the construction created by [input-label](#input-label), except that 
 |divObj|`object`|An object describing the container label. Similar to the inputObj, but will most likely only have a `class` property if it is passed at all.|
 |spanObj|`object`|An object describing the span to be paired with the input. This is the same object that you would pass to [span](#span).|
 |block|`block`|The mixin uses the pug block as the content of the select.|
+
+
 ### Example
 **PUG**
 ```js
@@ -394,6 +410,8 @@ Creates a construction that nests the input and span in a label so that they are
 |divObj|`object`|An object describing the container label. Similar to the inputObj, but will most likely only have a `class` property if it is passed at all.|
 |spanObj|`object`|An object describing the span to be paired with the input. This is the same object that you would pass to [span](#span).|
 |block|`block`|The mixin uses the pug block as the content of the select.|
+
+
 ### Example
 **PUG**
 ```js
@@ -413,6 +431,8 @@ Creates a construction for pairing a header with a textarea. Currently is locked
 |---|---|---|
 |textObj|`object`|The object describing the textarea as per [textarea](#textarea)|
 |header|`string`|The `data-i18n` translation key to use for the header|
+
+
 ### Examples
 **PUG**
 ```js
@@ -451,6 +471,8 @@ Creates an html construction for creating a [content-scaled](https://wiki.roll20
 |Argument|type|description|
 |---|---|---|
 |textObj|`object`|The object describing the textarea as per the [textarea](#textarea) mixin. You can apply classes and IDs to the container div by appending them to the mixin call (see the second example).|
+
+
 ### Examples
 **PUG**
 ```js
@@ -482,6 +504,8 @@ Creates a set of compendium drop target attributes. Defaults to creating target 
 |lookupAttributes|`array`|An array of the lookup attributes to create targets for. The target attributes are named based on the compendium attribute they are for. lookupAttributes defaults to `["Name","data"]`.|
 |triggerAccept|`string`|The compendium attribute that should trigger the sheetworkers to handle the compendium drop.|
 |trigger|`object`|The trigger object. Defaults to `{listenerFunc:"handleCompendiumDrop"}`|
+
+
 ### Examples
 **PUG**
 ```js
@@ -518,6 +542,8 @@ Converts an attribute name into an attribute call for that attribute. Converts `
 |Argument|type|description|
 |---|---|---|
 |attrName|`string`|The attribute name to create an attribute call for.|
+
+
 ### Examples
 **PUG**
 ```js
@@ -540,6 +566,8 @@ Converts an ability name into an ability call for that attribute. If called from
 |Argument|type|description|
 |---|---|---|
 |abilityName|`string`|The ability name to create an attribute call for.|
+
+
 ### Examples
 **PUG**
 ```js
@@ -558,6 +586,8 @@ Replaces spaces in a string with underscores (`_`).
 |Argument|type|description|
 |---|---|---|
 |string|`string`|The string to work on|
+
+
 ### Example
 **PUG**
 ```js
@@ -571,6 +601,8 @@ Escapes problem characters in a string for use as a regex.
 |Argument|type|description|
 |---|---|---|
 |string|`string`|The string to work on|
+
+
 ### Example
 **PUG**
 ```js
