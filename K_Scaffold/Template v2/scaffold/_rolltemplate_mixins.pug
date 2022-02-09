@@ -17,9 +17,9 @@ mixin multiPartTemplate(name)
 mixin characterLink
   +templateConditionalDisplay('character_name')
     +templateConditionalDisplay('character_id')
-      h4.character_name [{{footer}}](http://journal.roll20.net/character/{{character_id}})
+      h4.character_name [{{character_name}}](http://journal.roll20.net/character/{{character_id}})
     +templateConditionalDisplay('character_id',true)
-      h4.character_name {{footer}}
+      h4.character_name {{character_name}}
 //-End mixin
 mixin templateConditionalDisplay(fieldBool,invert)
   !=`{{${invert ? '^' : '#'}${fieldBool}}}`

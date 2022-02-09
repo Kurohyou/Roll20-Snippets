@@ -1,0 +1,25 @@
+//- An array of all the attributes for the system. We'll iterate through this so we don't have to write the same code 6 times.
+-
+  const attributes = [
+    'might',
+    'finesse',
+    'resolve',
+    'insight',
+    'bearing',
+    'weal'
+  ];
+//- Let's store that array in the K-scaffold provided varObjects object so that we'll be able to reuse it in our HTML.
+- varObjects.attributeNames = attributes;
+//- Our attributes section. We'll use the ID and class in our CSS and our navigation functions. paper-background will be used to style the backgrounds of our sections.
+section#attributes.attributes.paper-background
+  //- We'll use CSS grid to lay this section out once we get to writing our SCSS
+  h5(data-i18n='score').score-head
+  h5(data-i18n='modifier').modifier-head
+  //- iterating through the attributes array.
+  each name in attributes
+    //- This is a roller mixin from the k-scaffold. It will make our action buttons draggable to the macro bar. We'll write the listener function later.
+    +roller({name,role:'heading','aria-level':4,'data-i18n':name,trigger:{listenerFunc:'initiateRoll'}})
+    //- The raw score of the attribute. It affects the mod for the attribute.
+    +number({name,class:'underlined',trigger:{affects:[`${name}_mod`]}})
+    //- the modifier for the attribute, it will be calculated by the calcAttribute function that we will write in the future. It is set to readonly, so that only our sheetworker will be able edit it.
+    +number({name:`${name} mod`,readonly:'',class:'underlined',trigger:{calculation:'calcAttribute'}})
