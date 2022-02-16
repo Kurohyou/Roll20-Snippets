@@ -1,0 +1,9 @@
+section#archetype.archetype.paper-background
+  h4(data-i18n='archetype abilities')
+  +fieldset({name:'archetype'})
+    +collapse()
+    +text({name:'name',class:'underlined'})
+    +number({name:'rating',class:'underlined'})
+    .headed-textarea.notes.expanded
+      +h5({'data-i18n':'notes'})
+      +adaptiveTextarea({name:'notes',class:'underlined'})
