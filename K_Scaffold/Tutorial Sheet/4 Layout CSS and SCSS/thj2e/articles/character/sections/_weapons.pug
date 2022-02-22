@@ -1,0 +1,25 @@
+section#weapons.weapons.paper-background
+  //- We'll put the character's generic attack modifier here. It will affect the attack stat of each weapon.
+  +input-label('attack modifier',{name:'attack modifier',type:'number',class:'underlined',trigger:{affects:['repeating_weapon_$X_attack']}})
+  //- The headers for our repeating section's columns
+  .repeat-columns
+    h4(data-i18n='weapons')
+    each label in ['attack modifier','damage','traits','range','aspects']
+      h5(data-i18n=label)
+  //- The fieldset that Roll20 will generate our weapon repeating section. The mixin will handle the naming of the repeating section to `repeating_weapon`
+  +fieldset({name:'weapon'})
+    //- A checkbox that will allow users to collapse the entry down to just the stats.
+    //- This mixin is defined in our sheet specific mixins file `_sheetmixins.pug` so that we don't have to wrtie the same checkbox definition for all of our fieldsets
+    +collapse
+    +roller({name:'roll',class:'die',trigger:{listenerFunc:'initiateRoll'}})
+    +text({name:'name',class:'underlined'})
+    //- The total attack stat. It's set to `readonly` so that only our sheetworkers will edit this. We'll write the calcAttack function later on in today's tutorial
+    +number({name:'attack',class:'underlined',readonly:'',trigger:{calculation:'calcAttack'}})
+    //- An input so players can note that a weapon has bonus to attacks (or penalties). It will affect the attack stat
+    +number({name:'attack bonus',class:'underlined',trigger:{affects:['repeating_weapon_$X_attack']}})
+    //- Several text inputs for noting various aspects of the weapon
+    each name in ['damage','traits','range','aspects']
+      +text({name,class:'underlined'})
+    .headed-textarea.notes.expanded
+      +h5({'data-i18n':'notes'})
+      +adaptiveTextarea({name:'notes',class:'underlined'})
