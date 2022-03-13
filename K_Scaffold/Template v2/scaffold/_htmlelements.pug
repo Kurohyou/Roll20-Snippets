@@ -723,7 +723,7 @@ mixin kscript(document)
     if document
       - propArray.push('docs');
     else
-      delete varObjects.docs
+      - delete varObjects.docs
     each prop in propArray
       |
       |const !{prop} = !{JSON.stringify(varObjects[prop])};
