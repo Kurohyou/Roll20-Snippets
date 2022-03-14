@@ -1,8 +1,8 @@
 # This file builds the three 
 
 echo "Building html..."
-node index.js > sheet/system.html
+node index.js > sheet/sheet.html
 echo "Building css..."
-sass system.scss > sheet/system.css
+sass system.scss > sheet/sheet.css
 echo "Building translation..." 
 node translate.js > sheet/translation.json

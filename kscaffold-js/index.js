@@ -1,10 +1,8 @@
 import pug from "pug"
 import _ from "lodash"
-import { constants } from "./javascript/constants.js"
+import { constants } from "./javascript/constants.js" 
 
-const pathToPug = "./system.pug";  // Substitute a different PUG file here
-
-const render = pug.compileFile(pathToPug)
+const render = pug.compileFile("./system.pug")
 const html = render({
   _,
   constants,

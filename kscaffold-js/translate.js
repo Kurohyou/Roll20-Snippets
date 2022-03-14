@@ -15,7 +15,6 @@ constants.attributes.forEach(attr => {
 
 // Translation file overrides.
 const translationFilePaths = [
-  "./override.json",
   // Add external translation files here. They will override values generated below
 ]
 
