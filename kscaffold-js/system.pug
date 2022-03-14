@@ -1,0 +1,20 @@
+include scaffold/_kpug.pug
+
+// Enter your template name here
+- let templateName = 'Character sheet';
+
+main
+  .sheet
+    .container.character
+      .column-1 
+        include articles/attrs.pug
+
+      .column-2 
+
+      .column-3
+  
+// Include additional templates here (roll templates, etc.) 
+
++kscript
+  // Include javascript files here. Files CANNOT be imported from.
+  include javascript/functions.js

@@ -1,0 +1,107 @@
+// These mixin allow inputs to be hidden and restored while remaining in the form for tabbing
+@mixin hidden {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    display: inline;
+    position: absolute;
+    pointer-events: none;
+}
+
+@mixin shown {
+    opacity: 1;
+    width: auto;
+    height: auto;
+    display: block;
+    position: static;
+    pointer-events: auto;
+}
+
+// Text buttons are clickablle text that turns red on hover
+button.sheet-text-btn {
+    background-color: transparent;
+    color: black;
+    border: none;
+    background-image: none;
+    text-shadow: none;
+    box-shadow: none;
+    padding: 0px;
+    margin: 0px;
+    font-weight: bold;
+
+    &:hover {
+        color: red;
+    }
+
+    &::before {
+        content: "" !important;
+    }
+}
+
+// Character sheet styling
+.sheet-character {
+    display: flex;
+    
+    .sheet-column-1 {
+        width: 100px;
+
+        .sheet-attrs {
+        
+            .sheet-attr-container {
+                height: 100px;
+                border: 1px solid #666;
+                border-radius: 5px;
+                margin: 5px 5px 20px;
+                position: relative;
+                text-align: center; 
+
+                .sheet-attr {
+                    font-size: 3em;
+                    margin-top: 5px;
+                }
+
+                .sheet-attr-base {
+                    width: 45%;
+                    height: 25%;
+                    border: 1px solid #666;
+                    border-radius: 50%;
+                    z-index: 2;
+                    position: absolute;
+                    bottom: -15%;
+                    left: 26%;
+                    background-color: white;
+        
+                    .sheet-base-input {
+                        @include hidden;
+                    }
+        
+                    .sheet-base-display {
+                        font-size: 20px;
+                    }
+        
+                    &:hover .sheet-base-input,
+                    .sheet-base-input:focus {
+                        @include shown;
+                        width: 140%;
+                    }
+        
+                    &:hover .sheet-base-display,
+                    .sheet-base-input:focus ~ .sheet-base-display {
+                        @include hidden;
+                    }
+                }
+            }
+        }
+    }
+
+    .sheet-column-2 {
+        width: 200px;
+        border: 1px solid #666;
+    }
+
+
+    .sheet-column-2 {
+        width: 300px;
+        border: 1px solid #666;
+    }
+}

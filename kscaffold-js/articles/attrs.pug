@@ -1,0 +1,36 @@
+// Sheet section for attributes
+
+mixin attr-block(name)
+  .attr-container
+    div
+      +roller({
+        name,
+        class: "text-btn",
+        'aria-level':4,
+        'data-i18n': name,
+        role:'heading', 
+        trigger:{
+          listenerFunc:'initiateRoll'
+          }
+        })
+    .attr
+      +span({
+        name: `${name}_mod`, 
+        title:`@{${name}_mod}`,
+        value: 0,
+        trigger: {calculation: "doTheThing"}
+      }) 
+    .attr-base 
+      +number({
+        name, 
+        class: "base-input",
+        value: 10,
+        trigger: {affects: [`${name}_mod`]}
+      })
+      .base-display
+        +span({name})
+
+.attrs
+  for attr in constants.attributes
+    +attr-block(attr)
+  

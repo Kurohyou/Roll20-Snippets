@@ -1,0 +1,15 @@
+{
+  "name": "engines",
+  "type": "module",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "./build",
+    "clean": "rm -rf sheet/*"
+  },
+  "dependencies": {
+    "lodash": "^4.17.21",
+    "pug": "^3.0.2"
+  }
+}
