@@ -13,7 +13,7 @@ To use the scaffold, simply download the scaffold folder from the template v2 di
 include scaffold/_kpug.pug
 #main.my-main-div
   section.some-section
-+kscript.
++kscript
   const calcAttribute = function({attributes}){
     //Calculate an attribute
   };
