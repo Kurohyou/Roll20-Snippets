@@ -2,7 +2,10 @@
 section#equipment.equipment.paper-background
   .wealth
     each name in coins
-      +input-label(name,{name,type:'number',class:'underlined'})
+      +input-label({
+        label:name,
+        inputObj:{name,type:'number',class:'underlined'}
+      })
     .other-treasures.headed-textarea
       +h5({'data-i18n':'other treasures'})
       +adaptiveTextarea({name:'other treasures',class:'underlined'})

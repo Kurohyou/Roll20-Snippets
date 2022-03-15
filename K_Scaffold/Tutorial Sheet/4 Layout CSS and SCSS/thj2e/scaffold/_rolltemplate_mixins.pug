@@ -1,12 +1,13 @@
 //-Roll Template Mixins to be included in Sheet files
--
-  varObjects.docs.rolltemplate = {
-    
-  };
 mixin rolltemplate(name)
   rolltemplate(class=`sheet-rolltemplate-${name}`)
+    block
+//- End Mixin
+mixin templateWrapper(name)
+  +rolltemplate(name)
     div(class=`template ${name} system-{{system}}`)
       block
+//- End Mixin
 mixin multiPartTemplate(name)
   rolltemplate(class=`sheet-rolltemplate-${name}`)
     +templateHelperFunction({func:'rollBetween',values:'computed::finished 0 0',invert:true})
