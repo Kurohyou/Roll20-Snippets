@@ -1,6 +1,9 @@
 section#weapons.weapons.paper-background
   //- We'll put the character's generic attack modifier here. It will affect the attack stat of each weapon.
-  +input-label('attack modifier',{name:'attack modifier',type:'number',class:'underlined',trigger:{affects:['repeating_weapon_$X_attack']}})
+  +input-label({
+    label:'attack modifier',
+    inputObj:{name:'attack modifier',type:'number',class:'underlined',trigger:{affects:['repeating_weapon_$X_attack']}}
+  })
   //- The headers for our repeating section's columns
   .repeat-columns
     h4(data-i18n='weapons')

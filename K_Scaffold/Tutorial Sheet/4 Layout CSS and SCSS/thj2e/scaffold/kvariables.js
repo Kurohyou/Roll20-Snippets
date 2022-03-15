@@ -1,5 +1,3 @@
-/*jshint esversion: 11, laxcomma:true, eqeqeq:true*/
-/*jshint -W014,-W084,-W030,-W033*/
 /**
  * This stores the name of your sheet for use in the logging functions {@link log} and {@link debug}
  * * @var
@@ -33,3 +31,6 @@ docs.js['k.debugMode'] = {
 };
 let debugMode = false;
 kFuncs.debugMode = debugMode;
+
+const kscaffoldJSVersion = 0.20;
+const kscaffoldPUGVersion = 0.20;

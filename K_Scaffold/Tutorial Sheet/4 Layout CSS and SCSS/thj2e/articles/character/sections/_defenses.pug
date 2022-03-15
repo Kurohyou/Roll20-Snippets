@@ -14,6 +14,12 @@ section#defenses.defenses.paper-background
     +number({name:'endurance',id:'endurance',value:0})
     span.slash /
     +number({name:'endurance max',trigger:{affects:['defence'],triggeredFuncs:['calcHealth']}})
-  +roller-label({name:'saving throw',type:'number',class:'underlined'},{name:'saving throw',role:'heading','aria-level':4,'data-i18n':'saving throw',trigger:{listenerFunc:'initiateRoll'}})
+  +roller-label({
+    inputObj:{name:'saving throw',type:'number',class:'underlined'},
+    buttonObj:{name:'saving throw',role:'heading','aria-level':4,'data-i18n':'saving throw',trigger:{listenerFunc:'initiateRoll'}}
+  })
   //- We're removing the attack modifier summary here because we'll incorporate it directly into the weapons section.
-  +input-label('myth points',{name:'myth points',type:'number',class:'underlined'})
+  +input-label({
+    label:'myth points',
+    inputObj:{name:'myth points',type:'number',class:'underlined'}
+  })
