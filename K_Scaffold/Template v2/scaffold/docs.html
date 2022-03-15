@@ -9,16 +9,18 @@
   
   kFuncs.cascades = cascades;
   
+  const actionAttributes = [];
+  
+  kFuncs.actionAttributes = actionAttributes;
+  
   const repeatingSectionDetails = [];
   
   kFuncs.repeatingSectionDetails = repeatingSectionDetails;
   
-  const docs = {"js":{},"pug":{"input":{"type":"mixin","description":"A generic mixin to create an input. The mixin will replace spaces in the attribute name with underscores and will add a title property if one isn't supplied that will inform the user what the attribute call for the attribute is.","arguments":[{"type":"object","name":"obj","description":"An object containing all of the properties to apply to the element. Must have the properties; `name` and `type`. Can have any property that is valid for an input element. May also have a [trigger](#trigger) proeprty"},{"type":"string","name":"obj.name"}],"example":[["+input({name:'my attribute',type:'text',class:'some-class',trigger:{affects:['other_attribute']}})'","<input name=\"attr_my_attribute\" type=\"text\" class=\"some-class\">'"]]},"text":{"type":"mixin","description":"Alias for [input](#input) that makes a text input.","example":[["+text({name:'my text',class:'some-class',trigger:{affects:['other_attribute']}})","<input type=\"text\" name=\"attr_my_text\" class=\"some-class\">"]]},"checkbox":{"type":"mixin","description":"Alias for [input](#input) that makes a checkbox input.","example":[["+checkbox({name:'my checkbox',class:'some-class',trigger:{affects:['other_attribute']}})","<input type=\"checkbox\" name=\"attr_my_checkbox\" class=\"some-class\">"]]},"radio":{"type":"mixin","description":"Alias for [input](#input) that makes a radio input.","example":[["+radio({name:'my radio',class:'some-class',trigger:{affects:['other_attribute']}})","<input type=\"radio\" name=\"attr_my_radio\" class=\"some-class\">"]]},"number":{"type":"mixin","description":"Alias for [input](#input) that makes a number input.","example":[["+number({name:'my number',class:'some-class',trigger:{affects:['other_attribute']}})","<input type=\"number\" name=\"attr_my_number\" class=\"some-class\">"]]},"range":{"type":"mixin","description":"Alias for [input](#input) that makes a range input.","example":[["+range({name:'my range',class:'some-class',trigger:{affects:['other_attribute']}})","<input type=\"range\" name=\"attr_my_range\" class=\"some-class\">"]]},"hidden":{"type":"mixin","description":"Alias for [input](#input) that makes a hidden input.","example":[["+hidden({name:'my hidden',class:'some-class',trigger:{affects:['other_attribute']}})","<input type=\"hidden\" name=\"attr_my_hidden\" class=\"some-class\">"]]},"textarea":{"type":"mixin","description":"Functions like [input](#input), but creates a textarea instead.","example":[["+textarea({name:'my hidden',class:'some-class',placeholder:'Placeholder text',trigger:{affects:['other_attribute']}})","<textarea type=\"hidden\" name=\"attr_my_hidden\" class=\"some-class\">Placeholder text</textarea>"]]},"option":{"type":"mixin","description":"Creates an option attribute. Also stores the trigger for the select that the option is part of. See [select](#select) for example uses."},"select":{"type":"mixin","description":"Functions like [input](#input), but creates a select instead.","example":[["+select({name:'my select',class:'some-class'})\n  +option({value:'option 1','data-i18n':'some-text',trigger:{affects:['some-attribute']}})\n  +option({value:'option 2','data-i18n':'other-text'})","<select name=\"attr_my_select\" class=\"some-class\">\n  <option value=\"option 1\" data-i18n=\"some-text\"></option>\n  <option value=\"option 2\" data-i18n=\"other-text\"></option>\n</select>"]]},"img":{"type":"mixin","description":"Functions like [input](#input), but creates a span instead. The name property is optional.","example":[["+span({name:'my span',class:'some-class'})","<span name=\"attr_my_span\" class=\"some-class\"></span>"]]},"datalist":{"type":"mixin","description":"Functions like [input](#input), but creates a datalist instead. Note that an ID should never be put inside a repeating section, although you can reference one from inside the repeating section.","example":[["+select({name:'my select',list:'my-data'})\n+datalist({id:'my-data'})\n  +option({value:'option 1','data-i18n':'some-text',trigger:{affects:['some-attribute']}})\n  +option({value:'option 2','data-i18n':'other-text'})","<select name=\"attr_my_select\" class=\"some-class\"></select><datalist id=\"my-data\">\n  <option value=\"option 1\" data-i18n=\"some-text\"></option>\n  <option value=\"option 2\" data-i18n=\"other-text\"></option>\n</datalist>"]]},"button":{"type":"mixin","description":"Creates a button element. Valid types are `roll` or `action`. If a type is not specified in the object argument, a roll button is created. If an action button is created, spaces in the name are replaced with dashes instead of underscores.","example":[["+button({name:'my button',value:'/r 3d10'})","<button type=\"roll\" name=\"roll_my_button\" value=\"/r 3d10\"></button>"],["+button({name:'my button',type:'action','data-i18n':'action button'})","<button type=\"action\" name=\"act_my-button\" data-i18n=\"action button\"></button>"]]},"action":{"type":"mixin","description":"Alias for [button](#button) that creates a button element with a type of `action`. Spaces in the name are replaced with dashes instead of underscores.","example":[["+action({name:'my button','data-i18n':'action button'})","<button type=\"action\" name=\"act_my-button\" data-i18n=\"action button\"></button>"]]},"navButton":{"type":"mixin","description":"Alias for [button](#button) that creates a combination roll button and action button element to get around the limitation that action buttons cannot be dragged to the macro quickbar. Requires sheetworker infrastructure to work, which should be triggered `on(sheet:opened)` and `on(\"change:character_name\")`.","example":[["+roller({name:'my roll'})","<button type=\"roll\" name=\"roll_my_roll\" value=\"@{my_roll_action}\"></button>\n<button type=\"action\" name=\"act_my-roll-action\" hidden></button>\n<input type=\"hidden\" name=\"attr_my_roll_action\" value=\"\">"]]},"customControlFieldset":{"type":"mixin","description":"Alias for [fieldset](#fieldset) that creates to custom action buttons to add/remove rows to the repeating section. Useful when you need to trigger a sheetworker when a row is added. This also prevents the occassional error of a new row disappearing immediately after the user has clicked the button to create one. Proper use of this will require css to hide the default buttons that fieldsets create automatically. Note that currently this assumes the existence of an addItem and editSection sheetworker function.","arguments":[{"name":"name","type":"string","description":"The name of the repeating section. Will be prefixed with `repeating_` and spaces will be replaced with dashes (`-`)."},{"name":"trigger","type":"object","description":"Trigger that defines how to handle the removal of a row from the fieldset. `Optional`"},{"name":"addClass","type":"string","description":"Any additional classes that should be used for the repeating section. Note that these are not added to the fieldset itself as adding additional classes to the fieldset itself interferes with calling action buttons from chat, but are added to a span that precedes the fieldset. This allows styling of the repcontainer via a css declaration like `.bonus-class + fieldset + .repcontainer`."}],"example":[["+customControlFieldset({name:'equipment'})\n  +text({name:'name',class:'underlined'})","<button type=\"action\" name=\"add-equipment\" class=\"repcontrol-button repcontrol-button--add\"></button>\n<button type=\"action\" name=\"edit-equipment\" class=\"repcontrol-button repcontrol-button--edit\"></button>\n<fieldset class=\"repeating_equipment\">\n  <input type=\"text\" name=\"attr_name\" title=\"@{repeating_equipment_$x_name}\">\n</fieldset>"]]},"fieldset":{"type":"mixin","description":"A mixin that creates a fieldset for the creation of a repeating section. The mixin prefixes the name with `repeating_` and replaces problem characters (e.g. spaces are replaced with dashes). Additionally, the auto-generated title properties from the K-scaffold's mixins will include the proper repeating section information.","arguments":[{"name":"name","type":"string","description":"The name of the repeating section. Will be prefixed with `repeating_` and spaces will be replaced with dashes (`-`)."},{"name":"trigger","type":"object","description":"Trigger that defines how to handle the removal of a row from the fieldset. `Optional`"},{"name":"addClass","type":"string","description":"Any additional classes that should be used for the repeating section. Note that these are not added to the fieldset itself as adding additional classes to the fieldset itself interferes with calling action buttons from chat, but are added to a span that precedes the fieldset. This allows styling of the repcontainer via a css declaration like `.bonus-class + fieldset + .repcontainer`."}],"example":[["+fieldset({name:'equipment'})\n  +text({name:'name',class:'underlined'})","<fieldset class=\"repeating_equipment\"></fieldset><div class=\"repcontainer\" data-groupname=\"repeating_equipment\">\n  <input type=\"text\" name=\"attr_name\" title=\"@{repeating_equipment_$x_name}\">\n</div>"],["+fieldset({name:'equipment',trigger:{listenerFunc:'handleDeletedRow'},addClass:'class-1 class-2'})\n  +text({name:'name',class:'underlined'})","<span hidden class=\"class-1 class-2\"></span>\n<fieldset class=\"repeating_equipment\"></fieldset><div class=\"repcontainer\" data-groupname=\"repeating_equipment\">\n  <input type=\"text\" name=\"attr_name\" title=\"@{repeating_equipment_$x_name}\">\n</div>"]]},"pseudo-button":{"type":"mixin","description":"A mixin for creating pseudo buttons of paired checkboxes/radios and spans such as those that had to be used to create [tabbed sheets](https://wiki.roll20.net/CSS_Wizardry#Show.2FHide_Areas) before action buttons were introduced.","arguments":[{"name":"label","type":"string","description":"The `data-i18n` translation key to use for the displayed text."},{"name":"inputObj","type":"object","description":"An object describing the input to be paired with the span. This is the same object that you would pass to [input](#input)."}],"example":[["+pseudo-button('page 1',{name:'page',type:'radio',value:1,trigger:{triggeredFuncs:['changePage']}})","<input type=\"hidden\" name=\"attr_page\" title=\"@{page} value=\"1\">\n<label class=\"pseudo-button\"><span data-i8n=\"page 1\" class=\"pseudo-button__span\"></span>\n  <input type=\"radio\" name=\"attr_page\" value=\"1\"></label>"]]},"button-label":{"type":"mixin","description":"A mixin to create a combined button and input that are within the same container. Similar to [input-label](#input-label), but does not use a label.","arguments":[{"name":"inputObj","type":"object","description":"An object describing the input to be paired with the button. This is the same object that you would pass to [input](#input)."},{"name":"buttonObj","type":"object","description":"An object describing the button to be paired with the input. This is the same object that you would pass to [button](#button)."},{"name":"divObj","type":"object","description":"An object describing the container div. Similar to the first two objects, but will most likely only have a `class` property if it is passed at all."}],"example":[["+button-label({name:'strength',type:'number',class:'underlined',value:10,trigger:{affects:['athletics']}},{name:'strength_roll',type:'roll',value:'/r 1d20+@{strength}'},{class:'strength'})","<div class=\"input-label input-label--button strength\">\n  <button name=\"roll_strength_roll\" type=\"roll\" value=\"/r 1d20+@strength\">\n  <input name=\"attr_strength\" type=\"number\" value=\"10\">\n</div"]]},"roller-label":{"type":"mixin","description":"Similar to the construction created by [button-label](#button-label), except that it creates a [roller](#roller) construction instead of just a straight button.","arguments":[{"name":"inputObj","type":"object","description":"An object describing the input to be paired with the button. This is the same object that you would pass to [input](#input)."},{"name":"buttonObj","type":"object","description":"An object describing the button to be paired with the input. This is the same object that you would pass to [roller](#roller)."},{"name":"divObj","type":"object","description":"An object describing the container div. Similar to the first two objects, but will most likely only have a `class` property if it is passed at all."}]},"action-label":{"type":"mixin","description":"Similar to the construction created by [button-label](#button-label), except that it specifcally creates an [action button](https://wiki.roll20.net/Button#Action_Button) as per [action](#action).","arguments":[{"name":"inputObj","type":"object","description":"An object describing the input to be paired with the button. This is the same object that you would pass to [input](#input)."},{"name":"buttonObj","type":"object","description":"An object describing the button to be paired with the input. This is the same object that you would pass to [action](#action)."},{"name":"divObj","type":"object","description":"An object describing the container div. Similar to the first two objects, but will most likely only have a `class` property if it is passed at all."}]},"select-label":{"type":"mixin","description":"Similar to the construction created by [input-label](#input-label), except that the input is replaced with a select.","arguments":[{"name":"label","type":"string","description":"The `data-i18n` translation key to add to the span in the label."},{"name":"inputObj","type":"object","description":"An object describing the select to be paired with the button. This is the same object that you would pass to [select](#select)."},{"name":"divObj","type":"object","description":"An object describing the container label. Similar to the inputObj, but will most likely only have a `class` property if it is passed at all."},{"name":"spanObj","type":"object","description":"An object describing the span to be paired with the input. This is the same object that you would pass to [span](#span)."},{"name":"block","type":"block","description":"The mixin uses the pug block as the content of the select."}],"example":[["+select-label('Whisper to GM',{name:'whisper'},{class:'div-class'},{class:'span-class'})\n  +option({value:'','data-i18n':'never'})\n  +option({value:'/w gm ','data-i18n':'always'})","<label class=\"input-label div-class\"><span data-i18n=\"Whisper to GM\" class=\"input-label__text span-class\"></span>\n  <select name=\"attr_whisper\" class=\"input-label__input\">\n    <option value=\"\" data-i18n=\"never\"></option>\n    <option value=\"/w gm \" data-i18n=\"always\"></option>\n  </select>\n</label>"]]},"input-label":{"type":"mixin","description":"Creates a construction that nests the input and span in a label so that they are connected. This is beneficial for screen readers as well as making it easier to interact with the input via mouse by clicking on the text associated with it.","arguments":[{"name":"label","type":"string","description":"The `data-i18n` translation key to add to the span in the label."},{"name":"inputObj","type":"object","description":"An object describing the input to be paired with the button. This is the same object that you would pass to [input](#input)."},{"name":"divObj","type":"object","description":"An object describing the container label. Similar to the inputObj, but will most likely only have a `class` property if it is passed at all."},{"name":"spanObj","type":"object","description":"An object describing the span to be paired with the input. This is the same object that you would pass to [span](#span)."},{"name":"block","type":"block","description":"The mixin uses the pug block as the content of the select."}],"example":[["+input-label('strength',{name:'strength',type:'number'},{class:'div-class'},{class:'span-class'})","<label class=\"input-label div-class\"><span data-i18n=\"Whisper to GM\" class=\"input-label__text span-class\"></span>\n  <input name=\"attr_strength\" type=\"number\" class=\"input-label__input\">\n</label>"]]},"headedTextarea":{"type":"mixin","description":"Creates a construction for pairing a header with a textarea. Currently is locked to creating an `h3`.  This mixin also accepts classes and IDs appended directly to it (see the second example)","arguments":[{"name":"textObj","type":"object","description":"The object describing the textarea as per [textarea](#textarea)"},{"name":"header","type":"string","description":"The `data-i18n` translation key to use for the header"}],"example":[["+headedTextarea({name:'character description','data-i18n-placeholder':'The description of your character'},'description')","<div class=\"headed-textarea\">\n  <h3 data-i18n=\"description\"></h3>\n  <textarea name=\"attr_character_description\" data-i18n-placeholder:\"The description of your character\"></textarea>\n</div>"],["+headedTextarea({name:'character description','data-i18n-placeholder':'The description of your character'},'description').character-description","<div class=\"headed-textarea character-description\">\n  <h3 data-i18n=\"description\"></h3>\n  <textarea name=\"attr_character_description\" data-i18n-placeholder:\"The description of your character\"></textarea>\n</div>"]]},"script":{"type":"mixin","description":"Creates a generic [Roll20 script block](https://wiki.roll20.net/Building_Character_Sheets#JavaScript_2) for use with the sheetworker system."},"kscript":{"type":"mixin","description":"Similar to [script](#script), but includes the K-scaffold's javascript function library."},"adaptiveTextarea":{"type":"mixin","description":"Creates an html construction for creating a [content-scaled](https://wiki.roll20.net/CSS_Wizardry#Content-scaled_Inputs) textarea.","arguments":[{"name":"textObj","type":"object","description":"The object describing the textarea as per the [textarea](#textarea) mixin. You can apply classes and IDs to the container div by appending them to the mixin call (see the second example)."}],"example":[["+adaptiveTextarea({name:'character description'})","<div class=\"adaptive adaptive--text\"><span name:\"attr_character_description\" class=\"adaptive--text__span\"></span>\n  <textarea name=\"attr_character_description\" class=\"adaptive--text__textarea\"></textarea>\n</div>"],["+adaptiveTextarea({name:'character description'}).custom-class","<div class=\"adaptive adaptive--text custom-class\"><span name:\"attr_character_description\" class=\"adaptive--text__span\"></span>\n  <textarea name=\"attr_character_description\" class=\"adaptive--text__textarea\"></textarea>\n</div>"]]},"compendiumAttributes":{"type":"mixin","description":"Creates a set of compendium drop target attributes. Defaults to creating target attributes for the `Name` and `data` compendium attributes.","arguments":[{"name":"prefix","type":"string","description":"A prefix to attach to the default attribute names."},{"name":"lookupAttributes","type":"array","description":"An array of the lookup attributes to create targets for. The target attributes are named based on the compendium attribute they are for. lookupAttributes defaults to `[\"Name\",\"data\"]`."},{"name":"triggerAccept","type":"string","description":"The compendium attribute that should trigger the sheetworkers to handle the compendium drop."},{"name":"trigger","type":"object","description":"The trigger object. Defaults to `{listenerFunc:\"handleCompendiumDrop\"}`"}],"example":[["+compendiumAttributes({})","<input name=\"attr_drop_name\" accept=\"Name\" value=\"\" type=\"hidden\" title=\"@{drop_name}\"/>\n<input name=\"attr_drop_data\" accept=\"data\" value=\"\" type=\"hidden\" title=\"@{drop_data}\"/>"],["+compendiumAttributes({prefix:'prefix'})","<input name=\"attr_prefix_drop_name\" accept=\"Name\" value=\"\" type=\"hidden\" title=\"@{prefix_drop_name}\"/>\n<input name=\"attr_prefix_drop_data\" accept=\"data\" value=\"\" type=\"hidden\" title=\"@{prefix_drop_data}\"/>"],["+compendiumAttributes({lookupAttributes:['Name','data','Category'],prefix:'prefix})","<input name=\"attr_prefix_drop_name\" accept=\"Name\" value=\"\" type=\"hidden\" title=\"@{prefix_drop_name}\"/>\n<input name=\"attr_prefix_drop_data\" accept=\"data\" value=\"\" type=\"hidden\" title=\"@{prefix_drop_data}\"/>\n<input name=\"attr_prefix_drop_category\" accept=\"Category\" value=\"\" type=\"hidden\" title=\"@{prefix_drop_category}\"/>"]]},"attrTitle":{"type":"function","description":"Converts an attribute name into an attribute call for that attribute. Converts `_max` attribute names to the proper attribute call syntax for `_max` attributes (see second example). If called from inside the block of a [fieldset](#fieldset) mixin, will also add the appropriate information for calling a repeating attribute.","arguments":[{"name":"attrName","type":"string","description":"The attribute name to create an attribute call for."}],"example":[["- attrTitle('strength') => \"@{strength}\""],["- attrTitle('hp_max') => \"@{hp|max}\""],["+fieldset({name:'equipment'})\n  - attrTitle('weight') => \"@{repeating_equipment_$X_weight}\""]],"retValue":{"type":"string"}},"buttonTitle":{"type":"function","description":"Converts an ability name into an ability call for that attribute. If called from inside the block of a [fieldset](#fieldset) mixin, will also add the appropriate information for calling a repeating attribute.","arguments":[{"name":"abilityName","type":"string","description":"The ability name to create an attribute call for."}],"example":[["- buttonTitle('strength') => \"%{strength}\""],["+fieldset({name:'equipment'})\n  - buttonTitle('use') => \"%{repeating_equipment_$X_use}\""]],"retValue":{"type":"string"}},"replaceSpaces":{"type":"function","description":"Replaces spaces in a string with underscores (`_`).","arguments":[{"name":"string","type":"string","description":"The string to work on"}],"example":[["- replaceSpaces('attribute name') => \"attribute_name\""]],"retValue":{"type":"string"}},"replaceProblems":{"type":"function","description":"Escapes problem characters in a string for use as a regex.","arguments":[{"name":"string","type":"string","description":"The string to work on"}],"example":[["- replaceProblems(\"Here's a problem => [\") => \"Here's a problem => [\""]],"retValue":{"type":"string"}}},"rolltemplate":{}};
+  const docs = {"js":{},"pug":{"trigger":{"type":"argument","description":"Many of the K-scaffold's mixins utilize the scaffold's trigger system. Triggers can be passed in any mixin that creates an attribute backed element, which is any element that you would give the `name` property to. The trigger is passed as a property of the object that defines the attribute backed element. See the [input mixin](#input) below for a simple example.\nTriggers are how the K-scaffold connects the attributes created in the html of the sheet with the javscript listeners to trigger sheetworker code. When accessed from a sheetworker, a trigger has all of the below properties. When passing a trigger into a mixin, it should only have any or all of the first four properties; `affects`,`initialFunc`, `calculation`, `triggeredFuncs`, and `listenerFunc`. Note that except for `listenerFunc`, the function that is called is passed arguments using the [destructuring assignment pattern](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment). This means that the functions referenced in ,`initialFunc`, `calculation`, and `triggeredFuncs` must be passed in an object associated with a key named as indicated in the arguments below.","arguments":[{"type":"Array","name":"affects","description":"An array of attribute names that this attribute might affect. As an example, the `strength` attribute in a 5e based sheet would have `strength_mod` in its affects array."},{"type":"string","name":"initialFunc","description":"The name of a function that has been registered with the K-scaffold using [k.registerFuncs](https://github.com/Kurohyou/Roll20-Snippets/blob/main/K_Scaffold/readme_docs/k_scaffold_js_documentation.md#registerFuncs). This function will only be called if the change to the attribute is directly caused by the user as opposed to being changed by the sheetworkers.\nThe K-scaffold sends this function the following arguments:\n- `trigger`: The trigger object for the attribute that is being changed\n- `attributes`: the attributes object containing the entire state of the sheet.\n- `sections`: An object containing the row IDs of all the repeating sections, indexed by section name (e.g. repeating_equipment)."},{"type":"string","name":"calculation","description":"The name of a function that has been registered with the K-scaffold using [k.registerFuncs](https://github.com/Kurohyou/Roll20-Snippets/blob/main/K_Scaffold/readme_docs/k_scaffold_js_documentation.md#registerFuncs). This function must return the calculated value of the attribute it is for, and is only called if the attribute is not changed directly by the user. Ideally, this function should be written as a pure function, reacting only to the arguments it is passed, and returning a value without modifying any of the arguments it is passed.\nThe K-scaffold sends this function the following arguments:\n- `trigger`: The trigger object for the attribute that is being changed\n- `attributes`: the attributes object containing the entire state of the sheet.\n- `sections`: An object containing the row IDs of all the repeating sections, indexed by section name (e.g. repeating_equipment)."},{"type":"Array","name":"triggeredFuncs","description":"An array of function names that have been registered with the K-scaffold using [k.registerFuncs](https://github.com/Kurohyou/Roll20-Snippets/blob/main/K_Scaffold/readme_docs/k_scaffold_js_documentation.md#registerFuncs). These functions are called any time an attribute is changed, regardless of the source of the change, do not return any values, and will likely modify the arguments that are passed to them. These functions are used for doing complex logic to determine what should be done in response to a change.\nThe K-scaffold sends these functions the following arguments:\n- `trigger`: The trigger object for the attribute that is being changed\n- `attributes`: the attributes object containing the entire state of the sheet.\n- `sections`: An object containing the row IDs of all the repeating sections, indexed by section name (e.g. repeating_equipment), and in the order that they appear on the sheet."},{"type":"string","name":"listenerFunc","description":"The name of a function that has been registered with the K-scaffold using [k.registerFuncs](https://github.com/Kurohyou/Roll20-Snippets/blob/main/K_Scaffold/readme_docs/k_scaffold_js_documentation.md#registerFuncs). This function will be called directly from the event listener for this attribute instead of the default [accessSheet](https://github.com/Kurohyou/Roll20-Snippets/blob/main/K_Scaffold/readme_docs/k_scaffold_js_documentation.md#accesssheet) listener function. If a `listenerFunc` is specified, the automated handling of the rest of the previous trigger properties will be disabled. You can still use these properties, but will need to code that handling yourself.\nThe K-scaffold sends this function the following argument:\n- `event`: The event information object that is passed to the callback in the [sheet worker event listener](https://wiki.roll20.net/Sheet_Worker_Scripts#Event_listener). This is **NOT** passed using the object destructuring pattern, unlike the previous three function types."},{"type":"string","name":"name","description":"The name of the attribute. When accessed from inside the default function cascade of the K-scaffold, or the callback of [getAllAttrs](https://github.com/Kurohyou/Roll20-Snippets/blob/main/K_Scaffold/readme_docs/k_scaffold_js_documentation.md#getAllAttrs), repeating attributes will include their specific row id for that instance of the attribute."},{"type":"string","name":"type","description":"What type of attribute is this. This is determined by the type of element that first created the trigger. Can be `text`,`number`,`checkbox`,`select`,or `radio`, but will usually be `text` or `number` based on the type of default value that is assigned to the attribute."},{"type":"string|number","name":"defaultValue","description":"What the default value of the attribute is. The k-scaffold uses this to return the default value in the event the value of the attribute becomes corrupted. For checkboxes and radios, this is determined based on the check state of the element. For selects, this is determined by which option has the `selected` property."}]},"input":{"type":"mixin","description":"A generic mixin to create an input. The mixin will replace spaces in the attribute name with underscores and will add a title property if one isn't supplied that will inform the user what the attribute call for the attribute is.","arguments":[{"type":"object","name":"obj","description":"An object containing all of the properties to apply to the element. Must have the properties; `name` and `type`. Can have any property that is valid for an input element. May also have a [trigger](#trigger) property"},{"type":"string","name":"obj.name"}],"example":[["+input({name:'my attribute',type:'text',class:'some-class',trigger:{affects:['other_attribute']}})'","<input name=\"attr_my_attribute\" type=\"text\" class=\"some-class\">'"]]},"text":{"type":"mixin","description":"Alias for [input](#input) that makes a text input.","example":[["+text({name:'my text',class:'some-class',trigger:{affects:['other_attribute']}})","<input type=\"text\" name=\"attr_my_text\" class=\"some-class\">"]]},"checkbox":{"type":"mixin","description":"Alias for [input](#input) that makes a checkbox input.","example":[["+checkbox({name:'my checkbox',class:'some-class',trigger:{affects:['other_attribute']}})","<input type=\"checkbox\" name=\"attr_my_checkbox\" class=\"some-class\">"]]},"collapse":{"type":"mixin","description":"Alias for [checkbox](#checkbox) that creates a checkbox for use in collapsing/expanding a section. Sets the checkbox to unchecked with a checked value of `1` and a class of `collapse`. Additional classes/ids can be applied by applying them inline to the mixin call.","arguments":[{"type":"string","name":"name","description":"The name to assign to the collapse button. Defaults to `collapse`"}]},"radio":{"type":"mixin","description":"Alias for [input](#input) that makes a radio input.","example":[["+radio({name:'my radio',class:'some-class',trigger:{affects:['other_attribute']}})","<input type=\"radio\" name=\"attr_my_radio\" class=\"some-class\">"]]},"number":{"type":"mixin","description":"Alias for [input](#input) that makes a number input.","example":[["+number({name:'my number',class:'some-class',trigger:{affects:['other_attribute']}})","<input type=\"number\" name=\"attr_my_number\" class=\"some-class\">"]]},"range":{"type":"mixin","description":"Alias for [input](#input) that makes a range input.","example":[["+range({name:'my range',class:'some-class',trigger:{affects:['other_attribute']}})","<input type=\"range\" name=\"attr_my_range\" class=\"some-class\">"]]},"hidden":{"type":"mixin","description":"Alias for [input](#input) that makes a hidden input.","example":[["+hidden({name:'my hidden',class:'some-class',trigger:{affects:['other_attribute']}})","<input type=\"hidden\" name=\"attr_my_hidden\" class=\"some-class\">"]]},"fillLeft":{"type":"mixin","description":"A mixin that creates a construction that can be used to recreate sheet mechanics that fill to the left. Will apply BEM style classes in addition to the classes specified. BEM classes that can be applied are\n  - `fill-left`: The class for the fill-left container.\n  - `fill-left__radio`: The class applied to all the radio buttons in the container\n  - `fill-left__radio--clearer`: The class applied to the clear value radio button","arguments":[{"type":"object","name":"radioObj","description":"The object containing the details of the radio input to create. Similar to the [radio mixin](#radio), but the value property passed is used as the default checked value."},{"type":"object","name":"divObj","description":"Optional object containing any details of the div to be applied such as class, id, or other properties. Class and ID can also be supplied by attaching them to the mixin invocation just like with a regular div."},{"type":"array","name":"valueArray","description":"Array containing the values to be used for the fill to left construction. These should be in the order that they should be displayed left to right."},{"name":"noClear","type":"boolean","description":"Optional argument that tells the mixin whether or not to apply the `fill-left__radio--clearer` class to the first radio button value. If falsy (or not passed), the class is applied. If truthy, the class is not applied."}],"example":[["+fillLeft({radioObj:{name:'track',class:'some-class',value:\"0\"},valueArray:[0,1,2]})","<div class=\"fill-left\">\n  <input type=\"radio\" name=\"attr_track\" class=\"some-class fill-left__radio fill-left__radio--clearer\" value=\"0\" checked>\n  <input type=\"radio\" name=\"attr_track\" class=\"some-class fill-left__radio\" value=\"1\">\n  <input type=\"radio\" name=\"attr_track\" class=\"some-class fill-left__radio\" value=\"2\">\n</div>"],["+fillLeft({radioObj:{name:'track',class:'some-class',value:\"0\"},valueArray:[0,1,2],noClear:true})","<div class=\"fill-left\">\n  <input type=\"radio\" name=\"attr_track\" class=\"some-class fill-left__radio\" value=\"0\" checked>\n  <input type=\"radio\" name=\"attr_track\" class=\"some-class fill-left__radio\" value=\"1\">\n  <input type=\"radio\" name=\"attr_track\" class=\"some-class fill-left__radio\" value=\"2\">\n</div>"],["+fillLeft({radioObj:{name:'track',class:'some-class',value:\"0\"},valueArray:[0,1,2],divObj:{'aria-label':'Accessible tracker'}}).custom-tracker-class","<div class=\"fill-left custom-tracker-class\" aria-label:\"Accessible tracker\">\n  <input type=\"radio\" name=\"attr_track\" class=\"some-class fill-left__radio fill-left__radio--clearer\" value=\"0\" checked>\n  <input type=\"radio\" name=\"attr_track\" class=\"some-class fill-left__radio\" value=\"1\">\n  <input type=\"radio\" name=\"attr_track\" class=\"some-class fill-left__radio\" value=\"2\">\n</div>"]]},"textarea":{"type":"mixin","description":"Functions like [input](#input), but creates a textarea instead.","example":[["+textarea({name:'my hidden',class:'some-class',placeholder:'Placeholder text',trigger:{affects:['other_attribute']}})","<textarea type=\"hidden\" name=\"attr_my_hidden\" class=\"some-class\">Placeholder text</textarea>"]]},"option":{"type":"mixin","description":"Creates an option attribute. Also stores the trigger for the select that the option is part of. See [select](#select) for example uses."},"select":{"type":"mixin","description":"Functions like [input](#input), but creates a select instead.","example":[["+select({name:'my select',class:'some-class'})\n  +option({value:'option 1','data-i18n':'some-text',trigger:{affects:['some-attribute']}})\n  +option({value:'option 2','data-i18n':'other-text'})","<select name=\"attr_my_select\" class=\"some-class\">\n  <option value=\"option 1\" data-i18n=\"some-text\"></option>\n  <option value=\"option 2\" data-i18n=\"other-text\"></option>\n</select>"]]},"img":{"type":"mixin","description":"Functions like [input](#input), but creates a span instead. The name property is optional.","example":[["+span({name:'my span',class:'some-class'})","<span name=\"attr_my_span\" class=\"some-class\"></span>"]]},"datalist":{"type":"mixin","description":"Functions like [input](#input), but creates a datalist instead. Note that an ID should never be put inside a repeating section, although you can reference one from inside the repeating section.","example":[["+select({name:'my select',list:'my-data'})\n+datalist({id:'my-data'})\n  +option({value:'option 1','data-i18n':'some-text',trigger:{affects:['some-attribute']}})\n  +option({value:'option 2','data-i18n':'other-text'})","<select name=\"attr_my_select\" class=\"some-class\"></select><datalist id=\"my-data\">\n  <option value=\"option 1\" data-i18n=\"some-text\"></option>\n  <option value=\"option 2\" data-i18n=\"other-text\"></option>\n</datalist>"]]},"button":{"type":"mixin","description":"Creates a button element. Valid types are `roll` or `action`. If a type is not specified in the object argument, a roll button is created. If an action button is created, spaces in the name are replaced with dashes instead of underscores.","example":[["+button({name:'my button',value:'/r 3d10'})","<button type=\"roll\" name=\"roll_my_button\" value=\"/r 3d10\"></button>"],["+button({name:'my button',type:'action','data-i18n':'action button'})","<button type=\"action\" name=\"act_my-button\" data-i18n=\"action button\"></button>"]]},"action":{"type":"mixin","description":"Alias for [button](#button) that creates a button element with a type of `action`. Spaces in the name are replaced with dashes instead of underscores.","example":[["+action({name:'my button','data-i18n':'action button'})","<button type=\"action\" name=\"act_my-button\" data-i18n=\"action button\"></button>"]]},"navButton":{"type":"mixin","description":"Alias for [button](#button) that creates a combination roll button and action button element to get around the limitation that action buttons cannot be dragged to the macro quickbar. Requires sheetworker infrastructure to work, which should be triggered `on(sheet:opened)` and `on(\"change:character_name\")`.","example":[["+roller({name:'my roll'})","<button type=\"roll\" name=\"roll_my_roll\" value=\"@{my_roll_action}\"></button>\n<button type=\"action\" name=\"act_my-roll-action\" hidden></button>\n<input type=\"hidden\" name=\"attr_my_roll_action\" value=\"\">"]]},"customControlFieldset":{"type":"mixin","description":"Alias for [fieldset](#fieldset) that creates to custom action buttons to add/remove rows to the repeating section. Useful when you need to trigger a sheetworker when a row is added. This also prevents the occassional error of a new row disappearing immediately after the user has clicked the button to create one. Proper use of this will require css to hide the default buttons that fieldsets create automatically. Note that currently this assumes the existence of an addItem and editSection sheetworker function.","arguments":[{"name":"name","type":"string","description":"The name of the repeating section. Will be prefixed with `repeating_` and spaces will be replaced with dashes (`-`)."},{"name":"trigger","type":"object","description":"Trigger that defines how to handle the removal of a row from the fieldset. `Optional`"},{"name":"addClass","type":"string","description":"Any additional classes that should be used for the repeating section. Note that these are not added to the fieldset itself as adding additional classes to the fieldset itself interferes with calling action buttons from chat, but are added to a span that precedes the fieldset. This allows styling of the repcontainer via a css declaration like `.bonus-class + fieldset + .repcontainer`."}],"example":[["+customControlFieldset({name:'equipment'})\n  +text({name:'name',class:'underlined'})","<button type=\"action\" name=\"add-equipment\" class=\"repcontrol-button repcontrol-button--add\"></button>\n<button type=\"action\" name=\"edit-equipment\" class=\"repcontrol-button repcontrol-button--edit\"></button>\n<fieldset class=\"repeating_equipment\">\n  <input type=\"text\" name=\"attr_name\" title=\"@{repeating_equipment_$x_name}\">\n</fieldset>"]]},"fieldset":{"type":"mixin","description":"A mixin that creates a fieldset for the creation of a repeating section. The mixin prefixes the name with `repeating_` and replaces problem characters (e.g. spaces are replaced with dashes). Additionally, the auto-generated title properties from the K-scaffold's mixins will include the proper repeating section information.","arguments":[{"name":"name","type":"string","description":"The name of the repeating section. Will be prefixed with `repeating_` and spaces will be replaced with dashes (`-`)."},{"name":"trigger","type":"object","description":"Trigger that defines how to handle the removal of a row from the fieldset. `Optional`"},{"name":"addClass","type":"string","description":"Any additional classes that should be used for the repeating section. Note that these are not added to the fieldset itself as adding additional classes to the fieldset itself interferes with calling action buttons from chat, but are added to a span that precedes the fieldset. This allows styling of the repcontainer via a css declaration like `.bonus-class + fieldset + .repcontainer`."}],"example":[["+fieldset({name:'equipment'})\n  +text({name:'name',class:'underlined'})","<fieldset class=\"repeating_equipment\"></fieldset><div class=\"repcontainer\" data-groupname=\"repeating_equipment\">\n  <input type=\"text\" name=\"attr_name\" title=\"@{repeating_equipment_$x_name}\">\n</div>"],["+fieldset({name:'equipment',trigger:{listenerFunc:'handleDeletedRow'},addClass:'class-1 class-2'})\n  +text({name:'name',class:'underlined'})","<span hidden class=\"class-1 class-2\"></span>\n<fieldset class=\"repeating_equipment\"></fieldset><div class=\"repcontainer\" data-groupname=\"repeating_equipment\">\n  <input type=\"text\" name=\"attr_name\" title=\"@{repeating_equipment_$x_name}\">\n</div>"]]},"pseudo-button":{"type":"mixin","description":"A mixin for creating pseudo buttons of paired checkboxes/radios and spans such as those that had to be used to create [tabbed sheets](https://wiki.roll20.net/CSS_Wizardry#Show.2FHide_Areas) before action buttons were introduced.","arguments":[{"name":"label","type":"string","description":"The `data-i18n` translation key to use for the displayed text."},{"name":"inputObj","type":"object","description":"An object describing the input to be paired with the span. This is the same object that you would pass to [input](#input)."}],"example":[["+pseudo-button('page 1',{name:'page',type:'radio',value:1,trigger:{triggeredFuncs:['changePage']}})","<input type=\"hidden\" name=\"attr_page\" title=\"@{page} value=\"1\">\n<label class=\"pseudo-button\"><span data-i8n=\"page 1\" class=\"pseudo-button__span\"></span>\n  <input type=\"radio\" name=\"attr_page\" value=\"1\"></label>"]]},"button-label":{"type":"mixin","description":"A mixin to create a combined button and input that are within the same container. Similar to [input-label](#input-label), but does not use a label.","arguments":[{"name":"inputObj","type":"object","description":"An object describing the input to be paired with the button. This is the same object that you would pass to [input](#input)."},{"name":"buttonObj","type":"object","description":"An object describing the button to be paired with the input. This is the same object that you would pass to [button](#button)."},{"name":"divObj","type":"object","description":"An object describing the container div. Similar to the first two objects, but will most likely only have a `class` property if it is passed at all."}],"example":[["+button-label({inputObj:{name:'strength',type:'number',class:'underlined',value:10,trigger:{affects:['athletics']}},buttonObj:{name:'strength_roll',type:'roll',value:'/r 1d20+@{strength}'},divObj:{class:'strength'}})","<div class=\"input-label input-label--button strength\">\n  <button name=\"roll_strength_roll\" type=\"roll\" value=\"/r 1d20+@strength\">\n  <input name=\"attr_strength\" type=\"number\" value=\"10\">\n</div"]]},"roller-label":{"type":"mixin","description":"Similar to the construction created by [button-label](#button-label), except that it creates a [roller](#roller) construction instead of just a straight button.","arguments":[{"name":"inputObj","type":"object","description":"An object describing the input to be paired with the button. This is the same object that you would pass to [input](#input)."},{"name":"buttonObj","type":"object","description":"An object describing the button to be paired with the input. This is the same object that you would pass to [roller](#roller)."},{"name":"divObj","type":"object","description":"An object describing the container div. Similar to the first two objects, but will most likely only have a `class` property if it is passed at all."}]},"action-label":{"type":"mixin","description":"Similar to the construction created by [button-label](#button-label), except that it specifcally creates an [action button](https://wiki.roll20.net/Button#Action_Button) as per [action](#action).","arguments":[{"name":"inputObj","type":"object","description":"An object describing the input to be paired with the button. This is the same object that you would pass to [input](#input)."},{"name":"buttonObj","type":"object","description":"An object describing the button to be paired with the input. This is the same object that you would pass to [action](#action)."},{"name":"divObj","type":"object","description":"An object describing the container div. Similar to the first two objects, but will most likely only have a `class` property if it is passed at all."}]},"select-label":{"type":"mixin","description":"Similar to the construction created by [input-label](#input-label), except that the input is replaced with a select.","arguments":[{"name":"label","type":"string","description":"The `data-i18n` translation key to add to the span in the label."},{"name":"inputObj","type":"object","description":"An object describing the select to be paired with the button. This is the same object that you would pass to [select](#select)."},{"name":"divObj","type":"object","description":"An object describing the container label. Similar to the inputObj, but will most likely only have a `class` property if it is passed at all."},{"name":"spanObj","type":"object","description":"An object describing the span to be paired with the input. This is the same object that you would pass to [span](#span)."},{"name":"block","type":"block","description":"The mixin uses the pug block as the content of the select."}],"example":[["+select-label('Whisper to GM',{name:'whisper'},{class:'div-class'},{class:'span-class'})\n  +option({value:'','data-i18n':'never'})\n  +option({value:'/w gm ','data-i18n':'always'})","<label class=\"input-label div-class\"><span data-i18n=\"Whisper to GM\" class=\"input-label__text span-class\"></span>\n  <select name=\"attr_whisper\" class=\"input-label__input\">\n    <option value=\"\" data-i18n=\"never\"></option>\n    <option value=\"/w gm \" data-i18n=\"always\"></option>\n  </select>\n</label>"]]},"input-label":{"type":"mixin","description":"Creates a construction that nests the input and span in a label so that they are connected. This is beneficial for screen readers as well as making it easier to interact with the input via mouse by clicking on the text associated with it.","arguments":[{"name":"label","type":"string","description":"The `data-i18n` translation key to add to the span in the label."},{"name":"inputObj","type":"object","description":"An object describing the input to be paired with the button. This is the same object that you would pass to [input](#input)."},{"name":"divObj","type":"object","description":"An object describing the container label. Similar to the inputObj, but will most likely only have a `class` property if it is passed at all."},{"name":"spanObj","type":"object","description":"An object describing the span to be paired with the input. This is the same object that you would pass to [span](#span)."},{"name":"block","type":"block","description":"The mixin uses the pug block as the content of the select."}],"example":[["+input-label({label:'strength',inputObj:{name:'strength',type:'number'},divObj:{class:'div-class'},spanObj:{class:'span-class'}})","<label class=\"input-label div-class\"><span data-i18n=\"Whisper to GM\" class=\"input-label__text span-class\"></span>\n  <input name=\"attr_strength\" type=\"number\" class=\"input-label__input\">\n</label>"]]},"headedTextarea":{"type":"mixin","description":"Creates a construction for pairing a header with a textarea. Currently is locked to creating an `h3`.  This mixin also accepts classes and IDs appended directly to it (see the second example)","arguments":[{"name":"textObj","type":"object","description":"The object describing the textarea as per [textarea](#textarea)"},{"name":"header","type":"string","description":"The `data-i18n` translation key to use for the header"}],"example":[["+headedTextarea({textObj:{name:'character description','data-i18n-placeholder':'The description of your character'},header:'description'})","<div class=\"headed-textarea\">\n  <h3 data-i18n=\"description\"></h3>\n  <textarea name=\"attr_character_description\" data-i18n-placeholder:\"The description of your character\"></textarea>\n</div>"],["+headedTextarea({textObj:{name:'character description','data-i18n-placeholder':'The description of your character'},header:'description'}).character-description","<div class=\"headed-textarea character-description\">\n  <h3 data-i18n=\"description\"></h3>\n  <textarea name=\"attr_character_description\" data-i18n-placeholder:\"The description of your character\"></textarea>\n</div>"]]},"script":{"type":"mixin","description":"Creates a generic [Roll20 script block](https://wiki.roll20.net/Building_Character_Sheets#JavaScript_2) for use with the sheetworker system."},"adaptiveTextarea":{"type":"mixin","description":"Creates an html construction for creating a [content-scaled](https://wiki.roll20.net/CSS_Wizardry#Content-scaled_Inputs) textarea.","arguments":[{"name":"textObj","type":"object","description":"The object describing the textarea as per the [textarea](#textarea) mixin. You can apply classes and IDs to the container div by appending them to the mixin call (see the second example)."}],"example":[["+adaptiveTextarea({name:'character description'})","<div class=\"adaptive adaptive--text\"><span name:\"attr_character_description\" class=\"adaptive--text__span\"></span>\n  <textarea name=\"attr_character_description\" class=\"adaptive--text__textarea\"></textarea>\n</div>"],["+adaptiveTextarea({name:'character description'}).custom-class","<div class=\"adaptive adaptive--text custom-class\"><span name:\"attr_character_description\" class=\"adaptive--text__span\"></span>\n  <textarea name=\"attr_character_description\" class=\"adaptive--text__textarea\"></textarea>\n</div>"]]},"compendiumAttributes":{"type":"mixin","description":"Creates a set of compendium drop target attributes. Defaults to creating target attributes for the `Name` and `data` compendium attributes.","arguments":[{"name":"prefix","type":"string","description":"A prefix to attach to the default attribute names."},{"name":"lookupAttributes","type":"array","description":"An array of the lookup attributes to create targets for. The target attributes are named based on the compendium attribute they are for. lookupAttributes defaults to `[\"Name\",\"data\"]`."},{"name":"triggerAccept","type":"string","description":"The compendium attribute that should trigger the sheetworkers to handle the compendium drop."},{"name":"trigger","type":"object","description":"The trigger object. Defaults to `{listenerFunc:\"handleCompendiumDrop\"}`"}],"example":[["+compendiumAttributes({})","<input name=\"attr_drop_name\" accept=\"Name\" value=\"\" type=\"hidden\" title=\"@{drop_name}\"/>\n<input name=\"attr_drop_data\" accept=\"data\" value=\"\" type=\"hidden\" title=\"@{drop_data}\"/>"],["+compendiumAttributes({prefix:'prefix'})","<input name=\"attr_prefix_drop_name\" accept=\"Name\" value=\"\" type=\"hidden\" title=\"@{prefix_drop_name}\"/>\n<input name=\"attr_prefix_drop_data\" accept=\"data\" value=\"\" type=\"hidden\" title=\"@{prefix_drop_data}\"/>"],["+compendiumAttributes({lookupAttributes:['Name','data','Category'],prefix:'prefix})","<input name=\"attr_prefix_drop_name\" accept=\"Name\" value=\"\" type=\"hidden\" title=\"@{prefix_drop_name}\"/>\n<input name=\"attr_prefix_drop_data\" accept=\"data\" value=\"\" type=\"hidden\" title=\"@{prefix_drop_data}\"/>\n<input name=\"attr_prefix_drop_category\" accept=\"Category\" value=\"\" type=\"hidden\" title=\"@{prefix_drop_category}\"/>"]]},"attrTitle":{"type":"function","description":"Converts an attribute name into an attribute call for that attribute. Converts `_max` attribute names to the proper attribute call syntax for `_max` attributes (see second example). If called from inside the block of a [fieldset](#fieldset) mixin, will also add the appropriate information for calling a repeating attribute.","arguments":[{"name":"attrName","type":"string","description":"The attribute name to create an attribute call for."}],"example":[["- attrTitle('strength') => \"@{strength}\""],["- attrTitle('hp_max') => \"@{hp|max}\""],["+fieldset({name:'equipment'})\n  - attrTitle('weight') => \"@{repeating_equipment_$X_weight}\""]],"retValue":{"type":"string"}},"kscript":{"type":"mixin","description":"Similar to [script](#script), but includes the K-scaffold's javascript function library."},"buttonTitle":{"type":"function","description":"Converts an ability name into an ability call for that attribute. If called from inside the block of a [fieldset](#fieldset) mixin, will also add the appropriate information for calling a repeating attribute.","arguments":[{"name":"abilityName","type":"string","description":"The ability name to create an attribute call for."}],"example":[["- buttonTitle('strength') => \"%{strength}\""],["+fieldset({name:'equipment'})\n  - buttonTitle('use') => \"%{repeating_equipment_$X_use}\""]],"retValue":{"type":"string"}},"replaceSpaces":{"type":"function","description":"Replaces spaces in a string with underscores (`_`).","arguments":[{"name":"string","type":"string","description":"The string to work on"}],"example":[["- replaceSpaces('attribute name') => \"attribute_name\""]],"retValue":{"type":"string"}},"replaceProblems":{"type":"function","description":"Escapes problem characters in a string for use as a regex.","arguments":[{"name":"string","type":"string","description":"The string to work on"}],"example":[["- replaceProblems(\"Here's a problem => [\") => \"Here's a problem => [\""]],"retValue":{"type":"string"}},"capitalize":{"type":"function","description":"Capitalizes the first let of words in a string.","arguments":[{"name":"string","type":"string","description":"The string to apply capitalization to."}],"retValue":{"type":"string"}}}};
   
   kFuncs.docs = docs;
-  /*jshint esversion: 11, laxcomma:true, eqeqeq:true*/
-/*jshint -W014,-W084,-W030,-W033*/
-/**
+  /**
  * This stores the name of your sheet for use in the logging functions {@link log} and {@link debug}
  * * @var
  * @type {string}
@@ -50,7 +52,11 @@ docs.js['k.debugMode'] = {
 	description:'A boolean flag that tells the script whether to enable or disable [k.debug](#kdebug) calls. If the version of the sheet is `0`, or an attribute named `debug_mode` is found on opening this is set to true for all sheets you open from that point on. Otherwise, it remains false.'
 };
 let debugMode = false;
-kFuncs.debugMode = debugMode;/*jshint esversion: 11, laxcomma:true, eqeqeq:true*/
+kFuncs.debugMode = debugMode;
+
+const kscaffoldJSVersion = 0.20;
+const kscaffoldPUGVersion = 0.20;
+  /*jshint esversion: 11, laxcomma:true, eqeqeq:true*/
 /*jshint -W014,-W084,-W030,-W033*/
 docs.js['k.sanitizeForRegex'] = {
   type:'function',
@@ -301,47 +307,6 @@ const commaArray = function(string=''){
 kFuncs.commaArray = commaArray;/*jshint esversion: 11, laxcomma:true, eqeqeq:true*/
 /*jshint -W014,-W084,-W030,-W033*/
 //# Attribute Obj Proxy handler
-docs.js['K-Scaffold Attribute Object'] = {
-  type:'object',
-description:`The attributes object that is passed as the first agrument to the callbacks from [k.getAttrs()](#kgetattrs) and [k.getAllAttrs](#kgetallattrs). This is a proxy for the basic attributes object passed to the callback in the sheetworker [getAttrs()](https://wiki.roll20.net/Sheet_Worker_Scripts#getAttrs.28attributeNameArray.2C_callback.29) and has been upgraded with several new abilities.`,
-  arguments:[
-    {type:'string|number',name:'name of attribute',description:'The attribute value you are accessing. Accessing the attribute value will return the most recent value and the value will be converted into a number if it should be.'},
-
-    {type:'function',name:'set({vocal,callback,attributes,sections,casc})',description:'Applies any updates that are currently cached to the sheet. This function uses [the destructuring assignment pattern](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment).'},
-    {type:'boolean',name:'set.vocal',description:'Set will not be silent. Inverts the standard behavior of setAttrs options object.'},
-    {type:'function',name:'set.callback',description:'A callback to be invoked once the setAttrs is completed'},
-    {type:'object',name:'set.attributes',description:'The instance of the K-scaffold Attribute Object to use for further set operations'},
-    {type:'object',name:'set.sections',description:'An object containing the idArrays for each repeating section, indexed by full section name (e.g. `repeating_equipment`)'},
-    {type:'object',name:'set.casc',description:'As the casc property described below.'},
-
-    {type:'object',name:'attributes',description:'An object that contains the original attribute values as returned by [getAttrs()](https://wiki.roll20.net/Sheet_Worker_Scripts#getAttrs.28attributeNameArray.2C_callback.29). Original attribute values can always be accessed by callin them from this property directly, e.g. `attributes.attributes.strength`'},
-    {type:'object',name:'updates',description:'An object that contains all the attribute values that need to be set on the sheet.'},
-    {type:'object',name:'repOrders',description:'An object containing the idArrays for each repeating section that need to be udpated, indexed by full section name (e.g. `repeating_equipment`)'},
-    {type:'array',name:'queue',description:'The queue of attributes to work through.'},
-    {type:'object',name:'casc',description:'The expanded version of the [cascades object](#cascades).'},
-
-    {type:'function',name:'processChange({event,trigger,attributes,sections,casc})',description:'Function to iterate through attribute changes for default handling. Uses [the destructuring assignment pattern](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment).'},
-    {type:'object',name:'processChange.event',description:'[A Roll20 event object](https://wiki.roll20.net/Sheet_Worker_Scripts#eventInfo_Object).'},
-    {type:'object',name:'processChange.trigger',description:'The trigger object as contained in [cascades](#cascades)'},
-    {type:'object',name:'processChange.attributes',description:'The K-scaffold Attribute object to use'},
-    {type:'object',name:'processChange.sections',description:'An object containing the idArrays for each repeating section, indexed by full section name (e.g. `repeating_equipment`)'},
-    {type:'object',name:'processChange.casc',description:'As the casc object above.'},
-
-    {type:'function',name:'triggerFunctions(trigger,attributes,sections)',description:'Calls functions that are triggered whenever an attribute is changed or affected'},
-    {type:'object',name:'triggerFunctions.trigger',description:'The trigger object as contained in the [cascades object](#cascades)'},
-    {type:'object',name:'triggerFunctions.attributes',description:'The attributes object.'},
-    {type:'object',name:'triggerFunctions.sections',description:'An object containing the idArrays for each repeating section, indexed by full section name (e.g. `repeating_equipment`)'},
-
-    {type:'function',name:'initialFunction(trigger,attributes,sections)',description:'Calls functions that are only triggered when an attribute is the triggering event'},
-    {type:'object',name:'initialFunction.trigger',description:'The trigger object as contained in the [cascades object](#cascades)'},
-    {type:'object',name:'initialFunction.attributes',description:'The attributes object.'},
-    {type:'object',name:'initialFunction.sections',description:'An object containing the idArrays for each repeating section, indexed by full section name (e.g. `repeating_equipment`)'},
-
-    {type:'function',name:'getCascObj(event,casc)',description:'Gets the appropriate cascade object for a given attribute or action button'},
-    {type:'object',name:'event',descrition:'[A Roll20 event object](https://wiki.roll20.net/Sheet_Worker_Scripts#eventInfo_Object).'},
-    {type:'object',name:'getCascObj.casc',description:'As the casc object above.'},
-  ]
-};
 const createAttrProxy = function(attrs){
   //creates a proxy for the attributes object so that values can be worked with more easily.
   const getCascObj = function(event,casc){
@@ -351,21 +316,21 @@ const createAttrProxy = function(attrs){
     return cascObj;
   };
   
-  const triggerFunctions = function(trigger,attributes,sections){
-    if(trigger.triggeredFuncs && trigger.triggeredFuncs.length){
-      debug(`triggering functions for ${trigger.name}`);
-      trigger.triggeredFuncs && trigger.triggeredFuncs.forEach(func=>funcs[func] ? 
-        funcs[func]({trigger,attributes,sections}) :
-        debug(`!!!Warning!!! no function named ${func} found. Triggered function not called for ${trigger.name}`,true));
+  const triggerFunctions = function(obj,attributes,sections){
+    if(obj.triggeredFuncs && obj.triggeredFuncs.length){
+      debug(`triggering functions for ${obj.name}`);
+      obj.triggeredFuncs && obj.triggeredFuncs.forEach(func=>funcs[func] ? 
+        funcs[func]({trigger:obj,attributes,sections}) :
+        debug(`!!!Warning!!! no function named ${func} found. Triggered function not called for ${obj.name}`,true));
     }
   };
   
-  const initialFunction = function(trigger,attributes,sections){
-    if(trigger.initialFunc){
+  const initialFunction = function(obj,attributes,sections){
+    if(obj.initialFunc){
       debug(`initial functions for ${obj.name}`);
-      funcs[trigger.initialFunc] ?
-        funcs[trigger.initialFunc]({trigger:trigger,attributes,sections}) :
-        debug(`!!!Warning!!! no function named ${trigger.initialFunc} found. Initial function not called for ${trigger.name}`,true);
+      funcs[obj.initialFunc] ?
+        funcs[obj.initialFunc]({trigger:obj,attributes,sections}) :
+        debug(`!!!Warning!!! no function named ${obj.initialFunc} found. Initial function not called for ${obj.name}`,true);
     }
   };
   const processChange = function({event,trigger,attributes,sections,casc}){
@@ -386,8 +351,10 @@ const createAttrProxy = function(attrs){
     if(trigger){
       debug(`processing ${trigger.name}`);
       triggerFunctions(trigger,attributes,sections);
-      if(!event && trigger.calculation){
+      if(!event && trigger.calculation && funcs[trigger.calculation]){
         attributes[trigger.name] = funcs[trigger.calculation]({trigger,attributes,sections,casc});
+      }else if(trigger.calculation && !funcs[trigger.calculation]){
+        debug(`K-Scaffold Error: No function named ${trigger.calculation} found`);
       }
       if(Array.isArray(trigger.affects)){
         attributes.queue.push(...trigger.affects);
@@ -447,11 +414,11 @@ const createAttrProxy = function(attrs){
             retValue = obj.attributes[prop];
             break;
         }
-        let cascRef = `attr_${prop.replace(/(repeating_[^_]+_)[^_]+/,'$1\$x')}`;
+        let cascRef = `attr_${prop.replace(/(repeating_[^_]+_)[^_]+/,'$1\$X')}`;
         let numRetVal = +retValue;
         if(!Number.isNaN(numRetVal) && retValue !== ''){
           retValue = numRetVal;
-        }else if(cascades[cascRef] && typeof cascades[cascRef].defaultValue === 'number'){
+        }else if(cascades[cascRef] && (typeof cascades[cascRef].defaultValue === 'number' || cascades[cascRef].type === 'number')){
           retValue = cascades[cascRef].defaultValue;
         }
         return retValue;
@@ -486,19 +453,13 @@ const createAttrProxy = function(attrs){
 
 const funcs = {};
 
-docs.js['k.registerFuncs'] = {
-  type:'function',
-  description:'Function that registers a function for being called via the funcs object. Returns true if the function was successfully registered, and false if it could not be registered for any reason.',
-  arguments:[
-    {type:'object',name:'funcObj',description:'Object with keys that are names to register functions under and values that are functions.'},
-    {type:'object',name:'optionsObj',description:'Object that contains options to use for this registration.'},
-    {type:'[\'strings\']',name:'optionsObj.type',description:'Array that contains the types of specialized functions that apply to the functions being registered. Valid types are `"opener"`, `"updater"`, and `"default"`. `"default"` is always used, and never needs to be passed.'}
-  ],
-  retValue:{
-    type:'boolean',
-    description:'True if the registration succeeded, false if it failed.'
-  }
-};
+/**
+ * Function that registers a function for being called via the funcs object. Returns true if the function was successfully registered, and false if it could not be registered for any reason.
+ * @param {object} funcObj - Object with keys that are names to register functions under and values that are functions.
+ * @param {object} optionsObj - Object that contains options to use for this registration.
+ * @param {string[]} optionsObj.type - Array that contains the types of specialized functions that apply to the functions being registered. Valid types are `"opener"`, `"updater"`, and `"default"`. `"default"` is always used, and never needs to be passed.
+ * @returns {boolean} - True if the registration succeeded, false if it failed.
+ */
 const registerFuncs = function(funcObj,optionsObj = {}){
   if(typeof funcObj !== 'object' || typeof optionsObj !== 'object'){
     debug(`!!!! K-scaffold error: Improper arguments to register functions !!!!`);
@@ -529,17 +490,27 @@ const registerFuncs = function(funcObj,optionsObj = {}){
 };
 kFuncs.registerFuncs = registerFuncs;
 
-docs.js['k.callFunc'] = {
-  type:'function',
-  description:'Function to call a function previously registered to the funcs object. May not be used that much. Either returns the function or null if no function exists.',
-  arguments:[
-    {type:'string',name:'funcName',description:'The name of the function to invoke.'},
-    {type:'any',name:'args',description:'The arguments to call the function with.'}
-  ],
-  retValue:{
-    type:'any',
-  }
+const setActionCalls = function({attributes,sections}){
+  actionAttributes.forEach((base)=>{
+    let [section,,field] = k.parseTriggerName(base);
+    let fieldAction = field.replace(/_/g,'-');
+    if(section){
+      sections[section].forEach((id)=>{
+        attributes[`${section}_${id}_${field}`] = `%{${attributes.character_name}|${section}_${id}_${fieldAction}}`;
+      });
+    }else{
+      attributes[`${field}`] = `%{${attributes.character_name}|${fieldAction}}`;
+    }
+  });
 };
+funcs.setActionCalls = setActionCalls;
+
+/**
+ * Function to call a function previously registered to the funcs object. May not be used that much. Either returns the function or null if no function exists.
+ * @param {string} funcName - The name of the function to invoke.
+ * @param {...any} args - The arguments to call the function with.
+ * @returns {any}
+ */
 const callFunc = function(funcName,...args){
   if(funcs[funcName]){
     debug(`calling ${funcName}`);
@@ -552,11 +523,16 @@ const callFunc = function(funcName,...args){
 kFuncs.callFunc = callFunc;/*jshint esversion: 11, laxcomma:true, eqeqeq:true*/
 /*jshint -W014,-W084,-W030,-W033*/
 //Sheet Updaters and styling functions
+/**
+ * An object to store your update functions in. Functions should be index by the version they are for (e.g. the update handler for version 1.01 would be indexed to '1.01'). These update functions will be iterated through based on the previous version of the sheet (as stored in the `sheet_version` attribute of the sheet) and the new version of the sheet (as stored in {@link k.version}).
+ * @type {object}
+ */
 const updateHandlers = {};
 const openHandlers = {};
 const updateSheet = function(){
   log('updating sheet');
-  getAllAttrs({props:['sheet_version','debug_mode','collapsed',...baseGet],
+  getAllAttrs({
+    props:['sheet_version','debug_mode','collapsed',...baseGet],
     callback:(attributes,sections,casc)=>{
       kFuncs.debugMode = !!attributes.debug_mode;
       if(!attributes.sheet_version){
@@ -568,6 +544,7 @@ const updateSheet = function(){
           }
         });
       }
+      setActionCalls({attributes,sections});
       Object.entries(openHandlers).forEach(([funcName,func])=>{
         debug(`running ${funcName}`);
         func({attributes,sections,casc});
@@ -575,13 +552,10 @@ const updateSheet = function(){
       attributes.sheet_version = kFuncs.version;
       log(`Sheet Update applied. Current Sheet Version ${kFuncs.version}`);
       //styleOnOpen(attributes,sections);
-      //setActionCalls({attributes,sections});
       ['pug','js'].forEach((type)=>{
+        debug({type,typeCasc:casc[`attr_k${type}docs`]});
         if(casc[`attr_k${type}docs`]){
           attributes[`k${type}docs`] = docGen(type);
-          if(type==='pug'){
-            debug({[`k${type}docs`]:attributes[`k${type}docs`]});
-          }
         }
       });
       attributes.set();
@@ -591,70 +565,76 @@ const updateSheet = function(){
 };
 
 const docGen = function(language){
-  if(language==='pug'){
-    debug(`doc gen for ${language}`);
-    debug({[`docs.pug`]:docs.pug});
-  }
+  debug(`generating documentation for ${language}`);
   let docHead = [`# K Scaffold ${language.toUpperCase()} documentation`];
-  Object.keys(docs[language]).forEach((funcName)=>{
-    docHead.push(`- [${funcName}](#${funcName.replace(/\./g,'').replace(/\s/g,'-')})`);
-  });
-  return Object.entries(docs[language]).reduce((text,[name,docObj])=>{
-    let type = docObj.type;
-    text.push(`## ${docObj.name || name}`,`\`${type}\`\n`);
-    if(docObj.invocation){
-      text.push(`\`\`\`js\n${docObj.invocation}\n\`\`\``);
-    }
-    if(docObj.description){
-      text.push(docObj.description);
-    }
-    let args = Array.isArray(docObj.arguments) ? docObj.arguments : [];
-    if(args.length){
-      text.push('|Argument|type|description|','|---|---|---|')
-    }
-    args.forEach((a)=>{
-      text.push(`|${a.name}|\`${a.type}\`|${a.description || ''}|`)
+  Object.keys(docs[language])
+    .sort((nameA,nameB) => nameA.localeCompare(nameB))
+    .forEach((funcName)=>{
+      docHead.push(`- [${funcName}](#${funcName.replace(/\./g,'').replace(/\s/g,'-')})`);
     });
-    if(args.length){
-      text.push('\n')
-    }
-    let example = Array.isArray(docObj.example) ? docObj.example : [];
-    if(example.length){
-      text.push(`### Example${example.length > 1 ? 's' : ''}`);
-    }
-    example.forEach((eArr)=>{
-      text.push(
-        `**${language.toUpperCase()}**`,
-        `\`\`\`js`,
-        eArr[0],
-        `\`\`\``
-      );
-      if(docObj.type === 'mixin'){
+  return Object.entries(docs[language])
+    .sort(([nameA,docObjA],[nameB,docObjB]) => nameA.localeCompare(nameB))
+    .reduce((text,[name,docObj]) => {
+      let type = docObj.type;
+      text.push(`## ${docObj.name || name}`,`\`${type}\`\n`);
+      if(docObj.invocation){
+        text.push(`\`\`\`js\n${docObj.invocation}\n\`\`\``);
+      }
+      if(docObj.description){
+        text.push(docObj.description);
+      }
+      let args = Array.isArray(docObj.arguments) ? docObj.arguments : [];
+      if(args.length){
+        text.push('|Argument|type|description|','|---|---|---|')
+      }
+      args.forEach((a)=>{
+        text.push(`|${a.name}|\`${a.type}\`|${a.description || ''}|`)
+      });
+      if(args.length){
+        text.push('\n')
+      }
+      let example = Array.isArray(docObj.example) ? docObj.example : [];
+      if(example.length){
+        text.push(`### Example${example.length > 1 ? 's' : ''}`);
+      }
+      example.forEach((eArr)=>{
         text.push(
-          '**HTML**',
-          `\`\`\`html`,
-          eArr[1],
+          `**${language.toUpperCase()}**`,
+          `\`\`\`js`,
+          eArr[0],
           `\`\`\``
         );
+        if(docObj.type === 'mixin'){
+          text.push(
+            '**HTML**',
+            `\`\`\`html`,
+            eArr[1],
+            `\`\`\``
+          );
+        }
+      });
+      if(docObj.retValue){
+        text.push(`returns \`${docObj.retValue.type}\` ${
+          docObj.retValue.description ? 
+            `- ${docObj.retValue.description}` :
+            ''
+          }`
+        );
       }
-    });
-    if(docObj.retValue){
-      text.push(`returns \`${docObj.retValue.type}\` ${
-        docObj.retValue.description ? 
-          `- ${docObj.retValue.description}` :
-          ''
-        }`
-      );
-    }
-    return text;
-  },docHead).join('\n');
+      return text;
+    },docHead).join('\n');
 };
 
 const initialSetup = function(attributes,sections){
-debug('Initial sheet setup');
+  debug('Initial sheet setup');
 };
 
-docs.js.accessSheet = {
+/**
+ * This is the default listener function for attributes that the K-Scaffold uses. It utilizes the `triggerFuncs`, `listenerFunc`, `calculation`, and `affects` properties of the K-scaffold trigger object (see the Pug section of the scaffold for more details).
+ * @param {Roll20Event} event
+ * @returns {void}
+ */
+docs.js['k.accessSheet'] = {
   name:'k.accessSheet',
   type:'function',
   description:'The default listener for the K-scaffold. Used whenever a `listenerFunc` is not specified in an attribute\'s trigger object',
@@ -663,12 +643,12 @@ docs.js.accessSheet = {
   ]
 };
 const accessSheet = function(event){
-debug({funcs:Object.keys(funcs)});
-debug({event});
-getAllAttrs({event,callback:(attributes,sections,casc)=>{
-  let trigger = attributes.getCascObj(event,casc);
-  attributes.processChange({event,trigger,attributes,sections,casc});
-}});
+  debug({funcs:Object.keys(funcs)});
+  debug({event});
+  getAllAttrs({event,callback:(attributes,sections,casc)=>{
+    let trigger = attributes.getCascObj(event,casc);
+    attributes.processChange({event,trigger,attributes,sections,casc});
+  }});
 };
 funcs.accessSheet = accessSheet;/*jshint esversion: 11, laxcomma:true, eqeqeq:true*/
 /*jshint -W014,-W084,-W030,-W033*/
@@ -947,6 +927,7 @@ const baseGet = Object.entries(cascades).reduce((memo,[attrName,detailObj])=>{
   }
   return memo;
 },[]);
+kFuncs.baseGet = baseGet;
 const registerEventHandlers = function(){
   on('sheet:opened',updateSheet);
   debug({funcKeys:Object.keys(funcs),funcs});
@@ -961,6 +942,26 @@ const registerEventHandlers = function(){
   log(`kScaffold Loaded`);
 };
 setTimeout(registerEventHandlers,0);//Delay the execution of event registration to ensure all event properties are present.
-return kFuncs;}());
+
+const addItem = function(event){
+  let [,,section] = parseClickTrigger(event.triggerName);
+  section = section.replace(/add-/,'');
+  let rowID = generateRowID();
+  const setObj = {};
+  setObj[`repeating_${section}_${rowID}_name`] = '';
+  k.setAttrs(setObj);
+};
+registerFuncs({addItem});
+
+const editSection = function(event){
+  let [,,section] = parseClickTrigger(event.triggerName);
+  section = section.replace(/edit-/,'');
+  let target = `fieldset.repeating_${section} + .repcontainer`;
+  $20(target).toggleClass('editmode');
+};
+registerFuncs({editSection});
+
+return kFuncs;return kFuncs;
+  }());
   
 </script>
