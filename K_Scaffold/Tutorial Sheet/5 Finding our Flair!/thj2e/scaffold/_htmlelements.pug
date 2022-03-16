@@ -1,4 +1,4 @@
-- const varObjects = {repeatingSectionDetails:[],cascades:{},docs:{js:{},pug:{}}};
+- const varObjects = {repeatingSectionDetails:[],actionAttributes:[],cascades:{},docs:{js:{},pug:{}}};
 - let selectName = null;
 - let selectTitle = null;
 - let repeatingPrefix = '';
@@ -895,10 +895,11 @@ mixin script
     type:'mixin',
     description:'Similar to [script](#script), but includes the K-scaffold\'s javascript function library.'
   };
-mixin kscript(document)
+mixin kscript(document=false)
   +script
     |const k = (function(){
     |const kFuncs = {};
+    |const document = #{document};
     //- The below declarations import variables from the pug file and mixins into the sheetworker code
     - const propArray = ['cascades','repeatingSectionDetails','docs'];
     each prop in propArray

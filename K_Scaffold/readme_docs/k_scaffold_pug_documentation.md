@@ -46,7 +46,7 @@ Alias for [button](#button) that creates a button element with a type of `action
 ```
 **HTML**
 ```html
-
+<button type="action" name="act_my-button" data-i18n="action button"></button>
 ```
 ## action-label
 `mixin`
@@ -75,9 +75,9 @@ Creates an html construction for creating a [content-scaled](https://wiki.roll20
 ```
 **HTML**
 ```html
-
-  
-
+<div class="adaptive adaptive--text"><span name:"attr_character_description" class="adaptive--text__span"></span>
+  <textarea name="attr_character_description" class="adaptive--text__textarea"></textarea>
+</div>
 ```
 **PUG**
 ```js
@@ -85,9 +85,9 @@ Creates an html construction for creating a [content-scaled](https://wiki.roll20
 ```
 **HTML**
 ```html
-
-  
-
+<div class="adaptive adaptive--text custom-class"><span name:"attr_character_description" class="adaptive--text__span"></span>
+  <textarea name="attr_character_description" class="adaptive--text__textarea"></textarea>
+</div>
 ```
 ## attrTitle
 `function`
@@ -124,7 +124,7 @@ Creates a button element. Valid types are `roll` or `action`. If a type is not s
 ```
 **HTML**
 ```html
-
+<button type="roll" name="roll_my_button" value="/r 3d10"></button>
 ```
 **PUG**
 ```js
@@ -132,7 +132,7 @@ Creates a button element. Valid types are `roll` or `action`. If a type is not s
 ```
 **HTML**
 ```html
-
+<button type="action" name="act_my-button" data-i18n="action button"></button>
 ```
 ## button-label
 `mixin`
@@ -152,10 +152,24 @@ A mixin to create a combined button and input that are within the same container
 ```
 **HTML**
 ```html
+<div class="input-label input-label--button strength">
+  <button name="roll_strength_roll" type="roll" value="/r 1d20+@strength">
+  <input name="attr_strength" type="number" value="10">
+</div
+```
+## buttonTitle
+`function`
 
-  
-  
- "%{strength}"
+Converts an ability name into an ability call for that attribute. If called from inside the block of a [fieldset](#fieldset) mixin, will also add the appropriate information for calling a repeating attribute.
+|Argument|type|description|
+|---|---|---|
+|abilityName|`string`|The ability name to create an attribute call for.|
+
+
+### Examples
+**PUG**
+```js
+- buttonTitle('strength') => "%{strength}"
 ```
 **PUG**
 ```js
@@ -184,7 +198,7 @@ Alias for [input](#input) that makes a checkbox input.
 ```
 **HTML**
 ```html
-
+<input type="checkbox" name="attr_my_checkbox" class="some-class">
 ```
 ## collapse
 `mixin`
@@ -214,8 +228,8 @@ Creates a set of compendium drop target attributes. Defaults to creating target 
 ```
 **HTML**
 ```html
-
-
+<input name="attr_drop_name" accept="Name" value="" type="hidden" title="@{drop_name}"/>
+<input name="attr_drop_data" accept="data" value="" type="hidden" title="@{drop_data}"/>
 ```
 **PUG**
 ```js
@@ -223,8 +237,8 @@ Creates a set of compendium drop target attributes. Defaults to creating target 
 ```
 **HTML**
 ```html
-
-
+<input name="attr_prefix_drop_name" accept="Name" value="" type="hidden" title="@{prefix_drop_name}"/>
+<input name="attr_prefix_drop_data" accept="data" value="" type="hidden" title="@{prefix_drop_data}"/>
 ```
 **PUG**
 ```js
@@ -232,9 +246,9 @@ Creates a set of compendium drop target attributes. Defaults to creating target 
 ```
 **HTML**
 ```html
-
-
-
+<input name="attr_prefix_drop_name" accept="Name" value="" type="hidden" title="@{prefix_drop_name}"/>
+<input name="attr_prefix_drop_data" accept="data" value="" type="hidden" title="@{prefix_drop_data}"/>
+<input name="attr_prefix_drop_category" accept="Category" value="" type="hidden" title="@{prefix_drop_category}"/>
 ```
 ## customControlFieldset
 `mixin`
@@ -255,11 +269,11 @@ Alias for [fieldset](#fieldset) that creates to custom action buttons to add/rem
 ```
 **HTML**
 ```html
-
-
-
-  
-
+<button type="action" name="add-equipment" class="repcontrol-button repcontrol-button--add"></button>
+<button type="action" name="edit-equipment" class="repcontrol-button repcontrol-button--edit"></button>
+<fieldset class="repeating_equipment">
+  <input type="text" name="attr_name" title="@{repeating_equipment_$x_name}">
+</fieldset>
 ```
 ## datalist
 `mixin`
@@ -275,10 +289,10 @@ Functions like [input](#input), but creates a datalist instead. Note that an ID 
 ```
 **HTML**
 ```html
-
-  
-  
-
+<select name="attr_my_select" class="some-class"></select><datalist id="my-data">
+  <option value="option 1" data-i18n="some-text"></option>
+  <option value="option 2" data-i18n="other-text"></option>
+</datalist>
 ```
 ## fieldset
 `mixin`
@@ -299,9 +313,9 @@ A mixin that creates a fieldset for the creation of a repeating section. The mix
 ```
 **HTML**
 ```html
-
-  
-
+<fieldset class="repeating_equipment"></fieldset><div class="repcontainer" data-groupname="repeating_equipment">
+  <input type="text" name="attr_name" title="@{repeating_equipment_$x_name}">
+</div>
 ```
 **PUG**
 ```js
@@ -310,10 +324,10 @@ A mixin that creates a fieldset for the creation of a repeating section. The mix
 ```
 **HTML**
 ```html
-
-
-  
-
+<span hidden class="class-1 class-2"></span>
+<fieldset class="repeating_equipment"></fieldset><div class="repcontainer" data-groupname="repeating_equipment">
+  <input type="text" name="attr_name" title="@{repeating_equipment_$x_name}">
+</div>
 ```
 ## fillLeft
 `mixin`
@@ -337,11 +351,11 @@ A mixin that creates a construction that can be used to recreate sheet mechanics
 ```
 **HTML**
 ```html
-
-  
-  
-  
-
+<div class="fill-left">
+  <input type="radio" name="attr_track" class="some-class fill-left__radio fill-left__radio--clearer" value="0" checked>
+  <input type="radio" name="attr_track" class="some-class fill-left__radio" value="1">
+  <input type="radio" name="attr_track" class="some-class fill-left__radio" value="2">
+</div>
 ```
 **PUG**
 ```js
@@ -349,11 +363,11 @@ A mixin that creates a construction that can be used to recreate sheet mechanics
 ```
 **HTML**
 ```html
-
-  
-  
-  
-
+<div class="fill-left">
+  <input type="radio" name="attr_track" class="some-class fill-left__radio" value="0" checked>
+  <input type="radio" name="attr_track" class="some-class fill-left__radio" value="1">
+  <input type="radio" name="attr_track" class="some-class fill-left__radio" value="2">
+</div>
 ```
 **PUG**
 ```js
@@ -361,11 +375,11 @@ A mixin that creates a construction that can be used to recreate sheet mechanics
 ```
 **HTML**
 ```html
-
-  
-  
-  
-
+<div class="fill-left custom-tracker-class" aria-label:"Accessible tracker">
+  <input type="radio" name="attr_track" class="some-class fill-left__radio fill-left__radio--clearer" value="0" checked>
+  <input type="radio" name="attr_track" class="some-class fill-left__radio" value="1">
+  <input type="radio" name="attr_track" class="some-class fill-left__radio" value="2">
+</div>
 ```
 ## headedTextarea
 `mixin`
@@ -384,10 +398,10 @@ Creates a construction for pairing a header with a textarea. Currently is locked
 ```
 **HTML**
 ```html
-
-  
-  
-
+<div class="headed-textarea">
+  <h3 data-i18n="description"></h3>
+  <textarea name="attr_character_description" data-i18n-placeholder:"The description of your character"></textarea>
+</div>
 ```
 **PUG**
 ```js
@@ -395,10 +409,10 @@ Creates a construction for pairing a header with a textarea. Currently is locked
 ```
 **HTML**
 ```html
-
-  
-  
-
+<div class="headed-textarea character-description">
+  <h3 data-i18n="description"></h3>
+  <textarea name="attr_character_description" data-i18n-placeholder:"The description of your character"></textarea>
+</div>
 ```
 ## hidden
 `mixin`
@@ -411,7 +425,7 @@ Alias for [input](#input) that makes a hidden input.
 ```
 **HTML**
 ```html
-
+<input type="hidden" name="attr_my_hidden" class="some-class">
 ```
 ## img
 `mixin`
@@ -424,7 +438,7 @@ Functions like [input](#input), but creates a span instead. The name property is
 ```
 **HTML**
 ```html
-
+<span name="attr_my_span" class="some-class"></span>
 ```
 ## input
 `mixin`
@@ -443,7 +457,7 @@ A generic mixin to create an input. The mixin will replace spaces in the attribu
 ```
 **HTML**
 ```html
-'
+<input name="attr_my_attribute" type="text" class="some-class">'
 ```
 ## input-label
 `mixin`
@@ -465,9 +479,9 @@ Creates a construction that nests the input and span in a label so that they are
 ```
 **HTML**
 ```html
-
-  
-
+<label class="input-label div-class"><span data-i18n="Whisper to GM" class="input-label__text span-class"></span>
+  <input name="attr_strength" type="number" class="input-label__input">
+</label>
 ```
 ## kscript
 `mixin`
@@ -484,9 +498,9 @@ Alias for [button](#button) that creates a combination roll button and action bu
 ```
 **HTML**
 ```html
-
-
-
+<button type="roll" name="roll_my_roll" value="@{my_roll_action}"></button>
+<button type="action" name="act_my-roll-action" hidden></button>
+<input type="hidden" name="attr_my_roll_action" value="">
 ```
 ## number
 `mixin`
@@ -499,7 +513,7 @@ Alias for [input](#input) that makes a number input.
 ```
 **HTML**
 ```html
-
+<input type="number" name="attr_my_number" class="some-class">
 ```
 ## option
 `mixin`
@@ -522,9 +536,9 @@ A mixin for creating pseudo buttons of paired checkboxes/radios and spans such a
 ```
 **HTML**
 ```html
-
-
-  
+<input type="hidden" name="attr_page" title="@{page} value="1">
+<label class="pseudo-button"><span data-i8n="page 1" class="pseudo-button__span"></span>
+  <input type="radio" name="attr_page" value="1"></label>
 ```
 ## radio
 `mixin`
@@ -537,7 +551,7 @@ Alias for [input](#input) that makes a radio input.
 ```
 **HTML**
 ```html
-
+<input type="radio" name="attr_my_radio" class="some-class">
 ```
 ## range
 `mixin`
@@ -550,7 +564,7 @@ Alias for [input](#input) that makes a range input.
 ```
 **HTML**
 ```html
-
+<input type="range" name="attr_my_range" class="some-class">
 ```
 ## replaceProblems
 `function`
@@ -610,10 +624,10 @@ Functions like [input](#input), but creates a select instead.
 ```
 **HTML**
 ```html
-
-  
-  
-
+<select name="attr_my_select" class="some-class">
+  <option value="option 1" data-i18n="some-text"></option>
+  <option value="option 2" data-i18n="other-text"></option>
+</select>
 ```
 ## select-label
 `mixin`
@@ -637,12 +651,12 @@ Similar to the construction created by [input-label](#input-label), except that 
 ```
 **HTML**
 ```html
-
-  
-    
-    
-  
-
+<label class="input-label div-class"><span data-i18n="Whisper to GM" class="input-label__text span-class"></span>
+  <select name="attr_whisper" class="input-label__input">
+    <option value="" data-i18n="never"></option>
+    <option value="/w gm " data-i18n="always"></option>
+  </select>
+</label>
 ```
 ## text
 `mixin`
@@ -655,7 +669,7 @@ Alias for [input](#input) that makes a text input.
 ```
 **HTML**
 ```html
-
+<input type="text" name="attr_my_text" class="some-class">
 ```
 ## textarea
 `mixin`
@@ -668,7 +682,7 @@ Functions like [input](#input), but creates a textarea instead.
 ```
 **HTML**
 ```html
-Placeholder text
+<textarea type="hidden" name="attr_my_hidden" class="some-class">Placeholder text</textarea>
 ```
 ## trigger
 `argument`

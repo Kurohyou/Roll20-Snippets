@@ -1,5 +1,4 @@
 # K Scaffold JS documentation
-- [k.accessSheet](#kaccessSheet)
 - [k.capitalize](#kcapitalize)
 - [k.commaArray](#kcommaArray)
 - [k.debug](#kdebug)
@@ -23,15 +22,6 @@
 - [k.sheetName](#ksheetName)
 - [k.value](#kvalue)
 - [k.version](#kversion)
-## k.accessSheet
-`function`
-
-The default listener for the K-scaffold. Used whenever a `listenerFunc` is not specified in an attribute's trigger object
-|Argument|type|description|
-|---|---|---|
-|event|`object`|The event from the Roll20 trigger as described in [the wiki](https://wiki.roll20.net/Sheet_Worker_Scripts#eventInfo_Object)|
-
-
 ## k.capitalize
 `function`
 
