@@ -28,13 +28,78 @@ const updateSheet = function(){
       debug(`running ${funcName}`);
       func({attributes,sections,casc});
     });
+    setActionCalls({attributes,sections});
     attributes.sheet_version = kFuncs.version;
     log(`Sheet Update applied. Current Sheet Version ${kFuncs.version}`);
-    //styleOnOpen(attributes,sections);
-    //setActionCalls({attributes,sections});
+    if(document){
+      ['pug','js'].forEach((type)=>{
+        log(docGen(type));
+      });
+    }
     attributes.set();
     log('Sheet ready for use');
   }});
+};
+
+const docGen = function(language){
+  debug(`generating documentation for ${language}`);
+  let docHead = [`# K Scaffold ${language.toUpperCase()} documentation`];
+  Object.keys(docs[language])
+    .sort((nameA,nameB) => nameA.localeCompare(nameB))
+    .forEach((funcName)=>{
+      docHead.push(`- [${funcName}](#${funcName.replace(/\./g,'').replace(/\s/g,'-')})`);
+    });
+  return Object.entries(docs[language])
+    .sort(([nameA,docObjA],[nameB,docObjB]) => nameA.localeCompare(nameB))
+    .reduce((text,[name,docObj]) => {
+      let type = docObj.type;
+      text.push(`## ${docObj.name || name}`,`\`${type}\`\n`);
+      if(docObj.invocation){
+        text.push(`\`\`\`js\n${docObj.invocation}\n\`\`\``);
+      }
+      if(docObj.description){
+        text.push(docObj.description);
+      }
+      let args = Array.isArray(docObj.arguments) ? docObj.arguments : [];
+      if(args.length){
+        text.push('|Argument|type|description|','|---|---|---|')
+      }
+      args.forEach((a)=>{
+        text.push(`|${a.name}|\`${a.type}\`|${a.description || ''}|`)
+      });
+      if(args.length){
+        text.push('\n')
+      }
+      let example = Array.isArray(docObj.example) ? docObj.example : [];
+      if(example.length){
+        text.push(`### Example${example.length > 1 ? 's' : ''}`);
+      }
+      example.forEach((eArr)=>{
+        text.push(
+          `**${language.toUpperCase()}**`,
+          `\`\`\`js`,
+          eArr[0],
+          `\`\`\``
+        );
+        if(type === 'mixin'){
+          text.push(
+            '**HTML**',
+            `\`\`\`html`,
+            eArr[1],
+            `\`\`\``
+          );
+        }
+      });
+      if(docObj.retValue){
+        text.push(`returns \`${docObj.retValue.type}\` ${
+          docObj.retValue.description ? 
+            `- ${docObj.retValue.description}` :
+            ''
+          }`
+        );
+      }
+      return text;
+    },docHead).join('\n');
 };
 
 const initialSetup = function(attributes,sections){
