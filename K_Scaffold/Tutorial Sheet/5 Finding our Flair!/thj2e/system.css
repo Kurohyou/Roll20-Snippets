@@ -1,0 +1,884 @@
+.ui-dialog .tab-content .charsheet select,
+.ui-dialog .tab-content .charsheet textarea,
+.ui-dialog .tab-content .charsheet input,
+.ui-dialog .tab-content .charsheet .uneditable-input,
+.ui-dialog .tab-content .charsheet label,
+.ui-dialog .tab-content .charsheet button {
+  all: initial;
+}
+
+.ui-dialog .tab-content .charsheet .stacked.input-label {
+  flex-direction: column-reverse;
+}
+.ui-dialog .tab-content .charsheet .stacked.center.input-label > * {
+  text-align: center;
+}
+.ui-dialog .tab-content .charsheet .stacked.input-label:not(.center) > * {
+  text-align: left;
+}
+.ui-dialog .tab-content .charsheet .stacked.input-label > [name] {
+  width: 100%;
+}
+
+.ui-dialog .tab-content .charsheet :is(.underlined, .boxed):not(:is([readonly], div)):is(:hover, :focus, :focus-within) {
+  border-width: 1px 3px;
+  border-style: solid;
+  border-color: var(--borderColor);
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.ui-dialog .tab-content .charsheet .ratio1-1,
+.ui-dialog .tab-content .charsheet .sheet-ratio1-1, .ui-dialog .tab-content .charsheet input:is([type=checkbox], [type=radio]) {
+  aspect-ratio: 1/1;
+}
+
+.ui-dialog .tab-content .charsheet .roll-container, .ui-dialog .tab-content .charsheet .headed-textarea, .ui-dialog .tab-content .charsheet .adaptive--text {
+  display: grid;
+}
+
+.ui-dialog {
+  --topHeaderFont:Arial;
+  --midHeaderFont:Arial;
+  --contentFont:Arial;
+}
+
+.ui-dialog .tab-content .charsheet select,
+.ui-dialog .tab-content .charsheet .pseudo-select span,
+.ui-dialog .tab-content .charsheet .sheet-pseudo-select span,
+.ui-dialog .tab-content .charsheet input:not(:where([type="checkbox"], [type="radio"])):where(.underlined,.boxed),
+.ui-dialog .tab-content .charsheet .uneditable-input,
+.ui-dialog .tab-content .charsheet textarea, .ui-dialog .tab-content .charsheet .adaptive--text > span {
+  border-width: 1px 3px;
+  border-style: solid;
+  border-radius: 5px;
+  border-color: transparent;
+  box-sizing: border-box;
+}
+
+.ui-dialog .tab-content .charsheet .repcontrol-button {
+  background-color: #DCDCDC33;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px var(--borderColor);
+  border-width: 0;
+  transition-property: box-shadow, backdrop-filter;
+  transition-duration: 200ms;
+  transition-timing-function: ease-out;
+  backdrop-filter: blur(1px);
+  overflow: hidden;
+}
+.ui-dialog .tab-content .charsheet .repcontrol-button:is(:hover, :focus) {
+  background-color: #85858580;
+  box-shadow: 0 4px 6px var(--borderColor);
+  backdrop-filter: blur(2px);
+}
+.ui-dialog .tab-content .charsheet .repcontrol-button:active {
+  background-color: #858585ff;
+  box-shadow: 0 1px 2px var(--borderColor);
+  backdrop-filter: blur(0px);
+}
+
+.ui-dialog .tab-content .charsheet .repcontrol-button {
+  padding: 5px 7px;
+}
+
+.ui-dialog .tab-content .charsheet .adaptive--text {
+  grid-template-columns: auto;
+  grid-template-rows: auto;
+  grid-template-areas: "content";
+}
+.ui-dialog .tab-content .charsheet .adaptive--text > * {
+  grid-area: content;
+}
+.ui-dialog .tab-content .charsheet .adaptive--text > span {
+  opacity: 0;
+  z-index: -10;
+  white-space: pre-wrap;
+  text-transform: initial;
+}
+.ui-dialog .tab-content .charsheet .adaptive--text textarea {
+  resize: none;
+}
+
+.ui-dialog .tab-content .charsheet .uppercase {
+  text-transform: uppercase;
+}
+
+.ui-dialog .tab-content .charsheet .sheet-hidden,
+.ui-dialog .tab-content .charsheet .hidden,
+.ui-dialog .tab-content .charsheet *[hidden] {
+  display: none !important;
+}
+
+.ui-dialog .tab-content .charsheet .sheet-italics,
+.ui-dialog .tab-content .charsheet .italics {
+  font-style: italic;
+}
+
+.ui-dialog .tab-content .charsheet span,
+.ui-dialog .tab-content .charsheet input,
+.ui-dialog .tab-content .charsheet textarea, .ui-dialog .tab-content .charsheet h5 *,
+.ui-dialog .tab-content .charsheet *[aria-level="5"] *, .ui-dialog .tab-content .charsheet h5,
+.ui-dialog .tab-content .charsheet *[aria-level="5"], #main .glyph-only *, .ui-dialog .tab-content .charsheet h4 *,
+.ui-dialog .tab-content .charsheet *[aria-level="4"] *, #main .glyph-only, .ui-dialog .tab-content .charsheet h4,
+.ui-dialog .tab-content .charsheet *[aria-level="4"], .ui-dialog .tab-content .charsheet h3 *,
+.ui-dialog .tab-content .charsheet *[aria-level="3"] *, .ui-dialog .tab-content .charsheet h3,
+.ui-dialog .tab-content .charsheet *[aria-level="3"], .ui-dialog .tab-content .charsheet h2 *, .ui-dialog .tab-content .charsheet .input-label:not(.stacked).large > [name] *,
+.ui-dialog .tab-content .charsheet *[aria-level="2"] *, .ui-dialog .tab-content .charsheet h2, .ui-dialog .tab-content .charsheet .input-label:not(.stacked).large > [name],
+.ui-dialog .tab-content .charsheet *[aria-level="2"], .ui-dialog .tab-content .charsheet h1 *,
+.ui-dialog .tab-content .charsheet *[aria-level="1"] *, .ui-dialog .tab-content .charsheet h1,
+.ui-dialog .tab-content .charsheet *[aria-level="1"] {
+  line-height: normal;
+}
+
+.ui-dialog .tab-content .charsheet h5 *,
+.ui-dialog .tab-content .charsheet *[aria-level="5"] *, .ui-dialog .tab-content .charsheet h5,
+.ui-dialog .tab-content .charsheet *[aria-level="5"], #main .glyph-only *, .ui-dialog .tab-content .charsheet h4 *,
+.ui-dialog .tab-content .charsheet *[aria-level="4"] *, #main .glyph-only, .ui-dialog .tab-content .charsheet h4,
+.ui-dialog .tab-content .charsheet *[aria-level="4"], .ui-dialog .tab-content .charsheet h3 *,
+.ui-dialog .tab-content .charsheet *[aria-level="3"] *, .ui-dialog .tab-content .charsheet h3,
+.ui-dialog .tab-content .charsheet *[aria-level="3"], .ui-dialog .tab-content .charsheet h2 *, .ui-dialog .tab-content .charsheet .input-label:not(.stacked).large > [name] *,
+.ui-dialog .tab-content .charsheet *[aria-level="2"] *, .ui-dialog .tab-content .charsheet h2, .ui-dialog .tab-content .charsheet .input-label:not(.stacked).large > [name],
+.ui-dialog .tab-content .charsheet *[aria-level="2"], .ui-dialog .tab-content .charsheet h1 *,
+.ui-dialog .tab-content .charsheet *[aria-level="1"] *, .ui-dialog .tab-content .charsheet h1,
+.ui-dialog .tab-content .charsheet *[aria-level="1"] {
+  color: var(--fontColor);
+  display: block;
+  white-space: pre-wrap;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-weight: normal;
+}
+
+.ui-dialog .tab-content .charsheet h3 *,
+.ui-dialog .tab-content .charsheet *[aria-level="3"] *, .ui-dialog .tab-content .charsheet h3,
+.ui-dialog .tab-content .charsheet *[aria-level="3"], .ui-dialog .tab-content .charsheet h2 *, .ui-dialog .tab-content .charsheet .input-label:not(.stacked).large > [name] *,
+.ui-dialog .tab-content .charsheet *[aria-level="2"] *, .ui-dialog .tab-content .charsheet h2, .ui-dialog .tab-content .charsheet .input-label:not(.stacked).large > [name],
+.ui-dialog .tab-content .charsheet *[aria-level="2"], .ui-dialog .tab-content .charsheet h1 *,
+.ui-dialog .tab-content .charsheet *[aria-level="1"] *, .ui-dialog .tab-content .charsheet h1,
+.ui-dialog .tab-content .charsheet *[aria-level="1"] {
+  text-transform: uppercase;
+}
+
+.ui-dialog .tab-content .charsheet h5 :not(input),
+.ui-dialog .tab-content .charsheet *[aria-level="5"] :not(input), .ui-dialog .tab-content .charsheet h5:not(input),
+.ui-dialog .tab-content .charsheet [aria-level="5"]:not(input), #main .glyph-only :not(input), .ui-dialog .tab-content .charsheet h4 :not(input),
+.ui-dialog .tab-content .charsheet *[aria-level="4"] :not(input), #main .glyph-only:not(input), .ui-dialog .tab-content .charsheet h4:not(input),
+.ui-dialog .tab-content .charsheet [aria-level="4"]:not(input) {
+  text-transform: capitalize;
+}
+
+.ui-dialog .tab-content .charsheet h1 *,
+.ui-dialog .tab-content .charsheet *[aria-level="1"] *, .ui-dialog .tab-content .charsheet h1,
+.ui-dialog .tab-content .charsheet *[aria-level="1"] {
+  font-size: 2rem;
+  font-family: var(--topHeaderFont);
+}
+.ui-dialog .tab-content .charsheet h1 :not(input),
+.ui-dialog .tab-content .charsheet *[aria-level="1"] :not(input), .ui-dialog .tab-content .charsheet h1:not(input),
+.ui-dialog .tab-content .charsheet [aria-level="1"]:not(input) {
+  text-align: center;
+}
+
+.ui-dialog .tab-content .charsheet h2 *, .ui-dialog .tab-content .charsheet .input-label:not(.stacked).large > [name] *,
+.ui-dialog .tab-content .charsheet *[aria-level="2"] *, .ui-dialog .tab-content .charsheet h2, .ui-dialog .tab-content .charsheet .input-label:not(.stacked).large > [name],
+.ui-dialog .tab-content .charsheet *[aria-level="2"] {
+  font-size: 1.75rem;
+  font-family: var(--topHeaderFont);
+  grid-area: header;
+}
+.ui-dialog .tab-content .charsheet h2 :not(input), .ui-dialog .tab-content .charsheet .input-label:not(.stacked).large > [name] :not(input),
+.ui-dialog .tab-content .charsheet *[aria-level="2"] :not(input), .ui-dialog .tab-content .charsheet h2:not(input), .ui-dialog .tab-content .charsheet .input-label:not(.stacked).large > [name]:not(input),
+.ui-dialog .tab-content .charsheet [aria-level="2"]:not(input) {
+  text-align: center;
+}
+
+.ui-dialog .tab-content .charsheet h3 *,
+.ui-dialog .tab-content .charsheet *[aria-level="3"] *, .ui-dialog .tab-content .charsheet h3,
+.ui-dialog .tab-content .charsheet *[aria-level="3"] {
+  font-size: 1.5rem;
+  font-family: var(--topHeaderFont);
+}
+.ui-dialog .tab-content .charsheet h3 :not(input),
+.ui-dialog .tab-content .charsheet *[aria-level="3"] :not(input), .ui-dialog .tab-content .charsheet h3:not(input),
+.ui-dialog .tab-content .charsheet [aria-level="3"]:not(input) {
+  text-align: center;
+}
+
+#main .glyph-only *, .ui-dialog .tab-content .charsheet h4 *,
+.ui-dialog .tab-content .charsheet *[aria-level="4"] *, #main .glyph-only, .ui-dialog .tab-content .charsheet h4,
+.ui-dialog .tab-content .charsheet *[aria-level="4"] {
+  font-size: 1.25rem;
+  font-family: var(--midHeaderFont);
+}
+#main .glyph-only :not(input), .ui-dialog .tab-content .charsheet h4 :not(input),
+.ui-dialog .tab-content .charsheet *[aria-level="4"] :not(input), #main .glyph-only:not(input), .ui-dialog .tab-content .charsheet h4:not(input),
+.ui-dialog .tab-content .charsheet [aria-level="4"]:not(input) {
+  text-align: center;
+}
+
+.ui-dialog .tab-content .charsheet h5 *,
+.ui-dialog .tab-content .charsheet *[aria-level="5"] *, .ui-dialog .tab-content .charsheet h5,
+.ui-dialog .tab-content .charsheet *[aria-level="5"] {
+  font-size: 1rem;
+  font-style: normal;
+  font-family: var(--midHeaderFont);
+}
+.ui-dialog .tab-content .charsheet h5 :not(input),
+.ui-dialog .tab-content .charsheet *[aria-level="5"] :not(input), .ui-dialog .tab-content .charsheet h5:not(input),
+.ui-dialog .tab-content .charsheet [aria-level="5"]:not(input) {
+  text-align: center;
+}
+
+.ui-dialog .tab-content .charsheet .sheet-pictos,
+.ui-dialog .tab-content .charsheet .pictos {
+  font-family: pictos;
+  text-transform: initial !important;
+}
+
+.ui-dialog .tab-content .charsheet .pictos3,
+.ui-dialog .tab-content .charsheet .sheet-pictos3 {
+  font-family: pictos three;
+  text-transform: initial !important;
+}
+
+.ui-dialog .tab-content .charsheet .pictoscustom,
+.ui-dialog .tab-content .charsheet .sheet-pictoscustom {
+  font-family: pictos custom;
+  text-transform: initial !important;
+}
+
+.ui-dialog .tab-content .charsheet input:is([type=checkbox], [type=radio]):checked {
+  background-color: var(--selectedColor);
+}
+
+.ui-dialog .tab-content .charsheet .boxed,
+.ui-dialog .tab-content .charsheet .sheet-boxed {
+  border: 1px solid var(--borderColor);
+  border-radius: 0;
+  box-sizing: border-box;
+}
+
+.ui-dialog {
+  --shadowColor1:rgba(0, 0, 0, 0.16);
+  --shadowColor2:rgba(0, 0, 0, 0.23);
+  --grid-gap: 1rem;
+  --half-gap: calc(var(--grid-gap) / 2);
+  --tiny-gap: calc(var(--half-gap) / 2);
+  --big-gap: calc(var(--grid-gap) * 2);
+  --revealTime: 500ms;
+  --delayTime: 200ms;
+  --inputSwap: opacity var(--revealTime) ease var(--delayTime);
+  --focusTiming: 500ms ease;
+  --focusTrans: all var(--focusTiming);
+  --borderColor: black;
+  --fontColor: black;
+  --backColor: #ffffff;
+  --spanSectionColumn:1/-1;
+  --displayBorderWidth: 2px;
+  --subHeadBackColor:grey;
+  --unselectedColor:lightgrey;
+  --selectedColor:black;
+  --paper-background:url(https://s3.amazonaws.com/files.d20.io/images/273738927/iVQXAo_7WQUV4NsdhnhtHg/original.png);
+}
+
+.ui-dialog .tab-content .charsheet {
+  gap: var(--grid-gap);
+}
+.ui-dialog .tab-content .charsheet button {
+  cursor: pointer;
+}
+.ui-dialog .tab-content .charsheet .flex-box,
+.ui-dialog .tab-content .charsheet .sheet-flex-box {
+  display: flex;
+}
+.ui-dialog .tab-content .charsheet .space-around,
+.ui-dialog .tab-content .charsheet .sheet-space-around {
+  justify-content: space-around;
+}
+.ui-dialog .tab-content .charsheet .space-between,
+.ui-dialog .tab-content .charsheet .sheet-space-between {
+  justify-content: space-between;
+}
+.ui-dialog .tab-content .charsheet .center,
+.ui-dialog .tab-content .charsheet .sheet-center {
+  place-self: center;
+}
+.ui-dialog .tab-content .charsheet .justify-start {
+  justify-self: start;
+}
+.ui-dialog .tab-content .charsheet .justify-right,
+.ui-dialog .tab-content .charsheet .justify-end {
+  justify-self: end;
+}
+.ui-dialog .tab-content .charsheet .align-start {
+  align-self: start;
+}
+.ui-dialog .tab-content .charsheet .align-end {
+  align-self: end;
+}
+.ui-dialog .tab-content .charsheet textarea {
+  resize: vertical;
+  min-height: 3.5rem;
+  white-space: pre-wrap;
+}
+.ui-dialog .tab-content .charsheet textarea.fixed {
+  resize: none;
+  overflow: auto;
+}
+.ui-dialog .tab-content .charsheet .span-2,
+.ui-dialog .tab-content .charsheet .sheet-span-2 {
+  grid-column: span 2;
+}
+.ui-dialog .tab-content .charsheet .span-all,
+.ui-dialog .tab-content .charsheet .sheet-span-all {
+  grid-column: 1/-1;
+}
+.ui-dialog .tab-content .charsheet select,
+.ui-dialog .tab-content .charsheet .pseudo-select span,
+.ui-dialog .tab-content .charsheet .sheet-pseudo-select span,
+.ui-dialog .tab-content .charsheet textarea,
+.ui-dialog .tab-content .charsheet input:not(:is([type=radio], [type=checkbox])),
+.ui-dialog .tab-content .charsheet .uneditable-input {
+  padding: 2px;
+  font-size: 1rem;
+  color: var(--fontColor);
+}
+.ui-dialog .tab-content .charsheet input:is([type=text], [type=number]), .ui-dialog .tab-content .charsheet textarea {
+  cursor: auto;
+}
+.ui-dialog .tab-content .charsheet select,
+.ui-dialog .tab-content .charsheet .sheet-pseudo-select span,
+.ui-dialog .tab-content .charsheet .pseudo-select span {
+  -webkit-apperance: none;
+  appearance: none;
+  text-transform: capitalize;
+  overflow: hidden !important;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  text-align: center;
+}
+.ui-dialog .tab-content .charsheet input {
+  width: auto;
+}
+.ui-dialog .tab-content .charsheet input:placeholder {
+  color: var(--fontColor);
+}
+.ui-dialog .tab-content .charsheet input.plus-control:not([value*="-"]) + span:before {
+  content: "+";
+}
+.ui-dialog .tab-content .charsheet span,
+.ui-dialog .tab-content .charsheet input,
+.ui-dialog .tab-content .charsheet textarea {
+  font-size: 1rem;
+}
+.ui-dialog .tab-content .charsheet span[name], .ui-dialog .tab-content .charsheet input, .ui-dialog .tab-content .charsheet textarea, .ui-dialog .tab-content .charsheet button, .ui-dialog .tab-content .charsheet select {
+  font-family: var(--contentFont);
+  --fontWght: 400;
+  font-weight: var(--fontWght);
+  font-variation-settings: "wght" var(--fontWght);
+}
+.ui-dialog .tab-content .charsheet input:is([type=checkbox], [type=radio]) {
+  align-self: center;
+  border: 1px solid black;
+  cursor: pointer;
+  width: 1rem;
+  display: inline-block;
+}
+.ui-dialog .tab-content .charsheet input[type=radio] {
+  appearance: radio;
+}
+.ui-dialog .tab-content .charsheet input[type=number] {
+  width: 3rem;
+  -moz-appearance: textfield !important;
+  text-align: center;
+}
+.ui-dialog .tab-content .charsheet input[type=number]::-webkit-inner-spin-button, .ui-dialog .tab-content .charsheet input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.ui-dialog .tab-content .charsheet .sheet-number,
+.ui-dialog .tab-content .charsheet .number {
+  width: 2rem;
+  box-sizing: border-box;
+}
+.ui-dialog .tab-content .charsheet section, .ui-dialog .tab-content .charsheet header, .ui-dialog .tab-content .charsheet footer {
+  align-self: start;
+  display: grid;
+  gap: var(--half-gap);
+}
+.ui-dialog .tab-content .charsheet .nav-display:not(.active) {
+  display: none !important;
+}
+.ui-dialog .tab-content .charsheet .inactive {
+  display: none !important;
+}
+.ui-dialog .tab-content .charsheet .pseudo-button {
+  display: inline;
+  cursor: pointer;
+  border-radius: 5px;
+  text-transform: uppercase;
+  border: 1px solid black;
+  text-align: center;
+  padding: 0 5px;
+}
+.ui-dialog .tab-content .charsheet .input-label {
+  display: inline-flex;
+  gap: var(--half-gap);
+  align-items: center;
+}
+.ui-dialog .tab-content .charsheet .input-label:not(.stacked) > [name]:not([type=number], [type=checkbox], [type=radio]) {
+  width: 0;
+  flex: 1 1 0;
+}
+.ui-dialog .tab-content .charsheet .input-label:not(.stacked) > :not([name]) {
+  flex: 0 0 auto;
+}
+.ui-dialog .tab-content .charsheet .input-label--dual {
+  grid-template-columns: 1fr auto 1fr;
+  grid-template-areas: "over 	over 	over" "under 	under 	under";
+}
+.ui-dialog .tab-content .charsheet .input-label--dual > span:last-of-type {
+  grid-column: 1/-1;
+}
+.ui-dialog .tab-content .charsheet .input-label--dual > input {
+  width: 100%;
+}
+.ui-dialog .tab-content .charsheet .input-label--dual > .slash {
+  line-height: 0rem;
+  font-weight: normal;
+}
+.ui-dialog .tab-content .charsheet .headed-textarea {
+  grid-template-rows: auto 1fr;
+  grid-template-columns: auto;
+}
+.ui-dialog .tab-content .charsheet .headed-textarea h5 {
+  justify-self: start;
+}
+.ui-dialog .tab-content .charsheet .boxed.thick-left,
+.ui-dialog .tab-content .charsheet .sheet-boxed.thick-left {
+  border-left-width: 5px;
+}
+.ui-dialog .tab-content .charsheet .boxed.thick-bottom,
+.ui-dialog .tab-content .charsheet .sheet-boxed.thick-bottom {
+  border-bottom-width: 5px;
+}
+.ui-dialog .tab-content .charsheet .boxed.thick-right,
+.ui-dialog .tab-content .charsheet .sheet-boxed.thick-right {
+  border-right-width: 5px;
+}
+.ui-dialog .tab-content .charsheet .boxed.thick-top,
+.ui-dialog .tab-content .charsheet .sheet-boxed.thick-top {
+  border-top-width: 5px;
+}
+.ui-dialog .tab-content .charsheet .underlined,
+.ui-dialog .tab-content .charsheet .sheet-underlined {
+  border-radius: 0;
+  border-bottom: 1px solid var(--borderColor);
+  transition: var(--focusTrans);
+}
+.ui-dialog .tab-content .charsheet :is(.underlined, .boxed):not([readonly]):is(:focus, :focus-within) {
+  background-color: #DCDCDC;
+  transition: var(--focusTrans);
+}
+.ui-dialog .tab-content .charsheet .short-text,
+.ui-dialog .tab-content .charsheet .sheet-short-text {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  text-transform: initial;
+}
+.ui-dialog .tab-content .charsheet .roll-container {
+  align-self: center;
+  opacity: 0;
+  grid-row: 1/2;
+}
+.ui-dialog .tab-content .charsheet .repitem > input:not(:is([type=checkbox], [type=number], [type=radio])) {
+  width: 100%;
+}
+.ui-dialog .tab-content .charsheet .repitem .headed-textarea {
+  grid-column: 1/-1;
+}
+.ui-dialog .tab-content .charsheet .repitem .collapse {
+  opacity: 0;
+  position: absolute;
+  right: -10px;
+  top: 0px;
+  border: 0px solid black;
+  border-radius: 0;
+  color: var(--selectedColor);
+  text-transform: none;
+}
+.ui-dialog .tab-content .charsheet .repitem .collapse:before {
+  content: "y";
+  font-family: pictos;
+}
+.ui-dialog .tab-content .charsheet .repitem .collapse:checked {
+  background-color: transparent;
+  color: var(--unselectedColor);
+}
+.ui-dialog .tab-content .charsheet .repitem .collapse:checked ~ .expanded,
+.ui-dialog .tab-content .charsheet .repitem .collapse:checked ~ .expanded-container .expanded {
+  display: none;
+}
+.ui-dialog .tab-content .charsheet .repitem .collapse:checked ~ .expanded--empty:is(:not([value]), [value=""]) + * {
+  display: none;
+}
+.ui-dialog .tab-content .charsheet .repitem .collapse:hover {
+  color: var(--selectedColor);
+}
+.ui-dialog .tab-content .charsheet .repitem:hover .collapse, .ui-dialog .tab-content .charsheet .repitem:hover .roll-container {
+  opacity: 1;
+}
+.ui-dialog .tab-content .charsheet .repcontainer.editmode .collapse {
+  display: none;
+}
+.ui-dialog .tab-content .charsheet .repcontainer {
+  display: grid;
+  gap: var(--half-gap);
+}
+.ui-dialog .tab-content .charsheet .repeating-container {
+  grid-template-areas: "header";
+}
+.ui-dialog .tab-content .charsheet .repeating-container h3 {
+  grid-area: header;
+}
+.ui-dialog .tab-content .charsheet .repeating-container:is(:hover, :focus-within, :focus) .repcontrol-button {
+  opacity: 1;
+}
+.ui-dialog .tab-content .charsheet .repcontrol-button {
+  grid-area: header;
+  align-self: center;
+  text-transform: none;
+  opacity: 0;
+  transition-property: background-color, opacity;
+  transition-duration: var(--revealTime);
+}
+.ui-dialog .tab-content .charsheet .repcontrol-button ~ .repcontrol {
+  display: none;
+}
+.ui-dialog .tab-content .charsheet .repcontrol-button--add {
+  justify-self: start;
+}
+.ui-dialog .tab-content .charsheet .repcontrol-button--add:before {
+  font-family: pictos;
+  content: "&";
+}
+.ui-dialog .tab-content .charsheet .repcontrol-button--edit {
+  justify-self: end;
+}
+.ui-dialog .tab-content .charsheet .repcontrol-button--edit:before {
+  font-family: pictos;
+  content: "p";
+}
+.ui-dialog .tab-content .charsheet .sheet-box,
+.ui-dialog .tab-content .charsheet .box {
+  border-radius: 0;
+  width: 10px;
+  height: 10px;
+}
+
+html {
+  font-size: 16px;
+}
+
+.ui-dialog {
+  box-sizing: border-box;
+}
+.sheet-darkmode .ui-dialog {
+  --backColor:var(--dark-surface1);
+  --fontColor:#f2e2a7;
+  --borderColor:var(--dark-primarytext);
+  --subHeadBackColor:var(--dark-surface1);
+  --selectedColor:rgb(242, 226, 167);
+  --shadowColor1: rgba(242, 226, 167,0.77);
+  --shadowColor2: rgba(242, 226, 167,0.84);
+  --paper-background:url(https://s3.amazonaws.com/files.d20.io/images/273774306/hku8q9ac-7P4KtYW95Qg8g/original.png);
+}
+
+#main {
+  /*
+    First of all we apply our default styles.
+    Note that because we are using the placeholder, these styles would be first up in the cascade even if we put the extend declaration last.
+    This is done first so that when we read the code, we can easily see that it is applied, and anything after it will overwrite those default styles.
+  */
+  display: grid;
+  /*nav button styling*/
+}
+#main .paper-background {
+  border: var(--half-gap) solid transparent;
+  border-image-source: var(--paper-background);
+  border-image-slice: 40 fill;
+  border-image-width: var(--grid-gap);
+  border-image-outset: var(--half-gap);
+  border-image-repeat: repeat;
+  filter: drop-shadow(var(--shadowColor1) 0px 3px 6px) drop-shadow(var(--shadowColor2) 0px 3px 6px);
+}
+#main .editmode .itemcontrol {
+  z-index: 100;
+}
+#main .roller {
+  display: flex;
+  gap: var(--tiny-gap);
+  align-items: center;
+}
+#main .roller:before {
+  text-transform: none;
+  content: "T";
+}
+#main .roller--scroll:before {
+  content: "w";
+  font-family: pictos;
+}
+#main .glyph-only {
+  text-transform: none !important;
+}
+#main .hover-container {
+  --delayTime:500ms;
+  place-self: start;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-areas: "content";
+  gap: var(--tiny-gap);
+  transition-duration: var(--revealTime);
+  transition-delay: var(--delayTime);
+  transition-property: width, height, border-color, background-color;
+  transition-timing-function: ease;
+  box-sizing: border-box;
+  border-width: 1px 3px;
+  border-radius: 5px;
+  border-style: solid;
+  border-color: transparent;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+}
+#main .hover-container:is(:hover, :focus-within) {
+  border-color: var(--borderColor);
+  background-color: var(--backColor);
+}
+#main .hover-container:is(:hover, :focus-within) .hover-container__hover-visible {
+  opacity: 1;
+  z-index: 0;
+}
+#main .hover-container--two-column:is(:hover, :focus-within) {
+  width: calc(200% + var(--tiny-gap));
+}
+#main .hover-container--two-row:is(:hover, :focus-within) {
+  height: calc(100% + var(--grid-gap));
+}
+#main .hover-container__content {
+  justify-self: start;
+  grid-area: content;
+}
+#main .hover-container__hover-visible {
+  grid-area: content;
+  transition-property: opacity, z-index, left, top;
+  transition-duration: var(--revealTime);
+  transition-timing-function: ease;
+  transition-delay: var(--delayTime);
+  opacity: 0;
+  z-index: -10;
+}
+#main [readonly] {
+  background-color: lightgrey;
+  border-color: transparent;
+}
+#main .sheet-nav__tab {
+  color: var(--fontColor);
+  font-style: normal;
+  border: 1px solid transparent;
+  margin: 0 0 -1px;
+  background-color: transparent;
+  border-radius: 4px 4px 0 0;
+  box-shadow: none;
+  font-size: 13px;
+  background-image: none;
+  padding: 9px 12px;
+  height: 16px;
+}
+#main .sheet-nav__tab:not(.active):hover {
+  background-color: #eeeeee;
+  --fontColor:black;
+}
+#main .sheet-nav__tab.active {
+  border-color: #dddddd #dddddd white #dddddd;
+}
+#main .sheet-nav__tab.inactive {
+  display: none !important;
+}
+
+#character {
+  display: grid;
+  gap: var(--big-gap);
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+}
+
+ul.nav-tabs.nav {
+  position: sticky;
+  top: 0;
+  background-color: var(--backColor);
+  z-index: 9999;
+  margin-bottom: 0px;
+}
+
+#main-nav {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  position: sticky;
+  top: 40px;
+  background-color: var(--backColor);
+  padding: var(--tiny-gap) 0 0;
+  margin-bottom: var(--big-gap);
+  border-bottom: 1px solid #dddddd;
+  z-index: 999;
+  box-shadow: 30px 0 var(--backColor), -30px 0 var(--backColor);
+  color: var(--fontColor);
+}
+
+#settings {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--half-gap);
+}
+#settings h2 {
+  width: 100%;
+}
+#settings .input-label * {
+  width: auto;
+}
+
+#character-header {
+  display: grid;
+  gap: var(--half-gap);
+  grid-template-columns: 14rem;
+  grid-auto-columns: 1fr;
+  grid-auto-flow: column;
+}
+#character-header .character-details {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--half-gap);
+}
+#character-header .character-details > :not(:is(.span-2, .span-all)) {
+  justify-self: end;
+}
+
+#attributes {
+  display: grid;
+  grid-template-columns: 1fr repeat(2, auto);
+  gap: var(--half-gap);
+  grid-template-areas: "header  header  header" ".       score   modifier" "might   might   might" "finesse finesse finesse" "resolve resolve resolve" "insight insight insight" "bearing bearing bearing";
+  margin: 0;
+}
+#attributes h3 {
+  grid-area: header;
+}
+#attributes .score-head {
+  grid-area: score;
+}
+#attributes .modifier-head {
+  grid-area: modifier;
+}
+#attributes .might {
+  grid-row-start: might;
+}
+#attributes .finesse {
+  grid-row-start: finesse;
+}
+#attributes .resolve {
+  grid-row-start: resolve;
+}
+#attributes .insight {
+  grid-row-start: insight;
+}
+#attributes .bearing {
+  grid-row-start: bearing;
+}
+#attributes .weal {
+  grid-row-start: weal;
+}
+#attributes :not(button) {
+  justify-self: center;
+}
+
+#defenses {
+  display: grid;
+  grid-template-columns: 1fr repeat(2, auto);
+  gap: var(--half-gap);
+}
+#defenses .boxed {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+}
+#defenses > :not(:where(input,div)) {
+  justify-self: start;
+}
+
+#weapons,
+#armor {
+  display: grid;
+  gap: var(--half-gap);
+}
+#weapons .repitem,
+#armor .repitem {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--tiny-gap);
+}
+#weapons .repitem .name,
+#armor .repitem .name {
+  display: flex;
+  gap: var(--tiny-gap);
+  align-items: center;
+}
+#weapons .repitem .name input[type=text],
+#armor .repitem .name input[type=text] {
+  flex: 1 1 0;
+  width: 0;
+}
+#weapons .repitem:not(:last-child),
+#armor .repitem:not(:last-child) {
+  border-bottom: 1px dashed black;
+  padding-bottom: var(--half-gap);
+}
+
+#archetype .repitem {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: var(--tiny-gap);
+}
+#archetype .repitem:not(:last-child) {
+  border-bottom: 1px dashed black;
+  padding-bottom: var(--half-gap);
+}
+
+#spells {
+  display: grid;
+}
+#spells .repitem {
+  display: grid;
+  gap: var(--tiny-gap);
+  grid-template-columns: 1fr auto;
+}
+#spells .repitem .name {
+  display: grid;
+  grid-template-columns: [roller-start] 1.4rem [input-start roller-end] 1fr [input-end] auto;
+  grid-template-rows: [input-start roller-start] auto [input-end roller-end];
+  gap: var(--tiny-gap);
+  align-items: center;
+}
+#spells .repitem .name input[type=text] {
+  grid-area: input;
+  width: 100%;
+}
+#spells .repitem .roller-container {
+  grid-area: roller;
+  box-sizing: border-box;
+}
+#spells .repitem:not(:last-child) {
+  border-bottom: 1px dashed black;
+  padding-bottom: var(--half-gap);
+}
