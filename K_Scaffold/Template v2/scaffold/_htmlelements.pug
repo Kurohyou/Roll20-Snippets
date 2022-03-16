@@ -1,4 +1,4 @@
-- const varObjects = {repeatingSectionDetails:[],actionAttributes:[],cascades:{'attr_character_name':{name:'character_name',type:'string',defaultValue:'',trigger:{triggeredFuncs:['setActionCalls']}}},docs:{js:{},pug:{}}};
+- const varObjects = {repeatingSectionDetails:[],cascades:{},docs:{js:{},pug:{}}};
 - let selectName = null;
 - let selectTitle = null;
 - let repeatingPrefix = '';
@@ -768,6 +768,11 @@ mixin headedTextarea({textObj,header})
     +textarea(textObj)
 //-End Mixin
 -
+  varObjects.docs.pug.script = {
+    type:'mixin',
+    description:'Creates a generic [Roll20 script block](https://wiki.roll20.net/Building_Character_Sheets#JavaScript_2) for use with the sheetworker system.'
+  };
+-
   varObjects.docs.pug.adaptiveTextarea = {
     type:'mixin',
     description:'Creates an html construction for creating a [content-scaled](https://wiki.roll20.net/CSS_Wizardry#Content-scaled_Inputs) textarea.',
@@ -857,10 +862,28 @@ mixin compendiumAttributes({prefix,lookupAttributes = ['Name','data'],triggerAcc
       - inputObj.trigger = trigger;
     +hidden(inputObj)
 //- End Mixin
+//- Functions
 -
-  varObjects.docs.pug.script = {
-    type:'mixin',
-    description:'Creates a generic [Roll20 script block](https://wiki.roll20.net/Building_Character_Sheets#JavaScript_2) for use with the sheetworker system.'
+  varObjects.docs.pug.attrTitle = {
+    type:'function',
+    description:'Converts an attribute name into an attribute call for that attribute. Converts `_max` attribute names to the proper attribute call syntax for `_max` attributes (see second example). If called from inside the block of a [fieldset](#fieldset) mixin, will also add the appropriate information for calling a repeating attribute.',
+    arguments:[
+      {name:'attrName',type:'string',description:'The attribute name to create an attribute call for.'}
+    ],
+    example:[
+      [
+        `- attrTitle('strength') => "@{strength}"`
+      ],
+      [
+        `- attrTitle('hp_max') => "@{hp|max}"`
+      ],
+      [
+        `+fieldset({name:'equipment'})\n  - attrTitle('weight') => "@{repeating_equipment_$X_weight}"`
+      ]
+    ],
+    retValue:{
+      type:'string'
+    }
   };
 mixin script
   script(type='text/worker')
@@ -871,12 +894,12 @@ mixin script
     type:'mixin',
     description:'Similar to [script](#script), but includes the K-scaffold\'s javascript function library.'
   };
-mixin kscript
+mixin kscript(document)
   +script
     |const k = (function(){
     |const kFuncs = {};
     //- The below declarations import variables from the pug file and mixins into the sheetworker code
-    - const propArray = ['cascades','actionAttributes','repeatingSectionDetails','docs'];
+    - const propArray = ['cascades','repeatingSectionDetails','docs'];
     each prop in propArray
       |
       |const !{prop} = !{JSON.stringify(varObjects[prop])};
@@ -905,29 +928,6 @@ mixin kscript
     |
     block
 //- End Mixin
-//- Functions
--
-  varObjects.docs.pug.attrTitle = {
-    type:'function',
-    description:'Converts an attribute name into an attribute call for that attribute. Converts `_max` attribute names to the proper attribute call syntax for `_max` attributes (see second example). If called from inside the block of a [fieldset](#fieldset) mixin, will also add the appropriate information for calling a repeating attribute.',
-    arguments:[
-      {name:'attrName',type:'string',description:'The attribute name to create an attribute call for.'}
-    ],
-    example:[
-      [
-        `- attrTitle('strength') => "@{strength}"`
-      ],
-      [
-        `- attrTitle('hp_max') => "@{hp|max}"`
-      ],
-      [
-        `+fieldset({name:'equipment'})\n  - attrTitle('weight') => "@{repeating_equipment_$X_weight}"`
-      ]
-    ],
-    retValue:{
-      type:'string'
-    }
-  };
 - const attrTitle = (string) => `@{${repeatingPrefix}${replaceSpaces(string).replace(/_max$/,'|max')}}`;
 -
   varObjects.docs.pug.buttonTitle = {
