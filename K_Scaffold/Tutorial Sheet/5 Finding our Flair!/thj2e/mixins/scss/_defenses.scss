@@ -1,0 +1,14 @@
+@use '_mixinsandplaceholders';
+#defenses{
+  display:grid;
+  grid-template-columns:1fr repeat(2,auto);
+  gap:var(--half-gap);
+  .boxed{
+    display:grid;
+    grid-template-columns:1fr auto 1fr;
+    align-items:center;
+  }
+  >:not(:where(input,div)){
+    justify-self:start;
+  }
+}
