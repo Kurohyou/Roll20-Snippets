@@ -1,0 +1,27 @@
+article#settings.settings.paper-background.nav-display
+  //- This is our sheet's settings page. We'll have just two settings on our sheet at the moment. The first will be whether to whisper rolls or not. The second will be what type of sheet this is (NPC or character).
+  h2(data-i18n='settings')
+  //- We define a select-label that will group our label and the select together. Note that the syntax has changed here to use the destructuring assignment pattern.
+  +select-label({
+    label:'whisper to gm',
+    inputObj:{name:'whisper',class:'underlined'},
+    spanObj:{role:'heading','aria-level':4}
+  }) 
+    +option({value:'','data-i18n':'never',selected:''})
+    +option({value:'/w gm','data-i18n':'always'})
+    +option({value:'?{Whisper to GM|No, |Yes,/w gm }','data-i18n':'ask'})
+  +select-label({
+    label:'sheet type',
+    inputObj:{name:'sheet type',class:'underlined'},
+    spanObj:{role:'heading','aria-level':4}
+  })
+    //- Our sheet type select is going to trigger some actual sheet workers. The trigger object goes on the default selected option. The displayArticles function will change what areas of the sheet are accessible based on the character type.
+    each value in varObjects.sheetTypes
+      //- Iterate through our sheet types
+      - const optObj = {value,'data-i18n':value};
+      if value === 'character'
+        - optObj.trigger = {triggeredFuncs:['displayArticles']};
+        -optObj.selected = '';
+      else if value === 'npc'
+        - optObj.class = 'uppercase';
+      +option(optObj)

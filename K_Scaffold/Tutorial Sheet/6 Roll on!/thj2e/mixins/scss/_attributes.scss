@@ -1,0 +1,35 @@
+//This file will define how our attribute section is laid out.
+@use '_mixinsandplaceholders';
+#attributes{
+  display:grid;
+  grid-template-columns: 1fr repeat(2,auto);
+  gap:var(--half-gap);
+  grid-template-areas:
+    'header  header  header'
+    '.       score   modifier'
+    'might   might   might'
+    'finesse finesse finesse'
+    'resolve resolve resolve'
+    'insight insight insight'
+    'bearing bearing bearing'
+    'weal    weal    weal   '
+  ;
+  h3{
+    grid-area:header;
+  }
+  margin:0;
+  .score-head{
+    grid-area:score;
+  }
+  .modifier-head{
+    grid-area:modifier;
+  }
+  @each $attribute in might,finesse,resolve,insight,bearing,weal{
+    .#{$attribute}{
+      grid-row-start:$attribute;
+    }
+  }
+  :not(button){
+    justify-self:center;
+  }
+}

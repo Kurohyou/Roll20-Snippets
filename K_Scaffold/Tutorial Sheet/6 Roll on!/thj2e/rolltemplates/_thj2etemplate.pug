@@ -1,0 +1,67 @@
+//- This creates our roll template element and an internal div that will be the wrapper for all our content. Using the wrapper is a recommended step to ensure that our inline roll styling will have enough specificity to override the default Roll20 styles (particular the dark mode styling)
++templateWrapper(templateName)
+  //- Our header section. Note that any class names we define here will be prepended with `sheet-` in the Roll20 environment, so we'll refer to these that way when we write our CSS.
+  .header
+    //- Put an element in that will only be added if the name template field is populated
+    +templateConditionalDisplay('name')
+      h3 {{name}}
+    //- Our output of the character's name, with a link to the character's sheet if the character_id is provided. These will be h4's
+    +characterLink
+  +templateConditionalDisplay('roll')
+    //- Our generic template rows that will be how we'll style our output
+    .template-row
+      +templateConditionalDisplay('roll_name')
+        h5 {{roll_name}}
+      //- If roll_name is not present, output a generic header for the row instead
+      +templateConditionalDisplay('roll_name','invert')
+        h5(data-i18n='roll')
+      //- Display our roll value. Note that this is wrapped in a span so that if text is provided, the whole content of the field is displayed inline.
+      span.description 
+        |{{roll}}
+        +templateConditionalDisplay('target')
+          span(data-i18n='vs')
+          |{{target}}
+    +templateConditionalDisplay('target')
+      +rollBetween({values:'computed::result 1 1'})
+        .template-row.template-row--summary
+          span(data-i18n='success').capitalize.result-display-true
+      +rollBetween({values:'computed::result 0 0'})
+        .template-row.template-row--summary
+          span(data-i18n='failure').capitalize.result-display-false
+  +templateConditionalDisplay('damage')
+    .template-row
+      +templateConditionalDisplay('damage_type')
+        h5 {{roll_name}}
+      +templateConditionalDisplay('damage_type','invert')
+        h5(data-i18n='damage')
+      span.description {{damage}}
+  +templateConditionalDisplay('range')
+    .template-row
+      h5(data-i18n='range')
+      span.description {{range}}
+  +templateConditionalDisplay('traits')
+    .template-row
+      h5(data-i18n='traits')
+      span.description {{traits}}
+  +templateConditionalDisplay('aspects')
+    .template-row
+      h5(data-i18n='aspects')
+      span.description {{aspects}}
+  +templateConditionalDisplay('description')
+    .template-row.template-row--text
+      h5(data-i18n='description')
+      span.description {{description}}
+  +templateConditionalDisplay('effect')
+    .template-row.template-row--text
+      h5(data-i18n='effect')
+      span.description {{effect}}
+  each num in [1,2,3]
+    +templateConditionalDisplay(`effect_${num}`)
+      .template-row.template-row--text
+        h5(data-i18n=`effect ${num}`)
+        span.description {{effect_#{num}}}
+  //- This template will be user extensible. User defined field/value combos will be displayed using the same format as other rows
+  +allProps({values:'character_name character_id name roll_name roll damage damage_type effect effect_1 effect_2 effect_3 description range traits aspects target result'})
+    .template-row.template-row--text
+      h5 {{key}}
+      span.description {{value}}
