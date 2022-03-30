@@ -1,14 +1,450 @@
 
+<input name="attr_template_start" value="&{template:thj2e} {{character_name=@{character_name}}} {{character_id=@{character_id}}}" type="hidden" title="@{template_start}"/>
+<input name="attr_sheet_state" value="settings" type="hidden" title="@{sheet_state}"/>
+<input name="attr_collapsed" value="" type="hidden" title="@{collapsed}"/>
+<main id="main">
+  <nav class="sheet-nav" id="main-nav">
+    <button class="sheet-nav__tab character" name="act_nav-character" data-i18n="character sheet" data-i18n-title="character sheet button title" role="heading" aria-level="5" type="action" title="%{nav-character}">
+    </button>
+    <button class="sheet-nav__tab npc" name="act_nav-npc" data-i18n="npc sheet" data-i18n-title="npc sheet button title" role="heading" aria-level="5" type="action" title="%{nav-npc}">
+    </button>
+    <button class="pictos active sheet-nav__tab settings" name="act_nav-settings" data-i18n-title="open the settings page" role="heading" aria-level="5" type="action" title="%{nav-settings}">y
+    </button>
+    <label class="pseudo-button">
+      <input class="pseudo-button__input" name="attr_roll_state" type="radio" value="2d20kh1" title="@{roll_state}"/><span class="pseudo-button__span advantage-toggle--advantage advantage-toggle" data-i18n="advantage" role="heading" aria-level="5"></span>
+    </label>
+    <label class="pseudo-button">
+      <input class="pseudo-button__input" name="attr_roll_state" type="radio" value="1d20" checked="" title="@{roll_state}"/><span class="pseudo-button__span advantage-toggle--normal advantage-toggle" data-i18n="normal" role="heading" aria-level="5"></span>
+    </label>
+    <label class="pseudo-button">
+      <input class="pseudo-button__input" name="attr_roll_state" type="radio" value="2d20kl1" title="@{roll_state}"/><span class="pseudo-button__span advantage-toggle--disadvantage advantage-toggle" data-i18n="disadvantage" role="heading" aria-level="5"></span>
+    </label>
+    <label class="pseudo-button">
+      <input class="pseudo-button__input" name="attr_roll_state" type="radio" value="?{Roll|Advantage,2d20kh1|Normal,1d20|Disadvantage,2d20kl1}" title="@{roll_state}"/><span class="pseudo-button__span advantage-toggle--query advantage-toggle" data-i18n="query" role="heading" aria-level="5"></span>
+    </label>
+  </nav>
+  <article class="settings paper-background nav-display" id="settings">
+    <h2 data-i18n="settings"></h2>
+    <label class="input-label"><span class="input-label__text" data-i18n="whisper to gm" role="heading" aria-level="4"></span>
+      <select class="underlined input-label__input" name="attr_whisper" title="@{whisper}"> 
+        <option value="" data-i18n="never" selected="">
+        </option>
+        <option value="/w gm" data-i18n="always">
+        </option>
+        <option value="?{Whisper to GM|No, |Yes,/w gm }" data-i18n="ask">
+        </option>
+      </select>
+    </label>
+    <label class="input-label"><span class="input-label__text" data-i18n="sheet type" role="heading" aria-level="4"></span>
+      <select class="underlined input-label__input" name="attr_sheet_type" title="@{sheet_type}">
+        <option value="character" data-i18n="character" selected="">
+        </option>
+        <option class="uppercase" value="npc" data-i18n="npc">
+        </option>
+      </select>
+    </label>
+  </article>
+  <article class="character nav-display" id="character">
+    <header class="header span-all" data-i18n-aria-label="character header" id="character-header"><img class="header__image" src="https://s3.amazonaws.com/files.d20.io/images/269781785/NLg9vcFOn6o_0dLEFcTDLg/original.png"/>
+      <div class="character-details paper-background">
+        <label class="input-label span-all"><span class="input-label__text" data-i18n="name" role="heading" aria-level="5"></span>
+          <input class="underlined input-label__input" name="attr_character_name" type="text" title="@{character_name}"/>
+        </label>
+        <label class="input-label span-2"><span class="input-label__text" data-i18n="lineage" role="heading" aria-level="5"></span>
+          <input class="underlined input-label__input" name="attr_lineage" type="text" title="@{lineage}"/>
+        </label>
+        <label class="input-label"><span class="input-label__text" data-i18n="level" role="heading" aria-level="5"></span>
+          <input class="underlined input-label__input" name="attr_level" type="number" title="@{level}"/>
+        </label>
+        <label class="input-label"><span class="uppercase input-label__text" data-i18n="xp" role="heading" aria-level="5"></span>
+          <input class="underlined input-label__input" name="attr_experience" type="number" title="@{experience}"/>
+        </label>
+        <label class="input-label span-2"><span class="input-label__text" data-i18n="archetype" role="heading" aria-level="5"></span>
+          <input class="underlined input-label__input" name="attr_archetype" type="text" title="@{archetype}"/>
+        </label>
+        <label class="input-label span-2"><span class="input-label__text" data-i18n="profession" role="heading" aria-level="5"></span>
+          <input class="underlined input-label__input" name="attr_profession" type="text" title="@{profession}"/>
+        </label>
+      </div>
+    </header>
+    <section class="attributes paper-background" data-i18n-aria-label="attributes" id="attributes">
+      <h3 data-i18n="attributes"></h3>
+      <h5 class="score-head" data-i18n="score"></h5>
+      <h5 class="modifier-head" data-i18n="modifier"></h5>
+      <button class="might roller" name="roll_might" role="heading" aria-level="4" data-i18n="might" value="@{might_action}" title="%{might}" type="roll">
+      </button>
+      <button name="act_might-action" hidden="" type="action" title="%{might-action}">
+      </button>
+      <input name="attr_might_action" type="hidden" title="@{might_action}"/>
+      <input class="might underlined" name="attr_might" value="10" type="number" title="@{might}"/>
+      <input class="might underlined" name="attr_might_mod" readonly="" value="0" type="number" title="@{might_mod}"/>
+      <button class="finesse roller" name="roll_finesse" role="heading" aria-level="4" data-i18n="finesse" value="@{finesse_action}" title="%{finesse}" type="roll">
+      </button>
+      <button name="act_finesse-action" hidden="" type="action" title="%{finesse-action}">
+      </button>
+      <input name="attr_finesse_action" type="hidden" title="@{finesse_action}"/>
+      <input class="finesse underlined" name="attr_finesse" value="10" type="number" title="@{finesse}"/>
+      <input class="finesse underlined" name="attr_finesse_mod" readonly="" value="0" type="number" title="@{finesse_mod}"/>
+      <button class="resolve roller" name="roll_resolve" role="heading" aria-level="4" data-i18n="resolve" value="@{resolve_action}" title="%{resolve}" type="roll">
+      </button>
+      <button name="act_resolve-action" hidden="" type="action" title="%{resolve-action}">
+      </button>
+      <input name="attr_resolve_action" type="hidden" title="@{resolve_action}"/>
+      <input class="resolve underlined" name="attr_resolve" value="10" type="number" title="@{resolve}"/>
+      <input class="resolve underlined" name="attr_resolve_mod" readonly="" value="0" type="number" title="@{resolve_mod}"/>
+      <button class="insight roller" name="roll_insight" role="heading" aria-level="4" data-i18n="insight" value="@{insight_action}" title="%{insight}" type="roll">
+      </button>
+      <button name="act_insight-action" hidden="" type="action" title="%{insight-action}">
+      </button>
+      <input name="attr_insight_action" type="hidden" title="@{insight_action}"/>
+      <input class="insight underlined" name="attr_insight" value="10" type="number" title="@{insight}"/>
+      <input class="insight underlined" name="attr_insight_mod" readonly="" value="0" type="number" title="@{insight_mod}"/>
+      <button class="bearing roller" name="roll_bearing" role="heading" aria-level="4" data-i18n="bearing" value="@{bearing_action}" title="%{bearing}" type="roll">
+      </button>
+      <button name="act_bearing-action" hidden="" type="action" title="%{bearing-action}">
+      </button>
+      <input name="attr_bearing_action" type="hidden" title="@{bearing_action}"/>
+      <input class="bearing underlined" name="attr_bearing" value="10" type="number" title="@{bearing}"/>
+      <input class="bearing underlined" name="attr_bearing_mod" readonly="" value="0" type="number" title="@{bearing_mod}"/>
+      <button class="weal roller" name="roll_weal" role="heading" aria-level="4" data-i18n="weal" value="@{weal_action}" title="%{weal}" type="roll">
+      </button>
+      <button name="act_weal-action" hidden="" type="action" title="%{weal-action}">
+      </button>
+      <input name="attr_weal_action" type="hidden" title="@{weal_action}"/>
+      <input class="weal underlined" name="attr_weal" value="10" type="number" title="@{weal}"/>
+      <input class="weal underlined" name="attr_weal_mod" readonly="" value="0" type="number" title="@{weal_mod}"/>
+    </section>
+    <section class="defenses paper-background" data-i18n-aria-label="defenses" id="defenses">
+      <label for="defense-bonus" data-i18n="defense" role="heading" aria-level="4"></label>
+      <input class="underlined" name="attr_defense_total" type="number" readonly="" value="10" title="@{defense_total}"/>
+      <input class="underlined" name="attr_defense_mod" type="number" title="@{defense_mod}"/>
+      <label for="reduction-bonus" data-i18n="reduction" role="heading" aria-level="4"></label>
+      <input class="underlined" name="attr_reduction_value" readonly="" type="number" title="@{reduction_value}"/>
+      <input class="underlined" name="attr_reduction_mod" type="number" title="@{reduction_mod}"/>
+      <label class="endurance-label" for="endurance" data-i18n="endurance" role="heading" aria-level="4"></label>
+      <div class="boxed span-2">
+        <input name="attr_endurance" id="endurance" value="0" type="number" title="@{endurance}"/><span class="slash">/</span>
+        <input name="attr_endurance_max" type="number" title="@{endurance|max}"/>
+      </div>
+      <button class="span-2 roller" name="roll_saving_throw" role="heading" aria-level="4" data-i18n="saving throw" value="@{saving_throw_action}" title="%{saving_throw}" type="roll">
+      </button>
+      <button name="act_saving-throw-action" hidden="" type="action" title="%{saving-throw-action}">
+      </button>
+      <input name="attr_saving_throw_action" type="hidden" title="@{saving_throw_action}"/>
+      <input class="underlined" name="attr_saving_throw" type="number" title="@{saving_throw}"/>
+      <label class="span-2" for="myth-points" data-i18n="myth points" role="heading" aria-level="4"></label>
+      <input class="underlined" name="attr_myth_points" type="number" title="@{myth_points}"/>
+    </section>
+    <section class="armor paper-background repeating-container" aria-labelledby="armor-header" id="armor">
+      <h3 data-i18n="armor and shield" id="armor-header"></h3>
+      <button class="repcontrol-button repcontrol-button--add" name="act_add-armor" type="action" title="%{add-armor}">
+      </button>
+      <button class="repcontrol-button repcontrol-button--edit" name="act_edit-armor" type="action" title="%{edit-armor}">
+      </button>
+      <fieldset class="repeating_armor">
+        <input class="collapse" name="attr_collapse" value="1" type="checkbox" title="@{repeating_armor_$X_collapse}"/>
+        <div class="span-all name">
+          <input name="attr_equipped" value="1" type="checkbox" title="@{repeating_armor_$X_equipped}"/>
+          <input class="underlined" name="attr_name" data-i18n-placeholder="armor name" type="text" title="@{repeating_armor_$X_name}"/>
+        </div>
+        <label class="input-label"><span class="input-label__text" data-i18n="reduction" role="heading" aria-level="5"></span>
+          <input class="underlined input-label__input" name="attr_reduction" type="number" title="@{repeating_armor_$X_reduction}"/>
+        </label>
+        <label class="input-label"><span class="input-label__text" data-i18n="defense" role="heading" aria-level="5"></span>
+          <input class="underlined input-label__input" name="attr_defense" type="number" title="@{repeating_armor_$X_defense}"/>
+        </label>
+        <label class="input-label span-all expanded"><span class="input-label__text" data-i18n="traits" role="heading" aria-level="5"></span>
+          <input class="underlined input-label__input" name="attr_traits" type="text" title="@{repeating_armor_$X_traits}"/>
+        </label>
+        <label class="input-label span-all expanded"><span class="input-label__text" data-i18n="aspects" role="heading" aria-level="5"></span>
+          <input class="underlined input-label__input" name="attr_aspects" type="text" title="@{repeating_armor_$X_aspects}"/>
+        </label>
+        <div class="headed-textarea description expanded span-all">
+          <h5 data-i18n="description">
+          </h5>
+          <div class="adaptive adaptive--text"><span class="adaptive--text__span" name="attr_description" title="@{repeating_armor_$X_description}"></span>
+            <textarea class="underlined adaptive--text__textarea" name="attr_description" title="@{repeating_armor_$X_description}"></textarea>
+          </div>
+        </div>
+      </fieldset>
+    </section>
+    <section class="weapons paper-background repeating-container" aria-labelledby="weapon-header" id="weapons">
+      <h3 data-i18n="weapons" id="weapon-header"></h3>
+      <label class="input-label" role="heading" aria-level="5"><span data-i18n="attack modifier"></span>
+        <input class="underlined input-label__input" name="attr_attack_modifier" type="number" title="@{attack_modifier}"/>
+      </label>
+      <button class="repcontrol-button repcontrol-button--add" name="act_add-weapon" type="action" title="%{add-weapon}">
+      </button>
+      <button class="repcontrol-button repcontrol-button--edit" name="act_edit-weapon" type="action" title="%{edit-weapon}">
+      </button>
+      <fieldset class="repeating_weapon">
+        <input class="collapse" name="attr_collapse" value="1" type="checkbox" title="@{repeating_weapon_$X_collapse}"/>
+        <div class="span-all name expanded-container">
+          <button class="glyph-only roller" name="roll_roll" value="@{action}" title="%{repeating_weapon_$X_roll}" type="roll">
+          </button>
+          <button name="act_action" hidden="" type="action" title="%{repeating_weapon_$X_action}">
+          </button>
+          <input name="attr_action" type="hidden" title="@{repeating_weapon_$X_action}"/>
+          <input class="underlined" name="attr_name" data-i18n-placeholder="weapon name" type="text" title="@{repeating_weapon_$X_name}"/>
+          <select class="underlined expanded" name="attr_type" title="@{repeating_weapon_$X_type}">
+            <option value="" data-i18n="choose">
+            </option>
+            <option value="might" data-i18n="might">
+            </option>
+            <option value="finesse" data-i18n="finesse">
+            </option>
+            <option value="resolve" data-i18n="resolve">
+            </option>
+            <option value="insight" data-i18n="insight">
+            </option>
+            <option value="bearing" data-i18n="bearing">
+            </option>
+            <option value="weal" data-i18n="weal">
+            </option>
+          </select>
+        </div>
+        <label class="input-label"><span class="input-label__text" data-i18n="attack" role="heading" aria-level="5"></span>
+          <input class="underlined input-label__input" name="attr_attack" type="number" readonly="" title="@{repeating_weapon_$X_attack}"/>
+        </label>
+        <label class="input-label expanded"><span class="input-label__text" data-i18n="bonus" role="heading" aria-level="5"></span>
+          <input class="underlined input-label__input" name="attr_attack_bonus" type="number" title="@{repeating_weapon_$X_attack_bonus}"/>
+        </label>
+        <label class="input-label"><span class="input-label__text" data-i18n="damage" role="heading" aria-level="5"></span>
+          <input class="underlined input-label__input" name="attr_damage" type="text" title="@{repeating_weapon_$X_damage}"/>
+        </label>
+        <label class="input-label  expanded"><span class="input-label__text" data-i18n="range" role="heading" aria-level="5"></span>
+          <input class="underlined input-label__input" name="attr_range" type="text" title="@{repeating_weapon_$X_range}"/>
+        </label>
+        <label class="input-label span-all expanded"><span class="input-label__text" data-i18n="traits" role="heading" aria-level="5"></span>
+          <input class="underlined input-label__input" name="attr_traits" type="text" title="@{repeating_weapon_$X_traits}"/>
+        </label>
+        <label class="input-label span-all expanded"><span class="input-label__text" data-i18n="aspects" role="heading" aria-level="5"></span>
+          <input class="underlined input-label__input" name="attr_aspects" type="text" title="@{repeating_weapon_$X_aspects}"/>
+        </label>
+        <div class="headed-textarea description expanded">
+          <h5 data-i18n="description">
+          </h5>
+          <div class="adaptive adaptive--text"><span class="adaptive--text__span" name="attr_description" title="@{repeating_weapon_$X_description}"></span>
+            <textarea class="underlined adaptive--text__textarea" name="attr_description" title="@{repeating_weapon_$X_description}"></textarea>
+          </div>
+        </div>
+      </fieldset>
+    </section>
+    <section class="lineage paper-background repeating-container" aria-labelledby="lineage-header" id="lineage">
+      <h3 data-i18n="lineage abilities" id="lineage-header"></h3>
+      <button class="repcontrol-button repcontrol-button--add" name="act_add-lineage" type="action" title="%{add-lineage}">
+      </button>
+      <button class="repcontrol-button repcontrol-button--edit" name="act_edit-lineage" type="action" title="%{edit-lineage}">
+      </button>
+      <fieldset class="repeating_lineage">
+        <input class="collapse" name="attr_collapse" value="1" type="checkbox" title="@{repeating_lineage_$X_collapse}"/>
+        <input class="underlined" name="attr_name" data-i18n-placeholder="ability name" type="text" title="@{repeating_lineage_$X_name}"/>
+        <div class="headed-textarea description expanded">
+          <h5 data-i18n="description">
+          </h5>
+          <div class="adaptive adaptive--text"><span class="adaptive--text__span" name="attr_description" title="@{repeating_lineage_$X_description}"></span>
+            <textarea class="underlined adaptive--text__textarea" name="attr_description" title="@{repeating_lineage_$X_description}"></textarea>
+          </div>
+        </div>
+      </fieldset>
+    </section>
+    <section class="archetype paper-background repeating-container" aria-labelledby="archetype-header" id="archetype">
+      <h3 data-i18n="archetype abilities" id="archetype-header"></h3>
+      <button class="repcontrol-button repcontrol-button--add" name="act_add-archetype" type="action" title="%{add-archetype}">
+      </button>
+      <button class="repcontrol-button repcontrol-button--edit" name="act_edit-archetype" type="action" title="%{edit-archetype}">
+      </button>
+      <fieldset class="repeating_archetype">
+        <input class="collapse" name="attr_collapse" value="1" type="checkbox" title="@{repeating_archetype_$X_collapse}"/>
+        <input class="underlined" name="attr_name" data-i18n-placeholder="ability name" type="text" title="@{repeating_archetype_$X_name}"/>
+        <input class="underlined" name="attr_rating" type="number" title="@{repeating_archetype_$X_rating}"/>
+        <div class="headed-textarea description expanded">
+          <h5 data-i18n="description">
+          </h5>
+          <div class="adaptive adaptive--text"><span class="adaptive--text__span" name="attr_description" title="@{repeating_archetype_$X_description}"></span>
+            <textarea class="underlined adaptive--text__textarea" name="attr_description" title="@{repeating_archetype_$X_description}"></textarea>
+          </div>
+        </div>
+      </fieldset>
+    </section>
+    <section class="equipment paper-background repeating-container" aria-labelledby="equipment-header" id="equipment">
+      <h3 data-i18n="equipment" id="equipment-header"></h3>
+      <div class="wealth">
+        <label class="input-label"><span class="uppercase input-label__text" data-i18n="gp"></span>
+          <input class="underlined input-label__input" name="attr_gp" type="number" title="@{gp}"/>
+        </label>
+        <label class="input-label"><span class="uppercase input-label__text" data-i18n="sp"></span>
+          <input class="underlined input-label__input" name="attr_sp" type="number" title="@{sp}"/>
+        </label>
+        <label class="input-label"><span class="uppercase input-label__text" data-i18n="cp"></span>
+          <input class="underlined input-label__input" name="attr_cp" type="number" title="@{cp}"/>
+        </label>
+        <div class="other-treasures headed-textarea">
+          <h5 data-i18n="other treasures">
+          </h5>
+          <div class="adaptive adaptive--text"><span class="adaptive--text__span" name="attr_other_treasures" title="@{other_treasures}"></span>
+            <textarea class="underlined adaptive--text__textarea" name="attr_other_treasures" title="@{other_treasures}"></textarea>
+          </div>
+        </div>
+      </div>
+      <button class="repcontrol-button repcontrol-button--add" name="act_add-equipment" type="action" title="%{add-equipment}">
+      </button>
+      <button class="repcontrol-button repcontrol-button--edit" name="act_edit-equipment" type="action" title="%{edit-equipment}">
+      </button>
+      <fieldset class="repeating_equipment">
+        <input class="collapse" name="attr_collapse" value="1" type="checkbox" title="@{repeating_equipment_$X_collapse}"/>
+        <input class="underlined" name="attr_name" role="heading" aria-level="5" type="text" title="@{repeating_equipment_$X_name}"/>
+        <div class="description headed-textarea expanded">
+          <h5 data-i18n="description">
+          </h5>
+          <div class="adaptive adaptive--text"><span class="adaptive--text__span" name="attr_description" title="@{repeating_equipment_$X_description}"></span>
+            <textarea class="underlined adaptive--text__textarea" name="attr_description" title="@{repeating_equipment_$X_description}"></textarea>
+          </div>
+        </div>
+      </fieldset>
+    </section>
+    <section class="spells paper-background repeating-container" aria-labelledby="spell-header" id="spells">
+      <h3 data-i18n="spells" id="spell-header"></h3>
+      <div class="input-label input-label--dual">
+        <label for="apprentice-current" data-i18n="apprentice per day" role="heading" aria-level="5"></label>
+        <input class="underlined" name="attr_apprentice_per_day" id="apprentice-current" type="number" title="@{apprentice_per_day}"/><span class="separator">/</span>
+        <input class="underlined" name="attr_apprentice_per_day_max" type="number" title="@{apprentice_per_day|max}"/>
+      </div>
+      <div class="input-label input-label--dual">
+        <label for="journeyman-current" data-i18n="journeyman per day" role="heading" aria-level="5"></label>
+        <input class="underlined" name="attr_journeyman_per_day" id="journeyman-current" type="number" title="@{journeyman_per_day}"/><span class="separator">/</span>
+        <input class="underlined" name="attr_journeyman_per_day_max" type="number" title="@{journeyman_per_day|max}"/>
+      </div>
+      <div class="input-label input-label--dual">
+        <label for="master-current" data-i18n="master per day" role="heading" aria-level="5"></label>
+        <input class="underlined" name="attr_master_per_day" id="master-current" type="number" title="@{master_per_day}"/><span class="separator">/</span>
+        <input class="underlined" name="attr_master_per_day_max" type="number" title="@{master_per_day|max}"/>
+      </div>
+      <button class="repcontrol-button repcontrol-button--add" name="act_add-spells" type="action" title="%{add-spells}">
+      </button>
+      <button class="repcontrol-button repcontrol-button--edit" name="act_edit-spells" type="action" title="%{edit-spells}">
+      </button>
+      <fieldset class="repeating_spells">
+        <input class="collapse" name="attr_collapse" value="1" type="checkbox" title="@{repeating_spells_$X_collapse}"/>
+        <div class="name">
+          <div class="roller-container hover-container hover-container--two-row hover-container--two-column">
+            <button class="glyph-only hover-container__content roller--scroll align-start justify-start roller" name="roll_describe" value="@{describe_action}" title="%{repeating_spells_$X_describe}" type="roll">
+            </button>
+            <button name="act_describe-action" hidden="" type="action" title="%{repeating_spells_$X_describe-action}">
+            </button>
+            <input name="attr_describe_action" type="hidden" title="@{repeating_spells_$X_describe_action}"/>
+            <button class="glyph-only hover-container__hover-visible align-start justify-end roller" name="roll_cast_1" value="@{cast_1_action}" title="%{repeating_spells_$X_cast_1}" type="roll">
+            </button>
+            <button name="act_cast-1-action" hidden="" type="action" title="%{repeating_spells_$X_cast-1-action}">
+            </button>
+            <input name="attr_cast_1_action" type="hidden" title="@{repeating_spells_$X_cast_1_action}"/>
+            <button class="glyph-only hover-container__hover-visible align-end justify-start roller" name="roll_cast_2" value="@{cast_2_action}" title="%{repeating_spells_$X_cast_2}" type="roll">
+            </button>
+            <button name="act_cast-2-action" hidden="" type="action" title="%{repeating_spells_$X_cast-2-action}">
+            </button>
+            <input name="attr_cast_2_action" type="hidden" title="@{repeating_spells_$X_cast_2_action}"/>
+            <button class="glyph-only hover-container__hover-visible align-end justify-end roller" name="roll_cast_3" value="@{cast_3_action}" title="%{repeating_spells_$X_cast_3}" type="roll">
+            </button>
+            <button name="act_cast-3-action" hidden="" type="action" title="%{repeating_spells_$X_cast-3-action}">
+            </button>
+            <input name="attr_cast_3_action" type="hidden" title="@{repeating_spells_$X_cast_3_action}"/>
+          </div>
+          <input class="underlined" name="attr_name" role="heading" aria-level="5" type="text" title="@{repeating_spells_$X_name}"/>
+          <select class="underlined" name="attr_level" title="@{repeating_spells_$X_level}">
+            <option value="apprentice" data-i18n="apprentice">
+            </option>
+            <option value="journeyman" data-i18n="journeyman">
+            </option>
+            <option value="master" data-i18n="master">
+            </option>
+          </select>
+        </div>
+        <div class="headed-textarea description expanded">
+          <h5 data-i18n="effect 1"></h5>
+          <div class="adaptive adaptive--text"><span class="adaptive--text__span" name="attr_effect_1" title="@{repeating_spells_$X_effect_1}"></span>
+            <textarea class="underlined adaptive--text__textarea" name="attr_effect_1" title="@{repeating_spells_$X_effect_1}"></textarea>
+          </div>
+        </div>
+        <div class="headed-textarea description expanded">
+          <h5 data-i18n="effect 2"></h5>
+          <div class="adaptive adaptive--text"><span class="adaptive--text__span" name="attr_effect_2" title="@{repeating_spells_$X_effect_2}"></span>
+            <textarea class="underlined adaptive--text__textarea" name="attr_effect_2" title="@{repeating_spells_$X_effect_2}"></textarea>
+          </div>
+        </div>
+        <div class="headed-textarea description expanded">
+          <h5 data-i18n="effect 3"></h5>
+          <div class="adaptive adaptive--text"><span class="adaptive--text__span" name="attr_effect_3" title="@{repeating_spells_$X_effect_3}"></span>
+            <textarea class="underlined adaptive--text__textarea" name="attr_effect_3" title="@{repeating_spells_$X_effect_3}"></textarea>
+          </div>
+        </div>
+        <div class="headed-textarea description expanded">
+          <h5 data-i18n="description">
+          </h5>
+          <div class="adaptive adaptive--text"><span class="adaptive--text__span" name="attr_description" title="@{repeating_spells_$X_description}"></span>
+            <textarea class="underlined adaptive--text__textarea" name="attr_description" title="@{repeating_spells_$X_description}"></textarea>
+          </div>
+        </div>
+      </fieldset>
+    </section>
+  </article>
+</main>
+<rolltemplate class="sheet-rolltemplate-thj2e">
+  <div class="template thj2e">
+    <div class="header">{{#name}}
+      <h3>{{name}}</h3>{{/name}}{{#character_name}}{{#character_id}}
+      <h4 class="character_name">[{{character_name}}](http://journal.roll20.net/character/{{character_id}})</h4>{{/character_id}}{{^character_id}}
+      <h4 class="character_name">{{character_name}}</h4>{{/character_id}}{{/character_name}}
+    </div>{{#roll}}
+    <div class="template-row">{{#roll_name}}
+      <h5>{{roll_name}}</h5>{{/roll_name}}{{^roll_name}}
+      <h5 data-i18n="roll"></h5>{{/roll_name}}<span class="description">
+         {{roll}}{{#target}}<span data-i18n="vs"></span>{{target}}{{/target}}</span>
+    </div>{{#target}}{{#rollBetween() computed::result 1 1}}
+    <div class="template-row template-row--summary"><span class="capitalize result-display-true" data-i18n="success"></span></div>{{/rollBetween() computed::result 1 1}}{{#rollBetween() computed::result 0 0}}
+    <div class="template-row template-row--summary"><span class="capitalize result-display-false" data-i18n="failure"></span></div>{{/rollBetween() computed::result 0 0}}{{/target}}{{/roll}}{{#damage}}
+    <div class="template-row">{{#damage_type}}
+      <h5>{{roll_name}}</h5>{{/damage_type}}{{^damage_type}}
+      <h5 data-i18n="damage"></h5>{{/damage_type}}<span class="description">{{damage}}</span>
+    </div>{{/damage}}{{#range}}
+    <div class="template-row">
+      <h5 data-i18n="range"></h5><span class="description">{{range}}</span>
+    </div>{{/range}}{{#traits}}
+    <div class="template-row">
+      <h5 data-i18n="traits"></h5><span class="description">{{traits}}</span>
+    </div>{{/traits}}{{#aspects}}
+    <div class="template-row">
+      <h5 data-i18n="aspects"></h5><span class="description">{{aspects}}</span>
+    </div>{{/aspects}}{{#description}}
+    <div class="template-row template-row--text">
+      <h5 data-i18n="description"></h5><span class="description">{{description}}</span>
+    </div>{{/description}}{{#effect}}
+    <div class="template-row template-row--text">
+      <h5 data-i18n="effect"></h5><span class="description">{{effect}}</span>
+    </div>{{/effect}}{{#effect_1}}
+    <div class="template-row template-row--text">
+      <h5 data-i18n="effect 1"></h5><span class="description">{{effect_1}}</span>
+    </div>{{/effect_1}}{{#effect_2}}
+    <div class="template-row template-row--text">
+      <h5 data-i18n="effect 2"></h5><span class="description">{{effect_2}}</span>
+    </div>{{/effect_2}}{{#effect_3}}
+    <div class="template-row template-row--text">
+      <h5 data-i18n="effect 3"></h5><span class="description">{{effect_3}}</span>
+    </div>{{/effect_3}}{{#allprops() character_name character_id name roll_name roll damage damage_type effect effect_1 effect_2 effect_3 description range traits aspects target result}}
+    <div class="template-row template-row--text">
+      <h5>{{key}}</h5><span class="description">{{value}}</span>
+    </div>{{/allprops() character_name character_id name roll_name roll damage damage_type effect effect_1 effect_2 effect_3 description range traits aspects target result}}
+  </div>
+</rolltemplate>
 <script type="text/worker">
   const k = (function(){
   const kFuncs = {};
-  const document = true;
+  const document = false;
   
-  const cascades = {"attr_character_name":{"name":"character_name","type":"text","defaultValue":"","affects":[],"triggeredFuncs":["setActionCalls"],"listenerFunc":"accessSheet","listener":"change:character_name"}};
+  const cascades = {"attr_character_name":{"name":"character_name","type":"text","defaultValue":"","affects":[],"triggeredFuncs":["setActionCalls"],"listenerFunc":"accessSheet","listener":"change:character_name"},"attr_template_start":{"name":"template_start","type":"hidden","defaultValue":"&{template:thj2e} {{character_name=@{character_name}}} {{character_id=@{character_id}}}","triggeredFuncs":[],"affects":[]},"attr_sheet_state":{"name":"sheet_state","type":"hidden","defaultValue":"settings","triggeredFuncs":[],"affects":[]},"attr_collapsed":{"name":"collapsed","type":"hidden","defaultValue":"","triggeredFuncs":[],"affects":[]},"act_nav-character":{"triggeredFuncs":["navigateSheet"],"name":"nav-character","listener":"clicked:nav-character","listenerFunc":"accessSheet","type":"action"},"act_nav-npc":{"triggeredFuncs":["navigateSheet"],"name":"nav-npc","listener":"clicked:nav-npc","listenerFunc":"accessSheet","type":"action"},"act_nav-settings":{"triggeredFuncs":["navigateSheet"],"name":"nav-settings","listener":"clicked:nav-settings","listenerFunc":"accessSheet","type":"action"},"attr_roll_state":{"name":"roll_state","type":"radio","defaultValue":"2d20kh1","triggeredFuncs":[],"affects":[]},"attr_whisper":{"name":"whisper","type":"select","defaultValue":"","triggeredFuncs":[],"affects":[]},"attr_sheet_type":{"triggeredFuncs":["displayArticles"],"name":"sheet_type","listener":"change:sheet_type","listenerFunc":"accessSheet","type":"select","defaultValue":"character","affects":[]},"attr_lineage":{"name":"lineage","type":"text","defaultValue":"","triggeredFuncs":[],"affects":[]},"attr_level":{"name":"level","type":"number","defaultValue":0,"triggeredFuncs":[],"affects":[]},"attr_experience":{"name":"experience","type":"number","defaultValue":0,"triggeredFuncs":[],"affects":[]},"attr_archetype":{"name":"archetype","type":"text","defaultValue":"","triggeredFuncs":[],"affects":[]},"attr_profession":{"name":"profession","type":"text","defaultValue":"","triggeredFuncs":[],"affects":[]},"act_might-action":{"listenerFunc":"rollGeneric","name":"might-action","listener":"clicked:might-action","type":"action"},"attr_might_action":{"name":"might_action","type":"hidden","defaultValue":"","triggeredFuncs":[],"affects":[]},"attr_might":{"affects":["might_mod"],"name":"might","listener":"change:might","listenerFunc":"accessSheet","type":"number","defaultValue":10,"triggeredFuncs":[]},"attr_might_mod":{"calculation":"calcAttributeMod","name":"might_mod","type":"number","defaultValue":0,"triggeredFuncs":[],"affects":[]},"act_finesse-action":{"listenerFunc":"rollGeneric","name":"finesse-action","listener":"clicked:finesse-action","type":"action"},"attr_finesse_action":{"name":"finesse_action","type":"hidden","defaultValue":"","triggeredFuncs":[],"affects":[]},"attr_finesse":{"affects":["finesse_mod"],"name":"finesse","listener":"change:finesse","listenerFunc":"accessSheet","type":"number","defaultValue":10,"triggeredFuncs":[]},"attr_finesse_mod":{"calculation":"calcAttributeMod","affects":["defense_total"],"name":"finesse_mod","listener":"change:finesse_mod","listenerFunc":"accessSheet","type":"number","defaultValue":0,"triggeredFuncs":[]},"act_resolve-action":{"listenerFunc":"rollGeneric","name":"resolve-action","listener":"clicked:resolve-action","type":"action"},"attr_resolve_action":{"name":"resolve_action","type":"hidden","defaultValue":"","triggeredFuncs":[],"affects":[]},"attr_resolve":{"affects":["resolve_mod"],"name":"resolve","listener":"change:resolve","listenerFunc":"accessSheet","type":"number","defaultValue":10,"triggeredFuncs":[]},"attr_resolve_mod":{"calculation":"calcAttributeMod","name":"resolve_mod","type":"number","defaultValue":0,"triggeredFuncs":[],"affects":[]},"act_insight-action":{"listenerFunc":"rollGeneric","name":"insight-action","listener":"clicked:insight-action","type":"action"},"attr_insight_action":{"name":"insight_action","type":"hidden","defaultValue":"","triggeredFuncs":[],"affects":[]},"attr_insight":{"affects":["insight_mod"],"name":"insight","listener":"change:insight","listenerFunc":"accessSheet","type":"number","defaultValue":10,"triggeredFuncs":[]},"attr_insight_mod":{"calculation":"calcAttributeMod","name":"insight_mod","type":"number","defaultValue":0,"triggeredFuncs":[],"affects":[]},"act_bearing-action":{"listenerFunc":"rollGeneric","name":"bearing-action","listener":"clicked:bearing-action","type":"action"},"attr_bearing_action":{"name":"bearing_action","type":"hidden","defaultValue":"","triggeredFuncs":[],"affects":[]},"attr_bearing":{"affects":["bearing_mod"],"name":"bearing","listener":"change:bearing","listenerFunc":"accessSheet","type":"number","defaultValue":10,"triggeredFuncs":[]},"attr_bearing_mod":{"calculation":"calcAttributeMod","name":"bearing_mod","type":"number","defaultValue":0,"triggeredFuncs":[],"affects":[]},"act_weal-action":{"listenerFunc":"rollGeneric","name":"weal-action","listener":"clicked:weal-action","type":"action"},"attr_weal_action":{"name":"weal_action","type":"hidden","defaultValue":"","triggeredFuncs":[],"affects":[]},"attr_weal":{"affects":["weal_mod"],"name":"weal","listener":"change:weal","listenerFunc":"accessSheet","type":"number","defaultValue":10,"triggeredFuncs":[]},"attr_weal_mod":{"calculation":"calcAttributeMod","name":"weal_mod","type":"number","defaultValue":0,"triggeredFuncs":[],"affects":[]},"attr_defense_total":{"calculation":"calcDefense","name":"defense_total","type":"number","defaultValue":10,"triggeredFuncs":[],"affects":[]},"attr_defense_mod":{"affects":["defense_total"],"name":"defense_mod","listener":"change:defense_mod","listenerFunc":"accessSheet","type":"number","defaultValue":0,"triggeredFuncs":[]},"attr_reduction_value":{"calculation":"calcDefense","name":"reduction_value","type":"number","defaultValue":0,"triggeredFuncs":[],"affects":[]},"attr_reduction_mod":{"affects":["reduction_value"],"name":"reduction_mod","listener":"change:reduction_mod","listenerFunc":"accessSheet","type":"number","defaultValue":0,"triggeredFuncs":[]},"attr_endurance":{"name":"endurance","type":"number","defaultValue":0,"triggeredFuncs":[],"affects":[]},"attr_endurance_max":{"affects":["defence"],"triggeredFuncs":["calcHealth"],"name":"endurance_max","listener":"change:endurance_max","listenerFunc":"accessSheet","type":"number","defaultValue":0},"act_saving-throw-action":{"listenerFunc":"rollGeneric","name":"saving-throw-action","listener":"clicked:saving-throw-action","type":"action"},"attr_saving_throw_action":{"name":"saving_throw_action","type":"hidden","defaultValue":"","triggeredFuncs":[],"affects":[]},"attr_saving_throw":{"name":"saving_throw","type":"number","defaultValue":0,"triggeredFuncs":[],"affects":[]},"attr_myth_points":{"name":"myth_points","type":"number","defaultValue":0,"triggeredFuncs":[],"affects":[]},"act_add-armor":{"listenerFunc":"addItem","name":"add-armor","listener":"clicked:add-armor","type":"action"},"act_edit-armor":{"listenerFunc":"editSection","name":"edit-armor","listener":"clicked:edit-armor","type":"action"},"fieldset_repeating_armor":{"affects":["reduction_value","defense_total"],"name":"repeating_armor","listener":"change:repeating_armor","listenerFunc":"accessSheet","type":"fieldset"},"attr_repeating_armor_$X_collapse":{"name":"repeating_armor_$X_collapse","type":"checkbox","defaultValue":0,"triggeredFuncs":[],"affects":[]},"attr_repeating_armor_$X_equipped":{"affects":["defense_total","reduction_value"],"name":"repeating_armor_$X_equipped","listener":"change:repeating_armor:equipped","listenerFunc":"accessSheet","type":"checkbox","defaultValue":0,"triggeredFuncs":[]},"attr_repeating_armor_$X_name":{"name":"repeating_armor_$X_name","type":"text","defaultValue":"","triggeredFuncs":[],"affects":[]},"attr_repeating_armor_$X_reduction":{"affects":["reduction_value"],"name":"repeating_armor_$X_reduction","listener":"change:repeating_armor:reduction","listenerFunc":"accessSheet","type":"number","defaultValue":0,"triggeredFuncs":[]},"attr_repeating_armor_$X_defense":{"affects":["defense_total"],"name":"repeating_armor_$X_defense","listener":"change:repeating_armor:defense","listenerFunc":"accessSheet","type":"number","defaultValue":0,"triggeredFuncs":[]},"attr_repeating_armor_$X_traits":{"name":"repeating_armor_$X_traits","type":"text","defaultValue":"","triggeredFuncs":[],"affects":[]},"attr_repeating_armor_$X_aspects":{"name":"repeating_armor_$X_aspects","type":"text","defaultValue":"","triggeredFuncs":[],"affects":[]},"attr_repeating_armor_$X_description":{"name":"repeating_armor_$X_description","type":"span","defaultValue":"","triggeredFuncs":[],"affects":[]},"attr_attack_modifier":{"affects":["repeating_weapon_$X_attack"],"name":"attack_modifier","listener":"change:attack_modifier","listenerFunc":"accessSheet","type":"number","defaultValue":0,"triggeredFuncs":[]},"act_add-weapon":{"listenerFunc":"addItem","name":"add-weapon","listener":"clicked:add-weapon","type":"action"},"act_edit-weapon":{"listenerFunc":"editSection","name":"edit-weapon","listener":"clicked:edit-weapon","type":"action"},"attr_repeating_weapon_$X_collapse":{"name":"repeating_weapon_$X_collapse","type":"checkbox","defaultValue":0,"triggeredFuncs":[],"affects":[]},"act_repeating_weapon_$X_action":{"listenerFunc":"rollAttack","name":"repeating_weapon_$X_action","listener":"clicked:repeating_weapon:action","type":"action"},"attr_repeating_weapon_$X_action":{"name":"repeating_weapon_$X_action","type":"hidden","defaultValue":"","triggeredFuncs":[],"affects":[]},"attr_repeating_weapon_$X_name":{"affects":["repeating_weapon_$x_attack"],"name":"repeating_weapon_$X_name","listener":"change:repeating_weapon:name","listenerFunc":"accessSheet","type":"text","defaultValue":"","triggeredFuncs":[]},"attr_repeating_weapon_$X_type":{"affects":["repeating_weapon_$x_attack"],"name":"repeating_weapon_$X_type","listener":"change:repeating_weapon:type","listenerFunc":"accessSheet","type":"select","defaultValue":"","triggeredFuncs":[]},"attr_repeating_weapon_$X_attack":{"calculation":"calcAttack","name":"repeating_weapon_$X_attack","type":"number","defaultValue":0,"triggeredFuncs":[],"affects":[]},"attr_repeating_weapon_$X_attack_bonus":{"affects":["repeating_weapon_$X_attack"],"name":"repeating_weapon_$X_attack_bonus","listener":"change:repeating_weapon:attack_bonus","listenerFunc":"accessSheet","type":"number","defaultValue":0,"triggeredFuncs":[]},"attr_repeating_weapon_$X_damage":{"affects":["repeating_weapon_$x_attack"],"name":"repeating_weapon_$X_damage","listener":"change:repeating_weapon:damage","listenerFunc":"accessSheet","type":"text","defaultValue":"","triggeredFuncs":[]},"attr_repeating_weapon_$X_range":{"affects":["repeating_weapon_$x_attack"],"name":"repeating_weapon_$X_range","listener":"change:repeating_weapon:range","listenerFunc":"accessSheet","type":"text","defaultValue":"","triggeredFuncs":[]},"attr_repeating_weapon_$X_traits":{"affects":["repeating_weapon_$x_attack"],"name":"repeating_weapon_$X_traits","listener":"change:repeating_weapon:traits","listenerFunc":"accessSheet","type":"text","defaultValue":"","triggeredFuncs":[]},"attr_repeating_weapon_$X_aspects":{"affects":["repeating_weapon_$x_attack"],"name":"repeating_weapon_$X_aspects","listener":"change:repeating_weapon:aspects","listenerFunc":"accessSheet","type":"text","defaultValue":"","triggeredFuncs":[]},"attr_repeating_weapon_$X_description":{"name":"repeating_weapon_$X_description","type":"span","defaultValue":"","triggeredFuncs":[],"affects":["repeating_weapon_$x_attack"],"listener":"change:repeating_weapon:description","listenerFunc":"accessSheet"},"act_add-lineage":{"listenerFunc":"addItem","name":"add-lineage","listener":"clicked:add-lineage","type":"action"},"act_edit-lineage":{"listenerFunc":"editSection","name":"edit-lineage","listener":"clicked:edit-lineage","type":"action"},"attr_repeating_lineage_$X_collapse":{"name":"repeating_lineage_$X_collapse","type":"checkbox","defaultValue":0,"triggeredFuncs":[],"affects":[]},"attr_repeating_lineage_$X_name":{"name":"repeating_lineage_$X_name","type":"text","defaultValue":"","triggeredFuncs":[],"affects":[]},"attr_repeating_lineage_$X_description":{"name":"repeating_lineage_$X_description","type":"span","defaultValue":"","triggeredFuncs":[],"affects":[]},"act_add-archetype":{"listenerFunc":"addItem","name":"add-archetype","listener":"clicked:add-archetype","type":"action"},"act_edit-archetype":{"listenerFunc":"editSection","name":"edit-archetype","listener":"clicked:edit-archetype","type":"action"},"attr_repeating_archetype_$X_collapse":{"name":"repeating_archetype_$X_collapse","type":"checkbox","defaultValue":0,"triggeredFuncs":[],"affects":[]},"attr_repeating_archetype_$X_name":{"name":"repeating_archetype_$X_name","type":"text","defaultValue":"","triggeredFuncs":[],"affects":[]},"attr_repeating_archetype_$X_rating":{"name":"repeating_archetype_$X_rating","type":"number","defaultValue":0,"triggeredFuncs":[],"affects":[]},"attr_repeating_archetype_$X_description":{"name":"repeating_archetype_$X_description","type":"span","defaultValue":"","triggeredFuncs":[],"affects":[]},"attr_gp":{"name":"gp","type":"number","defaultValue":0,"triggeredFuncs":[],"affects":[]},"attr_sp":{"name":"sp","type":"number","defaultValue":0,"triggeredFuncs":[],"affects":[]},"attr_cp":{"name":"cp","type":"number","defaultValue":0,"triggeredFuncs":[],"affects":[]},"attr_other_treasures":{"name":"other_treasures","type":"span","defaultValue":"","triggeredFuncs":[],"affects":[]},"act_add-equipment":{"listenerFunc":"addItem","name":"add-equipment","listener":"clicked:add-equipment","type":"action"},"act_edit-equipment":{"listenerFunc":"editSection","name":"edit-equipment","listener":"clicked:edit-equipment","type":"action"},"attr_repeating_equipment_$X_collapse":{"name":"repeating_equipment_$X_collapse","type":"checkbox","defaultValue":0,"triggeredFuncs":[],"affects":[]},"attr_repeating_equipment_$X_name":{"name":"repeating_equipment_$X_name","type":"text","defaultValue":"","triggeredFuncs":[],"affects":[]},"attr_repeating_equipment_$X_description":{"name":"repeating_equipment_$X_description","type":"span","defaultValue":"","triggeredFuncs":[],"affects":[]},"attr_apprentice_per_day":{"name":"apprentice_per_day","type":"number","defaultValue":0,"triggeredFuncs":[],"affects":[]},"attr_apprentice_per_day_max":{"name":"apprentice_per_day_max","type":"number","defaultValue":0,"triggeredFuncs":[],"affects":[]},"attr_journeyman_per_day":{"name":"journeyman_per_day","type":"number","defaultValue":0,"triggeredFuncs":[],"affects":[]},"attr_journeyman_per_day_max":{"name":"journeyman_per_day_max","type":"number","defaultValue":0,"triggeredFuncs":[],"affects":[]},"attr_master_per_day":{"name":"master_per_day","type":"number","defaultValue":0,"triggeredFuncs":[],"affects":[]},"attr_master_per_day_max":{"name":"master_per_day_max","type":"number","defaultValue":0,"triggeredFuncs":[],"affects":[]},"act_add-spells":{"listenerFunc":"addItem","name":"add-spells","listener":"clicked:add-spells","type":"action"},"act_edit-spells":{"listenerFunc":"editSection","name":"edit-spells","listener":"clicked:edit-spells","type":"action"},"attr_repeating_spells_$X_collapse":{"name":"repeating_spells_$X_collapse","type":"checkbox","defaultValue":0,"triggeredFuncs":[],"affects":[]},"act_repeating_spells_$X_describe-action":{"listenerFunc":"castSpell","name":"repeating_spells_$X_describe-action","listener":"clicked:repeating_spells:describe-action","type":"action"},"attr_repeating_spells_$X_describe_action":{"name":"repeating_spells_$X_describe_action","type":"hidden","defaultValue":"","triggeredFuncs":[],"affects":[]},"act_repeating_spells_$X_cast-1-action":{"listenerFunc":"castSpell","name":"repeating_spells_$X_cast-1-action","listener":"clicked:repeating_spells:cast-1-action","type":"action"},"attr_repeating_spells_$X_cast_1_action":{"name":"repeating_spells_$X_cast_1_action","type":"hidden","defaultValue":"","triggeredFuncs":[],"affects":[]},"act_repeating_spells_$X_cast-2-action":{"listenerFunc":"castSpell","name":"repeating_spells_$X_cast-2-action","listener":"clicked:repeating_spells:cast-2-action","type":"action"},"attr_repeating_spells_$X_cast_2_action":{"name":"repeating_spells_$X_cast_2_action","type":"hidden","defaultValue":"","triggeredFuncs":[],"affects":[]},"act_repeating_spells_$X_cast-3-action":{"listenerFunc":"castSpell","name":"repeating_spells_$X_cast-3-action","listener":"clicked:repeating_spells:cast-3-action","type":"action"},"attr_repeating_spells_$X_cast_3_action":{"name":"repeating_spells_$X_cast_3_action","type":"hidden","defaultValue":"","triggeredFuncs":[],"affects":[]},"attr_repeating_spells_$X_name":{"name":"repeating_spells_$X_name","type":"text","defaultValue":"","triggeredFuncs":[],"affects":[]},"attr_repeating_spells_$X_level":{"name":"repeating_spells_$X_level","type":"select","defaultValue":"apprentice","triggeredFuncs":[],"affects":[]},"attr_repeating_spells_$X_effect_1":{"name":"repeating_spells_$X_effect_1","type":"span","defaultValue":"","triggeredFuncs":[],"affects":[]},"attr_repeating_spells_$X_effect_2":{"name":"repeating_spells_$X_effect_2","type":"span","defaultValue":"","triggeredFuncs":[],"affects":[]},"attr_repeating_spells_$X_effect_3":{"name":"repeating_spells_$X_effect_3","type":"span","defaultValue":"","triggeredFuncs":[],"affects":[]},"attr_repeating_spells_$X_description":{"name":"repeating_spells_$X_description","type":"span","defaultValue":"","triggeredFuncs":[],"affects":[]}};
   
   kFuncs.cascades = cascades;
   
-  const repeatingSectionDetails = [];
+  const repeatingSectionDetails = [{"section":"repeating_armor","fields":["collapse","equipped","name","reduction","defense","traits","aspects","description"]},{"section":"repeating_weapon","fields":["collapse","action","name","type","attack","attack_bonus","damage","range","traits","aspects","description"]},{"section":"repeating_lineage","fields":["collapse","name","description"]},{"section":"repeating_archetype","fields":["collapse","name","rating","description"]},{"section":"repeating_equipment","fields":["collapse","name","description"]},{"section":"repeating_spells","fields":["collapse","describe_action","cast_1_action","cast_2_action","cast_3_action","name","level","effect_1","effect_2","effect_3","description"]}];
   
   kFuncs.repeatingSectionDetails = repeatingSectionDetails;
   
@@ -956,5 +1392,290 @@ registerFuncs({editSection});
 
 return kFuncs;return kFuncs;
   }());
-  const actionAttributes = [];
+  const actionAttributes = ["might_action","finesse_action","resolve_action","insight_action","bearing_action","weal_action","saving_throw_action","repeating_weapon_$x_action","repeating_spells_$x_describe_action","repeating_spells_$x_cast_1_action","repeating_spells_$x_cast_2_action","repeating_spells_$x_cast_3_action"];const sheetTypes = ["character","npc"];const navButtons = ["character","npc","settings"];const attributeNames = ["might","finesse","resolve","insight","bearing","weal"];
+  /*jshint esversion: 11, laxcomma:true, eqeqeq:true*/
+/*jshint -W014,-W084,-W030,-W033*/
+k.version = 0;
+k.sheetName = "THJ2e";
+
+//The attributes that are needed for all roll functions.
+const rollGet = ['roll_state','whisper'];/*jshint esversion: 11, laxcomma:true, eqeqeq:true*/
+/*jshint -W014,-W084,-W030,-W033*/
+/**
+ * A function to calculate the value of the base attribute mods in the system (might, finesse, resolve, insight, bearing, and weal).
+ * 
+ * Also, Note that the K-scaffold passes three properties of the args object to calculation, triggered, and initial functions. We're using `trigger`, and `attributes` here, but an object containing arrays of all the row IDs of each section is also passed under the term `sections`.
+ * 
+ * I've only listed the parameters of the trigger object that are relevant to this function. You can see the full parameter list in the [readme](https://github.com/Kurohyou/Roll20-Snippets/tree/main/K_Scaffold)
+ * @param {object} args - An object containing the trigger and attributes
+ * @param {object} args.trigger - The details of which attribute is being calculated.
+ * @param {string} args.trigger.name - The full name of the attribute, including any repeating section information (won't be applicable for this function)
+ * @param {object} args.attributes - The object containing the attribute values. Note that this is actually proxy for the actual attribute object that ensures values are returned correctly.
+ * @returns {number} - Returns the new attribute mod, which the K-scaffold's infrastructure will apply to the sheet.
+ */
+const calcAttributeMod = function({trigger,attributes}){
+  let attribute = trigger.name.replace(/_mod/,'');//extract the base attribute name from the name of the triggering attribute
+  let returnValue;
+  switch(true){//We're looking for the first expression that returns true;
+    case (attributes[attribute] < 4):
+      returnValue = -2;
+      break;
+    case (attributes[attribute] < 7):
+      returnValue = -1;
+      break;
+    case (attributes[attribute] < 15):
+      returnValue = 0;
+      break;
+    case (attributes[attribute] < 18):
+      returnValue = 1;
+      break;
+    case (attributes[attribute] >= 18):
+      returnValue = 2;
+      break;
+    default:
+      returnValue = 0;
+      break;
+  }
+  return returnValue;
+};
+k.registerFuncs({calcAttributeMod});//We need to register the function with the k-scaffold so that the k-scaffold's listeners can call it when needed.
+
+/**
+ * Our function to calculate our total Defense or reduction_value rating.
+ * 
+ * We are using the new `sections` parameter so that we can loop over our `repeating_armor` rows to determine what defense or reduction_value bonuses to apply.
+ * 
+ * Note that the `trigger` paramter is coming last here. Because the K-scaffold calls functions via the object destructuring argument method, We can put these arguments in any order, as long as they are all part of object. Even though this is possible, I would typically put these in a standardized order of `trigger`,`attributes`,`sections` just to make it easier for me to read the code.
+ * @param {object} attributes - Same as in {@link calcAttributeMod}.
+ * @param {object} sections - An object that contains all of the repeating row information for our sheet.
+ * @param {string[]} sections.repeating_armor - The row IDs of our `repeating_armor` section. We'll use this to loop through and determine which defense bonuses should apply.
+ * @param {object} trigger - As in {@link calcAttributeMod}
+ * @returns {number} - Returns the new defense stat value, which the K-scaffold's infrastructure will apply to the sheet.
+ */
+const calcDefense = function({attributes,sections,trigger}){
+  let name = trigger.name.replace(/_.+/,'');//Extract the attribute name that will be used for referencing affecting attributes. e.g. `defense_total` becomes `defense` for use in referencing `defence_mod` and `repeating_armor_-oyho8987uLKJ_defense`.
+  let activeArmorIDs = sections.repeating_armor.filter((id)=>attributes[`repeating_armor_${id}_equipped`]);//Because the K-scaffold's attributes object takes care of ensuring a proper return value for our attributes, we can just do a simple check for whether the attribute value is truthy (e.g. `1`) or falsy (e.g. `0`) because this attribute is a checkbox with a checked state of `1` and an off state of `0`.
+  let finesse = name === 'defense' ?//Handles accounting for finesse in the defense calculation.
+    10 + attributes.finesse_mod :
+    0;
+  let activeArmorBonus = activeArmorIDs.reduce((total,id)=>total += attributes[`repeating_armor_${id}_${name}`],0);//Total up the bonuses from all our equipped gear.
+  return attributes[`${name}_mod`] + finesse + activeArmorBonus;//Total our defense or reduction score using the miscellaneous modifier and all of our equipped armors/shields.
+};
+k.registerFuncs({calcDefense});//Register the function
+
+const calcAttack = function({trigger,attributes,sections}){
+  const [section,id] = k.parseTriggerName(trigger.name);
+  const selectedAttribute = attributes[`${section}_${id}_type`];
+  const selectedValue = selectedAttribute ?
+    attributes[`${selectedAttribute}_mod`] :
+    0;
+    k.debug({attack_modifier:attributes.attack_modifier,attack_bonus:attributes[`${section}_${id}_attack_bonus`],selectedValue,bonusCasc:k.cascades['attr_repeating_weapon_$X_attack_bonus']})
+  return attributes.attack_modifier + attributes[`${section}_${id}_attack_bonus`] + selectedValue;
+};
+k.registerFuncs({calcAttack});/*jshint esversion: 11, laxcomma:true, eqeqeq:true*/
+/*jshint -W014,-W084,-W030,-W033*/
+/**
+ * A function that toggles the `.active` class on elements based on which tab of the sheet is currently selected. Note that the display changes caused by this are client side only and are not sync'd across users except when the sheet is opened by a user.
+ * @param {object} trigger - The trigger object as stored in the k-scaffold's cascades object.
+ * @param {object} attributes - The attributes object as returned from `getAllAttrs` and used in the default K-scaffold event cascade.
+ * @returns {void}
+ */
+const navigateSheet = function({trigger,attributes}){
+  let name = trigger ?
+    trigger.name :
+    attributes.sheet_state;//The trigger property is not passed when this function is called on sheet:opened. So, we need to get the current sheet state out of memory in that case.
+  let [,,page] = k.parseTriggerName(name);//Parse out the name of the navigation button that was clicked.
+  page = page.replace(/^nav-|-action$/g,'');//Remove the navigation and action button specific pieces of the button name to leave us with just the name of the button, which ideally is the same as a CSS class that we want to apply `.active` to.
+  navButtons.forEach((button)=>{//iterate through all the navigation buttons. navButtons is exported to our JS by the K-scaffold.
+    let element = button.replace(/-action/,'');//sanitize the button name down until we get just the target class name.
+    $20(`.${element}`).removeClass('active');//Remove the active class from all elements with the indicated class (e.g. .character)
+  });
+  $20(`.${page}`).addClass('active');//Add .active back to the elements that we are actually navigating to. We do this outside of the loop so that we can properly handle elements that may have more than one navigation class applied to them, although we don't have any of these in this sheet setup.
+  attributes.sheet_state = page;//Store the new page selection in our sheet_state attribute so that it will be remembered when the sheet is opened again.
+};
+k.registerFuncs({navigateSheet},{type:['opener']});//Register the function. Note that we are using a new argument with registerFuncs. The second object here is the options object where we can define what type of function this is. See the K-scaffold documentation for more information on the available types.
+
+/**
+ * Function to control what sections of the sheet are accessible based on the type of sheet that is selected (npc vs. character). This is done by application of the `inactive` class to the element.
+ * @param {object} attributes - The attributes object as passed from `getAllAttrs` and used in the default K-scaffold event cascade.
+ * @returns {void}
+ */
+const displayArticles = function({attributes}){
+  sheetTypes.forEach((type)=>{
+    const action = attributes.sheet_type === type ?
+      'remove' ://If the type is the same as the selected sheet type, then we want to remove the inactive class.
+      'add';//Otherwise, we want to add it.
+    k.debug({action});
+    $20(`.${type}`)[`${action}Class`]('inactive');//Actually do the class manipulation.
+  });
+};
+k.registerFuncs({displayArticles},{type:['opener']});//This function is registered as an opener so that it will be fired every time the sheet is opened. This will ensure that the sheet is displayed always matches the selections. It will also be called in reaction to changes to the `sheet_type` attribute./*jshint esversion: 11, laxcomma:true, eqeqeq:true*/
+/*jshint -W014,-W084,-W030,-W033*/
+/**
+ * Function that extracts the information of which roll was clicked from the name of the button.
+ * @param {string} string - The triggerName to be parsed
+ * @returns {array} - Returns an array containing the repeating section name, the row id, and the field that is referenced.
+ */
+const extractRollInfo = function(string){
+  //Get the information on which button was clicked.
+  const [section,id,button] = k.parseTriggerName(string);
+  //Convert the button name into the name of the relevant attribute (e.g. saving-throw => saving_throw). Also removes the `-action` suffix of the action button to get the raw field name.
+  const field = button.replace(/\-?action/,'').replace(/\-/g,'_');
+  return [section,id,field];
+};
+
+/**
+ * Function to translate our advantage query
+ * @returns {string}
+ */
+const translateAdvantageQuery = function(){
+  //Iterate throught the advantage options and create the translated strings.
+  const options = [['advantage','2d20kh1'],['normal','1d20'],['disadvantage','2d20kl1']]
+  .map((arr)=>{
+    const translated = k.capitalize(getTranslationByKey(arr[0]));
+    return `${translated},${arr[1]}`;
+  })
+  .join('|');
+  return `?{${k.capitalize(getTranslationByKey('roll with'))}|${options}}`;
+};
+
+/**
+ * Our function that will actually initiate the roll. 
+ * @param {object} attributes - Our object containing the attributes needed for the roll
+ * @param {object} rollObj - The object containing the fields to send with the roll
+ * @returns {void}
+ */
+const initiateRoll = async function(attributes,rollObj){
+  if(rollObj.roll){
+    rollObj.roll = rollObj.roll.replace(/@\{roll_state\}/,(match)=>{
+      //If roll state is set to ask the user what to do, we need to assemble a translated version of the query.
+      if(/\?\{/.test(attributes.roll_state)){
+        return translateAdvantageQuery();
+      }else{
+        //Otherwise just use the roll_state
+        return attributes.roll_state;
+      }
+    });
+  }
+  //Assemble our completed roll string.
+  const message = Object.entries(rollObj)
+    .reduce((text,[field,content]) => {
+      return text += `{{${field}=${content}}}`;
+    },`@{template_start}`);
+  //Send the completed roll string to the chat parser.
+  const roll = await startRoll(message);
+  //An object to aggregate the changes that need to be made to what is displayed in the roll output.
+  const computeObj = {};
+  //If the roll contained a result, target, and roll field with an inline roll in them, then we want to compare the roll and target values to determine if the result was a success or failure.
+  k.debug({roll});
+  if(roll.results.result && roll.results.target && roll.results.roll){
+    computeObj.result = roll.results.roll.result >= roll.results.target ? 1 : 0;
+  }
+  //Now we finish our roll, which tells Roll20 to actually display it in chat.
+  finishRoll(roll.rollId,computeObj);
+};
+
+/**
+ * Our generic rolling function. This will be used for our simple attribute and saving throw rolls that need very little logic.
+ * @param {object} event - The Roll20 event object.
+ * @returns {void}
+ */
+const rollGeneric = function(event){
+  const[section,id,field] = extractRollInfo(event.triggerName);
+  const attributeRef = attributeNames.indexOf(field) > -1 ?
+    `${field}_mod` :
+    undefined;
+  k.getAttrs({
+    props:rollGet,
+    callback: (attributes)=>{
+      //object that will aggregate all the roll template fields we will need to send to chat.
+      const rollObj = {
+        name:`^{${field.replace(/_/g,' ')}}`,
+        roll:attributeRef ? 
+          `[[@{roll_state} + 0@{${attributeRef}}]]` :
+          `[[@{roll_state}]]`,
+        target:`[[0@{saving_throw}]]`,
+        result:`[[0[computed value]]]`
+      };
+      //Send the roll.
+      initiateRoll(attributes,rollObj);
+    }
+  });
+};
+k.registerFuncs({rollGeneric});
+
+/**
+ * Our attack roll function. This won't need much logic, but has a slightly different button/attribute relationship that we need to account for.
+ * @param {object} event - The Roll20 event object.
+ * @returns {void}
+ */
+const rollAttack = function(event){
+  const[section,id,field] = extractRollInfo(event.triggerName);
+  const row = `${section}_${id}`;
+  k.getAttrs({
+    props:[...rollGet,`${row}_type`,`${row}_damage`],
+    callback:(attributes)=>{
+      const type = attributes[`${row}_type`];
+      const rollObj = {
+        name:`@{${row}_name}`,
+        roll_name:'^{attack}',
+        roll:`[[@{roll_state} + 0@{attack_modifier}[${getTranslationByKey('attack modifier')}] + 0@{${row}_attack_bonus}[${getTranslationByKey('bonus')}] + 0@{${type}_mod}[${getTranslationByKey(type)}]]]`,
+        range:`@{${row}_range}`,
+        traits:`@{${row}_traits}`,
+        aspects:`@{${row}_aspects}`,
+        description:`@{${row}_description}`
+      }
+      if(attributes[`${row}_damage`]){
+        rollObj.damage = `[[@{${row}_damage}]]`;
+      }
+      initiateRoll(attributes,rollObj);
+    }
+  });
+};
+k.registerFuncs({rollAttack});
+
+/**
+ * Our function to cast spells. This will be our most complex roll function because it is going to have the ability to affect attributes on the sheet in reaction to the roll.
+ * @param {object} event - The Roll20 event object.
+ * @returns {void}
+ */
+const castSpell = async function(event){
+  const[section,id,field] = extractRollInfo(event.triggerName);
+  const row = `${section}_${id}`;
+
+  //Assemble the attributes to get for the spell being cast.
+  const spellGet = ['apprentice','journeyman','master']
+    .reduce((arr,level)=>{
+      arr.push(`${level}_per_day`);
+      return arr;
+    },[...rollGet,`${row}_level`]);
+  
+  k.getAttrs({
+    props:spellGet,
+    //Note that his callback is asynchronous because we are going to wait for the roll to resolve and then do some additional operations.
+    callback:async (attributes)=>{
+      const level = attributes[`${row}_level`];
+      const rollObj = {
+        name:`@{${row}_name}`,
+        description:`@{${row}_description}`,
+      }
+      if(field !== 'describe'){
+        const num = field.replace(/.+?(\d+)$/,'$1');
+        rollObj.effect = `@{${row}_effect_${num}}`;
+      }else{
+        [1,2,3].forEach((num)=>{
+          rollObj[`effect_${num}`] = `@{${row}_effect_${num}}`;
+        });
+      }
+      await initiateRoll(attributes,rollObj);
+      //If we are actually casting the spell, decrement the spells per day for that level of spell to a minimum of zero.
+      if(field !== 'describe'){
+        attributes[`${level}_per_day`] = Math.max(attributes[`${level}_per_day`] - 1,0);
+        attributes.set();
+      }
+    }
+  })
+};
+k.registerFuncs({castSpell});
+
 </script>

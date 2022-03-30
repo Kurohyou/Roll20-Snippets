@@ -1,0 +1,28 @@
+- const spellLevels = ['apprentice','journeyman','master']
+section(aria-labelledby='spell-header')#spells.spells.paper-background.repeating-container
+  h3(data-i18n='spells')#spell-header
+  each level in spellLevels
+    .input-label.input-label--dual
+      label(for=`${level}-current` data-i18n=`${level} per day` role='heading' aria-level=5)
+      +number({name:`${level} per day`,class:'underlined',id:`${level}-current`})
+      span.separator /
+      +number({name:`${level} per day max`,class:'underlined'})
+  +customControlFieldset({name:'spells'})
+    +collapse
+    .name
+      .roller-container.hover-container.hover-container--two-row.hover-container--two-column
+        +roller({name:'describe',class:'glyph-only hover-container__content roller--scroll align-start justify-start',trigger:{listenerFunc:'castSpell'}})
+        +roller({name:'cast 1',class:'glyph-only hover-container__hover-visible align-start justify-end',trigger:{listenerFunc:'castSpell'}})
+        +roller({name:'cast 2',class:'glyph-only hover-container__hover-visible align-end justify-start',trigger:{listenerFunc:'castSpell'}})
+        +roller({name:'cast 3',class:'glyph-only hover-container__hover-visible align-end justify-end',trigger:{listenerFunc:'castSpell'}})
+      +text({name:'name',class:'underlined',role:'heading','aria-level':5})
+      +select({name:'level',class:'underlined'})
+        each value in spellLevels
+          +option({value,'data-i18n':value})
+    each n in [1,2,3]
+      .headed-textarea.description.expanded
+        h5(data-i18n=`effect ${n}`)
+        +adaptiveTextarea({name:`effect ${n}`,class:'underlined'})
+    .headed-textarea.description.expanded
+      +h5({'data-i18n':'description'})
+      +adaptiveTextarea({name:'description',class:'underlined'})

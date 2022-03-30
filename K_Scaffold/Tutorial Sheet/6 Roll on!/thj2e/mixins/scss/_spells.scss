@@ -1,0 +1,52 @@
+@use '_mixinsandplaceholders';
+#spells{
+  display:grid;
+  .repitem{
+    display:grid;
+    gap:var(--tiny-gap);
+    grid-template-columns:1fr auto;
+    .name{
+      display:grid;
+      grid-template-columns:[roller-start] 1.4rem [input-start roller-end] 1fr [input-end] auto;
+      grid-template-rows:[input-start roller-start] auto[input-end roller-end];
+      gap:var(--tiny-gap);
+      align-items: center;
+      input[type='text']{
+        grid-area:input;
+        width:100%;
+      }
+    }
+    .roller-container{
+      grid-area:roller;
+      box-sizing:border-box;
+    }
+    &:not(:last-child){
+      border-bottom:1px dashed black;
+      padding-bottom:var(--half-gap);
+    }
+    .hover-container{
+      .glyph-only{
+        &[name*="1"]{
+          background-image:var(--star1Image);
+        }
+        &[name*="2"]{
+          background-image:var(--star2Image);
+        }
+        &[name*="3"]{
+          background-image:var(--star3Image);
+        }
+        &:not(:first-child){
+          width:18px;
+          aspect-ratio:1 / 1;
+          background:{
+            repeat:no-repeat;
+            size:contain;
+          }
+         &:before{
+          content:none;
+         }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,18 @@
+- const coins = ['gp','sp','cp']
+section(aria-labelledby="equipment-header")#equipment.equipment.paper-background.repeating-container
+  h3(data-i18n="equipment")#equipment-header
+  .wealth
+    each name in coins
+      +input-label({
+        label:name,
+        inputObj:{name,type:'number',class:'underlined'},
+        spanObj:{class:'uppercase'}})
+    .other-treasures.headed-textarea
+      +h5({'data-i18n':'other treasures'})
+      +adaptiveTextarea({name:'other treasures',class:'underlined'})
+  +customControlFieldset({name:'equipment'})
+    +collapse
+    +text({name:'name',class:'underlined',role:'heading','aria-level':5})
+    .description.headed-textarea.expanded
+      +h5({'data-i18n':'description'})
+      +adaptiveTextarea({name:'description',class:'underlined'})

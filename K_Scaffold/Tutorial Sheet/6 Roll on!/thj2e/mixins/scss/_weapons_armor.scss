@@ -1,0 +1,24 @@
+@use '_mixinsandplaceholders';
+#weapons,
+#armor{
+  display:grid;
+  gap:var(--half-gap);
+  .repitem{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:var(--tiny-gap);
+    .name{
+      display:flex;
+      gap:var(--tiny-gap);
+      align-items: center;
+      input[type='text']{
+        flex:1 1 0;
+        width:0;
+      }
+    }
+    &:not(:last-child){
+      border-bottom:1px dashed black;
+      padding-bottom:var(--half-gap);
+    }
+  }
+}

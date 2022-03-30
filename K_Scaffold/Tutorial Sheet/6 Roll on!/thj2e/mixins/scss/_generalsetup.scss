@@ -1,0 +1,176 @@
+//This file will store all of our generic styling for the sheet. Styling for specific sections will be done in individual scss files to make the code easier to read.
+@use '_mixinsandplaceholders';
+
+html{
+  font-size:16px;
+}
+
+// styles that should be applied to our sheet as a whole. I've separated them out from the Clearing. As with our style clearing definition above, we're using 3 classes to ensure that we have enough specificity. This specificity level is known as 0-3-0. A great specificity calculator for comparing the specificities of CSS declarations is https://specificity.keegan.st/
+.ui-dialog{
+  @extend %universalVariables;
+  box-sizing:border-box;
+  .tab-content .charsheet{
+    @extend %defaultStyles;
+  }
+}
+
+//- Spaceholder darkmode colors. We'll want to adjust these to a better dark mode pallette before release.
+.sheet-darkmode .ui-dialog,
+.sheet-rolltemplate-darkmode{
+  --backColor:var(--dark-surface1);
+  --fontColor:var(--darkModeText);
+  --borderColor:var(--dark-primarytext);
+  --subHeadBackColor:var(--dark-surface1);
+  --selectedColor:var(--darkModeText);
+  --disableBackground:var(--dark-surface1);
+  //--shadowColor:
+  --disableShadow:0px 0 7px 0px #161616 inset;
+  --buttonColor:var(--dark-surface1);
+  --hoverColor:#2e2e2e;
+  --clickColor:black;
+
+  //Images
+  --paper-background:url(https://s3.amazonaws.com/files.d20.io/images/277897578/A-KBtxirzw5z2lhjc6z9Ig/original.png);
+  --star1Image:url(https://s3.amazonaws.com/files.d20.io/images/277891541/3QIvaKp_cOc6B8DAAXM6CA/original.png);
+  --star2Image:url(https://s3.amazonaws.com/files.d20.io/images/277891540/WAPK5ypyf235723n0GcVMQ/original.png);
+  --star3Image:url(https://s3.amazonaws.com/files.d20.io/images/277891539/iR6cOrzXq28bpGfsqSrK0Q/original.png);
+
+  .sheetform{
+    background-color:inherit;
+  }
+  img{
+    filter: brightness(.8) contrast(1.2);
+  }
+}
+//the declarations for styles specifically applying to our main element.
+#main{
+  /*
+    First of all we apply our default styles.
+    Note that because we are using the placeholder, these styles would be first up in the cascade even if we put the extend declaration last.
+    This is done first so that when we read the code, we can easily see that it is applied, and anything after it will overwrite those default styles.
+  */
+  display:grid;
+  .paper-background{
+    border:var(--half-gap) solid transparent;
+    border-image:{
+      source:var(--paper-background);
+      slice:40 fill;
+      width:var(--grid-gap);
+      outset:var(--half-gap);
+      repeat:repeat;
+    };
+    filter:drop-shadow(var(--shadowColor1) 0px 3px 6px) drop-shadow(var(--shadowColor2) 0px 3px 6px);
+  };
+  .editmode .itemcontrol{
+    z-index:100;
+  }
+  .roller{
+    display:flex;
+    gap:var(--tiny-gap);
+    align-items:center;
+    &:before{
+      text-transform:none;
+      content:'T'
+    }
+  }
+  .roller--scroll:before{
+    content:'w';
+    font-family:pictos;
+  }
+  .glyph-only{
+    @extend %h4;
+    text-transform:none !important;
+  }
+  .hover-container{
+    --delayTime:500ms;
+    place-self:start;
+    display:grid;
+    grid-template-columns:auto;
+    grid-template-areas: 'content';
+    gap:var(--tiny-gap);
+    transition:{
+      duration:var(--revealTime);
+      delay:var(--delayTime);
+      property:width,height,border-color,background-color;
+      timing-function:ease;
+    };
+    box-sizing:border-box;
+    border:{
+      width:1px 3px;
+      radius:5px;
+      style:solid;
+      color:transparent;
+    }
+    width:100%;
+    height:100%;
+    z-index:10;
+    &:is(:hover,:focus-within){
+      border-color:var(--borderColor);
+      background-color:var(--backColor);
+      .hover-container__hover-visible{
+        opacity:1;
+        z-index:0;
+      }
+    }
+  }
+  .hover-container--two-column{
+    &:is(:hover,:focus-within){
+      width:calc(200% + var(--tiny-gap));
+    }
+  }
+  .hover-container--two-row{
+    &:is(:hover,:focus-within){
+      height:calc(100% + var(--grid-gap));
+    }
+  }
+  .hover-container__content{
+    justify-self:start;
+    grid-area:content;
+  }
+  .hover-container__hover-visible{
+    grid-area:content;
+    transition:{
+      property:opacity,z-index,left,top;
+      duration:var(--revealTime);
+      timing-function:ease;
+      delay:var(--delayTime);
+    }
+    opacity:0;
+    z-index:-10;
+  }
+  [readonly]{
+    background:var(--disableBackground);
+    border:0px solid transparent;
+    box-shadow:var(--disableShadow);
+  }
+
+  /*nav button styling*/
+	.sheet-nav__tab{
+		color:var(--fontColor);
+		font-style:normal;
+		border:1px solid transparent;
+		margin:0 0 -1px;
+		background-color:transparent;
+		border-radius:4px 4px 0 0;
+		box-shadow:none;
+		font-size:13px;
+		background-image:none;
+		padding:9px 12px;
+    height:16px;
+    &:not(.active):hover{
+      background-color:#eeeeee;
+      --fontColor:black;
+    }
+    &.active{
+      border-color: #dddddd #dddddd var(--backColor) #dddddd;
+    }
+    &.inactive{
+      display:none !important;
+    }
+	}
+}
+#character{
+  display:grid;
+  gap:var(--big-gap);
+  grid-template-columns:repeat(auto-fill,minmax(15rem,1fr));//This one line is our secret sauce for making our sheet responsive to just about any screen width that our sheet might encounter from tiny phone screens up to stretching across several superwide monitors. For more information about auto-fit and auto-fill, I recommend the CSS-tricks summary: https://css-tricks.com/auto-sizing-columns-css-grid-auto-fill-vs-auto-fit/.
+}
