@@ -29,19 +29,31 @@ setTimeout(registerEventHandlers,0);//Delay the execution of event registration 
 const addItem = function(event){
   let [,,section] = parseClickTrigger(event.triggerName);
   section = section.replace(/add-/,'');
-  let rowID = generateRowID();
-  const setObj = {};
-  setObj[`repeating_${section}_${rowID}_name`] = '';
-  k.setAttrs(setObj);
+  getAllAttrs({
+    callback:(attributes,sections,casc) => {
+      let row = _generateRowID(section,sections);
+      debug({row});
+      attributes[`${row}_name`] = '';
+      setActionCalls({attributes,sections});
+      const trigger = cascades[`fieldset_repeating_${section}`];
+      if(trigger && trigger.addFuncs){
+        trigger.addFuncs.forEach((funcName) => {
+          if(funcs[funcName]){
+            funcs[funcName]({attributes,sections,casc,trigger});
+          }
+        });
+      }
+      attributes.set({attributes,sections,casc});
+    }
+  });
 };
-registerFuncs({addItem});
+funcs.addItem = addItem;
 
 const editSection = function(event){
   let [,,section] = parseClickTrigger(event.triggerName);
   section = section.replace(/edit-/,'');
   let target = `fieldset.repeating_${section} + .repcontainer`;
+  $20(target).toggleClass('ui-sortable');
   $20(target).toggleClass('editmode');
 };
 registerFuncs({editSection});
-
-return kFuncs;

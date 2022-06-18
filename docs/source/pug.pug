@@ -1,0 +1,27 @@
+include _mixins.pug
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    +generalStyleSheets('pug')
+    link(rel="stylesheet", href="/docs/assets/css/prettify.css")
+    link(rel="stylesheet", href="/docs/assets/css/sons-of-obsidian.css")
+    link(rel="stylesheet" href="/docs/assets/css/codeDisplay.css")
+    title K-Scaffold PUG
+  body
+    +pageHead('PUG Documentation')
+      li
+        a(href="#intro-header") K-Scaffold Pug
+      li
+        a(href="#")#doc-link PUG Mixins & Functions
+    main#doc-target
+      +mainSection('The PUG Library','intro-header')
+        p Pug Library Intro Placeholder
+    aside
+      h2 Mixins
+      nav
+        ul#toc-target
+    +pageFooter
+    script(src="/docs/assets/javascript/prettify.js")
+    script(src="/docs/assets/javascript/parser.js")

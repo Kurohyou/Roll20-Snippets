@@ -1,0 +1,152 @@
+h1, h5, h4, h1 + .subhead, h3, h2 {
+  text-transform: capitalize;
+  font-family: Aldrich;
+}
+
+h2 {
+  font-size: 1.75rem;
+}
+
+h1 + .subhead, h3 {
+  font-size: 1.5rem;
+}
+
+h4 {
+  font-size: 1.25rem;
+}
+
+h5 {
+  font-size: 1rem;
+}
+
+body {
+  font-size: 1rem;
+  font-family: "Exo 2";
+  color: var(--primaryTextColor);
+}
+
+header, header + nav, footer {
+  padding: var(--mainPadding);
+  background-color: var(--hfBackground);
+}
+header *, header + nav *, footer * {
+  color: var(--hfColor);
+}
+
+header, header + nav, footer {
+  display: grid;
+}
+
+:root {
+  --gap:1rem;
+  --half-gap:calc(var(--gap) / 2);
+  --tiny-gap:calc(var(--gap) / 4);
+  --big-gap:calc(var(--gap) * 2);
+  --huge-gap:calc(var(--gap) * 4);
+  --mainPadding:var(--half-gap) var(--gap);
+  --primaryBackground:white;
+  --secondaryBackground:#eeeeee;
+  --hfBackground:rgb(24, 24, 26);
+  --primaryTextColor:rgb(24, 24, 26);
+  --secondaryTextColor:rgb(24, 24, 26);
+  --primaryLinkColor:rgb(87, 186, 208);
+  --secondaryLinkColor:rgb(57, 17, 120);
+  --roll20LinkColor:#ed008c;
+  --hfColor:rgb(210, 243, 246);
+  --sectionBorder:1px solid black;
+  --sectionShadow:1 1 black;
+}
+
+html {
+  font-size: 16px;
+  scroll-padding-top: 35.2px;
+}
+
+body {
+  margin: 0;
+}
+
+header {
+  grid-template-columns: auto;
+  grid-template-areas: "pagehead" "subhead" "nav";
+  align-items: start;
+}
+header + nav {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+header + nav ul {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: var(--half-gap);
+  justify-self: end;
+}
+header + nav ul a {
+  text-decoration: none;
+}
+
+h1 {
+  grid-area: pagehead;
+  font-size: 2.25rem;
+}
+.subhead {
+  grid-area: subhead;
+}
+
+a {
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--primaryLinkColor);
+  font-weight: 700;
+}
+a[href*="roll20.net"] {
+  color: var(--roll20LinkColor);
+}
+
+[hidden] {
+  display: none;
+}
+
+main {
+  padding: var(--mainPadding);
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+  background-color: var(--primaryBackground);
+  position: relative;
+}
+main > section {
+  grid-column: 1;
+  display: grid;
+  grid-template-rows: [header-start] auto [border-start] auto [header-end content-start] 1fr [content-end border-end];
+  grid-template-columns: [header-start border-start content-start] 1fr [header-end content-end border-end];
+}
+main > section > :first-child {
+  grid-area: header;
+  border: var(--sectionBorder);
+  justify-self: start;
+  background-color: var(--primaryBackground);
+  z-index: 10;
+  padding: var(--tiny-gap) var(--half-gap);
+  margin-left: var(--big-gap);
+}
+main > section > .content {
+  grid-area: content;
+  padding: var(--half-gap);
+  display: flex;
+  flex-direction: column;
+  gap: var(--half-gap);
+}
+main > section > .content > h3 {
+  margin-top: var(--half-gap);
+}
+main > section > .border {
+  grid-area: border;
+  border: var(--sectionBorder);
+  background-color: var(--secondaryBackground);
+}
+
+.no-capital {
+  text-transform: none;
+}

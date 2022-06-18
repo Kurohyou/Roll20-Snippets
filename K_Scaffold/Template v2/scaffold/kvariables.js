@@ -1,16 +1,12 @@
 /**
- * This stores the name of your sheet for use in the logging functions {@link log} and {@link debug}
- * * @var
+ * This stores the name of your sheet for use in the logging functions {@link log} and {@link debug}. Accessible by `k.sheetName`
+ * @var
  * @type {string}
  */
-docs.js['k.sheetName'] = {
-	type:'string',
-	description:'This stores the name of your sheet for use in the logging functions [k.log](#klog) and [k.debug](#kdebug).'
-};
 let sheetName = 'kScaffold Powered Sheet';
 kFuncs.sheetName = sheetName;
 /**
-	* This stores the version of your sheet for use in the logging functions{@link log} and {@link debug}. It is also stored in the sheet_version attribute on your character sheet.
+	* This stores the version of your sheet for use in the logging functions{@link log} and {@link debug}. It is also stored in the sheet_version attribute on your character sheet. Accessible via `k.version`
 	* @var
 	* @type {number}
 	*/
@@ -31,6 +27,12 @@ docs.js['k.debugMode'] = {
 };
 let debugMode = false;
 kFuncs.debugMode = debugMode;
+const funcs = {};
+kFuncs.funcs = funcs;
+const updateHandlers = {};
+const openHandlers = {};
+const initialSetups = {};
+const addFuncs = {};
 
-const kscaffoldJSVersion = 0.20;
-const kscaffoldPUGVersion = 0.20;
+const kscaffoldJSVersion = 0.30;
+const kscaffoldPUGVersion = 0.30;

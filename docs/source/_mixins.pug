@@ -1,0 +1,31 @@
+mixin pageHead(subHead = "PUG, HTML, and Javascript")
+  header
+    h1 The K-Scaffold Framework
+    span.subhead #{subHead}
+  nav
+    ul
+      block
+      li
+        a(href="#contact-header") Contact & Feedback
+mixin pageFooter
+  footer
+    span By Scott Casey, Kurohyou Studios
+  //- Will do the contact icons
+
+mixin siteFonts
+  link(rel="preconnect" href="https://fonts.googleapis.com")
+  link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
+  link(href="https://fonts.googleapis.com/css2?family=Aldrich&family=Exo+2:ital,wght@0,400;0,700;1,400&family=Fira+Code&display=swap" rel="stylesheet")
+
+mixin generalStyleSheets(page)
+  +siteFonts
+  link(rel="stylesheet" href="/docs/assets/css/clear.css")
+  link(rel="stylesheet" href="/docs/assets/css/generic.css")
+  link(rel="stylesheet" href=`/docs/assets/css/${page}.css`)
+
+mixin mainSection(headText,headID)
+  section(aria-labelledby=headID)
+    h2(id=headID) #{headText}
+    .border
+    .content
+      block

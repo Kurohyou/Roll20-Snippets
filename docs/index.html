@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin"/>
+    <link href="https://fonts.googleapis.com/css2?family=Aldrich&amp;family=Exo+2:ital,wght@0,400;0,700;1,400&amp;family=Fira+Code&amp;display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="/docs/assets/css/clear.css"/>
+    <link rel="stylesheet" href="/docs/assets/css/generic.css"/>
+    <link rel="stylesheet" href="/docs/assets/css/index.css"/>
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
+      <h1>The K-Scaffold Framework</h1><span class="subhead">PUG, HTML, and Javascript</span>
+    </header>
+    <nav>
+      <ul>
+        <li> <a href="#about-header">What is it?</a></li>
+        <li> <a href="#start-header">Getting Started</a></li>
+        <li> <a href="#use-header">Using the Scaffold</a></li>
+        <li><a href="#contact-header">Contact & Feedback</a></li>
+      </ul>
+    </nav>
+    <main>
+      <section aria-labelledby="about-header">
+        <h2 id="about-header">What is it?</h2>
+        <div class="border"></div>
+        <div class="content">
+          <p>Building character sheets is difficult. There's thousands of lines of html, CSS, and Javascript to write and keep track of. The sheet author community has switched to using PUG to write the majority of html code because it simplifies the HTML coding part of creating a sheet. PUG allows us to do many powerful things, including creating reusable bits of code for things that we need frequently.</p>
+          <p>The K-Scaffold provides a comprehensive library of PUG mixins for frequently used generic HTML constructions. It also provides a powerful link between your PUG code and the javascript sheetworkers that will power your sheet by allowing you to link attributes to functions directly in the PUG that creates them.</p>
+        </div>
+      </section>
+      <section aria-labelledby="start-header">
+        <h2 id="start-header">Getting Started</h2>
+        <div class="border"></div>
+        <div class="content">
+          <p>To get started with the K-scaffold, follow the steps below</p>
+          <ol>
+            <li>Download the most recent version of the scaffold from the <a href="https://github.com/Kurohyou/Roll20-Snippets/releases">releases page</a>.</li>
+            <li>Copy the `scaffold` directory into the same directory as your main pug file.</li>
+            <li>Add 
+              <pre><code>include scaffold/_kpug.pug</code></pre> to the top of your primary PUG file.
+            </li>
+            <li>Start coding!</li>
+          </ol>
+        </div>
+      </section>
+      <section aria-labelledby="use-header">
+        <h2 id="use-header">Using the Scaffold</h2>
+        <div class="border"></div>
+        <div class="content">
+          <p>The K-scaffold has two primary components; PUG mixins and functions, and Javascript functions.</p>
+          <h3>K-Scaffold PUG</h3>
+          <p>To use the K-scaffold to write the html of your sheet, you will write normal PUG, but using a comprehensive library of components that are frequently used on character sheets. These range from simple mixin versions of standard html elements inputs, textareas, and selects to more complex constructions that generate Roll20 elements or workarounds for limitations of Roll20 character sheets. See the <a href="subpages/pug.html">K-scaffold PUG documentation</a> for full details on the mixins and functions available.</p>
+          <h3>K-Scaffold Javascript</h3>
+          <p>To use the K-scaffold to write your sheetworkers, you will write normal sheetworkers, but using a library of utility functions and sheetworker aliases supercharge the standard sheetworkers. See the <a href="subpages/js.html">K-scaffold Javascript documentation</a> for full details on the functions and variables available.</p>
+        </div>
+      </section>
+    </main>
+    <footer><span>By Scott Casey, Kurohyou Studios</span></footer>
+  </body>
+</html>

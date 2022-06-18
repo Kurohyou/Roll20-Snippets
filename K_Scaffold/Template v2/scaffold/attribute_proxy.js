@@ -4,7 +4,7 @@
 const createAttrProxy = function(attrs){
   //creates a proxy for the attributes object so that values can be worked with more easily.
   const getCascObj = function(event,casc){
-    const eventName = event.sourceAttribute || event.triggerName;
+    const eventName = event.triggerName || event.sourceAttribute;
     let typePrefix = eventName.startsWith('clicked:') ?
       'act_' :
       event.removedInfo ?
@@ -150,7 +150,6 @@ const createAttrProxy = function(attrs){
   return new Proxy(attrTarget,attrHandler);
 };
 
-const funcs = {};
 
 /**
  * Function that registers a function for being called via the funcs object. Returns true if the function was successfully registered, and false if it could not be registered for any reason.
@@ -158,6 +157,13 @@ const funcs = {};
  * @param {object} optionsObj - Object that contains options to use for this registration.
  * @param {string[]} optionsObj.type - Array that contains the types of specialized functions that apply to the functions being registered. Valid types are `"opener"`, `"updater"`, and `"default"`. `"default"` is always used, and never needs to be passed.
  * @returns {boolean} - True if the registration succeeded, false if it failed.
+ * @example
+ * //Basic Registration
+ * const myFunc = function(){};
+ * k.registerFuncs({myFunc});
+ * //Register a function to run on sheet open
+ * const openFunc = function(){};
+ * k.registerFuncs({openFunc},{type:['opener']})
  */
 const registerFuncs = function(funcObj,optionsObj = {}){
   if(typeof funcObj !== 'object' || typeof optionsObj !== 'object'){
@@ -210,6 +216,9 @@ funcs.setActionCalls = setActionCalls;
  * @param {string} funcName - The name of the function to invoke.
  * @param {...any} args - The arguments to call the function with.
  * @returns {any}
+ * @example
+ * //Call myFunc with two arguments
+ * k.callFunc('myFunc','an argument','another argument');
  */
 const callFunc = function(funcName,...args){
   if(funcs[funcName]){
