@@ -9,7 +9,6 @@
   };
   const docType = window.location.href.replace(/.+?(pug|js)\.html(?:#.+)?/,'$1');
   console.log('docType',docType);
-  https://raw.githubusercontent.com/{USERNAME}/{REPO}/{BRANCH}/{FILE}
   const response = await fetch(`https://raw.githubusercontent.com/Kurohyou/Roll20-Snippets/gh-pages/data/${typeLookup[docType]}`);
   console.log(response);
   const docData = await response.json();
