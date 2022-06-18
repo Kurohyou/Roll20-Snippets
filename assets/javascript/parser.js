@@ -8,7 +8,7 @@
     pug:parsePugdoc
   };
   const docType = window.location.href.replace(/.+?(pug|js)\.html(?:#.+)?/,'$1');
-  const response = await fetch(`/docs/data/${typeLookup[docType]}`);
+  const response = await fetch(`data/${typeLookup[docType]}`);
   const docData = await response.json();
   const contentTarget = document.getElementById('doc-target');
   const tocTarget = document.getElementById('toc-target')
