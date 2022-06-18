@@ -9,7 +9,7 @@
   };
   const docType = window.location.href.replace(/.+?(pug|js)\.html(?:#.+)?/,'$1');
   console.log('docType',docType);
-  const response = await fetch(`https://github.com/Kurohyou/Roll20-Snippets/tree/gh-pages/data/${typeLookup[docType]}`);
+  const response = await fetch(`https://kurohyou.github.io/Roll20-Snippets/tree/gh-pages/data/${typeLookup[docType]}`);
   const docData = await response.json();
   const contentTarget = document.getElementById('doc-target');
   const tocTarget = document.getElementById('toc-target')
