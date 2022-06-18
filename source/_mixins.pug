@@ -19,9 +19,9 @@ mixin siteFonts
 
 mixin generalStyleSheets(page)
   +siteFonts
-  link(rel="stylesheet" href="docs/assets/css/clear.css")
-  link(rel="stylesheet" href="docs/assets/css/generic.css")
-  link(rel="stylesheet" href=`docs/assets/css/${page}.css`)
+  link(rel="stylesheet" href="/assets/css/clear.css")
+  link(rel="stylesheet" href="/assets/css/generic.css")
+  link(rel="stylesheet" href=`/assets/css/${page}.css`)
 
 mixin mainSection(headText,headID)
   section(aria-labelledby=headID)
