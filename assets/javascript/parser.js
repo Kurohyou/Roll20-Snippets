@@ -13,6 +13,7 @@
   const prefix = github ? //Allows the js to pull from local version during development and the server version when live.
     'https://raw.githubusercontent.com/Kurohyou/Roll20-Snippets/gh-pages' :
     '';
+    console.log('prefix',prefix);
   const response = await fetch(`${prefix}/data/${typeLookup[docType]}`);
   console.log(response);
   const docData = await response.json();
