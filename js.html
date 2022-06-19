@@ -6,19 +6,25 @@
     <link rel="preconnect" href="https://fonts.googleapis.com"/>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin"/>
     <link href="https://fonts.googleapis.com/css2?family=Aldrich&amp;family=Exo+2:ital,wght@0,400;0,700;1,400&amp;family=Fira+Code&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+    <link rel="stylesheet" href="assets/portfolio/social-icons.css"/>
     <link rel="stylesheet" href="assets/css/clear.css"/>
     <link rel="stylesheet" href="assets/css/generic.css"/>
     <link rel="stylesheet" href="assets/css/js.css"/>
-    <link rel="stylesheet" href="assets/css/prettify.css">
-    <link rel="stylesheet" href="assets/css/sons-of-obsidian.css">
-    <link rel="stylesheet" href="assets/css/codeDisplay.css">
-    <title>K-Scaffold Sheetworker</title>
+    <link rel="stylesheet" href="assets/css/prettify.css"/>
+    <link rel="stylesheet" href="assets/css/sons-of-obsidian.css"/>
+    <link rel="stylesheet" href="assets/css/codeDisplay.css"/>
+    <title>K-Scaffold | Sheetworker</title>
   </head>
   <body>
     <header>
-      <h1>The K-Scaffold Framework</h1><span class="subhead">Sheetworker Documentation</span>
+      <h1>The K-Scaffold Framework</h1><span class="subhead">PUG, HTML, and Javascript</span>
     </header>
     <nav>
+      <ul>
+        <li><a href="index.html">General Info</a></li>
+        <li><a href="pug.html">Pug Documentation</a></li>
+      </ul>
       <ul>
         <li><a href="#intro-header"> </a></li>
         <li><a href="#" id="doc-link"></a></li>
@@ -31,7 +37,13 @@
         <h2 id="intro-header">js library</h2>
         <div class="border"></div>
         <div class="content">
-          <p>JS Library Intro Placeholder</p>
+          <p>The K-Scaffold's javascript library provides a wide range of functionality. The library's functions are divided into three broad types; aliases for Roll20 sheetworker functions, utility functions, and K-Scaffold specific functions.</p>
+          <h3>Sheetworker Aliases</h3>
+          <p>The K-Scaffold's sheetworker aliases provide improved versions of many of Roll20's sheetworker functions. These aliases provide combinations of sheetworker functions that are frequently used together.</p>
+          <h3>Utility functions</h3>
+          <p>The scaffold's utility functions provide many general use functions that can be used to do everything from parse a repeating attribute name into its component parts to querying the user about what they want to do.</p>
+          <h3>K-Scaffold specific functions</h3>
+          <p>The K-scaffold specific functions provide methods for hooking your functions into the K-scaffold's functionality.</p>
         </div>
       </section>
     </main>
@@ -41,7 +53,12 @@
         <ul id="toc-target"></ul>
       </nav>
     </aside>
-    <footer><span>By Scott Casey, Kurohyou Studios</span></footer>
+    <div class="footer"></div>
+    <footer>
+      <section class="flex flex--space-evenly" aria-label="Contact &amp; Feedback" id="contact-header"><a class="social-icon" href="https://www.linkedin.com/in/scott-casey-20210398/">linkedin</a><a class="social-icon" href="https://www.patreon.com/kurohyoustudios?fan_landing=true">patreon</a><a class="material-icons" title="Email" href="mailto:scaseydv@gmail.com?subject=Inquiring about your work">email</a><a class="social-icon" href="https://discord.gg/vYmvFBZQsM">discord</a><a class="social-icon" href="https://twitter.com/Kurohyoustudios">twitter</a>
+      </section><span>By Scott Casey, Kurohyou Studios</span>
+    </footer>
+    <script src="assets/javascript/resizer.js"></script>
     <script src="assets/javascript/prettify.js"></script>
     <script src="assets/javascript/parser.js"></script>
   </body>

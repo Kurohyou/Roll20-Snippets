@@ -7,9 +7,13 @@
     js:parseJSdoc,
     pug:parsePugdoc
   };
-  const docType = window.location.href.replace(/.+?(pug|js)\.html(?:#.+)?/,'$1');
+  const [,github,docType] = window.location.href.match(/.+?(github)?.+?(pug|js)\.html(?:#.+)?/);
+  console.log('github',github,'docType',docType);
   console.log('docType',docType);
-  const response = await fetch(`https://raw.githubusercontent.com/Kurohyou/Roll20-Snippets/gh-pages/data/${typeLookup[docType]}`);
+  const prefix = github ? //Allows the js to pull from local version during development and the server version when live.
+    'https://raw.githubusercontent.com/Kurohyou/Roll20-Snippets/gh-pages' :
+    '';
+  const response = await fetch(`${prefix}/data/${typeLookup[docType]}`);
   console.log(response);
   const docData = await response.json();
   const contentTarget = document.getElementById('doc-target');
@@ -114,12 +118,13 @@ function createEntry({target,name,index,output,description,example,args,type}){
     argHeader.append('arguments');
     argContainer.append(argHeader);
     argContainer.className = 'arguments-container';
-    args.forEach((arg)=>{
-      const typeSpan = document.createElement('span');
+    args.unshift({type:'type',name:'name',description:'description'})
+    args.forEach((arg,index)=>{
+      const typeSpan = document.createElement(index ? 'span' : 'h5');
       typeSpan.append(arg.type);
-      const nameSpan = document.createElement('span');
+      const nameSpan = document.createElement(index ? 'span' : 'h5');
       nameSpan.append(arg.name);
-      const descs = createDescriptionElements(arg.description);
+      const descs = createDescriptionElements(arg.description,index);
       argContainer.append(typeSpan,nameSpan,...descs);
     });
   }
@@ -162,12 +167,13 @@ function createEntry({target,name,index,output,description,example,args,type}){
  * @param {string} description - A description string to be split into separate paragraphs
  * @returns {array} - An array of paragraph elements containing the description paragraphs
  */
-function createDescriptionElements(description){
+function createDescriptionElements(description,index){
   return (description || '').split(/\n/).map((desc)=>{
-    const p = document.createElement('p');
+    const p = document.createElement(index !== 0 ? 'p' : 'h5');
     const linkedDesc = desc
       .replace(/\{@link (.+?)\}/g,`<a href="#$1">$1</a>`)
-      .replace(/\[(.+?)\]\((.+?)\)/g,'<a href="$2">$1</a>');
+      .replace(/\[(.+?)\]\((.+?)\)/g,'<a href="$2">$1</a>')
+      .replace(/`(.+?)`/g,'<pre class="snippet"><code>$1</code></pre>');
     p.innerHTML = linkedDesc;
     return p;
   });

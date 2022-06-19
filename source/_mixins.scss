@@ -26,7 +26,10 @@
 %hfStyle{
   padding:var(--mainPadding);
   background-color:var(--hfBackground);
-  *{
+  span,p,h1,h2,h3,h4,h5{
+    color:var(--hfColor);
+  }
+  a:not(:hover){
     color:var(--hfColor);
   }
 }

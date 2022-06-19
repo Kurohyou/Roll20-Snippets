@@ -1,3 +1,18 @@
+.footer {
+  padding: var(--mainPadding);
+  background-color: var(--hfBackground);
+}
+.footer span, .footer p, .footer h1, .footer h2, .footer h3, .footer h4, .footer h5 {
+  color: var(--hfColor);
+}
+.footer a:not(:hover) {
+  color: var(--hfColor);
+}
+
+.footer {
+  display: grid;
+}
+
 .arguments-container {
   display: grid;
   grid-template-columns: repeat(2, auto) 1fr;
@@ -14,13 +29,14 @@ pre.prettyprint {
   padding: var(--tiny-gap);
   white-space: pre-wrap;
   font-family: "Fira Code", monospace;
+  border: 2px inset var(--secondaryBackground);
 }
 
 body {
   display: grid;
   grid-template-columns: 1fr auto;
   grid-template-rows: repeat(4, auto);
-  grid-template-areas: "header header" "nav    nav" "main   aside" "footer footer";
+  grid-template-areas: "header header" "nav    nav" "main   aside" "footer aside";
 }
 
 header {
@@ -36,6 +52,11 @@ main {
 
 footer {
   grid-area: footer;
+}
+
+.footer {
+  grid-column: footer-start/aside-end;
+  grid-row: footer-start/footer-end;
 }
 
 aside {
@@ -63,6 +84,6 @@ aside > nav > ul {
 aside > nav > ul > li {
   text-align: right;
 }
-aside a {
+aside a:not(:hover) {
   color: var(--hfColor);
 }

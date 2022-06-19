@@ -24,33 +24,69 @@
   //Borders & Shadows
   --sectionBorder:1px solid black;
   --sectionShadow:1 1 black;
+
+  //Scroll Padding
+  --scrollPad: 40px;
 }
 html{
   font-size:16px;
-  scroll-padding-top:35.2px;
+  scroll-padding-top:var(--scrollPad);
 }
 body{
   @extend %normalText;
   margin:0;
+}
+a{
+  cursor: pointer;
+  text-decoration:none;
+  color:var(--primaryLinkColor);
+  font-weight:700;
+  transition: {
+    property:color, filter;
+    duration:500ms;
+  };
+  &[href*="roll20.net"]{
+    color:var(--roll20LinkColor);
+  }
+  &:hover{
+    filter:brightness(0.8);
+  }
 }
 header{
   @extend %hfGeneral;
   grid-template-columns:auto;
   grid-template-areas:
     "pagehead"
-    "subhead"
-    "nav";   
+    "subhead";  
   align-items:start;
   + nav{
     @extend %hfGeneral;
     position:sticky;
     top:0;
     z-index:20;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content: space-between;
+    gap:var(--half-gap) var(--gap);
+    align-items:end;
     ul{
-      display:inline-flex;
+      display:flex;
       flex-wrap:wrap;
       gap:var(--half-gap);
-      justify-self: end;
+      justify-content:end;
+      flex:1 1 auto;
+      &:first-child{
+        @extend %h4;
+        justify-content:start;
+      }
+      > li{
+        display:flex;
+        gap:var(--half-gap);
+        &:not(:last-child):after{
+          content:'|';
+          color:var(--hfColor);
+        }
+      }
       a{
         text-decoration:none;
       }
@@ -83,15 +119,6 @@ h5{
 }
 .subhead{
   grid-area:subhead;
-}
-a{
-  cursor: pointer;
-  text-decoration:none;
-  color:var(--primaryLinkColor);
-  font-weight:700;
-  &[href*="roll20.net"]{
-    color:var(--roll20LinkColor);
-  }
 }
 [hidden]{
   display:none;
@@ -136,4 +163,26 @@ main{
 }
 .no-capital{
   text-transform:none;
+}
+
+.flex{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+}
+
+.flex--space-evenly{
+  justify-content: space-evenly;
+}
+
+.social-icon{
+  width:20px;
+}
+
+.snippet{
+  color:red;
+}
+
+code{
+  font-family:"Fira Code";
 }

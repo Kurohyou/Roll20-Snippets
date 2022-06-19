@@ -5,12 +5,10 @@ html(lang="en")
     meta(charset="UTF-8")
     meta(http-equiv="X-UA-Compatible", content="IE=edge")
     +generalStyleSheets('js')
-    link(rel="stylesheet", href="assets/css/prettify.css")
-    link(rel="stylesheet", href="assets/css/sons-of-obsidian.css")
-    link(rel="stylesheet" href="assets/css/codeDisplay.css")
-    title K-Scaffold Sheetworker
+    +codeSheetStyles
+    title K-Scaffold | Sheetworker
   body
-    +pageHead('Sheetworker Documentation')
+    +pageHead('js')
       li
         a(href="#intro-header") 
       li
@@ -18,11 +16,16 @@ html(lang="en")
       li
     main#doc-target
       +mainSection('js library','intro-header')
-        p JS Library Intro Placeholder
+        p The K-Scaffold's javascript library provides a wide range of functionality. The library's functions are divided into three broad types; aliases for Roll20 sheetworker functions, utility functions, and K-Scaffold specific functions.
+        h3 Sheetworker Aliases
+        p The K-Scaffold's sheetworker aliases provide improved versions of many of Roll20's sheetworker functions. These aliases provide combinations of sheetworker functions that are frequently used together.
+        h3 Utility functions
+        p The scaffold's utility functions provide many general use functions that can be used to do everything from parse a repeating attribute name into its component parts to querying the user about what they want to do.
+        h3 K-Scaffold specific functions
+        p The K-scaffold specific functions provide methods for hooking your functions into the K-scaffold's functionality.
     aside
       h2 Table of Contents
       nav
         ul#toc-target
     +pageFooter
-    script(src="assets/javascript/prettify.js")
-    script(src="assets/javascript/parser.js")
+    +codePageScripts

@@ -14,6 +14,7 @@ pre.prettyprint{
   padding:var(--tiny-gap);
   white-space: pre-wrap;
   font-family:"Fira Code", monospace;
+  border:2px inset var(--secondaryBackground);
 }
 body{
   display:grid;
@@ -23,7 +24,7 @@ body{
   "header header"
   "nav    nav"
   "main   aside"
-  "footer footer";
+  "footer aside";
 }
 header{
   grid-area:header;
@@ -36,6 +37,11 @@ main{
 }
 footer{
   grid-area:footer;
+}
+.footer{
+  @extend %hfGeneral;
+  grid-column:footer-start / aside-end;
+  grid-row:footer-start / footer-end;
 }
 aside{
   position:sticky;
@@ -63,7 +69,7 @@ aside{
       }
     }
   }
-  a{
+  a:not(:hover){
     color:var(--hfColor);
   }
 }
