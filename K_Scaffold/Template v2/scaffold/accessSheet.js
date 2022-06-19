@@ -33,11 +33,6 @@ const updateSheet = function(){
     setActionCalls({attributes,sections});
     attributes.sheet_version = kFuncs.version;
     log(`Sheet Update applied. Current Sheet Version ${kFuncs.version}`);
-    if(document){
-      ['pug','js'].forEach((type)=>{
-        log(docGen(type));
-      });
-    }
     attributes.set();
     log('Sheet ready for use');
   }});
