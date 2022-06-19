@@ -7,8 +7,9 @@
     js:parseJSdoc,
     pug:parsePugdoc
   };
-  const [,github,docType] = window.location.href.match(/(?:.+(github))?.+?(pug|js)\.html(?:#.+)?/);
-  console.log('github',github,'docType',docType);
+  const locMatch = window.location.href.match(/(?:.+(github))?.+?(pug|js)\.html(?:#.+)?/)
+  const [,github,docType] = locMatch;
+  console.log('locMatch',locMatch,'github',github,'docType',docType);
   console.log('docType',docType);
   const prefix = github ? //Allows the js to pull from local version during development and the server version when live.
     'https://raw.githubusercontent.com/Kurohyou/Roll20-Snippets/gh-pages' :
