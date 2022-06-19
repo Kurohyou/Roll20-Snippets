@@ -1,4 +1,3 @@
-const siteVersion = '1-1';
 (async function(){
   const typeLookup = {
     js:'jsdoc-ast.json',

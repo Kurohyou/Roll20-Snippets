@@ -1,4 +1,5 @@
 include ../assets/pug/_kurohyoustudios.pug
+- const siteVersion = '1.1';
 mixin pageHead(subHead = "index")
   header
     h1 The K-Scaffold Framework
@@ -7,13 +8,13 @@ mixin pageHead(subHead = "index")
     ul
       if subHead === 'pug' || subHead === 'js'
         li
-          a(href="index.html") General Info
+          a(href=`index.html?v=${siteVersion}`) General Info
       if subHead === 'index' || subHead === 'js'
         li
-          a(href="pug.html") Pug Documentation
+          a(href=`pug.html?v=${siteVersion}`) Pug Documentation
       if subHead === 'index' || subHead === 'pug'
         li
-          a(href="js.html") Sheetworker Documentation
+          a(href=`js.html?v=${siteVersion}`) Sheetworker Documentation
     ul
       block
       li
@@ -24,6 +25,8 @@ mixin pageFooter
     section(aria-label="Contact & Feedback")#contact-header.flex.flex--space-evenly
       +socialIcons
     span By Scott Casey, Kurohyou Studios
+  script(type="text/javascript").
+    const siteVersion = #{siteVersion};
 
 mixin siteFonts
   link(rel="preconnect" href="https://fonts.googleapis.com")
