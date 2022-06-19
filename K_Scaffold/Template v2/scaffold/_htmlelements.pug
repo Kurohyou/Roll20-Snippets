@@ -798,7 +798,7 @@ mixin kscript
     |const k = (function(){
     |const kFuncs = {};
     //- The below declarations import variables from the pug file and mixins into the sheetworker code
-    - const propArray = ['cascades','repeatingSectionDetails','docs'];
+    - const propArray = ['cascades','repeatingSectionDetails'];
     each prop in propArray
       |
       |const !{prop} = !{JSON.stringify(varObjects[prop])};
