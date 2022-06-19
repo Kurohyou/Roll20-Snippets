@@ -1,3 +1,4 @@
+const siteVersion = '1-1';
 (async function(){
   const typeLookup = {
     js:'jsdoc-ast.json',
@@ -9,14 +10,10 @@
   };
   const locMatch = window.location.href.match(/(?:.+(github))?.+?(pug|js)\.html(?:#.+)?/)
   const [,github,docType] = locMatch;
-  console.log('locMatch',locMatch,'github',github,'docType',docType);
-  console.log('docType',docType);
   const prefix = github ? //Allows the js to pull from local version during development and the server version when live.
     'https://raw.githubusercontent.com/Kurohyou/Roll20-Snippets/gh-pages' :
     '';
-    console.log('prefix',prefix);
-  const response = await fetch(`${prefix}/data/${typeLookup[docType]}`);
-  console.log(response);
+  const response = await fetch(`${prefix}/data/${typeLookup[docType]}?v=${siteVersion}`);
   const docData = await response.json();
   const contentTarget = document.getElementById('doc-target');
   const tocTarget = document.getElementById('toc-target')
