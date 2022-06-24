@@ -1,5 +1,6 @@
 include ../assets/pug/_kurohyoustudios.pug
 - const siteVersion = '1.1';
+- const siteDate = "06/19/2022";
 mixin pageHead(subHead = "index")
   header
     h1 The K-Scaffold Framework
@@ -24,7 +25,6 @@ mixin pageFooter
   footer
     section(aria-label="Contact & Feedback")#contact-header.flex.flex--space-evenly
       +socialIcons
-    span By Scott Casey, Kurohyou Studios
   script(type="text/javascript").
     const siteVersion = #{siteVersion};
 
@@ -40,7 +40,6 @@ mixin generalStyleSheets(page)
   link(rel="stylesheet" href="assets/portfolio/social-icons.css")
   link(rel="stylesheet" href="assets/css/clear.css")
   link(rel="stylesheet" href="assets/css/generic.css")
-  link(rel="stylesheet" href=`assets/css/${page}.css`)
 
 mixin codeSheetStyles
   link(rel="stylesheet", href="assets/css/prettify.css")

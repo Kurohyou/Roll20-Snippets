@@ -187,6 +187,10 @@ main > section > .border {
   justify-content: space-evenly;
 }
 
+.flex-column {
+  flex-direction: column;
+}
+
 .social-icon {
   width: 20px;
 }
