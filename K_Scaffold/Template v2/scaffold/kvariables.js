@@ -24,6 +24,7 @@ kFuncs.funcs = funcs;
 const updateHandlers = {};
 const openHandlers = {};
 const initialSetups = {};
+const allHandlers = {};
 const addFuncs = {};
 
 const kscaffoldJSVersion = 0.30;
