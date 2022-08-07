@@ -17,7 +17,7 @@ const updateSheet = function(){
       });
     }else{
       Object.entries(updateHandlers).forEach(([ver,handler])=>{
-        if(attributes.version < +ver){
+        if(attributes.sheet_version < +ver){
           handler({attributes,sections,casc});
         }
       });
