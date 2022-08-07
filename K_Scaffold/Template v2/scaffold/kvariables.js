@@ -27,5 +27,5 @@ const initialSetups = {};
 const allHandlers = {};
 const addFuncs = {};
 
-const kscaffoldJSVersion = 0.30;
+const kscaffoldJSVersion = 0.40;
 const kscaffoldPUGVersion = 0.30;
