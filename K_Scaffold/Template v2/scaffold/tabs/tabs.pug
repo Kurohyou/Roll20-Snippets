@@ -1,0 +1,56 @@
+//- @pugdoc
+  name: tabs
+  description: A generic mixin to create tabs using jQuery. It uses a nested {@link tab} mixin to define tabs. Any content outside those mixin in put in the containing div, before the tabs. Attributes passed to the mixin are passed to the outer containing div.
+  arguments:
+    arguments:
+    - {string} [name=tabs] - The name of the tabs construct. Used in all elements so that you may vary the styling of different tabs
+  attributes:
+  example: |
+    include _htmlelements.pug
+    +tabs(name="sheet-tabs")(class="outer")
+        span before the header
+        +tab()(class="tab-vertical")
+            span Tab 1 content
+        +tab("background")(class="tab_horizontal")
+            span Tab background content
+mixin tabs(name="tabs")
+    - name = actionButtonName(replaceProblems(name));
+
+    - const tabs = [];
+    //- @pugdoc
+      name: tab
+      description: Mixin to add a new tab. Only available inside a {@link tabs} mixin. Attributes passed to the mixin are passed to the div containing the content, not to the header button.
+      arguments:
+      - {string} [name] - The name of the tab. Defaults to "tab" followed by a index count starting at 1 (so tab1, then tab2, ...)
+    mixin tab(name)
+        - name = actionButtonName(replaceProblems(name ? name : `tab${tabs.length + 1}`));
+        - tabs.push({name, attributes, block});
+    
+    - attributes.class = actionButtonName(replaceProblems(attributes.class ? attributes.class : ""));
+    - attributes.class = `tab tab-${name} ` + attributes.class;
+    div&attributes(attributes)
+
+        - block ? block() : undefined
+
+        div(class=`tab-header tab-header-${name}`)
+            each tab, index in tabs
+                div(
+                    class=`tab-button tab-button-${name}` + (index === 0 ? " active" : "")
+                    data-container-tab=name
+                    data-tab=tab.name
+                )
+                    span(data-i18n=`tab-${name}-${tab.name}`)
+                        != tab.name
+        
+        div(class=`tab-body tab-body-${name}`)
+            each tab, index in tabs
+                - tab.attributes.class = actionButtonName(replaceProblems(tab.attributes.class ? tab.attributes.class : ""));
+                - tab.attributes.class = `tab-container tab-container-${name} ` + (index === 0 ? "active " : "") + tab.attributes.class;
+                div(data-container-tab=name data-tab=tab.name)&attributes(tab.attributes)
+                    - tab.block()
+    
+    -
+        varObjects["tabDetails"].push({
+            name,
+            tabs:tabs.map(data => { const {block, ...rest} = data; return rest; } )
+        });
