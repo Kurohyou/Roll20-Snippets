@@ -10,8 +10,11 @@ const createAttrProxy = function(attrs){
       event.removedInfo ?
       'fieldset_' :
       'attr_';
-    let cascName = `${typePrefix}${eventName.replace(/clicked:/,'')}`;
+    let cascName = `${typePrefix}${eventName.replace(/(?:removed|clicked):/,'')}`;
     let cascObj = casc[cascName];
+    if(typePrefix === 'attr_'){
+      cascObj.previousValue = event.previousValue;
+    }
     return cascObj;
   };
   
@@ -48,7 +51,7 @@ const createAttrProxy = function(attrs){
     }
     debug({trigger});
     if(event){
-      debug('checking for initial functions');
+      debug('checking for initial & always functions');
       alwaysFunctions(trigger,attributes,sections,casc);//Functions that should be run for all events.
       initialFunction(trigger,attributes,sections,casc);//functions that should only be run if the attribute was the thing changed by the user
     }

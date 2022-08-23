@@ -1,4 +1,18 @@
-- const varObjects = {repeatingSectionDetails:[],actionAttributes:[],cascades:{attr_character_name:{name:'character_name',type:'text',defaultValue:'',affects:[],triggeredFuncs:['setActionCalls'],listenerFunc:'accessSheet',listener:'change:character_name'}}};
+-
+  const varObjects = {
+    repeatingSectionDetails:[],
+    actionAttributes:[],
+    cascades:{
+      attr_character_name:{
+        name:'character_name',
+        type:'text',
+        defaultValue:'',
+        affects:[],
+        triggeredFuncs:['setActionCalls'],
+        listenerFunc:'accessSheet',
+        listener:'change:character_name'}
+      }
+  };
 - let selectName = null;
 - let selectTitle = null;
 - let repeatingPrefix = '';
@@ -310,7 +324,7 @@ mixin p(obj)
     +button({name:'my button',value:'/r 3d10'})
     //An action button
     +button({name:'my button',type:'action','data-i18n':'action button',trigger:{triggeredFuncs:['doSomethingOnClick']}})
-mixin button(obj)
+mixin button(obj, _attributes)
   - obj.class = obj.class ? replaceProblems(obj.class) : undefined;
   - obj.name = replaceSpaces(obj.name);
   - obj.title = obj.title || buttonTitle(obj.name);
@@ -322,7 +336,7 @@ mixin button(obj)
   - const elementObj = makeElementObj(obj);
   if obj.type !== 'roll'
     - storeTrigger(obj);
-  button&attributes(elementObj)
+  button&attributes(elementObj)&attributes(attributes)
     block
 //-End Mixin
 //- @pugdoc
@@ -333,11 +347,11 @@ mixin button(obj)
   example: |
     include _htmlelements.pug
     +action({name:'my button','data-i18n':'action button',trigger:{triggeredFuncs:['doSomethingOnClick']}})
-mixin action(obj)
+mixin action(obj, _attributes)
   - obj.class = obj.class ? replaceProblems(obj.class) : undefined;
   - obj.type = 'action';
   - obj.name = obj.name.replace(/\s+/g,'-');
-  +button(obj)
+  +button(obj)&attributes(attributes)
     block
 //- End Mixin
 //- @pugdoc
@@ -351,7 +365,7 @@ mixin action(obj)
 mixin navButton(obj)
   - addIfUnique(obj.name,'navButtons');
   - obj.name = `nav ${obj.name}`;
-  +action(obj)
+  +action(obj)&attributes(attributes)
     block
 //- End Mixin
 mixin rollerExtras(obj)
@@ -772,6 +786,9 @@ mixin compendiumAttributes({prefix,lookupAttributes = ['Name','data'],triggerAcc
       - inputObj.trigger = trigger;
     +hidden(inputObj)
 //- End Mixin
+
+include tabs/_tabs.pug
+
 //- Functions
 //- @pugdoc
   name: script
@@ -814,6 +831,8 @@ mixin kscript
     include parse_cascade.js
     include sheetworker_aliases.js
     include listeners.js
+    include tabs/tabs.js
+    |
     |return kFuncs;
     |}());
     |

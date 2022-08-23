@@ -17,7 +17,7 @@ const updateSheet = function(){
       });
     }else{
       Object.entries(updateHandlers).forEach(([ver,handler])=>{
-        if(attributes.version < +ver){
+        if(attributes.sheet_version < +ver){
           handler({attributes,sections,casc});
         }
       });
@@ -53,7 +53,7 @@ const initialSetup = function(attributes,sections){
 const accessSheet = function(event){
   debug({funcs:Object.keys(funcs)});
   debug({event});
-  getAllAttrs({event,callback:(attributes,sections,casc)=>{
+  getAllAttrs({callback:(attributes,sections,casc)=>{
     let trigger = attributes.getCascObj(event,casc);
     attributes.processChange({event,trigger,attributes,sections,casc});
   }});
