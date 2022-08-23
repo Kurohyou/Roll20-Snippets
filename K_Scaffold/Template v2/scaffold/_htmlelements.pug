@@ -1,4 +1,19 @@
-- const varObjects = {repeatingSectionDetails:[],actionAttributes:[],cascades:{attr_character_name:{name:'character_name',type:'text',defaultValue:'',affects:[],triggeredFuncs:['setActionCalls'],listenerFunc:'accessSheet',listener:'change:character_name'}}};
+-
+  const varObjects = {
+    repeatingSectionDetails:[],
+    actionAttributes:[],
+    cascades:{
+      attr_character_name:{
+        name:'character_name',
+        type:'text',
+        defaultValue:'',
+        affects:[],
+        triggeredFuncs:['setActionCalls'],
+        listenerFunc:'accessSheet',
+        listener:'change:character_name'}
+      },
+    tabDetails:[],
+  };
 - let selectName = null;
 - let selectTitle = null;
 - let repeatingPrefix = '';
@@ -772,6 +787,9 @@ mixin compendiumAttributes({prefix,lookupAttributes = ['Name','data'],triggerAcc
       - inputObj.trigger = trigger;
     +hidden(inputObj)
 //- End Mixin
+
+include tabs/tabs.pug
+
 //- Functions
 //- @pugdoc
   name: script
@@ -798,7 +816,7 @@ mixin kscript
     |const k = (function(){
     |const kFuncs = {};
     //- The below declarations import variables from the pug file and mixins into the sheetworker code
-    - const propArray = ['cascades','repeatingSectionDetails'];
+    - const propArray = ['cascades','repeatingSectionDetails','tabDetails'];
     each prop in propArray
       |
       |const !{prop} = !{JSON.stringify(varObjects[prop])};
@@ -814,6 +832,8 @@ mixin kscript
     include parse_cascade.js
     include sheetworker_aliases.js
     include listeners.js
+    include tabs/tabs.js
+    |
     |return kFuncs;
     |}());
     |

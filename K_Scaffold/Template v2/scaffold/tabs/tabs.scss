@@ -1,0 +1,10 @@
+.tab {
+    .tab-body {
+        .tab-container {
+            display: none;
+        }
+        .tab-container.active {
+            display: block;
+        }
+    }
+}
