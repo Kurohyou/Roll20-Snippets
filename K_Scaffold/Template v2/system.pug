@@ -1,44 +1,44 @@
 include scaffold/_kpug.pug
 //- additional includes should be below this point
-//- +input-label({
-//-   label:'strength',
-//-   inputObj:{name:'strength',type:'number',value:10,trigger:{affects:['strength_mod']}}
-//- })
-//- +input-label({
-//-   label:'strength mod',
-//-   inputObj:{name:'strength mod',type:'number',value:0,trigger:{affects:['athletics','repeating_attack_$x_mod'],calculation:'calcStrengthMod'}}
-//- })
-//- +input-label({
-//-   label:'athletics base',
-//-   inputObj:{name:'athletics base',type:'number',value:0,trigger:{affects:['athletics']}}
-//- })
-//- +input-label({
-//-   label:'athletics',
-//-   inputObj:{name:'athletics',type:'number',value:0,trigger:{calculation:'calcAthletics'}}
-//- })
-//- +fieldset({name:'attack'})
-//-   +text({name:'name',placeholder:'name'})
-//-   +input-label({
-//-     label:'mod',
-//-     inputObj:{name:'mod',readonly:'',type:'number',value:0,trigger:{calculation:'calcAttackMod'}}
-//-   })
-//-   +input-label({
-//-     label:'bonus',
-//-     inputObj:{name:'bonus',type:'number',value:0,trigger:{affects:['repeating_attack_$x_mod']}}
-//-   })
-//-   +input-label({
-//-     label:'weight',
-//-     inputObj:{name:'weight',type:'number',value:0,trigger:{affects:['weapon_weight']}}
-//-   })
-//-   +input-label({
-//-     label:'quantity',
-//-     inputObj:{name:'quantity',type:'number',value:0,trigger:{affects:['weapon_weight']}}
-//-   })
-//- +input-label({
-//-   label:'weapon weight',
-//-   inputObj:{name:'weapon weight',type:'number',readonly:'',value:0,trigger:{calculation:'calcWeaponWeight'}}
-//- })
-//- +kscript
-//-   //- All additional javascript files should start here
-//-   include Javascript/variables.js
-//-   include Javascript/demoworkers.js
++input-label({
+  label:'strength',
+  inputObj:{name:'strength',type:'number',value:10,trigger:{affects:['strength mod']}}
+})
++input-label({
+  label:'strength mod',
+  inputObj:{name:'strength mod',type:'number',value:0,trigger:{affects:['athletics','repeating attack $x mod'],calculation:'calcStrengthMod'}}
+})
++input-label({
+  label:'athletics base',
+  inputObj:{name:'athletics base',type:'number',value:0,trigger:{affects:['athletics']}}
+})
++input-label({
+  label:'athletics',
+  inputObj:{name:'athletics',type:'number',value:0,trigger:{calculation:'calcAthletics'}}
+})
++fieldset({name:'attack'})
+  +text({name:'name',placeholder:'name'})
+  +input-label({
+    label:'mod',
+    inputObj:{name:'mod',readonly:'',type:'number',value:0,trigger:{calculation:'calcAttackMod'}}
+  })
+  +input-label({
+    label:'bonus',
+    inputObj:{name:'bonus',type:'number',value:0,trigger:{affects:['repeating attack $x mod']}}
+  })
+  +input-label({
+    label:'weight',
+    inputObj:{name:'weight',type:'number',value:0,trigger:{affects:['weapon weight']}}
+  })
+  +input-label({
+    label:'quantity',
+    inputObj:{name:'quantity',type:'number',value:0,trigger:{affects:['weapon weight']}}
+  })
++input-label({
+  label:'weapon weight',
+  inputObj:{name:'weapon weight',type:'number',readonly:'',value:0,trigger:{calculation:'calcWeaponWeight'}}
+})
++kscript
+  //- All additional javascript files should start here
+  include Javascript/variables.js
+  include Javascript/demoworkers.js

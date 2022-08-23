@@ -10,8 +10,11 @@ const createAttrProxy = function(attrs){
       event.removedInfo ?
       'fieldset_' :
       'attr_';
-    let cascName = `${typePrefix}${eventName.replace(/clicked:/,'')}`;
+    let cascName = `${typePrefix}${eventName.replace(/(?:removed|clicked):/,'')}`;
     let cascObj = casc[cascName];
+    if(typePrefix === 'attr_'){
+      cascObj.previousValue = event.previousValue;
+    }
     return cascObj;
   };
   
@@ -32,24 +35,29 @@ const createAttrProxy = function(attrs){
         debug(`!!!Warning!!! no function named ${obj.initialFunc} found. Initial function not called for ${obj.name}`,true);
     }
   };
+  const alwaysFunctions = function(trigger,attributes,sections,casc){
+    Object.values(allHandlers).forEach((handler)=>{
+      handler({trigger,attributes,sections,casc});
+    });
+  };
   const processChange = function({event,trigger,attributes,sections,casc}){
-    debug({trigger});
     if(event && !trigger){
-      debug('initial change detected. No trigger found');
+      debug(`${event.sourceAttribute} change detected. No trigger found`);
       return;
     }
     if(!attributes || !sections || !casc){
       debug(`!!! Insufficient arguments || attributes > ${!!attributes} | sections > ${!!sections} | casc > ${!!casc} !!!`);
       return;
     }
-    //store the queue in attributes.
+    debug({trigger});
     if(event){
-      debug('checking for initial functions');
-      initialFunction(trigger,attributes,sections);//functions that should only be run if the attribute was the thing changed by the user
+      debug('checking for initial & always functions');
+      alwaysFunctions(trigger,attributes,sections,casc);//Functions that should be run for all events.
+      initialFunction(trigger,attributes,sections,casc);//functions that should only be run if the attribute was the thing changed by the user
     }
     if(trigger){
       debug(`processing ${trigger.name}`);
-      triggerFunctions(trigger,attributes,sections);
+      triggerFunctions(trigger,attributes,sections,casc);
       if(!event && trigger.calculation && funcs[trigger.calculation]){
         attributes[trigger.name] = funcs[trigger.calculation]({trigger,attributes,sections,casc});
       }else if(trigger.calculation && !funcs[trigger.calculation]){
@@ -67,6 +75,7 @@ const createAttrProxy = function(attrs){
     repOrders:{},
     queue: [],
     casc:{},
+    alwaysFunctions,
     processChange,
     triggerFunctions,
     initialFunction,
@@ -159,11 +168,16 @@ const createAttrProxy = function(attrs){
  * @returns {boolean} - True if the registration succeeded, false if it failed.
  * @example
  * //Basic Registration
- * const myFunc = function(){};
+ * const myFunc = function({trigger,attributes,sections,casc}){};
  * k.registerFuncs({myFunc});
+ * 
  * //Register a function to run on sheet open
- * const openFunc = function(){};
+ * const openFunc = function({trigger,attributes,sections,casc}){};
  * k.registerFuncs({openFunc},{type:['opener']})
+ * 
+ * //Register a function to run on all events
+ * const allFunc = function({trigger,attributes,sections,casc}){};
+ * k.registerFuncs({allFunc},{type:['all']})
  */
 const registerFuncs = function(funcObj,optionsObj = {}){
   if(typeof funcObj !== 'object' || typeof optionsObj !== 'object'){
@@ -175,6 +189,7 @@ const registerFuncs = function(funcObj,optionsObj = {}){
     'opener':openHandlers,
     'updater':updateHandlers,
     'new':initialSetups,
+    'all':allHandlers,
     'default':funcs
   };
   let setState;
