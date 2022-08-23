@@ -27,25 +27,25 @@ mixin tabs(name="tabs")
         - tabs.push({name, attributes, block});
     
     - attributes.class = actionButtonName(replaceProblems(attributes.class ? attributes.class : ""));
-    - attributes.class = `tab tab-${name} ` + attributes.class;
+    - attributes.class = `tabs tabs--${name} ` + attributes.class;
     div&attributes(attributes)
 
         - block ? block() : undefined
 
-        div(class=`tab-header tab-header-${name}`)
+        div(class=`tabs__header tabs__header--${name}`)
             each tab, index in tabs
                 div(
-                    class=`tab-button tab-button-${name}` + (index === 0 ? " active" : "")
+                    class=`tabs__button tabs__button--${name}` + (index === 0 ? " active" : "")
                     data-container-tab=name
                     data-tab=tab.name
                 )
-                    span(data-i18n=`tab-${name}-${tab.name}`)
+                    span(data-i18n=`tabs-${name}-${tab.name}`)
                         != tab.name
         
-        div(class=`tab-body tab-body-${name}`)
+        div(class=`tabs__body tabs__body--${name}`)
             each tab, index in tabs
                 - tab.attributes.class = actionButtonName(replaceProblems(tab.attributes.class ? tab.attributes.class : ""));
-                - tab.attributes.class = `tab-container tab-container-${name} ` + (index === 0 ? "active " : "") + tab.attributes.class;
+                - tab.attributes.class = `tabs__container tabs__container--${name} ` + (index === 0 ? "active " : "") + tab.attributes.class;
                 div(data-container-tab=name data-tab=tab.name)&attributes(tab.attributes)
                     - tab.block()
     
