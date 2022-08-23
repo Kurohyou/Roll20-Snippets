@@ -1,10 +1,7 @@
-.tab {
-    .tab-body {
-        .tab-container {
-            display: none;
-        }
-        .tab-container.active {
-            display: block;
+.tabs {
+    .tabs__body {
+        .tabs__container:not(.k-active-tab) {
+            display: none ! important;
         }
     }
 }

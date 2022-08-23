@@ -13,44 +13,60 @@
             span Tab 1 content
         +tab("background")(class="tab_horizontal")
             span Tab background content
-mixin tabs(name="tabs")
+mixin tabs(name="tabs",defaultActiveTabIndex=0)
+    //- Cleanup the name to use "-" instead of spaces, and no problematic chars
+    //- We use "-" as in action buttons, because this name will be used in CSS classes
     - name = actionButtonName(replaceProblems(name));
 
+
+    //- Storage for all the tabs in this construct, plus a local mixin to pass
+    //- several pug blocks
     - const tabs = [];
     //- @pugdoc
       name: tab
       description: Mixin to add a new tab. Only available inside a {@link tabs} mixin. Attributes passed to the mixin are passed to the div containing the content, not to the header button.
       arguments:
       - {string} [name] - The name of the tab. Defaults to "tab" followed by a index count starting at 1 (so tab1, then tab2, ...)
-    mixin tab(name)
-        - name = actionButtonName(replaceProblems(name ? name : `tab${tabs.length + 1}`));
-        - tabs.push({name, attributes, block});
+    mixin tab(tabName,button={},container="div")
+        - tabName = actionButtonName(replaceProblems(tabName || `tab${tabs.length + 1}`));
+        - if (tabs.filter(tab => tab.name === tabName).length) { throw new Error(`Tab "${tabName}" already exists in "${name}".`); }
+        //- Cleanup the name of the navigation button
+        - button.name = `nav-tabs-${name}--${tabName}`;
+        //- Cleanup the class, add our own internal classes
+        - button.class = button.class ? replaceProblems(button.class) : "";
+        - button.class = `tabs__button tabs--${name}__button tabs--${name}__button--${tabName} ${button.class}`;
+        - button.class = button.class + (tabs.length === defaultActiveTabIndex ? " k-active-tab" : "");
+        //- If not provided, hook the button to the default tab switcher listener
+        - button.trigger = button.trigger || {triggeredFuncs:["_kSwitchTab"]};
+        //- Cleanup the class of the tab content passed through the implicit attributes
+        //- and add our own internal classes
+        - attributes.class = actionButtonName(replaceProblems(attributes.class || ""));
+        - attributes.class = `tabs__container tabs--${name}__container tabs--${name}__container--${tabName} ${attributes.class}`;
+        - attributes.class = attributes.class + (tabs.length === defaultActiveTabIndex ? " k-active-tab" : "");
+        //- Store the tab definition
+        - tabs.push({name:tabName, container, button, attributes, block});
     
-    - attributes.class = actionButtonName(replaceProblems(attributes.class ? attributes.class : ""));
-    - attributes.class = `tabs tabs--${name} ` + attributes.class;
+
+    //- Put everything in a global div with appropriate classes for CSS styling
+    //- and proper HTML organization
+    - attributes.class = actionButtonName(replaceProblems(attributes.class || ""));
+    - attributes.class = `tabs tabs--${name} ${attributes.class}`;
     div&attributes(attributes)
+        //- Execute the block passed to the +tabs mixin, if any
+        //- this fills the `tabs` array above when the +tab nested mixin
+        //- is called in the block
+        - block ? block() : undefined;
 
-        - block ? block() : undefined
-
-        div(class=`tabs__header tabs__header--${name}`)
+        //- Navigation header with action button to switch tabs
+        nav(class=`tabs__header tabs--${name}__header`)
             each tab, index in tabs
-                div(
-                    class=`tabs__button tabs__button--${name}` + (index === 0 ? " active" : "")
-                    data-container-tab=name
-                    data-tab=tab.name
-                )
-                    span(data-i18n=`tabs-${name}-${tab.name}`)
-                        != tab.name
+                +action(tab.button)(data-container-tab=name data-tab=tab.name data-i18n=`tabs-${name}-${tab.name}`)
+                    != tab.name
         
-        div(class=`tabs__body tabs__body--${name}`)
+        //- Global div storing all the tabs one after another
+        //- only one will be visible at the same time
+        div(class=`tabs__body tabs--${name}__body`)
             each tab, index in tabs
-                - tab.attributes.class = actionButtonName(replaceProblems(tab.attributes.class ? tab.attributes.class : ""));
-                - tab.attributes.class = `tabs__container tabs__container--${name} ` + (index === 0 ? "active " : "") + tab.attributes.class;
-                div(data-container-tab=name data-tab=tab.name)&attributes(tab.attributes)
+                - const container = tab.container;
+                #{container}(data-container-tab=name data-tab=tab.name)&attributes(tab.attributes)
                     - tab.block()
-    
-    -
-        varObjects["tabDetails"].push({
-            name,
-            tabs:tabs.map(data => { const {block, ...rest} = data; return rest; } )
-        });
