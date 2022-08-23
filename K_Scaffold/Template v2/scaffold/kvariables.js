@@ -28,4 +28,4 @@ const allHandlers = {};
 const addFuncs = {};
 
 const kscaffoldJSVersion = '0.0.4';
-const kscaffoldPUGVersion = '0.0.30';
+const kscaffoldPUGVersion = '0.0.4';
