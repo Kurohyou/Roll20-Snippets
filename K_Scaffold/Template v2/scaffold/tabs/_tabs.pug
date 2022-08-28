@@ -3,12 +3,25 @@
   description: A generic mixin to create tabs using jQuery. It uses a nested {@link tab} mixin to define tabs. Any content outside those mixin in put in the containing div, before the tabs. Attributes passed to the mixin are passed to the outer containing div.
   arguments:
     - {string} [name=tabs] - The name of the tabs construct. Used in all elements so that you may vary the styling of different tabs
-    - {integer} [defaultActiveTab] - The name of the tab that should be active by default.
-    - {}
+    - {string} [defaultActiveTab] - The name of the tab that should be active by default.
+    - {boolean} [persistent = true] - Whether the tabs should be persistent and load their last state when the sheet is reloaded. True by default.
   attributes:
   example: |
     include ../_htmlelements.pug
-    +tabs("sheet-tabs")(class="outer")
+    //- Tabs that are persistent (default) and have the background tab as the default tab
+    +tabs({name:"sheet-tabs",defaultActiveTab:'background'})(class="outer")
+      span before the header
+      +tab()(class="tab-vertical")
+        span(style="background: white;") Tab 1 content
+      +tab("background")(class="tab_horizontal")
+        span(style="background: white;") Tab background content
+      +tab("history", {class:"custom-button", trigger:{}})(class="tab_horizontal")
+        span(style="background: white;") Tab history content
+      +tab("inventory", {}, "span")(class="tab_horizontal")
+        span(style="background: white;") Tab inventory content
+        
+    //- Tabs that are NOT persistent and have no default tab (aka all tab content will be hidden by default)
+    +tabs({name:"sheet-tabs",persistent:false})(class="outer")
       span before the header
       +tab()(class="tab-vertical")
         span(style="background: white;") Tab 1 content
