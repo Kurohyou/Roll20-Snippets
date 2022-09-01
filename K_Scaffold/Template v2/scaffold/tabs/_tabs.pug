@@ -63,8 +63,8 @@ mixin tabs({name="tabs",defaultActiveTab,persistent=true})
     //- Cleanup the name of the navigation button
     - button.name = `nav-tabs-${name}--${tabName}`;
     //- Cleanup the class, add our own internal classes
-    - button.class = button.class ? replaceProblems(button.class) : "";
-    - button.class = `tabs__button tabs--${name}__button tabs--${name}__button--${tabName}${!persistent && defaultActiveTab === tabName ? 'k-active-button' : ''} ${button.class}`;
+    - button.class = button.class ? ` ${replaceProblems(button.class)}` : "";
+    - button.class = `tabs__button tabs--${name}__button tabs--${name}__button--${tabName}${button.class}${!persistent && defaultActiveTab === tabName ? ' k-active-button' : ''}`;
     - button['data-container-button'] = name;
     - button['data-button'] = tabName;
     - const content = button.content;
@@ -75,7 +75,7 @@ mixin tabs({name="tabs",defaultActiveTab,persistent=true})
     //- Cleanup the class of the tab content passed through the implicit attributes
     //- and add our own internal classes
     - attributes.class = actionButtonName(replaceProblems(attributes.class || ""));
-    - attributes.class = `tabs__container tabs--${name}__container tabs--${name}__container--${tabName}${!persistent && defaultActiveTab === tabName ? 'k-active-tab' : ''} ${attributes.class}`;
+    - attributes.class = `tabs__container tabs--${name}__container tabs--${name}__container--${tabName}${attributes.class}${!persistent && defaultActiveTab === tabName ? ' k-active-tab' : ''}`;
     //- Store the tab definition
     - tabs.push({name:tabName, container, button, attributes, block, content});
       
