@@ -1,0 +1,160 @@
+
+//- @pugdoc
+  name: img
+  description: A mixin to create a sheet image element. Particularly useful when using the image attribute syntax.
+  arguments:
+  attributes:
+  example: |
+    include _htmlelements.pug
+    +img({name:'my image',class:'some-class'})
+mixin img(obj)
+  - obj.class = obj.class ? replaceProblems(obj.class) : undefined;
+  - obj['data-i18n-alt'] = obj['data-i18n-alt'] || obj.name;
+  - obj.name = replaceSpaces(obj.name);
+  - obj.title = obj.title || attrTitle(obj.name);
+  - obj.name = `attr_${obj.name}`;
+  img&attributes(obj)
+//-End Mixin
+
+
+
+
+//- @pugdoc
+  name: span
+  description: Creates a span element and formats the name of the span for compatibility with the Roll20 attribute system.
+  arguments:
+    - {object} attrObj - The object describing the span itself.
+    - {block} block - What is contained within the span
+  attributes:
+  example: |
+    include _htmlelements.pug
+    +span({name:'attribute backed span',trigger:{calculation:'calculateAttribute'}})
+mixin span(obj)
+  - obj.class = obj.class ? replaceProblems(obj.class) : undefined;
+  if obj.name
+    - obj.name = replaceSpaces(obj.name);
+    - obj.title = obj.title || attrTitle(obj.name);
+    - obj.name = `attr_${obj.name}`;
+    - addFieldToFieldsetObj(obj);
+  - const elementObj = makeElementObj(obj);
+  span&attributes(elementObj)
+    block
+  if obj.name
+    - obj.type = 'span';
+    - storeTrigger(obj);
+//-End Mixin
+
+
+
+
+//- @pugdoc
+  name: div
+  description: Creates a div element and will properly format the name attribute of the div if it is provided
+  arguments:
+    - {object} divObj - The object describing the div
+    - {block} block - The contents of the div
+  attributes:
+  example: |
+    include _htmlelements.pug
+    +div({name:'background image'})
+mixin div(obj)
+  - obj.class = obj.class ? replaceProblems(obj.class) : undefined;
+  if obj.name
+    - obj.name = replaceSpaces(obj.name);
+    - obj.title = obj.title || attrTitle(obj.name);
+    - obj.name = `attr_${obj.name}`;
+  div&attributes(obj)
+    block
+//-End Mixin
+
+
+
+
+mixin h1(obj)
+  - obj.class = obj.class ? replaceProblems(obj.class) : undefined;
+  h1&attributes(obj)
+    block
+
+
+mixin h2(obj)
+  - obj.class = obj.class ? replaceProblems(obj.class) : undefined;
+  h2&attributes(obj)
+    block
+
+
+mixin h3(obj)
+  - obj.class = obj.class ? replaceProblems(obj.class) : undefined;
+  h3&attributes(obj)
+    block
+
+
+mixin h4(obj)
+  - obj.class = obj.class ? replaceProblems(obj.class) : undefined;
+  h4&attributes(obj)
+    block
+
+
+mixin h5(obj)
+  - obj.class = obj.class ? replaceProblems(obj.class) : undefined;
+  h5&attributes(obj)
+    block
+
+
+mixin h6(obj)
+  - obj.class = obj.class ? replaceProblems(obj.class) : undefined;
+  h6&attributes(obj)
+    block
+
+
+mixin p(obj)
+  - obj.class = obj.class ? replaceProblems(obj.class) : undefined;
+  p&attributes(obj)
+    block
+
+
+mixin section(obj)
+  - obj.class = obj.class ? replaceProblems(obj.class) : undefined;
+  section&attributes(obj)
+    block
+
+
+
+mixin main(obj)
+  - obj.class = obj.class ? replaceProblems(obj.class) : undefined;
+  main&attributes(obj)
+    block
+
+
+
+mixin header(obj)
+  - obj.class = obj.class ? replaceProblems(obj.class) : undefined;
+  header&attributes(obj)
+    block
+
+
+
+mixin footer(obj)
+  - obj.class = obj.class ? replaceProblems(obj.class) : undefined;
+  footer&attributes(obj)
+    block
+
+
+
+mixin details(obj)
+  - obj.class = obj.class ? replaceProblems(obj.class) : undefined;
+  details&attributes(obj)
+    block
+
+
+
+mixin summary(obj)
+  - obj.class = obj.class ? replaceProblems(obj.class) : undefined;
+  summary&attributes(obj)
+    block
+
+
+
+mixin label(obj)
+  - obj.class = obj.class ? replaceProblems(obj.class) : undefined;
+  label&attributes(obj)
+    block
