@@ -74,7 +74,10 @@ mixin tabs({name="tabs",defaultActiveTab,persistent=true})
     - button.trigger = button.trigger || {triggeredFuncs:["kSwitchTab"]};
     //- Cleanup the class of the tab content passed through the implicit attributes
     //- and add our own internal classes
-    - attributes.class = actionButtonName(replaceProblems(attributes.class || ""));
+    -
+      attributes.class = attributes.class ?
+        actionButtonName(replaceProblems(attributes.class)) :
+        '';
     - attributes.class = `tabs__container tabs--${name}__container tabs--${name}__container--${tabName}${attributes.class}${!persistent && defaultActiveTab === tabName ? ' k-active-tab' : ''}`;
     //- Store the tab definition
     - tabs.push({name:tabName, container, button, attributes, block, content});
