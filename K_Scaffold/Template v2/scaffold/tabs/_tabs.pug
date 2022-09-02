@@ -8,28 +8,28 @@
   attributes:
   example: |
     include ../_htmlelements.pug
-    //- Tabs that are persistent (default) and have the background tab as the default tab
+    // Tabs that are persistent (default) and have the background tab as the default tab
     +tabs({name:"sheet-tabs",defaultActiveTab:'background'})(class="outer")
       span before the header
-      +tab()(class="tab-vertical")
+      +tab({})(class="tab-vertical")
         span(style="background: white;") Tab 1 content
-      +tab("background")(class="tab_horizontal")
+      +tab({name:"background"})(class="tab_horizontal")
         span(style="background: white;") Tab background content
-      +tab("history", {class:"custom-button", trigger:{}})(class="tab_horizontal")
+      +tab({name:"history", button:{class:"custom-button"}})(class="tab_horizontal")
         span(style="background: white;") Tab history content
-      +tab("inventory", {}, "span")(class="tab_horizontal")
+      +tab({name:"inventory", container:"span"})(class="tab_horizontal")
         span(style="background: white;") Tab inventory content
         
-    //- Tabs that are NOT persistent and have no default tab (aka all tab content will be hidden by default)
-    +tabs({name:"sheet-tabs",persistent:false})(class="outer")
+    // Tabs that are NOT persistent and have no default tab (aka all tab content will be hidden by default)
+    +tabs({name:"sheet-tabs"-2,persistent:false})(class="outer")
       span before the header
-      +tab()(class="tab-vertical")
+      +tab({})(class="tab-vertical")
         span(style="background: white;") Tab 1 content
-      +tab("background")(class="tab_horizontal")
+      +tab({name:"background"})(class="tab_horizontal")
         span(style="background: white;") Tab background content
-      +tab("history", {class:"custom-button", trigger:{}})(class="tab_horizontal")
+      +tab({name:"history", button:{class:"custom-button"}})(class="tab_horizontal")
         span(style="background: white;") Tab history content
-      +tab("inventory", {}, "span")(class="tab_horizontal")
+      +tab({name:"inventory", container:"span"})(class="tab_horizontal")
         span(style="background: white;") Tab inventory content
 mixin tabs({name="tabs",defaultActiveTab,persistent=true})
   //- Cleanup the name to use "-" instead of spaces, and no problematic chars
@@ -38,34 +38,27 @@ mixin tabs({name="tabs",defaultActiveTab,persistent=true})
     defaultActiveTab = defaultActiveTab ?
       actionButtonName(replaceProblems(defaultActiveTab)) :
       undefined;
-  - name = actionButtonName(replaceProblems(name));
+  - sectionName = actionButtonName(replaceProblems(name));
   if persistent
-    - const inputObj = {name:`${name.replace(/\-/g,'_')} tab`};
+    - const inputObj = {name:`${sectionName.replace(/\-/g,'_')} tab`};
     if defaultActiveTab
-      - inputObj.value = `nav-tabs-${name}--${defaultActiveTab}`;
+      - inputObj.value = `nav-tabs-${sectionName}--${defaultActiveTab}`;
     +hidden(inputObj)
     - varObjects.persistentTabs = varObjects.persistentTabs || [];
-    - varObjects.persistentTabs.push(replaceSpaces(`${name} tab`))
+    - varObjects.persistentTabs.push(replaceSpaces(`${sectionName} tab`))
 
   //- Storage for all the tabs in this construct, plus a local mixin to pass
   //- several pug blocks
   - const tabs = [];
-  //- @pugdoc
-    name: tab
-    description: Mixin to add a new tab. Only available inside a {@link tabs} mixin. Attributes passed to the mixin are passed to the div containing the content, not to the header button.
-    arguments:
-      - {string} [tabName] - The name of the tab. Defaults to `tab` followed by a index count starting at 1 (so tab1, then tab2, ...)
-      - {object} [button] - object passed to the +action mixin to build the action button for switching tabe. By default a trigger is defined, but you can override it.
-      - {string} [container] - tag to use to contain the whole tab. A div by default but can be overridden.
-  mixin tab({tabName,button={},container="div"})
-    - tabName = actionButtonName(replaceProblems(tabName || `tab${tabs.length + 1}`));
-    - if (tabs.filter(tab => tab.name === tabName).length) { throw new Error(`Tab "${tabName}" already exists in "${name}".`); }
+  mixin tab({name,button={},container="div"})
+    - tabName = actionButtonName(replaceProblems(name || `tab${tabs.length + 1}`));
+    - if (tabs.filter(tab => tab.name === tabName).length) { throw new Error(`Tab "${tabName}" already exists in "${sectionName}".`); }
     //- Cleanup the name of the navigation button
-    - button.name = `nav-tabs-${name}--${tabName}`;
+    - button.name = `nav-tabs-${sectionName}--${tabName}`;
     //- Cleanup the class, add our own internal classes
     - button.class = button.class ? ` ${replaceProblems(button.class)}` : "";
-    - button.class = `tabs__button tabs--${name}__button tabs--${name}__button--${tabName}${button.class}${!persistent && defaultActiveTab === tabName ? ' k-active-button' : ''}`;
-    - button['data-container-button'] = name;
+    - button.class = `tabs__button tabs--${sectionName}__button tabs--${sectionName}__button--${tabName}${button.class}${!persistent && defaultActiveTab === tabName ? ' k-active-button' : ''}`;
+    - button['data-container-button'] = sectionName;
     - button['data-button'] = tabName;
     - const content = button.content;
     - delete button.content;
@@ -74,19 +67,16 @@ mixin tabs({name="tabs",defaultActiveTab,persistent=true})
     - button.trigger = button.trigger || {triggeredFuncs:["kSwitchTab"]};
     //- Cleanup the class of the tab content passed through the implicit attributes
     //- and add our own internal classes
-    -
-      attributes.class = attributes.class ?
-        actionButtonName(replaceProblems(attributes.class)) :
-        '';
-    - attributes.class = `tabs__container tabs--${name}__container tabs--${name}__container--${tabName}${attributes.class}${!persistent && defaultActiveTab === tabName ? ' k-active-tab' : ''}`;
+    - attributes.class = attributes.class ? ` ${replaceProblems(attributes.class)}` : '';
+    - attributes.class = `tabs__container tabs--${sectionName}__container tabs--${sectionName}__container--${tabName}${attributes.class}${!persistent && defaultActiveTab === tabName ? ' k-active-tab' : ''}`;
     //- Store the tab definition
     - tabs.push({name:tabName, container, button, attributes, block, content});
       
 
   //- Put everything in a global div with appropriate classes for CSS styling
   //- and proper HTML organization
-  - attributes.class = actionButtonName(replaceProblems(attributes.class || ""));
-  - attributes.class = `tabs tabs--${name} ${attributes.class}`;
+  - attributes.class = attributes.class ? ` ${replaceProblems(attributes.class)}` : '';
+  - attributes.class = `tabs tabs--${sectionName}${attributes.class}`;
   div&attributes(attributes)
     //- Execute the block passed to the +tabs mixin, if any
     //- this fills the `tabs` array above when the +tab nested mixin
@@ -94,18 +84,29 @@ mixin tabs({name="tabs",defaultActiveTab,persistent=true})
     - block ? block() : undefined;
 
     //- Navigation header with action button to switch tabs
-    nav(class=`tabs__header tabs--${name}__header`)
+    nav(class=`tabs__header tabs--${sectionName}__header`)
       each tab, index in tabs
         if !tab.content
-          - tab.button['data-i18n'] = `tabs-${name}-${tab.name}`;
-        +action(tab.button)(data-container-tab=name data-tab=tab.name)
+          - tab.button['data-i18n'] = `tabs-${sectionName}-${tab.name}`;
+        +action(tab.button)(data-container-tab=sectionName data-tab=tab.name)
           if tab.content
             != tab.content
     
     //- Global div storing all the tabs one after another
     //- only one will be visible at the same time
-    div(class=`tabs__body tabs--${name}__body`)
+    div(class=`tabs__body tabs--${sectionName}__body`)
       each tab, index in tabs
         - const container = tab.container;
-        #{container}(data-container-tab=name data-tab=tab.name)&attributes(tab.attributes)
+        #{container}(data-container-tab=sectionName data-tab=tab.name)&attributes(tab.attributes)
           - tab.block()
+
+//- duplicate for documentation purposes
+//- @pugdoc
+    name: tab
+    description: Mixin to add a new tab. Only available inside a {@link tabs} mixin. Attributes passed to the mixin are passed to the div containing the content, not to the header button.
+    arguments:
+      - {string} [name] - The name of the tab. Defaults to `tab` followed by a index count starting at 1 (so tab1, then tab2, ...)
+      - {object} [button] - object passed to the +action mixin to build the action button for switching tabe. By default a trigger is defined, but you can override it.
+      - {string} [container] - tag to use to contain the whole tab. A div by default but can be overridden.
+mixin tab({name,button={},container="div"})
+  - throw new Error("The +tab() mixin can only be used within a +tabs() mixin");
