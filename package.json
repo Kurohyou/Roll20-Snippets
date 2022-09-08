@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "jsdoc": "^3.6.11",
+    "pug-doc": "^2.23.1"
+  }
+}
