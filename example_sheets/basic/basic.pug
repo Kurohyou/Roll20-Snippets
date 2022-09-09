@@ -1,0 +1,12 @@
+include ../../k-scaffold/_k.pug
+
++tabs({name:"sheet-tabs",defaultActiveTab:'background'})(class="outer")
+  span before the header
+  +tab({})(class="tab-vertical")
+    span(style="background: white;") Tab 1 content
+  +tab({name:"background"})(class="tab_horizontal")
+    span(style="background: white;") Tab background content
+  +tab({name:"history", button:{class:"custom-button"}})(class="tab_horizontal")
+    span(style="background: white;") Tab history content
+  +tab({name:"inventory", container:"span"})(class="tab_horizontal")
+    span(style="background: white;") Tab inventory content
