@@ -1,25 +1,3 @@
-
-
-
-//- @pugdoc
-  name: option
-  description: A mixin to create an option for use in a select. This mixin must be used within the block of a {@link select} mixin. The K-scaffold will associate the option's values and trigger with the select parent. See the {@link select} for example usage.
-  arguments:
-    - {object} optionObj - The object describing the option element
-    - {block} block - The contents of the option element
-  attributes:
-mixin option(obj)
-  - obj.class = obj.class ? replaceProblems(obj.class) : undefined;
-  - const triggerObj = {...obj,name:selectName,title:selectTitle,type:'select'};
-  - const elementObj = makeElementObj(obj);
-  - storeTrigger(triggerObj);
-  option&attributes(elementObj)
-    block
-//-End Mixin
-
-
-
-
 //- @pugdoc
   name: select
   description: A mixin to create a select element. Uses K-scaffold global variables to control how {@link option} mixins within the select's block behave.
@@ -35,18 +13,53 @@ mixin option(obj)
       +option({value:'value 3'})
         |Some Text we include via the option's block
 mixin select(obj)
-  - obj.class = obj.class ? replaceProblems(obj.class) : undefined;
+  -
+    obj.class = obj.class ?
+      replaceProblems(obj.class) :
+      undefined;
   - obj.name = replaceSpaces(obj.name);
   - obj.title = obj.title || attrTitle(obj.name);
   - obj.name = `attr_${obj.name}`;
-  - selectName = obj.name;
-  - selectTitle = obj.title;
   - addFieldToFieldsetObj(obj);
-  select&attributes(obj)
+
+  //- Initialize the object that will be passed to the cascade
+  - const triggerObj = {...obj,type:'select'};
+  - const options = [];
+  
+  mixin option(optObj)
+    -
+      obj.class = obj.class ?
+        replaceProblems(obj.class) :
+        undefined;
+    -
+      const pushObj = {
+        obj:optObj,
+        attributes: attributes || {}
+      };
     if block
-      block
-    else
-      +option({value:'empty select, PEBKAC',selected:true})
+      - pushObj.block = block;
+    - options.push(pushObj);
+
+
+  if !block
+    option(value='!!! Error: empty select !!!')
+  else
+    - block();
+    - const selObj = makeElementObj(obj);
+    select&attributes(selObj)&attributes(attributes)
+      each o in options
+        if o.hasOwnProperty('selected') && o.hasOwnProperty('value')
+          - triggerObj.value = o.value;
+          if o.trigger && !triggerObj.trigger
+            - triggerObj.trigger = o.trigger;
+        - const elemObj = makeElementObj(o.obj);
+        option&attributes(elemObj)&attributes(o.attributes)
+    - storeTrigger(triggerObj);
+  
+//- mixin select(obj)
+//-   select&attributes(obj)
+//-     if block
+//-       block
+//-     else
+//-       +option({value:'empty select, PEBKAC',selected:true})
 //-End Mixin
-
-

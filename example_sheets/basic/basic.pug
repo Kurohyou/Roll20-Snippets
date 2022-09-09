@@ -13,5 +13,12 @@ include ../../k-scaffold/_k.pug
     +adaptiveInput({name:'test adaptive',type:'number',class:'test-class'})
   +tab({name:"history", button:{class:"custom-button"}})(class="tab_horizontal")
     span(style="background: white;") Tab history content
+    +select({name:'test select',trigger:{affects:['test']}})
+      each n in [1,2,3,4]
+        - const nObj = {value:n,'data-i18n':'one'};
+        if n === 1
+          - nObj.selected = '';
+        +option(nObj)
   +tab({name:"inventory", container:"span"})(class="tab_horizontal")
     span(style="background: white;") Tab inventory content
++kscript
