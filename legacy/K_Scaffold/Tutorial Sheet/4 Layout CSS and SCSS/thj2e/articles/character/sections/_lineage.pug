@@ -1,9 +1,0 @@
-section#lineage.lineage.paper-background
-  h4(data-i18n='lineage abilities')
-  +fieldset({name:'lineage'})
-    //- This will be our collapse control so that users can shrink their abilities down when they don't need all the information
-    +collapse
-    +text({name:'name',class:'underlined'})
-    .headed-textarea.notes.expanded
-      +h5({'data-i18n':'notes'})
-      +adaptiveTextarea({name:'notes',class:'underlined'})

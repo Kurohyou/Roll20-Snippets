@@ -1,9 +1,0 @@
-section(aria-labelledby='archetype-header')#archetype.archetype.paper-background.repeating-container
-  h3(data-i18n='archetype abilities')#archetype-header
-  +customControlFieldset({name:'archetype'})
-    +collapse
-    +text({name:'name',class:'underlined','data-i18n-placeholder':'ability name'})
-    +number({name:'rating',class:'underlined'})
-    .headed-textarea.description.expanded
-      +h5({'data-i18n':'description'})
-      +adaptiveTextarea({name:'description',class:'underlined'})
