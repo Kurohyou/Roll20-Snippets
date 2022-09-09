@@ -1,0 +1,2122 @@
+Error: arguments.callee -> function template(locals) {var pug_html = "", pug_mixins = {}, pug_interp;var pug_debug_filename, pug_debug_line;try {;
+    var locals_for_with = (locals || {});
+    
+    (function (Error, Set, actionObj, arguments, pug_indent, sectionName, spanObj, tabName) {
+      var pug_indent = [];
+;pug_debug_line = 2;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\helpers\\_helpers.pug";
+const varObjects = {
+  repeatingSectionDetails:[],
+  actionAttributes:[],
+  cascades:{
+    attr_character_name:{
+      name:'character_name',
+      type:'text',
+      defaultValue:'',
+      affects:[],
+      triggeredFuncs:['setActionCalls'],
+      listenerFunc:'accessSheet',
+      listener:'change:character_name'}
+    }
+};
+;pug_debug_line = 17;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\helpers\\_helpers.pug";
+let selectName = null;
+;pug_debug_line = 18;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\helpers\\_helpers.pug";
+let selectTitle = null;
+;pug_debug_line = 19;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\helpers\\_helpers.pug";
+let repeatingPrefix = '';
+;pug_debug_line = 21;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\helpers\\_helpers.pug";
+pug_html = pug_html + (null == (pug_interp = new Error(`arguments.callee -> ${arguments.callee}\n`)) ? "" : pug_interp);
+;pug_debug_line = 23;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\helpers\\_helpers.pug";
+let variables = "";
+variables += `arguments.callee -> ${arguments.callee}\n`;
+//variables += `pug_debug_filename -> ${pug_debug_filename}\n`;
+// variables += `pug  -> ${pug}\n`;
+// variables += `fs  -> ${fs}\n`;
+// throw new Error(variables);
+
+
+;pug_debug_line = 49;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\helpers\\_helpers.pug";
+const attrTitle = (string) => `@{${repeatingPrefix}${replaceSpaces(string).replace(/_max$/,'|max')}}`;
+;pug_debug_line = 68;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\helpers\\_helpers.pug";
+const buttonTitle = (string) => `%{${repeatingPrefix}${replaceSpaces(string)}}`;
+;pug_debug_line = 80;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\helpers\\_helpers.pug";
+const replaceSpaces = (string) => string.replace(/\s+/g,'_');
+;pug_debug_line = 94;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\helpers\\_helpers.pug";
+const replaceProblems = (string) => string.replace(/[\(\)\[\]\|\/\\]/g,'-');
+;pug_debug_line = 111;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\helpers\\_helpers.pug";
+const capitalize = (string)=> string.replace(/(?:^|\s+|\/)[a-z]/ig,(letter)=>letter.toUpperCase());
+
+
+
+
+
+
+
+;pug_debug_line = 120;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\helpers\\_helpers.pug";
+const actionButtonName = (name) => `${name.replace(/_|\s+/g,'-')}`;
+;pug_debug_line = 121;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\helpers\\_helpers.pug";
+const actionInputName = (name) => `${name}_action`.replace(/roll_action/,'action');
+;pug_debug_line = 122;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\helpers\\_helpers.pug";
+const titleToName = (string) => string.replace(/[@%]\{|\}/g,'');
+;pug_debug_line = 123;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\helpers\\_helpers.pug";
+const addIfUnique = (item,arrName) => {
+  varObjects[arrName] = varObjects[arrName] || [];
+  if(varObjects[arrName].indexOf(item) === -1){
+    varObjects[arrName].push(item);
+  }
+};
+;pug_debug_line = 130;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\helpers\\_helpers.pug";
+const storeTrigger = function(element){
+  let trigger = element.trigger || {};
+  const namePrefix = {
+    roll:'roll_',
+    action:'act_',
+    fieldset:'fieldset_'
+  };
+  const typeDefs = {
+    select:'',
+    radio:0,
+    checkbox:0,
+    number:0,
+    text:'',
+    span:''
+  };
+  const eventTypes = {
+    roll:'clicked',
+    action:'clicked',
+    fieldset:'remove'
+  };
+  let elementName = element.title ?
+    titleToName(element.title) :
+    element.name;
+  trigger.name = elementName.replace(/\|/g,'_');
+  let cascName = `${namePrefix[element.type] || 'attr_'}${trigger.name}`;
+  let match = trigger.name.match(/(repeating_[^_]+)_[^_]+_(.+)/);
+  let [,section,field] = match || [,,trigger.name];
+  let eventType = eventTypes[element.type] || 'change';
+  if(!varObjects.cascades[cascName]){
+    if(trigger.listener || trigger.triggeredFuncs || trigger.listenerFunc || trigger.initialFunc || trigger.affects){
+      trigger.listener = trigger.listener || `${eventType}:${section ? `${section}:` : ''}${field}`;
+      trigger.listenerFunc = trigger.listenerFunc || 'accessSheet';
+    }
+    trigger.type = element.type;
+    if(!namePrefix[element.type]){
+      trigger.defaultValue = trigger.hasOwnProperty('defaultValue') ?
+        trigger.defaultValue :
+        (element.type === 'checkbox' && !element.hasOwnProperty('checked')) ?
+          0 :
+          element.hasOwnProperty('value') ?
+            element.value :
+            typeDefs.hasOwnProperty(element.type) ?
+              typeDefs[element.type] :
+              '';
+      trigger.triggeredFuncs = trigger.triggeredFuncs || [];
+      if(trigger.affects){
+        trigger.affects = trigger.affects.map((affect)=>replaceSpaces(affect));
+      }else{
+        trigger.affects = [];
+      }
+    }
+    varObjects.cascades[cascName] = {...trigger};
+  }else{
+    if(!namePrefix[varObjects.cascades[cascName].type]){
+      varObjects.cascades[cascName].triggeredFuncs = trigger.triggeredFuncs ?
+        [...new Set([...varObjects.cascades[cascName].triggeredFuncs,...trigger.triggeredFuncs])] :
+        varObjects.cascades[cascName].triggeredFuncs;
+      varObjects.cascades[cascName].affects = trigger.affects ?
+        [...new Set([...varObjects.cascades[cascName].affects,...trigger.affects])] : 
+        varObjects.cascades[cascName].affects;
+      varObjects.cascades[cascName].calculation = varObjects.cascades[cascName].calculation || 
+        trigger.calculation;
+    }
+    if(trigger.listenerFunc || trigger.triggeredFuncs || trigger.affects){
+      varObjects.cascades[cascName].listener = varObjects.cascades[cascName].listener || trigger.listener || `${eventType}:${section ? `${section}:` : ''}${field}`;
+      varObjects.cascades[cascName].listenerFunc = varObjects.cascades[cascName].listenerFunc || trigger.listenerFunc || 'accessSheet';
+    }
+  }
+};
+;pug_debug_line = 200;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\helpers\\_helpers.pug";
+const getSectionDetails = function(section){
+  return varObjects.repeatingSectionDetails.find((obj)=>obj.section === section);
+};
+;pug_debug_line = 204;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\helpers\\_helpers.pug";
+const createFieldsetObj = function(section){
+   !getSectionDetails(section) ? 
+    varObjects.repeatingSectionDetails.push({section,fields:[]}) :
+    null;
+};
+;pug_debug_line = 210;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\helpers\\_helpers.pug";
+const addFieldToFieldsetObj = function(obj){
+  let section = repeatingPrefix.replace(/_[^_]+_$/,'');
+  let sectionDetails = getSectionDetails(section);
+  let name = obj.name.replace(/^attr_/,'');
+  if(sectionDetails && sectionDetails.fields.indexOf(name) < 0){
+    sectionDetails.fields.push(name);
+  }
+};
+;pug_debug_line = 219;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\helpers\\_helpers.pug";
+const makeElementObj = function(obj){
+  const newObj = {...obj};
+  delete newObj.trigger;
+  return newObj;
+};    
+;pug_debug_line = 11;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\attribute_holders\\_inputs.pug";
+pug_mixins["input"] = pug_interp = function(obj){
+var block = (this && this.block), attributes = (this && this.attributes) || {};
+;pug_debug_line = 12;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\attribute_holders\\_inputs.pug";
+obj.class = obj.class ? replaceProblems(obj.class) : undefined;
+;pug_debug_line = 13;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\attribute_holders\\_inputs.pug";
+obj.name = replaceSpaces(obj.name);
+;pug_debug_line = 14;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\attribute_holders\\_inputs.pug";
+obj.title = obj.title || attrTitle(obj.name);
+;pug_debug_line = 15;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\attribute_holders\\_inputs.pug";
+obj.name = `attr_${obj.name}`;
+;pug_debug_line = 16;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\attribute_holders\\_inputs.pug";
+const elementObj = makeElementObj(obj);
+;pug_debug_line = 17;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\attribute_holders\\_inputs.pug";
+addFieldToFieldsetObj(obj);
+;pug_debug_line = 18;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\attribute_holders\\_inputs.pug";
+storeTrigger(obj);
+;pug_debug_line = 19;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\attribute_holders\\_inputs.pug";
+pug_html = pug_html + "\n";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cinput" + (pug.attrs(pug.merge([elementObj,attributes]), false)) + "\u002F\u003E";
+};
+;pug_debug_line = 33;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\attribute_holders\\_inputs.pug";
+
+
+
+
+
+
+
+
+
+;pug_debug_line = 48;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\attribute_holders\\_inputs.pug";
+pug_mixins["checkbox"] = pug_interp = function(obj){
+var block = (this && this.block), attributes = (this && this.attributes) || {};
+;pug_debug_line = 49;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\attribute_holders\\_inputs.pug";
+obj.type = 'checkbox';
+;pug_debug_line = 50;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\attribute_holders\\_inputs.pug";
+pug_indent.push("");
+pug_mixins["input"].call({
+attributes: attributes
+}, obj);
+pug_indent.pop();
+};
+;pug_debug_line = 65;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\attribute_holders\\_inputs.pug";
+pug_mixins["collapse"] = pug_interp = function(name='collapse'){
+var block = (this && this.block), attributes = (this && this.attributes) || {};
+;pug_debug_line = 66;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\attribute_holders\\_inputs.pug";
+pug_indent.push("");
+pug_mixins["checkbox"].call({
+attributes: attributes
+}, {name,value:1,class:'collapse'});
+pug_indent.pop();
+};
+;pug_debug_line = 79;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\attribute_holders\\_inputs.pug";
+pug_mixins["radio"] = pug_interp = function(obj){
+var block = (this && this.block), attributes = (this && this.attributes) || {};
+;pug_debug_line = 80;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\attribute_holders\\_inputs.pug";
+obj.type = 'radio';
+;pug_debug_line = 81;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\attribute_holders\\_inputs.pug";
+pug_indent.push("");
+pug_mixins["input"](obj);
+pug_indent.pop();
+};
+;pug_debug_line = 95;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\attribute_holders\\_inputs.pug";
+
+
+
+
+
+
+
+
+
+;pug_debug_line = 111;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\attribute_holders\\_inputs.pug";
+
+
+
+
+
+
+
+
+
+;pug_debug_line = 127;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\attribute_holders\\_inputs.pug";
+pug_mixins["hidden"] = pug_interp = function(obj){
+var block = (this && this.block), attributes = (this && this.attributes) || {};
+;pug_debug_line = 128;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\attribute_holders\\_inputs.pug";
+obj.type = 'hidden';
+;pug_debug_line = 129;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\attribute_holders\\_inputs.pug";
+pug_indent.push("");
+pug_mixins["input"](obj);
+pug_indent.pop();
+};
+;pug_debug_line = 135;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\attribute_holders\\_inputs.pug";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+;pug_debug_line = 150;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\attribute_holders\\_inputs.pug";
+pug_mixins["textarea"] = pug_interp = function(obj){
+var block = (this && this.block), attributes = (this && this.attributes) || {};
+;pug_debug_line = 151;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\attribute_holders\\_inputs.pug";
+obj.class = obj.class ? replaceProblems(obj.class) : undefined;
+;pug_debug_line = 152;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\attribute_holders\\_inputs.pug";
+obj.name = replaceSpaces(obj.name);
+;pug_debug_line = 153;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\attribute_holders\\_inputs.pug";
+obj.title = obj.title || attrTitle(obj.name);
+;pug_debug_line = 154;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\attribute_holders\\_inputs.pug";
+obj.name = `attr_${obj.name}`;
+;pug_debug_line = 155;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\attribute_holders\\_inputs.pug";
+addFieldToFieldsetObj(obj);
+;pug_debug_line = 156;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\attribute_holders\\_inputs.pug";
+storeTrigger(obj);
+;pug_debug_line = 157;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\attribute_holders\\_inputs.pug";
+const elementObj = makeElementObj(obj);
+;pug_debug_line = 158;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\attribute_holders\\_inputs.pug";
+pug_html = pug_html + "\n";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Ctextarea" + (pug.attrs(elementObj, false)) + "\u003E\u003C\u002Ftextarea\u003E";
+};
+;pug_debug_line = 11;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\attribute_holders\\_selects.pug";
+pug_mixins["option"] = pug_interp = function(obj){
+var block = (this && this.block), attributes = (this && this.attributes) || {};
+;pug_debug_line = 12;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\attribute_holders\\_selects.pug";
+obj.class = obj.class ? replaceProblems(obj.class) : undefined;
+;pug_debug_line = 13;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\attribute_holders\\_selects.pug";
+const triggerObj = {...obj,name:selectName,title:selectTitle,type:'select'};
+;pug_debug_line = 14;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\attribute_holders\\_selects.pug";
+const elementObj = makeElementObj(obj);
+;pug_debug_line = 15;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\attribute_holders\\_selects.pug";
+storeTrigger(triggerObj);
+;pug_debug_line = 16;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\attribute_holders\\_selects.pug";
+pug_html = pug_html + "\n";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Coption" + (pug.attrs(elementObj, false)) + "\u003E";
+;pug_debug_line = 17;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\attribute_holders\\_selects.pug";
+pug_indent.push("  ");
+block && block();
+pug_indent.pop();
+pug_html = pug_html + "\n";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003C\u002Foption\u003E";
+};
+;pug_debug_line = 37;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\attribute_holders\\_selects.pug";
+pug_mixins["select"] = pug_interp = function(obj){
+var block = (this && this.block), attributes = (this && this.attributes) || {};
+;pug_debug_line = 38;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\attribute_holders\\_selects.pug";
+obj.class = obj.class ? replaceProblems(obj.class) : undefined;
+;pug_debug_line = 39;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\attribute_holders\\_selects.pug";
+obj.name = replaceSpaces(obj.name);
+;pug_debug_line = 40;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\attribute_holders\\_selects.pug";
+obj.title = obj.title || attrTitle(obj.name);
+;pug_debug_line = 41;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\attribute_holders\\_selects.pug";
+obj.name = `attr_${obj.name}`;
+;pug_debug_line = 42;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\attribute_holders\\_selects.pug";
+selectName = obj.name;
+;pug_debug_line = 43;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\attribute_holders\\_selects.pug";
+selectTitle = obj.title;
+;pug_debug_line = 44;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\attribute_holders\\_selects.pug";
+addFieldToFieldsetObj(obj);
+;pug_debug_line = 45;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\attribute_holders\\_selects.pug";
+pug_html = pug_html + "\n";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cselect" + (pug.attrs(obj, false)) + "\u003E";
+;pug_debug_line = 46;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\attribute_holders\\_selects.pug";
+if (block) {
+;pug_debug_line = 47;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\attribute_holders\\_selects.pug";
+pug_indent.push("  ");
+block && block();
+pug_indent.pop();
+}
+else {
+;pug_debug_line = 49;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\attribute_holders\\_selects.pug";
+pug_indent.push("  ");
+pug_mixins["option"]({value:'empty select, PEBKAC',selected:true});
+pug_indent.pop();
+}
+pug_html = pug_html + "\n";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003C\u002Fselect\u003E";
+};
+;pug_debug_line = 10;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\attribute_holders\\_attribute_backed.pug";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+;pug_debug_line = 32;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\attribute_holders\\_attribute_backed.pug";
+pug_mixins["span"] = pug_interp = function(obj){
+var block = (this && this.block), attributes = (this && this.attributes) || {};
+;pug_debug_line = 33;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\attribute_holders\\_attribute_backed.pug";
+obj.class = obj.class ? replaceProblems(obj.class) : undefined;
+;pug_debug_line = 34;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\attribute_holders\\_attribute_backed.pug";
+if (obj.name) {
+;pug_debug_line = 35;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\attribute_holders\\_attribute_backed.pug";
+obj.name = replaceSpaces(obj.name);
+;pug_debug_line = 36;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\attribute_holders\\_attribute_backed.pug";
+obj.title = obj.title || attrTitle(obj.name);
+;pug_debug_line = 37;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\attribute_holders\\_attribute_backed.pug";
+obj.name = `attr_${obj.name}`;
+;pug_debug_line = 38;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\attribute_holders\\_attribute_backed.pug";
+addFieldToFieldsetObj(obj);
+}
+;pug_debug_line = 39;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\attribute_holders\\_attribute_backed.pug";
+const elementObj = makeElementObj(obj);
+;pug_debug_line = 40;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\attribute_holders\\_attribute_backed.pug";
+pug_html = pug_html + "\u003Cspan" + (pug.attrs(elementObj, false)) + "\u003E";
+;pug_debug_line = 41;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\attribute_holders\\_attribute_backed.pug";
+pug_indent.push("  ");
+block && block();
+pug_indent.pop();
+pug_html = pug_html + "\u003C\u002Fspan\u003E";
+;pug_debug_line = 42;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\attribute_holders\\_attribute_backed.pug";
+if (obj.name) {
+;pug_debug_line = 43;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\attribute_holders\\_attribute_backed.pug";
+obj.type = 'span';
+;pug_debug_line = 44;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\attribute_holders\\_attribute_backed.pug";
+storeTrigger(obj);
+}
+};
+;pug_debug_line = 60;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\attribute_holders\\_attribute_backed.pug";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+;pug_debug_line = 16;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\attribute_holders\\_fill_left.pug";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+;pug_debug_line = 15;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\attribute_holders\\_buttons.pug";
+pug_mixins["button"] = pug_interp = function(obj, _attributes){
+var block = (this && this.block), attributes = (this && this.attributes) || {};
+;pug_debug_line = 16;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\attribute_holders\\_buttons.pug";
+obj.class = obj.class ? replaceProblems(obj.class) : undefined;
+;pug_debug_line = 17;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\attribute_holders\\_buttons.pug";
+obj.name = replaceSpaces(obj.name);
+;pug_debug_line = 18;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\attribute_holders\\_buttons.pug";
+obj.title = obj.title || buttonTitle(obj.name);
+;pug_debug_line = 19;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\attribute_holders\\_buttons.pug";
+if (obj.type === 'action') {
+;pug_debug_line = 20;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\attribute_holders\\_buttons.pug";
+obj.name = `act_${obj.name}`;
+}
+else {
+;pug_debug_line = 22;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\attribute_holders\\_buttons.pug";
+obj.type = 'roll';
+;pug_debug_line = 23;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\attribute_holders\\_buttons.pug";
+obj.name = `roll_${obj.name}`;
+}
+;pug_debug_line = 24;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\attribute_holders\\_buttons.pug";
+const elementObj = makeElementObj(obj);
+;pug_debug_line = 25;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\attribute_holders\\_buttons.pug";
+if (obj.type !== 'roll') {
+;pug_debug_line = 26;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\attribute_holders\\_buttons.pug";
+storeTrigger(obj);
+}
+;pug_debug_line = 27;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\attribute_holders\\_buttons.pug";
+pug_html = pug_html + "\n";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cbutton" + (pug.attrs(pug.merge([elementObj,attributes]), false)) + "\u003E";
+;pug_debug_line = 28;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\attribute_holders\\_buttons.pug";
+pug_indent.push("  ");
+block && block();
+pug_indent.pop();
+pug_html = pug_html + "\n";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003C\u002Fbutton\u003E";
+};
+;pug_debug_line = 42;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\attribute_holders\\_buttons.pug";
+pug_mixins["action"] = pug_interp = function(obj, _attributes){
+var block = (this && this.block), attributes = (this && this.attributes) || {};
+;pug_debug_line = 43;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\attribute_holders\\_buttons.pug";
+obj.class = obj.class ? replaceProblems(obj.class) : undefined;
+;pug_debug_line = 44;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\attribute_holders\\_buttons.pug";
+obj.type = 'action';
+;pug_debug_line = 45;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\attribute_holders\\_buttons.pug";
+obj.name = obj.name.replace(/\s+/g,'-');
+;pug_debug_line = 46;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\attribute_holders\\_buttons.pug";
+pug_indent.push("");
+pug_mixins["button"].call({
+block: function(){
+;pug_debug_line = 47;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\attribute_holders\\_buttons.pug";
+pug_indent.push("");
+block && block();
+pug_indent.pop();
+},
+attributes: attributes
+}, obj);
+pug_indent.pop();
+};
+;pug_debug_line = 61;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\attribute_holders\\_buttons.pug";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+;pug_debug_line = 71;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\attribute_holders\\_buttons.pug";
+pug_mixins["rollerExtras"] = pug_interp = function(obj){
+var block = (this && this.block), attributes = (this && this.attributes) || {};
+;pug_debug_line = 72;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\attribute_holders\\_buttons.pug";
+obj.class = obj.class ? `${replaceProblems(obj.class)} roller` : 'roller';
+;pug_debug_line = 73;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\attribute_holders\\_buttons.pug";
+let attrName = replaceSpaces(actionInputName(obj.name));
+;pug_debug_line = 74;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\attribute_holders\\_buttons.pug";
+let actionName = actionButtonName(attrName);
+;pug_debug_line = 75;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\attribute_holders\\_buttons.pug";
+obj.value = `@{${attrName}}`;
+;pug_debug_line = 76;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\attribute_holders\\_buttons.pug";
+actionObj = {name:actionName,hidden:''};
+;pug_debug_line = 77;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\attribute_holders\\_buttons.pug";
+actionObj.trigger = obj.trigger || {listenerFunc:'initiateRoll'};
+;pug_debug_line = 78;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\attribute_holders\\_buttons.pug";
+pug_indent.push("");
+block && block();
+pug_indent.pop();
+;pug_debug_line = 79;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\attribute_holders\\_buttons.pug";
+addIfUnique(`${repeatingPrefix}${attrName}`,'actionAttributes');
+;pug_debug_line = 80;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\attribute_holders\\_buttons.pug";
+pug_indent.push("");
+pug_mixins["action"](actionObj);
+pug_indent.pop();
+;pug_debug_line = 81;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\attribute_holders\\_buttons.pug";
+pug_indent.push("");
+pug_mixins["hidden"]({name:attrName});
+pug_indent.pop();
+};
+;pug_debug_line = 95;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\attribute_holders\\_buttons.pug";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+;pug_debug_line = 20;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\attribute_holders\\_compendium.pug";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+;pug_debug_line = 17;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\labels\\_labels.pug";
+pug_mixins["button-label"] = pug_interp = function({inputObj,buttonObj,divObj}){
+var block = (this && this.block), attributes = (this && this.attributes) || {};
+;pug_debug_line = 18;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\labels\\_labels.pug";
+if (divObj) {
+;pug_debug_line = 19;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\labels\\_labels.pug";
+divObj.class = divObj.class ? replaceProblems(divObj.class) : undefined;
+}
+;pug_debug_line = 20;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\labels\\_labels.pug";
+inputObj.class = inputObj.class ? replaceProblems(inputObj.class) : undefined;
+;pug_debug_line = 21;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\labels\\_labels.pug";
+buttonObj.class = buttonObj.class ? replaceProblems(buttonObj.class) : undefined;
+;pug_debug_line = 22;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\labels\\_labels.pug";
+inputObj.name = inputObj.name.replace(/\s+/g,'_');
+;pug_debug_line = 23;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\labels\\_labels.pug";
+buttonObj.name = (buttonObj.name || inputObj.name).replace(/\s+/g,'_');
+;pug_debug_line = 24;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\labels\\_labels.pug";
+pug_html = pug_html + "\n";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cdiv" + (pug.attrs(pug.merge([{"class": "input-label input-label--button"},divObj]), false)) + "\u003E";
+;pug_debug_line = 25;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\labels\\_labels.pug";
+inputObj.class = inputObj.class ? `${inputObj.class} input-label__input` : 'input-label__input';
+;pug_debug_line = 26;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\labels\\_labels.pug";
+if (spanObj) {
+;pug_debug_line = 27;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\labels\\_labels.pug";
+buttonObj.class = buttonObj.class ? `${buttonObj.class} input-label__text` : 'input-label__text';
+}
+;pug_debug_line = 28;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\labels\\_labels.pug";
+pug_indent.push("  ");
+pug_mixins["button"](buttonObj);
+pug_indent.pop();
+;pug_debug_line = 29;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\labels\\_labels.pug";
+pug_indent.push("  ");
+pug_mixins["input"](inputObj);
+pug_indent.pop();
+pug_html = pug_html + "\n";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003C\u002Fdiv\u003E";
+};
+;pug_debug_line = 50;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\labels\\_labels.pug";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+;pug_debug_line = 73;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\labels\\_labels.pug";
+
+
+
+
+
+
+
+
+
+;pug_debug_line = 101;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\labels\\_labels.pug";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+;pug_debug_line = 138;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\labels\\_labels.pug";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+;pug_debug_line = 157;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\labels\\_labels.pug";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+;pug_debug_line = 184;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\labels\\_labels.pug";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+;pug_debug_line = 13;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\adaptive\\_adaptive.pug";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+;pug_debug_line = 33;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\adaptive\\_adaptive.pug";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+;pug_debug_line = 26;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\fieldsets\\_fieldsets.pug";
+pug_mixins["fieldset"] = pug_interp = function({name,trigger,addClass}){
+var block = (this && this.block), attributes = (this && this.attributes) || {};
+;pug_debug_line = 27;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\fieldsets\\_fieldsets.pug";
+name = name.replace(/\s+/g,'-');
+;pug_debug_line = 28;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\fieldsets\\_fieldsets.pug";
+let section = `repeating_${name}`;
+;pug_debug_line = 29;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\fieldsets\\_fieldsets.pug";
+repeatingPrefix = `${section}_$X_`;
+;pug_debug_line = 30;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\fieldsets\\_fieldsets.pug";
+createFieldsetObj(section)
+;pug_debug_line = 31;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\fieldsets\\_fieldsets.pug";
+if (trigger) {
+;pug_debug_line = 32;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\fieldsets\\_fieldsets.pug";
+storeTrigger({name:section,type:'fieldset',trigger})
+}
+;pug_debug_line = 33;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\fieldsets\\_fieldsets.pug";
+if (addClass) {
+;pug_debug_line = 34;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\fieldsets\\_fieldsets.pug";
+pug_html = pug_html + "\u003Cspan" + (pug.attr("class", pug.classes([addClass], [true]), false, false)+" hidden=\"\"") + "\u003E\u003C\u002Fspan\u003E";
+}
+;pug_debug_line = 35;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\fieldsets\\_fieldsets.pug";
+pug_html = pug_html + "\n";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cfieldset" + (pug.attr("class", pug.classes([`${section}`], [true]), false, false)) + "\u003E";
+;pug_debug_line = 36;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\fieldsets\\_fieldsets.pug";
+pug_indent.push("  ");
+block && block();
+pug_indent.pop();
+pug_html = pug_html + "\n";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003C\u002Ffieldset\u003E";
+;pug_debug_line = 37;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\fieldsets\\_fieldsets.pug";
+repeatingPrefix = '';
+};
+;pug_debug_line = 65;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\fieldsets\\_fieldsets.pug";
+pug_mixins["customControlFieldset"] = pug_interp = function({name,trigger,addClass}){
+var block = (this && this.block), attributes = (this && this.attributes) || {};
+;pug_debug_line = 66;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\fieldsets\\_fieldsets.pug";
+pug_indent.push("");
+pug_mixins["action"]({name:`add ${name}`,class:'repcontrol-button repcontrol-button--add',trigger:{listenerFunc:'addItem'}});
+pug_indent.pop();
+;pug_debug_line = 67;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\fieldsets\\_fieldsets.pug";
+pug_indent.push("");
+pug_mixins["action"]({name:`edit ${name}`,class:'repcontrol-button repcontrol-button--edit',trigger:{listenerFunc:'editSection'}});
+pug_indent.pop();
+;pug_debug_line = 68;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\fieldsets\\_fieldsets.pug";
+pug_indent.push("");
+pug_mixins["fieldset"].call({
+block: function(){
+;pug_debug_line = 69;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\fieldsets\\_fieldsets.pug";
+pug_indent.push("");
+block && block();
+pug_indent.pop();
+}
+}, {name,trigger,addClass});
+pug_indent.pop();
+};
+;pug_debug_line = 91;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\fieldsets\\_fieldsets.pug";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+;pug_debug_line = 121;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\fieldsets\\_fieldsets.pug";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+;pug_debug_line = 34;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\tabs\\_tabs.pug";
+pug_mixins["tabs"] = pug_interp = function({name="tabs",defaultActiveTab,persistent=true}){
+var block = (this && this.block), attributes = (this && this.attributes) || {};
+;pug_debug_line = 37;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\tabs\\_tabs.pug";
+defaultActiveTab = defaultActiveTab ?
+  actionButtonName(replaceProblems(defaultActiveTab)) :
+  undefined;
+;pug_debug_line = 41;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\tabs\\_tabs.pug";
+sectionName = actionButtonName(replaceProblems(name));
+;pug_debug_line = 42;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\tabs\\_tabs.pug";
+if (persistent) {
+;pug_debug_line = 43;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\tabs\\_tabs.pug";
+const inputObj = {name:`${sectionName.replace(/\-/g,'_')} tab`};
+;pug_debug_line = 44;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\tabs\\_tabs.pug";
+if (defaultActiveTab) {
+;pug_debug_line = 45;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\tabs\\_tabs.pug";
+inputObj.value = `nav-tabs-${sectionName}--${defaultActiveTab}`;
+}
+;pug_debug_line = 46;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\tabs\\_tabs.pug";
+pug_indent.push("");
+pug_mixins["hidden"](inputObj);
+pug_indent.pop();
+;pug_debug_line = 47;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\tabs\\_tabs.pug";
+varObjects.persistentTabs = varObjects.persistentTabs || [];
+;pug_debug_line = 48;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\tabs\\_tabs.pug";
+varObjects.persistentTabs.push(replaceSpaces(`${sectionName} tab`))
+}
+;pug_debug_line = 52;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\tabs\\_tabs.pug";
+const tabs = [];
+;pug_debug_line = 53;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\tabs\\_tabs.pug";
+pug_mixins["tab"] = pug_interp = function({name,button={},container="div"}){
+var block = (this && this.block), attributes = (this && this.attributes) || {};
+;pug_debug_line = 54;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\tabs\\_tabs.pug";
+tabName = actionButtonName(replaceProblems(name || `tab${tabs.length + 1}`));
+;pug_debug_line = 55;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\tabs\\_tabs.pug";
+if (tabs.filter(tab => tab.name === tabName).length) { throw new Error(`Tab "${tabName}" already exists in "${sectionName}".`); }
+;pug_debug_line = 57;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\tabs\\_tabs.pug";
+button.name = `nav-tabs-${sectionName}--${tabName}`;
+;pug_debug_line = 59;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\tabs\\_tabs.pug";
+button.class = button.class ? ` ${replaceProblems(button.class)}` : "";
+;pug_debug_line = 60;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\tabs\\_tabs.pug";
+button.class = `tabs__button tabs--${sectionName}__button tabs--${sectionName}__button--${tabName}${button.class}${!persistent && defaultActiveTab === tabName ? ' k-active-button' : ''}`;
+;pug_debug_line = 61;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\tabs\\_tabs.pug";
+button['data-container-button'] = sectionName;
+;pug_debug_line = 62;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\tabs\\_tabs.pug";
+button['data-button'] = tabName;
+;pug_debug_line = 63;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\tabs\\_tabs.pug";
+const content = button.content;
+;pug_debug_line = 64;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\tabs\\_tabs.pug";
+delete button.content;
+;pug_debug_line = 67;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\tabs\\_tabs.pug";
+button.trigger = button.trigger || {triggeredFuncs:["kSwitchTab"]};
+;pug_debug_line = 70;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\tabs\\_tabs.pug";
+attributes.class = attributes.class ? ` ${replaceProblems(attributes.class)}` : '';
+;pug_debug_line = 71;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\tabs\\_tabs.pug";
+attributes.class = `tabs__container tabs--${sectionName}__container tabs--${sectionName}__container--${tabName}${attributes.class}${!persistent && defaultActiveTab === tabName ? ' k-active-tab' : ''}`;
+;pug_debug_line = 73;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\tabs\\_tabs.pug";
+tabs.push({name:tabName, container, button, attributes, block, content});
+};
+;pug_debug_line = 78;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\tabs\\_tabs.pug";
+attributes.class = attributes.class ? ` ${replaceProblems(attributes.class)}` : '';
+;pug_debug_line = 79;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\tabs\\_tabs.pug";
+attributes.class = `tabs tabs--${sectionName}${attributes.class}`;
+;pug_debug_line = 80;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\tabs\\_tabs.pug";
+pug_html = pug_html + "\n";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cdiv" + (pug.attrs(attributes, false)) + "\u003E";
+;pug_debug_line = 84;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\tabs\\_tabs.pug";
+block ? block() : undefined;
+;pug_debug_line = 87;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\tabs\\_tabs.pug";
+pug_html = pug_html + "\n  ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cnav" + (pug.attr("class", pug.classes([`tabs__header tabs--${sectionName}__header`], [true]), false, false)) + "\u003E";
+;pug_debug_line = 88;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\tabs\\_tabs.pug";
+// iterate tabs
+;(function(){
+  var $$obj = tabs;
+  if ('number' == typeof $$obj.length) {
+      for (var index = 0, $$l = $$obj.length; index < $$l; index++) {
+        var tab = $$obj[index];
+;pug_debug_line = 89;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\tabs\\_tabs.pug";
+if (!tab.content) {
+;pug_debug_line = 90;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\tabs\\_tabs.pug";
+tab.button['data-i18n'] = `tabs-${sectionName}-${tab.name}`;
+}
+;pug_debug_line = 91;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\tabs\\_tabs.pug";
+pug_indent.push("    ");
+pug_mixins["action"].call({
+block: function(){
+;pug_debug_line = 92;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\tabs\\_tabs.pug";
+if (tab.content) {
+;pug_debug_line = 93;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\tabs\\_tabs.pug";
+pug_html = pug_html + (null == (pug_interp = tab.content) ? "" : pug_interp);
+}
+},
+attributes: {"data-container-tab": pug.escape(sectionName),"data-tab": pug.escape(tab.name)}
+}, tab.button);
+pug_indent.pop();
+      }
+  } else {
+    var $$l = 0;
+    for (var index in $$obj) {
+      $$l++;
+      var tab = $$obj[index];
+;pug_debug_line = 89;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\tabs\\_tabs.pug";
+if (!tab.content) {
+;pug_debug_line = 90;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\tabs\\_tabs.pug";
+tab.button['data-i18n'] = `tabs-${sectionName}-${tab.name}`;
+}
+;pug_debug_line = 91;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\tabs\\_tabs.pug";
+pug_indent.push("    ");
+pug_mixins["action"].call({
+block: function(){
+;pug_debug_line = 92;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\tabs\\_tabs.pug";
+if (tab.content) {
+;pug_debug_line = 93;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\tabs\\_tabs.pug";
+pug_html = pug_html + (null == (pug_interp = tab.content) ? "" : pug_interp);
+}
+},
+attributes: {"data-container-tab": pug.escape(sectionName),"data-tab": pug.escape(tab.name)}
+}, tab.button);
+pug_indent.pop();
+    }
+  }
+}).call(this);
+
+pug_html = pug_html + "\n  ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003C\u002Fnav\u003E";
+;pug_debug_line = 97;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\tabs\\_tabs.pug";
+pug_html = pug_html + "\n  ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cdiv" + (pug.attr("class", pug.classes([`tabs__body tabs--${sectionName}__body`], [true]), false, false)) + "\u003E";
+;pug_debug_line = 98;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\tabs\\_tabs.pug";
+// iterate tabs
+;(function(){
+  var $$obj = tabs;
+  if ('number' == typeof $$obj.length) {
+      for (var index = 0, $$l = $$obj.length; index < $$l; index++) {
+        var tab = $$obj[index];
+;pug_debug_line = 99;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\tabs\\_tabs.pug";
+const container = tab.container;
+;pug_debug_line = 100;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\tabs\\_tabs.pug";
+pug_html = pug_html + "\n    ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003C" + (container) + (pug.attrs(pug.merge([{"data-container-tab": pug.escape(sectionName),"data-tab": pug.escape(tab.name)},tab.attributes]), false)) + "\u003E";
+;pug_debug_line = 101;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\tabs\\_tabs.pug";
+tab.block()
+pug_html = pug_html + "\n    ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003C\u002F" + (container) + "\u003E";
+      }
+  } else {
+    var $$l = 0;
+    for (var index in $$obj) {
+      $$l++;
+      var tab = $$obj[index];
+;pug_debug_line = 99;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\tabs\\_tabs.pug";
+const container = tab.container;
+;pug_debug_line = 100;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\tabs\\_tabs.pug";
+pug_html = pug_html + "\n    ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003C" + (container) + (pug.attrs(pug.merge([{"data-container-tab": pug.escape(sectionName),"data-tab": pug.escape(tab.name)},tab.attributes]), false)) + "\u003E";
+;pug_debug_line = 101;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\tabs\\_tabs.pug";
+tab.block()
+pug_html = pug_html + "\n    ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003C\u002F" + (container) + "\u003E";
+    }
+  }
+}).call(this);
+
+pug_html = pug_html + "\n  ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003C\u002Fdiv\u003E\n";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003C\u002Fdiv\u003E";
+};
+;pug_debug_line = 111;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\tabs\\_tabs.pug";
+pug_mixins["tab"] = pug_interp = function({name,button={},container="div"}){
+var block = (this && this.block), attributes = (this && this.attributes) || {};
+;pug_debug_line = 112;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\tabs\\_tabs.pug";
+throw new Error("The +tab() mixin can only be used within a +tabs() mixin");
+};
+;pug_debug_line = 10;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\scripts\\_scripts.pug";
+pug_mixins["script"] = pug_interp = function(){
+var block = (this && this.block), attributes = (this && this.attributes) || {};
+;pug_debug_line = 11;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\scripts\\_scripts.pug";
+pug_html = pug_html + "\n";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cscript type=\"text\u002Fworker\"\u003E";
+;pug_debug_line = 12;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\scripts\\_scripts.pug";
+pug_indent.push("  ");
+block && block();
+pug_indent.pop();
+pug_html = pug_html + "\n";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003C\u002Fscript\u003E";
+};
+;pug_debug_line = 23;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\scripts\\_scripts.pug";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+;pug_debug_line = 2;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\rolltemplate\\_rolltemplate.pug";
+pug_mixins["rolltemplate"] = pug_interp = function(name){
+var block = (this && this.block), attributes = (this && this.attributes) || {};
+;pug_debug_line = 3;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\rolltemplate\\_rolltemplate.pug";
+pug_html = pug_html + "\n";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Crolltemplate" + (pug.attr("class", pug.classes([`sheet-rolltemplate-${name}`], [true]), false, false)) + "\u003E";
+;pug_debug_line = 4;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\rolltemplate\\_rolltemplate.pug";
+pug_indent.push("  ");
+block && block();
+pug_indent.pop();
+pug_html = pug_html + "\n";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003C\u002Frolltemplate\u003E";
+};
+;pug_debug_line = 6;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\rolltemplate\\_rolltemplate.pug";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+;pug_debug_line = 11;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\rolltemplate\\_rolltemplate.pug";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+;pug_debug_line = 18;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\rolltemplate\\_rolltemplate.pug";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+;pug_debug_line = 25;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\rolltemplate\\_rolltemplate.pug";
+pug_mixins["templateConditionalDisplay"] = pug_interp = function(fieldBool,invert){
+var block = (this && this.block), attributes = (this && this.attributes) || {};
+;pug_debug_line = 26;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\rolltemplate\\_rolltemplate.pug";
+pug_html = pug_html + (null == (pug_interp = `{{${invert ? '^' : '#'}${fieldBool}}}`) ? "" : pug_interp);
+;pug_debug_line = 27;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\rolltemplate\\_rolltemplate.pug";
+pug_indent.push("");
+block && block();
+pug_indent.pop();
+;pug_debug_line = 28;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\rolltemplate\\_rolltemplate.pug";
+pug_html = pug_html + (null == (pug_interp = `{{/${fieldBool}}}`) ? "" : pug_interp);
+};
+;pug_debug_line = 30;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\rolltemplate\\_rolltemplate.pug";
+pug_mixins["templateHelperFunction"] = pug_interp = function(helperObj){
+var block = (this && this.block), attributes = (this && this.attributes) || {};
+;pug_debug_line = 31;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\rolltemplate\\_rolltemplate.pug";
+pug_html = pug_html + (null == (pug_interp = `{{${helperObj.invert ? '#^':'#'}${helperObj.func ? `${helperObj.func}() `:''}${helperObj.values ? `${helperObj.values}` : ''}}}`) ? "" : pug_interp);
+;pug_debug_line = 32;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\rolltemplate\\_rolltemplate.pug";
+pug_indent.push("");
+block && block();
+pug_indent.pop();
+;pug_debug_line = 33;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\rolltemplate\\_rolltemplate.pug";
+pug_html = pug_html + (null == (pug_interp = `{{/${(helperObj.invert) ? '^' : ''}${helperObj.func ? `${helperObj.func}() `:''}${helperObj.values}}}`) ? "" : pug_interp);
+};
+;pug_debug_line = 35;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\rolltemplate\\_rolltemplate.pug";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+;pug_debug_line = 40;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\rolltemplate\\_rolltemplate.pug";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+;pug_debug_line = 45;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\rolltemplate\\_rolltemplate.pug";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+;pug_debug_line = 50;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\rolltemplate\\_rolltemplate.pug";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+;pug_debug_line = 55;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\rolltemplate\\_rolltemplate.pug";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+;pug_debug_line = 60;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\rolltemplate\\_rolltemplate.pug";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+;pug_debug_line = 65;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\rolltemplate\\_rolltemplate.pug";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+;pug_debug_line = 2;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\deprecated\\_base_elements.pug";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+;pug_debug_line = 8;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\deprecated\\_base_elements.pug";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+;pug_debug_line = 14;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\deprecated\\_base_elements.pug";
+pug_mixins["h3"] = pug_interp = function(obj){
+var block = (this && this.block), attributes = (this && this.attributes) || {};
+;pug_debug_line = 15;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\deprecated\\_base_elements.pug";
+obj.class = obj.class ? replaceProblems(obj.class) : undefined;
+;pug_debug_line = 16;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\deprecated\\_base_elements.pug";
+pug_html = pug_html + "\n";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Ch3" + (pug.attrs(obj, false)) + "\u003E";
+;pug_debug_line = 17;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\deprecated\\_base_elements.pug";
+pug_indent.push("  ");
+block && block();
+pug_indent.pop();
+pug_html = pug_html + "\n";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003C\u002Fh3\u003E";
+};
+;pug_debug_line = 20;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\deprecated\\_base_elements.pug";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+;pug_debug_line = 26;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\deprecated\\_base_elements.pug";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+;pug_debug_line = 32;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\deprecated\\_base_elements.pug";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+;pug_debug_line = 38;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\deprecated\\_base_elements.pug";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+;pug_debug_line = 44;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\deprecated\\_base_elements.pug";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+;pug_debug_line = 51;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\deprecated\\_base_elements.pug";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+;pug_debug_line = 58;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\deprecated\\_base_elements.pug";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+;pug_debug_line = 65;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\deprecated\\_base_elements.pug";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+;pug_debug_line = 72;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\deprecated\\_base_elements.pug";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+;pug_debug_line = 79;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\deprecated\\_base_elements.pug";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+;pug_debug_line = 86;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\deprecated\\_base_elements.pug";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+;pug_debug_line = 3;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\example_sheets\\basic\\basic.pug";
+pug_indent.push("");
+pug_mixins["tabs"].call({
+block: function(){
+;pug_debug_line = 4;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\example_sheets\\basic\\basic.pug";
+pug_html = pug_html + "\u003Cspan\u003E";
+;pug_debug_line = 4;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\example_sheets\\basic\\basic.pug";
+pug_html = pug_html + "before the header\u003C\u002Fspan\u003E";
+;pug_debug_line = 5;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\example_sheets\\basic\\basic.pug";
+pug_indent.push("");
+pug_mixins["tab"].call({
+block: function(){
+;pug_debug_line = 6;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\example_sheets\\basic\\basic.pug";
+pug_html = pug_html + "\u003Cspan style=\"background: white;\"\u003E";
+;pug_debug_line = 6;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\example_sheets\\basic\\basic.pug";
+pug_html = pug_html + "Tab 1 content\u003C\u002Fspan\u003E";
+},
+attributes: {"class": "tab-vertical"}
+}, {});
+pug_indent.pop();
+;pug_debug_line = 7;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\example_sheets\\basic\\basic.pug";
+pug_indent.push("");
+pug_mixins["tab"].call({
+block: function(){
+;pug_debug_line = 8;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\example_sheets\\basic\\basic.pug";
+pug_html = pug_html + "\u003Cspan style=\"background: white;\"\u003E";
+;pug_debug_line = 8;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\example_sheets\\basic\\basic.pug";
+pug_html = pug_html + "Tab background content\u003C\u002Fspan\u003E";
+},
+attributes: {"class": "tab_horizontal"}
+}, {name:"background"});
+pug_indent.pop();
+;pug_debug_line = 9;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\example_sheets\\basic\\basic.pug";
+pug_indent.push("");
+pug_mixins["tab"].call({
+block: function(){
+;pug_debug_line = 10;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\example_sheets\\basic\\basic.pug";
+pug_html = pug_html + "\u003Cspan style=\"background: white;\"\u003E";
+;pug_debug_line = 10;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\example_sheets\\basic\\basic.pug";
+pug_html = pug_html + "Tab history content\u003C\u002Fspan\u003E";
+},
+attributes: {"class": "tab_horizontal"}
+}, {name:"history", button:{class:"custom-button"}});
+pug_indent.pop();
+;pug_debug_line = 11;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\example_sheets\\basic\\basic.pug";
+pug_indent.push("");
+pug_mixins["tab"].call({
+block: function(){
+;pug_debug_line = 12;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\example_sheets\\basic\\basic.pug";
+pug_html = pug_html + "\u003Cspan style=\"background: white;\"\u003E";
+;pug_debug_line = 12;pug_debug_filename = "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\example_sheets\\basic\\basic.pug";
+pug_html = pug_html + "Tab inventory content\u003C\u002Fspan\u003E";
+},
+attributes: {"class": "tab_horizontal"}
+}, {name:"inventory", container:"span"});
+pug_indent.pop();
+},
+attributes: {"class": "outer"}
+}, {name:"sheet-tabs",defaultActiveTab:'background'});
+pug_indent.pop();
+    }.call(this, "Error" in locals_for_with ?
+        locals_for_with.Error :
+        typeof Error !== 'undefined' ? Error : undefined, "Set" in locals_for_with ?
+        locals_for_with.Set :
+        typeof Set !== 'undefined' ? Set : undefined, "actionObj" in locals_for_with ?
+        locals_for_with.actionObj :
+        typeof actionObj !== 'undefined' ? actionObj : undefined, "arguments" in locals_for_with ?
+        locals_for_with.arguments :
+        typeof arguments !== 'undefined' ? arguments : undefined, "pug_indent" in locals_for_with ?
+        locals_for_with.pug_indent :
+        typeof pug_indent !== 'undefined' ? pug_indent : undefined, "sectionName" in locals_for_with ?
+        locals_for_with.sectionName :
+        typeof sectionName !== 'undefined' ? sectionName : undefined, "spanObj" in locals_for_with ?
+        locals_for_with.spanObj :
+        typeof spanObj !== 'undefined' ? spanObj : undefined, "tabName" in locals_for_with ?
+        locals_for_with.tabName :
+        typeof tabName !== 'undefined' ? tabName : undefined));
+    ;} catch (err) {pug.rethrow(err, pug_debug_filename, pug_debug_line);};return pug_html;}
+
+<input name="attr_sheet_tabs_tab" value="nav-tabs-sheet-tabs--background" type="hidden" title="@{sheet_tabs_tab}"/>
+<div class="tabs tabs--sheet-tabs outer"><span>before the header</span>
+  <nav class="tabs__header tabs--sheet-tabs__header">
+    <button class="tabs__button tabs--sheet-tabs__button tabs--sheet-tabs__button--tab1" name="act_nav-tabs-sheet-tabs--tab1" data-container-button="sheet-tabs" data-button="tab1" data-i18n="tabs-sheet-tabs-tab1" type="action" title="%{nav-tabs-sheet-tabs--tab1}" data-container-tab="sheet-tabs" data-tab="tab1">
+    </button>
+    <button class="tabs__button tabs--sheet-tabs__button tabs--sheet-tabs__button--background" name="act_nav-tabs-sheet-tabs--background" data-container-button="sheet-tabs" data-button="background" data-i18n="tabs-sheet-tabs-background" type="action" title="%{nav-tabs-sheet-tabs--background}" data-container-tab="sheet-tabs" data-tab="background">
+    </button>
+    <button class="tabs__button tabs--sheet-tabs__button tabs--sheet-tabs__button--history custom-button" name="act_nav-tabs-sheet-tabs--history" data-container-button="sheet-tabs" data-button="history" data-i18n="tabs-sheet-tabs-history" type="action" title="%{nav-tabs-sheet-tabs--history}" data-container-tab="sheet-tabs" data-tab="history">
+    </button>
+    <button class="tabs__button tabs--sheet-tabs__button tabs--sheet-tabs__button--inventory" name="act_nav-tabs-sheet-tabs--inventory" data-container-button="sheet-tabs" data-button="inventory" data-i18n="tabs-sheet-tabs-inventory" type="action" title="%{nav-tabs-sheet-tabs--inventory}" data-container-tab="sheet-tabs" data-tab="inventory">
+    </button>
+  </nav>
+  <div class="tabs__body tabs--sheet-tabs__body">
+    <div class="tabs__container tabs--sheet-tabs__container tabs--sheet-tabs__container--tab1 tab-vertical" data-container-tab="sheet-tabs" data-tab="tab1"><span style="background: white;">Tab 1 content</span>
+    </div>
+    <div class="tabs__container tabs--sheet-tabs__container tabs--sheet-tabs__container--background tab_horizontal" data-container-tab="sheet-tabs" data-tab="background"><span style="background: white;">Tab background content</span>
+    </div>
+    <div class="tabs__container tabs--sheet-tabs__container tabs--sheet-tabs__container--history tab_horizontal" data-container-tab="sheet-tabs" data-tab="history"><span style="background: white;">Tab history content</span>
+    </div>
+    <span class="tabs__container tabs--sheet-tabs__container tabs--sheet-tabs__container--inventory tab_horizontal" data-container-tab="sheet-tabs" data-tab="inventory"><span style="background: white;">Tab inventory content</span>
+    </span>
+  </div>
+</div>
