@@ -24,6 +24,10 @@
     })
       +text({name:'name'})
 mixin fieldset({name,trigger,addClass})
+  -
+    name = repeatsIgnoreSystemPrefix || !getSystemPrefix() ?
+      name :
+      `${getSystemPrefix()} ${name}`;
   - name = name.replace(/\s+/g,'-');
   - let section = `repeating_${name}`;
   - repeatingPrefix = `${section}_$X_`;
@@ -63,8 +67,14 @@ mixin fieldset({name,trigger,addClass})
       addClass:'some-class'
     })
 mixin customControlFieldset({name,trigger,addClass})
-  +action({name:`add ${name}`,class:'repcontrol-button repcontrol-button--add',trigger:{listenerFunc:'addItem'}})
-  +action({name:`edit ${name}`,class:'repcontrol-button repcontrol-button--edit',trigger:{listenerFunc:'editSection'}})
+  - const prefixHolder = setSystemPrefix();
+  -
+    buttonName = prefixHolder ?
+      `${prefixHolder} ${name}`:
+      name;
+  +action({name:`add ${buttonName}`,class:'repcontrol-button repcontrol-button--add',trigger:{listenerFunc:'addItem'}})
+  +action({name:`edit ${buttonName}`,class:'repcontrol-button repcontrol-button--edit',trigger:{listenerFunc:'editSection'}})
+  - setSystemPrefix(prefixHolder);
   +fieldset({name,trigger,addClass})
     block
 //- End Mixin
@@ -132,6 +142,7 @@ mixin inlineFieldset({name,trigger,addClass})
     .inline-fieldset__detail.display-target
       +collapse
       block
+  
   +action({name:`add ${name}`,class:'repcontrol-button repcontrol-button--add repcontrol-button--inline',trigger:{listenerFunc:'sectionInteract'}})
   +action({name:`edit ${name}`,class:'repcontrol-button repcontrol-button--edit repcontrol-button--inline',trigger:{listenerFunc:'sectionInteract'}})
 //- End Mixin

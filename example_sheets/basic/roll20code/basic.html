@@ -30,7 +30,25 @@
   <option value="4" data-i18n="one"></option>
 </select>
     </div>
-    <span class="tabs__container tabs--sheet-tabs__container tabs--sheet-tabs__container--inventory tab_horizontal" data-container-tab="sheet-tabs" data-tab="inventory"><span style="background: white;">Tab inventory content</span>
+    <span class="tabs__container tabs--sheet-tabs__container tabs--sheet-tabs__container--inventory tab_horizontal" data-container-tab="sheet-tabs" data-tab="inventory">
+<input name="attr_prefixed_test_for_pre" type="text" title="@{prefixed_test_for_pre}"/>
+<fieldset class="repeating_prefixed-section">
+  <input name="attr_bonus" type="number" title="@{repeating_prefixed-section_$X_bonus}"/>
+  <button class="roller" name="roll_do_it" value="@{do_it_action}" title="%{repeating_prefixed-section_$X_do_it}" type="roll">
+  </button>
+  <button name="act_do-it-action" hidden="" type="action" title="%{repeating_prefixed-section_$X_do-it-action}">
+  </button>
+  <input name="attr_do_it_action" type="hidden" title="@{repeating_prefixed-section_$X_do_it_action}"/>
+</fieldset>
+<!-- Custom control fieldset test-->
+<button class="repcontrol-button repcontrol-button--add" name="act_add-prefixed-custom" type="action" title="%{add-prefixed-custom}">
+</button>
+<button class="repcontrol-button repcontrol-button--edit" name="act_edit-prefixed-custom" type="action" title="%{edit-prefixed-custom}">
+</button>
+<fieldset class="repeating_prefixed-custom">
+  <input name="attr_name" type="text" title="@{repeating_prefixed-custom_$X_name}"/>
+</fieldset>
+<textarea name="attr_prefixed_description" title="@{prefixed_description}"></textarea><span style="background: white;">Tab inventory content</span>
     </span>
   </div>
 </div>
@@ -38,11 +56,11 @@
   const k = (function(){
   const kFuncs = {};
   
-  const cascades = {"attr_character_name":{"name":"character_name","type":"text","defaultValue":"","affects":[],"triggeredFuncs":["setActionCalls"],"listenerFunc":"accessSheet","listener":"change:character_name"},"attr_sheet_tabs_tab":{"name":"sheet_tabs_tab","type":"hidden","defaultValue":"nav-tabs-sheet-tabs--background","triggeredFuncs":[],"affects":[]},"act_nav-tabs-sheet-tabs--tab1":{"triggeredFuncs":["kSwitchTab"],"name":"nav-tabs-sheet-tabs--tab1","listener":"clicked:nav-tabs-sheet-tabs--tab1","listenerFunc":"accessSheet","type":"action"},"act_nav-tabs-sheet-tabs--background":{"triggeredFuncs":["kSwitchTab"],"name":"nav-tabs-sheet-tabs--background","listener":"clicked:nav-tabs-sheet-tabs--background","listenerFunc":"accessSheet","type":"action"},"act_nav-tabs-sheet-tabs--history":{"triggeredFuncs":["kSwitchTab"],"name":"nav-tabs-sheet-tabs--history","listener":"clicked:nav-tabs-sheet-tabs--history","listenerFunc":"accessSheet","type":"action"},"act_nav-tabs-sheet-tabs--inventory":{"triggeredFuncs":["kSwitchTab"],"name":"nav-tabs-sheet-tabs--inventory","listener":"clicked:nav-tabs-sheet-tabs--inventory","listenerFunc":"accessSheet","type":"action"},"attr_test":{"name":"test","type":"text","defaultValue":"","triggeredFuncs":[],"affects":[]},"attr_test_adaptive":{"name":"test_adaptive","type":"span","defaultValue":"","triggeredFuncs":[],"affects":[]},"attr_test_select":{"affects":["test"],"name":"test_select","listener":"change:test_select","listenerFunc":"accessSheet","type":"select","defaultValue":"","triggeredFuncs":[]}};
+  const cascades = {"attr_character_name":{"name":"character_name","type":"text","defaultValue":"","affects":[],"triggeredFuncs":["setActionCalls"],"listenerFunc":"accessSheet","listener":"change:character_name"},"attr_sheet_tabs_tab":{"name":"sheet_tabs_tab","type":"hidden","defaultValue":"nav-tabs-sheet-tabs--background","triggeredFuncs":[],"affects":[]},"act_nav-tabs-sheet-tabs--tab1":{"triggeredFuncs":["kSwitchTab"],"name":"nav-tabs-sheet-tabs--tab1","listener":"clicked:nav-tabs-sheet-tabs--tab1","listenerFunc":"accessSheet","type":"action"},"act_nav-tabs-sheet-tabs--background":{"triggeredFuncs":["kSwitchTab"],"name":"nav-tabs-sheet-tabs--background","listener":"clicked:nav-tabs-sheet-tabs--background","listenerFunc":"accessSheet","type":"action"},"act_nav-tabs-sheet-tabs--history":{"triggeredFuncs":["kSwitchTab"],"name":"nav-tabs-sheet-tabs--history","listener":"clicked:nav-tabs-sheet-tabs--history","listenerFunc":"accessSheet","type":"action"},"act_nav-tabs-sheet-tabs--inventory":{"triggeredFuncs":["kSwitchTab"],"name":"nav-tabs-sheet-tabs--inventory","listener":"clicked:nav-tabs-sheet-tabs--inventory","listenerFunc":"accessSheet","type":"action"},"attr_test":{"name":"test","type":"text","defaultValue":"","triggeredFuncs":[],"affects":[]},"attr_test_adaptive":{"name":"test_adaptive","type":"span","defaultValue":"","triggeredFuncs":[],"affects":[]},"attr_test_select":{"affects":["test"],"name":"test_select","listener":"change:test_select","listenerFunc":"accessSheet","type":"select","defaultValue":"","triggeredFuncs":[]},"attr_prefixed_test_for_pre":{"name":"prefixed_test_for_pre","type":"text","defaultValue":"","triggeredFuncs":[],"affects":[]},"attr_repeating_prefixed-section_$X_bonus":{"name":"repeating_prefixed-section_$X_bonus","type":"number","defaultValue":0,"triggeredFuncs":[],"affects":[]},"act_repeating_prefixed-section_$X_do-it-action":{"listenerFunc":"initiateRoll","name":"repeating_prefixed-section_$X_do-it-action","listener":"clicked:repeating_prefixed-section:do-it-action","type":"action"},"attr_repeating_prefixed-section_$X_do_it_action":{"name":"repeating_prefixed-section_$X_do_it_action","type":"hidden","defaultValue":"","triggeredFuncs":[],"affects":[]},"act_add-prefixed-custom":{"listenerFunc":"addItem","name":"add-prefixed-custom","listener":"clicked:add-prefixed-custom","type":"action"},"act_edit-prefixed-custom":{"listenerFunc":"editSection","name":"edit-prefixed-custom","listener":"clicked:edit-prefixed-custom","type":"action"},"attr_repeating_prefixed-custom_$X_name":{"name":"repeating_prefixed-custom_$X_name","type":"text","defaultValue":"","triggeredFuncs":[],"affects":[]},"attr_prefixed_description":{"name":"prefixed_description","defaultValue":"","triggeredFuncs":[],"affects":[]}};
   
   kFuncs.cascades = cascades;
   
-  const repeatingSectionDetails = [];
+  const repeatingSectionDetails = [{"section":"repeating_prefixed-section","fields":["bonus","do_it_action"]},{"section":"repeating_prefixed-custom","fields":["name"]}];
   
   kFuncs.repeatingSectionDetails = repeatingSectionDetails;
   /**
@@ -979,5 +997,5 @@ const kTabOnOpen = function({trigger,attributes,sections,casc}){
 registerFuncs({ kTabOnOpen },{type:['opener']});
   return kFuncs;
   }());
-  const actionAttributes = [];const persistentTabs = ["sheet-tabs_tab"];
+  const actionAttributes = ["repeating_prefixed-section_$X_do_it_action"];const persistentTabs = ["sheet-tabs_tab"];
 </script>

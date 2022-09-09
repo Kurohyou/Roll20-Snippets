@@ -15,7 +15,8 @@
       }
   };
 - let repeatingPrefix = '';
-
+- let repeatsIgnoreSystemPrefix = false;
+- let systemPrefix = '';
 -
     let variables = "";
     variables += `arguments.callee -> ${arguments.callee}\n`;
@@ -24,6 +25,36 @@
     // variables += `fs  -> ${fs}\n`;
     // throw new Error(variables);
 
+- const getSystemPrefix = () => systemPrefix || '';
+
+//- @pugdoc
+  name: SetSystemPrefix
+  description: Updates the systemPrefix K-scaffold global variable so that any attributes created after this point will be prepended with the prefix. By default attributes in repeating sections are not prepended; instead the repeating section name is prefixed. Returns the previous prefix.
+  arguments:
+    - {string} val - The value to set the prefix to. If not a string or falsy, will reset the prefix to an empty string.
+    - {boolean} [normalRepeating = true] - Whether the prefix should be applied to repeating section names (default), or to the attribute name itself in repeating sections.
+  attributes:
+  example: |
+    include _htmlelements.pug
+    // Non repeating attributes
+    setSystemPrefix('npc')
+    +number({name:'athletics',value:0})
+
+    // pass it a falsy value to unset it
+    setSystemPrefix(false)
+    +number({name:'athletics',value:0})
+
+    // Repeating attributes
+    setSystemPrefix('npc')
+    +fieldset({name:'skill'})
+      +number({name:'score',value:0})
+-
+  const setSystemPrefix = (val,normalRepeating = false) => {
+    repeatsIgnoreSystemPrefix = normalRepeating;
+    const prevPrefix = systemPrefix;
+    systemPrefix = typeof val === 'string' ? val : '';
+    return prevPrefix;
+  };
 
 //- @pugdoc
   name: attrTitle
@@ -44,7 +75,12 @@
       +input({name:'name',type:'text',title:attrTitle('user accessible name')})
 - const attrTitle = (string) => `@{${repeatingPrefix}${replaceSpaces(string).replace(/_max$/,'|max')}}`;
 
-
+-
+  const attrName = (string) => replaceSpaces(`${
+    (repeatingPrefix && !repeatsIgnoreSystemPrefix) || !getSystemPrefix() ?
+      '' :
+      `${getSystemPrefix()} `
+    }${string}`);
 
 
 //- @pugdoc
@@ -55,10 +91,10 @@
   attributes:
   example: |
     include _htmlelements.pug
-    //Basic attribute name
+    //Basic button title
     +button({name:'hidden button',type:'text',title:buttonTitle('user accessible name')})
 
-    //fieldset attrTitle
+    //fieldset button title
     +fieldset({name:'equipment'})
       +button({name:'button',type:'text',title:buttonTitle('user accessible name')})
 - const buttonTitle = (string) => `%{${repeatingPrefix}${replaceSpaces(string)}}`;

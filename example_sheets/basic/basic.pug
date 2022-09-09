@@ -20,5 +20,17 @@ include ../../k-scaffold/_k.pug
           - nObj.selected = '';
         +option(nObj)
   +tab({name:"inventory", container:"span"})(class="tab_horizontal")
+    - setSystemPrefix('prefixed');
+    +text({name:'test for pre'})
+    +fieldset({name:'section'})
+      +number({name:'bonus'})
+      +roller({name:'do it'})
+
+    // Custom control fieldset test
+    +customControlFieldset({
+      name:'custom'
+    })
+      +text({name:'name'})
+    +textarea({name:'description'})
     span(style="background: white;") Tab inventory content
 +kscript

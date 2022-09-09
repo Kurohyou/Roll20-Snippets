@@ -1,4 +1,3 @@
-
 //- @pugdoc
   name: button
   description: Creates a button element. Valid types are `roll` or `action`. If a type is not specified in the object argument, a roll button is created. If an action button is created, spaces in the name are replaced with dashes instead of underscores.
@@ -14,7 +13,7 @@
     +button({name:'my button',type:'action','data-i18n':'action button',trigger:{triggeredFuncs:['doSomethingOnClick']}})
 mixin button(obj, _attributes)
   - obj.class = obj.class ? replaceProblems(obj.class) : undefined;
-  - obj.name = replaceSpaces(obj.name);
+  - obj.name = attrName(obj.name);
   - obj.title = obj.title || buttonTitle(obj.name);
   if obj.type === 'action'
     - obj.name = `act_${obj.name}`;
@@ -28,9 +27,6 @@ mixin button(obj, _attributes)
     block
 //-End Mixin
 
-
-
-
 //- @pugdoc
   name: action
   description: Alias for {@link button} that creates a button element with a type of `action`. Spaces in the name are replaced with dashes instead of underscores.
@@ -42,13 +38,10 @@ mixin button(obj, _attributes)
 mixin action(obj, _attributes)
   - obj.class = obj.class ? replaceProblems(obj.class) : undefined;
   - obj.type = 'action';
-  - obj.name = obj.name.replace(/\s+/g,'-');
+  - obj.name = attrName(obj.name).replace(/\s+|_/g,'-');
   +button(obj)&attributes(attributes)
     block
 //- End Mixin
-
-
-
 
 //- @pugdoc
   name: navButton
@@ -65,9 +58,6 @@ mixin navButton(obj)
     block
 //- End Mixin
 
-
-
-
 mixin rollerExtras(obj)
   - obj.class = obj.class ? `${replaceProblems(obj.class)} roller` : 'roller';
   - let attrName = replaceSpaces(actionInputName(obj.name));
@@ -79,11 +69,6 @@ mixin rollerExtras(obj)
   - addIfUnique(`${repeatingPrefix}${attrName}`,'actionAttributes');
   +action(actionObj)
   +hidden({name:attrName})
-
-
-
-
-
 //- @pugdoc
   name: roller
   description: Creates a multi element construction made of a hidden input, a roll button, and a hidden action button. On sheet load, or character sheet name change, the hidden input is updated with an ability call to the action button. The roll button refers to the hidden input as its value. This allows for an action button to be used to call custom roll parsing (or other sheet functionality) while retaining the ability to drag the button to the macro bar. Uses the same arguments as {@link button}. A trigger should be passed, and will be associated with the action button's name.

@@ -17,7 +17,7 @@ mixin select(obj)
     obj.class = obj.class ?
       replaceProblems(obj.class) :
       undefined;
-  - obj.name = replaceSpaces(obj.name);
+  - obj.name = attrName(obj.name);
   - obj.title = obj.title || attrTitle(obj.name);
   - obj.name = `attr_${obj.name}`;
   - addFieldToFieldsetObj(obj);
