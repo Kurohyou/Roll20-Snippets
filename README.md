@@ -59,7 +59,7 @@ A PUG, JS, and SCSS framework for building custom Roll20 character sheet templat
 <!-- ABOUT THE PROJECT -->
 
 ## About The Project
-![Product Name Screen Shot][product-screenshot]
+
 TODO
 <p align="right">(<a href="#top">back to top</a>)</p>
 
