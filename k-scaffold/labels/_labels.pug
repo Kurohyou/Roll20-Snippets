@@ -168,3 +168,22 @@ mixin dual-input-label({label,inputArr,divObj,spanObj})
       +input(inputObj)
       if i<1
         span(class='slash h2')='/'
+
+//- @pugdoc
+  name: headedTextarea
+  description: Creates a construction for pairing a header with a textarea. Currently is locked to creating an `h3`.  This mixin also accepts classes and IDs appended directly to it (see the second example)
+  arguments:
+    - {object} textObj - The object describing the textarea as per {@link textarea}
+    - {string} header - The `data-i18n` translation key to use for the header
+  attributes:
+  example: |
+    include _htmlelements.pug
+    +headedTextarea({textObj:{name:'character description','data-i18n-placeholder':'The description of your character'},header:'description'})
+    //With class appended to the mixin itself
+    +headedTextarea({textObj:{name:'character description','data-i18n-placeholder':'The description of your character'},header:'description'}).character-description
+mixin headedTextarea({textObj,header})
+  .headed-textarea&attributes(attributes)
+    - textObj.class = textObj.class ? `${textObj.class} headed-textarea__textarea` : 'headed-textarea__textarea';
+    +h3({'data-i18n':header,class:'headed-textarea__header'})
+    +textarea(textObj)
+//-End Mixin

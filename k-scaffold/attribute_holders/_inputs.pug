@@ -138,23 +138,22 @@ mixin radioGroup(objArray)
     - obj.type='radio';
     +input(obj)
 
-
 //- @pugdoc
-  name: adaptiveInput
-  description: Creates an html construction for creating a [content-scaled](https://wiki.roll20.net/CSS_Wizardry#Content-scaled_Inputs) input. You can apply classes and IDs to the container div by appending them to the mixin call (see the second example).
+  name: textarea
+  description: A mixin to create K-scaffold compatible textareas. 
   arguments:
-    - {object} inputObj - The object describing the input as per the {@link input} mixin. You can apply classes and IDs to the container div by appending them to the mixin call (see the second example).
+    - {object} textObj - See {@link input} for information on valid properties of the textObj.
   attributes:
   example: |
     include _htmlelements.pug
-    +adaptiveInput({name:'character description',type:'text'})
-
-    //Appending class directly to the mixin
-    +adaptiveInput({name:'character description',type:'text'}).custom-class
-mixin adaptiveInput(textObj)
-  .adaptive.adaptive--input&attributes(attributes)
-    - let spanObj = {name:textObj.name,class:'adaptive--input__span','max-width':maxWidth};
-    - textObj.class = textObj.class ? `${textObj.class} adaptive--input__input` : 'adaptive--input__input';
-    +span(spanObj)
-    +input(textObj)
-//- End Mixin
+    +textarea({name:'my textarea',class:'some-class',trigger:{affects:['an_attribute']}})
+mixin textarea(obj)
+  - obj.class = obj.class ? replaceProblems(obj.class) : undefined;
+  - obj.name = replaceSpaces(obj.name);
+  - obj.title = obj.title || attrTitle(obj.name);
+  - obj.name = `attr_${obj.name}`;
+  - addFieldToFieldsetObj(obj);
+  - storeTrigger(obj);
+  - const elementObj = makeElementObj(obj);
+  textarea&attributes(elementObj)
+//-End Mixin
