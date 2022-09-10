@@ -21,6 +21,7 @@ mixin script
     include _htmlelements.pug
     +kscript
 mixin kscript
+  - scriptUsed = true;
   +script
     |const k = (function(){
     |const kFuncs = {};

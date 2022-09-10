@@ -8,6 +8,7 @@
     include _htmlelements.pug
     +img({name:'my image',class:'some-class'})
 mixin img(obj)
+  - checkKUse();
   - obj.class = obj.class ? replaceProblems(obj.class) : undefined;
   - obj['data-i18n-alt'] = obj['data-i18n-alt'] || obj.name;
   - obj.name = replaceSpaces(obj.name);
@@ -30,6 +31,7 @@ mixin img(obj)
     include _htmlelements.pug
     +span({name:'attribute backed span',trigger:{calculation:'calculateAttribute'}})
 mixin span(obj)
+  - checkKUse();
   - obj.class = obj.class ? replaceProblems(obj.class) : undefined;
   if obj.name
     - obj.name = replaceSpaces(obj.name);
@@ -58,6 +60,7 @@ mixin span(obj)
     include _htmlelements.pug
     +div({name:'background image'})
 mixin div(obj)
+  - checkKUse();
   - obj.class = obj.class ? replaceProblems(obj.class) : undefined;
   if obj.name
     - obj.name = replaceSpaces(obj.name);

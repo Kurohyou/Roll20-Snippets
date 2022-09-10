@@ -13,6 +13,7 @@
       +option({value:'value 3'})
         |Some Text we include via the option's block
 mixin select(obj)
+  - checkKUse();
   -
     obj.class = obj.class ?
       replaceProblems(obj.class) :

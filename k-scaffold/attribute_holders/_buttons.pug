@@ -12,6 +12,7 @@
     //An action button
     +button({name:'my button',type:'action','data-i18n':'action button',trigger:{triggeredFuncs:['doSomethingOnClick']}})
 mixin button(obj, _attributes)
+  - checkKUse();
   - obj.class = obj.class ? replaceProblems(obj.class) : undefined;
   - obj.name = attrName(obj.name);
   - obj.title = obj.title || buttonTitle(obj.name);

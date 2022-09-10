@@ -9,13 +9,14 @@
     include _htmlelements.pug
     +input({name:'my attribute',type:'text',class:'some-class',trigger:{affects:['other_attribute']}})
 mixin input(obj)
+  - checkKUse();
   - obj.class = obj.class ? replaceProblems(obj.class) : undefined;
   - obj.name = attrName(obj.name);
   - obj.title = obj.title || attrTitle(obj.name);
   - obj.name = `attr_${obj.name}`;
   - const elementObj = makeElementObj(obj);
-  - addFieldToFieldsetObj(obj);
-  - storeTrigger(obj);
+  //- - addFieldToFieldsetObj(obj);
+  //- - storeTrigger(obj);
   input&attributes(elementObj)&attributes(attributes)
 //-End Mixin
 
@@ -124,6 +125,7 @@ mixin radioGroup(objArray)
     include _htmlelements.pug
     +textarea({name:'my textarea',class:'some-class',trigger:{affects:['an_attribute']}})
 mixin textarea(obj)
+  - checkKUse();
   - obj.class = obj.class ? replaceProblems(obj.class) : undefined;
   - obj.name = attrName(obj.name);
   - obj.title = obj.title || attrTitle(obj.name);
