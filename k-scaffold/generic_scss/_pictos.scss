@@ -28,8 +28,8 @@
   .sheet-pictoscustom{
     @extend %pictosCustom;
   }
-  .dicefontd20,
-  .sheet-dicefontd20{
+  .d20,
+  .sheet-d20{
     @extend %diceD20;
   }
 }
