@@ -1,6 +1,6 @@
-include ../../k-scaffold/_k.pug
-
-+tabs({name:"sheet-tabs",defaultActiveTab:'background'})(class="outer")
+include k-scaffold
+//- testsssss
++tabs({name:"test-tabs",defaultActiveTab:'background'})(class="outer")
   span before the header
   +tab({})(class="tab-vertical")
     +input-label({
@@ -34,4 +34,5 @@ include ../../k-scaffold/_k.pug
     +textarea({name:'description'})
     +roller({name:'external'})
     span(style="background: white;") Tab inventory content
++action({name:'test-button'})
 +kscript

@@ -1,36 +1,36 @@
-
-<input name="attr_sheettabs_tab" value="nav-tabs-sheet-tabs--background" type="hidden" title="@{sheettabs_tab}"/>
-<div class="tabs tabs--sheet-tabs outer"><span>before the header</span>
-  <nav class="tabs__header tabs--sheet-tabs__header">
-    <button class="tabs__button tabs--sheet-tabs__button tabs--sheet-tabs__button--tab1" name="act_navtabssheet-tabs--tab1" data-container-button="sheet-tabs" data-button="tab1" data-i18n="tabs-sheet-tabs-tab1" type="action" title="%{navtabssheet-tabs--tab1}" data-container-tab="sheet-tabs" data-tab="tab1">
+<!-- sectionName:test-tabs -->
+<input name="attr_test_tabs_tab" value="nav-tabs-test-tabs--background" type="hidden" title="@{test_tabs_tab}"/>
+<div class="tabs tabs--test-tabs outer"><span>before the header</span>
+  <nav class="tabs__header tabs--test-tabs__header">
+    <button class="tabs__button tabs--test-tabs__button tabs--test-tabs__button--tab1" name="act_nav-tabs-test-tabs--tab1" data-container-button="test-tabs" data-button="tab1" data-i18n="tabs-test-tabs-tab1" type="action" title="%{nav-tabs-test-tabs--tab1}" data-container-tab="test-tabs" data-tab="tab1">
     </button>
-    <button class="tabs__button tabs--sheet-tabs__button tabs--sheet-tabs__button--background" name="act_navtabssheet-tabs--background" data-container-button="sheet-tabs" data-button="background" data-i18n="tabs-sheet-tabs-background" type="action" title="%{navtabssheet-tabs--background}" data-container-tab="sheet-tabs" data-tab="background">
+    <button class="tabs__button tabs--test-tabs__button tabs--test-tabs__button--background" name="act_nav-tabs-test-tabs--background" data-container-button="test-tabs" data-button="background" data-i18n="tabs-test-tabs-background" type="action" title="%{nav-tabs-test-tabs--background}" data-container-tab="test-tabs" data-tab="background">
     </button>
-    <button class="tabs__button tabs--sheet-tabs__button tabs--sheet-tabs__button--history custom-button" name="act_navtabssheet-tabs--history" data-container-button="sheet-tabs" data-button="history" data-i18n="tabs-sheet-tabs-history" type="action" title="%{navtabssheet-tabs--history}" data-container-tab="sheet-tabs" data-tab="history">
+    <button class="tabs__button tabs--test-tabs__button tabs--test-tabs__button--history custom-button" name="act_nav-tabs-test-tabs--history" data-container-button="test-tabs" data-button="history" data-i18n="tabs-test-tabs-history" type="action" title="%{nav-tabs-test-tabs--history}" data-container-tab="test-tabs" data-tab="history">
     </button>
-    <button class="tabs__button tabs--sheet-tabs__button tabs--sheet-tabs__button--inventory" name="act_navtabssheet-tabs--inventory" data-container-button="sheet-tabs" data-button="inventory" data-i18n="tabs-sheet-tabs-inventory" type="action" title="%{navtabssheet-tabs--inventory}" data-container-tab="sheet-tabs" data-tab="inventory">
+    <button class="tabs__button tabs--test-tabs__button tabs--test-tabs__button--inventory" name="act_nav-tabs-test-tabs--inventory" data-container-button="test-tabs" data-button="inventory" data-i18n="tabs-test-tabs-inventory" type="action" title="%{nav-tabs-test-tabs--inventory}" data-container-tab="test-tabs" data-tab="inventory">
     </button>
   </nav>
-  <div class="tabs__body tabs--sheet-tabs__body">
-    <div class="tabs__container tabs--sheet-tabs__container tabs--sheet-tabs__container--tab1 tab-vertical" data-container-tab="sheet-tabs" data-tab="tab1">
+  <div class="tabs__body tabs--test-tabs__body">
+    <div class="tabs__container tabs--test-tabs__container tabs--test-tabs__container--tab1 tab-vertical" data-container-tab="test-tabs" data-tab="tab1">
 <label class="input-label"><span class="input-label__text" data-i18n="a test label"></span>
   <input class="input-label__input" name="attr_test" type="text" title="@{test}"/>
 </label><span style="background: white;">Tab 1 content</span>
     </div>
-    <div class="tabs__container tabs--sheet-tabs__container tabs--sheet-tabs__container--background tab_horizontal" data-container-tab="sheet-tabs" data-tab="background"><span style="background: white;">Tab background content</span>
+    <div class="tabs__container tabs--test-tabs__container tabs--test-tabs__container--background tab_horizontal" data-container-tab="test-tabs" data-tab="background"><span style="background: white;">Tab background content</span>
 <div class="adaptive adaptive--input"><span class="adaptive--input__span" name="attr_test_adaptive" title="@{test_adaptive}"></span>
-  <input class="test-class adaptive--input__input" name="attr_testadaptive" type="number" title="@{testadaptive}"/>
+  <input class="test-class adaptive--input__input" name="attr_test_adaptive" type="number" title="@{test_adaptive}"/>
 </div>
     </div>
-    <div class="tabs__container tabs--sheet-tabs__container tabs--sheet-tabs__container--history tab_horizontal" data-container-tab="sheet-tabs" data-tab="history"><span style="background: white;">Tab history content</span>
-<select name="attr_testselect" title="@{testselect}">
+    <div class="tabs__container tabs--test-tabs__container tabs--test-tabs__container--history tab_horizontal" data-container-tab="test-tabs" data-tab="history"><span style="background: white;">Tab history content</span>
+<select name="attr_test_select" title="@{test_select}">
   <option value="1" data-i18n="one" selected=""></option>
   <option value="2" data-i18n="one"></option>
   <option value="3" data-i18n="one"></option>
   <option value="4" data-i18n="one"></option>
 </select>
     </div>
-    <span class="tabs__container tabs--sheet-tabs__container tabs--sheet-tabs__container--inventory tab_horizontal" data-container-tab="sheet-tabs" data-tab="inventory">
+    <span class="tabs__container tabs--test-tabs__container tabs--test-tabs__container--inventory tab_horizontal" data-container-tab="test-tabs" data-tab="inventory">
 <input name="attr_prefixed_test_for_pre" type="text" title="@{prefixed_test_for_pre}"/>
 <fieldset class="repeating_prefixed-section">
   <input name="attr_bonus" type="number" title="@{repeating_prefixed-section_$X_bonus}"/>
@@ -41,9 +41,9 @@
   <input name="attr_do_it_action" type="hidden" title="@{repeating_prefixed-section_$X_do_it_action}"/>
 </fieldset>
 <!-- Custom control fieldset test-->
-<button class="repcontrol-button repcontrol-button--add" name="act_addprefixedcustom" type="action" title="%{addprefixedcustom}">
+<button class="repcontrol-button repcontrol-button--add" name="act_add-prefixed-custom" type="action" title="%{add-prefixed-custom}">
 </button>
-<button class="repcontrol-button repcontrol-button--edit" name="act_editprefixedcustom" type="action" title="%{editprefixedcustom}">
+<button class="repcontrol-button repcontrol-button--edit" name="act_edit-prefixed-custom" type="action" title="%{edit-prefixed-custom}">
 </button>
 <fieldset class="repeating_prefixed-custom">
   <input name="attr_name" type="text" title="@{repeating_prefixed-custom_$X_name}"/>
@@ -57,15 +57,17 @@
     </span>
   </div>
 </div>
+<button name="act_prefixed-test-button" type="action" title="%{prefixed-test-button}">
+</button>
 <script type="text/worker">
   const k = (function(){
   const kFuncs = {};
   
-  const cascades = {"attr_character_name":{"name":"character_name","type":"text","defaultValue":"","affects":[],"triggeredFuncs":["setActionCalls"],"listenerFunc":"accessSheet","listener":"change:character_name"},"act_navtabssheet-tabs--tab1":{"triggeredFuncs":["kSwitchTab"],"name":"navtabssheet-tabs--tab1","listener":"clicked:navtabssheet-tabs--tab1","listenerFunc":"accessSheet","type":"action"},"act_navtabssheet-tabs--background":{"triggeredFuncs":["kSwitchTab"],"name":"navtabssheet-tabs--background","listener":"clicked:navtabssheet-tabs--background","listenerFunc":"accessSheet","type":"action"},"act_navtabssheet-tabs--history":{"triggeredFuncs":["kSwitchTab"],"name":"navtabssheet-tabs--history","listener":"clicked:navtabssheet-tabs--history","listenerFunc":"accessSheet","type":"action"},"act_navtabssheet-tabs--inventory":{"triggeredFuncs":["kSwitchTab"],"name":"navtabssheet-tabs--inventory","listener":"clicked:navtabssheet-tabs--inventory","listenerFunc":"accessSheet","type":"action"},"attr_test_adaptive":{"name":"test_adaptive","type":"span","defaultValue":"","triggeredFuncs":[],"affects":[]},"attr_testselect":{"affects":["test"],"name":"testselect","listener":"change:testselect","listenerFunc":"accessSheet","type":"select","defaultValue":"","triggeredFuncs":[]},"act_repeating_prefixed-section_$X_do-it-action":{"listenerFunc":"initiateRoll","name":"repeating_prefixed-section_$X_do-it-action","listener":"clicked:repeating_prefixed-section:do-it-action","type":"action"},"act_addprefixedcustom":{"listenerFunc":"addItem","name":"addprefixedcustom","listener":"clicked:addprefixedcustom","type":"action"},"act_editprefixedcustom":{"listenerFunc":"editSection","name":"editprefixedcustom","listener":"clicked:editprefixedcustom","type":"action"},"attr_prefixed_description":{"name":"prefixed_description","defaultValue":"","triggeredFuncs":[],"affects":[]},"act_prefixed-external-action":{"listenerFunc":"initiateRoll","name":"prefixed-external-action","listener":"clicked:prefixed-external-action","type":"action"}};
+  const cascades = {"attr_character_name":{"name":"character_name","type":"text","defaultValue":"","affects":[],"triggeredFuncs":["setActionCalls"],"listenerFunc":"accessSheet","listener":"change:character_name"},"attr_test_tabs_tab":{"name":"test_tabs_tab","type":"hidden","defaultValue":"nav-tabs-test-tabs--background","triggeredFuncs":[],"affects":[]},"act_nav-tabs-test-tabs--tab1":{"triggeredFuncs":["kSwitchTab"],"name":"nav-tabs-test-tabs--tab1","listener":"clicked:nav-tabs-test-tabs--tab1","listenerFunc":"accessSheet","type":"action"},"act_nav-tabs-test-tabs--background":{"triggeredFuncs":["kSwitchTab"],"name":"nav-tabs-test-tabs--background","listener":"clicked:nav-tabs-test-tabs--background","listenerFunc":"accessSheet","type":"action"},"act_nav-tabs-test-tabs--history":{"triggeredFuncs":["kSwitchTab"],"name":"nav-tabs-test-tabs--history","listener":"clicked:nav-tabs-test-tabs--history","listenerFunc":"accessSheet","type":"action"},"act_nav-tabs-test-tabs--inventory":{"triggeredFuncs":["kSwitchTab"],"name":"nav-tabs-test-tabs--inventory","listener":"clicked:nav-tabs-test-tabs--inventory","listenerFunc":"accessSheet","type":"action"},"attr_test":{"name":"test","type":"text","defaultValue":"","triggeredFuncs":[],"affects":[]},"attr_test_adaptive":{"name":"test_adaptive","type":"span","defaultValue":"","triggeredFuncs":[],"affects":[]},"attr_test_select":{"affects":["test"],"name":"test_select","listener":"change:test_select","listenerFunc":"accessSheet","type":"select","defaultValue":"","triggeredFuncs":[]},"attr_prefixed_test_for_pre":{"name":"prefixed_test_for_pre","type":"text","defaultValue":"","triggeredFuncs":[],"affects":[]},"attr_repeating_prefixed-section_$X_bonus":{"name":"repeating_prefixed-section_$X_bonus","type":"number","defaultValue":0,"triggeredFuncs":[],"affects":[]},"act_repeating_prefixed-section_$X_do-it-action":{"listenerFunc":"initiateRoll","name":"repeating_prefixed-section_$X_do-it-action","listener":"clicked:repeating_prefixed-section:do-it-action","type":"action"},"attr_repeating_prefixed-section_$X_do_it_action":{"name":"repeating_prefixed-section_$X_do_it_action","type":"hidden","defaultValue":"","triggeredFuncs":[],"affects":[]},"act_add-prefixed-custom":{"listenerFunc":"addItem","name":"add-prefixed-custom","listener":"clicked:add-prefixed-custom","type":"action"},"act_edit-prefixed-custom":{"listenerFunc":"editSection","name":"edit-prefixed-custom","listener":"clicked:edit-prefixed-custom","type":"action"},"attr_repeating_prefixed-custom_$X_name":{"name":"repeating_prefixed-custom_$X_name","type":"text","defaultValue":"","triggeredFuncs":[],"affects":[]},"attr_prefixed_description":{"name":"prefixed_description","defaultValue":"","triggeredFuncs":[],"affects":[]},"act_prefixed-external-action":{"listenerFunc":"initiateRoll","name":"prefixed-external-action","listener":"clicked:prefixed-external-action","type":"action"},"attr_prefixed_external_action":{"name":"prefixed_external_action","type":"hidden","defaultValue":"","triggeredFuncs":[],"affects":[]},"act_prefixed-test-button":{"name":"prefixed-test-button","type":"action"}};
   
   kFuncs.cascades = cascades;
   
-  const repeatingSectionDetails = [{"section":"repeating_prefixed-section","fields":[]},{"section":"repeating_prefixed-custom","fields":[]}];
+  const repeatingSectionDetails = [{"section":"repeating_prefixed-section","fields":["bonus","do_it_action"]},{"section":"repeating_prefixed-custom","fields":["name"]}];
   
   kFuncs.repeatingSectionDetails = repeatingSectionDetails;
   /**
@@ -994,6 +996,7 @@ registerFuncs({ kSwitchTab });
  * @param {object} casc - Expanded cascade object
  */
 const kTabOnOpen = function({trigger,attributes,sections,casc}){
+  debugger;
   persistentTabs.forEach((tabInput) => {
     const pseudoTrigger = {name:attributes[tabInput]};
     kSwitchTab({trigger:pseudoTrigger, attributes});
@@ -1002,5 +1005,5 @@ const kTabOnOpen = function({trigger,attributes,sections,casc}){
 registerFuncs({ kTabOnOpen },{type:['opener']});
   return kFuncs;
   }());
-  const actionAttributes = ["repeating_prefixed-section_$X_do_it_action","external_action"];const persistentTabs = ["sheet-tabs_tab"];
+  const actionAttributes = ["repeating_prefixed-section_$X_do_it_action","external_action"];const persistentTabs = ["test_tabs_tab"];
 </script>

@@ -1,0 +1,8 @@
+@use 'k/k';
+
+.ui-dialog .tab-content .charsheet{
+  @extend %defaultStyles;
+}
+.test{
+  display:none;
+}
