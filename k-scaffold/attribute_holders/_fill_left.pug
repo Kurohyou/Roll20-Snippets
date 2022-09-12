@@ -13,15 +13,26 @@
       divObj:{class:'some-custom-class'},
       valueArray:[1,2,3,4,5]
     })
-mixin fillLeft({radioObj,divObj,valueArray,noClear})
+mixin fillLeft({radioObj,divObj,valueArray,noClear,displayValues})
   - divObj = divObj || {};
   .fill-left&attributes(divObj)&attributes(attributes)
+    if !noClear
+      - const clearObj = {...radioObj,value:0};
+      -
+        clearObj.class = clearObj.class ? 
+          `${clearObj.class} fill-left__radio` :
+          `fill-left__radio`;
+      if value === 0
+        - clearObj.checked = '';
+      +hidden(clearObj)
     each value,index in valueArray
       - const usedObj = {...radioObj,value};
       -
         usedObj.class = usedObj.class ? 
           `${usedObj.class} fill-left__radio` :
           `fill-left__radio`;
+      if displayValues
+        - usedObj['data-value'] = displayValues[index];
       if value === radioObj.value
         - usedObj.checked = '';
       
