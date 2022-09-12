@@ -1,0 +1,58 @@
+@use '../attribute_holders/buttons';
+%fieldsetStyling{
+  .repitem{
+    > input:not([type='checkbox']){
+      width:100%;
+    }
+    .headed-textarea,
+    .description{
+      grid-column:1/-1;
+    }
+  }
+  .repcontainer{
+    display:grid;
+    gap:var(--grid-gap);
+  }
+  .repeating-container{
+    display:grid;
+    grid-template-areas:'header';
+    align-self:start;
+    > .header{
+      grid-area:header;
+    }
+    &:is(:hover,:focus-within,:focus) .repcontrol-button{
+      opacity:1;
+    }
+  }
+  .repcontrol-button{
+    @extend %text-button;
+    grid-area:header;
+    align-self:center;
+    text-transform:none;
+    opacity:0;
+    transition: {
+      property:opacity,background-color;
+      duration: var(--revealTime);
+    };
+    ~ .repcontrol{
+      display:none;
+    }
+  }
+  .repcontrol_move{
+    display:none;
+  }
+  .repcontrol-button--add{
+    justify-self:start;
+    &:before{
+      font-family:pictos;
+      content:'&';
+    }
+  }
+  .repcontrol-button--edit{
+    justify-self:end;
+    &:before{
+      font-family:pictos;
+      content:'p';
+    }
+  }
+}

@@ -1,1 +1,41 @@
+@use 'generic_scss/roll20clear';
 @use 'tabs/_tabs.scss';
+
+@use 'generic_scss/materialIcons';
+@use 'generic_scss/borderPlaceholders';
+
+@use 'generic_scss/pictos';
+
+@use 'generic_scss/layout';
+
+@use 'generic_scss/textLevel';
+@use 'attribute_holders/buttons';
+@use 'attribute_holders/inputBase';
+@use 'labels/inputlabel';
+@use 'attribute_holders/collapse';
+@use 'adaptive/adaptive';
+@use 'labels/headedText';
+
+@use 'fieldsets/fieldsetStyling';
+@use 'generic_scss/sizingAndRatio';
+@use 'attribute_holders/fillLeft';
+
+%defaultStyles{
+  @extend %clear;
+  @extend %layout;
+  @extend %textElements;
+  @extend %materialIcons;
+  @extend %textStyles;
+  @extend %headerElements;
+  @extend %inputBase;
+  @extend %button;
+  @extend %r20FontClasses;
+  @extend %input-label;
+  @extend %headed-textarea;
+  @extend %borderStyles;
+  @extend %adaptiveText;
+  @extend %sizesAndRatios;
+  @extend %collapsible;
+  @extend %fieldsetStyling;
+  @extend %fillLeft;
+}

@@ -1,0 +1,26 @@
+%layout{
+  .flex-box,
+  .sheet-flex-box{
+    display:flex;
+  }
+  .space-around,
+  .sheet-space-around{
+    justify-content:space-around;
+  }
+  .space-between,
+  .sheet-space-between{
+    justify-content:space-between;
+  }
+  .center,
+  .sheet-center{
+    place-self:center;
+  }
+  .span-2,
+  .sheet-span-2{
+    grid-column:span 2;
+  }
+  .span-all,
+  .sheet-span-all{
+    grid-column:1/-1;
+  }
+}

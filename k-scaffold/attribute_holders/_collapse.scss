@@ -1,5 +1,5 @@
-@use 'borderPlaceholders';
-@use 'materialIcons';
+@use '../generic_scss/borderPlaceholders';
+@use '../generic_scss/materialIcons';
 %collapsible{
   .collapse-container{
     display:grid;

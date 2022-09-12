@@ -84,11 +84,18 @@
 - const attrTitle = (string) => `@{${repeatingPrefix}${replaceSpaces(string).replace(/_max$/,'|max')}}`;
 
 -
-  const attrName = (string) => replaceSpaces(`${
+  const attrName = (string) => {
+    let tempString = replaceSpaces(`${
     (repeatingPrefix && !repeatsIgnoreSystemPrefix) || !getSystemPrefix() ?
       '' :
       `${getSystemPrefix()} `
-    }${string}`).replace(new RegExp(`${getSystemPrefix()}[_-]${getSystemPrefix()}`),getSystemPrefix());
+    }${string}`);
+    if(getSystemPrefix()){
+      tempString = tempString
+        .replace(new RegExp(`${getSystemPrefix()}[_-]${getSystemPrefix()}`),getSystemPrefix());
+    }
+    return tempString;
+  };
 
 
 //- @pugdoc

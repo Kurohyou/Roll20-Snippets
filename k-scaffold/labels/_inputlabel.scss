@@ -1,4 +1,4 @@
-@use 'textLevel';
+@use '../generic_scss/textLevel';
 %stackedGrid{
   &.stacked{
     flex-direction:column;
