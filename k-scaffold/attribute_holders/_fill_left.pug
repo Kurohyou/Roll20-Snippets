@@ -24,8 +24,6 @@ mixin fillLeft({radioObj,divObj,valueArray,noClear})
           `fill-left__radio`;
       if value === radioObj.value
         - usedObj.checked = '';
-      if !noClear && index === 0
-        - usedObj.class = `${usedObj.class} fill-left__radio--clearer`;
       
-      +radio(usedObj)
+      +#{noClear ? 'radio' : 'checkbox'}(usedObj)
 //- End Mixin
