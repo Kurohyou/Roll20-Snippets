@@ -1,0 +1,10 @@
+%clear {
+  select,
+  textarea,
+  input,
+  .uneditable-input,
+  label,
+  button {
+    all: initial;
+  }
+}
