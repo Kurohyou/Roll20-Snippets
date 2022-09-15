@@ -1,0 +1,38 @@
+%layoutVariables{
+  // Layout variables
+  --normal-gap: 1.6rem;//Variable to define our basic gap between layout elements. Followed by several gaps that are mathematically related to it.
+  --half-gap: calc(var(--grid-gap) / 2);
+  --tiny-gap: calc(var(--half-gap) / 2);
+  --big-gap: calc(var(--grid-gap) * 2);
+
+  --spanSectionColumn:1/-1;//How a section should span when it is meant to span large numbers of columns (default span all)
+
+  /* Navbar */
+
+  --navbar-height: 5rem;
+  --navbar-border-width: 0 0 var(--base-border-width) 0;
+  --navbar-border-style: solid;
+  --navbar-horizontal-padding: 1rem;
+
+  /* Containers */
+  --container-width: 100%;
+  --container-sm-max-width: 54rem;
+  --container-md-max-width: 72rem;
+  --container-lg-max-width: 96rem;
+  --container-xl-max-width: 114rem;
+  --container-fluid-width: 100%;
+
+  /* Content and Card */
+  --content-and-card-spacing: 3rem;
+  --content-and-card-spacing-xs: 2rem;
+  --content-and-card-spacing-half: calc(var(--content-and-card-spacing)/2); /* For rows with adjusted spacing */
+  --content-and-card-spacing-xs-half: calc(var(--content-and-card-spacing-xs)/2); /* For rows with adjusted spacing */
+  
+  --content-title-font-size: 2rem;
+  --content-title-font-weight: 500;
+
+  --card-border-width: var(--base-border-width);
+  --card-border-radius: var(--base-border-radius);
+  --card-title-font-size: var(--content-title-font-size);
+  --card-title-font-weight: var(--content-title-font-weight);
+}
