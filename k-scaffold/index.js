@@ -13,7 +13,6 @@ const getTemplate = (filePath) => fs.readFile(filePath,'utf8')
 const outputPug = async (html,destination) => {
   if(!destination) return;
   const destDir = path.dirname(destination);
-  console.log(destDir);
   await fs.mkdir(destDir,{recursive:true});
   await fs.writeFile(destination,html);
   const dom = new JSDOM(html);
@@ -25,7 +24,6 @@ const outputPug = async (html,destination) => {
     memo[el.dataset.i18n] = el.textContent?.trim() || el.dataset.i18n;
     return memo;
   },{});
-  console.log('translations',translations);
   if(translations){
     const translationHandle = await fs.open(path.resolve(path.dirname(destination),'translations.json'),'w+');
     const currTranslation = await translationHandle.readFile('utf8')

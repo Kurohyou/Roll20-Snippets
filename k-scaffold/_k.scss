@@ -1,24 +1,11 @@
-@use 'generic_scss/roll20clear';
+@forward 'generic_scss/genericStyle';
 @use 'tabs/_tabs.scss';
 
-@use 'generic_scss/materialIcons';
-@use 'generic_scss/borderPlaceholders';
-
-@use 'generic_scss/pictos';
-
-@use 'generic_scss/layout';
-
-@use 'generic_scss/textLevel';
-@use 'attribute_holders/buttons';
-@use 'attribute_holders/inputBase';
-@use 'labels/inputlabel';
-@use 'attribute_holders/collapse';
+@use 'attribute_holders/attributeConstructs';
+@use 'labels/labels';
 @use 'adaptive/adaptive';
-@use 'labels/headedText';
 
 @use 'fieldsets/fieldsetStyling';
-@use 'generic_scss/sizingAndRatio';
-@use 'attribute_holders/fillLeft';
 
 %defaultStyles{
   @extend %clear;

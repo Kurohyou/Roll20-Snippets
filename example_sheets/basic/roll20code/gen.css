@@ -120,17 +120,33 @@
 .ui-dialog .tab-content .charsheet .sheet-flex-box {
   display: flex;
 }
-.ui-dialog .tab-content .charsheet .space-around,
-.ui-dialog .tab-content .charsheet .sheet-space-around {
+.ui-dialog .tab-content .charsheet .flex-wrap,
+.ui-dialog .tab-content .charsheet .sheet-flex-wrap {
+  flex-wrap: wrap;
+}
+.ui-dialog .tab-content .charsheet .justify-space-around,
+.ui-dialog .tab-content .charsheet .sheet-justify-space-around {
   justify-content: space-around;
 }
-.ui-dialog .tab-content .charsheet .space-between,
-.ui-dialog .tab-content .charsheet .sheet-space-between {
+.ui-dialog .tab-content .charsheet .justify-space-between,
+.ui-dialog .tab-content .charsheet .sheet-justify-space-between {
   justify-content: space-between;
 }
-.ui-dialog .tab-content .charsheet .center,
-.ui-dialog .tab-content .charsheet .sheet-center {
-  place-self: center;
+.ui-dialog .tab-content .charsheet .justify-center,
+.ui-dialog .tab-content .charsheet .sheet-justify-center {
+  justify-content: center;
+}
+.ui-dialog .tab-content .charsheet .stacked {
+  flex-direction: column;
+}
+.ui-dialog .tab-content .charsheet .stacked.center > * {
+  text-align: center;
+}
+.ui-dialog .tab-content .charsheet .stacked:not(.center) {
+  align-items: start;
+}
+.ui-dialog .tab-content .charsheet .stacked > [name]:not([type=number]):not([type=checkbox]):not([type=radio]) {
+  width: 100%;
 }
 .ui-dialog .tab-content .charsheet .span-2,
 .ui-dialog .tab-content .charsheet .sheet-span-2 {
@@ -139,6 +155,38 @@
 .ui-dialog .tab-content .charsheet .span-all,
 .ui-dialog .tab-content .charsheet .sheet-span-all {
   grid-column: 1/-1;
+}
+.ui-dialog .tab-content .charsheet .row-reverse,
+.ui-dialog .tab-content .charsheet .sheet-row-revers {
+  flex-direction: row-reverse;
+}
+.ui-dialog .tab-content .charsheet .column-reverse,
+.ui-dialog .tab-content .charsheet .sheet-column-reverse {
+  flex-direction: column-reverse;
+}
+.ui-dialog .tab-content .charsheet .gap,
+.ui-dialog .tab-content .charsheet .sheet-gap {
+  gap: var(--grid-gap);
+}
+.ui-dialog .tab-content .charsheet .half-gap,
+.ui-dialog .tab-content .charsheet .sheet-half-gap {
+  gap: var(--half-gap);
+}
+.ui-dialog .tab-content .charsheet .tiny-gap,
+.ui-dialog .tab-content .charsheet .sheet-tiny-gap {
+  gap: var(--tiny-gap);
+}
+.ui-dialog .tab-content .charsheet .big-gap,
+.ui-dialog .tab-content .charsheet .sheet-big-gap {
+  gap: var(--big-gap);
+}
+.ui-dialog .tab-content .charsheet .flex-min-content,
+.ui-dialog .tab-content .charsheet .sheet-flex-min-content {
+  flex: 1 0 min-content;
+}
+.ui-dialog .tab-content .charsheet .align-self-stretch,
+.ui-dialog .tab-content .charsheet .sheet-align-self-stretch {
+  align-self: stretch;
 }
 
 .ui-dialog .tab-content .charsheet span,

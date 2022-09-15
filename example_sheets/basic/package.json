@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "nodemon generator.js",
+    "start": "nodemon generator.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
