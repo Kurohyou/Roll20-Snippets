@@ -1,4 +1,4 @@
-%fillLeft{
+@mixin fillLeft{
   .fill-left{
     display:flex;
     align-self:center;

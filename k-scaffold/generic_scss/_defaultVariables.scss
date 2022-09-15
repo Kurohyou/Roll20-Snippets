@@ -1,8 +1,8 @@
-@use 'variables/layoutVariables';
-@use 'variables/fontVariables';
+@use 'variables/layout';
+@use 'variables/font';
 
-%universalVariables{
-  // Only one variable set at the moment, but this is expected to grow.
-  @extend %fontVariables;
-  @extend %layoutVariables;
+@mixin variables{
+  // Only two variable set at the moment, but this is expected to grow.
+  @include font.variables;
+  @include layout.variables;
 }

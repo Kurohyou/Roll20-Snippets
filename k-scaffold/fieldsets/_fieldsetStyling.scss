@@ -1,5 +1,5 @@
 @use '../attribute_holders/buttons';
-%fieldsetStyling{
+@mixin fieldsetStyling{
   .repitem{
     > input:not([type='checkbox']){
       width:100%;
@@ -25,7 +25,7 @@
     }
   }
   .repcontrol-button{
-    @extend %text-button;
+    @include buttons.text-button;
     grid-area:header;
     align-self:center;
     text-transform:none;

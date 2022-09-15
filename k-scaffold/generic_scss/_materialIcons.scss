@@ -1,4 +1,4 @@
-%materialStyle{
+@mixin materialStyle{
   font-family: 'Material Icons';
   font-weight: normal;
   font-style: normal;
@@ -22,9 +22,9 @@
   /* Support for IE. */
   font-feature-settings: 'liga';
 }
-%materialIcons{
+@mixin materialIcons{
   .sheet-material-icons,
   .material-icons {
-    @extend %materialStyle;
+    @include materialStyle;
   }
 }

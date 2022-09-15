@@ -1,23 +1,23 @@
 //- Our basic setup for text on the sheet.
-%baseText{
+@mixin baseText{
   line-height: normal;
 }
 //- styling for italic words
-%italics{
+@mixin italics{
   font-style: italic;
 }
-%uppercase{
+@mixin uppercase{
   text-transform:uppercase;
 }
-%textStyles{
+@mixin textStyles{
   .sheet-italics,
   .italics{
-    @extend %italics;
+    @include italics;
   }
 }
 //- Basic styling for headers.
-%baseHeader{
-  @extend %baseText;
+@mixin baseHeader{
+  @include baseText;
   color:var(--fontColor);
   display: block;
   white-space: nowrap;
@@ -27,82 +27,82 @@
 }
 
 //- Headers that should pop!
-%importantHeader{
+@mixin importantHeader{
   text-transform: uppercase;
   font-weight: normal;
 }
 
 //- Headers that should be important, but not eye-catching
-%midHeader{
+@mixin midHeader{
   &:not(:where(input)){
     text-transform:capitalize;
   }
 }
 
 //- The next several placeholders are for styling our various levels of headers (1-5).
-%h1-style{
-  @extend %baseHeader;
-  @extend %importantHeader;
+@mixin h1-style{
+  @include baseHeader;
+  @include importantHeader;
   font-size: var(--size1);
   font-family: var(--topHeaderFont);
   &:not(input){
     text-align: center;
   }
 }
-%h1{
-  @extend %h1-style;
+@mixin h1{
+  @include h1-style;
   *{
-    @extend %h1-style;
+    @include h1-style;
   }
 }
-%h2-style{
-  @extend %baseHeader;
-  @extend %importantHeader;
+@mixin h2-style{
+  @include baseHeader;
+  @include importantHeader;
   font-size: var(--size2);
   font-family: var(--topHeaderFont);
   &:not(input){
     text-align: center;
   }
 }
-%h2{
-  @extend %h2-style;
+@mixin h2{
+  @include h2-style;
   *{
-    @extend %h2-style;
+    @include h2-style;
   }
 }
-%h3-style{
-  @extend %baseHeader;
-  @extend %importantHeader;
+@mixin h3-style{
+  @include baseHeader;
+  @include importantHeader;
   font-size: var(--size3);
   font-family: var(--topHeaderFont);
   &:not(input){
     text-align: center;
   }
 }
-%h3{
-  @extend %h3-style;
+@mixin h3{
+  @include h3-style;
   *{
-    @extend %h3-style;
+    @include h3-style;
   }
 }
-%h4-style{
-  @extend %baseHeader;
-  @extend %midHeader;
+@mixin h4-style{
+  @include baseHeader;
+  @include midHeader;
   font-size: var(--size4);
   font-family: var(--midHeaderFont);
   &:not(input){
     text-align: center;
   }
 }
-%h4{
-  @extend %h4-style;
+@mixin h4{
+  @include h4-style;
   *{
-    @extend %h4-style;
+    @include h4-style;
   }
 }
-%h5-style{
-  @extend %baseHeader;
-  @extend %midHeader;
+@mixin h5-style{
+  @include baseHeader;
+  @include midHeader;
   font-size: var(--size5);
   font-style:normal;
   font-family: var(--midHeaderFont);
@@ -110,41 +110,41 @@
     text-align: center;
   }
 }
-%h5{
-  @extend %h5-style;
+@mixin h5{
+  @include h5-style;
   *{
-    @extend %h5-style;
+    @include h5-style;
   }
 }
-%headerElements{
+@mixin headerElements{
   h1,
   *[aria-level='1']{
-    @extend %h1;
+    @include h1;
   }
   h2,
   *[aria-level='2']{
-    @extend %h2;
+    @include h2;
   }
   h3,
   *[aria-level='3']{
-    @extend %h3;
+    @include h3;
   }
   h4,
   *[aria-level='4']{
-    @extend %h4;
+    @include h4;
   }
   h5,
   *[aria-level='5']{
-    @extend %h5;
+    @include h5;
   }
 }
-%textElements{
+@mixin textElements{
   span,
   input,
   textarea{
     font-size: var(--size6);
     color:var(--fontColor);
-    @extend %baseText;
+    @include baseText;
   }
   span[name],input,textarea,button,select{
     font-family:var(--contentFont);

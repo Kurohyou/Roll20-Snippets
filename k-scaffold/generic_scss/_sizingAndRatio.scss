@@ -1,12 +1,12 @@
-%circle{
+@mixin circle{
   border-radius: 50%;
 }
-%ratio1_1{
+@mixin ratio1_1{
   aspect-ratio: 1/1;
 }
-%sizesAndRatios{
+@mixin sizesAndRatios{
   .ratio1-1,
   .sheet-ratio1-1{
-    @extend %ratio1_1;
+    @include ratio1_1;
   }
 }

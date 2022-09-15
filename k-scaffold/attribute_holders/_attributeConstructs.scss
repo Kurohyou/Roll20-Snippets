@@ -1,4 +1,4 @@
-@use 'inputBase';
-@use 'buttons';
-@use 'collapse';
-@use 'fillLeft';
+@forward 'inputBase';
+@forward 'buttons';
+@forward 'collapse';
+@forward 'fillLeft';

@@ -1,4 +1,5 @@
-%layout{
+@mixin layout{
+  // Flexbox variables
   .flex-box,
   .sheet-flex-box{
     display:flex;
@@ -19,6 +20,11 @@
   .sheet-justify-center{
     justify-content:center;
   }
+  
+  .flex-min-content,
+  .sheet-flex-min-content{
+    flex: 1 0 min-content;
+  }
   .stacked{
     flex-direction:column;
     &.center>*{
@@ -31,44 +37,93 @@
       width:100%;
     }
   }
-  .span-2,
-  .sheet-span-2{
-    grid-column:span 2;
+  .flex-column,
+  .sheet-flex-column{
+    flex-direction: column;
   }
-  .span-all,
-  .sheet-span-all{
-    grid-column:1/-1;
-  }
-  .row-reverse,
-  .sheet-row-revers{
+  .flex-row-reverse,
+  .sheet-flex-row-revers{
     flex-direction: row-reverse;
   }
-  .column-reverse,
-  .sheet-column-reverse{
+  .flex-column-reverse,
+  .sheet-flex-column-reverse{
     flex-direction: column-reverse;
   }
-  .gap,
-  .sheet-gap{
-    gap:var(--grid-gap);
+
+  // Gap/Flex combined variables
+  .normal-gap,
+  .sheet-normal-gap{
+    gap:var(--normal-gap);
   }
+  .normal-gap-x,
+  .sheet-normal-gap-x{
+    column-gap:var(--normal-gap-x);
+  }
+  .normal-gap-y,
+  .sheet-normal-gap-y{
+    row-gap:var(--normal-gap-y);
+  }
+  
   .half-gap,
   .sheet-half-gap{
     gap:var(--half-gap);
   }
+  .half-gap-x,
+  .sheet-half-gap-x{
+    column-gap:var(--half-gap-x);
+  }
+  .half-gap-y,
+  .sheet-half-gap-y{
+    row-gap:var(--half-gap-y);
+  }
+  
   .tiny-gap,
   .sheet-tiny-gap{
     gap:var(--tiny-gap);
   }
+  .tiny-gap-x,
+  .sheet-tiny-gap-x{
+    column-gap:var(--tiny-gap-x);
+  }
+  .tiny-gap-y,
+  .sheet-tiny-gap-y{
+    row-gap:var(--tiny-gap-y);
+  }
+  
   .big-gap,
   .sheet-big-gap{
     gap:var(--big-gap);
   }
-  .flex-min-content,
-  .sheet-flex-min-content{
-    flex: 1 0 min-content;
+  .big-gap-x,
+  .sheet-big-gap-x{
+    column-gap:var(--big-gap-x);
   }
-  .align-self-stretch,
-  .sheet-align-self-stretch{
-    align-self:stretch;
+  .big-gap-y,
+  .sheet-big-gap-y{
+    row-gap:var(--big-gap-y);
+  }
+
+  // Grid variables
+  .grid,
+  .sheet-grid{
+    display:grid;
+  }
+
+  .grid-span-2,
+  .sheet-grid-span-2{
+    grid-column:span 2;
+  }
+  .grid-span-all,
+  .sheet-grid-span-all{
+    grid-column:1/-1;
+  }
+
+  .grid-column,
+  .sheet-grid-column{
+    grid-auto-flow:column;
+  }
+  .grid-dense,
+  .sheet-grid-dense{
+    grid-auto-flow:dense;
   }
 }

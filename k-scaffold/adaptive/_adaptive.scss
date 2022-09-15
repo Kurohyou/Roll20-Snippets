@@ -1,5 +1,5 @@
-@use '../generic_scss/_borderPlaceholders.scss';
-%adaptiveText{
+@use '../generic_scss/borderPlaceholders';
+@mixin adaptiveText{
   .adaptive{
     display:grid;
     grid-template-columns: auto;
@@ -12,7 +12,7 @@
     > span{
       opacity: 0;
       z-index: -10;
-      @extend %base-border;
+      @include borderPlaceholders.base-border;
       text-transform: initial;
       border-radius:0px;
     }

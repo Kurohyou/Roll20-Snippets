@@ -1,7 +1,10 @@
 @use 'k/k';
 
+html{
+  @include k.variables;
+}
 .ui-dialog .tab-content .charsheet{
-  @extend %defaultStyles;
+  @include k.defaultStyles;
 }
 .test{
   display:none;

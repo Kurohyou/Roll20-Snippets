@@ -1,6 +1,6 @@
 @use '../generic_scss/borderPlaceholders';
 @use '../generic_scss/materialIcons';
-%collapsible{
+@mixin collapsible{
   .collapse-container{
     display:grid;
     position:relative;
@@ -12,7 +12,7 @@
     align-items:center;
     &:before{
       content:'unfold_less';
-      @extend %materialStyle;
+      @include materialIcons.materialStyle;
     }
   }
   .text-collapse__text{
@@ -20,7 +20,7 @@
   }
   .text-collapse__check{
     &:not(:checked) + .text-collapse{
-      @extend %inputHighlight;
+      @include borderPlaceholders.inputHighlight;
     }
     &:checked + .text-collapse:before{
       content:'unfold_more';

@@ -1,6 +1,6 @@
 @use '../generic_scss/borderPlaceholders';
 //- Placeholder for applying our checked styling to something
-%checked{
+@mixin checked{
   &:before{
     content: '\2713';
     grid-area:content;
@@ -12,7 +12,7 @@
   }
 }
 //- Some styling to highlight which input is currently being interacted with.
-%inputBase{
+@mixin inputBase{
   input{
     &[type='checkbox']{
       border: 1px solid var(--borderColor);
@@ -27,7 +27,7 @@
       grid-template-columns:1fr;
       grid-template-areas:"content";
       &:not(.collapse):not(.fill-left__radio):checked{
-        @extend %checked;
+        @include checked;
       }
     }
     &[type='number']{
@@ -58,7 +58,7 @@
   input:not(:where([type='checkbox'], [type='radio'])),
   .uneditable-input,
   textarea{
-    @extend %base-border;
+    @include borderPlaceholders.base-border;
   }
   select,
   .sheet-pseudo-select span,

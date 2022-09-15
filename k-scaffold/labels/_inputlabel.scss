@@ -1,5 +1,4 @@
-@use '../generic_scss/textLevel';
-%stackedGrid{
+@mixin stackedGrid{
   &.stacked{
     flex-direction:column;
     &.center>*{
@@ -10,12 +9,12 @@
     }
   }
 }
-%input-label{
+@mixin input-label{
   .input-label{
     display: inline-flex;
     gap: var(--half-gap);
     align-items:center;
-    @extend %stackedGrid;
+    @include stackedGrid;
     &:not(.stacked){
       > input[type='text']{
         flex:1 1 0;
