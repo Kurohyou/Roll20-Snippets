@@ -3,18 +3,44 @@
   font-family: pictos;
   text-transform: none;
 }
-%pictos3{
-  font-family: pictos three;
-  text-transform: none;
-}
 %pictosCustom{
   font-family: pictos custom;
   text-transform: none;
 }
-%diceD20{
-  font-family:dicefontd20;
-  text-transform:none;
+%pictos3{
+  font-family: pictos three;
+  text-transform: none;
 }
+
+%diceD4{
+  font-family: dicefontd4 !important;
+  text-transform: none !important;
+}
+%diceD6{
+  font-family: dicefontd6 !important;
+  text-transform: none !important;
+}
+%diceD8{
+  font-family: dicefontd8 !important;
+  text-transform: none !important;
+}
+%diceD10{
+  font-family: dicefontd10 !important;
+  text-transform: none !important;
+}
+%diceD12{
+  font-family: dicefontd12 !important;
+  text-transform: none !important;
+}
+%diceD20{
+  font-family: dicefontd20 !important;
+  text-transform: none !important;
+}
+%diceD30{
+  font-family: dicefontd30 !important;
+  text-transform: none !important;
+}
+
 %r20FontClasses{
   .sheet-pictos,
   .pictos{
@@ -28,8 +54,32 @@
   .sheet-pictoscustom{
     @extend %pictosCustom;
   }
+  .d4,
+  .sheet-d4{
+    @extend %diceD4;
+  }
+  .d6,
+  .sheet-d6{
+    @extend %diceD6;
+  }
+  .d8,
+  .sheet-d8{
+    @extend %diceD8;
+  }
+  .d10,
+  .sheet-d10{
+    @extend %diceD10;
+  }
+  .d12,
+  .sheet-d12{
+    @extend %diceD12;
+  }
   .d20,
   .sheet-d20{
     @extend %diceD20;
+  }
+  .d30,
+  .sheet-d30{
+    @extend %diceD30;
   }
 }
