@@ -1,0 +1,17 @@
+- const spellLevels = ['apprentice','journeyman','master']
+section#spells.spells.paper-background
+  each level in spellLevels
+    .input-label.input-label--dual
+      label(for=`${level}-current` data-i18n=`${level} per day`)
+      +number({name:`${level} per day`,class:'underlined',id:`${level}-current`})
+      span.separator /
+      +number({name:`${level} per day max`,class:'underlined'})
+  +fieldset({name:'spells'})
+    +collapse
+    +text({name:'name',class:'underlined',role:'heading','aria-level':5})
+    +select({name:'level',class:'underlined'})
+      each value in spellLevels
+        +option({value,'data-i18n':value})
+    .headed-textarea.notes.expanded
+      +h5({'data-i18n':'notes'})
+      +adaptiveTextarea({name:'notes',class:'underlined'})

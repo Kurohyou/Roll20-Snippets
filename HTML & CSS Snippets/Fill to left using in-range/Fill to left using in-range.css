@@ -1,0 +1,21 @@
+/*
+This styling makes the .dot elements circles, hides the radio inside the label, and fills the labels that are to the left of the currently checked radio.
+# Notes #
+- Only one of width or height should be applied to .dot in order for aspect-ratio to function.
+*/
+.dot{
+    border:1px solid black;
+    border-radius:50%;
+    width:1rem;/*Set our width*/
+    aspect-ratio:1/1;/*make our label a 1:1 aspect ratio. You could specify a different ratio here if you want an ellipse, or specify a height instead*/
+}
+.dot input{
+    display:none;
+}
+.fill-control:in-range + .dot{
+    --innerFillPoint:3px;/*The distance from the center at which the central bit of color will end*/
+    --outerFillPoint:5px;/*The distance from the center at which the outer ring of color will start*/
+    --fillColor:blue;/*The color to use for the center and outer ring*/
+    --midColor:transparent;/*The color to use for the middle ring*/
+    background:radial-gradient(circle,var(--fillColor) var(--innerFillPoint),var(--midColor) var(--innerFillPoint),var(--midColor) var(--outerFillPoint),var(--fillColor) var(--outerFillPoint));/*Create a radial gradient with hard color stops at our inner and outer fill point*/
+}

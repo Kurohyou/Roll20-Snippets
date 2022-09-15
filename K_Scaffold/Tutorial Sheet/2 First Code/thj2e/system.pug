@@ -1,0 +1,37 @@
+//- The .pug file type is not required when including pug files, but I find that it makes reading the code easier if I can see at a glance what the file type is
+include scaffold/_kpug.pug
+include mixins/_sheetmixins.pug
+//- We define our rolltemplate name here so that we can use it as a variable elsewhere. We'll be using a single template for the entire system
+- let templateName = 'thj2e';
+//- 
+  template_start will allow us to include repetitive message information without needing to type it all out every time. The parts of the template included here are:
+  - @{whisper}: An attribute that we will create in the settings page of the sheet to allow users to set their rolls to always whisper to the gm or not.
+  - &{template:${templateName}}: The template declaration that we'll use in our macros
+  - @{character_name}: the character's name. We'll combine it with the character id so that a link to open the character sheet is output with every macro
+  - @{character_id}: the character's Roll20 ID. Combined with the character name, this allows the template to output a link to open the character from chat.
++hidden({name:'template start',value:`@{whisper}&{template:${templateName}} {{character_name=@{character_name}}} {{character_id=@{character_id}}}`})
+//- sheet_state will contain which display of the sheet is currently enabled
++hidden({name:'sheet state',value:'settings'})
+//- collapsed will contain the sections that are currently collapsed as a space separated list
++hidden({name:'collapsed',value:''})
+//- Now, for our actual sheet. We'll wrap this in a main element and give it an ID of main.
+main#main
+  //- Because this is going to be a tabbed sheet, we'll need to have a navigation section. We will use a nav element so that our html will be semantic html. This will help us make our sheet more accessible to those using assistive technologies like screen readers.
+  nav#main-nav.sheet-nav
+    //- Our nav section is going to contain a series of action buttons that will eventually trigger our navigation javascript function. We'll create the buttons now, but write their functions at a later point.
+      As part of our use of semantic HTML, we'll assign these a role of "heading" and an aria-level of "5" so these will read like <h5> elements to screen readers. We'll make these using the each pug construction which will let us write the actual button code just once.
+    each val in ['character','npc']
+      +action({name:`nav ${val}`,class:`sheet-nav__tab ${val}`,'data-i18n':`${val} sheet`,'data-i18n-title':`${val} sheet button title`,role:'heading','aria-level':5,trigger:{listenerFunc:'navigateSheet'}})
+    //- This will be our button to access the settings page. it's written separately because it has some different requirements
+    +action({name:'nav settings',class:'pictos active sheet-nav__tab settings','data-i18n-title':'open the settings page',role:'heading','aria-level':5,trigger:{listenerFunc:'navigateSheet'}})
+      |y
+  //- This will eventually expand to become our settings page for the sheet, but we'll start with the PC sheet
+  include articles/settings/_settings.pug
+  //- Includes all the code for the PC character sheet
+  include articles/character/_character.pug
+  //- Includes all the code for the npc character sheet
+  include articles/npc/_npc.pug
+//- This will eventually become our roll template. It is empty for now
+include rolltemplates/_thj2etemplate.pug
++kscript
+  //- All additional javascript files should start here

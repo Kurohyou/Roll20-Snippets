@@ -1,0 +1,19 @@
+//- See _attributes.pug for info on these IDs and classes
+section(data-i18n-aria-label='defenses')#defenses.defenses.paper-background
+  label(for='defense-bonus' data-i18n='defense' role='heading' aria-level=4)
+  +number({name:'defense total',type:'number',readonly:'',class:'underlined',value:10,trigger:{calculation:'calcDefense'}})
+  +number({name:'defense mod',class:'underlined',trigger:{affects:['defense_total']}})
+  label(for='reduction-bonus' data-i18n='reduction' role='heading' aria-level=4)
+  +number({name:'reduction value',readonly:'',class:'underlined',trigger:{calculation:'calcDefense'}})
+  +number({name:'reduction mod',class:'underlined',trigger:{affects:['reduction_value']}})
+  //- The next few lines relate to the endurance. We're going to adjust the endurance format from what it is on the paper sheet
+  label(for='endurance' class='endurance-label' data-i18n='endurance',role='heading' aria-level=4)
+  .boxed.span-2
+    +number({name:'endurance',id:'endurance',value:0})
+    span.slash /
+    +number({name:'endurance max',trigger:{affects:['defence'],triggeredFuncs:['calcHealth']}})
+  +roller({name:'saving throw',class:'span-2',role:'heading','aria-level':4,'data-i18n':'saving throw',trigger:{listenerFunc:'rollGeneric'}})
+  +number({name:'saving throw',class:'underlined'})
+  //- We're removing the attack modifier summary here because we'll incorporate it directly into the weapons section.
+  label(for='myth-points' data-i18n='myth points' role='heading' aria-level=4).span-2
+  +number({name:'myth points',class:'underlined'})

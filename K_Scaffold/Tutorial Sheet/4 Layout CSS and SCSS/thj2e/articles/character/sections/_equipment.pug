@@ -1,0 +1,17 @@
+- const coins = ['gp','sp','cp']
+section#equipment.equipment.paper-background
+  .wealth
+    each name in coins
+      +input-label({
+        label:name,
+        inputObj:{name,type:'number',class:'underlined'}
+      })
+    .other-treasures.headed-textarea
+      +h5({'data-i18n':'other treasures'})
+      +adaptiveTextarea({name:'other treasures',class:'underlined'})
+  +fieldset({name:'equipment'})
+    +collapse
+    +text({name:'name',class:'underlined',role:'heading','aria-level':5})
+    .notes.headed-textarea.expanded
+      +h5({'data-i18n':'notes'})
+      +adaptiveTextarea({name:'notes',class:'underlined'})

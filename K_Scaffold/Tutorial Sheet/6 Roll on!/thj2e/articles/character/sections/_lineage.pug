@@ -1,0 +1,9 @@
+section(aria-labelledby='lineage-header')#lineage.lineage.paper-background.repeating-container
+  h3(data-i18n='lineage abilities')#lineage-header
+  +customControlFieldset({name:'lineage'})
+    //- This will be our collapse control so that users can shrink their abilities down when they don't need all the information
+    +collapse
+    +text({name:'name',class:'underlined','data-i18n-placeholder':'ability name'})
+    .headed-textarea.description.expanded
+      +h5({'data-i18n':'description'})
+      +adaptiveTextarea({name:'description',class:'underlined'})
