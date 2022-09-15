@@ -40,12 +40,13 @@ mixin tabs({name="tabs",defaultActiveTab,persistent=true})
       undefined;
   - sectionName = actionButtonName(replaceProblems(name));
   if persistent
+    |<!-- sectionName:#{sectionName} -->
     - const inputObj = {name:`${sectionName.replace(/\-/g,'_')} tab`};
     if defaultActiveTab
       - inputObj.value = `nav-tabs-${sectionName}--${defaultActiveTab}`;
     +hidden(inputObj)
     - varObjects.persistentTabs = varObjects.persistentTabs || [];
-    - varObjects.persistentTabs.push(replaceSpaces(`${sectionName} tab`))
+    - varObjects.persistentTabs.push(inputObj.name.replace(/attr_/,''))
 
   //- Storage for all the tabs in this construct, plus a local mixin to pass
   //- several pug blocks

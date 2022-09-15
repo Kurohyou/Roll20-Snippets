@@ -15,8 +15,8 @@ mixin input(obj)
   - obj.title = obj.title || attrTitle(obj.name);
   - obj.name = `attr_${obj.name}`;
   - const elementObj = makeElementObj(obj);
-  //- - addFieldToFieldsetObj(obj);
-  //- - storeTrigger(obj);
+  - addFieldToFieldsetObj(obj);
+  - storeTrigger(obj);
   input&attributes(elementObj)&attributes(attributes)
 //-End Mixin
 

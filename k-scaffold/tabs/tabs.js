@@ -27,6 +27,7 @@ registerFuncs({ kSwitchTab });
  * @param {object} casc - Expanded cascade object
  */
 const kTabOnOpen = function({trigger,attributes,sections,casc}){
+  debugger;
   persistentTabs.forEach((tabInput) => {
     const pseudoTrigger = {name:attributes[tabInput]};
     kSwitchTab({trigger:pseudoTrigger, attributes});

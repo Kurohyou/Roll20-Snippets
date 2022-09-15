@@ -1,0 +1,161 @@
+//- Our basic setup for text on the sheet.
+@mixin baseText{
+  line-height: normal;
+}
+//- styling for italic words
+@mixin italics{
+  font-style: italic;
+}
+@mixin uppercase{
+  text-transform:uppercase;
+}
+@mixin textStyles{
+  .sheet-italics,
+  .italics{
+    @include italics;
+  }
+}
+//- Basic styling for headers.
+@mixin baseHeader{
+  @include baseText;
+  color:var(--fontColor);
+  display: block;
+  white-space: nowrap;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-weight:normal;
+}
+
+//- Headers that should pop!
+@mixin importantHeader{
+  text-transform: uppercase;
+  font-weight: normal;
+}
+
+//- Headers that should be important, but not eye-catching
+@mixin midHeader{
+  &:not(:where(input)){
+    text-transform:capitalize;
+  }
+}
+
+//- The next several placeholders are for styling our various levels of headers (1-5).
+@mixin h1-style{
+  @include baseHeader;
+  @include importantHeader;
+  font-size: var(--size1);
+  font-family: var(--topHeaderFont);
+  &:not(input){
+    text-align: center;
+  }
+}
+@mixin h1{
+  @include h1-style;
+  *{
+    @include h1-style;
+  }
+}
+@mixin h2-style{
+  @include baseHeader;
+  @include importantHeader;
+  font-size: var(--size2);
+  font-family: var(--topHeaderFont);
+  &:not(input){
+    text-align: center;
+  }
+}
+@mixin h2{
+  @include h2-style;
+  *{
+    @include h2-style;
+  }
+}
+@mixin h3-style{
+  @include baseHeader;
+  @include importantHeader;
+  font-size: var(--size3);
+  font-family: var(--topHeaderFont);
+  &:not(input){
+    text-align: center;
+  }
+}
+@mixin h3{
+  @include h3-style;
+  *{
+    @include h3-style;
+  }
+}
+@mixin h4-style{
+  @include baseHeader;
+  @include midHeader;
+  font-size: var(--size4);
+  font-family: var(--midHeaderFont);
+  &:not(input){
+    text-align: center;
+  }
+}
+@mixin h4{
+  @include h4-style;
+  *{
+    @include h4-style;
+  }
+}
+@mixin h5-style{
+  @include baseHeader;
+  @include midHeader;
+  font-size: var(--size5);
+  font-style:normal;
+  font-family: var(--midHeaderFont);
+  &:not(input){
+    text-align: center;
+  }
+}
+@mixin h5{
+  @include h5-style;
+  *{
+    @include h5-style;
+  }
+}
+@mixin headerElements{
+  h1,
+  *[aria-level='1']{
+    @include h1;
+  }
+  h2,
+  *[aria-level='2']{
+    @include h2;
+  }
+  h3,
+  *[aria-level='3']{
+    @include h3;
+  }
+  h4,
+  *[aria-level='4']{
+    @include h4;
+  }
+  h5,
+  *[aria-level='5']{
+    @include h5;
+  }
+}
+@mixin textElements{
+  span,
+  input,
+  textarea{
+    font-size: var(--size6);
+    color:var(--fontColor);
+    @include baseText;
+  }
+  span[name],input,textarea,button,select{
+    font-family:var(--contentFont);
+  }
+  .big-text{
+    font-size: var(--size4);
+  }
+  .tiny-text{
+    font-size:var(--size7);
+  }
+  .uppercase{
+    text-transform:uppercase !important;
+  }
+}

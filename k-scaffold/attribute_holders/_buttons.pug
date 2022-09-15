@@ -39,7 +39,7 @@ mixin button(obj, _attributes)
 mixin action(obj, _attributes)
   - obj.class = obj.class ? replaceProblems(obj.class) : undefined;
   - obj.type = 'action';
-  - obj.name = attrName(obj.name).replace(/\s+|_/g,'-');
+  - obj.name = attrName(obj.name).replace(/[\s_]+/g,'-');
   +button(obj)&attributes(attributes)
     block
 //- End Mixin
