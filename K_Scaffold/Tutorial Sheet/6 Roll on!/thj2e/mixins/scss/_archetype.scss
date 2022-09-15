@@ -1,0 +1,12 @@
+@use '_mixinsandplaceholders';
+#archetype{
+  .repitem{
+    display:grid;
+    grid-template-columns:1fr auto;
+    gap:var(--tiny-gap);
+    &:not(:last-child){
+      border-bottom:1px dashed black;
+      padding-bottom:var(--half-gap);
+    }
+  }
+}

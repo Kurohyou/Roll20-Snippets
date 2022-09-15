@@ -1,0 +1,13 @@
+// Clears the default Roll20 styling from all elements so that we can style them as we want more easily. We are using 3 classes here because we have to use at least that level of specificity to overcome many of the default Roll20 styles.
+.ui-dialog{
+  .tab-content .charsheet{
+    select,
+    textarea,
+    input,
+    .uneditable-input,
+    label,
+    button{
+      all: initial;
+    }
+  }
+}

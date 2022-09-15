@@ -1,0 +1,17 @@
+//This file will define how our header section is laid out.
+@use '_mixinsandplaceholders';
+#character-header{
+  display:grid;
+  gap:var(--half-gap);
+  grid-template-columns:14rem;
+  grid-auto-columns: 1fr;
+  grid-auto-flow: column;
+  .character-details{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:var(--half-gap);
+    > :not(:is(.span-2,.span-all)){
+      justify-self:end;
+    }
+  }
+}

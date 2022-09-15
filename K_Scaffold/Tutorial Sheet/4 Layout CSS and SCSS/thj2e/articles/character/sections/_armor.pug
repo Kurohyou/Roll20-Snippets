@@ -1,0 +1,18 @@
+section#armor.armor.paper-background
+  //- See the _weapons.pug file for a full comment on what's going on here.
+  .repeat-columns
+    h4(data-i18n='armor and shield')
+    each label in ['reduction value','defense bonus','traits','aspects']
+      h5(data-i18n=label)
+  +fieldset({name:'armor',trigger:{listenerFunc:'rowDeleted'}})
+    +collapse
+    //- This checkbox will mark this piece of armor or shield as being equipped or not, and will trigger a recalc of the defense score and reduction value.
+    +checkbox({name:'equipped',value:1,trigger:{affects:['defense_total','reduction_value']}})
+    +text({name:'name',class:'underlined'})
+    +number({name:'reduction',class:'underlined',trigger:{affects:['reduction_value']}})
+    +number({name:'defense',class:'underlined',trigger:{affects:['defense_total']}})
+    each name in ['traits','aspects']
+      +text({name,class:'underlined'})
+    .headed-textarea.notes.expanded
+      +h5({'data-i18n':'notes'})
+      +adaptiveTextarea({name:'notes',class:'underlined'})
