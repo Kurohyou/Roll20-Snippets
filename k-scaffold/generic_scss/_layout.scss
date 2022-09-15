@@ -3,17 +3,33 @@
   .sheet-flex-box{
     display:flex;
   }
-  .space-around,
-  .sheet-space-around{
+  .flex-wrap,
+  .sheet-flex-wrap{
+    flex-wrap:wrap;
+  }
+  .justify-space-around,
+  .sheet-justify-space-around{
     justify-content:space-around;
   }
-  .space-between,
-  .sheet-space-between{
+  .justify-space-between,
+  .sheet-justify-space-between{
     justify-content:space-between;
   }
-  .center,
-  .sheet-center{
-    place-self:center;
+  .justify-center,
+  .sheet-justify-center{
+    justify-content:center;
+  }
+  .stacked{
+    flex-direction:column;
+    &.center>*{
+      text-align: center;
+    }
+    &:not(.center){
+      align-items:start;
+    }
+    > [name]:not([type="number"]):not([type="checkbox"]):not([type="radio"]){
+      width:100%;
+    }
   }
   .span-2,
   .sheet-span-2{
@@ -22,5 +38,37 @@
   .span-all,
   .sheet-span-all{
     grid-column:1/-1;
+  }
+  .row-reverse,
+  .sheet-row-revers{
+    flex-direction: row-reverse;
+  }
+  .column-reverse,
+  .sheet-column-reverse{
+    flex-direction: column-reverse;
+  }
+  .gap,
+  .sheet-gap{
+    gap:var(--grid-gap);
+  }
+  .half-gap,
+  .sheet-half-gap{
+    gap:var(--half-gap);
+  }
+  .tiny-gap,
+  .sheet-tiny-gap{
+    gap:var(--tiny-gap);
+  }
+  .big-gap,
+  .sheet-big-gap{
+    gap:var(--big-gap);
+  }
+  .flex-min-content,
+  .sheet-flex-min-content{
+    flex: 1 0 min-content;
+  }
+  .align-self-stretch,
+  .sheet-align-self-stretch{
+    align-self:stretch;
   }
 }
