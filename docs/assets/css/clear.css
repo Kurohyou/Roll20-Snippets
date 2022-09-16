@@ -1,3 +1,0 @@
-body *:where(:not(script)) {
-  all: unset;
-}

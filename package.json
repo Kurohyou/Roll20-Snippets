@@ -1,6 +1,10 @@
 {
+  "scripts":{
+    "docs":"node ./docs/generators"
+  },
   "dependencies": {
     "jsdoc": "^3.6.11",
+    "npm-packlist": "^5.1.3",
     "pug": "^3.0.2",
     "pug-doc": "^2.23.1",
     "sass": "^1.54.9"
