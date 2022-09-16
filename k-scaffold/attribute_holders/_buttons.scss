@@ -40,14 +40,12 @@
 }
 //- Styling for our roll buttons
 @mixin roller{
-  display: inline-flex;
+  display: flex;
   align-items: center;
-  align-self:start;
   gap: var(--half-gap);
-  color:var(--fontColor);
   &:before{
-    content:'L';
-    font-family:dicefontd6;
+    content:'T';
+    font-family:dicefontd20;
   }
 }
 @mixin button{
@@ -55,13 +53,6 @@
     cursor: pointer;
   }
 	.roller{
-		@include textLevel.h4;
-		display:flex;
-		gap:var(--half-gap);
-		align-items:center;
-		&:before{
-			font-family:dicefontd20;
-			content:'T'
-		}
+		@include roller;
 	}
 }

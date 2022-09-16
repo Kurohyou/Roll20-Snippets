@@ -1,12 +1,11 @@
 //- A placeholder for creating a stackable grid of elements. Particularly for making stacked input labels.
-%darkmodeStyle{
-  --borderColor: var(--dark-secondarytext);//Our basic border color
-  --fontColor: var(--dark-secondarytext);//Our basic font color
-  --backColor: var(--dark-surface1);//Set our background to match the dark mode background of the sheet
-  --selectedColor:var(--dark-primary);
-  --subHeadBackColor:var(--dark-primary);
-  --checkColor: var(--darkCheck);
-  img{
-    filter: brightness(.8) contrast(1.2);
-  }
+@mixin darkMode{
+  --backColor:var(--dm-backColor);
+  --selectedColor:var(--dm-selectedColor);
+  --unselectedColor1:var(--dm-unselectedColor1);
+  --unselectedColor1:var(--dm-unselectedColor2);
+  --checkColor:var(--dm-checkColor);
+  --borderColor:var(--dm-borderColor);
+  --fontColor:var(--dm-fontColor);
+  --disabledColor:var(--dm-disabledColor);
 }

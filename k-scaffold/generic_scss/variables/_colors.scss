@@ -1,0 +1,33 @@
+@mixin variables{
+  --lm-backColor:#fff;
+  --dm-backColor:var(--dark-surface1);
+  --backColor:var(--lm-backColor);
+
+  --lm-selectedColor:#000;
+  --dm-selectedColor:#007476;
+  --selectedColor:var(--lm-selectedColor);
+
+  --lm-unselectedColor1:lightgrey;
+  --dm-unselectedColor1:#0e0e0e;
+  --unselectedColor1:var(--lm-unselectedColor1);
+
+  --lm-unselectedColor2:transparent;
+  --dm-unselectedColor2:transparent;
+  --unselectedColor1:var(--lm-unselectedColor2);
+
+  --lm-checkColor:#000;
+  --dm-checkColor:#ff0000;
+  --checkColor:var(--lm-checkColor);
+
+  --lm-borderColor:#000;
+  --dm-borderColor:lightgrey;
+  --borderColor:var(--lm-borderColor);
+
+  --lm-fontColor:#0f0f0f;
+  --dm-fontColor:var(--dark-primarytext);
+  --fontColor:var(--lm-fontColor);
+
+  --lm-disabledColor:var(--lm-unselectedColor1);
+  --dm-disabledColor:var(--dm-unselectedColor1);
+  --disabledColor:var(--lm-disabledColor);
+}

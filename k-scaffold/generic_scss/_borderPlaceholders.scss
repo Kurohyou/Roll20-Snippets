@@ -41,14 +41,14 @@
     @include base-border;
     border-radius: 0;
     border-bottom: 1px solid var(--borderColor);
-    transition: var(--focusTrans);
+    transition: border-radius border var(--revealTrans);
   }
   :is(.underlined,.boxed){
     &:not([readonly]):not([type='checkbox']):not([type='radio']):is(:hover, :focus,:focus-within){
       @include inputHighlight;
     }
     &:not([readonly]):not([type='checkbox']):not([type='radio']):is(:focus,:focus-within){
-      background-color: var(--subHeadBackColor);
+      background-color: var(--disabledColor);
     }
   }
   .underlined--invisible{
