@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin"/>
+    <link href="https://fonts.googleapis.com/css2?family=Aldrich&amp;family=Exo+2:ital,wght@0,400;0,700;1,400&amp;family=Fira+Code&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+    <link rel="stylesheet" href="assets/portfolio/social-icons.css"/>
+    <link rel="stylesheet" href="assets/css/clear.css"/>
+    <link rel="stylesheet" href="assets/css/generic.css"/>
+    <link rel="stylesheet" href="assets/css/prettify.css"/>
+    <link rel="stylesheet" href="assets/css/sons-of-obsidian.css"/>
+    <link rel="stylesheet" href="assets/css/codeDisplay.css"/>
+    <title>K-Scaffold | Sheetworker</title>
+  </head>
+  <body>
+    <header>
+      <h1>The K-Scaffold Framework</h1><span class="subhead">PUG, HTML, and Javascript</span>
+    </header>
+    <nav>
+      <ul>
+        <li><a href="./docs/index.html?v=1.1">General Info</a></li>
+        <li><a href="./docs/pug.html?v=1.1">Pug Documentation</a></li>
+      </ul>
+      <ul>
+        <li><a href="#intro-header">Intro</a></li>
+        <li><a href="#" id="doc-link">K-Scaffold methods and variables</a></li>
+        <li><a href="#contact-header">Contact & Feedback</a></li>
+      </ul>
+    </nav>
+    <main id="doc-target">
+      <section aria-labelledby="intro-header">
+        <h2 id="intro-header">js library</h2>
+        <div class="border"></div>
+        <div class="content">
+          <p>The K-Scaffold's javascript library provides a wide range of functionality. The library's functions are divided into three broad types; aliases for Roll20 sheetworker functions, utility functions, and K-Scaffold specific functions.</p>
+          <h3>Sheetworker Aliases</h3>
+          <p>The K-Scaffold's sheetworker aliases provide improved versions of many of Roll20's sheetworker functions. These aliases provide combinations of sheetworker functions that are frequently used together.</p>
+          <h3>Utility functions</h3>
+          <p>The scaffold's utility functions provide many general use functions that can be used to do everything from parse a repeating attribute name into its component parts to querying the user about what they want to do.</p>
+          <h3>K-Scaffold specific functions</h3>
+          <p>The K-scaffold specific functions provide methods for hooking your functions into the K-scaffold's functionality.</p>
+        </div>
+      </section>
+        <section>
+          <div>
+            <h3 class="no-capital" id="accessSheet">accessSheet</h3>
+          </div>
+          <div class="border"></div>
+          <div class="content">
+            <p>This is the default listener function for attributes that the K-Scaffold uses. It utilizes the &#x60;triggerFuncs&#x60;, &#x60;listenerFunc&#x60;, &#x60;calculation&#x60;, and &#x60;affects&#x60; properties of the K-scaffold trigger object (see the Pug section of the scaffold for more details).</p>
+            <div class="arguments-container">
+              <h4>arguments</h4>
+              <h5>name</h5>
+              <h5>type</h5>
+              <h5>description</h5>
+                <span>event</span>
+                <span>Roll20Event</span>
+                <p>The Roll20 event object</p>
+            </div>
+                <pre class="prettyprint prettyprinted" style="">
+                  <code class="language-js">//Call from an attribute changeon(&#x27;change:an_attribute&#x27;,k.accessSheet);</code>
+                </pre>
+          </div>
+        </section>        <section>
+          <div>
+            <h3 class="no-capital" id="registerFuncs">registerFuncs</h3>
+          </div>
+          <div class="border"></div>
+          <div class="content">
+            <p>Function that registers a function for being called via the funcs object. Returns true if the function was successfully registered, and false if it could not be registered for any reason.</p>
+            <div class="arguments-container">
+              <h4>arguments</h4>
+              <h5>name</h5>
+              <h5>type</h5>
+              <h5>description</h5>
+                <span>funcObj</span>
+                <span>object</span>
+                <p>Object with keys that are names to register functions under and values that are functions.</p>
+                <span>optionsObj</span>
+                <span>object</span>
+                <p>Object that contains options to use for this registration.</p>
+                <span>optionsObj.type</span>
+                <span>Array.&lt;string&gt;</span>
+                <p>Array that contains the types of specialized functions that apply to the functions being registered. Valid types are &#x60;&quot;opener&quot;&#x60;, &#x60;&quot;updater&quot;&#x60;, and &#x60;&quot;default&quot;&#x60;. &#x60;&quot;default&quot;&#x60; is always used, and never needs to be passed.</p>
+            </div>
+                <pre class="prettyprint prettyprinted" style="">
+                  <code class="language-js">//Basic Registrationconst myFunc &#x3D; function({trigger,attributes,sections,casc}){};k.registerFuncs({myFunc});//Register a function to run on sheet openconst openFunc &#x3D; function({trigger,attributes,sections,casc}){};k.registerFuncs({openFunc},{type:[&#x27;opener&#x27;]})//Register a function to run on all eventsconst allFunc &#x3D; function({trigger,attributes,sections,casc}){};k.registerFuncs({allFunc},{type:[&#x27;all&#x27;]})</code>
+                </pre>
+          </div>
+        </section>        <section>
+          <div>
+            <h3 class="no-capital" id="callFunc">callFunc</h3>
+          </div>
+          <div class="border"></div>
+          <div class="content">
+            <p>Function to call a function previously registered to the funcs object. May not be used that much. Either returns the function or null if no function exists.</p>
+            <div class="arguments-container">
+              <h4>arguments</h4>
+              <h5>name</h5>
+              <h5>type</h5>
+              <h5>description</h5>
+                <span>funcName</span>
+                <span>string</span>
+                <p>The name of the function to invoke.</p>
+                <span>args</span>
+                <span>any</span>
+                <p>The arguments to call the function with.</p>
+            </div>
+                <pre class="prettyprint prettyprinted" style="">
+                  <code class="language-js">//Call myFunc with two argumentsk.callFunc(&#x27;myFunc&#x27;,&#x27;an argument&#x27;,&#x27;another argument&#x27;);</code>
+                </pre>
+          </div>
+        </section>        <section>
+          <div>
+            <h3 class="no-capital" id="sheetName">sheetName</h3>
+          </div>
+          <div class="border"></div>
+          <div class="content">
+            <p>This stores the name of your sheet for use in the logging functions {@link log} and {@link debug}. Accessible by &#x60;k.sheetName&#x60;</p>
+            <div class="arguments-container">
+              <h4>arguments</h4>
+              <h5>name</h5>
+              <h5>type</h5>
+              <h5>description</h5>
+            </div>
+          </div>
+        </section>        <section>
+          <div>
+            <h3 class="no-capital" id="version">version</h3>
+          </div>
+          <div class="border"></div>
+          <div class="content">
+            <p>This stores the version of your sheet for use in the logging functions{@link log} and {@link debug}. It is also stored in the sheet_version attribute on your character sheet. Accessible via &#x60;k.version&#x60;</p>
+            <div class="arguments-container">
+              <h4>arguments</h4>
+              <h5>name</h5>
+              <h5>type</h5>
+              <h5>description</h5>
+            </div>
+          </div>
+        </section>        <section>
+          <div>
+            <h3 class="no-capital" id="debugMode">debugMode</h3>
+          </div>
+          <div class="border"></div>
+          <div class="content">
+            <p>A boolean flag that tells the script whether to enable or disable {@link debug} calls. If the version of the sheet is &#x60;0&#x60;, or an attribute named &#x60;debug_mode&#x60; is found on opening this is set to true for your entire session. Otherwise, it remains false.</p>
+            <div class="arguments-container">
+              <h4>arguments</h4>
+              <h5>name</h5>
+              <h5>type</h5>
+              <h5>description</h5>
+            </div>
+          </div>
+        </section>        <section>
+          <div>
+            <h3 class="no-capital" id="setSectionOrder">setSectionOrder</h3>
+          </div>
+          <div class="border"></div>
+          <div class="content">
+            <p>Alias for [setSectionOrder()](https://wiki.roll20.net/Sheet_Worker_Scripts#setSectionOrder.28.3CRepeating_Section_Name.3E.2C_.3CSection_Array.3E.2C_.3CCallback.3E.29) that allows you to use the section name in either &#x60;repeating_section&#x60; or &#x60;section&#x60; formats. Note that the Roll20 sheetworker [setSectionOrder](https://wiki.roll20.net/Sheet_Worker_Scripts#setSectionOrder.28.3CRepeating_Section_Name.3E.2C_.3CSection_Array.3E.2C_.3CCallback.3E.29) currently causes some display issues on sheets.</p>
+            <div class="arguments-container">
+              <h4>arguments</h4>
+              <h5>name</h5>
+              <h5>type</h5>
+              <h5>description</h5>
+                <span>section</span>
+                <span>string</span>
+                <p>The name of the section, with or without &#x60;repeating_&#x60;</p>
+                <span>order</span>
+                <span>Array.&lt;string&gt;</span>
+                <p>Array of ids describing the desired order of the section.</p>
+            </div>
+                <pre class="prettyprint prettyprinted" style="">
+                  <code class="language-js">//Set the order of a repeating_weapon sectionk.setSectionOrder(&#x27;repeating_equipment&#x27;,[&#x27;id1&#x27;,&#x27;id2&#x27;,&#x27;id3&#x27;]);//Can also specify the section name without the repeating_ prefixk.setSectionOrder(&#x27;equipment&#x27;,[&#x27;id1&#x27;,&#x27;id2&#x27;,&#x27;id3&#x27;]);</code>
+                </pre>
+          </div>
+        </section>        <section>
+          <div>
+            <h3 class="no-capital" id="removeRepeatingRow">removeRepeatingRow</h3>
+          </div>
+          <div class="border"></div>
+          <div class="content">
+            <p>Alias for [removeRepeatingRow](https://wiki.roll20.net/Sheet_Worker_Scripts#removeRepeatingRow.28_RowID_.29) that also removes the row from the current object of attribute values and array of section IDs to ensure that erroneous updates are not issued.</p>
+            <div class="arguments-container">
+              <h4>arguments</h4>
+              <h5>name</h5>
+              <h5>type</h5>
+              <h5>description</h5>
+                <span>row</span>
+                <span>string</span>
+                <p>The row id to be removed</p>
+                <span>attributes</span>
+                <span>attributesProxy</span>
+                <p>The attribute values currently in memory</p>
+                <span>sections</span>
+                <span>object</span>
+                <p>Object that contains arrays of all the IDs in sections on the sheet indexed by repeating name.</p>
+            </div>
+                <pre class="prettyprint prettyprinted" style="">
+                  <code class="language-js">//Remove a repeating Rowk.getAllAttrs({ callback:(attributes,sections)&#x3D;&gt;{   const rowID &#x3D; sections.repeating_equipment[0];   k.removeRepeatingRow(&#x60;repeating_equipment_${rowID}&#x60;,attributes,sections);   console.log(sections.repeating_equipment); // &#x3D;&gt; rowID no longer exists in the array.   console.log(attributes[&#x60;repeating_equipment_${rowID}_name&#x60;]); // &#x3D;&gt; undefined }})</code>
+                </pre>
+          </div>
+        </section>        <section>
+          <div>
+            <h3 class="no-capital" id="getAttrs">getAttrs</h3>
+          </div>
+          <div class="border"></div>
+          <div class="content">
+            <p>Alias for [getAttrs()](https://wiki.roll20.net/Sheet_Worker_Scripts#getAttrs.28attributeNameArray.2C_callback.29) that converts the default object of attribute values into an {@link attributesProxy} and passes that back to the callback function.</p>
+            <div class="arguments-container">
+              <h4>arguments</h4>
+              <h5>name</h5>
+              <h5>type</h5>
+              <h5>description</h5>
+                <span>props</span>
+                <span>Array.&lt;string&gt;</span>
+                <p>Array of attribute names to get the value of. Defaults to {@link baseGet} if not passed.</p>
+                <span>callback</span>
+                <span>function</span>
+                <p>The function to call after the attribute values have been gotten. An {@link attributesProxy} is passed to the callback.</p>
+            </div>
+                <pre class="prettyprint prettyprinted" style="">
+                  <code class="language-js">//Gets the attributes named in props.k.getAttrs({ props:[&#x27;attribute_1&#x27;,&#x27;attribute_2&#x27;], callback:(attributes)&#x3D;&gt;{   //Work with the attributes as you would in a normal getAttrs, or use the superpowers of the K-scaffold attributes object like so:   attributes.attribute_1 &#x3D; &#x27;new value&#x27;;   attributes.set(); }})</code>
+                </pre>
+          </div>
+        </section>        <section>
+          <div>
+            <h3 class="no-capital" id="getAllAttrs">getAllAttrs</h3>
+          </div>
+          <div class="border"></div>
+          <div class="content">
+            <p>Alias for [getAttrs()](https://wiki.roll20.net/Sheet_Worker_Scripts#getAttrs.28attributeNameArray.2C_callback.29) and [getSectionIDs](https://wiki.roll20.net/Sheet_Worker_Scripts#getSectionIDs.28section_name.2Ccallback.29) that combines the actions of both sheetworker functions and converts the default object of attribute values into an {@link attributesProxy}. Also gets the details on how to handle all attributes from the master {@link cascades} object and.</p>
+            <div class="arguments-container">
+              <h4>arguments</h4>
+              <h5>name</h5>
+              <h5>type</h5>
+              <h5>description</h5>
+                <span>args</span>
+                <span>Object</span>
+                <p></p>
+                <span>args.props</span>
+                <span>Array.&lt;string&gt;</span>
+                <p>Array of attribute names to get the value of. Defaults to {@link baseGet} if not passed.</p>
+                <span>sectionDetails</span>
+                <span>repeatingSectionDetails</span>
+                <p>Array of details about a section to get the IDs for and attributes that need to be gotten.</p>
+                <span>args.callback</span>
+                <span>function</span>
+                <p>The function to call after the attribute values have been gotten. An {@link attributesProxy} is passed to the callback along with a {@link sectionObj} and {@link expandedCascade}.</p>
+            </div>
+                <pre class="prettyprint prettyprinted" style="">
+                  <code class="language-js">//Get every K-scaffold linked attribute on the sheetk.getAllAttrs({ callback:(attributes,sections,casc)&#x3D;&gt;{   //Work with the attributes as you please.   attributes.some_attribute &#x3D; &#x27;a value&#x27;;   attributes.set();//Apply our change }})</code>
+                </pre>
+          </div>
+        </section>        <section>
+          <div>
+            <h3 class="no-capital" id="getSections">getSections</h3>
+          </div>
+          <div class="border"></div>
+          <div class="content">
+            <p>Alias for [getSectionIDs()](https://wiki.roll20.net/Sheet_Worker_Scripts#getSectionIDs.28section_name.2Ccallback.29) that allows you to iterate through several functions at once. Also assembles an array of repeating attributes to get.</p>
+            <div class="arguments-container">
+              <h4>arguments</h4>
+              <h5>name</h5>
+              <h5>type</h5>
+              <h5>description</h5>
+                <span>sectionDetails</span>
+                <span>Array.&lt;object&gt;</span>
+                <p>Array of details about a section to get the IDs for and attributes that need to be gotten.</p>
+                <span>sectionDetails.section</span>
+                <span>string</span>
+                <p>The full name of the repeating section including the &#x60;repeating_&#x60; prefix.</p>
+                <span>sectionDetails.fields</span>
+                <span>Array.&lt;string&gt;</span>
+                <p>Array of field names that need to be gotten from the repeating section</p>
+                <span>callback</span>
+                <span>function</span>
+                <p>The function to call once all IDs have been gotten and the array of repating attributes to get has been assembled. The callback is passed the array of repating attributes to get and a {@link sectionObj}.</p>
+            </div>
+                <pre class="prettyprint prettyprinted" style="">
+                  <code class="language-js">// Get some section detailsconst sectionDetails &#x3D; { {section:&#x27;repeating_equipment&#x27;,fields:[&#x27;name&#x27;,&#x27;weight&#x27;,&#x27;cost&#x27;]}, {section:&#x27;repeating_weapon&#x27;,fields:[&#x27;name&#x27;,&#x27;attack&#x27;,&#x27;damage&#x27;]}};k.getSections(sectionDetails,(attributeNames,sections)&#x3D;&gt;{ console.log(attributeNames);// &#x3D;&gt; Array containing all row specific attribute names console.log(sections);// &#x3D;&gt; Object with arrays containing the row ids. Indexed by section name (e.g. repeating_eqiupment)})</code>
+                </pre>
+          </div>
+        </section>        <section>
+          <div>
+            <h3 class="no-capital" id="set">set</h3>
+          </div>
+          <div class="border"></div>
+          <div class="content">
+            <p>Alias for [setAttrs()](https://wiki.roll20.net/Sheet_Worker_Scripts#setAttrs.28values.2Coptions.2Ccallback.29) that sets silently by default.</p>
+            <div class="arguments-container">
+              <h4>arguments</h4>
+              <h5>name</h5>
+              <h5>type</h5>
+              <h5>description</h5>
+                <span>obj</span>
+                <span>object</span>
+                <p>The object containting attributes to set</p>
+                <span>vocal</span>
+                <span>boolean</span>
+                <p>Whether to set silently (default value) or not.</p>
+                <span>callback</span>
+                <span>function</span>
+                <p>The callback function to invoke after the setting has been completed. No arguments are passed to the callback function.</p>
+            </div>
+                <pre class="prettyprint prettyprinted" style="">
+                  <code class="language-js">//Set some attributes silentlyk.setAttrs({attribute_1:&#x27;new value&#x27;})//Set some attributes and triggers listenersk.setAttrs({attribute_1:&#x27;new value&#x27;,true})//Set some attributes and call a callback functionk.setAttrs({attribute_1:&#x27;new value&#x27;},null,()&#x3D;&gt;{ //Do something after the attribute is set})</code>
+                </pre>
+          </div>
+        </section>        <section>
+          <div>
+            <h3 class="no-capital" id="generateRowID">generateRowID</h3>
+          </div>
+          <div class="border"></div>
+          <div class="content">
+            <p>Alias for generateRowID that adds the new id to the {@link sectionObj}. Also allows for creation of custom IDs that conform to the section ID requirements.</p>
+            <div class="arguments-container">
+              <h4>arguments</h4>
+              <h5>name</h5>
+              <h5>type</h5>
+              <h5>description</h5>
+                <span>sections</span>
+                <span>sectionObj</span>
+                <p></p>
+                <span>customText</span>
+                <span>string</span>
+                <p>Custom text to start the ID with. This text should not be longer than the standard repeating section ID format.</p>
+            </div>
+                <pre class="prettyprint prettyprinted" style="">
+                  <code class="language-js">k.getAllAttrs({ callback:(attributes,sections,casc)&#x3D;&gt;{   //Create a new row ID   const rowID &#x3D; k.generateRowID(&#x27;repeating_equipment&#x27;,sections);   console.log(rowID);// &#x3D;&gt; -p8rg908ug0suzz   //Create a custom row ID   const customID &#x3D; k.generateRowID(&#x27;repeating_equipment&#x27;,sections,&#x27;custom&#x27;);   console.log(customID);// &#x3D;&gt; -custom98uadj89kj }});</code>
+                </pre>
+          </div>
+        </section>        <section>
+          <div>
+            <h3 class="no-capital" id="sanitizeForRegex">sanitizeForRegex</h3>
+          </div>
+          <div class="border"></div>
+          <div class="content">
+            <p>Replaces problem characters to use a string as a regex</p>
+            <div class="arguments-container">
+              <h4>arguments</h4>
+              <h5>name</h5>
+              <h5>type</h5>
+              <h5>description</h5>
+                <span>text</span>
+                <span>string</span>
+                <p>The text to replace characters in</p>
+            </div>
+                <pre class="prettyprint prettyprinted" style="">
+                  <code class="language-js">const textForRegex &#x3D; k.sanitizeForRegex(&#x27;.some thing[with characters]&#x27;);console.log(textForRegex);// &#x3D;&gt; &quot;\.some thing\[with characters\]&quot;</code>
+                </pre>
+          </div>
+        </section>        <section>
+          <div>
+            <h3 class="no-capital" id="value">value</h3>
+          </div>
+          <div class="border"></div>
+          <div class="content">
+            <p>Converts a value to a number, it\&#x27;s default value, or &#x60;0&#x60; if no default value passed.</p>
+            <div class="arguments-container">
+              <h4>arguments</h4>
+              <h5>name</h5>
+              <h5>type</h5>
+              <h5>description</h5>
+                <span>val</span>
+                <span>stringnumber</span>
+                <p>Value to convert to a number</p>
+                <span>def</span>
+                <span>number</span>
+                <p>The default value, uses 0 if not passed</p>
+            </div>
+                <pre class="prettyprint prettyprinted" style="">
+                  <code class="language-js">const num &#x3D; k.value(&#x27;100&#x27;);console.log(num);// &#x3D;&gt; 100</code>
+                </pre>
+          </div>
+        </section>        <section>
+          <div>
+            <h3 class="no-capital" id="parseRepeatName">parseRepeatName</h3>
+          </div>
+          <div class="border"></div>
+          <div class="content">
+            <p>Extracts the section (e.g. &#x60;repeating_equipment&#x60;), rowID (e.g &#x60;-;lkj098J:LKj&#x60;), and field name (e.g. &#x60;bulk&#x60;) from a repeating attribute name.</p>
+            <div class="arguments-container">
+              <h4>arguments</h4>
+              <h5>name</h5>
+              <h5>type</h5>
+              <h5>description</h5>
+                <span>string</span>
+                <span>string</span>
+                <p>The string to parse</p>
+            </div>
+                <pre class="prettyprint prettyprinted" style="">
+                  <code class="language-js">//Extract info from a full repeating nameconst [section,rowID,attrName] &#x3D; k.parseRepeatName(&#x27;repeating_equipment_-8908asdflkjZlkj23_name&#x27;);console.log(section);// &#x3D;&gt; &quot;repeating_equipment&quot;console.log(rowID);// &#x3D;&gt; &quot;-8908asdflkjZlkj23&quot;console.log(attrName);// &#x3D;&gt; &quot;name&quot;//Extract info from just a row nameconst [section,rowID,attrName] &#x3D; k.parseRepeatName(&#x27;repeating_equipment_-8908asdflkjZlkj23&#x27;);console.log(section);// &#x3D;&gt; &quot;repeating_equipment&quot;console.log(rowID);// &#x3D;&gt; &quot;-8908asdflkjZlkj23&quot;console.log(attrName);// &#x3D;&gt; undefined</code>
+                </pre>
+          </div>
+        </section>        <section>
+          <div>
+            <h3 class="no-capital" id="parseTriggerName">parseTriggerName</h3>
+          </div>
+          <div class="border"></div>
+          <div class="content">
+            <p>Parses out the components of a trigger name similar to [parseRepeatName](#parserepeatname). Aliases: parseClickTrigger.Aliases: &#x60;k.parseClickTrigger&#x60;</p>
+            <div class="arguments-container">
+              <h4>arguments</h4>
+              <h5>name</h5>
+              <h5>type</h5>
+              <h5>description</h5>
+                <span>string</span>
+                <span>string</span>
+                <p>The triggerName property of the</p>
+            </div>
+                <pre class="prettyprint prettyprinted" style="">
+                  <code class="language-js">//Parse a non repeating triggerconst [section,rowID,attrName] &#x3D; k.parseTriggerName(&#x27;clicked:some-button&#x27;);console.log(section);// &#x3D;&gt; undefinedconsole.log(rowID);// &#x3D;&gt; undefinedconsole.log(attrName);// &#x3D;&gt; &quot;some-button&quot;//Parse a repeating triggerconst [section,rowID,attrName] &#x3D; k.parseTriggerName(&#x27;clicked:repeating_attack_-234lkjpd8fu8usadf_some-button&#x27;);console.log(section);// &#x3D;&gt; &quot;repeating_attack&quot;console.log(rowID);// &#x3D;&gt; &quot;-234lkjpd8fu8usadf&quot;console.log(attrName);// &#x3D;&gt; &quot;some-button&quot;//Parse a repeating nameconst [section,rowID,attrName] &#x3D; k.parseTriggerName(&#x27;repeating_attack_-234lkjpd8fu8usadf_some-button&#x27;);console.log(section);// &#x3D;&gt; &quot;repeating_attack&quot;console.log(rowID);// &#x3D;&gt; &quot;-234lkjpd8fu8usadf&quot;console.log(attrName);// &#x3D;&gt; &quot;some-button&quot;</code>
+                </pre>
+          </div>
+        </section>        <section>
+          <div>
+            <h3 class="no-capital" id="parseHTMLName">parseHTMLName</h3>
+          </div>
+          <div class="border"></div>
+          <div class="content">
+            <p>Parses out the attribute name from the htmlattribute name.</p>
+            <div class="arguments-container">
+              <h4>arguments</h4>
+              <h5>name</h5>
+              <h5>type</h5>
+              <h5>description</h5>
+                <span>string</span>
+                <span>string</span>
+                <p>The triggerName property of the [event](https://wiki.roll20.net/Sheet_Worker_Scripts#eventInfo_Object).</p>
+            </div>
+                <pre class="prettyprint prettyprinted" style="">
+                  <code class="language-js">//Parse a nameconst attrName &#x3D; k.parseHtmlName(&#x27;attr_attribute_1&#x27;);console.log(attrName);// &#x3D;&gt; &quot;attribute_1&quot;</code>
+                </pre>
+          </div>
+        </section>        <section>
+          <div>
+            <h3 class="no-capital" id="capitalize">capitalize</h3>
+          </div>
+          <div class="border"></div>
+          <div class="content">
+            <p>Capitalize each word in a string</p>
+            <div class="arguments-container">
+              <h4>arguments</h4>
+              <h5>name</h5>
+              <h5>type</h5>
+              <h5>description</h5>
+                <span>string</span>
+                <span>string</span>
+                <p>The string to capitalize</p>
+            </div>
+                <pre class="prettyprint prettyprinted" style="">
+                  <code class="language-js">const capitalized &#x3D; k.capitalize(&#x27;a word&#x27;);console.log(capitalized);// &#x3D;&gt; &quot;A Word&quot;</code>
+                </pre>
+          </div>
+        </section>        <section>
+          <div>
+            <h3 class="no-capital" id="extractQueryResult">extractQueryResult</h3>
+          </div>
+          <div class="border"></div>
+          <div class="content">
+            <p>Extracts a roll query result for use in later functions. Must be awaited as per [startRoll documentation](https://wiki.roll20.net/Sheet_Worker_Scripts#Roll_Parsing.28NEW.29). Stolen from [Oosh\&#x27;s Adventures with Startroll thread](https://app.roll20.net/forum/post/10346883/adventures-with-startroll).</p>
+            <div class="arguments-container">
+              <h4>arguments</h4>
+              <h5>name</h5>
+              <h5>type</h5>
+              <h5>description</h5>
+                <span>query</span>
+                <span>string</span>
+                <p>The query should be just the text as the &#x60;?{&#x60; and &#x60;}&#x60; at the start/end of the query are added by the function.</p>
+            </div>
+                <pre class="prettyprint prettyprinted" style="">
+                  <code class="language-js">const rollFunction &#x3D; async function(){ //Get the result of a choose from list query const queryResult &#x3D; await extractQueryResult(&#x27;Prompt Text Here|Option 1|Option 2&#x27;); console.log(queryResult);//&#x3D;&gt; &quot;Option 1&quot; or &quot;Option 2&quot; depending on what the user selects //Get free from input from the user const freeResult &#x3D; await extractQueryResult(&#x27;Prompt Text Here&#x27;); consoel.log(freeResult);// &#x3D;&gt; Whatever the user entered}</code>
+                </pre>
+          </div>
+        </section>        <section>
+          <div>
+            <h3 class="no-capital" id="pseudoQuery">pseudoQuery</h3>
+          </div>
+          <div class="border"></div>
+          <div class="content">
+            <p>Simulates a query for ensuring that async/await works correctly in the sheetworker environment when doing conditional startRolls. E.g. if you have an if/else and only one of the conditions results in &#x60;startRoll&#x60; being called (and thus an &#x60;await&#x60;), the sheetworker environment would normally crash. Awaiting this in the condition that does not actually need to call &#x60;startRoll&#x60; will keep the environment in sync.</p>
+            <div class="arguments-container">
+              <h4>arguments</h4>
+              <h5>name</h5>
+              <h5>type</h5>
+              <h5>description</h5>
+                <span>value</span>
+                <span>stringnumber</span>
+                <p>The value to return. Optional.</p>
+            </div>
+                <pre class="prettyprint prettyprinted" style="">
+                  <code class="language-js">const rollFunction &#x3D; async function(){ //Get the result of a choose from list query const queryResult &#x3D; await pseudoQuery(&#x27;a value&#x27;); console.log(queryResult);//&#x3D;&gt; &quot;a value&quot;}</code>
+                </pre>
+          </div>
+        </section>        <section>
+          <div>
+            <h3 class="no-capital" id="log">log</h3>
+          </div>
+          <div class="border"></div>
+          <div class="content">
+            <p>An alias for console.log.</p>
+            <div class="arguments-container">
+              <h4>arguments</h4>
+              <h5>name</h5>
+              <h5>type</h5>
+              <h5>description</h5>
+                <span>msg</span>
+                <span>any</span>
+                <p>The message can be a straight string, an object, or an array. If it is an object or array, the object will be broken down so that each key is used as a label to output followed by the value of that key. If the value of the key is an object or array, it will be output via &#x60;console.table&#x60;.</p>
+            </div>
+          </div>
+        </section>        <section>
+          <div>
+            <h3 class="no-capital" id="debug">debug</h3>
+          </div>
+          <div class="border"></div>
+          <div class="content">
+            <p>Alias for console.log that only triggers when debug mode is enabled or when the sheet\&#x27;s version is &#x60;0&#x60;. Useful for entering test logs that will not pollute the console on the live sheet.</p>
+            <div class="arguments-container">
+              <h4>arguments</h4>
+              <h5>name</h5>
+              <h5>type</h5>
+              <h5>description</h5>
+                <span>msg</span>
+                <span>any</span>
+                <p>&#x27;See {@link k.log}</p>
+                <span>force</span>
+                <span>boolean</span>
+                <p>Pass as a truthy value to force the debug output to be output to the console regardless of debug mode.</p>
+            </div>
+          </div>
+        </section>        <section>
+          <div>
+            <h3 class="no-capital" id="orderSections">orderSections</h3>
+          </div>
+          <div class="border"></div>
+          <div class="content">
+            <p>Orders the section id arrays for all sections in the &#x60;sections&#x60; object to match the repOrder attribute.</p>
+            <div class="arguments-container">
+              <h4>arguments</h4>
+              <h5>name</h5>
+              <h5>type</h5>
+              <h5>description</h5>
+                <span>attributes</span>
+                <span>attributesProxy</span>
+                <p>The attributes object that must have a value for the reporder for each section.</p>
+                <span>sections</span>
+                <span>Array.&lt;object&gt;</span>
+                <p>Object containing the IDs for the repeating sections, indexed by repeating section name.</p>
+            </div>
+          </div>
+        </section>        <section>
+          <div>
+            <h3 class="no-capital" id="orderSection">orderSection</h3>
+          </div>
+          <div class="border"></div>
+          <div class="content">
+            <p>Orders a single ID array.</p>
+            <div class="arguments-container">
+              <h4>arguments</h4>
+              <h5>name</h5>
+              <h5>type</h5>
+              <h5>description</h5>
+                <span>repOrder</span>
+                <span>Array.&lt;string&gt;</span>
+                <p>Array of IDs in the order they are in on the sheet.</p>
+                <span>IDs</span>
+                <span>Array.&lt;string&gt;</span>
+                <p>Array of IDs to be ordered.</p>
+            </div>
+          </div>
+        </section>        <section>
+          <div>
+            <h3 class="no-capital" id="commaArray">commaArray</h3>
+          </div>
+          <div class="border"></div>
+          <div class="content">
+            <p>Splits a comma delimited string into an array</p>
+            <div class="arguments-container">
+              <h4>arguments</h4>
+              <h5>name</h5>
+              <h5>type</h5>
+              <h5>description</h5>
+                <span>string</span>
+                <span>string</span>
+                <p>The string to split.</p>
+            </div>
+          </div>
+        </section>        <section>
+          <div>
+            <h3 class="no-capital" id="kSwitchTab">kSwitchTab</h3>
+          </div>
+          <div class="border"></div>
+          <div class="content">
+            <p>The default tab navigation function of the K-scaffold. Courtesy of Riernar. It will add &#x60;k-active-tab&#x60; to the active tab-container and &#x60;k-active-button&#x60; to the active button. You can either write your own CSS to control display of these, or use the default CSS included in &#x60;scaffold/_k.scss&#x60;. Note that &#x60;k-active-button&#x60; has no default CSS as it is assumed that you will want to style the active button to match your system.</p>
+            <div class="arguments-container">
+              <h4>arguments</h4>
+              <h5>name</h5>
+              <h5>type</h5>
+              <h5>description</h5>
+                <span>trigger</span>
+                <span>Object</span>
+                <p>The trigger object</p>
+            </div>
+          </div>
+        </section>        <section>
+          <div>
+            <h3 class="no-capital" id="kTabOnOpen">kTabOnOpen</h3>
+          </div>
+          <div class="border"></div>
+          <div class="content">
+            <p>Sets persistent tabs to their last active state</p>
+            <div class="arguments-container">
+              <h4>arguments</h4>
+              <h5>name</h5>
+              <h5>type</h5>
+              <h5>description</h5>
+                <span>trigger</span>
+                <span>object</span>
+                <p>The trigger that caused the function to be called</p>
+                <span>attributes</span>
+                <span>object</span>
+                <p>The attribute values of the character</p>
+                <span>sections</span>
+                <span>Array.&lt;object&gt;</span>
+                <p>All the repeating section IDs</p>
+                <span>casc</span>
+                <span>object</span>
+                <p>Expanded cascade object</p>
+            </div>
+          </div>
+        </section>    </main>
+    <aside>
+      <h2>Table of Contents</h2>
+      <nav>
+        <ul id="toc-target">
+            <li><a href="#accessSheet">accessSheet</a></li>            <li><a href="#registerFuncs">registerFuncs</a></li>            <li><a href="#callFunc">callFunc</a></li>            <li><a href="#sheetName">sheetName</a></li>            <li><a href="#version">version</a></li>            <li><a href="#debugMode">debugMode</a></li>            <li><a href="#setSectionOrder">setSectionOrder</a></li>            <li><a href="#removeRepeatingRow">removeRepeatingRow</a></li>            <li><a href="#getAttrs">getAttrs</a></li>            <li><a href="#getAllAttrs">getAllAttrs</a></li>            <li><a href="#getSections">getSections</a></li>            <li><a href="#set">set</a></li>            <li><a href="#generateRowID">generateRowID</a></li>            <li><a href="#sanitizeForRegex">sanitizeForRegex</a></li>            <li><a href="#value">value</a></li>            <li><a href="#parseRepeatName">parseRepeatName</a></li>            <li><a href="#parseTriggerName">parseTriggerName</a></li>            <li><a href="#parseHTMLName">parseHTMLName</a></li>            <li><a href="#capitalize">capitalize</a></li>            <li><a href="#extractQueryResult">extractQueryResult</a></li>            <li><a href="#pseudoQuery">pseudoQuery</a></li>            <li><a href="#log">log</a></li>            <li><a href="#debug">debug</a></li>            <li><a href="#orderSections">orderSections</a></li>            <li><a href="#orderSection">orderSection</a></li>            <li><a href="#commaArray">commaArray</a></li>            <li><a href="#kSwitchTab">kSwitchTab</a></li>            <li><a href="#kTabOnOpen">kTabOnOpen</a></li>        </ul>
+      </nav>
+    </aside>
+    <div class="footer"></div>
+    <footer>
+      <section class="flex flex--space-evenly" aria-label="Contact &amp; Feedback" id="contact-header"><a class="social-icon" href="https://discord.gg/vYmvFBZQsM">discord</a><a class="social-icon" href="https://www.linkedin.com/in/scott-casey-20210398/">linkedin</a><a class="social-icon" href="https://www.patreon.com/kurohyoustudios?fan_landing=true">patreon</a>
+        <div class="flex flex-column"><span style="justify-self:center;">Scott Casey | Kurohyou Studios</span><span style="justify-self:center;">06/19/2022</span></div><a class="material-icons" title="Email" href="mailto:scaseydv@gmail.com?subject=Inquiring about your work">email</a><a class="social-icon" href="https://github.com/Kurohyou">github</a><a class="social-icon" href="https://twitter.com/Kurohyoustudios">twitter</a>
+      </section>
+    </footer>
+    <script type="text/javascript">const siteVersion = 1.1;
+      
+    </script>
+    <script src="assets/javascript/resizer.js"></script>
+    <script src="assets/javascript/prettify.js"></script>
+    <script src="assets/javascript/parser.js"></script>
+  </body>
+</html>

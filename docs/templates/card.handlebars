@@ -1,0 +1,42 @@
+<section>
+  <div>
+    <h3 class="no-capital" id="{{name}}{{meta.name}}">{{name}}{{meta.name}}</h3>
+  </div>
+  <div class="border"></div>
+  <div class="content">
+    <p>{{description}}{{meta.description}}</p>
+    <div class="arguments-container">
+      <h4>arguments</h4>
+      <h5>name</h5>
+      <h5>type</h5>
+      <h5>description</h5>
+      {{#each params as |param|}}
+        <span>{{name}}</span>
+        <span>{{#each type.names as |type|}}{{type}}{{/each}}</span>
+        <p>{{description}}</p>
+      {{/each}}
+      {{#each meta.arguments as |arguments|}}
+        <span>{{name}}</span>
+        <span>{{type}}</span>
+        <p>{{description}}</p>
+      {{/each}}
+    </div>
+    {{#if examples}}
+      {{#each examples as |example|}}
+        <pre class="prettyprint prettyprinted" style="">
+          <code class="language-js">{{example}}</code>
+        </pre>
+      {{/each}}
+    {{/if}}
+    {{#if source}}
+      <h4>pug</h4>
+      <pre class="prettyprint prettyprinted" style="">
+        <code class="language-jade">{{meta.example}}</code>
+      </pre>
+      <h4>html</h4>
+      <pre class="prettyprint prettyprinted" style="">
+        <code class="language-html">{{output}}</code>
+      </pre>
+    {{/if}}
+  </div>
+</section>
