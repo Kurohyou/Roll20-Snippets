@@ -1,6 +1,8 @@
 <section>
   <div>
-    <h3 class="no-capital" id="{{name}}{{meta.name}}">{{name}}{{meta.name}}</h3>
+    <h3 class="no-capital" id="{{name}}{{meta.name}}">{{#if name ~}}
+    k.
+    {{~/if}}{{name}}{{meta.name}}</h3>
   </div>
   <div class="border"></div>
   <div class="content">
@@ -23,20 +25,14 @@
     </div>
     {{#if examples}}
       {{#each examples as |example|}}
-        <pre class="prettyprint prettyprinted" style="">
-          <code class="language-js">{{example}}</code>
-        </pre>
+        <pre class="prettyprint" style=""><code class="language-js">{{trim example}}</code></pre>
       {{/each}}
     {{/if}}
     {{#if source}}
       <h4>pug</h4>
-      <pre class="prettyprint prettyprinted" style="">
-        <code class="language-jade">{{meta.example}}</code>
-      </pre>
+      <pre class="prettyprint" style=""><code class="language-jade">{{trim meta.example}}</code></pre>
       <h4>html</h4>
-      <pre class="prettyprint prettyprinted" style="">
-        <code class="language-html">{{output}}</code>
-      </pre>
+      <pre class="prettyprint" style=""><code class="language-html">{{trim output}}</code></pre>
     {{/if}}
   </div>
 </section>

@@ -8,11 +8,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Aldrich&amp;family=Exo+2:ital,wght@0,400;0,700;1,400&amp;family=Fira+Code&amp;display=swap" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
     <link rel="stylesheet" href="assets/portfolio/social-icons.css"/>
-    <link rel="stylesheet" href="assets/css/clear.css"/>
-    <link rel="stylesheet" href="assets/css/generic.css"/>
-    <link rel="stylesheet" href="assets/css/prettify.css"/>
-    <link rel="stylesheet" href="assets/css/sons-of-obsidian.css"/>
-    <link rel="stylesheet" href="assets/css/codeDisplay.css"/>
+    <link rel="stylesheet" href="./assets/css/clear.css"/>
+    <link rel="stylesheet" href="./assets/css/generic.css"/>
+    <link rel="stylesheet" href="./assets/css/prettify.css"/>
+    <link rel="stylesheet" href="./assets/css/sons-of-obsidian.css"/>
+    <link rel="stylesheet" href="./assets/css/codeDisplay.css"/>
     <title>K-Scaffold | PUG</title>
   </head>
   <body>
@@ -21,8 +21,8 @@
     </header>
     <nav>
       <ul>
-        <li><a href="./docs/index.html?v=1.1">General Info</a></li>
-        <li><a href="./docs/js.html?v=1.1">Sheetworker Documentation</a></li>
+        <li><a href="./index.html?v=1.1">General Info</a></li>
+        <li><a href="./js.html?v=1.1">Sheetworker Documentation</a></li>
       </ul>
       <ul>
         <li><a href="#intro-header">Intro</a></li>
@@ -84,18 +84,13 @@ k.registerFuncs({calcStrength});</code></pre>
                 <p>The object describing the textarea as per the {@link textarea} mixin.</p>
             </div>
               <h4>pug</h4>
-              <pre class="prettyprint prettyprinted" style="">
-                <code class="language-jade">include ../_k.pug
+              <pre class="prettyprint" style=""><code class="language-jade">include ../_k.pug
         +adaptiveTextarea({name:&#x27;character description&#x27;})
         
         //Appending the class directly to the mixin
-        +adaptiveTextarea({name:&#x27;character description&#x27;}).custom-class
-        </code>
-              </pre>
+        +adaptiveTextarea({name:&#x27;character description&#x27;}).custom-class</code></pre>
               <h4>html</h4>
-              <pre class="prettyprint prettyprinted" style="">
-                <code class="language-html">&lt;div class&#x3D;&quot;adaptive adaptive--text&quot;&gt;&lt;span class&#x3D;&quot;adaptive--text__span&quot; name&#x3D;&quot;attr_character_description&quot; title&#x3D;&quot;@{character_description}&quot;&gt;&lt;/span&gt;&lt;textarea class&#x3D;&quot;adaptive--text__textarea&quot; name&#x3D;&quot;attr_character_description&quot; title&#x3D;&quot;@{character_description}&quot;&gt;&lt;/textarea&gt;&lt;/div&gt;&lt;!--Appending the class directly to the mixin--&gt;&lt;div class&#x3D;&quot;adaptive adaptive--text custom-class&quot;&gt;&lt;span class&#x3D;&quot;adaptive--text__span&quot; name&#x3D;&quot;attr_character_description&quot; title&#x3D;&quot;@{character_description}&quot;&gt;&lt;/span&gt;&lt;textarea class&#x3D;&quot;adaptive--text__textarea&quot; name&#x3D;&quot;attr_character_description&quot; title&#x3D;&quot;@{character_description}&quot;&gt;&lt;/textarea&gt;&lt;/div&gt;</code>
-              </pre>
+              <pre class="prettyprint" style=""><code class="language-html">&lt;div class&#x3D;&quot;adaptive adaptive--text&quot;&gt;&lt;span class&#x3D;&quot;adaptive--text__span&quot; name&#x3D;&quot;attr_character_description&quot; title&#x3D;&quot;@{character_description}&quot;&gt;&lt;/span&gt;&lt;textarea class&#x3D;&quot;adaptive--text__textarea&quot; name&#x3D;&quot;attr_character_description&quot; title&#x3D;&quot;@{character_description}&quot;&gt;&lt;/textarea&gt;&lt;/div&gt;&lt;!--Appending the class directly to the mixin--&gt;&lt;div class&#x3D;&quot;adaptive adaptive--text custom-class&quot;&gt;&lt;span class&#x3D;&quot;adaptive--text__span&quot; name&#x3D;&quot;attr_character_description&quot; title&#x3D;&quot;@{character_description}&quot;&gt;&lt;/span&gt;&lt;textarea class&#x3D;&quot;adaptive--text__textarea&quot; name&#x3D;&quot;attr_character_description&quot; title&#x3D;&quot;@{character_description}&quot;&gt;&lt;/textarea&gt;&lt;/div&gt;</code></pre>
           </div>
         </section>        <section>
           <div>
@@ -114,163 +109,13 @@ k.registerFuncs({calcStrength});</code></pre>
                 <p>The object describing the input as per the {@link input} mixin. You can apply classes and IDs to the container div by appending them to the mixin call (see the second example).</p>
             </div>
               <h4>pug</h4>
-              <pre class="prettyprint prettyprinted" style="">
-                <code class="language-jade">include ../_k.pug
+              <pre class="prettyprint" style=""><code class="language-jade">include ../_k.pug
         +adaptiveInput({name:&#x27;character description&#x27;,type:&#x27;text&#x27;})
         
         //Appending class directly to the mixin
-        +adaptiveInput({name:&#x27;character description&#x27;,type:&#x27;text&#x27;}).custom-class
-        </code>
-              </pre>
+        +adaptiveInput({name:&#x27;character description&#x27;,type:&#x27;text&#x27;}).custom-class</code></pre>
               <h4>html</h4>
-              <pre class="prettyprint prettyprinted" style="">
-                <code class="language-html">&lt;div class&#x3D;&quot;adaptive adaptive--input&quot;&gt;&lt;span class&#x3D;&quot;adaptive--input__span&quot; name&#x3D;&quot;attr_character_description&quot; title&#x3D;&quot;@{character_description}&quot;&gt;&lt;/span&gt;&lt;input class&#x3D;&quot;adaptive--input__input&quot; name&#x3D;&quot;attr_character_description&quot; type&#x3D;&quot;text&quot; title&#x3D;&quot;@{character_description}&quot;/&gt;&lt;/div&gt;&lt;!--Appending class directly to the mixin--&gt;&lt;div class&#x3D;&quot;adaptive adaptive--input custom-class&quot;&gt;&lt;span class&#x3D;&quot;adaptive--input__span&quot; name&#x3D;&quot;attr_character_description&quot; title&#x3D;&quot;@{character_description}&quot;&gt;&lt;/span&gt;&lt;input class&#x3D;&quot;adaptive--input__input&quot; name&#x3D;&quot;attr_character_description&quot; type&#x3D;&quot;text&quot; title&#x3D;&quot;@{character_description}&quot;/&gt;&lt;/div&gt;</code>
-              </pre>
-          </div>
-        </section>        <section>
-          <div>
-            <h3 class="no-capital" id="fillLeft">fillLeft</h3>
-          </div>
-          <div class="border"></div>
-          <div class="content">
-            <p>A mixin that creates an html construction ready to be styled for use as a [fill-to-left section](https://wiki.roll20.net/CSS_Wizardry#Fill_Radio_Buttons_to_the_Left).</p>
-            <div class="arguments-container">
-              <h4>arguments</h4>
-              <h5>name</h5>
-              <h5>type</h5>
-              <h5>description</h5>
-                <span>radioObj</span>
-                <span>object</span>
-                <p>The object containing the details of the radio input to create. Similar to the {@link radio}, but the value property passed is used as the default checked value.</p>
-                <span>divObj</span>
-                <span>object</span>
-                <p>Optional object containing any details of the div to be applied such as class, id, or other properties. Class and ID can also be supplied by attaching them to the mixin invocation just like with a regular div.</p>
-                <span>valueArray</span>
-                <span>array</span>
-                <p>Array containing the values to be used for the fill to left construction. These should be in the order that they should be displayed left to right.</p>
-                <span>noClear</span>
-                <span>boolean</span>
-                <p>Optional argument that tells the mixin whether or not to apply the &#x60;fill-left__radio--clearer&#x60; class to the first radio button value. If falsy (or not passed), the class is applied. If truthy, the class is not applied.</p>
-            </div>
-              <h4>pug</h4>
-              <pre class="prettyprint prettyprinted" style="">
-                <code class="language-jade">include ../_k.pug
-        +fillLeft({
-          radioObj:{name:&#x27;my radio&#x27;},
-          divObj:{class:&#x27;some-custom-class&#x27;},
-          valueArray:[1,2,3,4,5]
-        })
-        </code>
-              </pre>
-              <h4>html</h4>
-              <pre class="prettyprint prettyprinted" style="">
-                <code class="language-html">&lt;div class&#x3D;&quot;fill-left some-custom-class&quot;&gt;&lt;input class&#x3D;&quot;fill-left__radio&quot; name&#x3D;&quot;attr_my_radio&quot; value&#x3D;&quot;0&quot; type&#x3D;&quot;hidden&quot; title&#x3D;&quot;@{my_radio}&quot;/&gt;&lt;input class&#x3D;&quot;fill-left__radio&quot; name&#x3D;&quot;attr_my_radio&quot; value&#x3D;&quot;1&quot; type&#x3D;&quot;checkbox&quot; title&#x3D;&quot;@{my_radio}&quot;/&gt;&lt;input class&#x3D;&quot;fill-left__radio&quot; name&#x3D;&quot;attr_my_radio&quot; value&#x3D;&quot;2&quot; type&#x3D;&quot;checkbox&quot; title&#x3D;&quot;@{my_radio}&quot;/&gt;&lt;input class&#x3D;&quot;fill-left__radio&quot; name&#x3D;&quot;attr_my_radio&quot; value&#x3D;&quot;3&quot; type&#x3D;&quot;checkbox&quot; title&#x3D;&quot;@{my_radio}&quot;/&gt;&lt;input class&#x3D;&quot;fill-left__radio&quot; name&#x3D;&quot;attr_my_radio&quot; value&#x3D;&quot;4&quot; type&#x3D;&quot;checkbox&quot; title&#x3D;&quot;@{my_radio}&quot;/&gt;&lt;input class&#x3D;&quot;fill-left__radio&quot; name&#x3D;&quot;attr_my_radio&quot; value&#x3D;&quot;5&quot; type&#x3D;&quot;checkbox&quot; title&#x3D;&quot;@{my_radio}&quot;/&gt;&lt;/div&gt;</code>
-              </pre>
-          </div>
-        </section>        <section>
-          <div>
-            <h3 class="no-capital" id="button">button</h3>
-          </div>
-          <div class="border"></div>
-          <div class="content">
-            <p>Creates a button element. Valid types are &#x60;roll&#x60; or &#x60;action&#x60;. If a type is not specified in the object argument, a roll button is created. If an action button is created, spaces in the name are replaced with dashes instead of underscores.</p>
-            <div class="arguments-container">
-              <h4>arguments</h4>
-              <h5>name</h5>
-              <h5>type</h5>
-              <h5>description</h5>
-                <span>buttonObj</span>
-                <span>object</span>
-                <p>The object describing the button</p>
-                <span>block</span>
-                <span>block</span>
-                <p>The contents of the button element</p>
-            </div>
-              <h4>pug</h4>
-              <pre class="prettyprint prettyprinted" style="">
-                <code class="language-jade">include ../_k.pug
-        //A basic roll button
-        +button({name:&#x27;my button&#x27;,value:&#x27;/r 3d10&#x27;})
-        //An action button
-        +button({name:&#x27;my button&#x27;,type:&#x27;action&#x27;,&#x27;data-i18n&#x27;:&#x27;action button&#x27;,trigger:{triggeredFuncs:[&#x27;doSomethingOnClick&#x27;]}})
-        </code>
-              </pre>
-              <h4>html</h4>
-              <pre class="prettyprint prettyprinted" style="">
-                <code class="language-html">&lt;!--A basic roll button--&gt;&lt;button name&#x3D;&quot;roll_my_button&quot; value&#x3D;&quot;/r 3d10&quot; title&#x3D;&quot;%{my_button}&quot; type&#x3D;&quot;roll&quot;&gt;&lt;/button&gt;&lt;!--An action button--&gt;&lt;button name&#x3D;&quot;act_my_button&quot; type&#x3D;&quot;action&quot; data-i18n&#x3D;&quot;action button&quot; title&#x3D;&quot;%{my_button}&quot;&gt;&lt;/button&gt;</code>
-              </pre>
-          </div>
-        </section>        <section>
-          <div>
-            <h3 class="no-capital" id="action">action</h3>
-          </div>
-          <div class="border"></div>
-          <div class="content">
-            <p>Alias for {@link button} that creates a button element with a type of &#x60;action&#x60;. Spaces in the name are replaced with dashes instead of underscores.</p>
-            <div class="arguments-container">
-              <h4>arguments</h4>
-              <h5>name</h5>
-              <h5>type</h5>
-              <h5>description</h5>
-            </div>
-              <h4>pug</h4>
-              <pre class="prettyprint prettyprinted" style="">
-                <code class="language-jade">include ../_k.pug
-        +action({name:&#x27;my button&#x27;,&#x27;data-i18n&#x27;:&#x27;action button&#x27;,trigger:{triggeredFuncs:[&#x27;doSomethingOnClick&#x27;]}})
-        </code>
-              </pre>
-              <h4>html</h4>
-              <pre class="prettyprint prettyprinted" style="">
-                <code class="language-html">&lt;button name&#x3D;&quot;act_my-button&quot; data-i18n&#x3D;&quot;action button&quot; type&#x3D;&quot;action&quot; title&#x3D;&quot;%{my-button}&quot;&gt;&lt;/button&gt;</code>
-              </pre>
-          </div>
-        </section>        <section>
-          <div>
-            <h3 class="no-capital" id="navButton">navButton</h3>
-          </div>
-          <div class="border"></div>
-          <div class="content">
-            <p>Alias for {@link button} that creates a button element with a type of &#x60;action&#x60; for use in nav buttons. Spaces in the name are replaced with dashes instead of underscores. The name is prefixed with &#x60;nav_&#x60;. A {@link trigger} object should be passed</p>
-            <div class="arguments-container">
-              <h4>arguments</h4>
-              <h5>name</h5>
-              <h5>type</h5>
-              <h5>description</h5>
-            </div>
-              <h4>pug</h4>
-              <pre class="prettyprint prettyprinted" style="">
-                <code class="language-jade">include ../_k.pug
-        +navButton({name:&#x27;my button&#x27;,&#x27;data-i18n&#x27;:&#x27;action button&#x27;})
-        </code>
-              </pre>
-              <h4>html</h4>
-              <pre class="prettyprint prettyprinted" style="">
-                <code class="language-html">&lt;button name&#x3D;&quot;act_nav-my-button&quot; data-i18n&#x3D;&quot;action button&quot; type&#x3D;&quot;action&quot; title&#x3D;&quot;%{nav-my-button}&quot;&gt;&lt;/button&gt;</code>
-              </pre>
-          </div>
-        </section>        <section>
-          <div>
-            <h3 class="no-capital" id="roller">roller</h3>
-          </div>
-          <div class="border"></div>
-          <div class="content">
-            <p>Creates a multi element construction made of a hidden input, a roll button, and a hidden action button. On sheet load, or character sheet name change, the hidden input is updated with an ability call to the action button. The roll button refers to the hidden input as its value. This allows for an action button to be used to call custom roll parsing (or other sheet functionality) while retaining the ability to drag the button to the macro bar. Uses the same arguments as {@link button}. A trigger should be passed, and will be associated with the action button&#x27;s name.</p>
-            <div class="arguments-container">
-              <h4>arguments</h4>
-              <h5>name</h5>
-              <h5>type</h5>
-              <h5>description</h5>
-            </div>
-              <h4>pug</h4>
-              <pre class="prettyprint prettyprinted" style="">
-                <code class="language-jade">include ../_k.pug
-        +roller({name:&#x27;my button&#x27;,&#x27;data-i18n&#x27;:&#x27;action button&#x27;,trigger:{triggeredFuncs:[&#x27;doSomethingOnClick&#x27;]}})
-        </code>
-              </pre>
-              <h4>html</h4>
-              <pre class="prettyprint prettyprinted" style="">
-                <code class="language-html">&lt;button class&#x3D;&quot;roller&quot; name&#x3D;&quot;roll_my_button&quot; data-i18n&#x3D;&quot;action button&quot; value&#x3D;&quot;@{my_button_action}&quot; title&#x3D;&quot;%{my_button}&quot; type&#x3D;&quot;roll&quot;&gt;&lt;/button&gt;&lt;button name&#x3D;&quot;act_my-button-action&quot; hidden&#x3D;&quot;&quot; type&#x3D;&quot;action&quot; title&#x3D;&quot;%{my-button-action}&quot;&gt;&lt;/button&gt;&lt;input name&#x3D;&quot;attr_my_button_action&quot; type&#x3D;&quot;hidden&quot; title&#x3D;&quot;@{my_button_action}&quot;/&gt;</code>
-              </pre>
+              <pre class="prettyprint" style=""><code class="language-html">&lt;div class&#x3D;&quot;adaptive adaptive--input&quot;&gt;&lt;span class&#x3D;&quot;adaptive--input__span&quot; name&#x3D;&quot;attr_character_description&quot; title&#x3D;&quot;@{character_description}&quot;&gt;&lt;/span&gt;&lt;input class&#x3D;&quot;adaptive--input__input&quot; name&#x3D;&quot;attr_character_description&quot; type&#x3D;&quot;text&quot; title&#x3D;&quot;@{character_description}&quot;/&gt;&lt;/div&gt;&lt;!--Appending class directly to the mixin--&gt;&lt;div class&#x3D;&quot;adaptive adaptive--input custom-class&quot;&gt;&lt;span class&#x3D;&quot;adaptive--input__span&quot; name&#x3D;&quot;attr_character_description&quot; title&#x3D;&quot;@{character_description}&quot;&gt;&lt;/span&gt;&lt;input class&#x3D;&quot;adaptive--input__input&quot; name&#x3D;&quot;attr_character_description&quot; type&#x3D;&quot;text&quot; title&#x3D;&quot;@{character_description}&quot;/&gt;&lt;/div&gt;</code></pre>
           </div>
         </section>        <section>
           <div>
@@ -286,15 +131,10 @@ k.registerFuncs({calcStrength});</code></pre>
               <h5>description</h5>
             </div>
               <h4>pug</h4>
-              <pre class="prettyprint prettyprinted" style="">
-                <code class="language-jade">include ../_k.pug
-        +img({name:&#x27;my image&#x27;,class:&#x27;some-class&#x27;})
-        </code>
-              </pre>
+              <pre class="prettyprint" style=""><code class="language-jade">include ../_k.pug
+        +img({name:&#x27;my image&#x27;,class:&#x27;some-class&#x27;})</code></pre>
               <h4>html</h4>
-              <pre class="prettyprint prettyprinted" style="">
-                <code class="language-html">&lt;img class&#x3D;&quot;some-class&quot; name&#x3D;&quot;attr_my_image&quot; data-i18n-alt&#x3D;&quot;my image&quot; title&#x3D;&quot;@{my_image}&quot;/&gt;</code>
-              </pre>
+              <pre class="prettyprint" style=""><code class="language-html">&lt;img class&#x3D;&quot;some-class&quot; name&#x3D;&quot;attr_my_image&quot; data-i18n-alt&#x3D;&quot;my image&quot; title&#x3D;&quot;@{my_image}&quot;/&gt;</code></pre>
           </div>
         </section>        <section>
           <div>
@@ -316,15 +156,10 @@ k.registerFuncs({calcStrength});</code></pre>
                 <p>What is contained within the span</p>
             </div>
               <h4>pug</h4>
-              <pre class="prettyprint prettyprinted" style="">
-                <code class="language-jade">include ../_k.pug
-        +span({name:&#x27;attribute backed span&#x27;,trigger:{calculation:&#x27;calculateAttribute&#x27;}})
-        </code>
-              </pre>
+              <pre class="prettyprint" style=""><code class="language-jade">include ../_k.pug
+        +span({name:&#x27;attribute backed span&#x27;,trigger:{calculation:&#x27;calculateAttribute&#x27;}})</code></pre>
               <h4>html</h4>
-              <pre class="prettyprint prettyprinted" style="">
-                <code class="language-html">&lt;span name&#x3D;&quot;attr_attribute_backed_span&quot; title&#x3D;&quot;@{attribute_backed_span}&quot;&gt;&lt;/span&gt;</code>
-              </pre>
+              <pre class="prettyprint" style=""><code class="language-html">&lt;span name&#x3D;&quot;attr_attribute_backed_span&quot; title&#x3D;&quot;@{attribute_backed_span}&quot;&gt;&lt;/span&gt;</code></pre>
           </div>
         </section>        <section>
           <div>
@@ -346,15 +181,95 @@ k.registerFuncs({calcStrength});</code></pre>
                 <p>The contents of the div</p>
             </div>
               <h4>pug</h4>
-              <pre class="prettyprint prettyprinted" style="">
-                <code class="language-jade">include ../_k.pug
-        +div({name:&#x27;background image&#x27;})
-        </code>
-              </pre>
+              <pre class="prettyprint" style=""><code class="language-jade">include ../_k.pug
+        +div({name:&#x27;background image&#x27;})</code></pre>
               <h4>html</h4>
-              <pre class="prettyprint prettyprinted" style="">
-                <code class="language-html">&lt;div name&#x3D;&quot;attr_background_image&quot; title&#x3D;&quot;@{background_image}&quot;&gt;&lt;/div&gt;</code>
-              </pre>
+              <pre class="prettyprint" style=""><code class="language-html">&lt;div name&#x3D;&quot;attr_background_image&quot; title&#x3D;&quot;@{background_image}&quot;&gt;&lt;/div&gt;</code></pre>
+          </div>
+        </section>        <section>
+          <div>
+            <h3 class="no-capital" id="button">button</h3>
+          </div>
+          <div class="border"></div>
+          <div class="content">
+            <p>Creates a button element. Valid types are &#x60;roll&#x60; or &#x60;action&#x60;. If a type is not specified in the object argument, a roll button is created. If an action button is created, spaces in the name are replaced with dashes instead of underscores.</p>
+            <div class="arguments-container">
+              <h4>arguments</h4>
+              <h5>name</h5>
+              <h5>type</h5>
+              <h5>description</h5>
+                <span>buttonObj</span>
+                <span>object</span>
+                <p>The object describing the button</p>
+                <span>block</span>
+                <span>block</span>
+                <p>The contents of the button element</p>
+            </div>
+              <h4>pug</h4>
+              <pre class="prettyprint" style=""><code class="language-jade">include ../_k.pug
+        //A basic roll button
+        +button({name:&#x27;my button&#x27;,value:&#x27;/r 3d10&#x27;})
+        //An action button
+        +button({name:&#x27;my button&#x27;,type:&#x27;action&#x27;,&#x27;data-i18n&#x27;:&#x27;action button&#x27;,trigger:{triggeredFuncs:[&#x27;doSomethingOnClick&#x27;]}})</code></pre>
+              <h4>html</h4>
+              <pre class="prettyprint" style=""><code class="language-html">&lt;!--A basic roll button--&gt;&lt;button name&#x3D;&quot;roll_my_button&quot; value&#x3D;&quot;/r 3d10&quot; title&#x3D;&quot;%{my_button}&quot; type&#x3D;&quot;roll&quot;&gt;&lt;/button&gt;&lt;!--An action button--&gt;&lt;button name&#x3D;&quot;act_my_button&quot; type&#x3D;&quot;action&quot; data-i18n&#x3D;&quot;action button&quot; title&#x3D;&quot;%{my_button}&quot;&gt;&lt;/button&gt;</code></pre>
+          </div>
+        </section>        <section>
+          <div>
+            <h3 class="no-capital" id="action">action</h3>
+          </div>
+          <div class="border"></div>
+          <div class="content">
+            <p>Alias for {@link button} that creates a button element with a type of &#x60;action&#x60;. Spaces in the name are replaced with dashes instead of underscores.</p>
+            <div class="arguments-container">
+              <h4>arguments</h4>
+              <h5>name</h5>
+              <h5>type</h5>
+              <h5>description</h5>
+            </div>
+              <h4>pug</h4>
+              <pre class="prettyprint" style=""><code class="language-jade">include ../_k.pug
+        +action({name:&#x27;my button&#x27;,&#x27;data-i18n&#x27;:&#x27;action button&#x27;,trigger:{triggeredFuncs:[&#x27;doSomethingOnClick&#x27;]}})</code></pre>
+              <h4>html</h4>
+              <pre class="prettyprint" style=""><code class="language-html">&lt;button name&#x3D;&quot;act_my-button&quot; data-i18n&#x3D;&quot;action button&quot; type&#x3D;&quot;action&quot; title&#x3D;&quot;%{my-button}&quot;&gt;&lt;/button&gt;</code></pre>
+          </div>
+        </section>        <section>
+          <div>
+            <h3 class="no-capital" id="navButton">navButton</h3>
+          </div>
+          <div class="border"></div>
+          <div class="content">
+            <p>Alias for {@link button} that creates a button element with a type of &#x60;action&#x60; for use in nav buttons. Spaces in the name are replaced with dashes instead of underscores. The name is prefixed with &#x60;nav_&#x60;. A {@link trigger} object should be passed</p>
+            <div class="arguments-container">
+              <h4>arguments</h4>
+              <h5>name</h5>
+              <h5>type</h5>
+              <h5>description</h5>
+            </div>
+              <h4>pug</h4>
+              <pre class="prettyprint" style=""><code class="language-jade">include ../_k.pug
+        +navButton({name:&#x27;my button&#x27;,&#x27;data-i18n&#x27;:&#x27;action button&#x27;})</code></pre>
+              <h4>html</h4>
+              <pre class="prettyprint" style=""><code class="language-html">&lt;button name&#x3D;&quot;act_nav-my-button&quot; data-i18n&#x3D;&quot;action button&quot; type&#x3D;&quot;action&quot; title&#x3D;&quot;%{nav-my-button}&quot;&gt;&lt;/button&gt;</code></pre>
+          </div>
+        </section>        <section>
+          <div>
+            <h3 class="no-capital" id="roller">roller</h3>
+          </div>
+          <div class="border"></div>
+          <div class="content">
+            <p>Creates a multi element construction made of a hidden input, a roll button, and a hidden action button. On sheet load, or character sheet name change, the hidden input is updated with an ability call to the action button. The roll button refers to the hidden input as its value. This allows for an action button to be used to call custom roll parsing (or other sheet functionality) while retaining the ability to drag the button to the macro bar. Uses the same arguments as {@link button}. A trigger should be passed, and will be associated with the action button&#x27;s name.</p>
+            <div class="arguments-container">
+              <h4>arguments</h4>
+              <h5>name</h5>
+              <h5>type</h5>
+              <h5>description</h5>
+            </div>
+              <h4>pug</h4>
+              <pre class="prettyprint" style=""><code class="language-jade">include ../_k.pug
+        +roller({name:&#x27;my button&#x27;,&#x27;data-i18n&#x27;:&#x27;action button&#x27;,trigger:{triggeredFuncs:[&#x27;doSomethingOnClick&#x27;]}})</code></pre>
+              <h4>html</h4>
+              <pre class="prettyprint" style=""><code class="language-html">&lt;button class&#x3D;&quot;roller&quot; name&#x3D;&quot;roll_my_button&quot; data-i18n&#x3D;&quot;action button&quot; value&#x3D;&quot;@{my_button_action}&quot; title&#x3D;&quot;%{my_button}&quot; type&#x3D;&quot;roll&quot;&gt;&lt;/button&gt;&lt;button name&#x3D;&quot;act_my-button-action&quot; hidden&#x3D;&quot;&quot; type&#x3D;&quot;action&quot; title&#x3D;&quot;%{my-button-action}&quot;&gt;&lt;/button&gt;&lt;input name&#x3D;&quot;attr_my_button_action&quot; type&#x3D;&quot;hidden&quot; title&#x3D;&quot;@{my_button_action}&quot;/&gt;</code></pre>
           </div>
         </section>        <section>
           <div>
@@ -382,8 +297,7 @@ k.registerFuncs({calcStrength});</code></pre>
                 <p>The trigger object.</p>
             </div>
               <h4>pug</h4>
-              <pre class="prettyprint prettyprinted" style="">
-                <code class="language-jade">include ../_k.pug
+              <pre class="prettyprint" style=""><code class="language-jade">include ../_k.pug
         //Using just defaults
         +compendiumAttributes({})
         
@@ -391,13 +305,186 @@ k.registerFuncs({calcStrength});</code></pre>
         +compendiumAttributes({prefix:&#x27;prefix&#x27;})
         
         //Specifying lookupAttributes and a prefix
-        +compendiumAttributes({lookupAttributes:[&#x27;Name&#x27;,&#x27;data&#x27;,&#x27;Category&#x27;],prefix:&#x27;prefix&#x27;})
-        </code>
-              </pre>
+        +compendiumAttributes({lookupAttributes:[&#x27;Name&#x27;,&#x27;data&#x27;,&#x27;Category&#x27;],prefix:&#x27;prefix&#x27;})</code></pre>
               <h4>html</h4>
-              <pre class="prettyprint prettyprinted" style="">
-                <code class="language-html">&lt;!--Using just defaults--&gt;&lt;input name&#x3D;&quot;attr_drop_name&quot; accept&#x3D;&quot;Name&quot; value&#x3D;&quot;&quot; type&#x3D;&quot;hidden&quot; title&#x3D;&quot;@{drop_name}&quot;/&gt;&lt;input name&#x3D;&quot;attr_drop_data&quot; accept&#x3D;&quot;data&quot; value&#x3D;&quot;&quot; type&#x3D;&quot;hidden&quot; title&#x3D;&quot;@{drop_data}&quot;/&gt;&lt;!--Specifying a prefix--&gt;&lt;input name&#x3D;&quot;attr_prefix_drop_name&quot; accept&#x3D;&quot;Name&quot; value&#x3D;&quot;&quot; type&#x3D;&quot;hidden&quot; title&#x3D;&quot;@{prefix_drop_name}&quot;/&gt;&lt;input name&#x3D;&quot;attr_prefix_drop_data&quot; accept&#x3D;&quot;data&quot; value&#x3D;&quot;&quot; type&#x3D;&quot;hidden&quot; title&#x3D;&quot;@{prefix_drop_data}&quot;/&gt;&lt;!--Specifying lookupAttributes and a prefix--&gt;&lt;input name&#x3D;&quot;attr_prefix_drop_name&quot; accept&#x3D;&quot;Name&quot; value&#x3D;&quot;&quot; type&#x3D;&quot;hidden&quot; title&#x3D;&quot;@{prefix_drop_name}&quot;/&gt;&lt;input name&#x3D;&quot;attr_prefix_drop_data&quot; accept&#x3D;&quot;data&quot; value&#x3D;&quot;&quot; type&#x3D;&quot;hidden&quot; title&#x3D;&quot;@{prefix_drop_data}&quot;/&gt;&lt;input name&#x3D;&quot;attr_prefix_drop_category&quot; accept&#x3D;&quot;Category&quot; value&#x3D;&quot;&quot; type&#x3D;&quot;hidden&quot; title&#x3D;&quot;@{prefix_drop_category}&quot;/&gt;</code>
-              </pre>
+              <pre class="prettyprint" style=""><code class="language-html">&lt;!--Using just defaults--&gt;&lt;input name&#x3D;&quot;attr_drop_name&quot; accept&#x3D;&quot;Name&quot; value&#x3D;&quot;&quot; type&#x3D;&quot;hidden&quot; title&#x3D;&quot;@{drop_name}&quot;/&gt;&lt;input name&#x3D;&quot;attr_drop_data&quot; accept&#x3D;&quot;data&quot; value&#x3D;&quot;&quot; type&#x3D;&quot;hidden&quot; title&#x3D;&quot;@{drop_data}&quot;/&gt;&lt;!--Specifying a prefix--&gt;&lt;input name&#x3D;&quot;attr_prefix_drop_name&quot; accept&#x3D;&quot;Name&quot; value&#x3D;&quot;&quot; type&#x3D;&quot;hidden&quot; title&#x3D;&quot;@{prefix_drop_name}&quot;/&gt;&lt;input name&#x3D;&quot;attr_prefix_drop_data&quot; accept&#x3D;&quot;data&quot; value&#x3D;&quot;&quot; type&#x3D;&quot;hidden&quot; title&#x3D;&quot;@{prefix_drop_data}&quot;/&gt;&lt;!--Specifying lookupAttributes and a prefix--&gt;&lt;input name&#x3D;&quot;attr_prefix_drop_name&quot; accept&#x3D;&quot;Name&quot; value&#x3D;&quot;&quot; type&#x3D;&quot;hidden&quot; title&#x3D;&quot;@{prefix_drop_name}&quot;/&gt;&lt;input name&#x3D;&quot;attr_prefix_drop_data&quot; accept&#x3D;&quot;data&quot; value&#x3D;&quot;&quot; type&#x3D;&quot;hidden&quot; title&#x3D;&quot;@{prefix_drop_data}&quot;/&gt;&lt;input name&#x3D;&quot;attr_prefix_drop_category&quot; accept&#x3D;&quot;Category&quot; value&#x3D;&quot;&quot; type&#x3D;&quot;hidden&quot; title&#x3D;&quot;@{prefix_drop_category}&quot;/&gt;</code></pre>
+          </div>
+        </section>        <section>
+          <div>
+            <h3 class="no-capital" id="fillLeft">fillLeft</h3>
+          </div>
+          <div class="border"></div>
+          <div class="content">
+            <p>A mixin that creates an html construction ready to be styled for use as a [fill-to-left section](https://wiki.roll20.net/CSS_Wizardry#Fill_Radio_Buttons_to_the_Left).</p>
+            <div class="arguments-container">
+              <h4>arguments</h4>
+              <h5>name</h5>
+              <h5>type</h5>
+              <h5>description</h5>
+                <span>radioObj</span>
+                <span>object</span>
+                <p>The object containing the details of the radio input to create. Similar to the {@link radio}, but the value property passed is used as the default checked value.</p>
+                <span>divObj</span>
+                <span>object</span>
+                <p>Optional object containing any details of the div to be applied such as class, id, or other properties. Class and ID can also be supplied by attaching them to the mixin invocation just like with a regular div.</p>
+                <span>valueArray</span>
+                <span>array</span>
+                <p>Array containing the values to be used for the fill to left construction. These should be in the order that they should be displayed left to right.</p>
+                <span>noClear</span>
+                <span>boolean</span>
+                <p>Optional argument that tells the mixin whether or not to apply the &#x60;fill-left__radio--clearer&#x60; class to the first radio button value. If falsy (or not passed), the class is applied. If truthy, the class is not applied.</p>
+            </div>
+              <h4>pug</h4>
+              <pre class="prettyprint" style=""><code class="language-jade">include ../_k.pug
+        +fillLeft({
+          radioObj:{name:&#x27;my radio&#x27;},
+          divObj:{class:&#x27;some-custom-class&#x27;},
+          valueArray:[1,2,3,4,5]
+        })</code></pre>
+              <h4>html</h4>
+              <pre class="prettyprint" style=""><code class="language-html">&lt;div class&#x3D;&quot;fill-left some-custom-class&quot;&gt;&lt;input class&#x3D;&quot;fill-left__radio&quot; name&#x3D;&quot;attr_my_radio&quot; value&#x3D;&quot;0&quot; type&#x3D;&quot;hidden&quot; title&#x3D;&quot;@{my_radio}&quot;/&gt;&lt;input class&#x3D;&quot;fill-left__radio&quot; name&#x3D;&quot;attr_my_radio&quot; value&#x3D;&quot;1&quot; type&#x3D;&quot;checkbox&quot; title&#x3D;&quot;@{my_radio}&quot;/&gt;&lt;input class&#x3D;&quot;fill-left__radio&quot; name&#x3D;&quot;attr_my_radio&quot; value&#x3D;&quot;2&quot; type&#x3D;&quot;checkbox&quot; title&#x3D;&quot;@{my_radio}&quot;/&gt;&lt;input class&#x3D;&quot;fill-left__radio&quot; name&#x3D;&quot;attr_my_radio&quot; value&#x3D;&quot;3&quot; type&#x3D;&quot;checkbox&quot; title&#x3D;&quot;@{my_radio}&quot;/&gt;&lt;input class&#x3D;&quot;fill-left__radio&quot; name&#x3D;&quot;attr_my_radio&quot; value&#x3D;&quot;4&quot; type&#x3D;&quot;checkbox&quot; title&#x3D;&quot;@{my_radio}&quot;/&gt;&lt;input class&#x3D;&quot;fill-left__radio&quot; name&#x3D;&quot;attr_my_radio&quot; value&#x3D;&quot;5&quot; type&#x3D;&quot;checkbox&quot; title&#x3D;&quot;@{my_radio}&quot;/&gt;&lt;/div&gt;</code></pre>
+          </div>
+        </section>        <section>
+          <div>
+            <h3 class="no-capital" id="input">input</h3>
+          </div>
+          <div class="border"></div>
+          <div class="content">
+            <p>A generic mixin to create an input. The mixin will replace spaces in the attribute name with underscores and will add a title property if one isn&#x27;t supplied that will inform the user what the attribute call for the attribute is.</p>
+            <div class="arguments-container">
+              <h4>arguments</h4>
+              <h5>name</h5>
+              <h5>type</h5>
+              <h5>description</h5>
+                <span>inputObj</span>
+                <span>object</span>
+                <p>An object describing the properties of the input just like they would be in a PUG or HTML element declaration, but in JS Object syntax. May also include a trigger property</p>
+            </div>
+              <h4>pug</h4>
+              <pre class="prettyprint" style=""><code class="language-jade">include ../_k.pug
+        +input({name:&#x27;my attribute&#x27;,type:&#x27;text&#x27;,class:&#x27;some-class&#x27;,trigger:{affects:[&#x27;other_attribute&#x27;]}})</code></pre>
+              <h4>html</h4>
+              <pre class="prettyprint" style=""><code class="language-html">&lt;input class&#x3D;&quot;some-class&quot; name&#x3D;&quot;attr_my_attribute&quot; type&#x3D;&quot;text&quot; title&#x3D;&quot;@{my_attribute}&quot;/&gt;</code></pre>
+          </div>
+        </section>        <section>
+          <div>
+            <h3 class="no-capital" id="text">text</h3>
+          </div>
+          <div class="border"></div>
+          <div class="content">
+            <p>An alias for {@link input} that specifies the input type as text. See {@link input} for arguments.</p>
+            <div class="arguments-container">
+              <h4>arguments</h4>
+              <h5>name</h5>
+              <h5>type</h5>
+              <h5>description</h5>
+            </div>
+              <h4>pug</h4>
+              <pre class="prettyprint" style=""><code class="language-jade">include ../_k.pug
+        +text({name:&#x27;my attribute&#x27;,class:&#x27;some-class&#x27;,trigger:{affects:[&#x27;other_attribute&#x27;]}})</code></pre>
+              <h4>html</h4>
+              <pre class="prettyprint" style=""><code class="language-html">&lt;input class&#x3D;&quot;some-class&quot; name&#x3D;&quot;attr_my_attribute&quot; type&#x3D;&quot;text&quot; title&#x3D;&quot;@{my_attribute}&quot;/&gt;</code></pre>
+          </div>
+        </section>        <section>
+          <div>
+            <h3 class="no-capital" id="collapse">collapse</h3>
+          </div>
+          <div class="border"></div>
+          <div class="content">
+            <p>Alias for {@link checkbox} that creates a checkbox for us in collapse/expanding a section. Sets the checkbox to unchecked with a checked value of &#x60;1&#x60; and a class of &#x60;collapse&#x60;. Additional classes/ids can be applied by applying them inline to the mixin call.</p>
+            <div class="arguments-container">
+              <h4>arguments</h4>
+              <h5>name</h5>
+              <h5>type</h5>
+              <h5>description</h5>
+                <span>name</span>
+                <span>string</span>
+                <p>The name to use for the collapse element. Defaults to &#x60;collapse&#x60;</p>
+            </div>
+              <h4>pug</h4>
+              <pre class="prettyprint" style=""><code class="language-jade">include ../_k.pug
+        +collapse()</code></pre>
+              <h4>html</h4>
+              <pre class="prettyprint" style=""><code class="language-html">&lt;input class&#x3D;&quot;collapse&quot; name&#x3D;&quot;attr_collapse&quot; value&#x3D;&quot;1&quot; type&#x3D;&quot;checkbox&quot; title&#x3D;&quot;@{collapse}&quot;/&gt;</code></pre>
+          </div>
+        </section>        <section>
+          <div>
+            <h3 class="no-capital" id="number">number</h3>
+          </div>
+          <div class="border"></div>
+          <div class="content">
+            <p>Alias for {@link input} that makes a number input. See {@link input} for arguments.</p>
+            <div class="arguments-container">
+              <h4>arguments</h4>
+              <h5>name</h5>
+              <h5>type</h5>
+              <h5>description</h5>
+            </div>
+              <h4>pug</h4>
+              <pre class="prettyprint" style=""><code class="language-jade">include ../_k.pug
+        +number({name:&#x27;my number&#x27;,class:&#x27;some-class&#x27;,trigger:{affects:[&#x27;other_attribute&#x27;]}})</code></pre>
+              <h4>html</h4>
+              <pre class="prettyprint" style=""><code class="language-html">&lt;input class&#x3D;&quot;some-class&quot; name&#x3D;&quot;attr_my_number&quot; type&#x3D;&quot;number&quot; title&#x3D;&quot;@{my_number}&quot;/&gt;</code></pre>
+          </div>
+        </section>        <section>
+          <div>
+            <h3 class="no-capital" id="range">range</h3>
+          </div>
+          <div class="border"></div>
+          <div class="content">
+            <p>Alias for {@link input} that makes a range input. See {@link input} for arguments.</p>
+            <div class="arguments-container">
+              <h4>arguments</h4>
+              <h5>name</h5>
+              <h5>type</h5>
+              <h5>description</h5>
+            </div>
+              <h4>pug</h4>
+              <pre class="prettyprint" style=""><code class="language-jade">include ../_k.pug
+        +range({name:&#x27;my range&#x27;,class:&#x27;some-class&#x27;})</code></pre>
+              <h4>html</h4>
+              <pre class="prettyprint" style=""><code class="language-html">&lt;input class&#x3D;&quot;some-class&quot; name&#x3D;&quot;attr_my_range&quot; type&#x3D;&quot;range&quot; title&#x3D;&quot;@{my_range}&quot;/&gt;</code></pre>
+          </div>
+        </section>        <section>
+          <div>
+            <h3 class="no-capital" id="hidden">hidden</h3>
+          </div>
+          <div class="border"></div>
+          <div class="content">
+            <p>Alias for {@link input} that makes a hidden input. See {@link input} for arguments.</p>
+            <div class="arguments-container">
+              <h4>arguments</h4>
+              <h5>name</h5>
+              <h5>type</h5>
+              <h5>description</h5>
+            </div>
+              <h4>pug</h4>
+              <pre class="prettyprint" style=""><code class="language-jade">include ../_k.pug
+        +hidden({name:&#x27;my hidden attribute&#x27;,class:&#x27;some-class&#x27;,trigger:{triggeredFuncs:[&#x27;someFunction&#x27;]}})</code></pre>
+              <h4>html</h4>
+              <pre class="prettyprint" style=""><code class="language-html">&lt;input class&#x3D;&quot;some-class&quot; name&#x3D;&quot;attr_my_hidden_attribute&quot; type&#x3D;&quot;hidden&quot; title&#x3D;&quot;@{my_hidden_attribute}&quot;/&gt;</code></pre>
+          </div>
+        </section>        <section>
+          <div>
+            <h3 class="no-capital" id="textarea">textarea</h3>
+          </div>
+          <div class="border"></div>
+          <div class="content">
+            <p>A mixin to create K-scaffold compatible textareas.</p>
+            <div class="arguments-container">
+              <h4>arguments</h4>
+              <h5>name</h5>
+              <h5>type</h5>
+              <h5>description</h5>
+                <span>textObj</span>
+                <span>object</span>
+                <p>See {@link input} for information on valid properties of the textObj.</p>
+            </div>
+              <h4>pug</h4>
+              <pre class="prettyprint" style=""><code class="language-jade">include ../_k.pug
+        +textarea({name:&#x27;my textarea&#x27;,class:&#x27;some-class&#x27;,trigger:{affects:[&#x27;an_attribute&#x27;]}})</code></pre>
+              <h4>html</h4>
+              <pre class="prettyprint" style=""><code class="language-html">&lt;textarea class&#x3D;&quot;some-class&quot; name&#x3D;&quot;attr_my_textarea&quot; title&#x3D;&quot;@{my_textarea}&quot;&gt;&lt;/textarea&gt;</code></pre>
           </div>
         </section>        <section>
           <div>
@@ -419,19 +506,14 @@ k.registerFuncs({calcStrength});</code></pre>
                 <p>The content within the select</p>
             </div>
               <h4>pug</h4>
-              <pre class="prettyprint prettyprinted" style="">
-                <code class="language-jade">include ../_k.pug
+              <pre class="prettyprint" style=""><code class="language-jade">include ../_k.pug
         +select({name:&#x27;my select&#x27;})
           +option({value:&#x27;a value&#x27;,&#x27;data-i18n&#x27;:&#x27;a translation key&#x27;,trigger:{affects:[&#x27;some_attribute&#x27;]}})
           +option({value:&#x27;value 2&#x27;,&#x27;data-i18n&#x27;:&#x27;translation 2&#x27;})
           +option({value:&#x27;value 3&#x27;})
-            |Some Text we include via the option&#x27;s block
-        </code>
-              </pre>
+            |Some Text we include via the option&#x27;s block</code></pre>
               <h4>html</h4>
-              <pre class="prettyprint prettyprinted" style="">
-                <code class="language-html">&lt;select name&#x3D;&quot;attr_my_select&quot; title&#x3D;&quot;@{my_select}&quot;&gt;&lt;option value&#x3D;&quot;a value&quot; data-i18n&#x3D;&quot;a translation key&quot;&gt;&lt;/option&gt;&lt;option value&#x3D;&quot;value 2&quot; data-i18n&#x3D;&quot;translation 2&quot;&gt;&lt;/option&gt;&lt;option value&#x3D;&quot;value 3&quot;&gt;&lt;/option&gt;&lt;/select&gt;</code>
-              </pre>
+              <pre class="prettyprint" style=""><code class="language-html">&lt;select name&#x3D;&quot;attr_my_select&quot; title&#x3D;&quot;@{my_select}&quot;&gt;&lt;option value&#x3D;&quot;a value&quot; data-i18n&#x3D;&quot;a translation key&quot;&gt;&lt;/option&gt;&lt;option value&#x3D;&quot;value 2&quot; data-i18n&#x3D;&quot;translation 2&quot;&gt;&lt;/option&gt;&lt;option value&#x3D;&quot;value 3&quot;&gt;&lt;/option&gt;&lt;/select&gt;</code></pre>
           </div>
         </section>        <section>
           <div>
@@ -456,8 +538,7 @@ k.registerFuncs({calcStrength});</code></pre>
                 <p>Any additional classes that should be used for the repeating section. Note that these are not added to the fieldset itself as adding additional classes to the fieldset itself interferes with calling action buttons from chat, but are added to a span that precedes the fieldset. This allows styling of the repcontainer via a css declaration like &#x60;.bonus-class + fieldset + .repcontainer&#x60;.</p>
             </div>
               <h4>pug</h4>
-              <pre class="prettyprint prettyprinted" style="">
-                <code class="language-jade">include ../_k.pug
+              <pre class="prettyprint" style=""><code class="language-jade">include ../_k.pug
         //A basic fieldset declaration with a trigger
         +fieldset({
           name:&#x27;fieldset&#x27;,
@@ -471,13 +552,9 @@ k.registerFuncs({calcStrength});</code></pre>
           trigger:{triggeredFuncs:[&#x27;doWhenRemoved&#x27;]},
           addClass:&#x27;some-class&#x27;
         })
-          +text({name:&#x27;name&#x27;})
-        </code>
-              </pre>
+          +text({name:&#x27;name&#x27;})</code></pre>
               <h4>html</h4>
-              <pre class="prettyprint prettyprinted" style="">
-                <code class="language-html">&lt;!--A basic fieldset declaration with a trigger--&gt;&lt;fieldset class&#x3D;&quot;repeating_fieldset&quot;&gt;&lt;input name&#x3D;&quot;attr_name&quot; type&#x3D;&quot;text&quot; title&#x3D;&quot;@{repeating_fieldset_$X_name}&quot;/&gt;&lt;/fieldset&gt;&lt;!--A Fieldset with an added class--&gt;&lt;span class&#x3D;&quot;some-class&quot; hidden&#x3D;&quot;&quot;&gt;&lt;/span&gt;&lt;fieldset class&#x3D;&quot;repeating_fieldset&quot;&gt;&lt;input name&#x3D;&quot;attr_name&quot; type&#x3D;&quot;text&quot; title&#x3D;&quot;@{repeating_fieldset_$X_name}&quot;/&gt;&lt;/fieldset&gt;</code>
-              </pre>
+              <pre class="prettyprint" style=""><code class="language-html">&lt;!--A basic fieldset declaration with a trigger--&gt;&lt;fieldset class&#x3D;&quot;repeating_fieldset&quot;&gt;&lt;input name&#x3D;&quot;attr_name&quot; type&#x3D;&quot;text&quot; title&#x3D;&quot;@{repeating_fieldset_$X_name}&quot;/&gt;&lt;/fieldset&gt;&lt;!--A Fieldset with an added class--&gt;&lt;span class&#x3D;&quot;some-class&quot; hidden&#x3D;&quot;&quot;&gt;&lt;/span&gt;&lt;fieldset class&#x3D;&quot;repeating_fieldset&quot;&gt;&lt;input name&#x3D;&quot;attr_name&quot; type&#x3D;&quot;text&quot; title&#x3D;&quot;@{repeating_fieldset_$X_name}&quot;/&gt;&lt;/fieldset&gt;</code></pre>
           </div>
         </section>        <section>
           <div>
@@ -502,196 +579,14 @@ k.registerFuncs({calcStrength});</code></pre>
                 <p>Any additional classes that should be used for the repeating section. Note that these are not added to the fieldset itself as adding additional classes to the fieldset itself interferes with calling action buttons from chat, but are added to a span that precedes the fieldset. This allows styling of the repcontainer via a css declaration like &#x60;.bonus-class + fieldset + .repcontainer&#x60;.</p>
             </div>
               <h4>pug</h4>
-              <pre class="prettyprint prettyprinted" style="">
-                <code class="language-jade">include ../_k.pug
+              <pre class="prettyprint" style=""><code class="language-jade">include ../_k.pug
         +inlineFieldset({
           name:&#x27;fieldset&#x27;,
           trigger:{triggeredFuncs:[&#x27;doWhenRemoved&#x27;]},
           addClass:&#x27;some-class&#x27;
-        })
-        </code>
-              </pre>
+        })</code></pre>
               <h4>html</h4>
-              <pre class="prettyprint prettyprinted" style="">
-                <code class="language-html">&lt;span class&#x3D;&quot;some-class inline-fieldset&quot; hidden&#x3D;&quot;&quot;&gt;&lt;/span&gt;&lt;fieldset class&#x3D;&quot;repeating_fieldset&quot;&gt;&lt;input class&#x3D;&quot;display-control&quot; name&#x3D;&quot;attr_display_state&quot; value&#x3D;&quot;short-display&quot; hidden&#x3D;&quot;&quot; type&#x3D;&quot;radio&quot; title&#x3D;&quot;@{repeating_fieldset_$X_display_state}&quot;/&gt;&lt;div class&#x3D;&quot;inline-fieldset__summary display-target&quot;&gt;&lt;label class&#x3D;&quot;pointer&quot;&gt;&lt;input name&#x3D;&quot;attr_collapse&quot; value&#x3D;&quot;1&quot; hidden&#x3D;&quot;&quot; type&#x3D;&quot;checkbox&quot; title&#x3D;&quot;@{repeating_fieldset_$X_collapse}&quot;/&gt;&lt;span class&#x3D;&quot;inline-fieldset__summary__text&quot; name&#x3D;&quot;attr_name&quot; title&#x3D;&quot;@{repeating_fieldset_$X_name}&quot;&gt;&lt;/span&gt;&lt;/label&gt;&lt;/div&gt;&lt;input class&#x3D;&quot;display-control&quot; name&#x3D;&quot;attr_display_state&quot; value&#x3D;&quot;display&quot; checked&#x3D;&quot;&quot; hidden&#x3D;&quot;&quot; type&#x3D;&quot;radio&quot; title&#x3D;&quot;@{repeating_fieldset_$X_display_state}&quot;/&gt;&lt;div class&#x3D;&quot;inline-fieldset__detail display-target&quot;&gt;&lt;input class&#x3D;&quot;collapse&quot; name&#x3D;&quot;attr_collapse&quot; value&#x3D;&quot;1&quot; type&#x3D;&quot;checkbox&quot; title&#x3D;&quot;@{repeating_fieldset_$X_collapse}&quot;/&gt;&lt;/div&gt;&lt;/fieldset&gt;&lt;button class&#x3D;&quot;repcontrol-button repcontrol-button--add repcontrol-button--inline&quot; name&#x3D;&quot;act_add-fieldset&quot; type&#x3D;&quot;action&quot; title&#x3D;&quot;%{add-fieldset}&quot;&gt;&lt;/button&gt;&lt;button class&#x3D;&quot;repcontrol-button repcontrol-button--edit repcontrol-button--inline&quot; name&#x3D;&quot;act_edit-fieldset&quot; type&#x3D;&quot;action&quot; title&#x3D;&quot;%{edit-fieldset}&quot;&gt;&lt;/button&gt;</code>
-              </pre>
-          </div>
-        </section>        <section>
-          <div>
-            <h3 class="no-capital" id="input">input</h3>
-          </div>
-          <div class="border"></div>
-          <div class="content">
-            <p>A generic mixin to create an input. The mixin will replace spaces in the attribute name with underscores and will add a title property if one isn&#x27;t supplied that will inform the user what the attribute call for the attribute is.</p>
-            <div class="arguments-container">
-              <h4>arguments</h4>
-              <h5>name</h5>
-              <h5>type</h5>
-              <h5>description</h5>
-                <span>inputObj</span>
-                <span>object</span>
-                <p>An object describing the properties of the input just like they would be in a PUG or HTML element declaration, but in JS Object syntax. May also include a trigger property</p>
-            </div>
-              <h4>pug</h4>
-              <pre class="prettyprint prettyprinted" style="">
-                <code class="language-jade">include ../_k.pug
-        +input({name:&#x27;my attribute&#x27;,type:&#x27;text&#x27;,class:&#x27;some-class&#x27;,trigger:{affects:[&#x27;other_attribute&#x27;]}})
-        </code>
-              </pre>
-              <h4>html</h4>
-              <pre class="prettyprint prettyprinted" style="">
-                <code class="language-html">&lt;input class&#x3D;&quot;some-class&quot; name&#x3D;&quot;attr_my_attribute&quot; type&#x3D;&quot;text&quot; title&#x3D;&quot;@{my_attribute}&quot;/&gt;</code>
-              </pre>
-          </div>
-        </section>        <section>
-          <div>
-            <h3 class="no-capital" id="text">text</h3>
-          </div>
-          <div class="border"></div>
-          <div class="content">
-            <p>An alias for {@link input} that specifies the input type as text. See {@link input} for arguments.</p>
-            <div class="arguments-container">
-              <h4>arguments</h4>
-              <h5>name</h5>
-              <h5>type</h5>
-              <h5>description</h5>
-            </div>
-              <h4>pug</h4>
-              <pre class="prettyprint prettyprinted" style="">
-                <code class="language-jade">include ../_k.pug
-        +text({name:&#x27;my attribute&#x27;,class:&#x27;some-class&#x27;,trigger:{affects:[&#x27;other_attribute&#x27;]}})
-        </code>
-              </pre>
-              <h4>html</h4>
-              <pre class="prettyprint prettyprinted" style="">
-                <code class="language-html">&lt;input class&#x3D;&quot;some-class&quot; name&#x3D;&quot;attr_my_attribute&quot; type&#x3D;&quot;text&quot; title&#x3D;&quot;@{my_attribute}&quot;/&gt;</code>
-              </pre>
-          </div>
-        </section>        <section>
-          <div>
-            <h3 class="no-capital" id="collapse">collapse</h3>
-          </div>
-          <div class="border"></div>
-          <div class="content">
-            <p>Alias for {@link checkbox} that creates a checkbox for us in collapse/expanding a section. Sets the checkbox to unchecked with a checked value of &#x60;1&#x60; and a class of &#x60;collapse&#x60;. Additional classes/ids can be applied by applying them inline to the mixin call.</p>
-            <div class="arguments-container">
-              <h4>arguments</h4>
-              <h5>name</h5>
-              <h5>type</h5>
-              <h5>description</h5>
-                <span>name</span>
-                <span>string</span>
-                <p>The name to use for the collapse element. Defaults to &#x60;collapse&#x60;</p>
-            </div>
-              <h4>pug</h4>
-              <pre class="prettyprint prettyprinted" style="">
-                <code class="language-jade">include ../_k.pug
-        +collapse()
-        </code>
-              </pre>
-              <h4>html</h4>
-              <pre class="prettyprint prettyprinted" style="">
-                <code class="language-html">&lt;input class&#x3D;&quot;collapse&quot; name&#x3D;&quot;attr_collapse&quot; value&#x3D;&quot;1&quot; type&#x3D;&quot;checkbox&quot; title&#x3D;&quot;@{collapse}&quot;/&gt;</code>
-              </pre>
-          </div>
-        </section>        <section>
-          <div>
-            <h3 class="no-capital" id="number">number</h3>
-          </div>
-          <div class="border"></div>
-          <div class="content">
-            <p>Alias for {@link input} that makes a number input. See {@link input} for arguments.</p>
-            <div class="arguments-container">
-              <h4>arguments</h4>
-              <h5>name</h5>
-              <h5>type</h5>
-              <h5>description</h5>
-            </div>
-              <h4>pug</h4>
-              <pre class="prettyprint prettyprinted" style="">
-                <code class="language-jade">include ../_k.pug
-        +number({name:&#x27;my number&#x27;,class:&#x27;some-class&#x27;,trigger:{affects:[&#x27;other_attribute&#x27;]}})
-        </code>
-              </pre>
-              <h4>html</h4>
-              <pre class="prettyprint prettyprinted" style="">
-                <code class="language-html">&lt;input class&#x3D;&quot;some-class&quot; name&#x3D;&quot;attr_my_number&quot; type&#x3D;&quot;number&quot; title&#x3D;&quot;@{my_number}&quot;/&gt;</code>
-              </pre>
-          </div>
-        </section>        <section>
-          <div>
-            <h3 class="no-capital" id="range">range</h3>
-          </div>
-          <div class="border"></div>
-          <div class="content">
-            <p>Alias for {@link input} that makes a range input. See {@link input} for arguments.</p>
-            <div class="arguments-container">
-              <h4>arguments</h4>
-              <h5>name</h5>
-              <h5>type</h5>
-              <h5>description</h5>
-            </div>
-              <h4>pug</h4>
-              <pre class="prettyprint prettyprinted" style="">
-                <code class="language-jade">include ../_k.pug
-        +range({name:&#x27;my range&#x27;,class:&#x27;some-class&#x27;})
-        </code>
-              </pre>
-              <h4>html</h4>
-              <pre class="prettyprint prettyprinted" style="">
-                <code class="language-html">&lt;input class&#x3D;&quot;some-class&quot; name&#x3D;&quot;attr_my_range&quot; type&#x3D;&quot;range&quot; title&#x3D;&quot;@{my_range}&quot;/&gt;</code>
-              </pre>
-          </div>
-        </section>        <section>
-          <div>
-            <h3 class="no-capital" id="hidden">hidden</h3>
-          </div>
-          <div class="border"></div>
-          <div class="content">
-            <p>Alias for {@link input} that makes a hidden input. See {@link input} for arguments.</p>
-            <div class="arguments-container">
-              <h4>arguments</h4>
-              <h5>name</h5>
-              <h5>type</h5>
-              <h5>description</h5>
-            </div>
-              <h4>pug</h4>
-              <pre class="prettyprint prettyprinted" style="">
-                <code class="language-jade">include ../_k.pug
-        +hidden({name:&#x27;my hidden attribute&#x27;,class:&#x27;some-class&#x27;,trigger:{triggeredFuncs:[&#x27;someFunction&#x27;]}})
-        </code>
-              </pre>
-              <h4>html</h4>
-              <pre class="prettyprint prettyprinted" style="">
-                <code class="language-html">&lt;input class&#x3D;&quot;some-class&quot; name&#x3D;&quot;attr_my_hidden_attribute&quot; type&#x3D;&quot;hidden&quot; title&#x3D;&quot;@{my_hidden_attribute}&quot;/&gt;</code>
-              </pre>
-          </div>
-        </section>        <section>
-          <div>
-            <h3 class="no-capital" id="textarea">textarea</h3>
-          </div>
-          <div class="border"></div>
-          <div class="content">
-            <p>A mixin to create K-scaffold compatible textareas.</p>
-            <div class="arguments-container">
-              <h4>arguments</h4>
-              <h5>name</h5>
-              <h5>type</h5>
-              <h5>description</h5>
-                <span>textObj</span>
-                <span>object</span>
-                <p>See {@link input} for information on valid properties of the textObj.</p>
-            </div>
-              <h4>pug</h4>
-              <pre class="prettyprint prettyprinted" style="">
-                <code class="language-jade">include ../_k.pug
-        +textarea({name:&#x27;my textarea&#x27;,class:&#x27;some-class&#x27;,trigger:{affects:[&#x27;an_attribute&#x27;]}})
-        </code>
-              </pre>
-              <h4>html</h4>
-              <pre class="prettyprint prettyprinted" style="">
-                <code class="language-html">&lt;textarea class&#x3D;&quot;some-class&quot; name&#x3D;&quot;attr_my_textarea&quot; title&#x3D;&quot;@{my_textarea}&quot;&gt;&lt;/textarea&gt;</code>
-              </pre>
+              <pre class="prettyprint" style=""><code class="language-html">&lt;span class&#x3D;&quot;some-class inline-fieldset&quot; hidden&#x3D;&quot;&quot;&gt;&lt;/span&gt;&lt;fieldset class&#x3D;&quot;repeating_fieldset&quot;&gt;&lt;input class&#x3D;&quot;display-control&quot; name&#x3D;&quot;attr_display_state&quot; value&#x3D;&quot;short-display&quot; hidden&#x3D;&quot;&quot; type&#x3D;&quot;radio&quot; title&#x3D;&quot;@{repeating_fieldset_$X_display_state}&quot;/&gt;&lt;div class&#x3D;&quot;inline-fieldset__summary display-target&quot;&gt;&lt;label class&#x3D;&quot;pointer&quot;&gt;&lt;input name&#x3D;&quot;attr_collapse&quot; value&#x3D;&quot;1&quot; hidden&#x3D;&quot;&quot; type&#x3D;&quot;checkbox&quot; title&#x3D;&quot;@{repeating_fieldset_$X_collapse}&quot;/&gt;&lt;span class&#x3D;&quot;inline-fieldset__summary__text&quot; name&#x3D;&quot;attr_name&quot; title&#x3D;&quot;@{repeating_fieldset_$X_name}&quot;&gt;&lt;/span&gt;&lt;/label&gt;&lt;/div&gt;&lt;input class&#x3D;&quot;display-control&quot; name&#x3D;&quot;attr_display_state&quot; value&#x3D;&quot;display&quot; checked&#x3D;&quot;&quot; hidden&#x3D;&quot;&quot; type&#x3D;&quot;radio&quot; title&#x3D;&quot;@{repeating_fieldset_$X_display_state}&quot;/&gt;&lt;div class&#x3D;&quot;inline-fieldset__detail display-target&quot;&gt;&lt;input class&#x3D;&quot;collapse&quot; name&#x3D;&quot;attr_collapse&quot; value&#x3D;&quot;1&quot; type&#x3D;&quot;checkbox&quot; title&#x3D;&quot;@{repeating_fieldset_$X_collapse}&quot;/&gt;&lt;/div&gt;&lt;/fieldset&gt;&lt;button class&#x3D;&quot;repcontrol-button repcontrol-button--add repcontrol-button--inline&quot; name&#x3D;&quot;act_add-fieldset&quot; type&#x3D;&quot;action&quot; title&#x3D;&quot;%{add-fieldset}&quot;&gt;&lt;/button&gt;&lt;button class&#x3D;&quot;repcontrol-button repcontrol-button--edit repcontrol-button--inline&quot; name&#x3D;&quot;act_edit-fieldset&quot; type&#x3D;&quot;action&quot; title&#x3D;&quot;%{edit-fieldset}&quot;&gt;&lt;/button&gt;</code></pre>
           </div>
         </section>        <section>
           <div>
@@ -716,19 +611,14 @@ k.registerFuncs({calcStrength});</code></pre>
                 <p>An object describing the container div. Similar to the first two objects, but will most likely only have a &#x60;class&#x60; property if it is passed at all.</p>
             </div>
               <h4>pug</h4>
-              <pre class="prettyprint prettyprinted" style="">
-                <code class="language-jade">include ../_k.pug
+              <pre class="prettyprint" style=""><code class="language-jade">include ../_k.pug
         +button-label({
           inputObj:{name:&#x27;strength&#x27;,type:&#x27;number&#x27;,class:&#x27;underlined&#x27;,value:10,trigger:{affects:[&#x27;athletics&#x27;]}},
           buttonObj:{name:&#x27;strength_roll&#x27;,type:&#x27;roll&#x27;,value:&#x27;/r 1d20+@{strength}&#x27;},
           divObj:{class:&#x27;strength&#x27;}
-        })
-        </code>
-              </pre>
+        })</code></pre>
               <h4>html</h4>
-              <pre class="prettyprint prettyprinted" style="">
-                <code class="language-html">&lt;div class&#x3D;&quot;input-label input-label--button strength&quot;&gt;&lt;button name&#x3D;&quot;roll_strength_roll&quot; type&#x3D;&quot;roll&quot; value&#x3D;&quot;/r 1d20+@{strength}&quot; title&#x3D;&quot;%{strength_roll}&quot;&gt;&lt;/button&gt;&lt;input class&#x3D;&quot;underlined input-label__input&quot; name&#x3D;&quot;attr_strength&quot; type&#x3D;&quot;number&quot; value&#x3D;&quot;10&quot; title&#x3D;&quot;@{strength}&quot;/&gt;&lt;/div&gt;</code>
-              </pre>
+              <pre class="prettyprint" style=""><code class="language-html">&lt;div class&#x3D;&quot;input-label input-label--button strength&quot;&gt;&lt;button name&#x3D;&quot;roll_strength_roll&quot; type&#x3D;&quot;roll&quot; value&#x3D;&quot;/r 1d20+@{strength}&quot; title&#x3D;&quot;%{strength_roll}&quot;&gt;&lt;/button&gt;&lt;input class&#x3D;&quot;underlined input-label__input&quot; name&#x3D;&quot;attr_strength&quot; type&#x3D;&quot;number&quot; value&#x3D;&quot;10&quot; title&#x3D;&quot;@{strength}&quot;/&gt;&lt;/div&gt;</code></pre>
           </div>
         </section>        <section>
           <div>
@@ -753,19 +643,14 @@ k.registerFuncs({calcStrength});</code></pre>
                 <p>An object describing the container div. Similar to the first two objects, but will most likely only have a &#x60;class&#x60; property if it is passed at all.</p>
             </div>
               <h4>pug</h4>
-              <pre class="prettyprint prettyprinted" style="">
-                <code class="language-jade">include ../_k.pug
+              <pre class="prettyprint" style=""><code class="language-jade">include ../_k.pug
         +roller-label({
           inputObj:{name:&#x27;strength&#x27;,type:&#x27;number&#x27;,class:&#x27;underlined&#x27;,value:10,trigger:{affects:[&#x27;athletics&#x27;]}},
           buttonObj:{name:&#x27;strength_roll&#x27;,type:&#x27;roll&#x27;,value:&#x27;/r 1d20+@{strength}&#x27;},
           divObj:{class:&#x27;strength&#x27;}
-        })
-        </code>
-              </pre>
+        })</code></pre>
               <h4>html</h4>
-              <pre class="prettyprint prettyprinted" style="">
-                <code class="language-html">&lt;div class&#x3D;&quot;input-label input-label--button strength&quot;&gt;&lt;button class&#x3D;&quot;roller&quot; name&#x3D;&quot;roll_strength_roll&quot; type&#x3D;&quot;roll&quot; value&#x3D;&quot;@{strength_action}&quot; title&#x3D;&quot;%{strength_roll}&quot;&gt;&lt;/button&gt;&lt;input class&#x3D;&quot;underlined input-label__input&quot; name&#x3D;&quot;attr_strength&quot; type&#x3D;&quot;number&quot; value&#x3D;&quot;10&quot; title&#x3D;&quot;@{strength}&quot;/&gt;&lt;/div&gt;&lt;button name&#x3D;&quot;act_strength-action&quot; hidden&#x3D;&quot;&quot; type&#x3D;&quot;action&quot; title&#x3D;&quot;%{strength-action}&quot;&gt;&lt;/button&gt;&lt;input name&#x3D;&quot;attr_strength_action&quot; type&#x3D;&quot;hidden&quot; title&#x3D;&quot;@{strength_action}&quot;/&gt;</code>
-              </pre>
+              <pre class="prettyprint" style=""><code class="language-html">&lt;div class&#x3D;&quot;input-label input-label--button strength&quot;&gt;&lt;button class&#x3D;&quot;roller&quot; name&#x3D;&quot;roll_strength_roll&quot; type&#x3D;&quot;roll&quot; value&#x3D;&quot;@{strength_action}&quot; title&#x3D;&quot;%{strength_roll}&quot;&gt;&lt;/button&gt;&lt;input class&#x3D;&quot;underlined input-label__input&quot; name&#x3D;&quot;attr_strength&quot; type&#x3D;&quot;number&quot; value&#x3D;&quot;10&quot; title&#x3D;&quot;@{strength}&quot;/&gt;&lt;/div&gt;&lt;button name&#x3D;&quot;act_strength-action&quot; hidden&#x3D;&quot;&quot; type&#x3D;&quot;action&quot; title&#x3D;&quot;%{strength-action}&quot;&gt;&lt;/button&gt;&lt;input name&#x3D;&quot;attr_strength_action&quot; type&#x3D;&quot;hidden&quot; title&#x3D;&quot;@{strength_action}&quot;/&gt;</code></pre>
           </div>
         </section>        <section>
           <div>
@@ -790,19 +675,14 @@ k.registerFuncs({calcStrength});</code></pre>
                 <p>An object describing the container div. Similar to the first two objects, but will most likely only have a &#x60;class&#x60; property if it is passed at all.</p>
             </div>
               <h4>pug</h4>
-              <pre class="prettyprint prettyprinted" style="">
-                <code class="language-jade">include ../_k.pug
+              <pre class="prettyprint" style=""><code class="language-jade">include ../_k.pug
         +roller-label({
           inputObj:{name:&#x27;strength&#x27;,type:&#x27;number&#x27;,class:&#x27;underlined&#x27;,value:10,trigger:{affects:[&#x27;athletics&#x27;]}},
           buttonObj:{name:&#x27;strength_roll&#x27;,type:&#x27;roll&#x27;,value:&#x27;/r 1d20+@{strength}&#x27;},
           divObj:{class:&#x27;strength&#x27;}
-        })
-        </code>
-              </pre>
+        })</code></pre>
               <h4>html</h4>
-              <pre class="prettyprint prettyprinted" style="">
-                <code class="language-html">&lt;div class&#x3D;&quot;input-label input-label--button strength&quot;&gt;&lt;button class&#x3D;&quot;roller&quot; name&#x3D;&quot;roll_strength_roll&quot; type&#x3D;&quot;roll&quot; value&#x3D;&quot;@{strength_action}&quot; title&#x3D;&quot;%{strength_roll}&quot;&gt;&lt;/button&gt;&lt;input class&#x3D;&quot;underlined input-label__input&quot; name&#x3D;&quot;attr_strength&quot; type&#x3D;&quot;number&quot; value&#x3D;&quot;10&quot; title&#x3D;&quot;@{strength}&quot;/&gt;&lt;/div&gt;&lt;button name&#x3D;&quot;act_strength-action&quot; hidden&#x3D;&quot;&quot; type&#x3D;&quot;action&quot; title&#x3D;&quot;%{strength-action}&quot;&gt;&lt;/button&gt;&lt;input name&#x3D;&quot;attr_strength_action&quot; type&#x3D;&quot;hidden&quot; title&#x3D;&quot;@{strength_action}&quot;/&gt;</code>
-              </pre>
+              <pre class="prettyprint" style=""><code class="language-html">&lt;div class&#x3D;&quot;input-label input-label--button strength&quot;&gt;&lt;button class&#x3D;&quot;roller&quot; name&#x3D;&quot;roll_strength_roll&quot; type&#x3D;&quot;roll&quot; value&#x3D;&quot;@{strength_action}&quot; title&#x3D;&quot;%{strength_roll}&quot;&gt;&lt;/button&gt;&lt;input class&#x3D;&quot;underlined input-label__input&quot; name&#x3D;&quot;attr_strength&quot; type&#x3D;&quot;number&quot; value&#x3D;&quot;10&quot; title&#x3D;&quot;@{strength}&quot;/&gt;&lt;/div&gt;&lt;button name&#x3D;&quot;act_strength-action&quot; hidden&#x3D;&quot;&quot; type&#x3D;&quot;action&quot; title&#x3D;&quot;%{strength-action}&quot;&gt;&lt;/button&gt;&lt;input name&#x3D;&quot;attr_strength_action&quot; type&#x3D;&quot;hidden&quot; title&#x3D;&quot;@{strength_action}&quot;/&gt;</code></pre>
           </div>
         </section>        <section>
           <div>
@@ -833,8 +713,7 @@ k.registerFuncs({calcStrength});</code></pre>
                 <p>The mixin uses the pug block as the content of the select.</p>
             </div>
               <h4>pug</h4>
-              <pre class="prettyprint prettyprinted" style="">
-                <code class="language-jade">include ../_k.pug
+              <pre class="prettyprint" style=""><code class="language-jade">include ../_k.pug
         +select-label({
           label:&#x27;Whisper to GM&#x27;,
           inputObj:{name:&#x27;whisper&#x27;},
@@ -842,13 +721,9 @@ k.registerFuncs({calcStrength});</code></pre>
           spanObj:{class:&#x27;span-class&#x27;}
         })
           +option({value:&#x27;&#x27;,&#x27;data-i18n&#x27;:&#x27;never&#x27;,selected:&#x27;&#x27;})
-          +option({value:&#x27;/w gm &#x27;,&#x27;data-i18n&#x27;:&#x27;always&#x27;})
-        </code>
-              </pre>
+          +option({value:&#x27;/w gm &#x27;,&#x27;data-i18n&#x27;:&#x27;always&#x27;})</code></pre>
               <h4>html</h4>
-              <pre class="prettyprint prettyprinted" style="">
-                <code class="language-html">&lt;label class&#x3D;&quot;input-label div-class&quot;&gt;&lt;span class&#x3D;&quot;span-class input-label__text&quot; data-i18n&#x3D;&quot;Whisper to GM&quot;&gt;&lt;/span&gt;&lt;select class&#x3D;&quot;input-label__input&quot; name&#x3D;&quot;attr_whisper&quot; title&#x3D;&quot;@{whisper}&quot;&gt;&lt;option value&#x3D;&quot;&quot; data-i18n&#x3D;&quot;never&quot; selected&#x3D;&quot;&quot;&gt;&lt;/option&gt;&lt;option value&#x3D;&quot;/w gm &quot; data-i18n&#x3D;&quot;always&quot;&gt;&lt;/option&gt;&lt;/select&gt;&lt;/label&gt;</code>
-              </pre>
+              <pre class="prettyprint" style=""><code class="language-html">&lt;label class&#x3D;&quot;input-label div-class&quot;&gt;&lt;span class&#x3D;&quot;span-class input-label__text&quot; data-i18n&#x3D;&quot;Whisper to GM&quot;&gt;&lt;/span&gt;&lt;select class&#x3D;&quot;input-label__input&quot; name&#x3D;&quot;attr_whisper&quot; title&#x3D;&quot;@{whisper}&quot;&gt;&lt;option value&#x3D;&quot;&quot; data-i18n&#x3D;&quot;never&quot; selected&#x3D;&quot;&quot;&gt;&lt;/option&gt;&lt;option value&#x3D;&quot;/w gm &quot; data-i18n&#x3D;&quot;always&quot;&gt;&lt;/option&gt;&lt;/select&gt;&lt;/label&gt;</code></pre>
           </div>
         </section>        <section>
           <div>
@@ -876,20 +751,15 @@ k.registerFuncs({calcStrength});</code></pre>
                 <p>An object describing the span to be paired with the input. This is the same object that you would pass to {@link span}.</p>
             </div>
               <h4>pug</h4>
-              <pre class="prettyprint prettyprinted" style="">
-                <code class="language-jade">include ../_k.pug
+              <pre class="prettyprint" style=""><code class="language-jade">include ../_k.pug
         +input-label({
           label:&#x27;strength&#x27;,
           inputObj:{name:&#x27;strength&#x27;,type:&#x27;number&#x27;},
           divObj:{class:&#x27;div-class&#x27;},
           spanObj:{class:&#x27;span-class&#x27;}
-        })
-        </code>
-              </pre>
+        })</code></pre>
               <h4>html</h4>
-              <pre class="prettyprint prettyprinted" style="">
-                <code class="language-html">&lt;label class&#x3D;&quot;input-label div-class&quot;&gt;&lt;span class&#x3D;&quot;span-class input-label__text&quot; data-i18n&#x3D;&quot;strength&quot;&gt;&lt;/span&gt;&lt;input class&#x3D;&quot;input-label__input&quot; name&#x3D;&quot;attr_strength&quot; type&#x3D;&quot;number&quot; title&#x3D;&quot;@{strength}&quot;/&gt;&lt;/label&gt;</code>
-              </pre>
+              <pre class="prettyprint" style=""><code class="language-html">&lt;label class&#x3D;&quot;input-label div-class&quot;&gt;&lt;span class&#x3D;&quot;span-class input-label__text&quot; data-i18n&#x3D;&quot;strength&quot;&gt;&lt;/span&gt;&lt;input class&#x3D;&quot;input-label__input&quot; name&#x3D;&quot;attr_strength&quot; type&#x3D;&quot;number&quot; title&#x3D;&quot;@{strength}&quot;/&gt;&lt;/label&gt;</code></pre>
           </div>
         </section>        <section>
           <div>
@@ -911,17 +781,12 @@ k.registerFuncs({calcStrength});</code></pre>
                 <p>The &#x60;data-i18n&#x60; translation key to use for the header</p>
             </div>
               <h4>pug</h4>
-              <pre class="prettyprint prettyprinted" style="">
-                <code class="language-jade">include ../_k.pug
+              <pre class="prettyprint" style=""><code class="language-jade">include ../_k.pug
         +headedTextarea({textObj:{name:&#x27;character description&#x27;,&#x27;data-i18n-placeholder&#x27;:&#x27;The description of your character&#x27;},header:&#x27;description&#x27;})
         //With class appended to the mixin itself
-        +headedTextarea({textObj:{name:&#x27;character description&#x27;,&#x27;data-i18n-placeholder&#x27;:&#x27;The description of your character&#x27;},header:&#x27;description&#x27;}).character-description
-        </code>
-              </pre>
+        +headedTextarea({textObj:{name:&#x27;character description&#x27;,&#x27;data-i18n-placeholder&#x27;:&#x27;The description of your character&#x27;},header:&#x27;description&#x27;}).character-description</code></pre>
               <h4>html</h4>
-              <pre class="prettyprint prettyprinted" style="">
-                <code class="language-html">&lt;div class&#x3D;&quot;headed-textarea&quot;&gt;&lt;h3 class&#x3D;&quot;headed-textarea__header&quot; data-i18n&#x3D;&quot;description&quot;&gt;&lt;/h3&gt;&lt;textarea class&#x3D;&quot;headed-textarea__textarea&quot; name&#x3D;&quot;attr_character_description&quot; data-i18n-placeholder&#x3D;&quot;The description of your character&quot; title&#x3D;&quot;@{character_description}&quot;&gt;&lt;/textarea&gt;&lt;/div&gt;&lt;!--With class appended to the mixin itself--&gt;&lt;div class&#x3D;&quot;headed-textarea character-description&quot;&gt;&lt;h3 class&#x3D;&quot;headed-textarea__header&quot; data-i18n&#x3D;&quot;description&quot;&gt;&lt;/h3&gt;&lt;textarea class&#x3D;&quot;headed-textarea__textarea&quot; name&#x3D;&quot;attr_character_description&quot; data-i18n-placeholder&#x3D;&quot;The description of your character&quot; title&#x3D;&quot;@{character_description}&quot;&gt;&lt;/textarea&gt;&lt;/div&gt;</code>
-              </pre>
+              <pre class="prettyprint" style=""><code class="language-html">&lt;div class&#x3D;&quot;headed-textarea&quot;&gt;&lt;h3 class&#x3D;&quot;headed-textarea__header&quot; data-i18n&#x3D;&quot;description&quot;&gt;&lt;/h3&gt;&lt;textarea class&#x3D;&quot;headed-textarea__textarea&quot; name&#x3D;&quot;attr_character_description&quot; data-i18n-placeholder&#x3D;&quot;The description of your character&quot; title&#x3D;&quot;@{character_description}&quot;&gt;&lt;/textarea&gt;&lt;/div&gt;&lt;!--With class appended to the mixin itself--&gt;&lt;div class&#x3D;&quot;headed-textarea character-description&quot;&gt;&lt;h3 class&#x3D;&quot;headed-textarea__header&quot; data-i18n&#x3D;&quot;description&quot;&gt;&lt;/h3&gt;&lt;textarea class&#x3D;&quot;headed-textarea__textarea&quot; name&#x3D;&quot;attr_character_description&quot; data-i18n-placeholder&#x3D;&quot;The description of your character&quot; title&#x3D;&quot;@{character_description}&quot;&gt;&lt;/textarea&gt;&lt;/div&gt;</code></pre>
           </div>
         </section>        <section>
           <div>
@@ -943,8 +808,7 @@ k.registerFuncs({calcStrength});</code></pre>
                 <p>Whether the prefix should be applied to repeating section names (default), or to the attribute name itself in repeating sections.</p>
             </div>
               <h4>pug</h4>
-              <pre class="prettyprint prettyprinted" style="">
-                <code class="language-jade">include ../_k.pug
+              <pre class="prettyprint" style=""><code class="language-jade">include ../_k.pug
         // Non repeating attributes
         setSystemPrefix(&#x27;npc&#x27;)
         +number({name:&#x27;athletics&#x27;,value:0})
@@ -956,13 +820,9 @@ k.registerFuncs({calcStrength});</code></pre>
         // Repeating attributes
         setSystemPrefix(&#x27;npc&#x27;)
         +fieldset({name:&#x27;skill&#x27;})
-          +number({name:&#x27;score&#x27;,value:0})
-        </code>
-              </pre>
+          +number({name:&#x27;score&#x27;,value:0})</code></pre>
               <h4>html</h4>
-              <pre class="prettyprint prettyprinted" style="">
-                <code class="language-html">&lt;!-- Non repeating attributes--&gt;&lt;setSystemPrefix npc&#x3D;&quot;npc&quot;&gt;&lt;/setSystemPrefix&gt;&lt;input name&#x3D;&quot;attr_athletics&quot; value&#x3D;&quot;0&quot; type&#x3D;&quot;number&quot; title&#x3D;&quot;@{athletics}&quot;/&gt;&lt;!-- pass it a falsy value to unset it--&gt;&lt;setSystemPrefix false&#x3D;&quot;false&quot;&gt;&lt;/setSystemPrefix&gt;&lt;input name&#x3D;&quot;attr_athletics&quot; value&#x3D;&quot;0&quot; type&#x3D;&quot;number&quot; title&#x3D;&quot;@{athletics}&quot;/&gt;&lt;!-- Repeating attributes--&gt;&lt;setSystemPrefix npc&#x3D;&quot;npc&quot;&gt;&lt;/setSystemPrefix&gt;&lt;fieldset class&#x3D;&quot;repeating_skill&quot;&gt;&lt;input name&#x3D;&quot;attr_score&quot; value&#x3D;&quot;0&quot; type&#x3D;&quot;number&quot; title&#x3D;&quot;@{repeating_skill_$X_score}&quot;/&gt;&lt;/fieldset&gt;</code>
-              </pre>
+              <pre class="prettyprint" style=""><code class="language-html">&lt;!-- Non repeating attributes--&gt;&lt;setSystemPrefix npc&#x3D;&quot;npc&quot;&gt;&lt;/setSystemPrefix&gt;&lt;input name&#x3D;&quot;attr_athletics&quot; value&#x3D;&quot;0&quot; type&#x3D;&quot;number&quot; title&#x3D;&quot;@{athletics}&quot;/&gt;&lt;!-- pass it a falsy value to unset it--&gt;&lt;setSystemPrefix false&#x3D;&quot;false&quot;&gt;&lt;/setSystemPrefix&gt;&lt;input name&#x3D;&quot;attr_athletics&quot; value&#x3D;&quot;0&quot; type&#x3D;&quot;number&quot; title&#x3D;&quot;@{athletics}&quot;/&gt;&lt;!-- Repeating attributes--&gt;&lt;setSystemPrefix npc&#x3D;&quot;npc&quot;&gt;&lt;/setSystemPrefix&gt;&lt;fieldset class&#x3D;&quot;repeating_skill&quot;&gt;&lt;input name&#x3D;&quot;attr_score&quot; value&#x3D;&quot;0&quot; type&#x3D;&quot;number&quot; title&#x3D;&quot;@{repeating_skill_$X_score}&quot;/&gt;&lt;/fieldset&gt;</code></pre>
           </div>
         </section>        <section>
           <div>
@@ -981,8 +841,7 @@ k.registerFuncs({calcStrength});</code></pre>
                 <p>The attribute name to create an attribute call for.</p>
             </div>
               <h4>pug</h4>
-              <pre class="prettyprint prettyprinted" style="">
-                <code class="language-jade">include ../_k.pug
+              <pre class="prettyprint" style=""><code class="language-jade">include ../_k.pug
         //Basic attribute name
         +input({name:&#x27;hidden name&#x27;,type:&#x27;text&#x27;,title:attrTitle(&#x27;user accessible name&#x27;)})
         
@@ -991,13 +850,9 @@ k.registerFuncs({calcStrength});</code></pre>
         
         //fieldset attrTitle
         +fieldset({name:&#x27;equipment&#x27;})
-          +input({name:&#x27;name&#x27;,type:&#x27;text&#x27;,title:attrTitle(&#x27;user accessible name&#x27;)})
-        </code>
-              </pre>
+          +input({name:&#x27;name&#x27;,type:&#x27;text&#x27;,title:attrTitle(&#x27;user accessible name&#x27;)})</code></pre>
               <h4>html</h4>
-              <pre class="prettyprint prettyprinted" style="">
-                <code class="language-html">&lt;!--Basic attribute name--&gt;&lt;input name&#x3D;&quot;attr_hidden_name&quot; type&#x3D;&quot;text&quot; title&#x3D;&quot;@{user_accessible_name}&quot;/&gt;&lt;!--Max attribute name--&gt;&lt;input name&#x3D;&quot;attr_hidden_max&quot; type&#x3D;&quot;number&quot; title&#x3D;&quot;@{user_accessible|max}&quot;/&gt;&lt;!--fieldset attrTitle--&gt;&lt;fieldset class&#x3D;&quot;repeating_equipment&quot;&gt;&lt;input name&#x3D;&quot;attr_name&quot; type&#x3D;&quot;text&quot; title&#x3D;&quot;@{repeating_equipment_$X_user_accessible_name}&quot;/&gt;&lt;/fieldset&gt;</code>
-              </pre>
+              <pre class="prettyprint" style=""><code class="language-html">&lt;!--Basic attribute name--&gt;&lt;input name&#x3D;&quot;attr_hidden_name&quot; type&#x3D;&quot;text&quot; title&#x3D;&quot;@{user_accessible_name}&quot;/&gt;&lt;!--Max attribute name--&gt;&lt;input name&#x3D;&quot;attr_hidden_max&quot; type&#x3D;&quot;number&quot; title&#x3D;&quot;@{user_accessible|max}&quot;/&gt;&lt;!--fieldset attrTitle--&gt;&lt;fieldset class&#x3D;&quot;repeating_equipment&quot;&gt;&lt;input name&#x3D;&quot;attr_name&quot; type&#x3D;&quot;text&quot; title&#x3D;&quot;@{repeating_equipment_$X_user_accessible_name}&quot;/&gt;&lt;/fieldset&gt;</code></pre>
           </div>
         </section>        <section>
           <div>
@@ -1016,20 +871,15 @@ k.registerFuncs({calcStrength});</code></pre>
                 <p>The ability name to create a call for.</p>
             </div>
               <h4>pug</h4>
-              <pre class="prettyprint prettyprinted" style="">
-                <code class="language-jade">include ../_k.pug
+              <pre class="prettyprint" style=""><code class="language-jade">include ../_k.pug
         //Basic button title
         +button({name:&#x27;hidden button&#x27;,type:&#x27;text&#x27;,title:buttonTitle(&#x27;user accessible name&#x27;)})
         
         //fieldset button title
         +fieldset({name:&#x27;equipment&#x27;})
-          +button({name:&#x27;button&#x27;,type:&#x27;text&#x27;,title:buttonTitle(&#x27;user accessible name&#x27;)})
-        </code>
-              </pre>
+          +button({name:&#x27;button&#x27;,type:&#x27;text&#x27;,title:buttonTitle(&#x27;user accessible name&#x27;)})</code></pre>
               <h4>html</h4>
-              <pre class="prettyprint prettyprinted" style="">
-                <code class="language-html">&lt;!--Basic button title--&gt;&lt;button name&#x3D;&quot;roll_hidden_button&quot; type&#x3D;&quot;roll&quot; title&#x3D;&quot;%{user_accessible_name}&quot;&gt;&lt;/button&gt;&lt;!--fieldset button title--&gt;&lt;fieldset class&#x3D;&quot;repeating_equipment&quot;&gt;&lt;button name&#x3D;&quot;roll_button&quot; type&#x3D;&quot;roll&quot; title&#x3D;&quot;%{repeating_equipment_$X_user_accessible_name}&quot;&gt;&lt;/button&gt;&lt;/fieldset&gt;</code>
-              </pre>
+              <pre class="prettyprint" style=""><code class="language-html">&lt;!--Basic button title--&gt;&lt;button name&#x3D;&quot;roll_hidden_button&quot; type&#x3D;&quot;roll&quot; title&#x3D;&quot;%{user_accessible_name}&quot;&gt;&lt;/button&gt;&lt;!--fieldset button title--&gt;&lt;fieldset class&#x3D;&quot;repeating_equipment&quot;&gt;&lt;button name&#x3D;&quot;roll_button&quot; type&#x3D;&quot;roll&quot; title&#x3D;&quot;%{repeating_equipment_$X_user_accessible_name}&quot;&gt;&lt;/button&gt;&lt;/fieldset&gt;</code></pre>
           </div>
         </section>        <section>
           <div>
@@ -1045,15 +895,10 @@ k.registerFuncs({calcStrength});</code></pre>
               <h5>description</h5>
             </div>
               <h4>pug</h4>
-              <pre class="prettyprint prettyprinted" style="">
-                <code class="language-jade">include ../_k.pug
-        +script
-        </code>
-              </pre>
+              <pre class="prettyprint" style=""><code class="language-jade">include ../_k.pug
+        +script</code></pre>
               <h4>html</h4>
-              <pre class="prettyprint prettyprinted" style="">
-                <code class="language-html">&lt;script type&#x3D;&quot;text/worker&quot;&gt;&lt;/script&gt;</code>
-              </pre>
+              <pre class="prettyprint" style=""><code class="language-html">&lt;script type&#x3D;&quot;text/worker&quot;&gt;&lt;/script&gt;</code></pre>
           </div>
         </section>        <section>
           <div>
@@ -1069,14 +914,10 @@ k.registerFuncs({calcStrength});</code></pre>
               <h5>description</h5>
             </div>
               <h4>pug</h4>
-              <pre class="prettyprint prettyprinted" style="">
-                <code class="language-jade">include ../_k.pug
-        +kscript
-        </code>
-              </pre>
+              <pre class="prettyprint" style=""><code class="language-jade">include ../_k.pug
+        +kscript</code></pre>
               <h4>html</h4>
-              <pre class="prettyprint prettyprinted" style="">
-                <code class="language-html">&lt;script type&#x3D;&quot;text/worker&quot;&gt;const k &#x3D; (function(){
+              <pre class="prettyprint" style=""><code class="language-html">&lt;script type&#x3D;&quot;text/worker&quot;&gt;const k &#x3D; (function(){
         const kFuncs &#x3D; {};
         const cascades &#x3D; {&quot;attr_character_name&quot;:{&quot;name&quot;:&quot;character_name&quot;,&quot;type&quot;:&quot;text&quot;,&quot;defaultValue&quot;:&quot;&quot;,&quot;affects&quot;:[],&quot;triggeredFuncs&quot;:[&quot;setActionCalls&quot;],&quot;listenerFunc&quot;:&quot;accessSheet&quot;,&quot;listener&quot;:&quot;change:character_name&quot;}};
         
@@ -2022,15 +1863,14 @@ k.registerFuncs({calcStrength});</code></pre>
         registerFuncs({ kTabOnOpen },{type:[&#x27;opener&#x27;]});
         return kFuncs;
         }());
-        const actionAttributes &#x3D; [];&lt;/script&gt;</code>
-              </pre>
+        const actionAttributes &#x3D; [];&lt;/script&gt;</code></pre>
           </div>
         </section>    </main>
     <aside>
       <h2>Mixins</h2>
       <nav>
         <ul id="toc-target">
-            <li><a href="#adaptiveTextarea">adaptiveTextarea</a></li>            <li><a href="#adaptiveInput">adaptiveInput</a></li>            <li><a href="#fillLeft">fillLeft</a></li>            <li><a href="#button">button</a></li>            <li><a href="#action">action</a></li>            <li><a href="#navButton">navButton</a></li>            <li><a href="#roller">roller</a></li>            <li><a href="#img">img</a></li>            <li><a href="#span">span</a></li>            <li><a href="#div">div</a></li>            <li><a href="#compendiumAttributes">compendiumAttributes</a></li>            <li><a href="#select">select</a></li>            <li><a href="#fieldset">fieldset</a></li>            <li><a href="#inlineFieldset">inlineFieldset</a></li>            <li><a href="#input">input</a></li>            <li><a href="#text">text</a></li>            <li><a href="#collapse">collapse</a></li>            <li><a href="#number">number</a></li>            <li><a href="#range">range</a></li>            <li><a href="#hidden">hidden</a></li>            <li><a href="#textarea">textarea</a></li>            <li><a href="#button-label">button-label</a></li>            <li><a href="#roller-label">roller-label</a></li>            <li><a href="#action-label">action-label</a></li>            <li><a href="#select-label">select-label</a></li>            <li><a href="#input-label">input-label</a></li>            <li><a href="#headedTextarea">headedTextarea</a></li>            <li><a href="#SetSystemPrefix">SetSystemPrefix</a></li>            <li><a href="#attrTitle">attrTitle</a></li>            <li><a href="#buttonTitle">buttonTitle</a></li>            <li><a href="#script">script</a></li>            <li><a href="#kscript">kscript</a></li>        </ul>
+            <li><a href="#adaptiveTextarea">adaptiveTextarea</a></li>            <li><a href="#adaptiveInput">adaptiveInput</a></li>            <li><a href="#img">img</a></li>            <li><a href="#span">span</a></li>            <li><a href="#div">div</a></li>            <li><a href="#button">button</a></li>            <li><a href="#action">action</a></li>            <li><a href="#navButton">navButton</a></li>            <li><a href="#roller">roller</a></li>            <li><a href="#compendiumAttributes">compendiumAttributes</a></li>            <li><a href="#fillLeft">fillLeft</a></li>            <li><a href="#input">input</a></li>            <li><a href="#text">text</a></li>            <li><a href="#collapse">collapse</a></li>            <li><a href="#number">number</a></li>            <li><a href="#range">range</a></li>            <li><a href="#hidden">hidden</a></li>            <li><a href="#textarea">textarea</a></li>            <li><a href="#select">select</a></li>            <li><a href="#fieldset">fieldset</a></li>            <li><a href="#inlineFieldset">inlineFieldset</a></li>            <li><a href="#button-label">button-label</a></li>            <li><a href="#roller-label">roller-label</a></li>            <li><a href="#action-label">action-label</a></li>            <li><a href="#select-label">select-label</a></li>            <li><a href="#input-label">input-label</a></li>            <li><a href="#headedTextarea">headedTextarea</a></li>            <li><a href="#SetSystemPrefix">SetSystemPrefix</a></li>            <li><a href="#attrTitle">attrTitle</a></li>            <li><a href="#buttonTitle">buttonTitle</a></li>            <li><a href="#script">script</a></li>            <li><a href="#kscript">kscript</a></li>        </ul>
       </nav>
     </aside>
     <div class="footer"></div>
@@ -2042,8 +1882,8 @@ k.registerFuncs({calcStrength});</code></pre>
     <script type="text/javascript">const siteVersion = 1.1;
       
     </script>
-    <script src="assets/javascript/resizer.js"></script>
-    <script src="assets/javascript/prettify.js"></script>
-    <script src="assets/javascript/parser.js"></script>
+    <script src="./assets/javascript/resizer.js"></script>
+    <script src="./assets/javascript/prettify.js"></script>
+    <script src="./assets/javascript/parser.js"></script>
   </body>
 </html>

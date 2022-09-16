@@ -8,11 +8,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Aldrich&amp;family=Exo+2:ital,wght@0,400;0,700;1,400&amp;family=Fira+Code&amp;display=swap" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
     <link rel="stylesheet" href="assets/portfolio/social-icons.css"/>
-    <link rel="stylesheet" href="assets/css/clear.css"/>
-    <link rel="stylesheet" href="assets/css/generic.css"/>
-    <link rel="stylesheet" href="assets/css/prettify.css"/>
-    <link rel="stylesheet" href="assets/css/sons-of-obsidian.css"/>
-    <link rel="stylesheet" href="assets/css/codeDisplay.css"/>
+    <link rel="stylesheet" href="./assets/css/clear.css"/>
+    <link rel="stylesheet" href="./assets/css/generic.css"/>
+    <link rel="stylesheet" href="./assets/css/prettify.css"/>
+    <link rel="stylesheet" href="./assets/css/sons-of-obsidian.css"/>
+    <link rel="stylesheet" href="./assets/css/codeDisplay.css"/>
     <title>K-Scaffold | Sheetworker</title>
   </head>
   <body>
@@ -21,8 +21,8 @@
     </header>
     <nav>
       <ul>
-        <li><a href="./docs/index.html?v=1.1">General Info</a></li>
-        <li><a href="./docs/pug.html?v=1.1">Pug Documentation</a></li>
+        <li><a href="./index.html?v=1.1">General Info</a></li>
+        <li><a href="./pug.html?v=1.1">Pug Documentation</a></li>
       </ul>
       <ul>
         <li><a href="#intro-header">Intro</a></li>
@@ -46,7 +46,7 @@
       </section>
         <section>
           <div>
-            <h3 class="no-capital" id="accessSheet">accessSheet</h3>
+            <h3 class="no-capital" id="accessSheet">k.accessSheet</h3>
           </div>
           <div class="border"></div>
           <div class="content">
@@ -60,13 +60,11 @@
                 <span>Roll20Event</span>
                 <p>The Roll20 event object</p>
             </div>
-                <pre class="prettyprint prettyprinted" style="">
-                  <code class="language-js">//Call from an attribute changeon(&#x27;change:an_attribute&#x27;,k.accessSheet);</code>
-                </pre>
+                <pre class="prettyprint" style=""><code class="language-js">//Call from an attribute changeon(&#x27;change:an_attribute&#x27;,k.accessSheet);</code></pre>
           </div>
         </section>        <section>
           <div>
-            <h3 class="no-capital" id="registerFuncs">registerFuncs</h3>
+            <h3 class="no-capital" id="registerFuncs">k.registerFuncs</h3>
           </div>
           <div class="border"></div>
           <div class="content">
@@ -86,13 +84,11 @@
                 <span>Array.&lt;string&gt;</span>
                 <p>Array that contains the types of specialized functions that apply to the functions being registered. Valid types are &#x60;&quot;opener&quot;&#x60;, &#x60;&quot;updater&quot;&#x60;, and &#x60;&quot;default&quot;&#x60;. &#x60;&quot;default&quot;&#x60; is always used, and never needs to be passed.</p>
             </div>
-                <pre class="prettyprint prettyprinted" style="">
-                  <code class="language-js">//Basic Registrationconst myFunc &#x3D; function({trigger,attributes,sections,casc}){};k.registerFuncs({myFunc});//Register a function to run on sheet openconst openFunc &#x3D; function({trigger,attributes,sections,casc}){};k.registerFuncs({openFunc},{type:[&#x27;opener&#x27;]})//Register a function to run on all eventsconst allFunc &#x3D; function({trigger,attributes,sections,casc}){};k.registerFuncs({allFunc},{type:[&#x27;all&#x27;]})</code>
-                </pre>
+                <pre class="prettyprint" style=""><code class="language-js">//Basic Registrationconst myFunc &#x3D; function({trigger,attributes,sections,casc}){};k.registerFuncs({myFunc});//Register a function to run on sheet openconst openFunc &#x3D; function({trigger,attributes,sections,casc}){};k.registerFuncs({openFunc},{type:[&#x27;opener&#x27;]})//Register a function to run on all eventsconst allFunc &#x3D; function({trigger,attributes,sections,casc}){};k.registerFuncs({allFunc},{type:[&#x27;all&#x27;]})</code></pre>
           </div>
         </section>        <section>
           <div>
-            <h3 class="no-capital" id="callFunc">callFunc</h3>
+            <h3 class="no-capital" id="callFunc">k.callFunc</h3>
           </div>
           <div class="border"></div>
           <div class="content">
@@ -109,13 +105,11 @@
                 <span>any</span>
                 <p>The arguments to call the function with.</p>
             </div>
-                <pre class="prettyprint prettyprinted" style="">
-                  <code class="language-js">//Call myFunc with two argumentsk.callFunc(&#x27;myFunc&#x27;,&#x27;an argument&#x27;,&#x27;another argument&#x27;);</code>
-                </pre>
+                <pre class="prettyprint" style=""><code class="language-js">//Call myFunc with two argumentsk.callFunc(&#x27;myFunc&#x27;,&#x27;an argument&#x27;,&#x27;another argument&#x27;);</code></pre>
           </div>
         </section>        <section>
           <div>
-            <h3 class="no-capital" id="sheetName">sheetName</h3>
+            <h3 class="no-capital" id="sheetName">k.sheetName</h3>
           </div>
           <div class="border"></div>
           <div class="content">
@@ -129,7 +123,7 @@
           </div>
         </section>        <section>
           <div>
-            <h3 class="no-capital" id="version">version</h3>
+            <h3 class="no-capital" id="version">k.version</h3>
           </div>
           <div class="border"></div>
           <div class="content">
@@ -143,7 +137,7 @@
           </div>
         </section>        <section>
           <div>
-            <h3 class="no-capital" id="debugMode">debugMode</h3>
+            <h3 class="no-capital" id="debugMode">k.debugMode</h3>
           </div>
           <div class="border"></div>
           <div class="content">
@@ -157,7 +151,7 @@
           </div>
         </section>        <section>
           <div>
-            <h3 class="no-capital" id="setSectionOrder">setSectionOrder</h3>
+            <h3 class="no-capital" id="setSectionOrder">k.setSectionOrder</h3>
           </div>
           <div class="border"></div>
           <div class="content">
@@ -174,13 +168,11 @@
                 <span>Array.&lt;string&gt;</span>
                 <p>Array of ids describing the desired order of the section.</p>
             </div>
-                <pre class="prettyprint prettyprinted" style="">
-                  <code class="language-js">//Set the order of a repeating_weapon sectionk.setSectionOrder(&#x27;repeating_equipment&#x27;,[&#x27;id1&#x27;,&#x27;id2&#x27;,&#x27;id3&#x27;]);//Can also specify the section name without the repeating_ prefixk.setSectionOrder(&#x27;equipment&#x27;,[&#x27;id1&#x27;,&#x27;id2&#x27;,&#x27;id3&#x27;]);</code>
-                </pre>
+                <pre class="prettyprint" style=""><code class="language-js">//Set the order of a repeating_weapon sectionk.setSectionOrder(&#x27;repeating_equipment&#x27;,[&#x27;id1&#x27;,&#x27;id2&#x27;,&#x27;id3&#x27;]);//Can also specify the section name without the repeating_ prefixk.setSectionOrder(&#x27;equipment&#x27;,[&#x27;id1&#x27;,&#x27;id2&#x27;,&#x27;id3&#x27;]);</code></pre>
           </div>
         </section>        <section>
           <div>
-            <h3 class="no-capital" id="removeRepeatingRow">removeRepeatingRow</h3>
+            <h3 class="no-capital" id="removeRepeatingRow">k.removeRepeatingRow</h3>
           </div>
           <div class="border"></div>
           <div class="content">
@@ -200,13 +192,11 @@
                 <span>object</span>
                 <p>Object that contains arrays of all the IDs in sections on the sheet indexed by repeating name.</p>
             </div>
-                <pre class="prettyprint prettyprinted" style="">
-                  <code class="language-js">//Remove a repeating Rowk.getAllAttrs({ callback:(attributes,sections)&#x3D;&gt;{   const rowID &#x3D; sections.repeating_equipment[0];   k.removeRepeatingRow(&#x60;repeating_equipment_${rowID}&#x60;,attributes,sections);   console.log(sections.repeating_equipment); // &#x3D;&gt; rowID no longer exists in the array.   console.log(attributes[&#x60;repeating_equipment_${rowID}_name&#x60;]); // &#x3D;&gt; undefined }})</code>
-                </pre>
+                <pre class="prettyprint" style=""><code class="language-js">//Remove a repeating Rowk.getAllAttrs({ callback:(attributes,sections)&#x3D;&gt;{   const rowID &#x3D; sections.repeating_equipment[0];   k.removeRepeatingRow(&#x60;repeating_equipment_${rowID}&#x60;,attributes,sections);   console.log(sections.repeating_equipment); // &#x3D;&gt; rowID no longer exists in the array.   console.log(attributes[&#x60;repeating_equipment_${rowID}_name&#x60;]); // &#x3D;&gt; undefined }})</code></pre>
           </div>
         </section>        <section>
           <div>
-            <h3 class="no-capital" id="getAttrs">getAttrs</h3>
+            <h3 class="no-capital" id="getAttrs">k.getAttrs</h3>
           </div>
           <div class="border"></div>
           <div class="content">
@@ -223,13 +213,11 @@
                 <span>function</span>
                 <p>The function to call after the attribute values have been gotten. An {@link attributesProxy} is passed to the callback.</p>
             </div>
-                <pre class="prettyprint prettyprinted" style="">
-                  <code class="language-js">//Gets the attributes named in props.k.getAttrs({ props:[&#x27;attribute_1&#x27;,&#x27;attribute_2&#x27;], callback:(attributes)&#x3D;&gt;{   //Work with the attributes as you would in a normal getAttrs, or use the superpowers of the K-scaffold attributes object like so:   attributes.attribute_1 &#x3D; &#x27;new value&#x27;;   attributes.set(); }})</code>
-                </pre>
+                <pre class="prettyprint" style=""><code class="language-js">//Gets the attributes named in props.k.getAttrs({ props:[&#x27;attribute_1&#x27;,&#x27;attribute_2&#x27;], callback:(attributes)&#x3D;&gt;{   //Work with the attributes as you would in a normal getAttrs, or use the superpowers of the K-scaffold attributes object like so:   attributes.attribute_1 &#x3D; &#x27;new value&#x27;;   attributes.set(); }})</code></pre>
           </div>
         </section>        <section>
           <div>
-            <h3 class="no-capital" id="getAllAttrs">getAllAttrs</h3>
+            <h3 class="no-capital" id="getAllAttrs">k.getAllAttrs</h3>
           </div>
           <div class="border"></div>
           <div class="content">
@@ -252,13 +240,11 @@
                 <span>function</span>
                 <p>The function to call after the attribute values have been gotten. An {@link attributesProxy} is passed to the callback along with a {@link sectionObj} and {@link expandedCascade}.</p>
             </div>
-                <pre class="prettyprint prettyprinted" style="">
-                  <code class="language-js">//Get every K-scaffold linked attribute on the sheetk.getAllAttrs({ callback:(attributes,sections,casc)&#x3D;&gt;{   //Work with the attributes as you please.   attributes.some_attribute &#x3D; &#x27;a value&#x27;;   attributes.set();//Apply our change }})</code>
-                </pre>
+                <pre class="prettyprint" style=""><code class="language-js">//Get every K-scaffold linked attribute on the sheetk.getAllAttrs({ callback:(attributes,sections,casc)&#x3D;&gt;{   //Work with the attributes as you please.   attributes.some_attribute &#x3D; &#x27;a value&#x27;;   attributes.set();//Apply our change }})</code></pre>
           </div>
         </section>        <section>
           <div>
-            <h3 class="no-capital" id="getSections">getSections</h3>
+            <h3 class="no-capital" id="getSections">k.getSections</h3>
           </div>
           <div class="border"></div>
           <div class="content">
@@ -281,13 +267,11 @@
                 <span>function</span>
                 <p>The function to call once all IDs have been gotten and the array of repating attributes to get has been assembled. The callback is passed the array of repating attributes to get and a {@link sectionObj}.</p>
             </div>
-                <pre class="prettyprint prettyprinted" style="">
-                  <code class="language-js">// Get some section detailsconst sectionDetails &#x3D; { {section:&#x27;repeating_equipment&#x27;,fields:[&#x27;name&#x27;,&#x27;weight&#x27;,&#x27;cost&#x27;]}, {section:&#x27;repeating_weapon&#x27;,fields:[&#x27;name&#x27;,&#x27;attack&#x27;,&#x27;damage&#x27;]}};k.getSections(sectionDetails,(attributeNames,sections)&#x3D;&gt;{ console.log(attributeNames);// &#x3D;&gt; Array containing all row specific attribute names console.log(sections);// &#x3D;&gt; Object with arrays containing the row ids. Indexed by section name (e.g. repeating_eqiupment)})</code>
-                </pre>
+                <pre class="prettyprint" style=""><code class="language-js">// Get some section detailsconst sectionDetails &#x3D; { {section:&#x27;repeating_equipment&#x27;,fields:[&#x27;name&#x27;,&#x27;weight&#x27;,&#x27;cost&#x27;]}, {section:&#x27;repeating_weapon&#x27;,fields:[&#x27;name&#x27;,&#x27;attack&#x27;,&#x27;damage&#x27;]}};k.getSections(sectionDetails,(attributeNames,sections)&#x3D;&gt;{ console.log(attributeNames);// &#x3D;&gt; Array containing all row specific attribute names console.log(sections);// &#x3D;&gt; Object with arrays containing the row ids. Indexed by section name (e.g. repeating_eqiupment)})</code></pre>
           </div>
         </section>        <section>
           <div>
-            <h3 class="no-capital" id="set">set</h3>
+            <h3 class="no-capital" id="set">k.set</h3>
           </div>
           <div class="border"></div>
           <div class="content">
@@ -307,13 +291,11 @@
                 <span>function</span>
                 <p>The callback function to invoke after the setting has been completed. No arguments are passed to the callback function.</p>
             </div>
-                <pre class="prettyprint prettyprinted" style="">
-                  <code class="language-js">//Set some attributes silentlyk.setAttrs({attribute_1:&#x27;new value&#x27;})//Set some attributes and triggers listenersk.setAttrs({attribute_1:&#x27;new value&#x27;,true})//Set some attributes and call a callback functionk.setAttrs({attribute_1:&#x27;new value&#x27;},null,()&#x3D;&gt;{ //Do something after the attribute is set})</code>
-                </pre>
+                <pre class="prettyprint" style=""><code class="language-js">//Set some attributes silentlyk.setAttrs({attribute_1:&#x27;new value&#x27;})//Set some attributes and triggers listenersk.setAttrs({attribute_1:&#x27;new value&#x27;,true})//Set some attributes and call a callback functionk.setAttrs({attribute_1:&#x27;new value&#x27;},null,()&#x3D;&gt;{ //Do something after the attribute is set})</code></pre>
           </div>
         </section>        <section>
           <div>
-            <h3 class="no-capital" id="generateRowID">generateRowID</h3>
+            <h3 class="no-capital" id="generateRowID">k.generateRowID</h3>
           </div>
           <div class="border"></div>
           <div class="content">
@@ -330,13 +312,11 @@
                 <span>string</span>
                 <p>Custom text to start the ID with. This text should not be longer than the standard repeating section ID format.</p>
             </div>
-                <pre class="prettyprint prettyprinted" style="">
-                  <code class="language-js">k.getAllAttrs({ callback:(attributes,sections,casc)&#x3D;&gt;{   //Create a new row ID   const rowID &#x3D; k.generateRowID(&#x27;repeating_equipment&#x27;,sections);   console.log(rowID);// &#x3D;&gt; -p8rg908ug0suzz   //Create a custom row ID   const customID &#x3D; k.generateRowID(&#x27;repeating_equipment&#x27;,sections,&#x27;custom&#x27;);   console.log(customID);// &#x3D;&gt; -custom98uadj89kj }});</code>
-                </pre>
+                <pre class="prettyprint" style=""><code class="language-js">k.getAllAttrs({ callback:(attributes,sections,casc)&#x3D;&gt;{   //Create a new row ID   const rowID &#x3D; k.generateRowID(&#x27;repeating_equipment&#x27;,sections);   console.log(rowID);// &#x3D;&gt; -p8rg908ug0suzz   //Create a custom row ID   const customID &#x3D; k.generateRowID(&#x27;repeating_equipment&#x27;,sections,&#x27;custom&#x27;);   console.log(customID);// &#x3D;&gt; -custom98uadj89kj }});</code></pre>
           </div>
         </section>        <section>
           <div>
-            <h3 class="no-capital" id="sanitizeForRegex">sanitizeForRegex</h3>
+            <h3 class="no-capital" id="sanitizeForRegex">k.sanitizeForRegex</h3>
           </div>
           <div class="border"></div>
           <div class="content">
@@ -350,13 +330,11 @@
                 <span>string</span>
                 <p>The text to replace characters in</p>
             </div>
-                <pre class="prettyprint prettyprinted" style="">
-                  <code class="language-js">const textForRegex &#x3D; k.sanitizeForRegex(&#x27;.some thing[with characters]&#x27;);console.log(textForRegex);// &#x3D;&gt; &quot;\.some thing\[with characters\]&quot;</code>
-                </pre>
+                <pre class="prettyprint" style=""><code class="language-js">const textForRegex &#x3D; k.sanitizeForRegex(&#x27;.some thing[with characters]&#x27;);console.log(textForRegex);// &#x3D;&gt; &quot;\.some thing\[with characters\]&quot;</code></pre>
           </div>
         </section>        <section>
           <div>
-            <h3 class="no-capital" id="value">value</h3>
+            <h3 class="no-capital" id="value">k.value</h3>
           </div>
           <div class="border"></div>
           <div class="content">
@@ -373,13 +351,11 @@
                 <span>number</span>
                 <p>The default value, uses 0 if not passed</p>
             </div>
-                <pre class="prettyprint prettyprinted" style="">
-                  <code class="language-js">const num &#x3D; k.value(&#x27;100&#x27;);console.log(num);// &#x3D;&gt; 100</code>
-                </pre>
+                <pre class="prettyprint" style=""><code class="language-js">const num &#x3D; k.value(&#x27;100&#x27;);console.log(num);// &#x3D;&gt; 100</code></pre>
           </div>
         </section>        <section>
           <div>
-            <h3 class="no-capital" id="parseRepeatName">parseRepeatName</h3>
+            <h3 class="no-capital" id="parseRepeatName">k.parseRepeatName</h3>
           </div>
           <div class="border"></div>
           <div class="content">
@@ -393,13 +369,11 @@
                 <span>string</span>
                 <p>The string to parse</p>
             </div>
-                <pre class="prettyprint prettyprinted" style="">
-                  <code class="language-js">//Extract info from a full repeating nameconst [section,rowID,attrName] &#x3D; k.parseRepeatName(&#x27;repeating_equipment_-8908asdflkjZlkj23_name&#x27;);console.log(section);// &#x3D;&gt; &quot;repeating_equipment&quot;console.log(rowID);// &#x3D;&gt; &quot;-8908asdflkjZlkj23&quot;console.log(attrName);// &#x3D;&gt; &quot;name&quot;//Extract info from just a row nameconst [section,rowID,attrName] &#x3D; k.parseRepeatName(&#x27;repeating_equipment_-8908asdflkjZlkj23&#x27;);console.log(section);// &#x3D;&gt; &quot;repeating_equipment&quot;console.log(rowID);// &#x3D;&gt; &quot;-8908asdflkjZlkj23&quot;console.log(attrName);// &#x3D;&gt; undefined</code>
-                </pre>
+                <pre class="prettyprint" style=""><code class="language-js">//Extract info from a full repeating nameconst [section,rowID,attrName] &#x3D; k.parseRepeatName(&#x27;repeating_equipment_-8908asdflkjZlkj23_name&#x27;);console.log(section);// &#x3D;&gt; &quot;repeating_equipment&quot;console.log(rowID);// &#x3D;&gt; &quot;-8908asdflkjZlkj23&quot;console.log(attrName);// &#x3D;&gt; &quot;name&quot;//Extract info from just a row nameconst [section,rowID,attrName] &#x3D; k.parseRepeatName(&#x27;repeating_equipment_-8908asdflkjZlkj23&#x27;);console.log(section);// &#x3D;&gt; &quot;repeating_equipment&quot;console.log(rowID);// &#x3D;&gt; &quot;-8908asdflkjZlkj23&quot;console.log(attrName);// &#x3D;&gt; undefined</code></pre>
           </div>
         </section>        <section>
           <div>
-            <h3 class="no-capital" id="parseTriggerName">parseTriggerName</h3>
+            <h3 class="no-capital" id="parseTriggerName">k.parseTriggerName</h3>
           </div>
           <div class="border"></div>
           <div class="content">
@@ -413,13 +387,11 @@
                 <span>string</span>
                 <p>The triggerName property of the</p>
             </div>
-                <pre class="prettyprint prettyprinted" style="">
-                  <code class="language-js">//Parse a non repeating triggerconst [section,rowID,attrName] &#x3D; k.parseTriggerName(&#x27;clicked:some-button&#x27;);console.log(section);// &#x3D;&gt; undefinedconsole.log(rowID);// &#x3D;&gt; undefinedconsole.log(attrName);// &#x3D;&gt; &quot;some-button&quot;//Parse a repeating triggerconst [section,rowID,attrName] &#x3D; k.parseTriggerName(&#x27;clicked:repeating_attack_-234lkjpd8fu8usadf_some-button&#x27;);console.log(section);// &#x3D;&gt; &quot;repeating_attack&quot;console.log(rowID);// &#x3D;&gt; &quot;-234lkjpd8fu8usadf&quot;console.log(attrName);// &#x3D;&gt; &quot;some-button&quot;//Parse a repeating nameconst [section,rowID,attrName] &#x3D; k.parseTriggerName(&#x27;repeating_attack_-234lkjpd8fu8usadf_some-button&#x27;);console.log(section);// &#x3D;&gt; &quot;repeating_attack&quot;console.log(rowID);// &#x3D;&gt; &quot;-234lkjpd8fu8usadf&quot;console.log(attrName);// &#x3D;&gt; &quot;some-button&quot;</code>
-                </pre>
+                <pre class="prettyprint" style=""><code class="language-js">//Parse a non repeating triggerconst [section,rowID,attrName] &#x3D; k.parseTriggerName(&#x27;clicked:some-button&#x27;);console.log(section);// &#x3D;&gt; undefinedconsole.log(rowID);// &#x3D;&gt; undefinedconsole.log(attrName);// &#x3D;&gt; &quot;some-button&quot;//Parse a repeating triggerconst [section,rowID,attrName] &#x3D; k.parseTriggerName(&#x27;clicked:repeating_attack_-234lkjpd8fu8usadf_some-button&#x27;);console.log(section);// &#x3D;&gt; &quot;repeating_attack&quot;console.log(rowID);// &#x3D;&gt; &quot;-234lkjpd8fu8usadf&quot;console.log(attrName);// &#x3D;&gt; &quot;some-button&quot;//Parse a repeating nameconst [section,rowID,attrName] &#x3D; k.parseTriggerName(&#x27;repeating_attack_-234lkjpd8fu8usadf_some-button&#x27;);console.log(section);// &#x3D;&gt; &quot;repeating_attack&quot;console.log(rowID);// &#x3D;&gt; &quot;-234lkjpd8fu8usadf&quot;console.log(attrName);// &#x3D;&gt; &quot;some-button&quot;</code></pre>
           </div>
         </section>        <section>
           <div>
-            <h3 class="no-capital" id="parseHTMLName">parseHTMLName</h3>
+            <h3 class="no-capital" id="parseHTMLName">k.parseHTMLName</h3>
           </div>
           <div class="border"></div>
           <div class="content">
@@ -433,13 +405,11 @@
                 <span>string</span>
                 <p>The triggerName property of the [event](https://wiki.roll20.net/Sheet_Worker_Scripts#eventInfo_Object).</p>
             </div>
-                <pre class="prettyprint prettyprinted" style="">
-                  <code class="language-js">//Parse a nameconst attrName &#x3D; k.parseHtmlName(&#x27;attr_attribute_1&#x27;);console.log(attrName);// &#x3D;&gt; &quot;attribute_1&quot;</code>
-                </pre>
+                <pre class="prettyprint" style=""><code class="language-js">//Parse a nameconst attrName &#x3D; k.parseHtmlName(&#x27;attr_attribute_1&#x27;);console.log(attrName);// &#x3D;&gt; &quot;attribute_1&quot;</code></pre>
           </div>
         </section>        <section>
           <div>
-            <h3 class="no-capital" id="capitalize">capitalize</h3>
+            <h3 class="no-capital" id="capitalize">k.capitalize</h3>
           </div>
           <div class="border"></div>
           <div class="content">
@@ -453,13 +423,11 @@
                 <span>string</span>
                 <p>The string to capitalize</p>
             </div>
-                <pre class="prettyprint prettyprinted" style="">
-                  <code class="language-js">const capitalized &#x3D; k.capitalize(&#x27;a word&#x27;);console.log(capitalized);// &#x3D;&gt; &quot;A Word&quot;</code>
-                </pre>
+                <pre class="prettyprint" style=""><code class="language-js">const capitalized &#x3D; k.capitalize(&#x27;a word&#x27;);console.log(capitalized);// &#x3D;&gt; &quot;A Word&quot;</code></pre>
           </div>
         </section>        <section>
           <div>
-            <h3 class="no-capital" id="extractQueryResult">extractQueryResult</h3>
+            <h3 class="no-capital" id="extractQueryResult">k.extractQueryResult</h3>
           </div>
           <div class="border"></div>
           <div class="content">
@@ -473,13 +441,11 @@
                 <span>string</span>
                 <p>The query should be just the text as the &#x60;?{&#x60; and &#x60;}&#x60; at the start/end of the query are added by the function.</p>
             </div>
-                <pre class="prettyprint prettyprinted" style="">
-                  <code class="language-js">const rollFunction &#x3D; async function(){ //Get the result of a choose from list query const queryResult &#x3D; await extractQueryResult(&#x27;Prompt Text Here|Option 1|Option 2&#x27;); console.log(queryResult);//&#x3D;&gt; &quot;Option 1&quot; or &quot;Option 2&quot; depending on what the user selects //Get free from input from the user const freeResult &#x3D; await extractQueryResult(&#x27;Prompt Text Here&#x27;); consoel.log(freeResult);// &#x3D;&gt; Whatever the user entered}</code>
-                </pre>
+                <pre class="prettyprint" style=""><code class="language-js">const rollFunction &#x3D; async function(){ //Get the result of a choose from list query const queryResult &#x3D; await extractQueryResult(&#x27;Prompt Text Here|Option 1|Option 2&#x27;); console.log(queryResult);//&#x3D;&gt; &quot;Option 1&quot; or &quot;Option 2&quot; depending on what the user selects //Get free from input from the user const freeResult &#x3D; await extractQueryResult(&#x27;Prompt Text Here&#x27;); consoel.log(freeResult);// &#x3D;&gt; Whatever the user entered}</code></pre>
           </div>
         </section>        <section>
           <div>
-            <h3 class="no-capital" id="pseudoQuery">pseudoQuery</h3>
+            <h3 class="no-capital" id="pseudoQuery">k.pseudoQuery</h3>
           </div>
           <div class="border"></div>
           <div class="content">
@@ -493,13 +459,11 @@
                 <span>stringnumber</span>
                 <p>The value to return. Optional.</p>
             </div>
-                <pre class="prettyprint prettyprinted" style="">
-                  <code class="language-js">const rollFunction &#x3D; async function(){ //Get the result of a choose from list query const queryResult &#x3D; await pseudoQuery(&#x27;a value&#x27;); console.log(queryResult);//&#x3D;&gt; &quot;a value&quot;}</code>
-                </pre>
+                <pre class="prettyprint" style=""><code class="language-js">const rollFunction &#x3D; async function(){ //Get the result of a choose from list query const queryResult &#x3D; await pseudoQuery(&#x27;a value&#x27;); console.log(queryResult);//&#x3D;&gt; &quot;a value&quot;}</code></pre>
           </div>
         </section>        <section>
           <div>
-            <h3 class="no-capital" id="log">log</h3>
+            <h3 class="no-capital" id="log">k.log</h3>
           </div>
           <div class="border"></div>
           <div class="content">
@@ -516,7 +480,7 @@
           </div>
         </section>        <section>
           <div>
-            <h3 class="no-capital" id="debug">debug</h3>
+            <h3 class="no-capital" id="debug">k.debug</h3>
           </div>
           <div class="border"></div>
           <div class="content">
@@ -536,7 +500,7 @@
           </div>
         </section>        <section>
           <div>
-            <h3 class="no-capital" id="orderSections">orderSections</h3>
+            <h3 class="no-capital" id="orderSections">k.orderSections</h3>
           </div>
           <div class="border"></div>
           <div class="content">
@@ -556,7 +520,7 @@
           </div>
         </section>        <section>
           <div>
-            <h3 class="no-capital" id="orderSection">orderSection</h3>
+            <h3 class="no-capital" id="orderSection">k.orderSection</h3>
           </div>
           <div class="border"></div>
           <div class="content">
@@ -576,7 +540,7 @@
           </div>
         </section>        <section>
           <div>
-            <h3 class="no-capital" id="commaArray">commaArray</h3>
+            <h3 class="no-capital" id="commaArray">k.commaArray</h3>
           </div>
           <div class="border"></div>
           <div class="content">
@@ -593,7 +557,7 @@
           </div>
         </section>        <section>
           <div>
-            <h3 class="no-capital" id="kSwitchTab">kSwitchTab</h3>
+            <h3 class="no-capital" id="kSwitchTab">k.kSwitchTab</h3>
           </div>
           <div class="border"></div>
           <div class="content">
@@ -610,7 +574,7 @@
           </div>
         </section>        <section>
           <div>
-            <h3 class="no-capital" id="kTabOnOpen">kTabOnOpen</h3>
+            <h3 class="no-capital" id="kTabOnOpen">k.kTabOnOpen</h3>
           </div>
           <div class="border"></div>
           <div class="content">
@@ -651,8 +615,8 @@
     <script type="text/javascript">const siteVersion = 1.1;
       
     </script>
-    <script src="assets/javascript/resizer.js"></script>
-    <script src="assets/javascript/prettify.js"></script>
-    <script src="assets/javascript/parser.js"></script>
+    <script src="./assets/javascript/resizer.js"></script>
+    <script src="./assets/javascript/prettify.js"></script>
+    <script src="./assets/javascript/parser.js"></script>
   </body>
 </html>

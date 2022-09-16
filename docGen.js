@@ -7,6 +7,7 @@ const nav = require('./docs/templates/navElement.handlebars');
 
 hb.registerPartial('card',card);
 hb.registerPartial('navElement',nav);
+hb.registerHelper('trim',(text)=>text.trim())
 
 console.log('Generating Documentation');
 const parsePugdoc = async (docData) => {
