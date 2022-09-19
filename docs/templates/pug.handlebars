@@ -17,12 +17,13 @@
   </head>
   <body>
     <header>
-      <h1>The K-Scaffold Framework</h1><span class="subhead">PUG, HTML, and Javascript</span>
+      <h1>The K-Scaffold Framework</h1><span class="subhead">PUG, HTML, SCSS, and Javascript</span>
     </header>
     <nav>
       <ul>
         <li><a href="./index.html?v=1.1">General Info</a></li>
         <li><a href="./js.html?v=1.1">Sheetworker Documentation</a></li>
+        <li><a href="./scss.html?v=1.1">SCSS Documentation</a></li>
       </ul>
       <ul>
         <li><a href="#intro-header">Intro</a></li>
@@ -66,10 +67,9 @@ k.registerFuncs({calcStrength});</code></pre>
           <p>Because this uses the destructuring pattern, these attribute names must be named this, but can be in any order in the function declaration.</p>
         </div>
       </section>
-      <span>Each starts here</span>
-      {{#each docData as |doc|}}
-        {{> card}}
-      {{/each}}
+{{~#each docData as |doc| ~}}
+  {{~> card}}
+{{~/each}}
     </main>
     <aside>
       <h2>Mixins</h2>

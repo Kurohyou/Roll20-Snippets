@@ -9,7 +9,7 @@
             "filename": "accessSheet.js",
             "lineno": 4,
             "columnno": 6,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100000003",
                 "name": "updateSheet",
@@ -36,7 +36,7 @@
             "filename": "accessSheet.js",
             "lineno": 6,
             "columnno": 15,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100000015",
                 "name": "props",
@@ -60,7 +60,7 @@
             "filename": "accessSheet.js",
             "lineno": 6,
             "columnno": 47,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100000020",
                 "name": "callback",
@@ -88,7 +88,7 @@
             "filename": "accessSheet.js",
             "lineno": 7,
             "columnno": 4,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100000027",
                 "name": "kFuncs.debugMode",
@@ -114,7 +114,7 @@
             "filename": "accessSheet.js",
             "lineno": 8,
             "columnno": 11,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100000044",
                 "name": "sheet_version",
@@ -138,7 +138,7 @@
             "filename": "accessSheet.js",
             "lineno": 13,
             "columnno": 27,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100000087",
                 "name": "attributes",
@@ -162,7 +162,7 @@
             "filename": "accessSheet.js",
             "lineno": 13,
             "columnno": 38,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100000089",
                 "name": "sections",
@@ -186,7 +186,7 @@
             "filename": "accessSheet.js",
             "lineno": 13,
             "columnno": 47,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100000091",
                 "name": "casc",
@@ -210,7 +210,7 @@
             "filename": "accessSheet.js",
             "lineno": 21,
             "columnno": 19,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100000126",
                 "name": "attributes",
@@ -234,7 +234,7 @@
             "filename": "accessSheet.js",
             "lineno": 21,
             "columnno": 30,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100000128",
                 "name": "sections",
@@ -258,7 +258,7 @@
             "filename": "accessSheet.js",
             "lineno": 21,
             "columnno": 39,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100000130",
                 "name": "casc",
@@ -282,7 +282,7 @@
             "filename": "accessSheet.js",
             "lineno": 28,
             "columnno": 25,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100000165",
                 "name": "attributes",
@@ -306,7 +306,7 @@
             "filename": "accessSheet.js",
             "lineno": 28,
             "columnno": 36,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100000167",
                 "name": "sections",
@@ -330,7 +330,7 @@
             "filename": "accessSheet.js",
             "lineno": 28,
             "columnno": 45,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100000169",
                 "name": "casc",
@@ -354,7 +354,7 @@
             "filename": "accessSheet.js",
             "lineno": 33,
             "columnno": 20,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100000183",
                 "name": "attributes",
@@ -378,7 +378,7 @@
             "filename": "accessSheet.js",
             "lineno": 33,
             "columnno": 31,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100000185",
                 "name": "sections",
@@ -402,7 +402,7 @@
             "filename": "accessSheet.js",
             "lineno": 34,
             "columnno": 4,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100000188",
                 "name": "attributes.sheet_version",
@@ -428,7 +428,7 @@
             "filename": "accessSheet.js",
             "lineno": 41,
             "columnno": 6,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100000214",
                 "name": "initialSetup",
@@ -452,7 +452,7 @@
             "filename": "accessSheet.js",
             "lineno": 53,
             "columnno": 6,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100000225",
                 "name": "accessSheet",
@@ -501,7 +501,7 @@
             "filename": "accessSheet.js",
             "lineno": 54,
             "columnno": 9,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100000234",
                 "name": "funcs",
@@ -525,7 +525,7 @@
             "filename": "accessSheet.js",
             "lineno": 55,
             "columnno": 9,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100000244",
                 "name": "event",
@@ -549,7 +549,7 @@
             "filename": "accessSheet.js",
             "lineno": 56,
             "columnno": 15,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100000250",
                 "name": "callback",
@@ -575,7 +575,7 @@
             "filename": "accessSheet.js",
             "lineno": 57,
             "columnno": 8,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100000257",
                 "name": "trigger",
@@ -601,7 +601,7 @@
             "filename": "accessSheet.js",
             "lineno": 58,
             "columnno": 30,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100000271",
                 "name": "event",
@@ -625,7 +625,7 @@
             "filename": "accessSheet.js",
             "lineno": 58,
             "columnno": 36,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100000273",
                 "name": "trigger",
@@ -649,7 +649,7 @@
             "filename": "accessSheet.js",
             "lineno": 58,
             "columnno": 44,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100000275",
                 "name": "attributes",
@@ -673,7 +673,7 @@
             "filename": "accessSheet.js",
             "lineno": 58,
             "columnno": 55,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100000277",
                 "name": "sections",
@@ -697,7 +697,7 @@
             "filename": "accessSheet.js",
             "lineno": 58,
             "columnno": 64,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100000279",
                 "name": "casc",
@@ -721,7 +721,7 @@
             "filename": "accessSheet.js",
             "lineno": 61,
             "columnno": 0,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100000282",
                 "name": "funcs.accessSheet",
@@ -747,7 +747,7 @@
             "filename": "attribute_proxy.js",
             "lineno": 4,
             "columnno": 6,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100000290",
                 "name": "createAttrProxy",
@@ -781,7 +781,7 @@
             "filename": "attribute_proxy.js",
             "lineno": 6,
             "columnno": 8,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100000296",
                 "name": "getCascObj",
@@ -813,7 +813,7 @@
             "filename": "attribute_proxy.js",
             "lineno": 7,
             "columnno": 10,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100000303",
                 "name": "eventName",
@@ -839,7 +839,7 @@
             "filename": "attribute_proxy.js",
             "lineno": 8,
             "columnno": 8,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100000313",
                 "name": "typePrefix",
@@ -865,7 +865,7 @@
             "filename": "attribute_proxy.js",
             "lineno": 13,
             "columnno": 8,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100000329",
                 "name": "cascName",
@@ -891,7 +891,7 @@
             "filename": "attribute_proxy.js",
             "lineno": 14,
             "columnno": 8,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100000343",
                 "name": "cascObj",
@@ -917,7 +917,7 @@
             "filename": "attribute_proxy.js",
             "lineno": 16,
             "columnno": 6,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100000354",
                 "name": "cascObj.previousValue",
@@ -944,7 +944,7 @@
             "filename": "attribute_proxy.js",
             "lineno": 21,
             "columnno": 8,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100000364",
                 "name": "triggerFunctions",
@@ -972,7 +972,7 @@
             "filename": "attribute_proxy.js",
             "lineno": 25,
             "columnno": 21,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100000413",
                 "name": "trigger",
@@ -996,7 +996,7 @@
             "filename": "attribute_proxy.js",
             "lineno": 25,
             "columnno": 33,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100000415",
                 "name": "attributes",
@@ -1020,7 +1020,7 @@
             "filename": "attribute_proxy.js",
             "lineno": 25,
             "columnno": 44,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100000417",
                 "name": "sections",
@@ -1044,7 +1044,7 @@
             "filename": "attribute_proxy.js",
             "lineno": 30,
             "columnno": 8,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100000431",
                 "name": "initialFunction",
@@ -1069,7 +1069,7 @@
             "filename": "attribute_proxy.js",
             "lineno": 34,
             "columnno": 32,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100000466",
                 "name": "trigger",
@@ -1093,7 +1093,7 @@
             "filename": "attribute_proxy.js",
             "lineno": 34,
             "columnno": 44,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100000468",
                 "name": "attributes",
@@ -1117,7 +1117,7 @@
             "filename": "attribute_proxy.js",
             "lineno": 34,
             "columnno": 55,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100000470",
                 "name": "sections",
@@ -1141,7 +1141,7 @@
             "filename": "attribute_proxy.js",
             "lineno": 38,
             "columnno": 8,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100000486",
                 "name": "alwaysFunctions",
@@ -1169,7 +1169,7 @@
             "filename": "attribute_proxy.js",
             "lineno": 40,
             "columnno": 15,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100000510",
                 "name": "trigger",
@@ -1193,7 +1193,7 @@
             "filename": "attribute_proxy.js",
             "lineno": 40,
             "columnno": 23,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100000512",
                 "name": "attributes",
@@ -1217,7 +1217,7 @@
             "filename": "attribute_proxy.js",
             "lineno": 40,
             "columnno": 34,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100000514",
                 "name": "sections",
@@ -1241,7 +1241,7 @@
             "filename": "attribute_proxy.js",
             "lineno": 40,
             "columnno": 43,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100000516",
                 "name": "casc",
@@ -1265,7 +1265,7 @@
             "filename": "attribute_proxy.js",
             "lineno": 43,
             "columnno": 8,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100000519",
                 "name": "processChange",
@@ -1293,7 +1293,7 @@
             "filename": "attribute_proxy.js",
             "lineno": 43,
             "columnno": 34,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100000523",
                 "name": "event",
@@ -1317,7 +1317,7 @@
             "filename": "attribute_proxy.js",
             "lineno": 43,
             "columnno": 40,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100000525",
                 "name": "trigger",
@@ -1341,7 +1341,7 @@
             "filename": "attribute_proxy.js",
             "lineno": 43,
             "columnno": 48,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100000527",
                 "name": "attributes",
@@ -1365,7 +1365,7 @@
             "filename": "attribute_proxy.js",
             "lineno": 43,
             "columnno": 59,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100000529",
                 "name": "sections",
@@ -1389,7 +1389,7 @@
             "filename": "attribute_proxy.js",
             "lineno": 43,
             "columnno": 68,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100000531",
                 "name": "casc",
@@ -1413,7 +1413,7 @@
             "filename": "attribute_proxy.js",
             "lineno": 52,
             "columnno": 11,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100000582",
                 "name": "trigger",
@@ -1437,7 +1437,7 @@
             "filename": "attribute_proxy.js",
             "lineno": 62,
             "columnno": 8,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100000639",
                 "name": "attributes[undefined]",
@@ -1462,7 +1462,7 @@
             "filename": "attribute_proxy.js",
             "lineno": 62,
             "columnno": 63,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100000652",
                 "name": "trigger",
@@ -1486,7 +1486,7 @@
             "filename": "attribute_proxy.js",
             "lineno": 62,
             "columnno": 71,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100000654",
                 "name": "attributes",
@@ -1510,7 +1510,7 @@
             "filename": "attribute_proxy.js",
             "lineno": 62,
             "columnno": 82,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100000656",
                 "name": "sections",
@@ -1534,7 +1534,7 @@
             "filename": "attribute_proxy.js",
             "lineno": 62,
             "columnno": 91,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100000658",
                 "name": "casc",
@@ -1558,7 +1558,7 @@
             "filename": "attribute_proxy.js",
             "lineno": 70,
             "columnno": 20,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100000707",
                 "name": "attributes",
@@ -1582,7 +1582,7 @@
             "filename": "attribute_proxy.js",
             "lineno": 70,
             "columnno": 31,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100000709",
                 "name": "sections",
@@ -1606,7 +1606,7 @@
             "filename": "attribute_proxy.js",
             "lineno": 70,
             "columnno": 40,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100000711",
                 "name": "casc",
@@ -1630,7 +1630,7 @@
             "filename": "attribute_proxy.js",
             "lineno": 72,
             "columnno": 8,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100000714",
                 "name": "attrTarget",
@@ -1656,7 +1656,7 @@
             "filename": "attribute_proxy.js",
             "lineno": 73,
             "columnno": 4,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100000717",
                 "name": "updates",
@@ -1681,7 +1681,7 @@
             "filename": "attribute_proxy.js",
             "lineno": 74,
             "columnno": 4,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100000719",
                 "name": "attributes",
@@ -1706,7 +1706,7 @@
             "filename": "attribute_proxy.js",
             "lineno": 75,
             "columnno": 4,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100000723",
                 "name": "repOrders",
@@ -1731,7 +1731,7 @@
             "filename": "attribute_proxy.js",
             "lineno": 76,
             "columnno": 4,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100000725",
                 "name": "queue",
@@ -1756,7 +1756,7 @@
             "filename": "attribute_proxy.js",
             "lineno": 77,
             "columnno": 4,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100000727",
                 "name": "casc",
@@ -1781,7 +1781,7 @@
             "filename": "attribute_proxy.js",
             "lineno": 78,
             "columnno": 4,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100000729",
                 "name": "alwaysFunctions",
@@ -1806,7 +1806,7 @@
             "filename": "attribute_proxy.js",
             "lineno": 79,
             "columnno": 4,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100000731",
                 "name": "processChange",
@@ -1831,7 +1831,7 @@
             "filename": "attribute_proxy.js",
             "lineno": 80,
             "columnno": 4,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100000733",
                 "name": "triggerFunctions",
@@ -1856,7 +1856,7 @@
             "filename": "attribute_proxy.js",
             "lineno": 81,
             "columnno": 4,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100000735",
                 "name": "initialFunction",
@@ -1881,7 +1881,7 @@
             "filename": "attribute_proxy.js",
             "lineno": 82,
             "columnno": 4,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100000737",
                 "name": "getCascObj",
@@ -1906,7 +1906,7 @@
             "filename": "attribute_proxy.js",
             "lineno": 84,
             "columnno": 8,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100000740",
                 "name": "attrHandler",
@@ -1932,7 +1932,7 @@
             "filename": "attribute_proxy.js",
             "lineno": 85,
             "columnno": 4,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100000743",
                 "name": "get",
@@ -1962,7 +1962,7 @@
             "filename": "attribute_proxy.js",
             "lineno": 89,
             "columnno": 15,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100000759",
                 "name": "attributes",
@@ -1986,7 +1986,7 @@
             "filename": "attribute_proxy.js",
             "lineno": 89,
             "columnno": 26,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100000761",
                 "name": "sections",
@@ -2010,7 +2010,7 @@
             "filename": "attribute_proxy.js",
             "lineno": 89,
             "columnno": 35,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100000763",
                 "name": "casc",
@@ -2034,7 +2034,7 @@
             "filename": "attribute_proxy.js",
             "lineno": 89,
             "columnno": 40,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100000765",
                 "name": "callback",
@@ -2058,7 +2058,7 @@
             "filename": "attribute_proxy.js",
             "lineno": 89,
             "columnno": 49,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100000767",
                 "name": "vocal",
@@ -2082,7 +2082,7 @@
             "filename": "attribute_proxy.js",
             "lineno": 91,
             "columnno": 16,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100000791",
                 "name": "triggerName",
@@ -2108,7 +2108,7 @@
             "filename": "attribute_proxy.js",
             "lineno": 92,
             "columnno": 16,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100000800",
                 "name": "trigger",
@@ -2134,7 +2134,7 @@
             "filename": "attribute_proxy.js",
             "lineno": 92,
             "columnno": 38,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100000805",
                 "name": "sourceAttribute",
@@ -2158,7 +2158,7 @@
             "filename": "attribute_proxy.js",
             "lineno": 93,
             "columnno": 38,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100000814",
                 "name": "trigger",
@@ -2182,7 +2182,7 @@
             "filename": "attribute_proxy.js",
             "lineno": 93,
             "columnno": 46,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100000816",
                 "name": "attributes",
@@ -2206,7 +2206,7 @@
             "filename": "attribute_proxy.js",
             "lineno": 93,
             "columnno": 57,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100000818",
                 "name": "sections",
@@ -2230,7 +2230,7 @@
             "filename": "attribute_proxy.js",
             "lineno": 93,
             "columnno": 66,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100000820",
                 "name": "casc",
@@ -2254,7 +2254,7 @@
             "filename": "attribute_proxy.js",
             "lineno": 95,
             "columnno": 19,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100000827",
                 "name": "updates",
@@ -2278,7 +2278,7 @@
             "filename": "attribute_proxy.js",
             "lineno": 96,
             "columnno": 16,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100000832",
                 "name": "trueCallback",
@@ -2304,7 +2304,7 @@
             "filename": "attribute_proxy.js",
             "lineno": 104,
             "columnno": 52,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100000884",
                 "name": "obj.attributes[undefined]",
@@ -2330,7 +2330,7 @@
             "filename": "attribute_proxy.js",
             "lineno": 105,
             "columnno": 18,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100000896",
                 "name": "update",
@@ -2356,7 +2356,7 @@
             "filename": "attribute_proxy.js",
             "lineno": 106,
             "columnno": 12,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100000902",
                 "name": "obj.updates",
@@ -2382,7 +2382,7 @@
             "filename": "attribute_proxy.js",
             "lineno": 113,
             "columnno": 12,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100000937",
                 "name": "retValue"
@@ -2406,7 +2406,7 @@
             "filename": "attribute_proxy.js",
             "lineno": 116,
             "columnno": 12,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100000950",
                 "name": "retValue",
@@ -2433,7 +2433,7 @@
             "filename": "attribute_proxy.js",
             "lineno": 119,
             "columnno": 12,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100000967",
                 "name": "retValue",
@@ -2460,7 +2460,7 @@
             "filename": "attribute_proxy.js",
             "lineno": 122,
             "columnno": 12,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100000977",
                 "name": "retValue",
@@ -2487,7 +2487,7 @@
             "filename": "attribute_proxy.js",
             "lineno": 125,
             "columnno": 12,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100000986",
                 "name": "cascRef",
@@ -2513,7 +2513,7 @@
             "filename": "attribute_proxy.js",
             "lineno": 126,
             "columnno": 12,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100000998",
                 "name": "numRetVal",
@@ -2539,7 +2539,7 @@
             "filename": "attribute_proxy.js",
             "lineno": 128,
             "columnno": 10,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100001015",
                 "name": "retValue",
@@ -2566,7 +2566,7 @@
             "filename": "attribute_proxy.js",
             "lineno": 130,
             "columnno": 10,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100001041",
                 "name": "retValue",
@@ -2593,7 +2593,7 @@
             "filename": "attribute_proxy.js",
             "lineno": 135,
             "columnno": 4,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100001050",
                 "name": "set",
@@ -2622,7 +2622,7 @@
             "filename": "attribute_proxy.js",
             "lineno": 140,
             "columnno": 14,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100001075",
                 "name": "section",
@@ -2648,7 +2648,7 @@
             "filename": "attribute_proxy.js",
             "lineno": 141,
             "columnno": 10,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100001084",
                 "name": "obj.repOrders[undefined]",
@@ -2674,7 +2674,7 @@
             "filename": "attribute_proxy.js",
             "lineno": 145,
             "columnno": 10,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100001123",
                 "name": "obj.updates[undefined]",
@@ -2700,7 +2700,7 @@
             "filename": "attribute_proxy.js",
             "lineno": 152,
             "columnno": 4,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100001142",
                 "name": "deleteProperty",
@@ -2727,7 +2727,7 @@
             "filename": "attribute_proxy.js",
             "lineno": 182,
             "columnno": 6,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100001175",
                 "name": "registerFuncs",
@@ -2798,7 +2798,7 @@
             "filename": "attribute_proxy.js",
             "lineno": 187,
             "columnno": 8,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100001202",
                 "name": "typeArr",
@@ -2824,7 +2824,7 @@
             "filename": "attribute_proxy.js",
             "lineno": 188,
             "columnno": 8,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100001217",
                 "name": "typeSwitch",
@@ -2850,7 +2850,7 @@
             "filename": "attribute_proxy.js",
             "lineno": 189,
             "columnno": 4,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100001220",
                 "name": "opener",
@@ -2875,7 +2875,7 @@
             "filename": "attribute_proxy.js",
             "lineno": 190,
             "columnno": 4,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100001222",
                 "name": "updater",
@@ -2900,7 +2900,7 @@
             "filename": "attribute_proxy.js",
             "lineno": 191,
             "columnno": 4,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100001224",
                 "name": "new",
@@ -2925,7 +2925,7 @@
             "filename": "attribute_proxy.js",
             "lineno": 192,
             "columnno": 4,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100001226",
                 "name": "all",
@@ -2950,7 +2950,7 @@
             "filename": "attribute_proxy.js",
             "lineno": 193,
             "columnno": 4,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100001228",
                 "name": "default",
@@ -2975,7 +2975,7 @@
             "filename": "attribute_proxy.js",
             "lineno": 195,
             "columnno": 6,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100001231",
                 "name": "setState"
@@ -2999,7 +2999,7 @@
             "filename": "attribute_proxy.js",
             "lineno": 200,
             "columnno": 8,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100001270",
                 "name": "setState",
@@ -3026,7 +3026,7 @@
             "filename": "attribute_proxy.js",
             "lineno": 202,
             "columnno": 8,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100001280",
                 "name": "typeSwitch[undefined][undefined]",
@@ -3053,7 +3053,7 @@
             "filename": "attribute_proxy.js",
             "lineno": 203,
             "columnno": 8,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100001288",
                 "name": "setState",
@@ -3080,7 +3080,7 @@
             "filename": "attribute_proxy.js",
             "lineno": 206,
             "columnno": 8,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100001305",
                 "name": "setState",
@@ -3107,7 +3107,7 @@
             "filename": "attribute_proxy.js",
             "lineno": 212,
             "columnno": 0,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100001311",
                 "name": "kFuncs.registerFuncs",
@@ -3133,7 +3133,7 @@
             "filename": "attribute_proxy.js",
             "lineno": 214,
             "columnno": 6,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100001317",
                 "name": "setActionCalls",
@@ -3160,7 +3160,7 @@
             "filename": "attribute_proxy.js",
             "lineno": 214,
             "columnno": 33,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100001321",
                 "name": "attributes",
@@ -3184,7 +3184,7 @@
             "filename": "attribute_proxy.js",
             "lineno": 214,
             "columnno": 44,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100001323",
                 "name": "sections",
@@ -3208,7 +3208,7 @@
             "filename": "attribute_proxy.js",
             "lineno": 217,
             "columnno": 8,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100001343",
                 "name": "fieldAction",
@@ -3234,7 +3234,7 @@
             "filename": "attribute_proxy.js",
             "lineno": 220,
             "columnno": 8,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100001365",
                 "name": "attributes[undefined]",
@@ -3259,7 +3259,7 @@
             "filename": "attribute_proxy.js",
             "lineno": 223,
             "columnno": 6,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100001390",
                 "name": "attributes[undefined]",
@@ -3284,7 +3284,7 @@
             "filename": "attribute_proxy.js",
             "lineno": 227,
             "columnno": 0,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100001406",
                 "name": "funcs.setActionCalls",
@@ -3310,7 +3310,7 @@
             "filename": "attribute_proxy.js",
             "lineno": 238,
             "columnno": 6,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100001412",
                 "name": "callFunc",
@@ -3366,7 +3366,7 @@
             "filename": "attribute_proxy.js",
             "lineno": 247,
             "columnno": 0,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100001449",
                 "name": "kFuncs.callFunc",
@@ -3392,7 +3392,7 @@
             "filename": "kvariables.js",
             "lineno": 6,
             "columnno": 4,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100001457",
                 "name": "sheetName",
@@ -3422,7 +3422,7 @@
             "filename": "kvariables.js",
             "lineno": 7,
             "columnno": 0,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100001461",
                 "name": "kFuncs.sheetName",
@@ -3448,7 +3448,7 @@
             "filename": "kvariables.js",
             "lineno": 13,
             "columnno": 4,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100001467",
                 "name": "version",
@@ -3478,7 +3478,7 @@
             "filename": "kvariables.js",
             "lineno": 14,
             "columnno": 0,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100001471",
                 "name": "kFuncs.version",
@@ -3504,7 +3504,7 @@
             "filename": "kvariables.js",
             "lineno": 20,
             "columnno": 4,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100001477",
                 "name": "debugMode",
@@ -3534,7 +3534,7 @@
             "filename": "kvariables.js",
             "lineno": 21,
             "columnno": 0,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100001481",
                 "name": "kFuncs.debugMode",
@@ -3560,7 +3560,7 @@
             "filename": "kvariables.js",
             "lineno": 22,
             "columnno": 6,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100001487",
                 "name": "funcs",
@@ -3585,7 +3585,7 @@
             "filename": "kvariables.js",
             "lineno": 23,
             "columnno": 0,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100001491",
                 "name": "kFuncs.funcs",
@@ -3611,7 +3611,7 @@
             "filename": "kvariables.js",
             "lineno": 24,
             "columnno": 6,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100001497",
                 "name": "updateHandlers",
@@ -3636,7 +3636,7 @@
             "filename": "kvariables.js",
             "lineno": 25,
             "columnno": 6,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100001501",
                 "name": "openHandlers",
@@ -3661,7 +3661,7 @@
             "filename": "kvariables.js",
             "lineno": 26,
             "columnno": 6,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100001505",
                 "name": "initialSetups",
@@ -3686,7 +3686,7 @@
             "filename": "kvariables.js",
             "lineno": 27,
             "columnno": 6,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100001509",
                 "name": "allHandlers",
@@ -3711,7 +3711,7 @@
             "filename": "kvariables.js",
             "lineno": 28,
             "columnno": 6,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100001513",
                 "name": "addFuncs",
@@ -3736,7 +3736,7 @@
             "filename": "kvariables.js",
             "lineno": 30,
             "columnno": 6,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100001517",
                 "name": "kscaffoldJSVersion",
@@ -3761,7 +3761,7 @@
             "filename": "kvariables.js",
             "lineno": 31,
             "columnno": 6,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100001521",
                 "name": "kscaffoldPUGVersion",
@@ -3786,7 +3786,7 @@
             "filename": "listeners.js",
             "lineno": 3,
             "columnno": 6,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100001527",
                 "name": "listeners",
@@ -3811,7 +3811,7 @@
             "filename": "listeners.js",
             "lineno": 4,
             "columnno": 6,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100001531",
                 "name": "baseGet",
@@ -3836,7 +3836,7 @@
             "filename": "listeners.js",
             "lineno": 9,
             "columnno": 4,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100001573",
                 "name": "listeners[undefined]",
@@ -3861,7 +3861,7 @@
             "filename": "listeners.js",
             "lineno": 13,
             "columnno": 0,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100001586",
                 "name": "kFuncs.baseGet",
@@ -3887,7 +3887,7 @@
             "filename": "listeners.js",
             "lineno": 14,
             "columnno": 6,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100001592",
                 "name": "registerEventHandlers",
@@ -3914,7 +3914,7 @@
             "filename": "listeners.js",
             "lineno": 16,
             "columnno": 9,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100001605",
                 "name": "funcKeys",
@@ -3938,7 +3938,7 @@
             "filename": "listeners.js",
             "lineno": 16,
             "columnno": 37,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100001611",
                 "name": "funcs",
@@ -3962,7 +3962,7 @@
             "filename": "listeners.js",
             "lineno": 29,
             "columnno": 6,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100001659",
                 "name": "addItem",
@@ -3991,7 +3991,7 @@
             "filename": "listeners.js",
             "lineno": 31,
             "columnno": 2,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100001673",
                 "name": "section",
@@ -4018,7 +4018,7 @@
             "filename": "listeners.js",
             "lineno": 33,
             "columnno": 4,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100001685",
                 "name": "callback",
@@ -4047,7 +4047,7 @@
             "filename": "listeners.js",
             "lineno": 34,
             "columnno": 10,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100001692",
                 "name": "row",
@@ -4073,7 +4073,7 @@
             "filename": "listeners.js",
             "lineno": 35,
             "columnno": 13,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100001702",
                 "name": "row",
@@ -4097,7 +4097,7 @@
             "filename": "listeners.js",
             "lineno": 36,
             "columnno": 6,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100001705",
                 "name": "attributes[undefined]",
@@ -4122,7 +4122,7 @@
             "filename": "listeners.js",
             "lineno": 37,
             "columnno": 22,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100001717",
                 "name": "attributes",
@@ -4146,7 +4146,7 @@
             "filename": "listeners.js",
             "lineno": 37,
             "columnno": 33,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100001719",
                 "name": "sections",
@@ -4170,7 +4170,7 @@
             "filename": "listeners.js",
             "lineno": 38,
             "columnno": 12,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100001722",
                 "name": "trigger",
@@ -4196,7 +4196,7 @@
             "filename": "listeners.js",
             "lineno": 42,
             "columnno": 29,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100001758",
                 "name": "attributes",
@@ -4220,7 +4220,7 @@
             "filename": "listeners.js",
             "lineno": 42,
             "columnno": 40,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100001760",
                 "name": "sections",
@@ -4244,7 +4244,7 @@
             "filename": "listeners.js",
             "lineno": 42,
             "columnno": 49,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100001762",
                 "name": "casc",
@@ -4268,7 +4268,7 @@
             "filename": "listeners.js",
             "lineno": 42,
             "columnno": 54,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100001764",
                 "name": "trigger",
@@ -4292,7 +4292,7 @@
             "filename": "listeners.js",
             "lineno": 46,
             "columnno": 22,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100001772",
                 "name": "attributes",
@@ -4316,7 +4316,7 @@
             "filename": "listeners.js",
             "lineno": 46,
             "columnno": 33,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100001774",
                 "name": "sections",
@@ -4340,7 +4340,7 @@
             "filename": "listeners.js",
             "lineno": 46,
             "columnno": 42,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100001776",
                 "name": "casc",
@@ -4364,7 +4364,7 @@
             "filename": "listeners.js",
             "lineno": 50,
             "columnno": 0,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100001779",
                 "name": "funcs.addItem",
@@ -4390,7 +4390,7 @@
             "filename": "listeners.js",
             "lineno": 52,
             "columnno": 6,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100001785",
                 "name": "editSection",
@@ -4419,7 +4419,7 @@
             "filename": "listeners.js",
             "lineno": 54,
             "columnno": 2,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100001799",
                 "name": "section",
@@ -4446,7 +4446,7 @@
             "filename": "listeners.js",
             "lineno": 55,
             "columnno": 6,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100001808",
                 "name": "target",
@@ -4472,7 +4472,7 @@
             "filename": "listeners.js",
             "lineno": 59,
             "columnno": 15,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100001834",
                 "name": "editSection",
@@ -4496,7 +4496,7 @@
             "filename": "parse_cascade.js",
             "lineno": 7,
             "columnno": 6,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100001839",
                 "name": "expandCascade",
@@ -4523,7 +4523,7 @@
             "filename": "parse_cascade.js",
             "lineno": 18,
             "columnno": 6,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100001888",
                 "name": "expandRepeating",
@@ -4550,7 +4550,7 @@
             "filename": "parse_cascade.js",
             "lineno": 21,
             "columnno": 6,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100001922",
                 "name": "memo[undefined]",
@@ -4575,7 +4575,7 @@
             "filename": "parse_cascade.js",
             "lineno": 22,
             "columnno": 6,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100001943",
                 "name": "memo[undefined].name",
@@ -4601,7 +4601,7 @@
             "filename": "parse_cascade.js",
             "lineno": 24,
             "columnno": 8,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100001974",
                 "name": "memo[undefined].affects",
@@ -4627,7 +4627,7 @@
             "filename": "parse_cascade.js",
             "lineno": 39,
             "columnno": 6,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100002048",
                 "name": "applyID",
@@ -4651,7 +4651,7 @@
             "filename": "parse_cascade.js",
             "lineno": 43,
             "columnno": 6,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100002065",
                 "name": "expandNormal",
@@ -4680,7 +4680,7 @@
             "filename": "parse_cascade.js",
             "lineno": 44,
             "columnno": 2,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100002074",
                 "name": "memo[undefined]",
@@ -4705,7 +4705,7 @@
             "filename": "parse_cascade.js",
             "lineno": 46,
             "columnno": 4,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100002093",
                 "name": "memo[undefined].affects",
@@ -4731,7 +4731,7 @@
             "filename": "parse_cascade.js",
             "lineno": 47,
             "columnno": 4,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100002107",
                 "name": "memo[undefined].affects",
@@ -4757,7 +4757,7 @@
             "filename": "parse_cascade.js",
             "lineno": 58,
             "columnno": 6,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100002149",
                 "name": "addAllRows",
@@ -4780,7 +4780,7 @@
             "filename": "sheetworker_aliases.js",
             "lineno": 3,
             "columnno": 0,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {}
         },
         "description": "Alias for [setSectionOrder()](https://wiki.roll20.net/Sheet_Worker_Scripts#setSectionOrder.28.3CRepeating_Section_Name.3E.2C_.3CSection_Array.3E.2C_.3CCallback.3E.29) that allows you to use the section name in either `repeating_section` or `section` formats. Note that the Roll20 sheetworker [setSectionOrder](https://wiki.roll20.net/Sheet_Worker_Scripts#setSectionOrder.28.3CRepeating_Section_Name.3E.2C_.3CSection_Array.3E.2C_.3CCallback.3E.29) currently causes some display issues on sheets.",
@@ -4831,7 +4831,7 @@
             "filename": "sheetworker_aliases.js",
             "lineno": 15,
             "columnno": 6,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100002191",
                 "name": "_setSectionOrder",
@@ -4858,7 +4858,7 @@
             "filename": "sheetworker_aliases.js",
             "lineno": 16,
             "columnno": 6,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100002198",
                 "name": "trueSection",
@@ -4884,7 +4884,7 @@
             "filename": "sheetworker_aliases.js",
             "lineno": 19,
             "columnno": 0,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100002212",
                 "name": "kFuncs.setSectionOrder",
@@ -4906,7 +4906,7 @@
             "filename": "sheetworker_aliases.js",
             "lineno": 21,
             "columnno": 0,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {}
         },
         "description": "Alias for [removeRepeatingRow](https://wiki.roll20.net/Sheet_Worker_Scripts#removeRepeatingRow.28_RowID_.29) that also removes the row from the current object of attribute values and array of section IDs to ensure that erroneous updates are not issued.",
@@ -4966,7 +4966,7 @@
             "filename": "sheetworker_aliases.js",
             "lineno": 39,
             "columnno": 6,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100002218",
                 "name": "_removeRepeatingRow",
@@ -4995,7 +4995,7 @@
             "filename": "sheetworker_aliases.js",
             "lineno": 47,
             "columnno": 2,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100002268",
                 "name": "sections[undefined]",
@@ -5020,7 +5020,7 @@
             "filename": "sheetworker_aliases.js",
             "lineno": 50,
             "columnno": 0,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100002288",
                 "name": "kFuncs.removeRepeatingRow",
@@ -5042,7 +5042,7 @@
             "filename": "sheetworker_aliases.js",
             "lineno": 52,
             "columnno": 0,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {}
         },
         "description": "Alias for [getAttrs()](https://wiki.roll20.net/Sheet_Worker_Scripts#getAttrs.28attributeNameArray.2C_callback.29) that converts the default object of attribute values into an {@link attributesProxy} and passes that back to the callback function.",
@@ -5086,7 +5086,7 @@
             "filename": "sheetworker_aliases.js",
             "lineno": 68,
             "columnno": 6,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100002294",
                 "name": "_getAttrs",
@@ -5113,7 +5113,7 @@
             "filename": "sheetworker_aliases.js",
             "lineno": 68,
             "columnno": 28,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100002298",
                 "name": "props",
@@ -5137,7 +5137,7 @@
             "filename": "sheetworker_aliases.js",
             "lineno": 68,
             "columnno": 42,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100002302",
                 "name": "callback",
@@ -5161,7 +5161,7 @@
             "filename": "sheetworker_aliases.js",
             "lineno": 70,
             "columnno": 10,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100002313",
                 "name": "attributes",
@@ -5187,7 +5187,7 @@
             "filename": "sheetworker_aliases.js",
             "lineno": 74,
             "columnno": 0,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100002323",
                 "name": "kFuncs.getAttrs",
@@ -5213,7 +5213,7 @@
             "filename": "sheetworker_aliases.js",
             "lineno": 92,
             "columnno": 6,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100002329",
                 "name": "getAllAttrs",
@@ -5281,7 +5281,7 @@
             "filename": "sheetworker_aliases.js",
             "lineno": 92,
             "columnno": 30,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100002333",
                 "name": "props",
@@ -5305,7 +5305,7 @@
             "filename": "sheetworker_aliases.js",
             "lineno": 92,
             "columnno": 44,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100002337",
                 "name": "sectionDetails",
@@ -5329,7 +5329,7 @@
             "filename": "sheetworker_aliases.js",
             "lineno": 92,
             "columnno": 83,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100002341",
                 "name": "callback",
@@ -5353,7 +5353,7 @@
             "filename": "sheetworker_aliases.js",
             "lineno": 95,
             "columnno": 12,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100002364",
                 "name": "attributes",
@@ -5379,7 +5379,7 @@
             "filename": "sheetworker_aliases.js",
             "lineno": 97,
             "columnno": 12,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100002375",
                 "name": "casc",
@@ -5405,7 +5405,7 @@
             "filename": "sheetworker_aliases.js",
             "lineno": 102,
             "columnno": 0,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100002389",
                 "name": "kFuncs.getAllAttrs",
@@ -5431,7 +5431,7 @@
             "filename": "sheetworker_aliases.js",
             "lineno": 121,
             "columnno": 6,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100002395",
                 "name": "getSections",
@@ -5500,7 +5500,7 @@
             "filename": "sheetworker_aliases.js",
             "lineno": 122,
             "columnno": 6,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100002402",
                 "name": "queueClone",
@@ -5526,7 +5526,7 @@
             "filename": "sheetworker_aliases.js",
             "lineno": 123,
             "columnno": 8,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100002410",
                 "name": "worker",
@@ -5555,7 +5555,7 @@
             "filename": "sheetworker_aliases.js",
             "lineno": 124,
             "columnno": 8,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100002422",
                 "name": "detail",
@@ -5581,7 +5581,7 @@
             "filename": "sheetworker_aliases.js",
             "lineno": 126,
             "columnno": 6,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100002438",
                 "name": "sections[undefined]",
@@ -5606,7 +5606,7 @@
             "filename": "sheetworker_aliases.js",
             "lineno": 146,
             "columnno": 0,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100002523",
                 "name": "kFuncs.getSections",
@@ -5632,7 +5632,7 @@
             "filename": "sheetworker_aliases.js",
             "lineno": 165,
             "columnno": 6,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100002529",
                 "name": "set",
@@ -5690,7 +5690,7 @@
             "filename": "sheetworker_aliases.js",
             "lineno": 166,
             "columnno": 16,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100002543",
                 "name": "silent",
@@ -5714,7 +5714,7 @@
             "filename": "sheetworker_aliases.js",
             "lineno": 168,
             "columnno": 0,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100002548",
                 "name": "kFuncs.setAttrs",
@@ -5740,7 +5740,7 @@
             "filename": "sheetworker_aliases.js",
             "lineno": 170,
             "columnno": 6,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100002554",
                 "name": "generateCustomID",
@@ -5769,7 +5769,7 @@
             "filename": "sheetworker_aliases.js",
             "lineno": 172,
             "columnno": 4,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100002568",
                 "name": "string",
@@ -5796,7 +5796,7 @@
             "filename": "sheetworker_aliases.js",
             "lineno": 174,
             "columnno": 2,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100002575",
                 "name": "rowID",
@@ -5823,7 +5823,7 @@
             "filename": "sheetworker_aliases.js",
             "lineno": 175,
             "columnno": 6,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100002580",
                 "name": "re",
@@ -5845,7 +5845,7 @@
             "filename": "sheetworker_aliases.js",
             "lineno": 180,
             "columnno": 0,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {}
         },
         "description": "Alias for generateRowID that adds the new id to the {@link sectionObj}. Also allows for creation of custom IDs that conform to the section ID requirements.",
@@ -5897,7 +5897,7 @@
             "filename": "sheetworker_aliases.js",
             "lineno": 198,
             "columnno": 6,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100002603",
                 "name": "_generateRowID",
@@ -5926,7 +5926,7 @@
             "filename": "sheetworker_aliases.js",
             "lineno": 199,
             "columnno": 6,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100002611",
                 "name": "rowID",
@@ -5952,7 +5952,7 @@
             "filename": "sheetworker_aliases.js",
             "lineno": 202,
             "columnno": 2,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100002621",
                 "name": "section",
@@ -5979,7 +5979,7 @@
             "filename": "sheetworker_aliases.js",
             "lineno": 205,
             "columnno": 2,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100002635",
                 "name": "sections[undefined]",
@@ -6004,7 +6004,7 @@
             "filename": "sheetworker_aliases.js",
             "lineno": 209,
             "columnno": 0,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100002660",
                 "name": "kFuncs.generateRowID",
@@ -6030,7 +6030,7 @@
             "filename": "utility.js",
             "lineno": 11,
             "columnno": 6,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100002668",
                 "name": "sanitizeForRegex",
@@ -6076,7 +6076,7 @@
             "filename": "utility.js",
             "lineno": 14,
             "columnno": 0,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100002681",
                 "name": "kFuncs.sanitizeForRegex",
@@ -6102,7 +6102,7 @@
             "filename": "utility.js",
             "lineno": 25,
             "columnno": 6,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100002687",
                 "name": "value",
@@ -6159,7 +6159,7 @@
             "filename": "utility.js",
             "lineno": 28,
             "columnno": 0,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100002701",
                 "name": "kFuncs.value",
@@ -6185,7 +6185,7 @@
             "filename": "utility.js",
             "lineno": 48,
             "columnno": 6,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100002707",
                 "name": "parseRepeatName",
@@ -6242,7 +6242,7 @@
             "filename": "utility.js",
             "lineno": 49,
             "columnno": 6,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100002713",
                 "name": "match",
@@ -6268,7 +6268,7 @@
             "filename": "utility.js",
             "lineno": 53,
             "columnno": 0,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100002728",
                 "name": "kFuncs.parseRepeatName",
@@ -6294,7 +6294,7 @@
             "filename": "utility.js",
             "lineno": 81,
             "columnno": 6,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100002734",
                 "name": "parseTriggerName",
@@ -6351,7 +6351,7 @@
             "filename": "utility.js",
             "lineno": 82,
             "columnno": 6,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100002740",
                 "name": "match",
@@ -6377,7 +6377,7 @@
             "filename": "utility.js",
             "lineno": 86,
             "columnno": 0,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100002760",
                 "name": "kFuncs.parseTriggerName",
@@ -6403,7 +6403,7 @@
             "filename": "utility.js",
             "lineno": 87,
             "columnno": 6,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100002766",
                 "name": "parseClickTrigger",
@@ -6428,7 +6428,7 @@
             "filename": "utility.js",
             "lineno": 88,
             "columnno": 0,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100002770",
                 "name": "kFuncs.parseClickTrigger",
@@ -6454,7 +6454,7 @@
             "filename": "utility.js",
             "lineno": 99,
             "columnno": 6,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100002776",
                 "name": "parseHTMLName",
@@ -6503,7 +6503,7 @@
             "filename": "utility.js",
             "lineno": 100,
             "columnno": 6,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100002782",
                 "name": "match",
@@ -6529,7 +6529,7 @@
             "filename": "utility.js",
             "lineno": 104,
             "columnno": 0,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100002799",
                 "name": "kFuncs.parseHTMLName",
@@ -6555,7 +6555,7 @@
             "filename": "utility.js",
             "lineno": 114,
             "columnno": 6,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100002805",
                 "name": "capitalize",
@@ -6604,7 +6604,7 @@
             "filename": "utility.js",
             "lineno": 117,
             "columnno": 0,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100002823",
                 "name": "kFuncs.capitalize",
@@ -6630,7 +6630,7 @@
             "filename": "utility.js",
             "lineno": 134,
             "columnno": 6,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100002829",
                 "name": "extractQueryResult",
@@ -6681,7 +6681,7 @@
             "filename": "utility.js",
             "lineno": 136,
             "columnno": 5,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100002839",
                 "name": "queryRoll",
@@ -6707,7 +6707,7 @@
             "filename": "utility.js",
             "lineno": 140,
             "columnno": 0,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100002868",
                 "name": "kFuncs.extractQueryResult",
@@ -6733,7 +6733,7 @@
             "filename": "utility.js",
             "lineno": 153,
             "columnno": 6,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100002874",
                 "name": "pseudoQuery",
@@ -6786,7 +6786,7 @@
             "filename": "utility.js",
             "lineno": 155,
             "columnno": 5,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100002884",
                 "name": "queryRoll",
@@ -6812,7 +6812,7 @@
             "filename": "utility.js",
             "lineno": 159,
             "columnno": 0,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100002913",
                 "name": "kFuncs.pseudoQuery",
@@ -6838,7 +6838,7 @@
             "filename": "utility.js",
             "lineno": 165,
             "columnno": 6,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100002919",
                 "name": "log",
@@ -6875,7 +6875,7 @@
             "filename": "utility.js",
             "lineno": 179,
             "columnno": 0,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100003017",
                 "name": "kFuncs.log",
@@ -6901,7 +6901,7 @@
             "filename": "utility.js",
             "lineno": 187,
             "columnno": 6,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100003023",
                 "name": "debug",
@@ -6956,7 +6956,7 @@
             "filename": "utility.js",
             "lineno": 202,
             "columnno": 0,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100003137",
                 "name": "kFuncs.debug",
@@ -6982,7 +6982,7 @@
             "filename": "utility.js",
             "lineno": 209,
             "columnno": 6,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100003143",
                 "name": "orderSections",
@@ -7028,7 +7028,7 @@
             "filename": "utility.js",
             "lineno": 211,
             "columnno": 4,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100003162",
                 "name": "attributes.attributes[undefined]",
@@ -7054,7 +7054,7 @@
             "filename": "utility.js",
             "lineno": 215,
             "columnno": 0,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100003194",
                 "name": "kFuncs.orderSections",
@@ -7080,7 +7080,7 @@
             "filename": "utility.js",
             "lineno": 222,
             "columnno": 6,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100003200",
                 "name": "orderSection",
@@ -7126,7 +7126,7 @@
             "filename": "utility.js",
             "lineno": 227,
             "columnno": 0,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100003236",
                 "name": "kFuncs.orderSection",
@@ -7152,7 +7152,7 @@
             "filename": "utility.js",
             "lineno": 234,
             "columnno": 6,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100003242",
                 "name": "commaArray",
@@ -7196,7 +7196,7 @@
             "filename": "utility.js",
             "lineno": 237,
             "columnno": 0,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts",
             "code": {
                 "id": "astnode100003259",
                 "name": "kFuncs.commaArray",
@@ -7222,7 +7222,7 @@
             "filename": "tabs.js",
             "lineno": 5,
             "columnno": 6,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\tabs",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\tabs",
             "code": {
                 "id": "astnode100003267",
                 "name": "kSwitchTab",
@@ -7261,7 +7261,7 @@
             "filename": "tabs.js",
             "lineno": 5,
             "columnno": 31,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\tabs",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\tabs",
             "code": {
                 "id": "astnode100003271",
                 "name": "trigger",
@@ -7285,7 +7285,7 @@
             "filename": "tabs.js",
             "lineno": 5,
             "columnno": 40,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\tabs",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\tabs",
             "code": {
                 "id": "astnode100003273",
                 "name": "attributes",
@@ -7309,7 +7309,7 @@
             "filename": "tabs.js",
             "lineno": 14,
             "columnno": 8,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\tabs",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\tabs",
             "code": {
                 "id": "astnode100003341",
                 "name": "tabInputName",
@@ -7335,7 +7335,7 @@
             "filename": "tabs.js",
             "lineno": 16,
             "columnno": 4,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\tabs",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\tabs",
             "code": {
                 "id": "astnode100003363",
                 "name": "attributes[undefined]",
@@ -7360,7 +7360,7 @@
             "filename": "tabs.js",
             "lineno": 20,
             "columnno": 16,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\tabs",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\tabs",
             "code": {
                 "id": "astnode100003374",
                 "name": "kSwitchTab",
@@ -7384,7 +7384,7 @@
             "filename": "tabs.js",
             "lineno": 29,
             "columnno": 6,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\tabs",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\tabs",
             "code": {
                 "id": "astnode100003377",
                 "name": "kTabOnOpen",
@@ -7448,7 +7448,7 @@
             "filename": "tabs.js",
             "lineno": 29,
             "columnno": 29,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\tabs",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\tabs",
             "code": {
                 "id": "astnode100003381",
                 "name": "trigger",
@@ -7472,7 +7472,7 @@
             "filename": "tabs.js",
             "lineno": 29,
             "columnno": 37,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\tabs",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\tabs",
             "code": {
                 "id": "astnode100003383",
                 "name": "attributes",
@@ -7496,7 +7496,7 @@
             "filename": "tabs.js",
             "lineno": 29,
             "columnno": 48,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\tabs",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\tabs",
             "code": {
                 "id": "astnode100003385",
                 "name": "sections",
@@ -7520,7 +7520,7 @@
             "filename": "tabs.js",
             "lineno": 29,
             "columnno": 57,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\tabs",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\tabs",
             "code": {
                 "id": "astnode100003387",
                 "name": "casc",
@@ -7544,7 +7544,7 @@
             "filename": "tabs.js",
             "lineno": 32,
             "columnno": 10,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\tabs",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\tabs",
             "code": {
                 "id": "astnode100003400",
                 "name": "pseudoTrigger",
@@ -7570,7 +7570,7 @@
             "filename": "tabs.js",
             "lineno": 32,
             "columnno": 27,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\tabs",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\tabs",
             "code": {
                 "id": "astnode100003403",
                 "name": "name",
@@ -7595,7 +7595,7 @@
             "filename": "tabs.js",
             "lineno": 33,
             "columnno": 16,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\tabs",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\tabs",
             "code": {
                 "id": "astnode100003411",
                 "name": "trigger",
@@ -7619,7 +7619,7 @@
             "filename": "tabs.js",
             "lineno": 33,
             "columnno": 39,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\tabs",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\tabs",
             "code": {
                 "id": "astnode100003413",
                 "name": "attributes",
@@ -7643,7 +7643,7 @@
             "filename": "tabs.js",
             "lineno": 36,
             "columnno": 16,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\tabs",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\tabs",
             "code": {
                 "id": "astnode100003419",
                 "name": "kTabOnOpen",
@@ -7667,7 +7667,7 @@
             "filename": "tabs.js",
             "lineno": 36,
             "columnno": 30,
-            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\tabs",
+            "path": "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\tabs",
             "code": {
                 "id": "astnode100003422",
                 "name": "type",
@@ -7685,14 +7685,14 @@
         "kind": "package",
         "longname": "package:undefined",
         "files": [
-            "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts\\accessSheet.js",
-            "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts\\attribute_proxy.js",
-            "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts\\kvariables.js",
-            "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts\\listeners.js",
-            "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts\\parse_cascade.js",
-            "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts\\sheetworker_aliases.js",
-            "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\scripts\\utility.js",
-            "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\k-scaffold\\modules\\tabs\\tabs.js"
+            "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts\\accessSheet.js",
+            "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts\\attribute_proxy.js",
+            "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts\\kvariables.js",
+            "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts\\listeners.js",
+            "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts\\parse_cascade.js",
+            "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts\\sheetworker_aliases.js",
+            "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\scripts\\utility.js",
+            "E:\\Git\\Kurohyou Studios\\Roll20-Snippets\\lib\\tabs\\tabs.js"
         ]
     }
 ]

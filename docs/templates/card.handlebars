@@ -1,38 +1,48 @@
 <section>
   <div>
-    <h3 class="no-capital" id="{{name}}{{meta.name}}">{{#if name ~}}
-    k.
-    {{~/if}}{{name}}{{meta.name}}</h3>
+    <h3 class="no-capital" id="{{name}}{{context.name}}{{meta.name}}">{{kName name context.name meta.name}}</h3>
   </div>
   <div class="border"></div>
   <div class="content">
-    <p>{{description}}{{meta.description}}</p>
-    <div class="arguments-container">
-      <h4>arguments</h4>
-      <h5>name</h5>
-      <h5>type</h5>
-      <h5>description</h5>
-      {{#each params as |param|}}
-        <span>{{name}}</span>
-        <span>{{#each type.names as |type|}}{{type}}{{/each}}</span>
-        <p>{{description}}</p>
-      {{/each}}
-      {{#each meta.arguments as |arguments|}}
-        <span>{{name}}</span>
-        <span>{{type}}</span>
-        <p>{{description}}</p>
-      {{/each}}
-    </div>
+    <p>{{{parseLinks description}}}{{{parseLinks meta.description}}}{{{parseLinks context.description}}}</p>
+    {{#if (hasArgs params meta.arguments)}}
+      <div class="arguments-container">
+        <h4>arguments</h4>
+        <h5>name</h5>
+        <h5>type</h5>
+        <h5>description</h5>
+        {{#each params as |param|}}
+          <span>{{name}}</span>
+          <span>{{#each type.names as |type|}}{{type}}{{/each}}</span>
+          <p>{{{parseLinks description}}}</p>
+        {{/each}}
+        {{#each meta.arguments as |arguments|}}
+          <span>{{name}}</span>
+          <span>{{type}}</span>
+          <p>{{{parseLinks description}}}</p>
+        {{/each}}
+      </div>
+    {{/if}}
     {{#if examples}}
       {{#each examples as |example|}}
-        <pre class="prettyprint" style=""><code class="language-js">{{trim example}}</code></pre>
+<pre class="prettyprint" style=""><code class="language-js">{{codeFormat example}}</code></pre>
       {{/each}}
     {{/if}}
     {{#if source}}
       <h4>pug</h4>
-      <pre class="prettyprint" style=""><code class="language-jade">{{trim meta.example}}</code></pre>
+<pre class="prettyprint" style=""><code class="language-jade">{{codeFormat meta.example}}</code></pre>
       <h4>html</h4>
-      <pre class="prettyprint" style=""><code class="language-html">{{trim output}}</code></pre>
+<pre class="prettyprint" style=""><code class="language-html">{{codeFormat output}}</code></pre>
+    {{/if}}
+    {{#if context.code}}
+      <h4>Mixin Contents</h4>
+<pre class="prettyprint" style=""><code class="language-scss">{{codeFormat context.code}}</code></pre>
+    {{/if}}
+    {{#if example}}
+      <h4>Mixin Contents</h4>
+      {{#each example as |ex|}}
+<pre class="prettyprint" style=""><code class="language-scss">{{codeFormat ex.code}}</code></pre>
+      {{/each}}
     {{/if}}
   </div>
 </section>

@@ -1,13 +1,26 @@
 {
+  "name": "@kurohyou/k-scaffold",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
   "scripts": {
     "docs": "node docGen"
   },
+  "files": [
+    "index.js",
+    "_k.pug",
+    "_k.scss",
+    "lib/*"
+  ],
   "dependencies": {
+    "pug": "^3.0.2",
+    "sass": "^1.54.9"
+  },
+  "devDependencies": {
     "handlebars": "^4.7.7",
     "jsdoc": "^3.6.11",
-    "npm-packlist": "^5.1.3",
-    "pug": "^3.0.2",
+    "markdown": "^0.5.0",
     "pug-doc": "^2.23.1",
-    "sass": "^1.54.9"
+    "sassdoc": "^2.7.4"
   }
 }

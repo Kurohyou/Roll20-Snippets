@@ -17,12 +17,13 @@
   </head>
   <body>
     <header>
-      <h1>The K-Scaffold Framework</h1><span class="subhead">PUG, HTML, and Javascript</span>
+      <h1>The K-Scaffold Framework</h1><span class="subhead">PUG, HTML, SCSS, and Javascript</span>
     </header>
     <nav>
       <ul>
         <li><a href="./index.html?v=1.1">General Info</a></li>
         <li><a href="./pug.html?v=1.1">Pug Documentation</a></li>
+        <li><a href="./scss.html?v=1.1">SCSS Documentation</a></li>
       </ul>
       <ul>
         <li><a href="#intro-header">Intro</a></li>
@@ -44,9 +45,9 @@
           <p>The K-scaffold specific functions provide methods for hooking your functions into the K-scaffold's functionality.</p>
         </div>
       </section>
-      {{#docData}}
-        {{> card}}
-      {{/docData}}
+{{~#docData ~}}
+  {{> card}}
+{{/docData~}}
     </main>
     <aside>
       <h2>Table of Contents</h2>

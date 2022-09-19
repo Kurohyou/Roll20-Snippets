@@ -1,0 +1,75 @@
+[
+  {
+    "description": "Mixin that includes all of the framework's styles. Should be included in a 3 class declaration for character sheets or directly in the rolltemplate declaration for your roll templates.\n",
+    "commentRange": {
+      "start": 15,
+      "end": 22
+    },
+    "context": {
+      "type": "mixin",
+      "name": "defaultStyles",
+      "code": "\n  // Clear roll20 styles\n  @include genericStyle.clear;\n\n  // Basic Layout constructs\n  @include genericStyle.layout;\n  @include genericStyle.borderStyles;\n  @include genericStyle.sizesAndRatios;\n  \n  // Text stylings\n  @include genericStyle.textElements;\n  @include genericStyle.materialIcons;\n  @include genericStyle.textStyles;\n  @include genericStyle.headerElements;\n  @include genericStyle.r20FontClasses;\n\n  // Input and button\n  @include attributeConstructs.inputBase;\n  @include attributeConstructs.button;\n  @include attributeConstructs.collapsible;\n  @include attributeConstructs.fillLeft;\n  @include labels.input-label;\n  @include labels.headed-textarea;\n  @include adaptive.adaptiveText;\n\n  @include fieldsetStyling.fieldsetStyling;\n",
+      "line": {
+        "start": 23,
+        "end": 49
+      }
+    },
+    "example": [
+      {
+        "type": "scss",
+        "code": "@use 'k/k';\n\n.ui-dialog .tab-content .charsheet,\n.sheet-rolltemplate-TEMPLATENAME{\n  @include k.defaultStyles\n}"
+      }
+    ],
+    "access": "public",
+    "group": [
+      "undefined"
+    ],
+    "require": [],
+    "file": {
+      "path": "_k.scss",
+      "name": "_k.scss"
+    }
+  },
+  {
+    "description": "Styling for the adaptive text construction to create textareas and inputs that grow based on their contents. Used in the default defaultStyles mixin, but can be used separately if you only want to include specific framework css.\n",
+    "commentRange": {
+      "start": 2,
+      "end": 3
+    },
+    "context": {
+      "type": "mixin",
+      "name": "adaptiveText",
+      "code": "\n  .adaptive{\n    display:grid;\n    grid-template-columns: auto;\n    grid-template-rows: auto;\n    grid-template-areas: \"content\";\n    position:relative;\n    >*{\n      grid-area: content;\n    }\n    > span{\n      opacity: 0;\n      z-index: -10;\n      @include borderPlaceholders.base-border;\n      text-transform: initial;\n      border-radius:0px;\n    }\n  }\n  .adaptive--text{\n    min-height:4rem;\n  }\n  .adaptive--text__span{\n    white-space: pre-wrap;\n    padding:2px;\n  }\n  .adaptive--text__textarea{\n    width:100%;\n    height:100%;\n    resize: none;\n  }\n  .adaptive--text__textarea,\n  .adaptive--input__input{\n    position:absolute;\n  }\n  .adaptive--input__input{\n    width:100%;\n  }\n  .adaptive--input__span{\n    padding:2px;\n    min-height:1.5rem;\n  }\n",
+      "line": {
+        "start": 4,
+        "end": 45
+      }
+    },
+    "see": [
+      {
+        "description": "Mixin that includes all of the framework's styles. Should be included in a 3 class declaration for character sheets or directly in the rolltemplate declaration for your roll templates.\n",
+        "context": {
+          "type": "mixin",
+          "name": "defaultStyles",
+          "code": "\n  // Clear roll20 styles\n  @include genericStyle.clear;\n\n  // Basic Layout constructs\n  @include genericStyle.layout;\n  @include genericStyle.borderStyles;\n  @include genericStyle.sizesAndRatios;\n  \n  // Text stylings\n  @include genericStyle.textElements;\n  @include genericStyle.materialIcons;\n  @include genericStyle.textStyles;\n  @include genericStyle.headerElements;\n  @include genericStyle.r20FontClasses;\n\n  // Input and button\n  @include attributeConstructs.inputBase;\n  @include attributeConstructs.button;\n  @include attributeConstructs.collapsible;\n  @include attributeConstructs.fillLeft;\n  @include labels.input-label;\n  @include labels.headed-textarea;\n  @include adaptive.adaptiveText;\n\n  @include fieldsetStyling.fieldsetStyling;\n",
+          "line": {
+            "start": 23,
+            "end": 49
+          }
+        },
+        "group": [
+          "undefined"
+        ]
+      }
+    ],
+    "access": "public",
+    "group": [
+      "undefined"
+    ],
+    "require": [],
+    "file": {
+      "path": "adaptive\\_adaptive.scss",
+      "name": "_adaptive.scss"
+    }
+  }
+]

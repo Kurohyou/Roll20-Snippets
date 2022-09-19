@@ -202,3 +202,11 @@ main > section > .border {
 code {
   font-family: "Fira Code";
 }
+
+p > code{
+  color:red;
+  background-color:rgb(255, 0, 0, 0.1);
+  border-radius:var(--half-gap);
+  box-shadow:var(--secondaryBackground) 0 0 5px inset;
+  padding-inline:var(--half-gap);
+}
