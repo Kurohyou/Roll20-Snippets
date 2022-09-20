@@ -1,4 +1,4 @@
-h1, h5, h4, h1 + .subhead, h3, h2 {
+h1, h5, header + nav ul:first-child, h4, h1 + .subhead, h3, h2 {
   text-transform: capitalize;
   font-family: Aldrich;
 }
@@ -11,7 +11,7 @@ h1 + .subhead, h3 {
   font-size: 1.5rem;
 }
 
-h4 {
+header + nav ul:first-child, h4 {
   font-size: 1.25rem;
 }
 
@@ -29,7 +29,10 @@ header, header + nav, footer {
   padding: var(--mainPadding);
   background-color: var(--hfBackground);
 }
-header *, header + nav *, footer * {
+header span, header + nav span, footer span, header p, header + nav p, footer p, header h1, header + nav h1, footer h1, header h2, header + nav h2, footer h2, header h3, header + nav h3, footer h3, header h4, header + nav h4, footer h4, header h5, header + nav h5, footer h5 {
+  color: var(--hfColor);
+}
+header a:not(:hover), header + nav a:not(:hover), footer a:not(:hover) {
   color: var(--hfColor);
 }
 
@@ -55,32 +58,65 @@ header, header + nav, footer {
   --hfColor:rgb(210, 243, 246);
   --sectionBorder:1px solid black;
   --sectionShadow:1 1 black;
+  --scrollPad: 40px;
 }
 
 html {
   font-size: 16px;
-  scroll-padding-top: 35.2px;
+  scroll-padding-top: var(--scrollPad);
 }
 
 body {
   margin: 0;
 }
 
+a {
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--primaryLinkColor);
+  font-weight: 700;
+  transition-property: color, filter;
+  transition-duration: 500ms;
+}
+a[href*="roll20.net"] {
+  color: var(--roll20LinkColor);
+}
+a:hover {
+  filter: brightness(0.8);
+}
+
 header {
   grid-template-columns: auto;
-  grid-template-areas: "pagehead" "subhead" "nav";
+  grid-template-areas: "pagehead" "subhead";
   align-items: start;
 }
 header + nav {
   position: sticky;
   top: 0;
   z-index: 20;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--half-gap) var(--gap);
+  align-items: end;
 }
 header + nav ul {
-  display: inline-flex;
+  display: flex;
   flex-wrap: wrap;
   gap: var(--half-gap);
-  justify-self: end;
+  justify-content: end;
+  flex: 1 1 auto;
+}
+header + nav ul:first-child {
+  justify-content: start;
+}
+header + nav ul > li {
+  display: flex;
+  gap: var(--half-gap);
+}
+header + nav ul > li:not(:last-child):after {
+  content: "|";
+  color: var(--hfColor);
 }
 header + nav ul a {
   text-decoration: none;
@@ -92,16 +128,6 @@ h1 {
 }
 .subhead {
   grid-area: subhead;
-}
-
-a {
-  cursor: pointer;
-  text-decoration: none;
-  color: var(--primaryLinkColor);
-  font-weight: 700;
-}
-a[href*="roll20.net"] {
-  color: var(--roll20LinkColor);
 }
 
 [hidden] {
@@ -149,4 +175,38 @@ main > section > .border {
 
 .no-capital {
   text-transform: none;
+}
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.flex--space-evenly {
+  justify-content: space-evenly;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.social-icon {
+  width: 20px;
+}
+
+.snippet {
+  color: red;
+}
+
+code {
+  font-family: "Fira Code";
+}
+
+p > code{
+  color:red;
+  background-color:rgb(255, 0, 0, 0.1);
+  border-radius:var(--half-gap);
+  box-shadow:var(--secondaryBackground) 0 0 5px inset;
+  padding-inline:var(--half-gap);
 }

@@ -1,0 +1,11 @@
+//- A placeholder for creating a stackable grid of elements. Particularly for making stacked input labels.
+@mixin darkMode{
+  --backColor:var(--dm-backColor);
+  --selectedColor:var(--dm-selectedColor);
+  --unselectedColor1:var(--dm-unselectedColor1);
+  --unselectedColor1:var(--dm-unselectedColor2);
+  --checkColor:var(--dm-checkColor);
+  --borderColor:var(--dm-borderColor);
+  --fontColor:var(--dm-fontColor);
+  --disabledColor:var(--dm-disabledColor);
+}

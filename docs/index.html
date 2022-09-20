@@ -7,9 +7,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com"/>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin"/>
     <link href="https://fonts.googleapis.com/css2?family=Aldrich&amp;family=Exo+2:ital,wght@0,400;0,700;1,400&amp;family=Fira+Code&amp;display=swap" rel="stylesheet"/>
-    <link rel="stylesheet" href="docs/assets/css/clear.css"/>
-    <link rel="stylesheet" href="docs/assets/css/generic.css"/>
-    <link rel="stylesheet" href="docs/assets/css/index.css"/>
+    <link rel="stylesheet" href="./assets/css/clear.css"/>
+    <link rel="stylesheet" href="./assets/css/generic.css"/>
+    <link rel="stylesheet" href="./assets/css/index.css"/>
+    <link rel="stylesheet" href="./assets/css/prettify.css"/>
+    <link rel="stylesheet" href="./assets/css/sons-of-obsidian.css"/>
+    <link rel="stylesheet" href="./assets/css/codeDisplay.css"/>
     <title>Document</title>
   </head>
   <body>
@@ -17,6 +20,10 @@
       <h1>The K-Scaffold Framework</h1><span class="subhead">PUG, HTML, and Javascript</span>
     </header>
     <nav>
+      <ul>
+        <li><a href="./js.html?v=1.1">Sheetworker Documentation</a></li>
+        <li><a href="./pug.html?v=1.1">Pug Documentation</a></li>
+      </ul>
       <ul>
         <li> <a href="#about-header">What is it?</a></li>
         <li> <a href="#start-header">Getting Started</a></li>
@@ -37,15 +44,10 @@
         <h2 id="start-header">Getting Started</h2>
         <div class="border"></div>
         <div class="content">
-          <p>To get started with the K-scaffold, follow the steps below</p>
-          <ol>
-            <li>Download the most recent version of the scaffold from the <a href="https://github.com/Kurohyou/Roll20-Snippets/releases">releases page</a>.</li>
-            <li>Copy the `scaffold` directory into the same directory as your main pug file.</li>
-            <li>Add 
-              <pre><code>include scaffold/_kpug.pug</code></pre> to the top of your primary PUG file.
-            </li>
-            <li>Start coding!</li>
-          </ol>
+          <p>The recommended method for using the K-scaffold as of v0-1-0 is to install it via npm.</p>
+          <pre class="prettyprint"><code>npm -i k-scaffold</code></pre>
+          <p>Then simply use it in your top level pug file:</p>
+          <pre class="prettyprint"><code class="language-jade">include k-scaffold<br>+text({name:'a k-scaffold text input'})</code></pre>
         </div>
       </section>
       <section aria-labelledby="use-header">
@@ -61,5 +63,11 @@
       </section>
     </main>
     <footer><span>By Scott Casey, Kurohyou Studios</span></footer>
+    <script type="text/javascript">const siteVersion = 1.1;
+      
+    </script>
+    <script src="./assets/javascript/resizer.js"></script>
+    <script src="./assets/javascript/prettify.js"></script>
+    <script src="./assets/javascript/parser.js"></script>
   </body>
 </html>

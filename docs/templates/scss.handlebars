@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin"/>
+    <link href="https://fonts.googleapis.com/css2?family=Aldrich&amp;family=Exo+2:ital,wght@0,400;0,700;1,400&amp;family=Fira+Code&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+    <link rel="stylesheet" href="assets/portfolio/social-icons.css"/>
+    <link rel="stylesheet" href="./assets/css/clear.css"/>
+    <link rel="stylesheet" href="./assets/css/generic.css"/>
+    <link rel="stylesheet" href="./assets/css/prettify.css"/>
+    <link rel="stylesheet" href="./assets/css/sons-of-obsidian.css"/>
+    <link rel="stylesheet" href="./assets/css/codeDisplay.css"/>
+    <title>K-Scaffold | SCSS</title>
+  </head>
+  <body>
+    <header>
+      <h1>The K-Scaffold Framework</h1><span class="subhead">PUG, HTML, SCSS, and Javascript</span>
+    </header>
+    <nav>
+      <ul>
+        <li><a href="./index.html?v=1.1">General Info</a></li>
+        <li><a href="./js.html?v=1.1">Sheetworker Documentation</a></li>
+        <li><a href="./pug.html?v=1.1">PUG Documentation</a></li>
+      </ul>
+      <ul>
+        <li><a href="#intro-header">Intro</a></li>
+        <li><a href="#" id="doc-link">SCSS Mixins & CSS Variables</a></li>
+        <li><a href="#contact-header">Contact & Feedback</a></li>
+      </ul>
+    </nav>
+    <main id="doc-target">
+      <section aria-labelledby="intro-header">
+        <h2 id="intro-header">The SCSS Framework</h2>
+        <div class="border"></div>
+        <div class="content">
+          <p>The K-scaffold's SCSS Framework provides the basic SCSS to style some of the more complex pug constructions, such as fillLeft. It also provides a scaffold of CSS variables to use to customize the appearance of these constructions and of your sheet.</p>
+        </div>
+      </section>
+{{~#each docData as |doc| ~}}
+  {{~> card}}
+{{~/each}}
+    </main>
+    <aside>
+      <h2>Mixins</h2>
+      <nav>
+        <ul id="toc-target">
+          {{#docData}}
+            {{> navElement}}
+          {{/docData}}
+        </ul>
+      </nav>
+    </aside>
+    <div class="footer"></div>
+    <footer>
+      <section class="flex flex--space-evenly" aria-label="Contact &amp; Feedback" id="contact-header"><a class="social-icon" href="https://discord.gg/vYmvFBZQsM">discord</a><a class="social-icon" href="https://www.linkedin.com/in/scott-casey-20210398/">linkedin</a><a class="social-icon" href="https://www.patreon.com/kurohyoustudios?fan_landing=true">patreon</a>
+        <div class="flex flex-column"><span style="justify-self:center;">Scott Casey | Kurohyou Studios</span><span style="justify-self:center;">06/19/2022</span></div><a class="material-icons" title="Email" href="mailto:scaseydv@gmail.com?subject=Inquiring about your work">email</a><a class="social-icon" href="https://github.com/Kurohyou">github</a><a class="social-icon" href="https://twitter.com/Kurohyoustudios">twitter</a>
+      </section>
+    </footer>
+    <script type="text/javascript">const siteVersion = 1.1;
+      
+    </script>
+    <script src="./assets/javascript/resizer.js"></script>
+    <script src="./assets/javascript/prettify.js"></script>
+    <script src="./assets/javascript/parser.js"></script>
+  </body>
+</html>
