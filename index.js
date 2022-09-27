@@ -27,8 +27,7 @@ const outputPug = async (html,destination) => {
   },{});
   if(translations){
     const transPath = path.resolve(path.dirname(destination),'translations.json');
-    const translationHandle = await fs.open(transPath,'w+');
-    const currTranslation = await translationHandle.readFile('utf8')
+    const currTranslation = await fs.readFile(transPath,'w+')
       .then(t => JSON.parse(t))
       .catch( e => {return {}});
     Object.entries(translations)
@@ -37,8 +36,7 @@ const outputPug = async (html,destination) => {
           currTranslation[key] = val;
         }
       });
-    await translationHandle.writeFile(JSON.stringify(currTranslation,null,2),'utf8');
-    translationHandle.close();
+    await fs.writeFile(transPath,JSON.stringify(currTranslation,null,2));
     console.log(`${transPath} updated`);
   }
 

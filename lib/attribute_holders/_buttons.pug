@@ -61,7 +61,7 @@ mixin navButton(obj)
 
 mixin rollerExtras(obj)
   - obj.class = obj.class ? `${replaceProblems(obj.class)} roller` : 'roller';
-  - let attrName = replaceSpaces(actionInputName(obj.name));
+  - let attrName = replaceSpaces(actionInputName(attrName(obj.name)));
   - let actionName = actionButtonName(attrName);
   - obj.value = `@{${attrName}}`;
   - actionObj = {name:actionName,hidden:''};
