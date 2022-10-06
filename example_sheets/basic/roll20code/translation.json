@@ -4,5 +4,7 @@
   "tabs-test-tabs-history": "tabs-test-tabs-history",
   "tabs-test-tabs-inventory": "tabs-test-tabs-inventory",
   "a test label": "a test label",
-  "one": "one"
+  "one": "one",
+  "something": "else",
+  "a new test label": "a new test label"
 }

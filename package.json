@@ -10,14 +10,19 @@
     "index.js",
     "_k.pug",
     "_k.scss",
-    "lib/*"
+    "lib/*",
+    "initialization"
   ],
   "dependencies": {
+    "colors": "^1.4.0",
+    "jest": "^29.1.2",
     "pug": "^3.0.2",
-    "sass": "^1.54.9"
+    "sass": "^1.54.9",
+    "sass-embedded": "^1.55.0",
+    "underscore": "^1.13.6"
   },
+  "author": "Scott Casey",
   "devDependencies": {
-    "handlebars": "^4.7.7",
     "jsdoc": "^3.6.11",
     "markdown": "^0.5.0",
     "pug-doc": "^2.23.1",

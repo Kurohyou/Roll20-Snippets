@@ -4,7 +4,6 @@
     display: inline-flex;
     gap: var(--half-gap);
     align-items:center;
-    @include stackedGrid;
     &:not(.stacked){
       > input[type='text']{
         flex:1 1 0;

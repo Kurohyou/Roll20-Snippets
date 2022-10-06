@@ -85,14 +85,15 @@
 
 -
   const attrName = (string) => {
+    const sysPrefix = getSystemPrefix();
     let tempString = replaceSpaces(`${
-    (repeatingPrefix && !repeatsIgnoreSystemPrefix) || !getSystemPrefix() ?
+    (repeatingPrefix && !repeatsIgnoreSystemPrefix) || !sysPrefix ?
       '' :
-      `${getSystemPrefix()} `
+      `${sysPrefix} `
     }${string}`);
-    if(getSystemPrefix()){
+    if(sysPrefix){
       tempString = tempString
-        .replace(new RegExp(`${getSystemPrefix()}[_-]${getSystemPrefix()}`),getSystemPrefix());
+        .replace(new RegExp(`${sysPrefix}[_-]${sysPrefix}`),sysPrefix);
     }
     return tempString;
   };

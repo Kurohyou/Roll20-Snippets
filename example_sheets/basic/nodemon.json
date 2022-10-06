@@ -1,3 +1,5 @@
 {
-  "ext":"pug, js, scss"
+  "ext":"pug, js, scss,json",
+  "ignore":["**/sheetworker.js","*.html","**/translation.json"],
+  "verbose":true
 }

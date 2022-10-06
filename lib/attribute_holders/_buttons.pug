@@ -61,15 +61,15 @@ mixin navButton(obj)
 
 mixin rollerExtras(obj)
   - obj.class = obj.class ? `${replaceProblems(obj.class)} roller` : 'roller';
-  - let attrName = replaceSpaces(actionInputName(attrName(obj.name)));
-  - let actionName = actionButtonName(attrName);
-  - obj.value = `@{${attrName}}`;
+  - let attributeName = replaceSpaces(actionInputName(attrName(obj.name)));
+  - let actionName = actionButtonName(attributeName);
+  - obj.value = `@{${attributeName}}`;
   - actionObj = {name:actionName,hidden:''};
   - actionObj.trigger = obj.trigger || {listenerFunc:'initiateRoll'};
   block
-  - addIfUnique(`${repeatingPrefix}${attrName}`,'actionAttributes');
+  - addIfUnique(`${repeatingPrefix}${attributeName}`,'actionAttributes');
   +action(actionObj)
-  +hidden({name:attrName})
+  +hidden({name:attributeName})
 //- @pugdoc
   name: roller
   description: Creates a multi element construction made of a hidden input, a roll button, and a hidden action button. On sheet load, or character sheet name change, the hidden input is updated with an ability call to the action button. The roll button refers to the hidden input as its value. This allows for an action button to be used to call custom roll parsing (or other sheet functionality) while retaining the ability to drag the button to the macro bar. Uses the same arguments as {@link button}. A trigger should be passed, and will be associated with the action button's name.
