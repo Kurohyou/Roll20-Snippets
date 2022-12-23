@@ -1,0 +1,15 @@
+/// Mixin that creates the properties that should be assigned for inline rolls
+@mixin rollProperties($type:''){
+  // Background settings
+  background-color: var(--inlineRoll#{$type}BackColor);
+
+  // Font settings
+  color:var(--inlineRoll#{$type}Color);
+  font-family:var(--inlineRoll#{$type}Font);
+  font-size:var(--inlineRoll#{$type}Size);
+
+  // Spacing
+  padding: var(--inlineRoll#{$type}Padding);
+  border: var(--inlineRoll#{$type}Border);
+  margin: var(--inlineRoll#{$type}Margin);
+}

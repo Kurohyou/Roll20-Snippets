@@ -16,6 +16,7 @@
   "dependencies": {
     "colors": "^1.4.0",
     "jest": "^29.1.2",
+    "jsdom": "^20.0.1",
     "pug": "^3.0.2",
     "sass": "^1.54.9",
     "sass-embedded": "^1.55.0",
@@ -26,6 +27,6 @@
     "jsdoc": "^3.6.11",
     "markdown": "^0.5.0",
     "pug-doc": "^2.23.1",
-    "sassdoc": "^2.7.4"
+    "sassdoc": "^2.7.2"
   }
 }

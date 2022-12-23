@@ -1,0 +1,6 @@
+@mixin variables{
+
+  --input-label-gap:var(--half-gap) var(--half-gap);
+
+  --input-label-text-transform: capitalize;
+}

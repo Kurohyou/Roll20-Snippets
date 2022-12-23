@@ -1,28 +1,29 @@
 @use '../generic_scss/borderPlaceholders';
 /// Mixin for applying our checked styling to something
 @mixin checked{
+  background-color:var(--checkedBackColor);
   &:before{
-    content: '\2713';
+    content: var(--checkContent);
     grid-area:content;
-    font-weight:bold;
+    font-weight:var(--checkWeight);
     place-self:start center;
     color: var(--checkColor);
-    font-size: 1.5rem;
-    line-height: 0.5rem;
+    font-size: var(--checkSize);
+    line-height: var(--checkLineHeight);
   }
 }
 /// Basic input styling to ensure that the various inputs are ready for future styling
 @mixin inputBase{
   input{
     &[type='checkbox']{
-      border: 1px solid var(--borderColor);
+      border: 1px solid var(--checkboxBorderColor);
       cursor: pointer;
       -webkit-appearance:none;
       appearance:none;
-      width: 14px;
-      min-width: 14px;
-      height: 14px;
-      min-height: 14px;
+      width: var(--checkboxWidth);
+      min-width: var(--checkboxWidth);
+      height: var(--checkboxHeight);
+      min-height: var(--checkboxHeight);
       display:grid;
       grid-template-columns:1fr;
       grid-template-areas:"content";
@@ -47,7 +48,7 @@
   textarea,
   input:not(:is([type='radio'],[type='checkbox'])),
   .uneditable-input{
-    padding: 2px;
+    padding: var(--inputPadding);
   }
   input:is([type="text"],[type="number"]),textarea{
     cursor:auto;
@@ -65,24 +66,24 @@
   .pseudo-select span{
     -webkit-apperance: none;
     appearance: none;
-    text-transform: capitalize;
+    text-transform: var(--selectTextTransform);
     overflow: hidden!important;
     white-space: nowrap;
-    text-overflow: ellipsis;
-    text-align: center;
-    color:var(--fontColor);
+    text-overflow: var(--selectTextOverflow);
+    text-align: var(--selectTextAlign);
+    color:var(--selectColor);
   }
   input{
     width: auto;
     &:placeholder{
-      color: #ededed80;
+      color: var(--placeholderColor);
     }
     &.plus-control:not([value*="-"])+span:before{
       content: '+';
     }
   }
   textarea{
-    resize: vertical;
+    resize: var(--textareaResize);
     white-space: pre-wrap;
     &.fixed{
       resize: none;

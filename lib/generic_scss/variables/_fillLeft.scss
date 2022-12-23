@@ -1,0 +1,20 @@
+@mixin variables{
+  --fillLeftDisplay: flex;
+  --fillLeftAlignment: center;
+
+  --fillLeftDataTransform: uppercase;
+  --fillLeftDataSize: var(--size6);
+
+  // Colors
+  --lm-fillLeftSelectedColor: var(--lm-selectedColor);
+  --dm-fillLeftSelectedColor: var(--dm-selectedColor);
+  --fillLeftSelectedColor: var(--lm-fillLeftSelectedColor);
+
+  --lm-fillLeftUnselectedColor: var(--lm-unselectedColor);
+  --dm-fillLeftUnselectedColor: var(--dm-unselectedColor);
+  --fillLeftUnselectedColor: var(--lm-fillLeftUnselectedColor);
+
+  --lm-fillLeftDataColor: var(--lm-backColor);
+  --dm-fillLeftDataColor: var(--dm-backColor);
+  --fillLeftDataColor: var(--lm-fillLeftDataColor);
+}

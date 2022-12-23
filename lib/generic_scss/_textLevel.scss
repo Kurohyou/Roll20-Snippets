@@ -44,7 +44,7 @@
   @include baseHeader;
   @include importantHeader;
   font-size: var(--size1);
-  font-family: var(--topHeaderFont);
+  font-family: var(--font1);
   &:not(input){
     text-align: center;
   }
@@ -59,7 +59,7 @@
   @include baseHeader;
   @include importantHeader;
   font-size: var(--size2);
-  font-family: var(--topHeaderFont);
+  font-family: var(--font2);
   &:not(input){
     text-align: center;
   }
@@ -74,7 +74,7 @@
   @include baseHeader;
   @include importantHeader;
   font-size: var(--size3);
-  font-family: var(--topHeaderFont);
+  font-family: var(--font3);
   &:not(input){
     text-align: center;
   }
@@ -89,7 +89,7 @@
   @include baseHeader;
   @include midHeader;
   font-size: var(--size4);
-  font-family: var(--midHeaderFont);
+  font-family: var(--font4);
   &:not(input){
     text-align: center;
   }
@@ -105,7 +105,7 @@
   @include midHeader;
   font-size: var(--size5);
   font-style:normal;
-  font-family: var(--midHeaderFont);
+  font-family: var(--font5);
   &:not(input){
     text-align: center;
   }
@@ -114,6 +114,22 @@
   @include h5-style;
   *{
     @include h5-style;
+  }
+}
+@mixin h6-style{
+  @include baseHeader;
+  @include midHeader;
+  font-size: var(--size5);
+  font-style:normal;
+  font-family: var(--font5);
+  &:not(input){
+    text-align: center;
+  }
+}
+@mixin h6{
+  @include h6-style;
+  *{
+    @include h6-style;
   }
 }
 @mixin headerElements{
@@ -137,25 +153,39 @@
   *[aria-level='5']{
     @include h5;
   }
+  h6,
+  *[aria-level='6']{
+    @include h6;
+  }
 }
 @mixin textElements{
   span,
   input,
-  textarea{
-    font-size: var(--size6);
-    color:var(--fontColor);
+  textarea,
+  button,
+  select{
     @include baseText;
+    color: inherit;
+    font-family: inherit;
+    font-size:inherit;
+    line-height:inherit;
   }
-  span[name],input,textarea,button,select{
-    font-family:var(--contentFont);
+  @each $size in 1,2,3,4,5,6,7{
+    .text-#{$size},
+    .sheet-text-#{$size}{
+      font-size: var(--size#{$size});
+    }
   }
-  .big-text{
-    font-size: var(--size4);
+  .capitalize,
+  .sheet-capitalize{
+    text-transform: capitalize !important;
   }
-  .tiny-text{
-    font-size:var(--size7);
+  .lowercase,
+  .sheet-lowercase{
+    text-transform:lowercase !important;
   }
-  .uppercase{
+  .uppercase,
+  .sheet-uppercase{
     text-transform:uppercase !important;
   }
 }

@@ -1,0 +1,17 @@
+@mixin variables{
+  --inputTopPadding: 2px;
+  --inputRightPadding: 2px;
+  --inputBottomPadding: 2px;
+  --inputLeftPadding: 2px;
+  --inputPadding:
+    var(--inputTopPadding)
+    var(--inputRightPadding)
+    var(--inputBottomPadding)
+    var(--inputLeftPadding);
+  
+  --lm-placeholderColor:#ededed80;
+  --dm-placeholderColor:#3f3f3f80;
+  --placeholderColor: var(--lm-placeholderColor);
+
+  --textareaResize: vertical;
+}

@@ -1,0 +1,15 @@
+@mixin variables{
+  --checkContent: '✓';
+  --checkWeight: bold;
+  --checkSize: 150%;
+  --checkLineHeight: calc(var(--checkSize) / 3);
+
+  --checkboxBorderWidth: var(--borderWidth);
+  --checkboxBorderStyle: var(--borderStyle);
+  --lm-checkboxBorderColor: var(--lm-borderColor);
+  --dm-checkboxBorderColor: var(--dm-borderColor);
+  --checkboxBorderColor: var(--lm-checkBorderColor);
+
+  --checkboxWidth: 14px;
+  --checkboxHeight: 14px;
+}

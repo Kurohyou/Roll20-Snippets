@@ -1,4 +1,10 @@
-//- A placeholder for creating a stackable grid of elements. Particularly for making stacked input labels.
+/// A mixin that switches the scaffold's sheet color variables over to dark mode specific versions.
+/// @example
+///   // Will apply the darkmode styling attributes to the body of the sheet when dark mode is enabled.
+///   @use 'k-scaffold' as k;
+///   body.sheet-darkmode{
+///     @include k.darkMode;
+///   }
 @mixin darkMode{
   --backColor:var(--dm-backColor);
   --selectedColor:var(--dm-selectedColor);
@@ -8,4 +14,22 @@
   --borderColor:var(--dm-borderColor);
   --fontColor:var(--dm-fontColor);
   --disabledColor:var(--dm-disabledColor);
+}
+
+/// A mixin that switches the scaffold's roll template color variables (including sheet variables) over to dark mode specific ones. Should only be used directly inside a `.sheet-rolltemplate-TEMPLATENAME` rule.
+/// @example
+///   // Will apply the darkmode styling attributes to the default template when dark mode is enabled.
+///   @use 'k-scaffold' as k;
+///   .sheet-rolltemplate-default{
+///     @include k.darkRoll;
+///   }
+@mixin darkRoll{
+  &.sheet-rolltemplate-darkmode{
+    @include darkMode;
+    --inlineRollBackColor: var(--dm-inlineRollBackColor);
+    --inlineRollColor: var(--fontColor);
+    --inlineRollCritColor: var(--dm-inlineRollCritColor);
+    --inlineRollFumbleColor: var(--dm-inlineRollCritColor);
+    --inlineRollImportantColor: var(--dm-inlineRollCritColor);
+  }
 }

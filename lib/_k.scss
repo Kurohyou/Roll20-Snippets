@@ -12,13 +12,14 @@
 
 @forward 'fieldsets/fieldsetStyling';
 @use 'fieldsets/fieldsetStyling';
-/// Mixin that includes all of the framework's styles. Should be included in a 3 class declaration for character sheets or directly in the rolltemplate declaration for your roll templates.
+
+@use 'rolltemplate/_rolltemplate';
+/// Mixin that includes all of the framework's styles. Should be included in a 3 class declaration for character sheets.
 /// @example
-///   @use 'k/k';
+///   @use 'k-scaffold' as k;
 ///   
-///   .ui-dialog .tab-content .charsheet,
-///   .sheet-rolltemplate-TEMPLATENAME{
-///     @include k.defaultStyles
+///   .ui-dialog .tab-content .charsheet{
+///     @include k.defaultStyles;
 ///   }
 @mixin defaultStyles{
   // Clear roll20 styles
@@ -46,4 +47,19 @@
   @include adaptive.adaptiveText;
 
   @include fieldsetStyling.fieldsetStyling;
+}
+
+/// Mixin that includes all of the default styles as well as rolltemplate specific styling such as inline roll variable assignment. Should be included directly in the rolltemplate declaration for your roll templates.
+/// @example
+///   @use 'k-scaffold/k';
+///   
+///   .sheet-rolltemplate-TEMPLATENAME{
+///     @include k.defaultRollStyling;
+///   }
+@mixin defaultRollStyling{
+  @include defaultStyles;
+  @include rolltemplate.rollStyles;
+}
+@mixin rollVariables{
+  @include rolltemplate.rollVariables;
 }

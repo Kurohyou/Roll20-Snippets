@@ -1,0 +1,10 @@
+@mixin variables{
+  --inlineRollFont: var(--font6);
+  --inlineRollSize: var(--size6);
+  --inlineRollCritFont: var(--inlineRollFont);
+  --inlineRollCritSize: var(--inlineRollSize);
+  --inlineRollFumbleFont: var(--inlineRollFont);
+  --inlineRollFumbleSize: var(--inlineRollSize);
+  --inlineRollImportantFont: var(--inlineRollFont);
+  --inlineRollImportantSize: var(--inlineRollSize);
+}

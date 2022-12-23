@@ -163,9 +163,8 @@ const renderSASS = async ({source,destination,options={}}) => {
       importers: [
         {
           findFileUrl(url) {
-            if(!url.startsWith('k-scaffold/')) return null;
-            const sub = url.substring(2);
-            const fileURL = pathToFileURL(path.resolve(dirname,'node_modules/@kurohyou/k-scaffold/_k.scss'));
+            if(!url.startsWith('k-scaffold')) return null;
+            const fileURL = pathToFileURL(path.resolve(dirname,'node_modules/@kurohyou/k-scaffold'),url.substring(10));
             const newURL = new URL(fileURL);
             return newURL;
           }
@@ -208,10 +207,9 @@ const renderSASS = async ({source,destination,options={}}) => {
  * @returns {Promise<array[]>} - Array containing all rendered HTML text in an array at index 0 and all rendered CSS text at index 1.
  */
 const renderAll = async ({source ='./',destination,testDestination,pugOptions={suppressStack:true},scssOptions={}}) => {
-  const destDir = path.dirname(destination);
   const files = await fs.opendir(source);
-  const pugOutput = [];
-  const scssOutput = [];
+  const pugPromises = [];
+  const scssPromises = [];
   for await (entry of files){
     if(entry.isFile() && !entry.name.startsWith('_') && (entry.name.endsWith('.pug') || entry.name.endsWith('.scss'))){
       const resSource = path.resolve(source,entry.name);
@@ -220,16 +218,18 @@ const renderAll = async ({source ='./',destination,testDestination,pugOptions={s
         undefined;
       if(entry.name.endsWith('.scss')){
         kStatus(` Processing ${entry.name} `);
-        const newSass = await renderSASS({source:resSource,destination:resDest,options:scssOptions});
-        scssOutput.push(newSass);
+        const newSass = renderSASS({source:resSource,destination:resDest,options:scssOptions});
+        scssPromises.push(newSass);
       }
       if(entry.name.endsWith('.pug')){
         kStatus(` Processing ${entry.name} `);
-        const newPug = await renderPug({source:resSource,destination:resDest,testDestination,options:pugOptions});
-        pugOutput.push(newPug);
+        const newPug = renderPug({source:resSource,destination:resDest,testDestination,options:pugOptions});
+        pugPromises.push(newPug);
       }
     }
   }
+  const pugOutput = await Promise.all(pugPromises);
+  const scssOutput = await Promise.all(scssPromises);
   return [pugOutput,scssOutput];
 };
 

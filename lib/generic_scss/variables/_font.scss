@@ -1,9 +1,22 @@
 @mixin variables{
-  --size1:3rem;
-  --size2:2.5rem;
-  --size3:2rem;
-  --size4:1.5rem;
-  --size5:1.25rem;
-  --size6:1rem;
-  --size7:0.875rem;
+  // Font families
+  --font1:var(--topHeadFont);
+  --font2:var(--topHeadFont);
+  --font3:var(--midHeadFont);
+  --font4:var(--midHeadFont);
+  --font5:var(--midHeadFont);
+  --font6:var(--contentHeadFont);
+  --font7:var(--contentHeadFont);
+
+  // Font sizes
+  --baseFontSize: 16px;
+  --size1:300%;
+  --size2:250%;
+  --size3:200%;
+  --size4:150%;
+  --size5:125%;
+  --size6:100%;
+  --size7:87.5%;
+
+  --textOverflow: ellipsis;
 }

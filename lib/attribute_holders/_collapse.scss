@@ -13,7 +13,7 @@
     justify-content:flex-start;
     align-items:center;
     &:before{
-      content:'unfold_less';
+      content: var(--expandedSymbol);
       @include materialIcons.materialStyle;
     }
   }
@@ -25,24 +25,24 @@
       @include borderPlaceholders.inputHighlight;
     }
     &:checked + .text-collapse:before{
-      content:'unfold_more';
+      content: var(--collapsedSymbol);
     }
   }
   .repitem,
   .collapse-container{
     &:hover{
       .collapse,.roll-container{
-        opacity:1;
+        opacity:var(--collapseHoverOpacity);
       }
     }
     .collapse{
-      opacity:0;
+      opacity:var(--collapseBaseOpacity);
       position:absolute;
       right:-10px;
       top:0px;
       border:0px solid black;
       border-radius:0;
-      color:var(--selectedColor);
+      color:var(--collapseExpandedColor);
       text-transform:none;
       background-color:transparent;
       &:before{
@@ -50,7 +50,7 @@
         font-family:pictos;
       }
       &:checked{
-        color:var(--unselectedColor1);
+        color:var(--collapseCollapsedColor);
         background-color:transparent;
         ~ .expanded,
         ~ .collapse-container .expanded{
@@ -67,7 +67,7 @@
         }
       }
       &:hover{
-        color:var(--selectedColor);
+        color:var(--collapseExpandedColor);
       }
     }
   }

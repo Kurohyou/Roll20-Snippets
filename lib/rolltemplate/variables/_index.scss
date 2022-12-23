@@ -1,0 +1,9 @@
+@use './colors';
+@use './spacing';
+@use './font';
+
+@mixin variables{
+  @include font.variables;
+  @include colors.variables;
+  @include spacing.variables;
+}

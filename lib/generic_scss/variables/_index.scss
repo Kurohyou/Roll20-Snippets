@@ -1,0 +1,23 @@
+@use './layout';
+@use './font';
+@use './colors';
+@use './animation';
+@use './checked';
+@use './input';
+@use './border';
+@use './collapse';
+@use './fillLeft';
+@use './select';
+
+@mixin variables{
+  @include font.variables;
+  @include layout.variables;
+  @include colors.variables;
+  @include checked.variables;
+  @include input.variables;
+  @include border.variables;
+  @include collapse.variables;
+  @include fillLeft.variables;
+  @include select.variables;
+  @include animation.variables;
+}

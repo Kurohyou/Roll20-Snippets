@@ -1,28 +1,26 @@
 /// The styling for the functionality of the fillLeft pug mixin. This allows us to easily make [radios/checkboxes that fill as the value increments](https://wiki.roll20.net/CSS_Wizardry#Fill_Radio_Buttons_to_the_Left).
 @mixin fillLeft{
   .fill-left{
-    display:flex;
-    align-self:center;
+    display:var(--fillLeftDisplay);
+    align-self:var(--fillLeftAlignment);
     box-sizing:border-box;
   }
   .fill-left__radio{
     appearance:none;
     -webkit-appearance:none;
-    background-color:var(--selectedColor);
-    order:1;
+    background-color:var(--fillLeftSelectedColor);
     width:100%;
     height:100%;
     cursor:pointer;
     &[data-value]:checked:before{
       content:attr(data-value);
-      color:var(--backColor);
-      font-size:1rem;
+      color:var(--fillLeftDataColor);
+      font-size:var(--fillLeftDataSize);
       place-self:center;
-      text-transform: uppercase;
+      text-transform: var(--fillLeftDataTransform);
     }
     &:checked ~ .fill-left__radio{
-      background-color:var(--unselectedColor2);
-      order:3;
+      background-color:var(--fillLeftUnselectedColor);
     }
   }
 }

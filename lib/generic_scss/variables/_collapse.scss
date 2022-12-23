@@ -1,0 +1,15 @@
+@mixin variables{
+  --expandedSymbol:'unfold_less';
+  --collapsedSymbol: 'unfold_more';
+
+  --collapseHoverOpacity: 1;
+  --collapseBaseOpacity: 0;
+
+  --lm-collapseExpandedColor:var(--lm-selectedColor);
+  --dm-collapseExpandedColor:var(--dm-selectedColor);
+  --collapseExpandedColor: var(--lm-collapseExpandedColor);
+
+  --lm-collapseCollapsedColor:var(--lm-unselectedColor);
+  --dm-collapseCollapsedColor:var(--dm-unselectedColor);
+  --collapseCollapsedColor: var(--lm-collapseCollapsedColor);
+}

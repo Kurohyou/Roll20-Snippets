@@ -18,6 +18,9 @@
   --lm-checkColor:#000;
   --dm-checkColor:#ff0000;
   --checkColor:var(--lm-checkColor);
+  --lm-checkedBackColor:transparent;
+  --dm-checkedBackColor:transparent;
+  --checkedBackColor:var(--lm-checkedBackColor);
 
   --lm-borderColor:#000;
   --dm-borderColor:lightgrey;

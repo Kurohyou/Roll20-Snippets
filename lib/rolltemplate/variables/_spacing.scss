@@ -1,0 +1,30 @@
+@mixin variables{
+  --inlineRollPadTop: 0;
+  --inlineRollPadRight: 0;
+  --inlineRollPadBottom: 0;
+  --inlineRollPadLeft: 0;
+  --inlineRollMarginTop: 0;
+  --inlineRollMarginRight: 0;
+  --inlineRollMarginBottom: 0;
+  --inlineRollMarginLeft: 0;
+  --inlineRollBorderTop: 0;
+  --inlineRollBorderRight: 0;
+  --inlineRollBorderBottom: 0;
+  --inlineRollBorderLeft: 0;
+
+  --inlineRollPadding:
+    var(--inlineRollPadTop)
+    var(--inlineRollPadRight)
+    var(--inlineRollPadBottom)
+    var(--inlineRollPadLeft);
+  --inlineRollMargin:
+    var(--inlineRollMarginTop)
+    var(--inlineRollMarginRight)
+    var(--inlineRollMarginBottom)
+    var(--inlineRollMarginLeft);
+  --inlineRollBorder:
+    var(--inlineRollBorderTop)
+    var(--inlineRollBorderRight)
+    var(--inlineRollBorderBottom)
+    var(--inlineRollBorderLeft);
+}

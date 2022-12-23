@@ -1,0 +1,25 @@
+@use './helpers';
+
+@forward './variables' as roll-*;
+@use './variables';
+
+@mixin inlineRolls{
+  .inlinerollresult{
+    @include helpers.rollProperties;
+
+    &.fullcrit{
+      @include helpers.rollProperties('Crit');
+    }
+    &.fullfail{
+      @include helpers.rollProperties('Fumble');
+    }
+    &.importantroll{
+      @include helpers.rollProperties('Important');
+    }
+  }
+}
+
+@mixin rollStyles{
+  @include variables.variables;
+  @include inlineRolls;
+}

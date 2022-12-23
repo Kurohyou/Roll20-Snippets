@@ -2,7 +2,7 @@
 @mixin input-label{
   .input-label{
     display: inline-flex;
-    gap: var(--half-gap);
+    gap: var(--input-label-gap);
     align-items:center;
     &:not(.stacked){
       > input[type='text']{
@@ -16,7 +16,7 @@
       }
     }
     > :is(span,button){
-      text-transform:capitalize;
+      text-transform:var(--input-label-text-transform);
     }
   }
   .input-label--dual{

@@ -1,0 +1,27 @@
+@mixin variables{
+  --lm-inlineRollBackColor: transparent;
+  --dm-inlineRollBackColor: transparent;
+  --inlineRollBackColor: var(--lm-inlineRollBackColor);
+  --inlineRollColor: var(--fontColor);
+
+  --lm-inlineRollCritBackColor: var(--lm-inlineRollBackColor);
+  --dm-inlineRollCritBackColor: var(--dm-inlineRollBackColor);
+  --inlineRollCritBackColor: var(--lm-inlineRollCritBackColor);
+  --lm-inlineRollCritColor: #40E240;
+  --dm-inlineRollCritColor: #40E240;
+  --inlineRollCritColor: var(--lm-inlineRollCritColor);
+
+  --lm-inlineRollFumbleBackColor: var(--lm-inlineRollBackColor);
+  --dm-inlineRollFumbleBackColor: var(--dm-inlineRollBackColor);
+  --inlineRollFumbleBackColor: var(--lm-inlineRollFumbleBackColor);
+  --lm-inlineRollFumbleColor: #C70000;
+  --dm-inlineRollFumbleColor: #C70000;
+  --inlineRollFumbleColor: var(--lm-inlineRollCritColor);
+
+  --lm-inlineRollImportantBackColor: var(--lm-inlineRollBackColor);
+  --dm-inlineRollImportantBackColor: var(--dm-inlineRollBackColor);
+  --inlineRollImportantBackColor: var(--lm-inlineRollImportantBackColor);
+  --lm-inlineRollImportantColor: #000352;
+  --dm-inlineRollImportantColor: #000352;
+  --inlineRollImportantColor: var(--lm-inlineRollCritColor);
+}
