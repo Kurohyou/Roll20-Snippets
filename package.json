@@ -10,8 +10,7 @@
     "index.js",
     "_k.pug",
     "_k.scss",
-    "lib/*",
-    "initialization"
+    "lib/*"
   ],
   "dependencies": {
     "colors": "^1.4.0",
