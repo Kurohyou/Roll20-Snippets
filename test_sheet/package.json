@@ -1,0 +1,19 @@
+{
+  "name": "basic",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node generator.js",
+    "build": "node generator.js --run",
+    "test":"vitest run",
+    "test-watch":"vitest --ui"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@vitest/ui": "^0.26.2",
+    "vitest": "^0.26.2"
+  }
+}

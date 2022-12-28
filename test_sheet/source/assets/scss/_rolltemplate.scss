@@ -1,0 +1,13 @@
+@use "./../../../../lib/k" as k;
+@use './variables/system';
+
+.sheet-rolltemplate-test{
+  @include k.rollStyles;
+  @include system.variables;
+  // Place your roll template specific variables here
+  // Place your roll template styling here
+}
+
+.sheet-rolltemplate-test{
+  @include k.darkRoll
+}

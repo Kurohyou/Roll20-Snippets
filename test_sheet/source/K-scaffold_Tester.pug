@@ -1,0 +1,15 @@
+include ./../../lib/_k.pug
+include ./assets/pug/mixins/_index.pug
+include ./assets/pug/spines/_index.pug
+
+- templateName = 'test';
++input({name:'template start',type:'text',value:`&{template:${templateName}} {{character_name=@{character_name}}} {{character_id=@{character_id}}}`})
+//- Replace `main-tabs` with whatever you would like your main tab group to be called. Change the default active tab as needed
++tabs({name:'main-tabs',defaultActiveTab:'settings'})#main
+  //- Put your sheet code in the articles folder with each article being a page of the sheet. Each discrete section of a page should be it's own file in a section folder for each page.
+  include ./assets/pug/articles/_index.pug
+
+include ./assets/pug/rolltemplates/_rolltemplate.pug
++kscript
+  //- All your javascript files should be included in index.pug
+  include ./assets/js/_index.pug

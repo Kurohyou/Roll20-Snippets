@@ -14,6 +14,7 @@
 @use 'fieldsets/fieldsetStyling';
 
 @use 'rolltemplate/_rolltemplate';
+@forward 'rolltemplate/_rolltemplate';
 /// Mixin that includes all of the framework's styles. Should be included in a 3 class declaration for character sheets.
 /// @example
 ///   @use 'k-scaffold' as k;

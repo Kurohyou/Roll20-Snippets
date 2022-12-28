@@ -1,0 +1,3318 @@
+// Vitest Snapshot v1
+
+exports[`k.build > Should generate the css file from scss 1`] = `
+".tabs__container:not(.k-active-tab) {
+  display: none !important;
+}
+
+body {
+  --font1:var(--topHeadFont);
+  --font2:var(--topHeadFont);
+  --font3:var(--midHeadFont);
+  --font4:var(--midHeadFont);
+  --font5:var(--midHeadFont);
+  --font6:var(--contentHeadFont);
+  --font7:var(--contentHeadFont);
+  --baseFontSize: 16px;
+  --size1:300%;
+  --size2:250%;
+  --size3:200%;
+  --size4:150%;
+  --size5:125%;
+  --size6:100%;
+  --size7:87.5%;
+  --textOverflow: ellipsis;
+  --normal-gap-x:1rem;
+  --normal-gap-y:1rem;
+  --normal-gap: var(--normal-gap-x);
+  --half-gap-x:calc(var(--normal-gap-x) / 2);
+  --half-gap-y:calc(var(--normal-gap-y) / 2);
+  --half-gap: var(--half-gap-x);
+  --tiny-gap-x:calc(var(--half-gap-x) / 2);
+  --tiny-gap-y:calc(var(--half-gap-y) / 2);
+  --tiny-gap: var(--tiny-gap-x);
+  --big-gap-x:calc(var(--normal-gap-x) * 2);
+  --big-gap-y:calc(var(--normal-gap-y) * 2);
+  --big-gap: var(--big-gap-x);
+  --lm-backColor:#fff;
+  --dm-backColor:var(--dark-surface1);
+  --backColor:var(--lm-backColor);
+  --lm-selectedColor:#000;
+  --dm-selectedColor:#007476;
+  --selectedColor:var(--lm-selectedColor);
+  --lm-unselectedColor1:lightgrey;
+  --dm-unselectedColor1:#0e0e0e;
+  --unselectedColor1:var(--lm-unselectedColor1);
+  --lm-unselectedColor2:transparent;
+  --dm-unselectedColor2:transparent;
+  --unselectedColor1:var(--lm-unselectedColor2);
+  --lm-checkColor:#000;
+  --dm-checkColor:#ff0000;
+  --checkColor:var(--lm-checkColor);
+  --lm-checkedBackColor:transparent;
+  --dm-checkedBackColor:transparent;
+  --checkedBackColor:var(--lm-checkedBackColor);
+  --lm-borderColor:#000;
+  --dm-borderColor:lightgrey;
+  --borderColor:var(--lm-borderColor);
+  --lm-fontColor:#0f0f0f;
+  --dm-fontColor:var(--dark-primarytext);
+  --fontColor:var(--lm-fontColor);
+  --lm-disabledColor:var(--lm-unselectedColor1);
+  --dm-disabledColor:var(--dm-unselectedColor1);
+  --disabledColor:var(--lm-disabledColor);
+  --checkContent: \\"✓\\";
+  --checkWeight: bold;
+  --checkSize: 150%;
+  --checkLineHeight: calc(var(--checkSize) / 3);
+  --checkboxBorderWidth: var(--borderWidth);
+  --checkboxBorderStyle: var(--borderStyle);
+  --lm-checkboxBorderColor: var(--lm-borderColor);
+  --dm-checkboxBorderColor: var(--dm-borderColor);
+  --checkboxBorderColor: var(--lm-checkBorderColor);
+  --checkboxWidth: 14px;
+  --checkboxHeight: 14px;
+  --inputTopPadding: 2px;
+  --inputRightPadding: 2px;
+  --inputBottomPadding: 2px;
+  --inputLeftPadding: 2px;
+  --inputPadding:
+    var(--inputTopPadding)
+    var(--inputRightPadding)
+    var(--inputBottomPadding)
+    var(--inputLeftPadding);
+  --lm-placeholderColor:#ededed80;
+  --dm-placeholderColor:#3f3f3f80;
+  --placeholderColor: var(--lm-placeholderColor);
+  --textareaResize: vertical;
+  --borderWidth:1px;
+  --borderStyle:solid;
+  --expandedSymbol:\\"unfold_less\\";
+  --collapsedSymbol: \\"unfold_more\\";
+  --collapseHoverOpacity: 1;
+  --collapseBaseOpacity: 0;
+  --lm-collapseExpandedColor:var(--lm-selectedColor);
+  --dm-collapseExpandedColor:var(--dm-selectedColor);
+  --collapseExpandedColor: var(--lm-collapseExpandedColor);
+  --lm-collapseCollapsedColor:var(--lm-unselectedColor);
+  --dm-collapseCollapsedColor:var(--dm-unselectedColor);
+  --collapseCollapsedColor: var(--lm-collapseCollapsedColor);
+  --fillLeftDisplay: flex;
+  --fillLeftAlignment: center;
+  --fillLeftDataTransform: uppercase;
+  --fillLeftDataSize: var(--size6);
+  --lm-fillLeftSelectedColor: var(--lm-selectedColor);
+  --dm-fillLeftSelectedColor: var(--dm-selectedColor);
+  --fillLeftSelectedColor: var(--lm-fillLeftSelectedColor);
+  --lm-fillLeftUnselectedColor: var(--lm-unselectedColor);
+  --dm-fillLeftUnselectedColor: var(--dm-unselectedColor);
+  --fillLeftUnselectedColor: var(--lm-fillLeftUnselectedColor);
+  --lm-fillLeftDataColor: var(--lm-backColor);
+  --dm-fillLeftDataColor: var(--dm-backColor);
+  --fillLeftDataColor: var(--lm-fillLeftDataColor);
+  --lm-selectColor: var(--lm-fontColor);
+  --dm-selectColor: var(--dm-fontColor);
+  --selectColor: var(--lm-fontColor);
+  --selectTextOverflow: var(--textOverflow);
+  --selectTextAlign: center;
+  --selectTextTransform: capitalize;
+  --revealTime:500ms;
+  --revealFunction: ease-in-out;
+  --revealTrans: var(--revealTime) var(--revealFunction);
+}
+body.sheet-darkmode {
+  --backColor:var(--dm-backColor);
+  --selectedColor:var(--dm-selectedColor);
+  --unselectedColor1:var(--dm-unselectedColor1);
+  --unselectedColor1:var(--dm-unselectedColor2);
+  --checkColor:var(--dm-checkColor);
+  --borderColor:var(--dm-borderColor);
+  --fontColor:var(--dm-fontColor);
+  --disabledColor:var(--dm-disabledColor);
+}
+
+.ui-dialog .tab-content .charsheet select,
+.ui-dialog .tab-content .charsheet textarea,
+.ui-dialog .tab-content .charsheet input,
+.ui-dialog .tab-content .charsheet .uneditable-input,
+.ui-dialog .tab-content .charsheet label,
+.ui-dialog .tab-content .charsheet button {
+  all: initial;
+}
+.ui-dialog .tab-content .charsheet .flex-box,
+.ui-dialog .tab-content .charsheet .sheet-flex-box {
+  display: flex;
+}
+.ui-dialog .tab-content .charsheet .flex-wrap,
+.ui-dialog .tab-content .charsheet .sheet-flex-wrap {
+  flex-wrap: wrap;
+}
+.ui-dialog .tab-content .charsheet .justify-space-around,
+.ui-dialog .tab-content .charsheet .sheet-justify-space-around {
+  justify-content: space-around;
+}
+.ui-dialog .tab-content .charsheet .justify-space-between,
+.ui-dialog .tab-content .charsheet .sheet-justify-space-between {
+  justify-content: space-between;
+}
+.ui-dialog .tab-content .charsheet .justify-center,
+.ui-dialog .tab-content .charsheet .sheet-justify-center {
+  justify-content: center;
+}
+.ui-dialog .tab-content .charsheet .flex-min-content,
+.ui-dialog .tab-content .charsheet .sheet-flex-min-content {
+  flex: 1 0 min-content;
+}
+.ui-dialog .tab-content .charsheet .stacked {
+  flex-direction: column;
+}
+.ui-dialog .tab-content .charsheet .stacked.center > * {
+  text-align: center;
+}
+.ui-dialog .tab-content .charsheet .stacked:not(.center) {
+  align-items: start;
+}
+.ui-dialog .tab-content .charsheet .stacked > [name]:not([type=number]):not([type=checkbox]):not([type=radio]) {
+  width: 100%;
+}
+.ui-dialog .tab-content .charsheet .flex-column,
+.ui-dialog .tab-content .charsheet .sheet-flex-column {
+  flex-direction: column;
+}
+.ui-dialog .tab-content .charsheet .flex-row-reverse,
+.ui-dialog .tab-content .charsheet .sheet-flex-row-revers {
+  flex-direction: row-reverse;
+}
+.ui-dialog .tab-content .charsheet .flex-column-reverse,
+.ui-dialog .tab-content .charsheet .sheet-flex-column-reverse {
+  flex-direction: column-reverse;
+}
+.ui-dialog .tab-content .charsheet .normal-gap,
+.ui-dialog .tab-content .charsheet .sheet-normal-gap {
+  gap: var(--normal-gap);
+}
+.ui-dialog .tab-content .charsheet .normal-gap-x,
+.ui-dialog .tab-content .charsheet .sheet-normal-gap-x {
+  column-gap: var(--normal-gap-x);
+}
+.ui-dialog .tab-content .charsheet .normal-gap-y,
+.ui-dialog .tab-content .charsheet .sheet-normal-gap-y {
+  row-gap: var(--normal-gap-y);
+}
+.ui-dialog .tab-content .charsheet .half-gap,
+.ui-dialog .tab-content .charsheet .sheet-half-gap {
+  gap: var(--half-gap);
+}
+.ui-dialog .tab-content .charsheet .half-gap-x,
+.ui-dialog .tab-content .charsheet .sheet-half-gap-x {
+  column-gap: var(--half-gap-x);
+}
+.ui-dialog .tab-content .charsheet .half-gap-y,
+.ui-dialog .tab-content .charsheet .sheet-half-gap-y {
+  row-gap: var(--half-gap-y);
+}
+.ui-dialog .tab-content .charsheet .tiny-gap,
+.ui-dialog .tab-content .charsheet .sheet-tiny-gap {
+  gap: var(--tiny-gap);
+}
+.ui-dialog .tab-content .charsheet .tiny-gap-x,
+.ui-dialog .tab-content .charsheet .sheet-tiny-gap-x {
+  column-gap: var(--tiny-gap-x);
+}
+.ui-dialog .tab-content .charsheet .tiny-gap-y,
+.ui-dialog .tab-content .charsheet .sheet-tiny-gap-y {
+  row-gap: var(--tiny-gap-y);
+}
+.ui-dialog .tab-content .charsheet .big-gap,
+.ui-dialog .tab-content .charsheet .sheet-big-gap {
+  gap: var(--big-gap);
+}
+.ui-dialog .tab-content .charsheet .big-gap-x,
+.ui-dialog .tab-content .charsheet .sheet-big-gap-x {
+  column-gap: var(--big-gap-x);
+}
+.ui-dialog .tab-content .charsheet .big-gap-y,
+.ui-dialog .tab-content .charsheet .sheet-big-gap-y {
+  row-gap: var(--big-gap-y);
+}
+.ui-dialog .tab-content .charsheet .grid,
+.ui-dialog .tab-content .charsheet .sheet-grid {
+  display: grid;
+}
+.ui-dialog .tab-content .charsheet .grid-span-2,
+.ui-dialog .tab-content .charsheet .sheet-grid-span-2 {
+  grid-column: span 2;
+}
+.ui-dialog .tab-content .charsheet .grid-span-all,
+.ui-dialog .tab-content .charsheet .sheet-grid-span-all {
+  grid-column: 1/-1;
+}
+.ui-dialog .tab-content .charsheet .grid-column,
+.ui-dialog .tab-content .charsheet .sheet-grid-column {
+  grid-auto-flow: column;
+}
+.ui-dialog .tab-content .charsheet .grid-dense,
+.ui-dialog .tab-content .charsheet .sheet-grid-dense {
+  grid-auto-flow: dense;
+}
+.ui-dialog .tab-content .charsheet .boxed,
+.ui-dialog .tab-content .charsheet .sheet-boxed {
+  border: 2px solid var(--borderColor);
+  border-radius: 0;
+  box-sizing: border-box;
+}
+.ui-dialog .tab-content .charsheet .boxed.thick-left,
+.ui-dialog .tab-content .charsheet .sheet-boxed.thick-left {
+  border-left-width: 5px;
+}
+.ui-dialog .tab-content .charsheet .boxed.thick-bottom,
+.ui-dialog .tab-content .charsheet .sheet-boxed.thick-bottom {
+  border-bottom-width: 5px;
+}
+.ui-dialog .tab-content .charsheet .boxed.thick-right,
+.ui-dialog .tab-content .charsheet .sheet-boxed.thick-right {
+  border-right-width: 5px;
+}
+.ui-dialog .tab-content .charsheet .boxed.thick-top,
+.ui-dialog .tab-content .charsheet .sheet-boxed.thick-top {
+  border-top-width: 5px;
+}
+.ui-dialog .tab-content .charsheet .underlined,
+.ui-dialog .tab-content .charsheet .sheet-underlined {
+  border-width: 1px 3px;
+  border-style: solid;
+  border-radius: 5px;
+  border-color: transparent;
+  box-sizing: border-box;
+  border-radius: 0;
+  border-bottom: 1px solid var(--borderColor);
+  transition: border-radius border var(--revealTrans);
+}
+.ui-dialog .tab-content .charsheet :is(.underlined, .boxed):not([readonly]):not([type=checkbox]):not([type=radio]):is(:hover, :focus, :focus-within) {
+  border-width: 1px 3px;
+  border-style: solid;
+  border-color: var(--borderColor);
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+.ui-dialog .tab-content .charsheet :is(.underlined, .boxed):not([readonly]):not([type=checkbox]):not([type=radio]):is(:focus, :focus-within) {
+  background-color: var(--disabledColor);
+}
+.ui-dialog .tab-content .charsheet .underlined--invisible {
+  border-color: transparent !important;
+}
+.ui-dialog .tab-content .charsheet .ratio1-1,
+.ui-dialog .tab-content .charsheet .sheet-ratio1-1 {
+  aspect-ratio: 1/1;
+}
+.ui-dialog .tab-content .charsheet span,
+.ui-dialog .tab-content .charsheet input,
+.ui-dialog .tab-content .charsheet textarea,
+.ui-dialog .tab-content .charsheet button,
+.ui-dialog .tab-content .charsheet select {
+  line-height: normal;
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+.ui-dialog .tab-content .charsheet .text-1,
+.ui-dialog .tab-content .charsheet .sheet-text-1 {
+  font-size: var(--size1);
+}
+.ui-dialog .tab-content .charsheet .text-2,
+.ui-dialog .tab-content .charsheet .sheet-text-2 {
+  font-size: var(--size2);
+}
+.ui-dialog .tab-content .charsheet .text-3,
+.ui-dialog .tab-content .charsheet .sheet-text-3 {
+  font-size: var(--size3);
+}
+.ui-dialog .tab-content .charsheet .text-4,
+.ui-dialog .tab-content .charsheet .sheet-text-4 {
+  font-size: var(--size4);
+}
+.ui-dialog .tab-content .charsheet .text-5,
+.ui-dialog .tab-content .charsheet .sheet-text-5 {
+  font-size: var(--size5);
+}
+.ui-dialog .tab-content .charsheet .text-6,
+.ui-dialog .tab-content .charsheet .sheet-text-6 {
+  font-size: var(--size6);
+}
+.ui-dialog .tab-content .charsheet .text-7,
+.ui-dialog .tab-content .charsheet .sheet-text-7 {
+  font-size: var(--size7);
+}
+.ui-dialog .tab-content .charsheet .capitalize,
+.ui-dialog .tab-content .charsheet .sheet-capitalize {
+  text-transform: capitalize !important;
+}
+.ui-dialog .tab-content .charsheet .lowercase,
+.ui-dialog .tab-content .charsheet .sheet-lowercase {
+  text-transform: lowercase !important;
+}
+.ui-dialog .tab-content .charsheet .uppercase,
+.ui-dialog .tab-content .charsheet .sheet-uppercase {
+  text-transform: uppercase !important;
+}
+.ui-dialog .tab-content .charsheet .sheet-material-icons,
+.ui-dialog .tab-content .charsheet .material-icons {
+  font-family: \\"Material Icons\\";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px; /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+  /* Support for IE. */
+  font-feature-settings: \\"liga\\";
+}
+.ui-dialog .tab-content .charsheet .sheet-italics,
+.ui-dialog .tab-content .charsheet .italics {
+  font-style: italic;
+}
+.ui-dialog .tab-content .charsheet h1,
+.ui-dialog .tab-content .charsheet *[aria-level=\\"1\\"] {
+  line-height: normal;
+  color: var(--fontColor);
+  display: block;
+  white-space: nowrap;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-weight: normal;
+  text-transform: uppercase;
+  font-weight: normal;
+  font-size: var(--size1);
+  font-family: var(--font1);
+}
+.ui-dialog .tab-content .charsheet h1:not(input),
+.ui-dialog .tab-content .charsheet *[aria-level=\\"1\\"]:not(input) {
+  text-align: center;
+}
+.ui-dialog .tab-content .charsheet h1 *,
+.ui-dialog .tab-content .charsheet *[aria-level=\\"1\\"] * {
+  line-height: normal;
+  color: var(--fontColor);
+  display: block;
+  white-space: nowrap;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-weight: normal;
+  text-transform: uppercase;
+  font-weight: normal;
+  font-size: var(--size1);
+  font-family: var(--font1);
+}
+.ui-dialog .tab-content .charsheet h1 *:not(input),
+.ui-dialog .tab-content .charsheet *[aria-level=\\"1\\"] *:not(input) {
+  text-align: center;
+}
+.ui-dialog .tab-content .charsheet h2, .ui-dialog .tab-content .charsheet .input-label:not(.stacked).large > [name],
+.ui-dialog .tab-content .charsheet *[aria-level=\\"2\\"] {
+  line-height: normal;
+  color: var(--fontColor);
+  display: block;
+  white-space: nowrap;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-weight: normal;
+  text-transform: uppercase;
+  font-weight: normal;
+  font-size: var(--size2);
+  font-family: var(--font2);
+}
+.ui-dialog .tab-content .charsheet h2:not(input), .ui-dialog .tab-content .charsheet .input-label:not(.stacked).large > [name]:not(input),
+.ui-dialog .tab-content .charsheet *[aria-level=\\"2\\"]:not(input) {
+  text-align: center;
+}
+.ui-dialog .tab-content .charsheet h2 *, .ui-dialog .tab-content .charsheet .input-label:not(.stacked).large > [name] *,
+.ui-dialog .tab-content .charsheet *[aria-level=\\"2\\"] * {
+  line-height: normal;
+  color: var(--fontColor);
+  display: block;
+  white-space: nowrap;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-weight: normal;
+  text-transform: uppercase;
+  font-weight: normal;
+  font-size: var(--size2);
+  font-family: var(--font2);
+}
+.ui-dialog .tab-content .charsheet h2 *:not(input), .ui-dialog .tab-content .charsheet .input-label:not(.stacked).large > [name] *:not(input),
+.ui-dialog .tab-content .charsheet *[aria-level=\\"2\\"] *:not(input) {
+  text-align: center;
+}
+.ui-dialog .tab-content .charsheet h3,
+.ui-dialog .tab-content .charsheet *[aria-level=\\"3\\"] {
+  line-height: normal;
+  color: var(--fontColor);
+  display: block;
+  white-space: nowrap;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-weight: normal;
+  text-transform: uppercase;
+  font-weight: normal;
+  font-size: var(--size3);
+  font-family: var(--font3);
+}
+.ui-dialog .tab-content .charsheet h3:not(input),
+.ui-dialog .tab-content .charsheet *[aria-level=\\"3\\"]:not(input) {
+  text-align: center;
+}
+.ui-dialog .tab-content .charsheet h3 *,
+.ui-dialog .tab-content .charsheet *[aria-level=\\"3\\"] * {
+  line-height: normal;
+  color: var(--fontColor);
+  display: block;
+  white-space: nowrap;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-weight: normal;
+  text-transform: uppercase;
+  font-weight: normal;
+  font-size: var(--size3);
+  font-family: var(--font3);
+}
+.ui-dialog .tab-content .charsheet h3 *:not(input),
+.ui-dialog .tab-content .charsheet *[aria-level=\\"3\\"] *:not(input) {
+  text-align: center;
+}
+.ui-dialog .tab-content .charsheet h4,
+.ui-dialog .tab-content .charsheet *[aria-level=\\"4\\"] {
+  line-height: normal;
+  color: var(--fontColor);
+  display: block;
+  white-space: nowrap;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-weight: normal;
+  font-size: var(--size4);
+  font-family: var(--font4);
+}
+.ui-dialog .tab-content .charsheet h4:not(:where(input)),
+.ui-dialog .tab-content .charsheet *[aria-level=\\"4\\"]:not(:where(input)) {
+  text-transform: capitalize;
+}
+.ui-dialog .tab-content .charsheet h4:not(input),
+.ui-dialog .tab-content .charsheet *[aria-level=\\"4\\"]:not(input) {
+  text-align: center;
+}
+.ui-dialog .tab-content .charsheet h4 *,
+.ui-dialog .tab-content .charsheet *[aria-level=\\"4\\"] * {
+  line-height: normal;
+  color: var(--fontColor);
+  display: block;
+  white-space: nowrap;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-weight: normal;
+  font-size: var(--size4);
+  font-family: var(--font4);
+}
+.ui-dialog .tab-content .charsheet h4 *:not(:where(input)),
+.ui-dialog .tab-content .charsheet *[aria-level=\\"4\\"] *:not(:where(input)) {
+  text-transform: capitalize;
+}
+.ui-dialog .tab-content .charsheet h4 *:not(input),
+.ui-dialog .tab-content .charsheet *[aria-level=\\"4\\"] *:not(input) {
+  text-align: center;
+}
+.ui-dialog .tab-content .charsheet h5,
+.ui-dialog .tab-content .charsheet *[aria-level=\\"5\\"] {
+  line-height: normal;
+  color: var(--fontColor);
+  display: block;
+  white-space: nowrap;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-weight: normal;
+  font-size: var(--size5);
+  font-style: normal;
+  font-family: var(--font5);
+}
+.ui-dialog .tab-content .charsheet h5:not(:where(input)),
+.ui-dialog .tab-content .charsheet *[aria-level=\\"5\\"]:not(:where(input)) {
+  text-transform: capitalize;
+}
+.ui-dialog .tab-content .charsheet h5:not(input),
+.ui-dialog .tab-content .charsheet *[aria-level=\\"5\\"]:not(input) {
+  text-align: center;
+}
+.ui-dialog .tab-content .charsheet h5 *,
+.ui-dialog .tab-content .charsheet *[aria-level=\\"5\\"] * {
+  line-height: normal;
+  color: var(--fontColor);
+  display: block;
+  white-space: nowrap;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-weight: normal;
+  font-size: var(--size5);
+  font-style: normal;
+  font-family: var(--font5);
+}
+.ui-dialog .tab-content .charsheet h5 *:not(:where(input)),
+.ui-dialog .tab-content .charsheet *[aria-level=\\"5\\"] *:not(:where(input)) {
+  text-transform: capitalize;
+}
+.ui-dialog .tab-content .charsheet h5 *:not(input),
+.ui-dialog .tab-content .charsheet *[aria-level=\\"5\\"] *:not(input) {
+  text-align: center;
+}
+.ui-dialog .tab-content .charsheet h6,
+.ui-dialog .tab-content .charsheet *[aria-level=\\"6\\"] {
+  line-height: normal;
+  color: var(--fontColor);
+  display: block;
+  white-space: nowrap;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-weight: normal;
+  font-size: var(--size5);
+  font-style: normal;
+  font-family: var(--font5);
+}
+.ui-dialog .tab-content .charsheet h6:not(:where(input)),
+.ui-dialog .tab-content .charsheet *[aria-level=\\"6\\"]:not(:where(input)) {
+  text-transform: capitalize;
+}
+.ui-dialog .tab-content .charsheet h6:not(input),
+.ui-dialog .tab-content .charsheet *[aria-level=\\"6\\"]:not(input) {
+  text-align: center;
+}
+.ui-dialog .tab-content .charsheet h6 *,
+.ui-dialog .tab-content .charsheet *[aria-level=\\"6\\"] * {
+  line-height: normal;
+  color: var(--fontColor);
+  display: block;
+  white-space: nowrap;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-weight: normal;
+  font-size: var(--size5);
+  font-style: normal;
+  font-family: var(--font5);
+}
+.ui-dialog .tab-content .charsheet h6 *:not(:where(input)),
+.ui-dialog .tab-content .charsheet *[aria-level=\\"6\\"] *:not(:where(input)) {
+  text-transform: capitalize;
+}
+.ui-dialog .tab-content .charsheet h6 *:not(input),
+.ui-dialog .tab-content .charsheet *[aria-level=\\"6\\"] *:not(input) {
+  text-align: center;
+}
+.ui-dialog .tab-content .charsheet .sheet-pictos,
+.ui-dialog .tab-content .charsheet .pictos {
+  font-family: pictos;
+  text-transform: none;
+}
+.ui-dialog .tab-content .charsheet .pictos3,
+.ui-dialog .tab-content .charsheet .sheet-pictos3 {
+  font-family: pictos three;
+  text-transform: none;
+}
+.ui-dialog .tab-content .charsheet .pictoscustom,
+.ui-dialog .tab-content .charsheet .sheet-pictoscustom {
+  font-family: pictos custom;
+  text-transform: none;
+}
+.ui-dialog .tab-content .charsheet .d4,
+.ui-dialog .tab-content .charsheet .sheet-d4 {
+  font-family: dicefontd4 !important;
+  text-transform: none !important;
+}
+.ui-dialog .tab-content .charsheet .d6,
+.ui-dialog .tab-content .charsheet .sheet-d6 {
+  font-family: dicefontd6 !important;
+  text-transform: none !important;
+}
+.ui-dialog .tab-content .charsheet .d8,
+.ui-dialog .tab-content .charsheet .sheet-d8 {
+  font-family: dicefontd8 !important;
+  text-transform: none !important;
+}
+.ui-dialog .tab-content .charsheet .d10,
+.ui-dialog .tab-content .charsheet .sheet-d10 {
+  font-family: dicefontd10 !important;
+  text-transform: none !important;
+}
+.ui-dialog .tab-content .charsheet .d12,
+.ui-dialog .tab-content .charsheet .sheet-d12 {
+  font-family: dicefontd12 !important;
+  text-transform: none !important;
+}
+.ui-dialog .tab-content .charsheet .d20,
+.ui-dialog .tab-content .charsheet .sheet-d20 {
+  font-family: dicefontd20 !important;
+  text-transform: none !important;
+}
+.ui-dialog .tab-content .charsheet .d30,
+.ui-dialog .tab-content .charsheet .sheet-d30 {
+  font-family: dicefontd30 !important;
+  text-transform: none !important;
+}
+.ui-dialog .tab-content .charsheet input[type=checkbox] {
+  border: 1px solid var(--checkboxBorderColor);
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+  width: var(--checkboxWidth);
+  min-width: var(--checkboxWidth);
+  height: var(--checkboxHeight);
+  min-height: var(--checkboxHeight);
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas: \\"content\\";
+}
+.ui-dialog .tab-content .charsheet input[type=checkbox]:not(.collapse):not(.fill-left__radio):checked {
+  background-color: var(--checkedBackColor);
+}
+.ui-dialog .tab-content .charsheet input[type=checkbox]:not(.collapse):not(.fill-left__radio):checked:before {
+  content: var(--checkContent);
+  grid-area: content;
+  font-weight: var(--checkWeight);
+  place-self: start center;
+  color: var(--checkColor);
+  font-size: var(--checkSize);
+  line-height: var(--checkLineHeight);
+}
+.ui-dialog .tab-content .charsheet input[type=number] {
+  width: 3rem;
+  -moz-appearance: textfield !important;
+  text-align: center;
+}
+.ui-dialog .tab-content .charsheet input[type=number]::-webkit-inner-spin-button, .ui-dialog .tab-content .charsheet input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.ui-dialog .tab-content .charsheet select,
+.ui-dialog .tab-content .charsheet .pseudo-select span,
+.ui-dialog .tab-content .charsheet .sheet-pseudo-select span,
+.ui-dialog .tab-content .charsheet textarea,
+.ui-dialog .tab-content .charsheet input:not(:is([type=radio], [type=checkbox])),
+.ui-dialog .tab-content .charsheet .uneditable-input {
+  padding: var(--inputPadding);
+}
+.ui-dialog .tab-content .charsheet input:is([type=text], [type=number]), .ui-dialog .tab-content .charsheet textarea {
+  cursor: auto;
+}
+.ui-dialog .tab-content .charsheet select,
+.ui-dialog .tab-content .charsheet .pseudo-select span,
+.ui-dialog .tab-content .charsheet .sheet-pseudo-select span,
+.ui-dialog .tab-content .charsheet input:not(:where([type=checkbox], [type=radio])),
+.ui-dialog .tab-content .charsheet .uneditable-input,
+.ui-dialog .tab-content .charsheet textarea {
+  border-width: 1px 3px;
+  border-style: solid;
+  border-radius: 5px;
+  border-color: transparent;
+  box-sizing: border-box;
+}
+.ui-dialog .tab-content .charsheet select,
+.ui-dialog .tab-content .charsheet .sheet-pseudo-select span,
+.ui-dialog .tab-content .charsheet .pseudo-select span {
+  -webkit-apperance: none;
+  appearance: none;
+  text-transform: var(--selectTextTransform);
+  overflow: hidden !important;
+  white-space: nowrap;
+  text-overflow: var(--selectTextOverflow);
+  text-align: var(--selectTextAlign);
+  color: var(--selectColor);
+}
+.ui-dialog .tab-content .charsheet input {
+  width: auto;
+}
+.ui-dialog .tab-content .charsheet input:placeholder {
+  color: var(--placeholderColor);
+}
+.ui-dialog .tab-content .charsheet input.plus-control:not([value*=\\"-\\"]) + span:before {
+  content: \\"+\\";
+}
+.ui-dialog .tab-content .charsheet textarea {
+  resize: var(--textareaResize);
+  white-space: pre-wrap;
+}
+.ui-dialog .tab-content .charsheet textarea.fixed {
+  resize: none;
+  overflow: auto;
+}
+.ui-dialog .tab-content .charsheet button {
+  cursor: pointer;
+}
+.ui-dialog .tab-content .charsheet .roller {
+  display: flex;
+  align-items: center;
+  gap: var(--half-gap);
+}
+.ui-dialog .tab-content .charsheet .roller:before {
+  content: \\"T\\";
+  font-family: dicefontd20;
+}
+.ui-dialog .tab-content .charsheet .collapse-container {
+  display: grid;
+  position: relative;
+}
+.ui-dialog .tab-content .charsheet .text-collapse {
+  cursor: pointer;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.ui-dialog .tab-content .charsheet .text-collapse:before {
+  content: var(--expandedSymbol);
+  font-family: \\"Material Icons\\";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px; /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+  /* Support for IE. */
+  font-feature-settings: \\"liga\\";
+}
+.ui-dialog .tab-content .charsheet .text-collapse__text {
+  display: inline;
+}
+.ui-dialog .tab-content .charsheet .text-collapse__check:not(:checked) + .text-collapse {
+  border-width: 1px 3px;
+  border-style: solid;
+  border-color: var(--borderColor);
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+.ui-dialog .tab-content .charsheet .text-collapse__check:checked + .text-collapse:before {
+  content: var(--collapsedSymbol);
+}
+.ui-dialog .tab-content .charsheet .repitem:hover .collapse, .ui-dialog .tab-content .charsheet .repitem:hover .roll-container,
+.ui-dialog .tab-content .charsheet .collapse-container:hover .collapse,
+.ui-dialog .tab-content .charsheet .collapse-container:hover .roll-container {
+  opacity: var(--collapseHoverOpacity);
+}
+.ui-dialog .tab-content .charsheet .repitem .collapse,
+.ui-dialog .tab-content .charsheet .collapse-container .collapse {
+  opacity: var(--collapseBaseOpacity);
+  position: absolute;
+  right: -10px;
+  top: 0px;
+  border: 0px solid black;
+  border-radius: 0;
+  color: var(--collapseExpandedColor);
+  text-transform: none;
+  background-color: transparent;
+}
+.ui-dialog .tab-content .charsheet .repitem .collapse:before,
+.ui-dialog .tab-content .charsheet .collapse-container .collapse:before {
+  content: \\"y\\";
+  font-family: pictos;
+}
+.ui-dialog .tab-content .charsheet .repitem .collapse:checked,
+.ui-dialog .tab-content .charsheet .collapse-container .collapse:checked {
+  color: var(--collapseCollapsedColor);
+  background-color: transparent;
+}
+.ui-dialog .tab-content .charsheet .repitem .collapse:checked ~ .expanded,
+.ui-dialog .tab-content .charsheet .repitem .collapse:checked ~ .collapse-container .expanded,
+.ui-dialog .tab-content .charsheet .collapse-container .collapse:checked ~ .expanded,
+.ui-dialog .tab-content .charsheet .collapse-container .collapse:checked ~ .collapse-container .expanded {
+  display: none !important;
+}
+.ui-dialog .tab-content .charsheet .repitem .collapse:checked ~ .expanded--empty:is(:not([value]), [value=\\"\\"]) + *,
+.ui-dialog .tab-content .charsheet .repitem .collapse:checked ~ .collapse-container ~ .expanded--empty:is(:not([value]), [value=\\"\\"]) + *,
+.ui-dialog .tab-content .charsheet .collapse-container .collapse:checked ~ .expanded--empty:is(:not([value]), [value=\\"\\"]) + *,
+.ui-dialog .tab-content .charsheet .collapse-container .collapse:checked ~ .collapse-container ~ .expanded--empty:is(:not([value]), [value=\\"\\"]) + * {
+  display: none !important;
+}
+.ui-dialog .tab-content .charsheet .repitem .collapse:not(:checked) ~ .collapsed,
+.ui-dialog .tab-content .charsheet .collapse-container .collapse:not(:checked) ~ .collapsed {
+  display: none !important;
+}
+.ui-dialog .tab-content .charsheet .repitem .collapse:hover,
+.ui-dialog .tab-content .charsheet .collapse-container .collapse:hover {
+  color: var(--collapseExpandedColor);
+}
+.ui-dialog .tab-content .charsheet .repcontainer.editmode .collapse {
+  display: none;
+}
+.ui-dialog .tab-content .charsheet .fill-left {
+  display: var(--fillLeftDisplay);
+  align-self: var(--fillLeftAlignment);
+  box-sizing: border-box;
+}
+.ui-dialog .tab-content .charsheet .fill-left__radio {
+  appearance: none;
+  -webkit-appearance: none;
+  background-color: var(--fillLeftSelectedColor);
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+.ui-dialog .tab-content .charsheet .fill-left__radio[data-value]:checked:before {
+  content: attr(data-value);
+  color: var(--fillLeftDataColor);
+  font-size: var(--fillLeftDataSize);
+  place-self: center;
+  text-transform: var(--fillLeftDataTransform);
+}
+.ui-dialog .tab-content .charsheet .fill-left__radio:checked ~ .fill-left__radio {
+  background-color: var(--fillLeftUnselectedColor);
+}
+.ui-dialog .tab-content .charsheet .input-label {
+  display: inline-flex;
+  gap: var(--input-label-gap);
+  align-items: center;
+}
+.ui-dialog .tab-content .charsheet .input-label:not(.stacked) > input[type=text] {
+  flex: 1 1 0;
+}
+.ui-dialog .tab-content .charsheet .input-label:not(.stacked) > :not([name]) {
+  flex: 0 0 auto;
+}
+.ui-dialog .tab-content .charsheet .input-label > :is(span, button) {
+  text-transform: var(--input-label-text-transform);
+}
+.ui-dialog .tab-content .charsheet .input-label--dual {
+  grid-template-columns: 1fr auto 1fr;
+  grid-template-areas: \\"over 	over 	over\\" \\"under 	under 	under\\";
+}
+.ui-dialog .tab-content .charsheet .input-label--dual > span:last-of-type {
+  grid-column: 1/-1;
+}
+.ui-dialog .tab-content .charsheet .input-label--dual > input:not([type=number]):not([type=checkbox]):not([type=radio]) {
+  width: 100%;
+}
+.ui-dialog .tab-content .charsheet .input-label--dual > .slash {
+  line-height: 0rem;
+  font-weight: normal;
+}
+.ui-dialog .tab-content .charsheet .headed-textarea {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  grid-template-columns: auto;
+  grid-column: 1/-1;
+}
+.ui-dialog .tab-content .charsheet .headed-textarea :not(textarea):not(.adaptive) {
+  justify-self: start;
+}
+.ui-dialog .tab-content .charsheet .headed-textarea .headed-textarea__header {
+  grid-area: initial;
+}
+.ui-dialog .tab-content .charsheet .adaptive {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto;
+  grid-template-areas: \\"content\\";
+  position: relative;
+}
+.ui-dialog .tab-content .charsheet .adaptive > * {
+  grid-area: content;
+}
+.ui-dialog .tab-content .charsheet .adaptive > span {
+  opacity: 0;
+  z-index: -10;
+  border-width: 1px 3px;
+  border-style: solid;
+  border-radius: 5px;
+  border-color: transparent;
+  box-sizing: border-box;
+  text-transform: initial;
+  border-radius: 0px;
+}
+.ui-dialog .tab-content .charsheet .adaptive--text {
+  min-height: 4rem;
+}
+.ui-dialog .tab-content .charsheet .adaptive--text__span {
+  white-space: pre-wrap;
+  padding: 2px;
+}
+.ui-dialog .tab-content .charsheet .adaptive--text__textarea {
+  width: 100%;
+  height: 100%;
+  resize: none;
+}
+.ui-dialog .tab-content .charsheet .adaptive--text__textarea,
+.ui-dialog .tab-content .charsheet .adaptive--input__input {
+  position: absolute;
+}
+.ui-dialog .tab-content .charsheet .adaptive--input__input {
+  width: 100%;
+}
+.ui-dialog .tab-content .charsheet .adaptive--input__span {
+  padding: 2px;
+  min-height: 1.5rem;
+}
+.ui-dialog .tab-content .charsheet .repitem > input:not([type=checkbox]) {
+  width: 100%;
+}
+.ui-dialog .tab-content .charsheet .repitem .headed-textarea,
+.ui-dialog .tab-content .charsheet .repitem .description {
+  grid-column: 1/-1;
+}
+.ui-dialog .tab-content .charsheet .repcontainer {
+  display: grid;
+  gap: var(--normal-gap);
+}
+.ui-dialog .tab-content .charsheet .repeating-container {
+  display: grid;
+  grid-template-areas: \\"header\\";
+  align-self: start;
+}
+.ui-dialog .tab-content .charsheet .repeating-container > .header {
+  grid-area: header;
+}
+.ui-dialog .tab-content .charsheet .repeating-container:is(:hover, :focus-within, :focus) .repcontrol-button {
+  opacity: 1;
+}
+.ui-dialog .tab-content .charsheet .repcontrol-button {
+  padding: 5px 7px;
+  background-color: rgba(220, 220, 220, 0.2);
+  border-radius: 5px;
+  box-shadow: 0 2px 4px black;
+  border-width: 0;
+  transition-property: box-shadow, backdrop-filter;
+  transition-duration: 200ms;
+  transition-timing-function: ease-out;
+  backdrop-filter: blur(1px);
+  overflow: hidden;
+  grid-area: header;
+  align-self: center;
+  text-transform: none;
+  opacity: 0;
+  transition-property: opacity, background-color;
+  transition-duration: var(--revealTime);
+}
+.ui-dialog .tab-content .charsheet .repcontrol-button:is(:hover, :focus) {
+  background-color: rgba(133, 133, 133, 0.5019607843);
+  box-shadow: 0 4px 6px black;
+  backdrop-filter: blur(2px);
+}
+.ui-dialog .tab-content .charsheet .repcontrol-button:active {
+  background-color: #858585;
+  box-shadow: 0 1px 2px black;
+  backdrop-filter: blur(0px);
+}
+.ui-dialog .tab-content .charsheet .repcontrol-button ~ .repcontrol {
+  display: none;
+}
+.ui-dialog .tab-content .charsheet .repcontrol_move {
+  display: none;
+}
+.ui-dialog .tab-content .charsheet .repcontrol-button--add {
+  justify-self: start;
+}
+.ui-dialog .tab-content .charsheet .repcontrol-button--add:before {
+  font-family: pictos;
+  content: \\"&\\";
+}
+.ui-dialog .tab-content .charsheet .repcontrol-button--edit {
+  justify-self: end;
+}
+.ui-dialog .tab-content .charsheet .repcontrol-button--edit:before {
+  font-family: pictos;
+  content: \\"p\\";
+}
+
+.sheet-rolltemplate-test {
+  --inlineRollFont: var(--font6);
+  --inlineRollSize: var(--size6);
+  --inlineRollCritFont: var(--inlineRollFont);
+  --inlineRollCritSize: var(--inlineRollSize);
+  --inlineRollFumbleFont: var(--inlineRollFont);
+  --inlineRollFumbleSize: var(--inlineRollSize);
+  --inlineRollImportantFont: var(--inlineRollFont);
+  --inlineRollImportantSize: var(--inlineRollSize);
+  --lm-inlineRollBackColor: transparent;
+  --dm-inlineRollBackColor: transparent;
+  --inlineRollBackColor: var(--lm-inlineRollBackColor);
+  --inlineRollColor: var(--fontColor);
+  --lm-inlineRollCritBackColor: var(--lm-inlineRollBackColor);
+  --dm-inlineRollCritBackColor: var(--dm-inlineRollBackColor);
+  --inlineRollCritBackColor: var(--lm-inlineRollCritBackColor);
+  --lm-inlineRollCritColor: #40E240;
+  --dm-inlineRollCritColor: #40E240;
+  --inlineRollCritColor: var(--lm-inlineRollCritColor);
+  --lm-inlineRollFumbleBackColor: var(--lm-inlineRollBackColor);
+  --dm-inlineRollFumbleBackColor: var(--dm-inlineRollBackColor);
+  --inlineRollFumbleBackColor: var(--lm-inlineRollFumbleBackColor);
+  --lm-inlineRollFumbleColor: #C70000;
+  --dm-inlineRollFumbleColor: #C70000;
+  --inlineRollFumbleColor: var(--lm-inlineRollCritColor);
+  --lm-inlineRollImportantBackColor: var(--lm-inlineRollBackColor);
+  --dm-inlineRollImportantBackColor: var(--dm-inlineRollBackColor);
+  --inlineRollImportantBackColor: var(--lm-inlineRollImportantBackColor);
+  --lm-inlineRollImportantColor: #000352;
+  --dm-inlineRollImportantColor: #000352;
+  --inlineRollImportantColor: var(--lm-inlineRollCritColor);
+  --inlineRollPadTop: 0;
+  --inlineRollPadRight: 0;
+  --inlineRollPadBottom: 0;
+  --inlineRollPadLeft: 0;
+  --inlineRollMarginTop: 0;
+  --inlineRollMarginRight: 0;
+  --inlineRollMarginBottom: 0;
+  --inlineRollMarginLeft: 0;
+  --inlineRollBorderTop: 0;
+  --inlineRollBorderRight: 0;
+  --inlineRollBorderBottom: 0;
+  --inlineRollBorderLeft: 0;
+  --inlineRollPadding:
+    var(--inlineRollPadTop)
+    var(--inlineRollPadRight)
+    var(--inlineRollPadBottom)
+    var(--inlineRollPadLeft);
+  --inlineRollMargin:
+    var(--inlineRollMarginTop)
+    var(--inlineRollMarginRight)
+    var(--inlineRollMarginBottom)
+    var(--inlineRollMarginLeft);
+  --inlineRollBorder:
+    var(--inlineRollBorderTop)
+    var(--inlineRollBorderRight)
+    var(--inlineRollBorderBottom)
+    var(--inlineRollBorderLeft);
+}
+.sheet-rolltemplate-test .inlinerollresult {
+  background-color: var(--inlineRollBackColor);
+  color: var(--inlineRollColor);
+  font-family: var(--inlineRollFont);
+  font-size: var(--inlineRollSize);
+  padding: var(--inlineRollPadding);
+  border: var(--inlineRollBorder);
+  margin: var(--inlineRollMargin);
+}
+.sheet-rolltemplate-test .inlinerollresult.fullcrit {
+  background-color: var(--inlineRollCritBackColor);
+  color: var(--inlineRollCritColor);
+  font-family: var(--inlineRollCritFont);
+  font-size: var(--inlineRollCritSize);
+  padding: var(--inlineRollCritPadding);
+  border: var(--inlineRollCritBorder);
+  margin: var(--inlineRollCritMargin);
+}
+.sheet-rolltemplate-test .inlinerollresult.fullfail {
+  background-color: var(--inlineRollFumbleBackColor);
+  color: var(--inlineRollFumbleColor);
+  font-family: var(--inlineRollFumbleFont);
+  font-size: var(--inlineRollFumbleSize);
+  padding: var(--inlineRollFumblePadding);
+  border: var(--inlineRollFumbleBorder);
+  margin: var(--inlineRollFumbleMargin);
+}
+.sheet-rolltemplate-test .inlinerollresult.importantroll {
+  background-color: var(--inlineRollImportantBackColor);
+  color: var(--inlineRollImportantColor);
+  font-family: var(--inlineRollImportantFont);
+  font-size: var(--inlineRollImportantSize);
+  padding: var(--inlineRollImportantPadding);
+  border: var(--inlineRollImportantBorder);
+  margin: var(--inlineRollImportantMargin);
+}
+
+.sheet-rolltemplate-test.sheet-rolltemplate-darkmode {
+  --backColor:var(--dm-backColor);
+  --selectedColor:var(--dm-selectedColor);
+  --unselectedColor1:var(--dm-unselectedColor1);
+  --unselectedColor1:var(--dm-unselectedColor2);
+  --checkColor:var(--dm-checkColor);
+  --borderColor:var(--dm-borderColor);
+  --fontColor:var(--dm-fontColor);
+  --disabledColor:var(--dm-disabledColor);
+  --inlineRollBackColor: var(--dm-inlineRollBackColor);
+  --inlineRollColor: var(--fontColor);
+  --inlineRollCritColor: var(--dm-inlineRollCritColor);
+  --inlineRollFumbleColor: var(--dm-inlineRollCritColor);
+  --inlineRollImportantColor: var(--dm-inlineRollCritColor);
+}"
+`;
+
+exports[`k.build > Should generate the html file from the pug and js 1`] = `
+"
+<input name=\\"attr_template_start\\" type=\\"text\\" value=\\"&{template:test} {{character_name=@{character_name}}} {{character_id=@{character_id}}}\\" title=\\"@{template_start}\\"/><!-- sectionName:main-tabs -->
+<input name=\\"attr_main_tabs_tab\\" value=\\"nav-tabs-main-tabs--settings\\" type=\\"hidden\\" title=\\"@{main_tabs_tab}\\"/>
+<div class=\\"tabs tabs--main-tabs\\" id=\\"main\\">
+  <nav class=\\"tabs__header tabs--main-tabs__header\\">
+  </nav>
+  <div class=\\"tabs__body tabs--main-tabs__body\\">
+  </div>
+</div>
+<script type=\\"text/worker\\">
+  const k = (function(){
+  const kFuncs = {};
+  
+  const cascades = {\\"attr_character_name\\":{\\"name\\":\\"character_name\\",\\"type\\":\\"text\\",\\"defaultValue\\":\\"\\",\\"affects\\":[],\\"triggeredFuncs\\":[\\"setActionCalls\\"],\\"listenerFunc\\":\\"accessSheet\\",\\"listener\\":\\"change:character_name\\"},\\"attr_template_start\\":{\\"name\\":\\"template_start\\",\\"type\\":\\"text\\",\\"defaultValue\\":\\"&{template:test} {{character_name=@{character_name}}} {{character_id=@{character_id}}}\\",\\"triggeredFuncs\\":[],\\"affects\\":[]},\\"attr_main_tabs_tab\\":{\\"name\\":\\"main_tabs_tab\\",\\"type\\":\\"hidden\\",\\"defaultValue\\":\\"nav-tabs-main-tabs--settings\\",\\"triggeredFuncs\\":[],\\"affects\\":[]}};
+  
+  kFuncs.cascades = cascades;
+  
+  const repeatingSectionDetails = [];
+  
+  kFuncs.repeatingSectionDetails = repeatingSectionDetails;
+  /**
+ * This stores the name of your sheet for use in the logging functions {@link log} and {@link debug}. Accessible by \`k.sheetName\`
+ * @var
+ * @type {string}
+ */
+let sheetName = 'kScaffold Powered Sheet';
+kFuncs.sheetName = sheetName;
+/**
+	* This stores the version of your sheet for use in the logging functions{@link log} and {@link debug}. It is also stored in the sheet_version attribute on your character sheet. Accessible via \`k.version\`
+	* @var
+	* @type {number}
+	*/
+let version = 0;
+kFuncs.version = version;
+/**
+	* A boolean flag that tells the script whether to enable or disable {@link debug} calls. If the version of the sheet is \`0\`, or an attribute named \`debug_mode\` is found on opening this is set to true for your entire session. Otherwise, it remains false.
+	* @var
+	* @type {boolean}
+	*/
+let debugMode = false;
+kFuncs.debugMode = debugMode;
+const funcs = {};
+kFuncs.funcs = funcs;
+const updateHandlers = {};
+const openHandlers = {};
+const initialSetups = {};
+const allHandlers = {};
+const addFuncs = {};
+
+const kscaffoldJSVersion = '0.0.4';
+const kscaffoldPUGVersion = '0.0.4';
+  /*jshint esversion: 11, laxcomma:true, eqeqeq:true*/
+/*jshint -W014,-W084,-W030,-W033*/
+/**
+ * Replaces problem characters to use a string as a regex
+ * @param {string} text - The text to replace characters in
+ * @returns {string}
+ * @example
+ * const textForRegex = k.sanitizeForRegex('.some thing[with characters]');
+ * console.log(textForRegex);// => \\"\\\\.some thing\\\\[with characters\\\\]\\"
+ */
+const sanitizeForRegex = function(text){
+  return text.replace(/\\\\.|\\\\||\\\\(|\\\\)|\\\\[|\\\\]|\\\\-|\\\\+|\\\\?|\\\\/|\\\\{|\\\\}|\\\\^|\\\\$|\\\\*/g,'\\\\\\\\$&');
+};
+kFuncs.sanitizeForRegex = sanitizeForRegex;
+
+/**
+ * Converts a value to a number, it\\\\'s default value, or \`0\` if no default value passed.
+ * @param {string|number} val - Value to convert to a number
+ * @param {number} def - The default value, uses 0 if not passed
+ * @returns {number|undefined}
+ * @example
+ * const num = k.value('100');
+ * console.log(num);// => 100
+ */
+const value = function(val,def){
+  return (+val||def||0);
+};
+kFuncs.value = value;
+
+/**
+ * Extracts the section (e.g. \`repeating_equipment\`), rowID (e.g \`-;lkj098J:LKj\`), and field name (e.g. \`bulk\`) from a repeating attribute name.
+ * @param {string} string - The string to parse
+ * @returns {array} - Array of matches. Index 0: the section name, e.g. repeating_equipment | Index 1:the row ID | index 2: The name of the attribute
+ * @returns {string[]}
+ * @example
+ * //Extract info from a full repeating name
+ * const [section,rowID,attrName] = k.parseRepeatName('repeating_equipment_-8908asdflkjZlkj23_name');
+ * console.log(section);// => \\"repeating_equipment\\"
+ * console.log(rowID);// => \\"-8908asdflkjZlkj23\\"
+ * console.log(attrName);// => \\"name\\"
+ * 
+ * //Extract info from just a row name
+ * const [section,rowID,attrName] = k.parseRepeatName('repeating_equipment_-8908asdflkjZlkj23');
+ * console.log(section);// => \\"repeating_equipment\\"
+ * console.log(rowID);// => \\"-8908asdflkjZlkj23\\"
+ * console.log(attrName);// => undefined
+ */
+const parseRepeatName = function(string){
+  let match = string.match(/(repeating_[^_]+)_([^_]+)(?:_(.+))?/);
+  match.shift();
+  return match;
+};
+kFuncs.parseRepeatName = parseRepeatName;
+
+/**
+ * Parses out the components of a trigger name similar to [parseRepeatName](#parserepeatname). Aliases: parseClickTrigger.
+ * 
+ * Aliases: \`k.parseClickTrigger\`
+ * @param {string} string The triggerName property of the
+ * @returns {array} - For a repeating button named \`repeating_equipment_-LKJhpoi98;lj_roll\`, the array will be \`['repeating_equipment','-LKJhpoi98;lj','roll']\`. For a non repeating button named \`roll\`, the array will be \`[undefined,undefined,'roll']\`
+ * @returns {string[]}
+ * @example
+ * //Parse a non repeating trigger
+ * const [section,rowID,attrName] = k.parseTriggerName('clicked:some-button');
+ * console.log(section);// => undefined
+ * console.log(rowID);// => undefined
+ * console.log(attrName);// => \\"some-button\\"
+ * 
+ * //Parse a repeating trigger
+ * const [section,rowID,attrName] = k.parseTriggerName('clicked:repeating_attack_-234lkjpd8fu8usadf_some-button');
+ * console.log(section);// => \\"repeating_attack\\"
+ * console.log(rowID);// => \\"-234lkjpd8fu8usadf\\"
+ * console.log(attrName);// => \\"some-button\\"
+ * 
+ * //Parse a repeating name
+ * const [section,rowID,attrName] = k.parseTriggerName('repeating_attack_-234lkjpd8fu8usadf_some-button');
+ * console.log(section);// => \\"repeating_attack\\"
+ * console.log(rowID);// => \\"-234lkjpd8fu8usadf\\"
+ * console.log(attrName);// => \\"some-button\\"
+ */
+const parseTriggerName = function(string){
+  let match = string.replace(/^clicked:/,'').match(/(?:(repeating_[^_]+)_([^_]+)_)?(.+)/);
+  match.shift();
+  return match;
+};
+kFuncs.parseTriggerName = parseTriggerName;
+const parseClickTrigger = parseTriggerName;
+kFuncs.parseClickTrigger = parseClickTrigger;
+
+/**
+ * Parses out the attribute name from the htmlattribute name.
+ * @param {string} string - The triggerName property of the [event](https://wiki.roll20.net/Sheet_Worker_Scripts#eventInfo_Object).
+ * @returns {string}
+ * @example
+ * //Parse a name
+ * const attrName = k.parseHtmlName('attr_attribute_1');
+ * console.log(attrName);// => \\"attribute_1\\"
+ */
+const parseHTMLName = function(string){
+  let match = string.match(/(?:attr|act|roll)_(.+)/);
+  match.shift();
+  return match[0];
+};
+kFuncs.parseHTMLName = parseHTMLName;
+
+/**
+ * Capitalize each word in a string
+ * @param {string} string - The string to capitalize
+ * @returns {string}
+ * @example
+ * const capitalized = k.capitalize('a word');
+ * console.log(capitalized);// => \\"A Word\\"
+ */
+const capitalize = function(string){
+  return string.replace(/(?:^|\\\\s+|\\\\/)[a-z]/ig,(letter)=>letter.toUpperCase());
+};
+kFuncs.capitalize = capitalize;
+
+/**
+ * Extracts a roll query result for use in later functions. Must be awaited as per [startRoll documentation](https://wiki.roll20.net/Sheet_Worker_Scripts#Roll_Parsing.28NEW.29). Stolen from [Oosh\\\\'s Adventures with Startroll thread](https://app.roll20.net/forum/post/10346883/adventures-with-startroll).
+ * @param {string} query - The query should be just the text as the \`?{\` and \`}\` at the start/end of the query are added by the function.
+ * @returns {Promise} - Resolves to the selected value from the roll query
+ * @example
+ * const rollFunction = async function(){
+ *  //Get the result of a choose from list query
+ *  const queryResult = await extractQueryResult('Prompt Text Here|Option 1|Option 2');
+ *  console.log(queryResult);//=> \\"Option 1\\" or \\"Option 2\\" depending on what the user selects
+ * 
+ *  //Get free from input from the user
+ *  const freeResult = await extractQueryResult('Prompt Text Here');
+ *  consoel.log(freeResult);// => Whatever the user entered
+ * }
+ */
+const extractQueryResult = async function(query){
+	debug('entering extractQueryResult');
+	let queryRoll = await startRoll(\`!{{query=[[0[response=?{\${query}}]]]}}\`);
+	finishRoll(queryRoll.rollId);
+	return queryRoll.results.query.expression.replace(/^.+?response=|\\\\]$/g,'');
+};
+kFuncs.extractQueryResult = extractQueryResult;
+
+/**
+ * Simulates a query for ensuring that async/await works correctly in the sheetworker environment when doing conditional startRolls. E.g. if you have an if/else and only one of the conditions results in \`startRoll\` being called (and thus an \`await\`), the sheetworker environment would normally crash. Awaiting this in the condition that does not actually need to call \`startRoll\` will keep the environment in sync.
+ * @param {string|number} [value] - The value to return. Optional.
+ * @returns {Promise} - Resolves to the value passed to the function
+ * @example
+ * const rollFunction = async function(){
+ *  //Get the result of a choose from list query
+ *  const queryResult = await pseudoQuery('a value');
+ *  console.log(queryResult);//=> \\"a value\\"
+ * }
+ */
+const pseudoQuery = async function(value){
+	debug('entering pseudoQuery');
+	let queryRoll = await startRoll(\`!{{query=[[0[response=\${value}]]]}}\`);
+	finishRoll(queryRoll.rollId);
+	return queryRoll.results.query.expression.replace(/^.+?response=|\\\\]$/g,'');
+};
+kFuncs.pseudoQuery = pseudoQuery;
+
+/**
+ * An alias for console.log.
+ * @param {any} msg - The message can be a straight string, an object, or an array. If it is an object or array, the object will be broken down so that each key is used as a label to output followed by the value of that key. If the value of the key is an object or array, it will be output via \`console.table\`.
+ */
+const log = function(msg){
+  if(typeof msg === 'string'){
+    console.log(\`%c\${kFuncs.sheetName} log| \${msg}\`,\\"background-color:#159ccf\\");
+  }else if(typeof msg === 'object'){
+    Object.keys(msg).forEach((m)=>{
+      if(typeof msg[m] === 'string'){
+        console.log(\`%c\${kFuncs.sheetName} log| \${m}: \${msg[m]}\`,\\"background-color:#159ccf\\");
+      }else{
+        console.log(\`%c\${kFuncs.sheetName} log| \${typeof msg[m]} \${m}\`,\\"background-color:#159ccf\\");
+        console.table(msg[m]);
+      }
+    });
+  }
+};
+kFuncs.log = log;
+
+/**
+ * Alias for console.log that only triggers when debug mode is enabled or when the sheet\\\\'s version is \`0\`. Useful for entering test logs that will not pollute the console on the live sheet.
+ * @param {any} msg - 'See {@link k.log}
+ * @param {boolean} force - Pass as a truthy value to force the debug output to be output to the console regardless of debug mode.
+ * @returns {void}
+ */
+const debug = function(msg,force){
+  if(!kFuncs.debugMode && !force && kFuncs.version > 0) return;
+  if(typeof msg === 'string'){
+    console.log(\`%c\${kFuncs.sheetName} DEBUG| \${msg}\`,\\"background-color:tan;color:red;\\");
+  }else if(typeof msg === 'object'){
+    Object.keys(msg).forEach((m)=>{
+      if(typeof msg[m] === 'string'){
+        console.log(\`%c\${kFuncs.sheetName} DEBUG| \${m}: \${msg[m]}\`,\\"background-color:tan;color:red;\\");
+      }else{
+        console.log(\`%c\${kFuncs.sheetName} DEBUG| \${typeof msg[m]} \${m}\`,\\"background-color:tan;color:red;font-weight:bold;\\");
+        console.table(msg[m]);
+      }
+    });
+  }
+};
+kFuncs.debug = debug;
+
+/**
+ * Orders the section id arrays for all sections in the \`sections\` object to match the repOrder attribute.
+ * @param {attributesProxy} attributes - The attributes object that must have a value for the reporder for each section.
+ * @param {object[]} sections - Object containing the IDs for the repeating sections, indexed by repeating section name.
+ */
+const orderSections = function(attributes,sections){
+  Object.keys(sections).forEach((section)=>{
+    attributes.attributes[\`_reporder_\${section}\`] = commaArray(attributes[\`_reporder_\${section}\`]);
+    orderSection(attributes.attributes[\`_reporder_\${section}\`],sections[section]);
+  });
+};
+kFuncs.orderSections = orderSections;
+
+/**
+ * Orders a single ID array.
+ * @param {string[]} repOrder - Array of IDs in the order they are in on the sheet.
+ * @param {string[]} IDs - Array of IDs to be ordered.
+ */
+const orderSection = function(repOrder,IDs=[]){
+  IDs.sort((a,b)=>{
+    return repOrder.indexOf(a.toLowerCase()) - repOrder.indexOf(b.toLowerCase());
+  });
+};
+kFuncs.orderSection = orderSection;
+
+/**
+ * Splits a comma delimited string into an array
+ * @param {string} string - The string to split.
+ * @returns {array} - The string segments of the comma delimited list.
+ */
+const commaArray = function(string=''){
+  return string.toLowerCase().split(/\\\\s*,\\\\s*/);
+};
+kFuncs.commaArray = commaArray;/*jshint esversion: 11, laxcomma:true, eqeqeq:true*/
+/*jshint -W014,-W084,-W030,-W033*/
+//# Attribute Obj Proxy handler
+const createAttrProxy = function(attrs){
+  //creates a proxy for the attributes object so that values can be worked with more easily.
+  const getCascObj = function(event,casc){
+    const eventName = event.triggerName || event.sourceAttribute;
+    let typePrefix = eventName.startsWith('clicked:') ?
+      'act_' :
+      event.removedInfo ?
+      'fieldset_' :
+      'attr_';
+    let cascName = \`\${typePrefix}\${eventName.replace(/(?:removed|clicked):/,'')}\`;
+    let cascObj = casc[cascName];
+    if(typePrefix === 'attr_'){
+      cascObj.previousValue = event.previousValue;
+    }
+    return cascObj;
+  };
+  
+  const triggerFunctions = function(obj,attributes,sections){
+    if(obj.triggeredFuncs && obj.triggeredFuncs.length){
+      debug(\`triggering functions for \${obj.name}\`);
+      obj.triggeredFuncs && obj.triggeredFuncs.forEach(func=>funcs[func] ? 
+        funcs[func]({trigger:obj,attributes,sections}) :
+        debug(\`!!!Warning!!! no function named \${func} found. Triggered function not called for \${obj.name}\`,true));
+    }
+  };
+  
+  const initialFunction = function(obj,attributes,sections){
+    if(obj.initialFunc){
+      debug(\`initial functions for \${obj.name}\`);
+      funcs[obj.initialFunc] ?
+        funcs[obj.initialFunc]({trigger:obj,attributes,sections}) :
+        debug(\`!!!Warning!!! no function named \${obj.initialFunc} found. Initial function not called for \${obj.name}\`,true);
+    }
+  };
+  const alwaysFunctions = function(trigger,attributes,sections,casc){
+    Object.values(allHandlers).forEach((handler)=>{
+      handler({trigger,attributes,sections,casc});
+    });
+  };
+  const processChange = function({event,trigger,attributes,sections,casc}){
+    if(event && !trigger){
+      debug(\`\${event.sourceAttribute} change detected. No trigger found\`);
+      return;
+    }
+    if(!attributes || !sections || !casc){
+      debug(\`!!! Insufficient arguments || attributes > \${!!attributes} | sections > \${!!sections} | casc > \${!!casc} !!!\`);
+      return;
+    }
+    debug({trigger});
+    if(event){
+      debug('checking for initial & always functions');
+      alwaysFunctions(trigger,attributes,sections,casc);//Functions that should be run for all events.
+      initialFunction(trigger,attributes,sections,casc);//functions that should only be run if the attribute was the thing changed by the user
+    }
+    if(trigger){
+      debug(\`processing \${trigger.name}\`);
+      triggerFunctions(trigger,attributes,sections,casc);
+      if(!event && trigger.calculation && funcs[trigger.calculation]){
+        attributes[trigger.name] = funcs[trigger.calculation]({trigger,attributes,sections,casc});
+      }else if(trigger.calculation && !funcs[trigger.calculation]){
+        debug(\`K-Scaffold Error: No function named \${trigger.calculation} found\`);
+      }
+      if(Array.isArray(trigger.affects)){
+        attributes.queue.push(...trigger.affects);
+      }
+    }
+    attributes.set({attributes,sections,casc});
+  };
+  const attrTarget = {
+    updates:{},
+    attributes:{...attrs},
+    repOrders:{},
+    queue: [],
+    casc:{},
+    alwaysFunctions,
+    processChange,
+    triggerFunctions,
+    initialFunction,
+    getCascObj
+  };
+  const attrHandler = {
+    get:function(obj,prop){//gets the most value of the attribute.
+      //If it is a repeating order, returns the array, otherwise returns the update value or the original value
+      if(prop === 'set'){
+        return function(){
+          let {attributes,sections,casc,callback,vocal} = arguments[0] ? arguments[0] : {};
+          if(attributes && attributes.queue.length && sections && casc){
+            let triggerName = attributes.queue.shift();
+            let trigger = getCascObj({sourceAttribute:triggerName},casc);
+            attributes.processChange({trigger,attributes,sections,casc});
+          }else{
+            debug({updates:obj.updates});
+            let trueCallback = Object.keys(obj.repOrders).length ?
+              function(){
+                Object.entries(obj.repOrders).forEach(([section,order])=>{
+                  _setSectionOrder(section,order,)
+                });
+                callback && callback();
+              }:
+              callback;
+            Object.keys(obj.updates).forEach((key)=>obj.attributes[key] = obj.updates[key]);
+            const update = obj.updates;
+            obj.updates = {};
+            set(update,vocal,trueCallback);
+          }
+        }
+      }else if(Object.keys(obj).some(key=>key===prop)){ 
+        return Reflect.get(...arguments)
+      }else{
+        let retValue;
+        switch(true){
+          case obj.repOrders.hasOwnProperty(prop):
+            retValue = obj.repOrders[prop];
+            break;
+          case obj.updates.hasOwnProperty(prop):
+            retValue = obj.updates[prop];
+            break;
+          default:
+            retValue = obj.attributes[prop];
+            break;
+        }
+        let cascRef = \`attr_\${prop.replace(/(repeating_[^_]+_)[^_]+/,'$1\\\\$X')}\`;
+        let numRetVal = +retValue;
+        if(!Number.isNaN(numRetVal) && retValue !== ''){
+          retValue = numRetVal;
+        }else if(cascades[cascRef] && (typeof cascades[cascRef].defaultValue === 'number' || cascades[cascRef].type === 'number')){
+          retValue = cascades[cascRef].defaultValue;
+        }
+        return retValue;
+      }
+    },
+    set:function(obj,prop,value){
+      //Sets the value. Also verifies that the value is a valid attribute value
+      //e.g. not undefined, null, or NaN
+      if(value || value===0 || value===''){
+        if(/reporder|^repeating_[^_]+$/.test(prop)){
+          let section = prop.replace(/_reporder_/,'');
+          obj.repOrders[section] = value;
+        }else if(\`\${obj.attributes}\` !== \`\${value}\` || 
+          (obj.updates[prop] && \`\${obj.updates}\` !== \`\${value}\`)
+        ){
+          obj.updates[prop] = value;
+        }
+      }else{
+        debug(\`!!!Warning: Attempted to set \${prop} to an invalid value:\${value}; value not stored!!!\`);
+      }
+      return true;
+    },
+    deleteProperty(obj,prop){
+      //removes the property from the original attributes, updates, and the reporders
+      Object.keys(obj).forEach((key)=>{
+        delete obj[key][prop.toLowerCase()];
+      });
+    }
+  };
+  return new Proxy(attrTarget,attrHandler);
+};
+
+
+/**
+ * Function that registers a function for being called via the funcs object. Returns true if the function was successfully registered, and false if it could not be registered for any reason.
+ * @param {object} funcObj - Object with keys that are names to register functions under and values that are functions.
+ * @param {object} optionsObj - Object that contains options to use for this registration.
+ * @param {string[]} optionsObj.type - Array that contains the types of specialized functions that apply to the functions being registered. Valid types are \`\\"opener\\"\`, \`\\"updater\\"\`, and \`\\"default\\"\`. \`\\"default\\"\` is always used, and never needs to be passed.
+ * @returns {boolean} - True if the registration succeeded, false if it failed.
+ * @example
+ * //Basic Registration
+ * const myFunc = function({trigger,attributes,sections,casc}){};
+ * k.registerFuncs({myFunc});
+ * 
+ * //Register a function to run on sheet open
+ * const openFunc = function({trigger,attributes,sections,casc}){};
+ * k.registerFuncs({openFunc},{type:['opener']})
+ * 
+ * //Register a function to run on all events
+ * const allFunc = function({trigger,attributes,sections,casc}){};
+ * k.registerFuncs({allFunc},{type:['all']})
+ */
+const registerFuncs = function(funcObj,optionsObj = {}){
+  if(typeof funcObj !== 'object' || typeof optionsObj !== 'object'){
+    debug(\`!!!! K-scaffold error: Improper arguments to register functions !!!!\`);
+    return false;
+  }
+  const typeArr = optionsObj.type ? ['default',...optionsObj.type] : ['default'];
+  const typeSwitch = {
+    'opener':openHandlers,
+    'updater':updateHandlers,
+    'new':initialSetups,
+    'all':allHandlers,
+    'default':funcs
+  };
+  let setState;
+  Object.entries(funcObj).map(([prop,value])=>{
+    typeArr.forEach((type)=>{
+      if(typeSwitch[type][prop]){
+        debug(\`!!! Duplicate function name for \${prop} as \${type}!!!\`);
+        setState = false;
+      }else if(typeof value === 'function'){
+        typeSwitch[type][prop] = value;
+        setState = setState !== false ? true : false;
+      }else{
+        debug(\`!!! K-scaffold error: Function registration requires a function. Invalid value to register as \${type} !!!\`);
+        setState = false;
+      }
+    });
+  });
+  return setState;
+};
+kFuncs.registerFuncs = registerFuncs;
+
+const setActionCalls = function({attributes,sections}){
+  actionAttributes.forEach((base)=>{
+    let [section,,field] = k.parseTriggerName(base);
+    let fieldAction = field.replace(/_/g,'-');
+    if(section){
+      sections[section].forEach((id)=>{
+        attributes[\`\${section}_\${id}_\${field}\`] = \`%{\${attributes.character_name}|\${section}_\${id}_\${fieldAction}}\`;
+      });
+    }else{
+      attributes[\`\${field}\`] = \`%{\${attributes.character_name}|\${fieldAction}}\`;
+    }
+  });
+};
+funcs.setActionCalls = setActionCalls;
+
+/**
+ * Function to call a function previously registered to the funcs object. May not be used that much. Either returns the function or null if no function exists.
+ * @param {string} funcName - The name of the function to invoke.
+ * @param {...any} args - The arguments to call the function with.
+ * @returns {any}
+ * @example
+ * //Call myFunc with two arguments
+ * k.callFunc('myFunc','an argument','another argument');
+ */
+const callFunc = function(funcName,...args){
+  if(funcs[funcName]){
+    debug(\`calling \${funcName}\`);
+    return funcs[funcName](...args);
+  }else{
+    debug(\`Invalid function name: \${funcName}\`);
+    return null;
+  }
+};
+kFuncs.callFunc = callFunc;/*jshint esversion: 11, laxcomma:true, eqeqeq:true*/
+/*jshint -W014,-W084,-W030,-W033*/
+//Sheet Updaters and styling functions
+const updateSheet = function(){
+  log('updating sheet');
+  getAllAttrs({props:['debug_mode',...baseGet],callback:(attributes,sections,casc)=>{
+    kFuncs.debugMode = kFuncs.debugMode || !!attributes.debug_mode;
+    debug({sheet_version:attributes.sheet_version});
+    if(!attributes.sheet_version){
+      Object.entries(initialSetups).forEach(([funcName,handler])=>{
+        if(typeof funcs[funcName] === 'function'){
+          debug(\`running \${funcName}\`);
+          funcs[funcName]({attributes,sections,casc});
+        }else{
+          debug(\`!!!Warning!!! no function named \${funcName} found. Initial sheet setup not performed.\`);
+        }
+      });
+    }else{
+      Object.entries(updateHandlers).forEach(([ver,handler])=>{
+        if(attributes.sheet_version < +ver){
+          handler({attributes,sections,casc});
+        }
+      });
+    }
+    Object.entries(openHandlers).forEach(([funcName,func])=>{
+      if(typeof funcs[funcName] === 'function'){
+        debug(\`running \${funcName}\`);
+        funcs[funcName]({attributes,sections,casc});
+      }else{
+        debug(\`!!!Warning!!! no function named \${funcName} found. Sheet open handling not performed.\`);
+      }
+    });
+    setActionCalls({attributes,sections});
+    attributes.sheet_version = kFuncs.version;
+    log(\`Sheet Update applied. Current Sheet Version \${kFuncs.version}\`);
+    attributes.set();
+    log('Sheet ready for use');
+  }});
+};
+
+const initialSetup = function(attributes,sections){
+  debug('Initial sheet setup');
+};
+
+/**
+ * This is the default listener function for attributes that the K-Scaffold uses. It utilizes the \`triggerFuncs\`, \`listenerFunc\`, \`calculation\`, and \`affects\` properties of the K-scaffold trigger object (see the Pug section of the scaffold for more details).
+ * @param {Roll20Event} event - The Roll20 event object
+ * @returns {void}
+ * @example
+ * //Call from an attribute change
+ * on('change:an_attribute',k.accessSheet);
+ */
+const accessSheet = function(event){
+  debug({funcs:Object.keys(funcs)});
+  debug({event});
+  getAllAttrs({callback:(attributes,sections,casc)=>{
+    let trigger = attributes.getCascObj(event,casc);
+    attributes.processChange({event,trigger,attributes,sections,casc});
+  }});
+};
+funcs.accessSheet = accessSheet;/*jshint esversion: 11, laxcomma:true, eqeqeq:true*/
+/*jshint -W014,-W084,-W030,-W033*/
+/*
+Cascade Expansion functions
+*/
+//Expands the repeating section templates in cascades to reflect the rows actually available
+const expandCascade = function(cascade,sections,attributes){
+  return _.keys(cascade).reduce((memo,key)=>{//iterate through cascades and replace references to repeating attributes with correct row ids.
+    if(/^(?:act|attr)_repeating_/.test(key)){//If the attribute is a repeating attribute, do special logic
+      expandRepeating(memo,key,cascade,sections,attributes);
+    }else if(key){//for non repeating attributes do this logic
+      expandNormal(memo,key,cascade,sections);
+    }
+    return memo;
+  },{});
+};
+
+const expandRepeating = function(memo,key,cascade,sections,attributes){
+  key.replace(/((?:attr|act)_)(repeating_[^_]+)_[^_]+?_(.+)/,(match,type,section,field)=>{
+    (sections[section]||[]).forEach((id)=>{
+      memo[\`\${type}\${section}_\${id}_\${field}\`]=_.clone(cascade[key]);//clone the details so that each row's attributes have correct ids
+      memo[\`\${type}\${section}_\${id}_\${field}\`].name = \`\${section}_\${id}_\${field}\`;
+      if(key.startsWith('attr_')){
+        memo[\`\${type}\${section}_\${id}_\${field}\`].affects = memo[\`\${type}\${section}_\${id}_\${field}\`].affects.reduce((m,affected)=>{
+          if(section === affected){//otherwise if the affected attribute is in the same section, simply set the affected attribute to have the same row id.
+            m.push(applyID(affected,id));
+          }else if(/repeating/.test(affected)){//If the affected attribute isn't in the same repeating section but is still a repeating attribute, add all the rows of that section
+            addAllRows(affected,m,sections);
+          }else{//otherwise the affected attribute is a non repeating attribute. Simply add it to the computed affected array
+            m.push(affected);
+          }
+          return m;
+        },[]);
+      }
+    });
+  });
+};
+
+const applyID = function(affected,id){
+  return affected.replace(/(repeating_[^_]+_)[^_]+(.+)/,\`$1\${id}$2\`);
+};
+
+const expandNormal = function(memo,key,cascade,sections){
+  memo[key] = _.clone(cascade[key]);
+  if(key.startsWith('attr_')){
+    memo[key].affects = memo[key].affects || [];
+    memo[key].affects = memo[key].affects.reduce((m,a)=>{
+      if(/^repeating/.test(a)){
+        addAllRows(a,m,sections);
+      }else{
+        m.push(a);
+      }
+      return m;
+    },[]);
+  }
+};
+
+const addAllRows = function(affected,memo,sections){
+  affected.replace(/(repeating_[^_]+?)_[^_]+?_(.+)/,(match,section,field)=>{
+    sections[section].forEach(id=>memo.push(\`\${section}_\${id}_\${field}\`));
+  });
+};/*jshint esversion: 11, laxcomma:true, eqeqeq:true*/
+/*jshint -W014,-W084,-W030,-W033*/
+/**
+ * Alias for [setSectionOrder()](https://wiki.roll20.net/Sheet_Worker_Scripts#setSectionOrder.28.3CRepeating_Section_Name.3E.2C_.3CSection_Array.3E.2C_.3CCallback.3E.29) that allows you to use the section name in either \`repeating_section\` or \`section\` formats. Note that the Roll20 sheetworker [setSectionOrder](https://wiki.roll20.net/Sheet_Worker_Scripts#setSectionOrder.28.3CRepeating_Section_Name.3E.2C_.3CSection_Array.3E.2C_.3CCallback.3E.29) currently causes some display issues on sheets.
+ * @name setSectionOrder
+ * @param {string} section - The name of the section, with or without \`repeating_\`
+ * @param {string[]} order - Array of ids describing the desired order of the section.
+ * @returns {void}
+ * @example
+ * //Set the order of a repeating_weapon section
+ * k.setSectionOrder('repeating_equipment',['id1','id2','id3']);
+ * //Can also specify the section name without the repeating_ prefix
+ * k.setSectionOrder('equipment',['id1','id2','id3']);
+ */
+const _setSectionOrder = function(section,order){
+  let trueSection = section.replace(/repeating_/,'');
+  setSectionOrder(trueSection,order);
+};
+kFuncs.setSectionOrder = _setSectionOrder;
+
+/**
+ * Alias for [removeRepeatingRow](https://wiki.roll20.net/Sheet_Worker_Scripts#removeRepeatingRow.28_RowID_.29) that also removes the row from the current object of attribute values and array of section IDs to ensure that erroneous updates are not issued.
+ * @name removeRepeatingRow
+ * @param {string} row - The row id to be removed
+ * @param {attributesProxy} attributes - The attribute values currently in memory
+ * @param {object} sections - Object that contains arrays of all the IDs in sections on the sheet indexed by repeating name.
+ * @returns {void}
+ * @example
+ * //Remove a repeating Row
+ * k.getAllAttrs({
+ *  callback:(attributes,sections)=>{
+ *    const rowID = sections.repeating_equipment[0];
+ *    k.removeRepeatingRow(\`repeating_equipment_\${rowID}\`,attributes,sections);
+ *    console.log(sections.repeating_equipment); // => rowID no longer exists in the array.
+ *    console.log(attributes[\`repeating_equipment_\${rowID}_name\`]); // => undefined
+ *  }
+ * })
+ */
+const _removeRepeatingRow = function(row,attributes,sections){
+  debug(\`removing \${row}\`);
+  Object.keys(attributes.attributes).forEach((key)=>{
+    if(key.startsWith(row)){
+      delete attributes[key];
+    }
+  });
+  let [,section,rowID] = row.match(/(repeating_[^_]+)_(.+)/,'');
+  sections[section] = sections[section].filter((id)=>id!==rowID);
+  removeRepeatingRow(row);
+};
+kFuncs.removeRepeatingRow = _removeRepeatingRow;
+
+/**
+ * Alias for [getAttrs()](https://wiki.roll20.net/Sheet_Worker_Scripts#getAttrs.28attributeNameArray.2C_callback.29) that converts the default object of attribute values into an {@link attributesProxy} and passes that back to the callback function.
+ * @name getAttrs
+ * @param {string[]} [props=baseGet] - Array of attribute names to get the value of. Defaults to {@link baseGet} if not passed.
+ * @param {function(attributesProxy)} callback - The function to call after the attribute values have been gotten. An {@link attributesProxy} is passed to the callback.
+ * @example
+ * //Gets the attributes named in props.
+ * k.getAttrs({
+ *  props:['attribute_1','attribute_2'],
+ *  callback:(attributes)=>{
+ *    //Work with the attributes as you would in a normal getAttrs, or use the superpowers of the K-scaffold attributes object like so:
+ *    attributes.attribute_1 = 'new value';
+ *    attributes.set();
+ *  }
+ * })
+ */
+const _getAttrs = function({props=baseGet,callback}){
+  getAttrs(props,(values)=>{
+    const attributes = createAttrProxy(values);
+    callback(attributes);
+  });
+};
+kFuncs.getAttrs = _getAttrs;
+
+/**
+ * Alias for [getAttrs()](https://wiki.roll20.net/Sheet_Worker_Scripts#getAttrs.28attributeNameArray.2C_callback.29) and [getSectionIDs](https://wiki.roll20.net/Sheet_Worker_Scripts#getSectionIDs.28section_name.2Ccallback.29) that combines the actions of both sheetworker functions and converts the default object of attribute values into an {@link attributesProxy}. Also gets the details on how to handle all attributes from the master {@link cascades} object and.
+ * @param {Object} args
+ * @param {string[]} [args.props=baseGet] - Array of attribute names to get the value of. Defaults to {@link baseGet} if not passed.
+ * @param {repeatingSectionDetails} sectionDetails - Array of details about a section to get the IDs for and attributes that need to be gotten. 
+ * @param {function(attributesProxy,sectionObj,expandedCascade):void} args.callback - The function to call after the attribute values have been gotten. An {@link attributesProxy} is passed to the callback along with a {@link sectionObj} and {@link expandedCascade}.
+ * @example
+ * //Get every K-scaffold linked attribute on the sheet
+ * k.getAllAttrs({
+ *  callback:(attributes,sections,casc)=>{
+ *    //Work with the attributes as you please.
+ *    attributes.some_attribute = 'a value';
+ *    attributes.set();//Apply our change
+ *  }
+ * })
+ */
+const getAllAttrs = function({props=baseGet,sectionDetails=repeatingSectionDetails,callback}){
+  getSections(sectionDetails,(repeats,sections)=>{
+    getAttrs([...props,...repeats],(values)=>{
+      const attributes = createAttrProxy(values);
+      orderSections(attributes,sections);
+      const casc = expandCascade(cascades,sections,attributes);
+      callback(attributes,sections,casc);
+    })
+  });
+};
+kFuncs.getAllAttrs = getAllAttrs;
+
+/**
+ * Alias for [getSectionIDs()](https://wiki.roll20.net/Sheet_Worker_Scripts#getSectionIDs.28section_name.2Ccallback.29) that allows you to iterate through several functions at once. Also assembles an array of repeating attributes to get.
+ * @param {object[]} sectionDetails - Array of details about a section to get the IDs for and attributes that need to be gotten.
+ * @param {string} sectionDetails.section - The full name of the repeating section including the \`repeating_\` prefix.
+ * @param {string[]} sectionDetails.fields - Array of field names that need to be gotten from the repeating section
+ * @param {function(string[],sectionObj)} callback - The function to call once all IDs have been gotten and the array of repating attributes to get has been assembled. The callback is passed the array of repating attributes to get and a {@link sectionObj}.
+ * @example
+ * // Get some section details
+ * const sectionDetails = {
+ *  {section:'repeating_equipment',fields:['name','weight','cost']},
+ *  {section:'repeating_weapon',fields:['name','attack','damage']}
+ * };
+ * k.getSections(sectionDetails,(attributeNames,sections)=>{
+ *  console.log(attributeNames);// => Array containing all row specific attribute names
+ *  console.log(sections);// => Object with arrays containing the row ids. Indexed by section name (e.g. repeating_eqiupment)
+ * })
+ */
+const getSections = function(sectionDetails,callback){
+  let queueClone = _.clone(sectionDetails);
+  const worker = (queue,repeatAttrs=[],sections={})=>{
+    let detail = queue.shift();
+    getSectionIDs(detail.section,(IDs)=>{
+      sections[detail.section] = IDs;
+      IDs.forEach((id)=>{
+        detail.fields.forEach((f)=>{
+          repeatAttrs.push(\`\${detail.section}_\${id}_\${f}\`);
+        });
+      });
+      repeatAttrs.push(\`_reporder_\${detail.section}\`);
+      if(queue.length){
+        worker(queue,repeatAttrs,sections);
+      }else{
+        callback(repeatAttrs,sections);
+      }
+    });
+  };
+  if(!queueClone[0]){
+    callback([],{});
+  }else{
+    worker(queueClone);
+  }
+};
+kFuncs.getSections = getSections;
+
+// Sets the attributes while always calling with {silent:true}
+// Can be awaited to get the values returned from _setAttrs
+/**
+ * Alias for [setAttrs()](https://wiki.roll20.net/Sheet_Worker_Scripts#setAttrs.28values.2Coptions.2Ccallback.29) that sets silently by default.
+ * @param {object} obj - The object containting attributes to set
+ * @param {boolean} [vocal=false] - Whether to set silently (default value) or not.
+ * @param {function()} [callback] - The callback function to invoke after the setting has been completed. No arguments are passed to the callback function.
+ * @example
+ * //Set some attributes silently
+ * k.setAttrs({attribute_1:'new value'})
+ * //Set some attributes and triggers listeners
+ * k.setAttrs({attribute_1:'new value',true})
+ * //Set some attributes and call a callback function
+ * k.setAttrs({attribute_1:'new value'},null,()=>{
+ *  //Do something after the attribute is set
+ * })
+ */
+const set = function(obj,vocal=false,callback){
+  setAttrs(obj,{silent:!vocal},callback);
+};
+kFuncs.setAttrs = set;
+
+const generateCustomID = function(string){
+  if(!string.startsWith('-')){
+    string = \`-\${string}\`;
+  }
+  rowID = generateRowID();
+  let re = new RegExp(\`^.{\${string.length}}\`);
+  return \`\${string}\${rowID.replace(re,'')}\`;
+};
+
+
+/**
+ * Alias for generateRowID that adds the new id to the {@link sectionObj}. Also allows for creation of custom IDs that conform to the section ID requirements.
+ * @name generateRowID
+ * @param {sectionObj} sections
+ * @param {string} [customText] - Custom text to start the ID with. This text should not be longer than the standard repeating section ID format.
+ * @returns {string} - The created ID
+ * @example
+ * k.getAllAttrs({
+ *  callback:(attributes,sections,casc)=>{
+ *    //Create a new row ID
+ *    const rowID = k.generateRowID('repeating_equipment',sections);
+ *    console.log(rowID);// => -p8rg908ug0suzz
+ *    //Create a custom row ID
+ *    const customID = k.generateRowID('repeating_equipment',sections,'custom');
+ *    console.log(customID);// => -custom98uadj89kj
+ *  }
+ * });
+ */
+const _generateRowID = function(section,sections,customText){
+  let rowID = customText ?
+    generateCustomID(customText) :
+    generateRowID();
+  section = section.match(/^repeating_[^_]+$/) ?
+    section :
+    \`repeating_\${section}\`;
+  sections[section] = sections[section] || [];
+  sections[section].push(rowID);
+  return \`\${section}_\${rowID}\`;
+};
+kFuncs.generateRowID = _generateRowID;/*jshint esversion: 11, laxcomma:true, eqeqeq:true*/
+/*jshint -W014,-W084,-W030,-W033*/
+const listeners = {};
+const baseGet = Object.entries(cascades).reduce((memo,[attrName,detailObj])=>{
+  if(!/repeating/.test(attrName) && detailObj.type !== 'action'){
+    memo.push(detailObj.name);
+  }
+  if(detailObj.listener){
+    listeners[detailObj.listener] = detailObj.listenerFunc;
+  }
+  return memo;
+},[]);
+kFuncs.baseGet = baseGet;
+const registerEventHandlers = function(){
+  on('sheet:opened',updateSheet);
+  debug({funcKeys:Object.keys(funcs),funcs});
+  //Roll20 change and click listeners
+  Object.entries(listeners).forEach(([event,funcName])=>{
+    if(funcs[funcName]){
+      on(event,funcs[funcName]);
+    }else{
+      debug(\`!!!Warning!!! no function named \${funcName} found. No listener created for \${event}\`,true);
+    }
+  });
+  log(\`kScaffold Loaded\`);
+};
+setTimeout(registerEventHandlers,0);//Delay the execution of event registration to ensure all event properties are present.
+
+const addItem = function(event){
+  let [,,section] = parseClickTrigger(event.triggerName);
+  section = section.replace(/add-/,'');
+  getAllAttrs({
+    callback:(attributes,sections,casc) => {
+      let row = _generateRowID(section,sections);
+      debug({row});
+      attributes[\`\${row}_name\`] = '';
+      setActionCalls({attributes,sections});
+      const trigger = cascades[\`fieldset_repeating_\${section}\`];
+      if(trigger && trigger.addFuncs){
+        trigger.addFuncs.forEach((funcName) => {
+          if(funcs[funcName]){
+            funcs[funcName]({attributes,sections,casc,trigger});
+          }
+        });
+      }
+      attributes.set({attributes,sections,casc});
+    }
+  });
+};
+funcs.addItem = addItem;
+
+const editSection = function(event){
+  let [,,section] = parseClickTrigger(event.triggerName);
+  section = section.replace(/edit-/,'');
+  let target = \`fieldset.repeating_\${section} + .repcontainer\`;
+  $20(target).toggleClass('ui-sortable');
+  $20(target).toggleClass('editmode');
+};
+registerFuncs({editSection});/**
+ * The default tab navigation function of the K-scaffold. Courtesy of Riernar. It will add \`k-active-tab\` to the active tab-container and \`k-active-button\` to the active button. You can either write your own CSS to control display of these, or use the default CSS included in \`scaffold/_k.scss\`. Note that \`k-active-button\` has no default CSS as it is assumed that you will want to style the active button to match your system.
+ * @param {Object} trigger - The trigger object
+ */
+const kSwitchTab = function ({ trigger, attributes }) {
+  const [container, tab] = (
+    trigger.name.match(/nav-tabs-(.+)--(.+)/) ||
+    []
+  ).slice(1);
+  $20(\`[data-container-tab=\\"\${container}\\"]\`).removeClass('k-active-tab');
+  $20(\`[data-container-tab=\\"\${container}\\"][data-tab=\\"\${tab}\\"]\`).addClass('k-active-tab');
+  $20(\`[data-container-button=\\"\${container}\\"]\`).removeClass('k-active-button');
+  $20(\`[data-container-button=\\"\${container}\\"][data-button=\\"\${tab}\\"]\`).addClass('k-active-button');
+  const tabInputName = \`\${container.replace(/\\\\-/g,'_')}_tab\`;
+  if(persistentTabs.indexOf(tabInputName) > -1){
+    attributes[tabInputName] = trigger.name;
+  }
+}
+
+registerFuncs({ kSwitchTab });
+
+/**
+ * Sets persistent tabs to their last active state
+ * @param {object} trigger - The trigger that caused the function to be called
+ * @param {object} attributes - The attribute values of the character
+ * @param {object[]} sections - All the repeating section IDs
+ * @param {object} casc - Expanded cascade object
+ */
+const kTabOnOpen = function({trigger,attributes,sections,casc}){
+  if(typeof persistentTabs === 'undefined') return;
+  persistentTabs.forEach((tabInput) => {
+    const pseudoTrigger = {name:attributes[tabInput]};
+    kSwitchTab({trigger:pseudoTrigger, attributes});
+  });
+};
+registerFuncs({ kTabOnOpen },{type:['opener']});
+  return kFuncs;
+  }());
+  const actionAttributes = [];const persistentTabs = [\\"main_tabs_tab\\"];
+</script>"
+`;
+
+exports[`k.build > Should generate the index.js for tests 1`] = `
+"// This code adapted from Nic Bradley's R20 test framework from the WFRP4e official sheet.
+import { vi } from 'vitest';
+import { _ } from 'underscore';
+
+const environment = {
+  attributes: {},
+  triggers: [],
+  otherCharacters: {
+    // Attribute information of other test characters indexed by character name
+  },
+  queryResponses:{
+    // object defining which value to use for roll queries, indexed by prompt text
+  }
+};
+global.environment = environment;
+const on = vi.fn((trigger, func) => {
+  environment.triggers.push({ trigger, func });
+});
+global.on = on;
+const getAttrs = vi.fn((query, callback) => {
+  let values = {};
+  for (const attr of query) {
+    if (attr in environment.attributes) values[attr] = environment.attributes[attr];
+  }
+  if (typeof callback === \\"function\\") callback(values);
+});
+global.getAttrs = getAttrs;
+const setAttrs = vi.fn((submit, params, callback) => {
+  if (!callback && typeof params === \\"function\\") callback = params;
+  for (const attr in submit) {
+    environment.attributes[attr] = submit[attr];
+  }
+  if (typeof callback === \\"function\\") callback();
+});
+global.setAttrs = setAttrs;
+const getSectionIDs = vi.fn((section, callback) => {
+  const ids = [];
+  const sectionName = section.indexOf(\\"repeating_\\") === 0 ? section : \`repeating_\${section}\`;
+  const attributes = environment.attributes;
+  for (const attr in attributes) {
+    if (attr.indexOf(sectionName) === 0) ids.push(attr.split(\\"_\\")[2]);
+  }
+  const idMap = [...new Set(ids)];
+  if (typeof callback === \\"function\\") callback(idMap);
+});
+global.getSectionIDs = getSectionIDs;
+const getSectionIDsSync = vi.fn((section) => {
+  const ids = [];
+  const sectionName = section.indexOf(\\"repeating_\\") === 0 ? section : \`repeating_\${section}\`;
+  const attributes = environment.attributes;
+  for (const attr in attributes) {
+    if (attr.indexOf(sectionName) === 0) ids.push(attr.split(\\"_\\")[2]);
+  }
+  const idMap = [...new Set(ids)];
+  return idMap;
+});
+global.getSectionIDsSync = getSectionIDsSync;
+const removeRepeatingRow = vi.fn((id) => {
+  const attributes = environment.attributes;
+  for (const attr in attributes) {
+    if (attr.indexOf(id) > -1) delete environment.attributes[attr];
+  }
+});
+global.removeRepeatingRow = removeRepeatingRow;
+const getCompendiumPage = vi.fn((request, callback) => {
+  const pages = compendiumData;
+  if (!pages)
+    throw new Error(
+      \\"Tried to use getCompendiumPage, but testing environment does not contain compendiumData.\\"
+    );
+  if (typeof request === \\"string\\") {
+    const [category, pageName] = request.split(\\":\\");
+    const response = {
+      Name: pageName,
+      Category: category,
+      data: {},
+    };
+    if (pages[request]) response.data = pages[request].data;
+    if (typeof callback === \\"function\\") callback(response);
+  } else if (Array.isArray(request)) {
+    const pageArray = [];
+    for (const page of request) {
+      if (pages[request] && pages[request].Category === category) pageArray.push(pages[pageName]);
+    }
+    if (typeof callback === \\"function\\") callback(pageArray);
+  }
+});
+global.getCompendiumPage = getCompendiumPage;
+const generateUUID = vi.fn(() => {
+  var a = 0,
+    b = [];
+  return (function () {
+    var c = new Date().getTime() + 0,
+      d = c === a;
+    a = c;
+    for (var e = Array(8), f = 7; 0 <= f; f--)
+      (e[f] = \\"-0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ_abcdefghijklmnopqrstuvwxyz\\".charAt(c % 64)),
+      (c = Math.floor(c / 64));
+    c = e.join(\\"\\");
+    if (d) {
+      for (f = 11; 0 <= f && 63 === b[f]; f--) b[f] = 0;
+      b[f]++;
+    } else for (f = 0; 12 > f; f++) b[f] = Math.floor(64 * Math.random());
+    for (f = 0; 12 > f; f++)
+      c += \\"-0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ_abcdefghijklmnopqrstuvwxyz\\".charAt(b[f]);
+    return c.replace(/_/g, \\"z\\");
+  })();
+});
+global.generateUUID = generateUUID;
+const generateRowID = vi.fn(() => {
+  return generateUUID().replace(/_/g, \\"Z\\");
+});
+global.generateRowID = generateRowID;
+const simulateEvent = vi.fn((event) => {
+  environment.triggers.forEach((trigger) => {
+    const splitTriggers = trigger.trigger.split(\\" \\") || [trigger.trigger];
+    splitTriggers.forEach((singleTrigger) => {
+      if (event === singleTrigger) {
+        trigger.func({
+          sourceAttribute: \\"test\\",
+        });
+      }
+    });
+  });
+});
+global.simulateEvent = simulateEvent;
+const getTranslationByKey = vi.fn((key) => key);
+global.getTranslationByKey = getTranslationByKey;
+// Roll Handlingglobal.getTranslationByKey = getTranslationByKey;
+
+const extractRollTemplate = (rollString) => {
+  const rollTemplate = rollString.match(/&\\\\{template:(.*?)\\\\}/)?.[1];
+  environment.attributes.__rolltemplate = rollTemplate;
+};
+
+const cleanRollElements = (value) => {
+  const cleanText = value
+    .replace(/\\\\{\\\\{|\\\\}}(?=$|\\\\s|\\\\{)/g, \\"\\")
+    .replace(/=/,'===SPLITHERE===');
+  const splitText = cleanText.split(\\"===SPLITHERE===\\");
+  return splitText;
+};
+
+const extractRollElements = (rollString) => {
+  const rollElements = rollString.match(/\\\\{\\\\{(.*?)\\\\}{2,}(?=$|\\\\s|\\\\{)/g);
+  if (!rollElements || rollElements.length < 1) return {}
+  return  Object.fromEntries(rollElements.map(cleanRollElements));
+};
+
+const getExpression = (element) => element.replace(/(\\\\[\\\\[|\\\\]\\\\])/gi, \\"\\");
+
+const getDiceOrHalf = (size) => {
+  const diceStack = environment.diceStack;
+  if (!diceStack?.[size] || diceStack[size].length < 0) return size / 2;
+  return environment.diceStack[size].pop();
+};
+
+const getDiceRolls = (expression) => {
+  const rolls = expression.match(/([0-9]+)?d([0-9]+)/gi);
+  if (!rolls) return [];
+  const allRolls = [];
+  rolls.forEach((roll) => {
+    const [number, size] = roll.split(/d/i);
+    for (let i = 1; i <= number; i++) {
+      const dice = getDiceOrHalf(size);
+      allRolls.push(dice);
+    }
+  });
+  return allRolls;
+};
+
+const calculateResult = (startExpression, dice) => {
+  let expression = startExpression.replace(/\\\\[.+?\\\\]/g,'')
+
+  const rolls = expression.match(/([0-9]+)?d([0-9]+)/gi);
+  if (!rolls) return eval(expression);
+  rolls.forEach((roll, index) => {
+    const [number, size] = roll.split(/d/i);
+    let total = 0;
+    for (let i = 1; i <= number; i++) {
+      total += +dice.shift();
+    }
+    expression = expression.replace(/([0-9]+d[0-9]+([+\\\\-*/][0-9]+)?)(.*?)$/gi, \\"$1\\");
+    const regex = new RegExp(roll, \\"gi\\");
+    expression = expression.replace(regex, total);
+  });
+
+  return eval(expression);
+};
+
+const replaceAttributes = (element) => {
+  const test = /@\\\\{(.*?)\\\\}/i;
+  while (test.test(element)) {
+    element = element.replace(/@\\\\{(.*?)\\\\}/gi, (sub, ...args) => {
+      const attributeName = args[0];
+      const attributeValue = environment.attributes[attributeName];
+      const attributeExists = typeof attributeValue !== \\"undefined\\";
+      const possibleAttributes = Object.keys(environment.attributes);
+      if (attributeExists) return attributeValue;
+      else
+        throw new Error(
+          \`Roll called \${sub} but no corresponding attribute \\"\${attributeName}\\" was found. Attributes are: \${possibleAttributes.join(
+            \\", \\"
+          )}\`
+        );
+    });
+  }
+  return element;
+};
+
+const replaceQueries = (element) => {
+  return element.replace(/\\\\?\\\\{(.+?)[|}]([^}]+?\\\\})?/g,(match,p,a) => {
+    a = a?.split(/\\\\s*\\\\|\\\\s*/) || [];
+    return environment.queryResponses[p] || a[0] || '';
+  });
+};
+
+const calculateRollResult = (rollElements) => {
+  const results = {};
+  for (const key in rollElements) {
+    const element = rollElements[key];
+    if (element.indexOf(\\"[[\\") === -1) continue;
+    const attributeFilled = replaceAttributes(element);
+    const queryAnswered = replaceQueries(attributeFilled);
+    const expression = getExpression(queryAnswered);
+    const dice = getDiceRolls(expression);
+    const result = calculateResult(expression, [...dice]);
+    results[key] = {
+      result,
+      dice,
+      expression,
+    };
+  }
+  return results;
+};
+
+const startRoll = vi.fn(async (rollString) => {
+  if (!rollString) throw new Error(\\"startRoll expected a Roll String but none was provided.\\");
+  const rollResult = { results: {} };
+  extractRollTemplate(rollString);
+  const rollElements = extractRollElements(rollString);
+  rollResult.results = calculateRollResult(rollElements);
+  rollResult.rollId = generateUUID();
+  return rollResult;
+});
+global.startRoll = startRoll;
+const finishRoll = vi.fn(() => {});
+global.finishRoll = finishRoll;
+
+  const k = (function(){
+  const kFuncs = {};
+  
+  const cascades = {\\"attr_character_name\\":{\\"name\\":\\"character_name\\",\\"type\\":\\"text\\",\\"defaultValue\\":\\"\\",\\"affects\\":[],\\"triggeredFuncs\\":[\\"setActionCalls\\"],\\"listenerFunc\\":\\"accessSheet\\",\\"listener\\":\\"change:character_name\\"},\\"attr_template_start\\":{\\"name\\":\\"template_start\\",\\"type\\":\\"text\\",\\"defaultValue\\":\\"&{template:test} {{character_name=@{character_name}}} {{character_id=@{character_id}}}\\",\\"triggeredFuncs\\":[],\\"affects\\":[]},\\"attr_main_tabs_tab\\":{\\"name\\":\\"main_tabs_tab\\",\\"type\\":\\"hidden\\",\\"defaultValue\\":\\"nav-tabs-main-tabs--settings\\",\\"triggeredFuncs\\":[],\\"affects\\":[]}};
+  
+  kFuncs.cascades = cascades;
+  
+  const repeatingSectionDetails = [];
+  
+  kFuncs.repeatingSectionDetails = repeatingSectionDetails;
+  /**
+ * This stores the name of your sheet for use in the logging functions {@link log} and {@link debug}. Accessible by \`k.sheetName\`
+ * @var
+ * @type {string}
+ */
+let sheetName = 'kScaffold Powered Sheet';
+kFuncs.sheetName = sheetName;
+/**
+	* This stores the version of your sheet for use in the logging functions{@link log} and {@link debug}. It is also stored in the sheet_version attribute on your character sheet. Accessible via \`k.version\`
+	* @var
+	* @type {number}
+	*/
+let version = 0;
+kFuncs.version = version;
+/**
+	* A boolean flag that tells the script whether to enable or disable {@link debug} calls. If the version of the sheet is \`0\`, or an attribute named \`debug_mode\` is found on opening this is set to true for your entire session. Otherwise, it remains false.
+	* @var
+	* @type {boolean}
+	*/
+let debugMode = false;
+kFuncs.debugMode = debugMode;
+const funcs = {};
+kFuncs.funcs = funcs;
+const updateHandlers = {};
+const openHandlers = {};
+const initialSetups = {};
+const allHandlers = {};
+const addFuncs = {};
+
+const kscaffoldJSVersion = '0.0.4';
+const kscaffoldPUGVersion = '0.0.4';
+  /*jshint esversion: 11, laxcomma:true, eqeqeq:true*/
+/*jshint -W014,-W084,-W030,-W033*/
+/**
+ * Replaces problem characters to use a string as a regex
+ * @param {string} text - The text to replace characters in
+ * @returns {string}
+ * @example
+ * const textForRegex = k.sanitizeForRegex('.some thing[with characters]');
+ * console.log(textForRegex);// => \\"\\\\.some thing\\\\[with characters\\\\]\\"
+ */
+const sanitizeForRegex = function(text){
+  return text.replace(/\\\\.|\\\\||\\\\(|\\\\)|\\\\[|\\\\]|\\\\-|\\\\+|\\\\?|\\\\/|\\\\{|\\\\}|\\\\^|\\\\$|\\\\*/g,'\\\\\\\\$&');
+};
+kFuncs.sanitizeForRegex = sanitizeForRegex;
+
+/**
+ * Converts a value to a number, it\\\\'s default value, or \`0\` if no default value passed.
+ * @param {string|number} val - Value to convert to a number
+ * @param {number} def - The default value, uses 0 if not passed
+ * @returns {number|undefined}
+ * @example
+ * const num = k.value('100');
+ * console.log(num);// => 100
+ */
+const value = function(val,def){
+  return (+val||def||0);
+};
+kFuncs.value = value;
+
+/**
+ * Extracts the section (e.g. \`repeating_equipment\`), rowID (e.g \`-;lkj098J:LKj\`), and field name (e.g. \`bulk\`) from a repeating attribute name.
+ * @param {string} string - The string to parse
+ * @returns {array} - Array of matches. Index 0: the section name, e.g. repeating_equipment | Index 1:the row ID | index 2: The name of the attribute
+ * @returns {string[]}
+ * @example
+ * //Extract info from a full repeating name
+ * const [section,rowID,attrName] = k.parseRepeatName('repeating_equipment_-8908asdflkjZlkj23_name');
+ * console.log(section);// => \\"repeating_equipment\\"
+ * console.log(rowID);// => \\"-8908asdflkjZlkj23\\"
+ * console.log(attrName);// => \\"name\\"
+ * 
+ * //Extract info from just a row name
+ * const [section,rowID,attrName] = k.parseRepeatName('repeating_equipment_-8908asdflkjZlkj23');
+ * console.log(section);// => \\"repeating_equipment\\"
+ * console.log(rowID);// => \\"-8908asdflkjZlkj23\\"
+ * console.log(attrName);// => undefined
+ */
+const parseRepeatName = function(string){
+  let match = string.match(/(repeating_[^_]+)_([^_]+)(?:_(.+))?/);
+  match.shift();
+  return match;
+};
+kFuncs.parseRepeatName = parseRepeatName;
+
+/**
+ * Parses out the components of a trigger name similar to [parseRepeatName](#parserepeatname). Aliases: parseClickTrigger.
+ * 
+ * Aliases: \`k.parseClickTrigger\`
+ * @param {string} string The triggerName property of the
+ * @returns {array} - For a repeating button named \`repeating_equipment_-LKJhpoi98;lj_roll\`, the array will be \`['repeating_equipment','-LKJhpoi98;lj','roll']\`. For a non repeating button named \`roll\`, the array will be \`[undefined,undefined,'roll']\`
+ * @returns {string[]}
+ * @example
+ * //Parse a non repeating trigger
+ * const [section,rowID,attrName] = k.parseTriggerName('clicked:some-button');
+ * console.log(section);// => undefined
+ * console.log(rowID);// => undefined
+ * console.log(attrName);// => \\"some-button\\"
+ * 
+ * //Parse a repeating trigger
+ * const [section,rowID,attrName] = k.parseTriggerName('clicked:repeating_attack_-234lkjpd8fu8usadf_some-button');
+ * console.log(section);// => \\"repeating_attack\\"
+ * console.log(rowID);// => \\"-234lkjpd8fu8usadf\\"
+ * console.log(attrName);// => \\"some-button\\"
+ * 
+ * //Parse a repeating name
+ * const [section,rowID,attrName] = k.parseTriggerName('repeating_attack_-234lkjpd8fu8usadf_some-button');
+ * console.log(section);// => \\"repeating_attack\\"
+ * console.log(rowID);// => \\"-234lkjpd8fu8usadf\\"
+ * console.log(attrName);// => \\"some-button\\"
+ */
+const parseTriggerName = function(string){
+  let match = string.replace(/^clicked:/,'').match(/(?:(repeating_[^_]+)_([^_]+)_)?(.+)/);
+  match.shift();
+  return match;
+};
+kFuncs.parseTriggerName = parseTriggerName;
+const parseClickTrigger = parseTriggerName;
+kFuncs.parseClickTrigger = parseClickTrigger;
+
+/**
+ * Parses out the attribute name from the htmlattribute name.
+ * @param {string} string - The triggerName property of the [event](https://wiki.roll20.net/Sheet_Worker_Scripts#eventInfo_Object).
+ * @returns {string}
+ * @example
+ * //Parse a name
+ * const attrName = k.parseHtmlName('attr_attribute_1');
+ * console.log(attrName);// => \\"attribute_1\\"
+ */
+const parseHTMLName = function(string){
+  let match = string.match(/(?:attr|act|roll)_(.+)/);
+  match.shift();
+  return match[0];
+};
+kFuncs.parseHTMLName = parseHTMLName;
+
+/**
+ * Capitalize each word in a string
+ * @param {string} string - The string to capitalize
+ * @returns {string}
+ * @example
+ * const capitalized = k.capitalize('a word');
+ * console.log(capitalized);// => \\"A Word\\"
+ */
+const capitalize = function(string){
+  return string.replace(/(?:^|\\\\s+|\\\\/)[a-z]/ig,(letter)=>letter.toUpperCase());
+};
+kFuncs.capitalize = capitalize;
+
+/**
+ * Extracts a roll query result for use in later functions. Must be awaited as per [startRoll documentation](https://wiki.roll20.net/Sheet_Worker_Scripts#Roll_Parsing.28NEW.29). Stolen from [Oosh\\\\'s Adventures with Startroll thread](https://app.roll20.net/forum/post/10346883/adventures-with-startroll).
+ * @param {string} query - The query should be just the text as the \`?{\` and \`}\` at the start/end of the query are added by the function.
+ * @returns {Promise} - Resolves to the selected value from the roll query
+ * @example
+ * const rollFunction = async function(){
+ *  //Get the result of a choose from list query
+ *  const queryResult = await extractQueryResult('Prompt Text Here|Option 1|Option 2');
+ *  console.log(queryResult);//=> \\"Option 1\\" or \\"Option 2\\" depending on what the user selects
+ * 
+ *  //Get free from input from the user
+ *  const freeResult = await extractQueryResult('Prompt Text Here');
+ *  consoel.log(freeResult);// => Whatever the user entered
+ * }
+ */
+const extractQueryResult = async function(query){
+	debug('entering extractQueryResult');
+	let queryRoll = await startRoll(\`!{{query=[[0[response=?{\${query}}]]]}}\`);
+	finishRoll(queryRoll.rollId);
+	return queryRoll.results.query.expression.replace(/^.+?response=|\\\\]$/g,'');
+};
+kFuncs.extractQueryResult = extractQueryResult;
+
+/**
+ * Simulates a query for ensuring that async/await works correctly in the sheetworker environment when doing conditional startRolls. E.g. if you have an if/else and only one of the conditions results in \`startRoll\` being called (and thus an \`await\`), the sheetworker environment would normally crash. Awaiting this in the condition that does not actually need to call \`startRoll\` will keep the environment in sync.
+ * @param {string|number} [value] - The value to return. Optional.
+ * @returns {Promise} - Resolves to the value passed to the function
+ * @example
+ * const rollFunction = async function(){
+ *  //Get the result of a choose from list query
+ *  const queryResult = await pseudoQuery('a value');
+ *  console.log(queryResult);//=> \\"a value\\"
+ * }
+ */
+const pseudoQuery = async function(value){
+	debug('entering pseudoQuery');
+	let queryRoll = await startRoll(\`!{{query=[[0[response=\${value}]]]}}\`);
+	finishRoll(queryRoll.rollId);
+	return queryRoll.results.query.expression.replace(/^.+?response=|\\\\]$/g,'');
+};
+kFuncs.pseudoQuery = pseudoQuery;
+
+/**
+ * An alias for console.log.
+ * @param {any} msg - The message can be a straight string, an object, or an array. If it is an object or array, the object will be broken down so that each key is used as a label to output followed by the value of that key. If the value of the key is an object or array, it will be output via \`console.table\`.
+ */
+const log = function(msg){
+  if(typeof msg === 'string'){
+    console.log(\`%c\${kFuncs.sheetName} log| \${msg}\`,\\"background-color:#159ccf\\");
+  }else if(typeof msg === 'object'){
+    Object.keys(msg).forEach((m)=>{
+      if(typeof msg[m] === 'string'){
+        console.log(\`%c\${kFuncs.sheetName} log| \${m}: \${msg[m]}\`,\\"background-color:#159ccf\\");
+      }else{
+        console.log(\`%c\${kFuncs.sheetName} log| \${typeof msg[m]} \${m}\`,\\"background-color:#159ccf\\");
+        console.table(msg[m]);
+      }
+    });
+  }
+};
+kFuncs.log = log;
+
+/**
+ * Alias for console.log that only triggers when debug mode is enabled or when the sheet\\\\'s version is \`0\`. Useful for entering test logs that will not pollute the console on the live sheet.
+ * @param {any} msg - 'See {@link k.log}
+ * @param {boolean} force - Pass as a truthy value to force the debug output to be output to the console regardless of debug mode.
+ * @returns {void}
+ */
+const debug = function(msg,force){
+  if(!kFuncs.debugMode && !force && kFuncs.version > 0) return;
+  if(typeof msg === 'string'){
+    console.log(\`%c\${kFuncs.sheetName} DEBUG| \${msg}\`,\\"background-color:tan;color:red;\\");
+  }else if(typeof msg === 'object'){
+    Object.keys(msg).forEach((m)=>{
+      if(typeof msg[m] === 'string'){
+        console.log(\`%c\${kFuncs.sheetName} DEBUG| \${m}: \${msg[m]}\`,\\"background-color:tan;color:red;\\");
+      }else{
+        console.log(\`%c\${kFuncs.sheetName} DEBUG| \${typeof msg[m]} \${m}\`,\\"background-color:tan;color:red;font-weight:bold;\\");
+        console.table(msg[m]);
+      }
+    });
+  }
+};
+kFuncs.debug = debug;
+
+/**
+ * Orders the section id arrays for all sections in the \`sections\` object to match the repOrder attribute.
+ * @param {attributesProxy} attributes - The attributes object that must have a value for the reporder for each section.
+ * @param {object[]} sections - Object containing the IDs for the repeating sections, indexed by repeating section name.
+ */
+const orderSections = function(attributes,sections){
+  Object.keys(sections).forEach((section)=>{
+    attributes.attributes[\`_reporder_\${section}\`] = commaArray(attributes[\`_reporder_\${section}\`]);
+    orderSection(attributes.attributes[\`_reporder_\${section}\`],sections[section]);
+  });
+};
+kFuncs.orderSections = orderSections;
+
+/**
+ * Orders a single ID array.
+ * @param {string[]} repOrder - Array of IDs in the order they are in on the sheet.
+ * @param {string[]} IDs - Array of IDs to be ordered.
+ */
+const orderSection = function(repOrder,IDs=[]){
+  IDs.sort((a,b)=>{
+    return repOrder.indexOf(a.toLowerCase()) - repOrder.indexOf(b.toLowerCase());
+  });
+};
+kFuncs.orderSection = orderSection;
+
+/**
+ * Splits a comma delimited string into an array
+ * @param {string} string - The string to split.
+ * @returns {array} - The string segments of the comma delimited list.
+ */
+const commaArray = function(string=''){
+  return string.toLowerCase().split(/\\\\s*,\\\\s*/);
+};
+kFuncs.commaArray = commaArray;/*jshint esversion: 11, laxcomma:true, eqeqeq:true*/
+/*jshint -W014,-W084,-W030,-W033*/
+//# Attribute Obj Proxy handler
+const createAttrProxy = function(attrs){
+  //creates a proxy for the attributes object so that values can be worked with more easily.
+  const getCascObj = function(event,casc){
+    const eventName = event.triggerName || event.sourceAttribute;
+    let typePrefix = eventName.startsWith('clicked:') ?
+      'act_' :
+      event.removedInfo ?
+      'fieldset_' :
+      'attr_';
+    let cascName = \`\${typePrefix}\${eventName.replace(/(?:removed|clicked):/,'')}\`;
+    let cascObj = casc[cascName];
+    if(typePrefix === 'attr_'){
+      cascObj.previousValue = event.previousValue;
+    }
+    return cascObj;
+  };
+  
+  const triggerFunctions = function(obj,attributes,sections){
+    if(obj.triggeredFuncs && obj.triggeredFuncs.length){
+      debug(\`triggering functions for \${obj.name}\`);
+      obj.triggeredFuncs && obj.triggeredFuncs.forEach(func=>funcs[func] ? 
+        funcs[func]({trigger:obj,attributes,sections}) :
+        debug(\`!!!Warning!!! no function named \${func} found. Triggered function not called for \${obj.name}\`,true));
+    }
+  };
+  
+  const initialFunction = function(obj,attributes,sections){
+    if(obj.initialFunc){
+      debug(\`initial functions for \${obj.name}\`);
+      funcs[obj.initialFunc] ?
+        funcs[obj.initialFunc]({trigger:obj,attributes,sections}) :
+        debug(\`!!!Warning!!! no function named \${obj.initialFunc} found. Initial function not called for \${obj.name}\`,true);
+    }
+  };
+  const alwaysFunctions = function(trigger,attributes,sections,casc){
+    Object.values(allHandlers).forEach((handler)=>{
+      handler({trigger,attributes,sections,casc});
+    });
+  };
+  const processChange = function({event,trigger,attributes,sections,casc}){
+    if(event && !trigger){
+      debug(\`\${event.sourceAttribute} change detected. No trigger found\`);
+      return;
+    }
+    if(!attributes || !sections || !casc){
+      debug(\`!!! Insufficient arguments || attributes > \${!!attributes} | sections > \${!!sections} | casc > \${!!casc} !!!\`);
+      return;
+    }
+    debug({trigger});
+    if(event){
+      debug('checking for initial & always functions');
+      alwaysFunctions(trigger,attributes,sections,casc);//Functions that should be run for all events.
+      initialFunction(trigger,attributes,sections,casc);//functions that should only be run if the attribute was the thing changed by the user
+    }
+    if(trigger){
+      debug(\`processing \${trigger.name}\`);
+      triggerFunctions(trigger,attributes,sections,casc);
+      if(!event && trigger.calculation && funcs[trigger.calculation]){
+        attributes[trigger.name] = funcs[trigger.calculation]({trigger,attributes,sections,casc});
+      }else if(trigger.calculation && !funcs[trigger.calculation]){
+        debug(\`K-Scaffold Error: No function named \${trigger.calculation} found\`);
+      }
+      if(Array.isArray(trigger.affects)){
+        attributes.queue.push(...trigger.affects);
+      }
+    }
+    attributes.set({attributes,sections,casc});
+  };
+  const attrTarget = {
+    updates:{},
+    attributes:{...attrs},
+    repOrders:{},
+    queue: [],
+    casc:{},
+    alwaysFunctions,
+    processChange,
+    triggerFunctions,
+    initialFunction,
+    getCascObj
+  };
+  const attrHandler = {
+    get:function(obj,prop){//gets the most value of the attribute.
+      //If it is a repeating order, returns the array, otherwise returns the update value or the original value
+      if(prop === 'set'){
+        return function(){
+          let {attributes,sections,casc,callback,vocal} = arguments[0] ? arguments[0] : {};
+          if(attributes && attributes.queue.length && sections && casc){
+            let triggerName = attributes.queue.shift();
+            let trigger = getCascObj({sourceAttribute:triggerName},casc);
+            attributes.processChange({trigger,attributes,sections,casc});
+          }else{
+            debug({updates:obj.updates});
+            let trueCallback = Object.keys(obj.repOrders).length ?
+              function(){
+                Object.entries(obj.repOrders).forEach(([section,order])=>{
+                  _setSectionOrder(section,order,)
+                });
+                callback && callback();
+              }:
+              callback;
+            Object.keys(obj.updates).forEach((key)=>obj.attributes[key] = obj.updates[key]);
+            const update = obj.updates;
+            obj.updates = {};
+            set(update,vocal,trueCallback);
+          }
+        }
+      }else if(Object.keys(obj).some(key=>key===prop)){ 
+        return Reflect.get(...arguments)
+      }else{
+        let retValue;
+        switch(true){
+          case obj.repOrders.hasOwnProperty(prop):
+            retValue = obj.repOrders[prop];
+            break;
+          case obj.updates.hasOwnProperty(prop):
+            retValue = obj.updates[prop];
+            break;
+          default:
+            retValue = obj.attributes[prop];
+            break;
+        }
+        let cascRef = \`attr_\${prop.replace(/(repeating_[^_]+_)[^_]+/,'$1\\\\$X')}\`;
+        let numRetVal = +retValue;
+        if(!Number.isNaN(numRetVal) && retValue !== ''){
+          retValue = numRetVal;
+        }else if(cascades[cascRef] && (typeof cascades[cascRef].defaultValue === 'number' || cascades[cascRef].type === 'number')){
+          retValue = cascades[cascRef].defaultValue;
+        }
+        return retValue;
+      }
+    },
+    set:function(obj,prop,value){
+      //Sets the value. Also verifies that the value is a valid attribute value
+      //e.g. not undefined, null, or NaN
+      if(value || value===0 || value===''){
+        if(/reporder|^repeating_[^_]+$/.test(prop)){
+          let section = prop.replace(/_reporder_/,'');
+          obj.repOrders[section] = value;
+        }else if(\`\${obj.attributes}\` !== \`\${value}\` || 
+          (obj.updates[prop] && \`\${obj.updates}\` !== \`\${value}\`)
+        ){
+          obj.updates[prop] = value;
+        }
+      }else{
+        debug(\`!!!Warning: Attempted to set \${prop} to an invalid value:\${value}; value not stored!!!\`);
+      }
+      return true;
+    },
+    deleteProperty(obj,prop){
+      //removes the property from the original attributes, updates, and the reporders
+      Object.keys(obj).forEach((key)=>{
+        delete obj[key][prop.toLowerCase()];
+      });
+    }
+  };
+  return new Proxy(attrTarget,attrHandler);
+};
+
+
+/**
+ * Function that registers a function for being called via the funcs object. Returns true if the function was successfully registered, and false if it could not be registered for any reason.
+ * @param {object} funcObj - Object with keys that are names to register functions under and values that are functions.
+ * @param {object} optionsObj - Object that contains options to use for this registration.
+ * @param {string[]} optionsObj.type - Array that contains the types of specialized functions that apply to the functions being registered. Valid types are \`\\"opener\\"\`, \`\\"updater\\"\`, and \`\\"default\\"\`. \`\\"default\\"\` is always used, and never needs to be passed.
+ * @returns {boolean} - True if the registration succeeded, false if it failed.
+ * @example
+ * //Basic Registration
+ * const myFunc = function({trigger,attributes,sections,casc}){};
+ * k.registerFuncs({myFunc});
+ * 
+ * //Register a function to run on sheet open
+ * const openFunc = function({trigger,attributes,sections,casc}){};
+ * k.registerFuncs({openFunc},{type:['opener']})
+ * 
+ * //Register a function to run on all events
+ * const allFunc = function({trigger,attributes,sections,casc}){};
+ * k.registerFuncs({allFunc},{type:['all']})
+ */
+const registerFuncs = function(funcObj,optionsObj = {}){
+  if(typeof funcObj !== 'object' || typeof optionsObj !== 'object'){
+    debug(\`!!!! K-scaffold error: Improper arguments to register functions !!!!\`);
+    return false;
+  }
+  const typeArr = optionsObj.type ? ['default',...optionsObj.type] : ['default'];
+  const typeSwitch = {
+    'opener':openHandlers,
+    'updater':updateHandlers,
+    'new':initialSetups,
+    'all':allHandlers,
+    'default':funcs
+  };
+  let setState;
+  Object.entries(funcObj).map(([prop,value])=>{
+    typeArr.forEach((type)=>{
+      if(typeSwitch[type][prop]){
+        debug(\`!!! Duplicate function name for \${prop} as \${type}!!!\`);
+        setState = false;
+      }else if(typeof value === 'function'){
+        typeSwitch[type][prop] = value;
+        setState = setState !== false ? true : false;
+      }else{
+        debug(\`!!! K-scaffold error: Function registration requires a function. Invalid value to register as \${type} !!!\`);
+        setState = false;
+      }
+    });
+  });
+  return setState;
+};
+kFuncs.registerFuncs = registerFuncs;
+
+const setActionCalls = function({attributes,sections}){
+  actionAttributes.forEach((base)=>{
+    let [section,,field] = k.parseTriggerName(base);
+    let fieldAction = field.replace(/_/g,'-');
+    if(section){
+      sections[section].forEach((id)=>{
+        attributes[\`\${section}_\${id}_\${field}\`] = \`%{\${attributes.character_name}|\${section}_\${id}_\${fieldAction}}\`;
+      });
+    }else{
+      attributes[\`\${field}\`] = \`%{\${attributes.character_name}|\${fieldAction}}\`;
+    }
+  });
+};
+funcs.setActionCalls = setActionCalls;
+
+/**
+ * Function to call a function previously registered to the funcs object. May not be used that much. Either returns the function or null if no function exists.
+ * @param {string} funcName - The name of the function to invoke.
+ * @param {...any} args - The arguments to call the function with.
+ * @returns {any}
+ * @example
+ * //Call myFunc with two arguments
+ * k.callFunc('myFunc','an argument','another argument');
+ */
+const callFunc = function(funcName,...args){
+  if(funcs[funcName]){
+    debug(\`calling \${funcName}\`);
+    return funcs[funcName](...args);
+  }else{
+    debug(\`Invalid function name: \${funcName}\`);
+    return null;
+  }
+};
+kFuncs.callFunc = callFunc;/*jshint esversion: 11, laxcomma:true, eqeqeq:true*/
+/*jshint -W014,-W084,-W030,-W033*/
+//Sheet Updaters and styling functions
+const updateSheet = function(){
+  log('updating sheet');
+  getAllAttrs({props:['debug_mode',...baseGet],callback:(attributes,sections,casc)=>{
+    kFuncs.debugMode = kFuncs.debugMode || !!attributes.debug_mode;
+    debug({sheet_version:attributes.sheet_version});
+    if(!attributes.sheet_version){
+      Object.entries(initialSetups).forEach(([funcName,handler])=>{
+        if(typeof funcs[funcName] === 'function'){
+          debug(\`running \${funcName}\`);
+          funcs[funcName]({attributes,sections,casc});
+        }else{
+          debug(\`!!!Warning!!! no function named \${funcName} found. Initial sheet setup not performed.\`);
+        }
+      });
+    }else{
+      Object.entries(updateHandlers).forEach(([ver,handler])=>{
+        if(attributes.sheet_version < +ver){
+          handler({attributes,sections,casc});
+        }
+      });
+    }
+    Object.entries(openHandlers).forEach(([funcName,func])=>{
+      if(typeof funcs[funcName] === 'function'){
+        debug(\`running \${funcName}\`);
+        funcs[funcName]({attributes,sections,casc});
+      }else{
+        debug(\`!!!Warning!!! no function named \${funcName} found. Sheet open handling not performed.\`);
+      }
+    });
+    setActionCalls({attributes,sections});
+    attributes.sheet_version = kFuncs.version;
+    log(\`Sheet Update applied. Current Sheet Version \${kFuncs.version}\`);
+    attributes.set();
+    log('Sheet ready for use');
+  }});
+};
+
+const initialSetup = function(attributes,sections){
+  debug('Initial sheet setup');
+};
+
+/**
+ * This is the default listener function for attributes that the K-Scaffold uses. It utilizes the \`triggerFuncs\`, \`listenerFunc\`, \`calculation\`, and \`affects\` properties of the K-scaffold trigger object (see the Pug section of the scaffold for more details).
+ * @param {Roll20Event} event - The Roll20 event object
+ * @returns {void}
+ * @example
+ * //Call from an attribute change
+ * on('change:an_attribute',k.accessSheet);
+ */
+const accessSheet = function(event){
+  debug({funcs:Object.keys(funcs)});
+  debug({event});
+  getAllAttrs({callback:(attributes,sections,casc)=>{
+    let trigger = attributes.getCascObj(event,casc);
+    attributes.processChange({event,trigger,attributes,sections,casc});
+  }});
+};
+funcs.accessSheet = accessSheet;/*jshint esversion: 11, laxcomma:true, eqeqeq:true*/
+/*jshint -W014,-W084,-W030,-W033*/
+/*
+Cascade Expansion functions
+*/
+//Expands the repeating section templates in cascades to reflect the rows actually available
+const expandCascade = function(cascade,sections,attributes){
+  return _.keys(cascade).reduce((memo,key)=>{//iterate through cascades and replace references to repeating attributes with correct row ids.
+    if(/^(?:act|attr)_repeating_/.test(key)){//If the attribute is a repeating attribute, do special logic
+      expandRepeating(memo,key,cascade,sections,attributes);
+    }else if(key){//for non repeating attributes do this logic
+      expandNormal(memo,key,cascade,sections);
+    }
+    return memo;
+  },{});
+};
+
+const expandRepeating = function(memo,key,cascade,sections,attributes){
+  key.replace(/((?:attr|act)_)(repeating_[^_]+)_[^_]+?_(.+)/,(match,type,section,field)=>{
+    (sections[section]||[]).forEach((id)=>{
+      memo[\`\${type}\${section}_\${id}_\${field}\`]=_.clone(cascade[key]);//clone the details so that each row's attributes have correct ids
+      memo[\`\${type}\${section}_\${id}_\${field}\`].name = \`\${section}_\${id}_\${field}\`;
+      if(key.startsWith('attr_')){
+        memo[\`\${type}\${section}_\${id}_\${field}\`].affects = memo[\`\${type}\${section}_\${id}_\${field}\`].affects.reduce((m,affected)=>{
+          if(section === affected){//otherwise if the affected attribute is in the same section, simply set the affected attribute to have the same row id.
+            m.push(applyID(affected,id));
+          }else if(/repeating/.test(affected)){//If the affected attribute isn't in the same repeating section but is still a repeating attribute, add all the rows of that section
+            addAllRows(affected,m,sections);
+          }else{//otherwise the affected attribute is a non repeating attribute. Simply add it to the computed affected array
+            m.push(affected);
+          }
+          return m;
+        },[]);
+      }
+    });
+  });
+};
+
+const applyID = function(affected,id){
+  return affected.replace(/(repeating_[^_]+_)[^_]+(.+)/,\`$1\${id}$2\`);
+};
+
+const expandNormal = function(memo,key,cascade,sections){
+  memo[key] = _.clone(cascade[key]);
+  if(key.startsWith('attr_')){
+    memo[key].affects = memo[key].affects || [];
+    memo[key].affects = memo[key].affects.reduce((m,a)=>{
+      if(/^repeating/.test(a)){
+        addAllRows(a,m,sections);
+      }else{
+        m.push(a);
+      }
+      return m;
+    },[]);
+  }
+};
+
+const addAllRows = function(affected,memo,sections){
+  affected.replace(/(repeating_[^_]+?)_[^_]+?_(.+)/,(match,section,field)=>{
+    sections[section].forEach(id=>memo.push(\`\${section}_\${id}_\${field}\`));
+  });
+};/*jshint esversion: 11, laxcomma:true, eqeqeq:true*/
+/*jshint -W014,-W084,-W030,-W033*/
+/**
+ * Alias for [setSectionOrder()](https://wiki.roll20.net/Sheet_Worker_Scripts#setSectionOrder.28.3CRepeating_Section_Name.3E.2C_.3CSection_Array.3E.2C_.3CCallback.3E.29) that allows you to use the section name in either \`repeating_section\` or \`section\` formats. Note that the Roll20 sheetworker [setSectionOrder](https://wiki.roll20.net/Sheet_Worker_Scripts#setSectionOrder.28.3CRepeating_Section_Name.3E.2C_.3CSection_Array.3E.2C_.3CCallback.3E.29) currently causes some display issues on sheets.
+ * @name setSectionOrder
+ * @param {string} section - The name of the section, with or without \`repeating_\`
+ * @param {string[]} order - Array of ids describing the desired order of the section.
+ * @returns {void}
+ * @example
+ * //Set the order of a repeating_weapon section
+ * k.setSectionOrder('repeating_equipment',['id1','id2','id3']);
+ * //Can also specify the section name without the repeating_ prefix
+ * k.setSectionOrder('equipment',['id1','id2','id3']);
+ */
+const _setSectionOrder = function(section,order){
+  let trueSection = section.replace(/repeating_/,'');
+  setSectionOrder(trueSection,order);
+};
+kFuncs.setSectionOrder = _setSectionOrder;
+
+/**
+ * Alias for [removeRepeatingRow](https://wiki.roll20.net/Sheet_Worker_Scripts#removeRepeatingRow.28_RowID_.29) that also removes the row from the current object of attribute values and array of section IDs to ensure that erroneous updates are not issued.
+ * @name removeRepeatingRow
+ * @param {string} row - The row id to be removed
+ * @param {attributesProxy} attributes - The attribute values currently in memory
+ * @param {object} sections - Object that contains arrays of all the IDs in sections on the sheet indexed by repeating name.
+ * @returns {void}
+ * @example
+ * //Remove a repeating Row
+ * k.getAllAttrs({
+ *  callback:(attributes,sections)=>{
+ *    const rowID = sections.repeating_equipment[0];
+ *    k.removeRepeatingRow(\`repeating_equipment_\${rowID}\`,attributes,sections);
+ *    console.log(sections.repeating_equipment); // => rowID no longer exists in the array.
+ *    console.log(attributes[\`repeating_equipment_\${rowID}_name\`]); // => undefined
+ *  }
+ * })
+ */
+const _removeRepeatingRow = function(row,attributes,sections){
+  debug(\`removing \${row}\`);
+  Object.keys(attributes.attributes).forEach((key)=>{
+    if(key.startsWith(row)){
+      delete attributes[key];
+    }
+  });
+  let [,section,rowID] = row.match(/(repeating_[^_]+)_(.+)/,'');
+  sections[section] = sections[section].filter((id)=>id!==rowID);
+  removeRepeatingRow(row);
+};
+kFuncs.removeRepeatingRow = _removeRepeatingRow;
+
+/**
+ * Alias for [getAttrs()](https://wiki.roll20.net/Sheet_Worker_Scripts#getAttrs.28attributeNameArray.2C_callback.29) that converts the default object of attribute values into an {@link attributesProxy} and passes that back to the callback function.
+ * @name getAttrs
+ * @param {string[]} [props=baseGet] - Array of attribute names to get the value of. Defaults to {@link baseGet} if not passed.
+ * @param {function(attributesProxy)} callback - The function to call after the attribute values have been gotten. An {@link attributesProxy} is passed to the callback.
+ * @example
+ * //Gets the attributes named in props.
+ * k.getAttrs({
+ *  props:['attribute_1','attribute_2'],
+ *  callback:(attributes)=>{
+ *    //Work with the attributes as you would in a normal getAttrs, or use the superpowers of the K-scaffold attributes object like so:
+ *    attributes.attribute_1 = 'new value';
+ *    attributes.set();
+ *  }
+ * })
+ */
+const _getAttrs = function({props=baseGet,callback}){
+  getAttrs(props,(values)=>{
+    const attributes = createAttrProxy(values);
+    callback(attributes);
+  });
+};
+kFuncs.getAttrs = _getAttrs;
+
+/**
+ * Alias for [getAttrs()](https://wiki.roll20.net/Sheet_Worker_Scripts#getAttrs.28attributeNameArray.2C_callback.29) and [getSectionIDs](https://wiki.roll20.net/Sheet_Worker_Scripts#getSectionIDs.28section_name.2Ccallback.29) that combines the actions of both sheetworker functions and converts the default object of attribute values into an {@link attributesProxy}. Also gets the details on how to handle all attributes from the master {@link cascades} object and.
+ * @param {Object} args
+ * @param {string[]} [args.props=baseGet] - Array of attribute names to get the value of. Defaults to {@link baseGet} if not passed.
+ * @param {repeatingSectionDetails} sectionDetails - Array of details about a section to get the IDs for and attributes that need to be gotten. 
+ * @param {function(attributesProxy,sectionObj,expandedCascade):void} args.callback - The function to call after the attribute values have been gotten. An {@link attributesProxy} is passed to the callback along with a {@link sectionObj} and {@link expandedCascade}.
+ * @example
+ * //Get every K-scaffold linked attribute on the sheet
+ * k.getAllAttrs({
+ *  callback:(attributes,sections,casc)=>{
+ *    //Work with the attributes as you please.
+ *    attributes.some_attribute = 'a value';
+ *    attributes.set();//Apply our change
+ *  }
+ * })
+ */
+const getAllAttrs = function({props=baseGet,sectionDetails=repeatingSectionDetails,callback}){
+  getSections(sectionDetails,(repeats,sections)=>{
+    getAttrs([...props,...repeats],(values)=>{
+      const attributes = createAttrProxy(values);
+      orderSections(attributes,sections);
+      const casc = expandCascade(cascades,sections,attributes);
+      callback(attributes,sections,casc);
+    })
+  });
+};
+kFuncs.getAllAttrs = getAllAttrs;
+
+/**
+ * Alias for [getSectionIDs()](https://wiki.roll20.net/Sheet_Worker_Scripts#getSectionIDs.28section_name.2Ccallback.29) that allows you to iterate through several functions at once. Also assembles an array of repeating attributes to get.
+ * @param {object[]} sectionDetails - Array of details about a section to get the IDs for and attributes that need to be gotten.
+ * @param {string} sectionDetails.section - The full name of the repeating section including the \`repeating_\` prefix.
+ * @param {string[]} sectionDetails.fields - Array of field names that need to be gotten from the repeating section
+ * @param {function(string[],sectionObj)} callback - The function to call once all IDs have been gotten and the array of repating attributes to get has been assembled. The callback is passed the array of repating attributes to get and a {@link sectionObj}.
+ * @example
+ * // Get some section details
+ * const sectionDetails = {
+ *  {section:'repeating_equipment',fields:['name','weight','cost']},
+ *  {section:'repeating_weapon',fields:['name','attack','damage']}
+ * };
+ * k.getSections(sectionDetails,(attributeNames,sections)=>{
+ *  console.log(attributeNames);// => Array containing all row specific attribute names
+ *  console.log(sections);// => Object with arrays containing the row ids. Indexed by section name (e.g. repeating_eqiupment)
+ * })
+ */
+const getSections = function(sectionDetails,callback){
+  let queueClone = _.clone(sectionDetails);
+  const worker = (queue,repeatAttrs=[],sections={})=>{
+    let detail = queue.shift();
+    getSectionIDs(detail.section,(IDs)=>{
+      sections[detail.section] = IDs;
+      IDs.forEach((id)=>{
+        detail.fields.forEach((f)=>{
+          repeatAttrs.push(\`\${detail.section}_\${id}_\${f}\`);
+        });
+      });
+      repeatAttrs.push(\`_reporder_\${detail.section}\`);
+      if(queue.length){
+        worker(queue,repeatAttrs,sections);
+      }else{
+        callback(repeatAttrs,sections);
+      }
+    });
+  };
+  if(!queueClone[0]){
+    callback([],{});
+  }else{
+    worker(queueClone);
+  }
+};
+kFuncs.getSections = getSections;
+
+// Sets the attributes while always calling with {silent:true}
+// Can be awaited to get the values returned from _setAttrs
+/**
+ * Alias for [setAttrs()](https://wiki.roll20.net/Sheet_Worker_Scripts#setAttrs.28values.2Coptions.2Ccallback.29) that sets silently by default.
+ * @param {object} obj - The object containting attributes to set
+ * @param {boolean} [vocal=false] - Whether to set silently (default value) or not.
+ * @param {function()} [callback] - The callback function to invoke after the setting has been completed. No arguments are passed to the callback function.
+ * @example
+ * //Set some attributes silently
+ * k.setAttrs({attribute_1:'new value'})
+ * //Set some attributes and triggers listeners
+ * k.setAttrs({attribute_1:'new value',true})
+ * //Set some attributes and call a callback function
+ * k.setAttrs({attribute_1:'new value'},null,()=>{
+ *  //Do something after the attribute is set
+ * })
+ */
+const set = function(obj,vocal=false,callback){
+  setAttrs(obj,{silent:!vocal},callback);
+};
+kFuncs.setAttrs = set;
+
+const generateCustomID = function(string){
+  if(!string.startsWith('-')){
+    string = \`-\${string}\`;
+  }
+  rowID = generateRowID();
+  let re = new RegExp(\`^.{\${string.length}}\`);
+  return \`\${string}\${rowID.replace(re,'')}\`;
+};
+
+
+/**
+ * Alias for generateRowID that adds the new id to the {@link sectionObj}. Also allows for creation of custom IDs that conform to the section ID requirements.
+ * @name generateRowID
+ * @param {sectionObj} sections
+ * @param {string} [customText] - Custom text to start the ID with. This text should not be longer than the standard repeating section ID format.
+ * @returns {string} - The created ID
+ * @example
+ * k.getAllAttrs({
+ *  callback:(attributes,sections,casc)=>{
+ *    //Create a new row ID
+ *    const rowID = k.generateRowID('repeating_equipment',sections);
+ *    console.log(rowID);// => -p8rg908ug0suzz
+ *    //Create a custom row ID
+ *    const customID = k.generateRowID('repeating_equipment',sections,'custom');
+ *    console.log(customID);// => -custom98uadj89kj
+ *  }
+ * });
+ */
+const _generateRowID = function(section,sections,customText){
+  let rowID = customText ?
+    generateCustomID(customText) :
+    generateRowID();
+  section = section.match(/^repeating_[^_]+$/) ?
+    section :
+    \`repeating_\${section}\`;
+  sections[section] = sections[section] || [];
+  sections[section].push(rowID);
+  return \`\${section}_\${rowID}\`;
+};
+kFuncs.generateRowID = _generateRowID;/*jshint esversion: 11, laxcomma:true, eqeqeq:true*/
+/*jshint -W014,-W084,-W030,-W033*/
+const listeners = {};
+const baseGet = Object.entries(cascades).reduce((memo,[attrName,detailObj])=>{
+  if(!/repeating/.test(attrName) && detailObj.type !== 'action'){
+    memo.push(detailObj.name);
+  }
+  if(detailObj.listener){
+    listeners[detailObj.listener] = detailObj.listenerFunc;
+  }
+  return memo;
+},[]);
+kFuncs.baseGet = baseGet;
+const registerEventHandlers = function(){
+  on('sheet:opened',updateSheet);
+  debug({funcKeys:Object.keys(funcs),funcs});
+  //Roll20 change and click listeners
+  Object.entries(listeners).forEach(([event,funcName])=>{
+    if(funcs[funcName]){
+      on(event,funcs[funcName]);
+    }else{
+      debug(\`!!!Warning!!! no function named \${funcName} found. No listener created for \${event}\`,true);
+    }
+  });
+  log(\`kScaffold Loaded\`);
+};
+setTimeout(registerEventHandlers,0);//Delay the execution of event registration to ensure all event properties are present.
+
+const addItem = function(event){
+  let [,,section] = parseClickTrigger(event.triggerName);
+  section = section.replace(/add-/,'');
+  getAllAttrs({
+    callback:(attributes,sections,casc) => {
+      let row = _generateRowID(section,sections);
+      debug({row});
+      attributes[\`\${row}_name\`] = '';
+      setActionCalls({attributes,sections});
+      const trigger = cascades[\`fieldset_repeating_\${section}\`];
+      if(trigger && trigger.addFuncs){
+        trigger.addFuncs.forEach((funcName) => {
+          if(funcs[funcName]){
+            funcs[funcName]({attributes,sections,casc,trigger});
+          }
+        });
+      }
+      attributes.set({attributes,sections,casc});
+    }
+  });
+};
+funcs.addItem = addItem;
+
+const editSection = function(event){
+  let [,,section] = parseClickTrigger(event.triggerName);
+  section = section.replace(/edit-/,'');
+  let target = \`fieldset.repeating_\${section} + .repcontainer\`;
+  $20(target).toggleClass('ui-sortable');
+  $20(target).toggleClass('editmode');
+};
+registerFuncs({editSection});/**
+ * The default tab navigation function of the K-scaffold. Courtesy of Riernar. It will add \`k-active-tab\` to the active tab-container and \`k-active-button\` to the active button. You can either write your own CSS to control display of these, or use the default CSS included in \`scaffold/_k.scss\`. Note that \`k-active-button\` has no default CSS as it is assumed that you will want to style the active button to match your system.
+ * @param {Object} trigger - The trigger object
+ */
+const kSwitchTab = function ({ trigger, attributes }) {
+  const [container, tab] = (
+    trigger.name.match(/nav-tabs-(.+)--(.+)/) ||
+    []
+  ).slice(1);
+  $20(\`[data-container-tab=\\"\${container}\\"]\`).removeClass('k-active-tab');
+  $20(\`[data-container-tab=\\"\${container}\\"][data-tab=\\"\${tab}\\"]\`).addClass('k-active-tab');
+  $20(\`[data-container-button=\\"\${container}\\"]\`).removeClass('k-active-button');
+  $20(\`[data-container-button=\\"\${container}\\"][data-button=\\"\${tab}\\"]\`).addClass('k-active-button');
+  const tabInputName = \`\${container.replace(/\\\\-/g,'_')}_tab\`;
+  if(persistentTabs.indexOf(tabInputName) > -1){
+    attributes[tabInputName] = trigger.name;
+  }
+}
+
+registerFuncs({ kSwitchTab });
+
+/**
+ * Sets persistent tabs to their last active state
+ * @param {object} trigger - The trigger that caused the function to be called
+ * @param {object} attributes - The attribute values of the character
+ * @param {object[]} sections - All the repeating section IDs
+ * @param {object} casc - Expanded cascade object
+ */
+const kTabOnOpen = function({trigger,attributes,sections,casc}){
+  if(typeof persistentTabs === 'undefined') return;
+  persistentTabs.forEach((tabInput) => {
+    const pseudoTrigger = {name:attributes[tabInput]};
+    kSwitchTab({trigger:pseudoTrigger, attributes});
+  });
+};
+registerFuncs({ kTabOnOpen },{type:['opener']});
+  return kFuncs;
+  }());
+  const actionAttributes = [];const persistentTabs = [\\"main_tabs_tab\\"];
+
+console.debug = vi.fn(a => null);
+console.log = vi.fn(a => null);
+console.table = vi.fn(a => null);
+module.exports = {k,...global};"
+`;
