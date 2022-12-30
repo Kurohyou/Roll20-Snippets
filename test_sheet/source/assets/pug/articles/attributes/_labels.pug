@@ -1,0 +1,25 @@
++input-label({
+  inputObj:{name:'labelled input',type:'text'},
+  spanObj:{'data-i18n':'label'},
+  divObj:{class:'div-class'}
+})
++select-label({
+  inputObj:{name:'labelled select',trigger:{affects:['dummy attribute']}},
+  spanObj:{'data-i18n':'select label'}
+})
+  +option({value:'option 1','data-i18n':'option 1',selected:''})
+  +option({value:'option 2','data-i18n':'option 2'})
++action-label({
+  buttonObj:{name:'labelled action','data-i18n':'labelled action',trigger:{triggeredFuncs:['actionTrigger']}},
+  inputObj:{name:'action text',type:'text'}
+})
++button-label({
+  buttonObj:{name:'labelled button',value:'&{template:default} {{name=temp roll}}'},
+  inputObj:{name:'button text',type:'text'}
+})
++roller-label({
+  buttonObj:{name:'labelled roller',trigger:{
+    triggeredFuncs:['rollFunc']
+  }},
+  inputObj:{name:'roller text',type:'text'}
+})

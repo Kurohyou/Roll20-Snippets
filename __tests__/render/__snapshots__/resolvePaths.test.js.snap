@@ -1,0 +1,8 @@
+// Vitest Snapshot v1
+
+exports[`resolvePaths() > Should resolve the relative source and destination paths 1`] = `
+[
+  "C:\\\\Users\\\\scase\\\\OneDrive\\\\Documents\\\\git\\\\kurohyou_studios\\\\Roll20-Snippets\\\\test.pug",
+  "C:\\\\Users\\\\scase\\\\OneDrive\\\\Documents\\\\git\\\\kurohyou_studios\\\\Roll20-Snippets\\\\test.html",
+]
+`;

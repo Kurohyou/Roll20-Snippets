@@ -1,0 +1,23 @@
++tab({name:'repeating attributes'})
+  // Repeating section tests
+  +fieldset({
+    name:'basic  fieldset',
+    trigger:{triggeredFuncs:'funcOnRemove'}
+  })
+    include ./attributes/_index.pug
+  +fieldset({
+    name:'class fieldset',
+    addClass:'add-a-class'
+  })
+    include ./attributes/_index.pug
+  +customControlFieldset({
+    name:'custom fieldset',
+    trigger:{addFuncs:['funcOnAdd']}
+  })
+    include ./attributes/_index.pug
+  +inlineFieldset({
+    name:'inline fieldset',
+    trigger:{},
+    addClass:''
+  })
+    include ./attributes/_index.pug

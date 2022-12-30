@@ -4,6 +4,7 @@ const fs = require('fs/promises');
 const { pathToFileURL } = require('url');
 
 const kErrorHead = require('./errorHead');
+
 /**
  * Renders SCSS into CSS text
  * @param {string} source - The path to the file you want to parse as SCSS.
@@ -13,7 +14,7 @@ const kErrorHead = require('./errorHead');
  */
 const renderSASS = async ({source,destination,options={}}) => {
   try{
-    const dirname = path.dirname(process.argv[1]);
+    const dirname = path.dirname(process.argv[1] || '');
     const compileOptions = {
       charset:false,
       importers: [

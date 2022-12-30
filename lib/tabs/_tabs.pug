@@ -99,7 +99,7 @@ mixin tabs({name="tabs",defaultActiveTab,persistent=true})
       each tab, index in tabs
         - const container = tab.container;
         #{container}(data-container-tab=sectionName data-tab=tab.name)&attributes(tab.attributes)
-          - tab.block()
+          - tab.block && tab.block();
 
 //- duplicate for documentation purposes
 //- @pugdoc

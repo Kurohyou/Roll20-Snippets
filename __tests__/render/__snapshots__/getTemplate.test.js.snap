@@ -1,0 +1,6 @@
+// Vitest Snapshot v1
+
+exports[`getTemplate() > Should read the file and replace k-scaffold includes with full path 1`] = `
+"include /node_modules/@kurohyou/k-scaffold/_k.pug
++tabs({})"
+`;

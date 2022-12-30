@@ -1,0 +1,41 @@
+//- input base mixin
++input({name:'basic input',type:'text',value:'test'})
+//- specific input mixins
++text({name:'text',value:'text'})
++number({name:'number',value:1})
+
++checkbox({name:'unchecked',value:1})
++checkbox({name:'checked',value:1,checked:''})
+
++radio({name:'radio',value:1,checked:''})
++radio({name:'radio',value:2})
+
+.collapse-container
+  +collapse('basic collapse')
+  span(data-i18n='hidden on expanded').collapsed
+  span(data-i18n='hidden on collapse').expanded
+  span(data-i18n='always visible')
+
++range({name:'range',value:2,min:1,max:10})
+
++hidden({name:'hidden',value:'hidden'})
+
++textarea({name:'textarea',value:'textarea'})
+
+//- Basic clearable fill left
++fillLeft({
+  radioObj:{name:'fill left'},
+  valueArray:[1,2,3,4,5],
+})
+//- non clearable fill left
++fillLeft({
+  radioObj:{name:'not clearable fill left'},
+  valueArray:[1,2,3,4,5],
+  noClear:true
+})
+//- Fill left with displayed values
++fillLeft({
+  radioObj:{name:'fill left with display'},
+  valueArray:[1,2,3,4,5],
+  displayValues:['+1','+2','+3','+4','+5']
+})
