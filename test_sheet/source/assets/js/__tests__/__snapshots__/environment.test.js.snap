@@ -2,35 +2,237 @@
 
 exports[`Environment > Should have attributes, characters, query response sub objects and all attributes from sheet in attributes subobject 1`] = `
 {
-  "action_text": "",
-  "adaptive_input": "",
-  "adaptive_textarea": "",
-  "basic_collapse": 0,
-  "basic_input": "test",
-  "button_text": "",
-  "checked": "1",
-  "drop_data": "",
-  "drop_name": "",
-  "fill_left": "0",
-  "fill_left_with_display": "0",
-  "hidden": "hidden",
-  "image": "",
-  "labelled_input": "",
-  "labelled_roller_action": "",
-  "labelled_select": "option 1",
-  "main_tabs_tab": "nav-tabs-main-tabs--tab1",
-  "number": "1",
-  "prefix_drop_data": "",
-  "prefix_drop_name": "",
-  "radio": "1",
-  "range": "2",
-  "roller_action": "",
-  "roller_text": "",
-  "select": "option 1",
-  "span": "",
-  "template_start": "&{template:test} {{character_name=@{character_name}}} {{character_id=@{character_id}}}",
-  "text": "text",
-  "textarea": "textarea",
-  "unchecked": 0,
+  "attributes": {
+    "action_text": "",
+    "adaptive_input": "",
+    "adaptive_textarea": "",
+    "basic_collapse": 0,
+    "basic_input": "test",
+    "button_text": "",
+    "checked": "1",
+    "drop_data": "",
+    "drop_name": "",
+    "fill_left": "0",
+    "fill_left_with_display": "0",
+    "hidden": "hidden",
+    "image": "",
+    "labelled_input": "",
+    "labelled_roller_action": "",
+    "labelled_select": "option 1",
+    "main_tabs_tab": "nav-tabs-main-tabs--tab1",
+    "number": "1",
+    "prefix_drop_data": "",
+    "prefix_drop_name": "",
+    "radio": "1",
+    "range": "2",
+    "roller_action": "",
+    "roller_text": "",
+    "select": "option 1",
+    "span": "",
+    "template_start": "&{template:test} {{character_name=@{character_name}}} {{character_id=@{character_id}}}",
+    "text": "text",
+    "textarea": "textarea",
+    "unchecked": 0,
+  },
+  "otherCharacters": {},
+  "queryResponses": {},
+  "triggers": [
+    {
+      "func": [Function],
+      "trigger": "sheet:opened",
+    },
+    {
+      "func": [Function],
+      "trigger": "change:character_name",
+    },
+    {
+      "func": [Function],
+      "trigger": "clicked:nav-tabs-main-tabs--basic-attributes",
+    },
+    {
+      "func": [Function],
+      "trigger": "clicked:nav-tabs-main-tabs--repeating-attributes",
+    },
+    {
+      "func": [Function],
+      "trigger": "clicked:nav-tabs-main-tabs--empty-tab",
+    },
+    {
+      "func": [Function],
+      "trigger": "change:select",
+    },
+    {
+      "func": [Function],
+      "trigger": "change:drop_name",
+    },
+    {
+      "func": [Function],
+      "trigger": "change:prefix_drop_name",
+    },
+    {
+      "func": [Function],
+      "trigger": "clicked:action-button",
+    },
+    {
+      "func": [Function],
+      "trigger": "clicked:roller-action",
+    },
+    {
+      "func": [Function],
+      "trigger": "change:labelled_select",
+    },
+    {
+      "func": [Function],
+      "trigger": "clicked:labelled_action",
+    },
+    {
+      "func": [Function],
+      "trigger": "clicked:labelled-roller-action",
+    },
+    {
+      "func": [Function],
+      "trigger": "remove:repeating_basic-fieldset",
+    },
+    {
+      "func": [Function],
+      "trigger": "change:repeating_basic-fieldset:select",
+    },
+    {
+      "func": [Function],
+      "trigger": "change:repeating_basic-fieldset:drop_name",
+    },
+    {
+      "func": [Function],
+      "trigger": "change:repeating_basic-fieldset:prefix_drop_name",
+    },
+    {
+      "func": [Function],
+      "trigger": "clicked:repeating_basic-fieldset:action-button",
+    },
+    {
+      "func": [Function],
+      "trigger": "clicked:repeating_basic-fieldset:roller-action",
+    },
+    {
+      "func": [Function],
+      "trigger": "change:repeating_basic-fieldset:labelled_select",
+    },
+    {
+      "func": [Function],
+      "trigger": "clicked:repeating_basic-fieldset:labelled_action",
+    },
+    {
+      "func": [Function],
+      "trigger": "clicked:repeating_basic-fieldset:labelled-roller-action",
+    },
+    {
+      "func": [Function],
+      "trigger": "change:repeating_class-fieldset:select",
+    },
+    {
+      "func": [Function],
+      "trigger": "change:repeating_class-fieldset:drop_name",
+    },
+    {
+      "func": [Function],
+      "trigger": "change:repeating_class-fieldset:prefix_drop_name",
+    },
+    {
+      "func": [Function],
+      "trigger": "clicked:repeating_class-fieldset:action-button",
+    },
+    {
+      "func": [Function],
+      "trigger": "clicked:repeating_class-fieldset:roller-action",
+    },
+    {
+      "func": [Function],
+      "trigger": "change:repeating_class-fieldset:labelled_select",
+    },
+    {
+      "func": [Function],
+      "trigger": "clicked:repeating_class-fieldset:labelled_action",
+    },
+    {
+      "func": [Function],
+      "trigger": "clicked:repeating_class-fieldset:labelled-roller-action",
+    },
+    {
+      "func": [Function],
+      "trigger": "clicked:add-custom-fieldset",
+    },
+    {
+      "func": [Function],
+      "trigger": "clicked:edit-custom-fieldset",
+    },
+    {
+      "func": [Function],
+      "trigger": "change:repeating_custom-fieldset:select",
+    },
+    {
+      "func": [Function],
+      "trigger": "change:repeating_custom-fieldset:drop_name",
+    },
+    {
+      "func": [Function],
+      "trigger": "change:repeating_custom-fieldset:prefix_drop_name",
+    },
+    {
+      "func": [Function],
+      "trigger": "clicked:repeating_custom-fieldset:action-button",
+    },
+    {
+      "func": [Function],
+      "trigger": "clicked:repeating_custom-fieldset:roller-action",
+    },
+    {
+      "func": [Function],
+      "trigger": "change:repeating_custom-fieldset:labelled_select",
+    },
+    {
+      "func": [Function],
+      "trigger": "clicked:repeating_custom-fieldset:labelled_action",
+    },
+    {
+      "func": [Function],
+      "trigger": "clicked:repeating_custom-fieldset:labelled-roller-action",
+    },
+    {
+      "func": [Function],
+      "trigger": "change:repeating_inline-fieldset:collapse",
+    },
+    {
+      "func": [Function],
+      "trigger": "change:repeating_inline-fieldset:select",
+    },
+    {
+      "func": [Function],
+      "trigger": "change:repeating_inline-fieldset:drop_name",
+    },
+    {
+      "func": [Function],
+      "trigger": "change:repeating_inline-fieldset:prefix_drop_name",
+    },
+    {
+      "func": [Function],
+      "trigger": "clicked:repeating_inline-fieldset:action-button",
+    },
+    {
+      "func": [Function],
+      "trigger": "clicked:repeating_inline-fieldset:roller-action",
+    },
+    {
+      "func": [Function],
+      "trigger": "change:repeating_inline-fieldset:labelled_select",
+    },
+    {
+      "func": [Function],
+      "trigger": "clicked:repeating_inline-fieldset:labelled_action",
+    },
+    {
+      "func": [Function],
+      "trigger": "clicked:repeating_inline-fieldset:labelled-roller-action",
+    },
+  ],
 }
 `;

@@ -67,7 +67,7 @@ mixin rollerExtras(obj)
   - actionObj = {name:actionName,hidden:''};
   - actionObj.trigger = obj.trigger || {listenerFunc:'initiateRoll'};
   block
-  - addIfUnique(`${repeatingPrefix}${attributeName}`,'actionAttributes');
+  - addIfUnique(`${k.repeatingPrefix}${attributeName}`,'actionAttributes');
   +action(actionObj)
   +hidden({name:attributeName})
 //- @pugdoc

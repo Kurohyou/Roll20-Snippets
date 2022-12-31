@@ -2,7 +2,7 @@ import { describe, it, expect, vi } from 'vitest';
 
 import { fsSpy } from './mocks';
 
-import getTemplate from './../../render/getTemplate';
+import getTemplate from '../../lib/render/getTemplate';
 
 describe('getTemplate()',()=>{
   it('Should read the file and replace k-scaffold includes with full path',async ()=>{

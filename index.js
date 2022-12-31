@@ -1,4 +1,4 @@
-const build = require('./render');
+const build = require('./lib/render');
 
 module.exports = {
   pug:(o)=>build({...o,runSCSS:false}),

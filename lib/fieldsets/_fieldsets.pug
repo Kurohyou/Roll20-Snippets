@@ -30,7 +30,7 @@ mixin fieldset({name,trigger,addClass})
       `${getSystemPrefix()} ${name}`;
   - name = name.replace(/\s+/g,'-');
   - let section = `repeating_${name}`;
-  - repeatingPrefix = `${section}_$X_`;
+  - k.repeatingPrefix = `${section}_$X_`;
   - createFieldsetObj(section)
   if trigger
     - storeTrigger({name:section,type:'fieldset',trigger})
@@ -38,7 +38,7 @@ mixin fieldset({name,trigger,addClass})
     span(hidden="" class=addClass)
   fieldset(class=`${section}`)
     block
-  - repeatingPrefix = '';
+  - k.repeatingPrefix = '';
 //-End Mixin
 
 

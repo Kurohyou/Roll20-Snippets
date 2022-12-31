@@ -1,5 +1,5 @@
 import { describe, it, expect, vi } from 'vitest';
-import kErrorHead from './../../render/errorHead';
+import kErrorHead from './../../lib/render/errorHead';
 import './mocks';
 
 describe('kErrorhead',()=>{
