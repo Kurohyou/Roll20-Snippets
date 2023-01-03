@@ -2592,14 +2592,12 @@ registerFuncs({ kTabOnOpen },{type:['opener']});
 
 exports[`k.build > Should generate the index.js for tests 1`] = `
 "{
-  \\"tabs-main-tabs-tab1\\": \\"tabs-main-tabs-tab1\\",
-  \\"tabs-main-tabs-tab2\\": \\"tabs-main-tabs-tab2\\",
+  \\"tabs-main-tabs-basic-attributes\\": \\"tabs-main-tabs-basic-attributes\\",
+  \\"tabs-main-tabs-repeating-attributes\\": \\"tabs-main-tabs-repeating-attributes\\",
+  \\"tabs-main-tabs-empty-tab\\": \\"tabs-main-tabs-empty-tab\\",
   \\"hidden on expanded\\": \\"hidden on expanded\\",
   \\"hidden on collapse\\": \\"hidden on collapse\\",
   \\"always visible\\": \\"always visible\\",
-  \\"tabs-main-tabs-empty-tab\\": \\"tabs-main-tabs-empty-tab\\",
-  \\"tabs-main-tabs-basic-attributes\\": \\"tabs-main-tabs-basic-attributes\\",
-  \\"tabs-main-tabs-repeating-attributes\\": \\"tabs-main-tabs-repeating-attributes\\",
   \\"option 1\\": \\"option 1\\",
   \\"option 2\\": \\"option 2\\",
   \\"label\\": \\"label\\",
@@ -2610,14 +2608,12 @@ exports[`k.build > Should generate the index.js for tests 1`] = `
 
 exports[`k.build > Should generate the translation file from the i18n entries 1`] = `
 "{
-  \\"tabs-main-tabs-tab1\\": \\"tabs-main-tabs-tab1\\",
-  \\"tabs-main-tabs-tab2\\": \\"tabs-main-tabs-tab2\\",
+  \\"tabs-main-tabs-basic-attributes\\": \\"tabs-main-tabs-basic-attributes\\",
+  \\"tabs-main-tabs-repeating-attributes\\": \\"tabs-main-tabs-repeating-attributes\\",
+  \\"tabs-main-tabs-empty-tab\\": \\"tabs-main-tabs-empty-tab\\",
   \\"hidden on expanded\\": \\"hidden on expanded\\",
   \\"hidden on collapse\\": \\"hidden on collapse\\",
   \\"always visible\\": \\"always visible\\",
-  \\"tabs-main-tabs-empty-tab\\": \\"tabs-main-tabs-empty-tab\\",
-  \\"tabs-main-tabs-basic-attributes\\": \\"tabs-main-tabs-basic-attributes\\",
-  \\"tabs-main-tabs-repeating-attributes\\": \\"tabs-main-tabs-repeating-attributes\\",
   \\"option 1\\": \\"option 1\\",
   \\"option 2\\": \\"option 2\\",
   \\"label\\": \\"label\\",

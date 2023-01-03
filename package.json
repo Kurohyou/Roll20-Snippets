@@ -7,7 +7,7 @@
     "docs": "node docGen",
     "build": "cd test_sheet && npm run build",
     "watch": "cd test_sheet && npm start",
-    "test":"vitest run",
+    "test": "vitest run",
     "test-watch": "vitest --ui"
   },
   "files": [
@@ -33,6 +33,6 @@
     "node-watch": "^0.7.3",
     "pug-doc": "^2.23.1",
     "sassdoc": "^2.7.2",
-    "vitest": "^0.26.2"
+    "vitest": "^0.26.3"
   }
 }

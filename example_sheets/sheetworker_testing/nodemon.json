@@ -1,5 +1,0 @@
-{
-  "ext":"pug, js, scss,json",
-  "ignore":["**/testFramework.js","*.html","**/translation.json"],
-  "verbose":true
-}
