@@ -1,5 +1,6 @@
+
 const k = require('./..');//Require the K-scaffold that we installed via NPM
-const kOpts = {destination:'./build',testDestination:'./source/assets/js',source:'./source',pugOptions:{suppressStack:false}};
+const kOpts = {destination:'./build',testDestination:'../__tests__',source:'./source',pugOptions:{suppressStack:false}};
 // We've set our output directory as roll20code, located directly in this same directory.
 
 if(process.argv[2] !== 'run'){

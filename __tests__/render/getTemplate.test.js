@@ -1,6 +1,6 @@
 import { describe, it, expect, vi } from 'vitest';
 
-import { fsSpy } from './mocks';
+import { fsSpy } from '../mocks';
 
 import getTemplate from '../../lib/render/getTemplate';
 

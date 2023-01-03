@@ -1,6 +1,6 @@
 import { describe, it, expect, vi } from 'vitest';
 import kErrorHead from './../../lib/render/errorHead';
-import './mocks';
+import '../mocks';
 
 describe('kErrorhead',()=>{
   it('Should log the provided error',()=>{
