@@ -21,7 +21,7 @@ describe('k.build',()=>{
     const translation = await fs.readFile(translationURL,'utf8');
     expect(translation).toMatchSnapshot();
   })
-  it('Should generate the index.js for tests', async ()=>{
+  it('Should generate the testFramework.js for tests', async ()=>{
     const js = await fs.readFile(jsURL,'utf8');
     expect(js).toMatchSnapshot()
   });

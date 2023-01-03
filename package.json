@@ -13,7 +13,7 @@
   "files": [
     "index.js",
     "_k.pug",
-    "_k.scss",
+    "_index.scss",
     "lib/*"
   ],
   "dependencies": {

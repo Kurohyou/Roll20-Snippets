@@ -1648,6 +1648,10 @@ exports[`k.build > Should generate the html file from the pug and js 1`] = `
   const repeatingSectionDetails = [{\\"section\\":\\"repeating_basic-fieldset\\",\\"fields\\":[\\"basic_input\\",\\"text\\",\\"number\\",\\"unchecked\\",\\"checked\\",\\"radio\\",\\"basic_collapse\\",\\"range\\",\\"hidden\\",\\"textarea\\",\\"fill_left\\",\\"not_clearable_fill_left\\",\\"fill_left_with_display\\",\\"select\\",\\"span\\",\\"drop_name\\",\\"drop_data\\",\\"prefix_drop_name\\",\\"prefix_drop_data\\",\\"roller_action\\",\\"adaptive_input\\",\\"adaptive_textarea\\",\\"labelled_input\\",\\"labelled_select\\",\\"action_text\\",\\"button_text\\",\\"roller_text\\",\\"labelled_roller_action\\"]},{\\"section\\":\\"repeating_class-fieldset\\",\\"fields\\":[\\"basic_input\\",\\"text\\",\\"number\\",\\"unchecked\\",\\"checked\\",\\"radio\\",\\"basic_collapse\\",\\"range\\",\\"hidden\\",\\"textarea\\",\\"fill_left\\",\\"not_clearable_fill_left\\",\\"fill_left_with_display\\",\\"select\\",\\"span\\",\\"drop_name\\",\\"drop_data\\",\\"prefix_drop_name\\",\\"prefix_drop_data\\",\\"roller_action\\",\\"adaptive_input\\",\\"adaptive_textarea\\",\\"labelled_input\\",\\"labelled_select\\",\\"action_text\\",\\"button_text\\",\\"roller_text\\",\\"labelled_roller_action\\"]},{\\"section\\":\\"repeating_custom-fieldset\\",\\"fields\\":[\\"basic_input\\",\\"text\\",\\"number\\",\\"unchecked\\",\\"checked\\",\\"radio\\",\\"basic_collapse\\",\\"range\\",\\"hidden\\",\\"textarea\\",\\"fill_left\\",\\"not_clearable_fill_left\\",\\"fill_left_with_display\\",\\"select\\",\\"span\\",\\"drop_name\\",\\"drop_data\\",\\"prefix_drop_name\\",\\"prefix_drop_data\\",\\"roller_action\\",\\"adaptive_input\\",\\"adaptive_textarea\\",\\"labelled_input\\",\\"labelled_select\\",\\"action_text\\",\\"button_text\\",\\"roller_text\\",\\"labelled_roller_action\\"]},{\\"section\\":\\"repeating_inline-fieldset\\",\\"fields\\":[\\"display_state\\",\\"collapse\\",\\"name\\",\\"basic_input\\",\\"text\\",\\"number\\",\\"unchecked\\",\\"checked\\",\\"radio\\",\\"basic_collapse\\",\\"range\\",\\"hidden\\",\\"textarea\\",\\"fill_left\\",\\"not_clearable_fill_left\\",\\"fill_left_with_display\\",\\"select\\",\\"span\\",\\"drop_name\\",\\"drop_data\\",\\"prefix_drop_name\\",\\"prefix_drop_data\\",\\"roller_action\\",\\"adaptive_input\\",\\"adaptive_textarea\\",\\"labelled_input\\",\\"labelled_select\\",\\"action_text\\",\\"button_text\\",\\"roller_text\\",\\"labelled_roller_action\\"]}];
   
   kFuncs.repeatingSectionDetails = repeatingSectionDetails;
+  
+  const persistentTabs = [\\"main_tabs_tab\\"];
+  
+  kFuncs.persistentTabs = persistentTabs;
   /**
  * This stores the name of your sheet for use in the logging functions {@link log} and {@link debug}. Accessible by \`k.sheetName\`
  * @var
@@ -1704,7 +1708,13 @@ kFuncs.sanitizeForRegex = sanitizeForRegex;
  * console.log(num);// => 100
  */
 const value = function(val,def){
-  return (+val||def||0);
+  const convertVal = +val;
+  if(def !== undefined && isNaN(def)){
+    throw(\`K-scaffold Error: invalid default for value(). Default: \${def}\`);
+  }
+  return convertVal === 0 ?
+    convertVal :
+    (+val||def||0);
 };
 kFuncs.value = value;
 
@@ -1807,7 +1817,7 @@ kFuncs.capitalize = capitalize;
  *  const queryResult = await extractQueryResult('Prompt Text Here|Option 1|Option 2');
  *  console.log(queryResult);//=> \\"Option 1\\" or \\"Option 2\\" depending on what the user selects
  * 
- *  //Get free from input from the user
+ *  //Get free form input from the user
  *  const freeResult = await extractQueryResult('Prompt Text Here');
  *  consoel.log(freeResult);// => Whatever the user entered
  * }
@@ -1866,6 +1876,7 @@ kFuncs.log = log;
  * @returns {void}
  */
 const debug = function(msg,force){
+  console.warn('kFuncs.version',kFuncs.version);
   if(!kFuncs.debugMode && !force && kFuncs.version > 0) return;
   if(typeof msg === 'string'){
     console.log(\`%c\${kFuncs.sheetName} DEBUG| \${msg}\`,\\"background-color:tan;color:red;\\");
@@ -1935,11 +1946,11 @@ const createAttrProxy = function(attrs){
     return cascObj;
   };
   
-  const triggerFunctions = function(obj,attributes,sections){
+  const triggerFunctions = function(obj,attributes,sections,casc){
     if(obj.triggeredFuncs && obj.triggeredFuncs.length){
       debug(\`triggering functions for \${obj.name}\`);
       obj.triggeredFuncs && obj.triggeredFuncs.forEach(func=>funcs[func] ? 
-        funcs[func]({trigger:obj,attributes,sections}) :
+        funcs[func]({trigger:obj,attributes,sections,casc}) :
         debug(\`!!!Warning!!! no function named \${func} found. Triggered function not called for \${obj.name}\`,true));
     }
   };
@@ -2586,11 +2597,11 @@ const kTabOnOpen = function({trigger,attributes,sections,casc}){
 registerFuncs({ kTabOnOpen },{type:['opener']});
   return kFuncs;
   }());
-  const actionAttributes = [\\"roller_action\\",\\"labelled_roller_action\\",\\"repeating_basic-fieldset_$X_roller_action\\",\\"repeating_basic-fieldset_$X_labelled_roller_action\\",\\"repeating_class-fieldset_$X_roller_action\\",\\"repeating_class-fieldset_$X_labelled_roller_action\\",\\"repeating_custom-fieldset_$X_roller_action\\",\\"repeating_custom-fieldset_$X_labelled_roller_action\\",\\"repeating_inline-fieldset_$X_roller_action\\",\\"repeating_inline-fieldset_$X_labelled_roller_action\\"];const persistentTabs = [\\"main_tabs_tab\\"];const inlineFieldsets = [\\"inline fieldset\\"];
+  const actionAttributes = [\\"roller_action\\",\\"labelled_roller_action\\",\\"repeating_basic-fieldset_$X_roller_action\\",\\"repeating_basic-fieldset_$X_labelled_roller_action\\",\\"repeating_class-fieldset_$X_roller_action\\",\\"repeating_class-fieldset_$X_labelled_roller_action\\",\\"repeating_custom-fieldset_$X_roller_action\\",\\"repeating_custom-fieldset_$X_labelled_roller_action\\",\\"repeating_inline-fieldset_$X_roller_action\\",\\"repeating_inline-fieldset_$X_labelled_roller_action\\"];const inlineFieldsets = [\\"inline fieldset\\"];
 </script>"
 `;
 
-exports[`k.build > Should generate the index.js for tests 1`] = `
+exports[`k.build > Should generate the testFramework.js for tests 1`] = `
 "{
   \\"tabs-main-tabs-basic-attributes\\": \\"tabs-main-tabs-basic-attributes\\",
   \\"tabs-main-tabs-repeating-attributes\\": \\"tabs-main-tabs-repeating-attributes\\",
