@@ -45,7 +45,6 @@ mixin tabs({name="tabs",defaultActiveTab,persistent=true})
     if defaultActiveTab
       - inputObj.value = `nav-tabs-${sectionName}--${defaultActiveTab}`;
     +hidden(inputObj)
-    - varObjects.persistentTabs = varObjects.persistentTabs || [];
     - varObjects.persistentTabs.push(inputObj.name.replace(/attr_/,''))
 
   //- Storage for all the tabs in this construct, plus a local mixin to pass
